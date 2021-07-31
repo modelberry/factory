@@ -1,5 +1,5 @@
 {
-  "name": "@modelberry/push",
+  "name": "@modelberry/berry-factory",
   "version": "6.25.2",
   "description": "Push Typescript models to a content platform",
   "keywords": [
