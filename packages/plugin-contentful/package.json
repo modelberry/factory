@@ -1,5 +1,5 @@
 {
-  "name": "@jaccomeijer/plugin-contentful",
+  "name": "@modelberry/plugin-contentful",
   "version": "6.25.2",
   "description": "Contentful plugin for Wheelroom push",
   "keywords": [
@@ -59,8 +59,8 @@
     "dev": "rollup --config --watch"
   },
   "dependencies": {
-    "chalk": "2.4.2",
-    "contentful-management": "7.25.1",
+    "chalk": "4.1.2",
+    "contentful-management": "7.31.0",
     "@modelberry/push": "6.25.2"
   },
   "engines": {

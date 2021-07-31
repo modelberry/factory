@@ -1,5 +1,5 @@
 {
-  "name": "@jaccomeijer/modelberry-com",
+  "name": "@modelberry/modelberry-com",
   "version": "6.25.4",
   "private": true,
   "description": "https://www.modelberry.com",
@@ -51,8 +51,8 @@
     "@modelberry/any": "6.25.4",
     "@modelberry/css-theme": "6.25.3",
     "facepaint": "1.2.1",
-    "gatsby": "3.4.1",
-    "gatsby-source-graphql": "3.5.0",
+    "gatsby": "3.10.2",
+    "gatsby-source-graphql": "3.10.0",
     "react-bootstrap-icons": "1.5.0"
   },
   "engines": {

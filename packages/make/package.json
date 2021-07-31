@@ -1,5 +1,5 @@
 {
-  "name": "@jaccomeijer/make",
+  "name": "@modelberry/make",
   "version": "6.26.0",
   "description": "Make library for use with NPM 7 and @npmcli/arborist ",
   "keywords": [
@@ -60,13 +60,13 @@
     "dev": "rollup --config --watch"
   },
   "dependencies": {
-    "@npmcli/arborist": "2.3.0",
-    "@octokit/rest": "18.5.3",
+    "@npmcli/arborist": "2.8.0",
+    "@octokit/rest": "18.7.2",
     "conventional-changelog": "3.1.24",
     "conventional-changelog-conventionalcommits": "4.6.0",
     "conventional-recommended-bump": "6.1.0",
     "deepmerge": "4.2.2",
-    "inquirer": "8.0.0",
+    "inquirer": "8.1.2",
     "semver": "7.3.5",
     "yargs": "17.0.1"
   },

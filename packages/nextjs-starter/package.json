@@ -1,5 +1,5 @@
 {
-  "name": "@jaccomeijer/nextjs-starter",
+  "name": "@modelberry/nextjs-starter",
   "version": "6.25.4",
   "private": true,
   "description": "Next.js starter",
@@ -44,7 +44,7 @@
   },
   "dependencies": {
     "@modelberry/any": "6.25.4",
-    "next": "10.2.0"
+    "next": "11.0.1"
   },
   "engines": {
     "node": ">=16.0.0",
