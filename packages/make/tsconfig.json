@@ -1,8 +1,0 @@
-{
-  "compilerOptions": {
-    "declaration": false,
-    "sourceMap": false,
-  },
-  "extends": "../../tsconfig.json",
-  "include": ["src/**/*.ts", "src/**/*.tsx"]
-}
