@@ -1,7 +1,7 @@
 /**
  * Action model, used to render links and buttons
- * @wheelroom
- * - {@plugin "@wheelroom/plugin-contentful/plain"}
+ * @modelberry
+ * - {@plugin "@modelberry/plugin-contentful/plain"}
  * - {@type testAction}
  */
 export interface ContentfulAction {
@@ -9,24 +9,24 @@ export interface ContentfulAction {
     id: string
   }
   /**
-   * @wheelroom
+   * @modelberry
    *   {@type Symbol}
    *   {@helpText Voorbeeld: mijn-anchor}
    */
   anchor?: string
   /**
-   * @wheelroom
+   * @modelberry
    *   {@type Symbol}
    *   {@helpText Omschrijving van de actie, voor zoekmachines}
    */
   description?: string
-  /** @wheelroom {@type Symbol} */
+  /** @modelberry {@type Symbol} */
   eventId?: string
-  /** @wheelroom {@type Symbol} */
+  /** @modelberry {@type Symbol} */
   heading?: string
-  /** @wheelroom {@type Symbol} */
+  /** @modelberry {@type Symbol} */
   query?: string
-  /** @wheelroom {@type Symbol} */
+  /** @modelberry {@type Symbol} */
   url?: string
 }
 

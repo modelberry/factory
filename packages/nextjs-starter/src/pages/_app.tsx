@@ -1,6 +1,6 @@
 import { AppProps } from 'next/app'
 import { Global } from '@emotion/react'
-import { globalReset } from '@wheelroom/any/react'
+import { globalReset } from '@modelberry/any/react'
 
 const App = ({ Component, pageProps }: AppProps) => (
   <>

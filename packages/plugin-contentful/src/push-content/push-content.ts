@@ -1,4 +1,4 @@
-import { TypeData } from '@wheelroom/push/plain'
+import { TypeData } from '@modelberry/push/plain'
 import chalk from 'chalk'
 import { Environment, KeyValueMap } from 'contentful-management/types'
 import { getContentfulLocales } from '../lib/get-contentful-locales'

@@ -1,11 +1,11 @@
-import { WheelroomPluginData } from '@wheelroom/plugin-contentful/plain'
+import { WheelroomPluginData } from '@modelberry/plugin-contentful/plain'
 import { ContentfulAction } from './topic-action'
 import { ContentfulAsset } from './topic-asset'
 
 /**
  * This desciption is not used
- * @wheelroom
- * - {@plugin "@wheelroom/plugin-contentful/plain"}
+ * @modelberry
+ * - {@plugin "@modelberry/plugin-contentful/plain"}
  * - {@type testTopic}
  * - {@displayField heading}
  * - {@description Topic model, a heading, an abstract and a call to action}
@@ -15,13 +15,13 @@ export interface ContentfulTopic {
     id: string
   }
 
-  /** @wheelroom
+  /** @modelberry
    * - {@type Symbol}
    * - {@validation shortString} */
   abstract?: string
 
   /**
-   * @wheelroom
+   * @modelberry
    * - {@type Array}
    * - {@itemsType Link}
    * - {@itemsLinkType Entry}
@@ -32,14 +32,14 @@ export interface ContentfulTopic {
     items: ContentfulAction[]
   }
 
-  /** @wheelroom {@type Symbol} */
+  /** @modelberry {@type Symbol} */
   heading?: string
 
-  /** @wheelroom {@type Symbol} */
+  /** @modelberry {@type Symbol} */
   icon?: string
 
   /**
-   * @wheelroom
+   * @modelberry
    *  - {@type Array}
    *  - {@itemsType Link}
    *  - {@itemsLinkType Asset}
@@ -48,7 +48,7 @@ export interface ContentfulTopic {
     items: ContentfulAsset[]
   }
 
-  /** @wheelroom
+  /** @modelberry
    * - {@type Link}
    * - {@linkType Asset}
    */
@@ -96,7 +96,7 @@ export const notTaggedObject: NotTagged = {
 }
 
 export const wheelroomPluginData: WheelroomPluginData = {
-  '@wheelroom/plugin-contentful/plain': {
+  '@modelberry/plugin-contentful/plain': {
     validations: {
       dropdown: { in: ['item A', 'item B', 'item C'] },
       media: { linkMimetypeGroup: ['image', 'video'] },

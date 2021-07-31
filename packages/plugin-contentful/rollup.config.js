@@ -16,7 +16,7 @@ const globals = {
   fs: '*',
   path: '*',
   'contentful-management': '*',
-  '@wheelroom/push/plain': '*',
+  '@modelberry/push/plain': '*',
 }
 
 const external = Object.keys(globals)

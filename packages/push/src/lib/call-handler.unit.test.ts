@@ -11,11 +11,11 @@ describe('The call handler should', () => {
     await callHandler({
       callCommand: 'push',
       callType: 'content',
-      pluginName: '@wheelroom/does-not-exist',
+      pluginName: '@modelberry/does-not-exist',
     })
     expect(consoleSpy.mock.calls).toEqual([
       [chalk.bold.underline(`\nRunning plugin`)],
-      [chalk('- plugin: @wheelroom/does-not-exist')],
+      [chalk('- plugin: @modelberry/does-not-exist')],
       [chalk.red('- could not find plugin (MODULE_NOT_FOUND)')],
     ])
   })

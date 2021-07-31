@@ -1,4 +1,4 @@
-import { TypeData } from '@wheelroom/push/plain'
+import { TypeData } from '@modelberry/push/plain'
 
 export const noInterfaceType: TypeData = {
   Topic: {
@@ -12,7 +12,7 @@ export const noInterfaceType: TypeData = {
         },
       },
       interfaceTags: {
-        '@plugin': '@wheelroom/plugin-contentful/plain',
+        '@plugin': '@modelberry/plugin-contentful/plain',
       },
       typeName: 'Topic',
     },

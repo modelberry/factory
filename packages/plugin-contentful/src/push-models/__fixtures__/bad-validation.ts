@@ -1,4 +1,4 @@
-import { TypeData } from '@wheelroom/push/plain'
+import { TypeData } from '@modelberry/push/plain'
 
 export const badValidation: TypeData = {
   Topic: {
@@ -13,7 +13,7 @@ export const badValidation: TypeData = {
         },
       },
       interfaceTags: {
-        '@plugin': '@wheelroom/plugin-contentful/plain',
+        '@plugin': '@modelberry/plugin-contentful/plain',
         '@type': 'topic',
       },
       typeName: 'Topic',

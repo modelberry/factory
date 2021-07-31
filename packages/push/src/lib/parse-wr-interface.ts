@@ -10,13 +10,13 @@ import { stripDoubleQuotes } from './case-helpers'
 export type WrInterface = {
   fields?: {
     [fieldName: string]: {
-      /** The inline tags defined within the @wheelroom tag for each field */
+      /** The inline tags defined within the @modelberry tag for each field */
       tags?: Record<string, string>
       /** Typescript type of the field */
       type?: string
     }
   }
-  /** The inline tags defined within the @wheelroom tagon the interface */
+  /** The inline tags defined within the @modelberry tagon the interface */
   interfaceTags?: Record<string, string>
   /** The typescript type of the interface  */
   typeName?: string
@@ -86,13 +86,13 @@ export const parseWrInterface = ({
   })
   /**
    * Checking for tags. Only check the tags that are required for exporting to a
-   * plugin. That makes the @wheelroom block tag and the @plugin inline tag
+   * plugin. That makes the @modelberry block tag and the @plugin inline tag
    * required. All others like @type are optional at this point.
    */
   if (!wheelroomTag) {
     log(
       chalk.red(
-        `- no @wheelroom block tag for interface (${wrInterface.typeName})`
+        `- no @modelberry block tag for interface (${wrInterface.typeName})`
       )
     )
     return
@@ -105,7 +105,7 @@ export const parseWrInterface = ({
     return
   }
   // Strip double quotes from plugin name, double quotes are needed when an
-  // @-character is used in a module. Eg {@plugin @wheelroom/module}
+  // @-character is used in a module. Eg {@plugin @modelberry/module}
   tags['@plugin'] = stripDoubleQuotes(tags['@plugin'])
 
   wrInterface.interfaceTags = tags
@@ -134,7 +134,7 @@ export const parseWrInterface = ({
     } else {
       log(
         chalk.red(
-          `- no @wheelroom block tag for field (${wrInterface.typeName}/${docProperty.name})`
+          `- no @modelberry block tag for field (${wrInterface.typeName}/${docProperty.name})`
         )
       )
     }

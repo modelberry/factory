@@ -1,5 +1,5 @@
 {
-  "name": "@wheelroom/nextjs-starter",
+  "name": "@jaccomeijer/nextjs-starter",
   "version": "6.25.4",
   "private": true,
   "description": "Next.js starter",
@@ -11,29 +11,23 @@
     "gatsbyjs",
     "netlify",
     "react",
-    "typescript",
-    "wheelroom"
+    "typescript"
   ],
-  "homepage": "https://github.com/wheelroom/wheelroom#readme",
+  "homepage": "https://github.com/jaccomeijer/modelberry#readme",
   "bugs": {
-    "url": "https://github.com/wheelroom/wheelroom/issues"
+    "url": "https://github.com/jaccomeijer/modelberry/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wheelroom/wheelroom.git"
+    "url": "git+https://github.com/jaccomeijer/modelberry.git"
   },
   "license": "MIT",
-  "author": "Wheelroom (https://www.wheelroom.io)",
+  "author": "Jacco Meijer (https://www.jaccomeijer.nl)",
   "contributors": [
     {
       "name": "Jacco Meijer",
-      "email": "jacco@wheelroom.io",
+      "email": "jacco@jaccomeijer.nl",
       "url": "https://www.jaccomeijer.nl"
-    },
-    {
-      "name": "Thijs Krooswijk",
-      "email": "thijs@wheelroom.io",
-      "url": "https://www.thijskrooswijk.com"
     }
   ],
   "publishConfig": {
@@ -49,7 +43,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@wheelroom/any": "6.25.4",
+    "@modelberry/any": "6.25.4",
     "next": "10.2.0"
   },
   "engines": {

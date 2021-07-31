@@ -1,4 +1,4 @@
-import { TypeData } from '@wheelroom/push/plain'
+import { TypeData } from '@modelberry/push/plain'
 
 export const ignoreField: TypeData = {
   Topic: {
@@ -14,7 +14,7 @@ export const ignoreField: TypeData = {
         },
       },
       interfaceTags: {
-        '@plugin': '@wheelroom/plugin-contentful/plain',
+        '@plugin': '@modelberry/plugin-contentful/plain',
         '@type': 'topic',
       },
       typeName: 'Topic',

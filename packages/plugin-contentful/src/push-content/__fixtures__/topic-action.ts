@@ -1,4 +1,4 @@
-import { TypeData } from '@wheelroom/push/plain'
+import { TypeData } from '@modelberry/push/plain'
 
 export const topicAction: TypeData = {
   ContentfulAction: {
@@ -13,7 +13,7 @@ export const topicAction: TypeData = {
       },
       interfaceTags: {
         '@displayField': 'heading',
-        '@plugin': '@wheelroom/plugin-contentful/plain',
+        '@plugin': '@modelberry/plugin-contentful/plain',
         '@type': 'testAction',
       },
       typeName: 'ContentfulAction',
@@ -61,7 +61,7 @@ anchor: 'anchor',
       },
       interfaceTags: {
         '@displayField': 'heading',
-        '@plugin': '@wheelroom/plugin-contentful/plain',
+        '@plugin': '@modelberry/plugin-contentful/plain',
         '@type': 'testTopic',
       },
       typeName: 'ContentfulTopic',

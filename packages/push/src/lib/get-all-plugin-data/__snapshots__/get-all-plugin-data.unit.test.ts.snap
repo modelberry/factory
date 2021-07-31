@@ -2,7 +2,7 @@
 
 exports[`getAllPluginData should get data for all-tags.ts 1`] = `
 Object {
-  "@wheelroom/plugin-contentful/plain": Object {
+  "@modelberry/plugin-contentful/plain": Object {
     "dataVar": Object {},
     "types": Object {
       "Topic": Object {
@@ -25,7 +25,7 @@ Object {
             },
           },
           "interfaceTags": Object {
-            "@plugin": "@wheelroom/plugin-contentful/plain",
+            "@plugin": "@modelberry/plugin-contentful/plain",
             "@type": "topic",
           },
           "typeName": "Topic",
@@ -39,7 +39,7 @@ Object {
 
 exports[`getAllPluginData should get data for topic.ts 1`] = `
 Object {
-  "@wheelroom/plugin-contentful/plain": Object {
+  "@modelberry/plugin-contentful/plain": Object {
     "dataVar": Object {
       "fileName": "/Users/jacco/Development/wheelroom/packages/push/src/lib/get-all-plugin-data/__fixtures__/topic.ts",
       "isArray": false,
@@ -49,7 +49,7 @@ Object {
       "name": "wheelroomPluginData",
       "type": "WheelroomPluginData",
       "value": "{
-  '@wheelroom/plugin-contentful/plain': {
+  '@modelberry/plugin-contentful/plain': {
     validations: {
       dropdown: { in: ['item A', 'item B', 'item C'] },
       media: { linkMimetypeGroup: ['image', 'video'] },
@@ -119,14 +119,14 @@ Object {
             },
           },
           "interfaceTags": Object {
-            "@plugin": "@wheelroom/plugin-contentful/plain",
+            "@plugin": "@modelberry/plugin-contentful/plain",
             "@type": "testAction",
           },
           "typeName": "ContentfulAction",
         },
         "variables": Array [
           Object {
-            "fileName": "/Users/jacco/Development/wheelroom/packages/push/src/lib/get-all-plugin-data/__fixtures__/topic-action.ts",
+            "fileName": "src/lib/get-all-plugin-data/__fixtures__/topic-action.ts",
             "isArray": true,
             "isExported": true,
             "isObject": false,
@@ -196,14 +196,14 @@ Object {
           "interfaceTags": Object {
             "@description": "Topic model, a heading, an abstract and a call to action",
             "@displayField": "heading",
-            "@plugin": "@wheelroom/plugin-contentful/plain",
+            "@plugin": "@modelberry/plugin-contentful/plain",
             "@type": "testTopic",
           },
           "typeName": "ContentfulTopic",
         },
         "variables": Array [
           Object {
-            "fileName": "/Users/jacco/Development/wheelroom/packages/push/src/lib/get-all-plugin-data/__fixtures__/topic.ts",
+            "fileName": "src/lib/get-all-plugin-data/__fixtures__/topic.ts",
             "isArray": true,
             "isExported": true,
             "isObject": false,

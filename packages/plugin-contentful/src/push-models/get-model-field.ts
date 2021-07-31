@@ -1,7 +1,7 @@
 import chalk from 'chalk'
-import { camelToSpaces, firstUpperCase } from '@wheelroom/push/plain'
+import { camelToSpaces, firstUpperCase } from '@modelberry/push/plain'
 import { ContentFields, FieldType } from 'contentful-management/types'
-import { ValidationsMap } from '../lib/get-wheelroom-plugin-data'
+import { ValidationsMap } from '../lib/get-modelberry-plugin-data'
 
 export interface GetModelField {
   fieldId: string

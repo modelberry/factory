@@ -1,10 +1,10 @@
 /**
- * @see https://www.wheelroom.io
+ * @see https://www.modelberry.com
  *
  */
 export interface Topic {
   /**
-   * @wheelroom
+   * @modelberry
    * - {@type Symbol}
    *
    */

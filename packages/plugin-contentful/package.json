@@ -1,5 +1,5 @@
 {
-  "name": "@wheelroom/plugin-contentful",
+  "name": "@jaccomeijer/plugin-contentful",
   "version": "6.25.2",
   "description": "Contentful plugin for Wheelroom push",
   "keywords": [
@@ -10,29 +10,23 @@
     "gatsbyjs",
     "netlify",
     "react",
-    "typescript",
-    "wheelroom"
+    "typescript"
   ],
-  "homepage": "https://github.com/wheelroom/wheelroom#readme",
+  "homepage": "https://github.com/jaccomeijer/modelberry#readme",
   "bugs": {
-    "url": "https://github.com/wheelroom/wheelroom/issues"
+    "url": "https://github.com/jaccomeijer/modelberry/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wheelroom/wheelroom.git"
+    "url": "git+https://github.com/jaccomeijer/modelberry.git"
   },
   "license": "MIT",
-  "author": "Wheelroom (https://www.wheelroom.io)",
+  "author": "Jacco Meijer (https://www.jaccomeijer.nl)",
   "contributors": [
     {
       "name": "Jacco Meijer",
-      "email": "jacco@wheelroom.io",
+      "email": "jacco@jaccomeijer.nl",
       "url": "https://www.jaccomeijer.nl"
-    },
-    {
-      "name": "Thijs Krooswijk",
-      "email": "thijs@wheelroom.io",
-      "url": "https://www.thijskrooswijk.com"
     }
   ],
   "exports": {
@@ -67,7 +61,7 @@
   "dependencies": {
     "chalk": "2.4.2",
     "contentful-management": "7.25.1",
-    "@wheelroom/push": "6.25.2"
+    "@modelberry/push": "6.25.2"
   },
   "engines": {
     "node": ">=16.0.0",

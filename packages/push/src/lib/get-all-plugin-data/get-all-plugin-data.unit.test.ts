@@ -64,7 +64,7 @@ describe('getAllPluginData should', () => {
     getAllPluginData({ program })
     expect(consoleSpy).toHaveBeenNthCalledWith(
       2,
-      chalk.red('- no @wheelroom block tag for field (Topic/heading)')
+      chalk.red('- no @modelberry block tag for field (Topic/heading)')
     )
   })
 
@@ -75,7 +75,7 @@ describe('getAllPluginData should', () => {
     getAllPluginData({ program })
     expect(consoleSpy).toHaveBeenNthCalledWith(
       2,
-      chalk.red('- no @wheelroom block tag for interface (Topic)')
+      chalk.red('- no @modelberry block tag for interface (Topic)')
     )
   })
 })

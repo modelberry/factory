@@ -1,5 +1,5 @@
 {
-  "name": "@wheelroom/oauth2-response-generator",
+  "name": "@jaccomeijer/oauth2-response-generator",
   "version": "6.28.1",
   "description": "Oauth 2.0 server",
   "keywords": [
@@ -10,29 +10,23 @@
     "gatsbyjs",
     "netlify",
     "react",
-    "typescript",
-    "wheelroom"
+    "typescript"
   ],
-  "homepage": "https://github.com/wheelroom/wheelroom#readme",
+  "homepage": "https://github.com/jaccomeijer/modelberry#readme",
   "bugs": {
-    "url": "https://github.com/wheelroom/wheelroom/issues"
+    "url": "https://github.com/jaccomeijer/modelberry/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wheelroom/wheelroom.git"
+    "url": "git+https://github.com/jaccomeijer/modelberry.git"
   },
   "license": "MIT",
-  "author": "Wheelroom (https://www.wheelroom.io)",
+  "author": "Jacco Meijer (https://www.jaccomeijer.nl)",
   "contributors": [
     {
       "name": "Jacco Meijer",
-      "email": "jacco@wheelroom.io",
+      "email": "jacco@jaccomeijer.nl",
       "url": "https://www.jaccomeijer.nl"
-    },
-    {
-      "name": "Thijs Krooswijk",
-      "email": "thijs@wheelroom.io",
-      "url": "https://www.thijskrooswijk.com"
     }
   ],
   "exports": {

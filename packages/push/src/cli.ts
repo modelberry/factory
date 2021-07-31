@@ -13,13 +13,13 @@ type WheelroomOptions = {
 const options: WheelroomOptions = {
   filter: {
     alias: 'f',
-    describe: 'Filter by type value @wheelroom {@type value}',
+    describe: 'Filter by type value @modelberry {@type value}',
     requiresArg: true,
     type: 'string',
   },
   locale: {
     alias: 'l',
-    describe: 'Override @wheelroom {@locale}',
+    describe: 'Override @modelberry {@locale}',
     requiresArg: true,
     type: 'string',
   },

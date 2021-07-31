@@ -1,12 +1,12 @@
 /**
- * @wheelroom
+ * @modelberry
  * - {@type topic}
- * - {@plugin "@wheelroom/plugin-contentful/plain"}
+ * - {@plugin "@modelberry/plugin-contentful/plain"}
  *
  */
 export interface Topic {
   /**
-   * @see https://www.wheelroom.io
+   * @see https://www.modelberry.com
    *
    */
   heading: string

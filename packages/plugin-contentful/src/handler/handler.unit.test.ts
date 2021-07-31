@@ -15,7 +15,7 @@ const envMissingResponse = [
   [chalk.red('- CONTENTFUL_ENVIRONMENT env variable is missing')],
 ]
 
-const envOkResponse = [[chalk('- wheelroom project: ok')]]
+const envOkResponse = [[chalk('- modelberry project: ok')]]
 
 // Make sure not to read .env.development
 process.env.NODE_ENV = 'test'

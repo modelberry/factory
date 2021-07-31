@@ -1,14 +1,14 @@
 /**
  * Something about this model, used as model description
- * @wheelroom
- * - {@plugin "@wheelroom/plugin-contentful/plain"}
+ * @modelberry
+ * - {@plugin "@modelberry/plugin-contentful/plain"}
  * - {@type topic}
- * @see https://www.wheelroom.io
+ * @see https://www.modelberry.com
  */
 export interface Topic {
   /**
    * Some text here that we do nothing with
-   * @wheelroom
+   * @modelberry
    *   {@helpText The topic heading}
    *   {@localized}
    *   {@name Heading}

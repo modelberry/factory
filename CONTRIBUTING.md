@@ -1,4 +1,4 @@
-# Contributing to Wheelroom
+# Contributing to Modelberry
 
 ## How to start contributing?
 

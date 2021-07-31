@@ -4,6 +4,6 @@ module.exports = {
     '^.+\\.(ts|tsx)$': 'ts-jest',
   },
   moduleNameMapper: {
-    '@wheelroom/push/plain': '<rootDir>/../../packages/push/build/plain.cjs',
+    '@modelberry/push/plain': '<rootDir>/../../packages/push/build/plain.cjs',
   },
 }

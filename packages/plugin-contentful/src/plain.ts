@@ -1,2 +1,2 @@
 export * from './handler/handler'
-export * from './lib/get-wheelroom-plugin-data'
+export * from './lib/get-modelberry-plugin-data'
