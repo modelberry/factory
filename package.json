@@ -1,25 +1,26 @@
 {
-  "name": "modelberry",
+  "name": "@modelberry/berry-factory",
   "version": "6.28.1",
   "private": true,
-  "description": "Modelberry npm 7 workspaces",
+  "description": "Modelberry factory command line tool with plugins",
   "keywords": [
-    "any",
-    "cli",
+    "berry",
     "component",
     "contentful",
+    "factory",
     "gatsbyjs",
+    "models",
     "netlify",
     "react",
     "typescript"
   ],
-  "homepage": "https://github.com/jaccomeijer/modelberry#readme",
+  "homepage": "https://github.com/modelberry/berry-factory#readme",
   "bugs": {
-    "url": "https://github.com/jaccomeijer/modelberry/issues"
+    "url": "https://github.com/modelberry/berry-factory/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jaccomeijer/modelberry.git"
+    "url": "git+https://github.com/modelberry/berry-factory.git"
   },
   "license": "MIT",
   "author": "Jacco Meijer (https://www.jaccomeijer.nl)",
