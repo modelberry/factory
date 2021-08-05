@@ -57,9 +57,9 @@ describe('getAllPluginData should', () => {
     )
   })
 
-  test('report warnings for no-wheelroom-field-tag (parse-wr-interface)', async () => {
+  test('report warnings for no-modelberry-field-tag (parse-wr-interface)', async () => {
     const file =
-      './src/lib/get-all-plugin-data/__fixtures__/no-wheelroom-field-tag'
+      './src/lib/get-all-plugin-data/__fixtures__/no-modelberry-field-tag'
     const program = ts.createProgram([file], compilerOptions.options)
     getAllPluginData({ program })
     expect(consoleSpy).toHaveBeenNthCalledWith(
@@ -68,9 +68,9 @@ describe('getAllPluginData should', () => {
     )
   })
 
-  test('report warnings for no-wheelroom-interface-tag (parse-wr-interface)', async () => {
+  test('report warnings for no-modelberry-interface-tag (parse-wr-interface)', async () => {
     const file =
-      './src/lib/get-all-plugin-data/__fixtures__/no-wheelroom-interface-tag'
+      './src/lib/get-all-plugin-data/__fixtures__/no-modelberry-interface-tag'
     const program = ts.createProgram([file], compilerOptions.options)
     getAllPluginData({ program })
     expect(consoleSpy).toHaveBeenNthCalledWith(

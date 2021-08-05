@@ -1,23 +1,25 @@
 import { ContentTypeFieldValidation } from 'contentful-management/types'
-import { WrVariable } from '@modelberry/push/plain'
+import { ModelberryVariable } from '@modelberry/cli/plain'
 
 export type ValidationsMap = {
   [validationName: string]: ContentTypeFieldValidation
 }
 
-export type WheelroomPluginData = {
+export type ModelberryPluginData = {
   '@modelberry/plugin-contentful/plain'?: {
     validations?: ValidationsMap
   }
 }
 
-export interface GetWheelroomPluginData {
-  dataVar: WrVariable
+export interface GetModelberryPluginData {
+  dataVar: ModelberryVariable
 }
 
-export const getWheelroomPluginData = ({ dataVar }: GetWheelroomPluginData) => {
+export const getModelberryPluginData = ({
+  dataVar,
+}: GetModelberryPluginData) => {
   const dataVarFn = new Function(`return ${dataVar.value}`)
-  const dataVarObj = dataVarFn() as WheelroomPluginData
+  const dataVarObj = dataVarFn() as ModelberryPluginData
   const data = dataVarObj?.['@modelberry/plugin-contentful/plain']
 
   return data

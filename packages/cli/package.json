@@ -12,13 +12,13 @@
     "react",
     "typescript"
   ],
-  "homepage": "https://github.com/jaccomeijer/modelberry#readme",
+  "homepage": "https://github.com/modelberry/factory#readme",
   "bugs": {
-    "url": "https://github.com/jaccomeijer/modelberry/issues"
+    "url": "https://github.com/modelberry/factory/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jaccomeijer/modelberry.git"
+    "url": "git+https://github.com/modelberry/factory.git"
   },
   "license": "MIT",
   "author": "Jacco Meijer (https://www.jaccomeijer.nl)",

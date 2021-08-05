@@ -1,4 +1,4 @@
-import { getWheelroomPluginData } from './get-modelberry-plugin-data'
+import { getModelberryPluginData } from './get-modelberry-plugin-data'
 
 const dataVar = {
   fileName: '/__fixtures__/topic.ts',
@@ -6,8 +6,8 @@ const dataVar = {
   isExported: true,
   isObject: true,
   isTyped: true,
-  name: 'wheelroomPluginData',
-  type: 'WheelroomPluginData',
+  name: 'modelberryPluginData',
+  type: 'ModelberryPluginData',
   value: `{
     '@modelberry/plugin-contentful/plain': {
       validations: {
@@ -20,9 +20,9 @@ const dataVar = {
   }`,
 }
 
-describe('getWheelroomPluginData should', () => {
+describe('getModelberryPluginData should', () => {
   test('get data correctly', async () => {
-    const data = getWheelroomPluginData({ dataVar })
+    const data = getModelberryPluginData({ dataVar })
     expect(data).toMatchSnapshot()
   })
 })

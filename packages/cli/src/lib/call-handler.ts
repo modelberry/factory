@@ -1,6 +1,6 @@
 import chalk from 'chalk'
 import { TypeData, PluginData } from './get-all-plugin-data/get-all-plugin-data'
-import { WrVariable } from './parse-wr-variable'
+import { ModelberryVariable } from './parse-modelberry-variable'
 
 export type CallCommand = 'push' | 'pull'
 export type ArgvType = 'content' | 'models'
@@ -18,7 +18,7 @@ export type PushHandlerArgs = {
   callType: ArgvType
   pluginData?: {
     types: TypeData
-    dataVar: WrVariable
+    dataVar: ModelberryVariable
   }
 }
 

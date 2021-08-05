@@ -1,4 +1,4 @@
-import { WheelroomPluginData } from '@modelberry/plugin-contentful/plain'
+import { ModelberryPluginData } from '@modelberry/plugin-contentful/plain'
 import { ContentfulAction } from './topic-action'
 import { ContentfulAsset } from './topic-asset'
 
@@ -95,7 +95,7 @@ export const notTaggedObject: NotTagged = {
   thisVariable: 'is not tagged',
 }
 
-export const wheelroomPluginData: WheelroomPluginData = {
+export const modelberryPluginData: ModelberryPluginData = {
   '@modelberry/plugin-contentful/plain': {
     validations: {
       dropdown: { in: ['item A', 'item B', 'item C'] },

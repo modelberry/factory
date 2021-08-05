@@ -1,6 +1,6 @@
 import chalk from 'chalk'
-import { PushHandler } from '@modelberry/push/plain'
-import { getWheelroomPluginData } from '../lib/get-modelberry-plugin-data'
+import { PushHandler } from '@modelberry/cli/plain'
+import { getModelberryPluginData } from '../lib/get-modelberry-plugin-data'
 import { getAndValidateEnv } from '../lib/get-and-validate-env'
 import { pushModels } from '../push-models/push-models'
 import { pushContent } from '../push-content/push-content'
@@ -15,11 +15,11 @@ export const handler: PushHandler = async ({
   const isValid = getAndValidateEnv()
   if (!isValid) return
   if (!pluginData) return
-  if (process.env.WHEELROOM_PROJECT_NAME) {
-    log(chalk(`- modelberry project: ${process.env.WHEELROOM_PROJECT_NAME}`))
+  if (process.env.MODELBERRY_PROJECT_NAME) {
+    log(chalk(`- modelberry project: ${process.env.MODELBERRY_PROJECT_NAME}`))
   }
 
-  const dataVarObj = getWheelroomPluginData({ dataVar: pluginData.dataVar })
+  const dataVarObj = getModelberryPluginData({ dataVar: pluginData.dataVar })
   const validationsMap = dataVarObj?.validations || {}
   const contentfulEnvironment = await getContentfulEnvironment()
   if (callCommand === 'push' && callType === 'models') {

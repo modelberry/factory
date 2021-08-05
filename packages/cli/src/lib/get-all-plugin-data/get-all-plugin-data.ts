@@ -1,11 +1,17 @@
 import ts from 'typescript'
 import chalk from 'chalk'
-import { parseWrInterface, WrInterface } from '../parse-wr-interface'
-import { parseWrVariable, WrVariable } from '../parse-wr-variable'
+import {
+  parseModelberryInterface,
+  ModelberryInterface,
+} from '../parse-modelberry-interface'
+import {
+  parseModelberryVariable,
+  ModelberryVariable,
+} from '../parse-modelberry-variable'
 
 export type WrType = {
-  interface: WrInterface
-  variables: WrVariable[]
+  interface: ModelberryInterface
+  variables: ModelberryVariable[]
 }
 
 export type TypeData = {
@@ -14,7 +20,7 @@ export type TypeData = {
 
 export type PluginData = {
   types: TypeData
-  dataVar: WrVariable
+  dataVar: ModelberryVariable
 }
 
 export type AllPluginData = {
@@ -34,14 +40,14 @@ export const getAllPluginData = ({ program }: GetPluginData) => {
   for (const sourceFile of program.getSourceFiles()) {
     if (sourceFile.isDeclarationFile) continue
     log(chalk.underline(sourceFile.fileName))
-    const wrInterfaces: WrInterface[] = []
-    const wrVariables: WrVariable[] = []
+    const wrInterfaces: ModelberryInterface[] = []
+    const wrVariables: ModelberryVariable[] = []
 
     ts.forEachChild(sourceFile, (node: ts.Node) => {
-      const wrInterface = parseWrInterface({ node, checker })
+      const wrInterface = parseModelberryInterface({ node, checker })
       if (wrInterface) wrInterfaces.push(wrInterface)
-      const wrVariable = parseWrVariable({ node, sourceFile })
-      if (wrVariable.name === 'wheelroomPluginData') {
+      const wrVariable = parseModelberryVariable({ node, sourceFile })
+      if (wrVariable.name === 'modelberryPluginData') {
         dataVar = wrVariable
       } else if (
         wrVariable.name &&

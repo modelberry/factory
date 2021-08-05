@@ -7,8 +7,8 @@ export const getAndValidateEnv = () => {
   const log = console.log
   config({ path: envPath })
   let isValid = true
-  if (!process.env.WHEELROOM_PROJECT_NAME) {
-    log(chalk.blue(`- WHEELROOM_PROJECT_NAME env variable not found`))
+  if (!process.env.MODELBERRY_PROJECT_NAME) {
+    log(chalk.blue(`- MODELBERRY_PROJECT_NAME env variable not found`))
   }
   if (!process.env.CONTENTFUL_SPACE_ID) {
     log(chalk.red(`- CONTENTFUL_SPACE_ID env variable is missing`))

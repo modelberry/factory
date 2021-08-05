@@ -1,7 +1,7 @@
 import ts from 'typescript'
 import { getCompilerOptions } from '../lib/get-compiler-options/get-compiler-options'
-import { parseWrVariable } from '../lib/parse-wr-variable'
-import { parseWrInterface } from '../lib/parse-wr-interface'
+import { parseModelberryVariable } from '../lib/parse-modelberry-variable'
+import { parseModelberryInterface } from '../lib/parse-modelberry-interface'
 
 interface PrintNode {
   node: ts.Node
@@ -11,13 +11,13 @@ interface PrintNode {
 }
 
 const printNode = ({ node, checker, printer, sourceFile }: PrintNode) => {
-  const parsedVar = parseWrVariable({ node, sourceFile })
+  const parsedVar = parseModelberryVariable({ node, sourceFile })
   if (parsedVar.isArray || parsedVar.isObject) {
     console.log(
       `Found: sending ${parsedVar.name}: ${parsedVar.type} to platform`
     )
   }
-  const wrInterface = parseWrInterface({ node, checker })
+  const wrInterface = parseModelberryInterface({ node, checker })
   if (!wrInterface) return
   const printThis = printer.printNode(ts.EmitHint.Unspecified, node, sourceFile)
   console.log(printThis)

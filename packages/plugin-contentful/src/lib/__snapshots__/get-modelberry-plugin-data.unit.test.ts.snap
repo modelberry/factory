@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`getWheelroomPluginData should get data correctly 1`] = `
+exports[`getModelberryPluginData should get data correctly 1`] = `
 Object {
   "validations": Object {
     "camelCase": Object {

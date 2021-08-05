@@ -1,4 +1,4 @@
-import { TypeData } from '@modelberry/push/plain'
+import { TypeData } from '@modelberry/cli/plain'
 
 export const ignoreField: TypeData = {
   Topic: {

@@ -1,7 +1,7 @@
 import path from 'path'
 import ts from 'typescript'
 
-export type WrVariable = {
+export type ModelberryVariable = {
   fileName?: string
   isArray?: boolean
   isObject?: boolean
@@ -12,17 +12,20 @@ export type WrVariable = {
   value?: string
 }
 
-export interface ParseWrVariable {
+export interface ParseModelberryVariable {
   node: ts.Node
   sourceFile: ts.SourceFile
 }
 
-export const parseWrVariable = ({ node, sourceFile }: ParseWrVariable) => {
-  const wrVariable: WrVariable = {}
+export const parseModelberryVariable = ({
+  node,
+  sourceFile,
+}: ParseModelberryVariable) => {
+  const modelberryVariable: ModelberryVariable = {}
   if (node.kind === ts.SyntaxKind.FirstStatement) {
     node.forEachChild((node) => {
       if (node.kind === ts.SyntaxKind.ExportKeyword)
-        wrVariable.isExported = true
+        modelberryVariable.isExported = true
       if (node.kind === ts.SyntaxKind.VariableDeclarationList) {
         node.forEachChild((node) => {
           if (node.kind === ts.SyntaxKind.VariableDeclaration) {
@@ -52,17 +55,17 @@ export const parseWrVariable = ({ node, sourceFile }: ParseWrVariable) => {
               }
             })
             if (arrayType) arrayType = arrayType.replace('[]', '')
-            wrVariable.fileName = path.resolve(sourceFile.fileName)
-            wrVariable.isArray = !!arrayValue
-            wrVariable.isObject = !!objectValue
-            wrVariable.isTyped = !!arrayType || !!objectType
-            wrVariable.name = name
-            wrVariable.type = arrayType || objectType
-            wrVariable.value = arrayValue || objectValue
+            modelberryVariable.fileName = path.resolve(sourceFile.fileName)
+            modelberryVariable.isArray = !!arrayValue
+            modelberryVariable.isObject = !!objectValue
+            modelberryVariable.isTyped = !!arrayType || !!objectType
+            modelberryVariable.name = name
+            modelberryVariable.type = arrayType || objectType
+            modelberryVariable.value = arrayValue || objectValue
           }
         })
       }
     })
   }
-  return wrVariable
+  return modelberryVariable
 }

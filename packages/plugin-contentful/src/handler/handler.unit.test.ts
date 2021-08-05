@@ -9,7 +9,7 @@ import { pushModels } from '../push-models/push-models'
 import { handler } from './handler'
 
 const envMissingResponse = [
-  [chalk.blue('- WHEELROOM_PROJECT_NAME env variable not found')],
+  [chalk.blue('- MODELBERRY_PROJECT_NAME env variable not found')],
   [chalk.red('- CONTENTFUL_SPACE_ID env variable is missing')],
   [chalk.red('- CONTENTFUL_CMA_TOKEN env variable is missing')],
   [chalk.red('- CONTENTFUL_ENVIRONMENT env variable is missing')],
@@ -22,12 +22,12 @@ process.env.NODE_ENV = 'test'
 
 const setEnv = (value?: string) => {
   if (value) {
-    process.env.WHEELROOM_PROJECT_NAME = value
+    process.env.MODELBERRY_PROJECT_NAME = value
     process.env.CONTENTFUL_SPACE_ID = value
     process.env.CONTENTFUL_CMA_TOKEN = value
     process.env.CONTENTFUL_ENVIRONMENT = value
   } else {
-    delete process.env.WHEELROOM_PROJECT_NAME
+    delete process.env.MODELBERRY_PROJECT_NAME
     delete process.env.CONTENTFUL_SPACE_ID
     delete process.env.CONTENTFUL_CMA_TOKEN
     delete process.env.CONTENTFUL_ENVIRONMENT

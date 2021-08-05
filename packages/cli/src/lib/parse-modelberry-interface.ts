@@ -7,7 +7,7 @@ import {
 import { isExportedDeclaration } from './is-exported-declaration'
 import { stripDoubleQuotes } from './case-helpers'
 
-export type WrInterface = {
+export type ModelberryInterface = {
   fields?: {
     [fieldName: string]: {
       /** The inline tags defined within the @modelberry tag for each field */
@@ -57,12 +57,12 @@ export interface ParseInterface {
   node: ts.Node
 }
 
-export const parseWrInterface = ({
+export const parseModelberryInterface = ({
   checker,
   node,
-}: ParseInterface): WrInterface | undefined => {
+}: ParseInterface): ModelberryInterface | undefined => {
   const log = console.log
-  const wrInterface: WrInterface = {}
+  const wrInterface: ModelberryInterface = {}
 
   if (
     !isExportedDeclaration({ node }) ||
@@ -80,16 +80,16 @@ export const parseWrInterface = ({
     log(chalk.red(`- no TSDoc tags (${wrInterface.typeName})`))
     return
   }
-  const wheelroomTag = getTagByName({
+  const ModelberryTag = getTagByName({
     tags: docProperty.jSDocTags,
-    name: 'wheelroom',
+    name: 'modelberry',
   })
   /**
    * Checking for tags. Only check the tags that are required for exporting to a
    * plugin. That makes the @modelberry block tag and the @plugin inline tag
    * required. All others like @type are optional at this point.
    */
-  if (!wheelroomTag) {
+  if (!ModelberryTag) {
     log(
       chalk.red(
         `- no @modelberry block tag for interface (${wrInterface.typeName})`
@@ -97,7 +97,7 @@ export const parseWrInterface = ({
     )
     return
   }
-  const text = getTextSymbol({ symbols: wheelroomTag.text })
+  const text = getTextSymbol({ symbols: ModelberryTag.text })
   const tags = getInlineTags({ search: text })
 
   if (!tags['@plugin']) {
@@ -120,12 +120,12 @@ export const parseWrInterface = ({
 
   wrInterface.fields = {}
   docProperty.docProperties?.forEach((docProperty: DocProperty) => {
-    const wheelroomTag = getTagByName({
+    const modelberryTag = getTagByName({
       tags: docProperty.jSDocTags,
-      name: 'wheelroom',
+      name: 'modelberry',
     })
-    if (wheelroomTag) {
-      const text = getTextSymbol({ symbols: wheelroomTag.text })
+    if (modelberryTag) {
+      const text = getTextSymbol({ symbols: modelberryTag.text })
       const tags = getInlineTags({ search: text })
       wrInterface.fields![docProperty.name || 'unknown'] = {
         tags,

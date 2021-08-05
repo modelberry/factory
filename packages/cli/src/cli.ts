@@ -3,14 +3,14 @@ import { hideBin } from 'yargs/helpers'
 import { PullArgv, pullCommand } from './commands/pull/pull'
 import { PushArgv, pushCommand } from './commands/push/push'
 
-type WheelroomOptions = {
+type ModelberryOptions = {
   filter: yargs.Options
   locale: yargs.Options
   outside: yargs.Options
   yes: yargs.Options
 }
 
-const options: WheelroomOptions = {
+const options: ModelberryOptions = {
   filter: {
     alias: 'f',
     describe: 'Filter by type value @modelberry {@type value}',
@@ -38,7 +38,7 @@ const options: WheelroomOptions = {
 }
 
 yargs(hideBin(process.argv))
-  .scriptName('wheelroom')
+  .scriptName('factory')
   .usage('Usage: $0 <command> [options]')
   .demandCommand(1, 'Command required. Use --help to list all commands.')
   .recommendCommands()

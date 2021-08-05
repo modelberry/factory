@@ -3,13 +3,13 @@ import {
   Environment,
   KeyValueMap,
 } from 'contentful-management/types'
-import { WrInterface } from '../../../push/build/plain'
+import { ModelberryInterface } from '@modelberry/cli/plain'
 
 export interface PushEntryToContentful {
   contentfulEnvironment: Environment
   contentTypeId: string
   fieldValues: KeyValueMap
-  fields: WrInterface['fields']
+  fields: ModelberryInterface['fields']
   variableName: string
 }
 

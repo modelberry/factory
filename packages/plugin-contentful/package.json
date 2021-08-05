@@ -1,7 +1,7 @@
 {
   "name": "@modelberry/plugin-contentful",
   "version": "6.25.2",
-  "description": "Contentful plugin for Wheelroom push",
+  "description": "Contentful plugin for Modelberry factory",
   "keywords": [
     "any",
     "cli",
@@ -12,13 +12,13 @@
     "react",
     "typescript"
   ],
-  "homepage": "https://github.com/jaccomeijer/modelberry#readme",
+  "homepage": "https://github.com/modelberry/factory#readme",
   "bugs": {
-    "url": "https://github.com/jaccomeijer/modelberry/issues"
+    "url": "https://github.com/modelberry/factory/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jaccomeijer/modelberry.git"
+    "url": "git+https://github.com/modelberry/factory.git"
   },
   "license": "MIT",
   "author": "Jacco Meijer (https://www.jaccomeijer.nl)",
