@@ -1,5 +1,5 @@
 {
-  "name": "@modelberry/berry-factory",
+  "name": "@modelberry/factory",
   "version": "6.28.1",
   "private": true,
   "description": "Modelberry factory command line tool with plugins",
@@ -14,13 +14,13 @@
     "react",
     "typescript"
   ],
-  "homepage": "https://github.com/modelberry/berry-factory#readme",
+  "homepage": "https://github.com/modelberry/factory#readme",
   "bugs": {
-    "url": "https://github.com/modelberry/berry-factory/issues"
+    "url": "https://github.com/modelberry/factory/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/modelberry/berry-factory.git"
+    "url": "git+https://github.com/modelberry/factory.git"
   },
   "license": "MIT",
   "author": "Jacco Meijer (https://www.jaccomeijer.nl)",

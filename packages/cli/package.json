@@ -1,5 +1,5 @@
 {
-  "name": "@modelberry/berry-factory",
+  "name": "@modelberry/cli",
   "version": "6.25.2",
   "description": "Push Typescript models to a content platform",
   "keywords": [
@@ -41,6 +41,9 @@
         "build/*"
       ]
     }
+  },
+  "bin": {
+    "factory": "build/cli.cjs"
   },
   "files": [
     "CHANGELOG.md",
