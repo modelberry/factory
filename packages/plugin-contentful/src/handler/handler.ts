@@ -1,5 +1,5 @@
 import chalk from 'chalk'
-import { PushHandler } from '@modelberry/cli/plain'
+import { PushHandler } from '@modelberry/mbfactory/plain'
 import { getModelberryPluginData } from '../lib/get-modelberry-plugin-data'
 import { getAndValidateEnv } from '../lib/get-and-validate-env'
 import { pushModels } from '../push-models/push-models'

@@ -1,4 +1,4 @@
-import { TypeData } from '@modelberry/cli/plain'
+import { TypeData } from '@modelberry/mbfactory/plain'
 
 export const badValidation: TypeData = {
   Topic: {

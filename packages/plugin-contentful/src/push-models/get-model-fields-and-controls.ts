@@ -1,6 +1,6 @@
 import chalk from 'chalk'
 import { Control } from 'contentful-management/types'
-import { ModelberryInterface } from '@modelberry/cli/plain'
+import { ModelberryInterface } from '@modelberry/mbfactory/plain'
 import { ValidationsMap } from '../lib/get-modelberry-plugin-data'
 import { getModelField } from './get-model-field'
 import { getModelControl } from './get-model-control'

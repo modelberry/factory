@@ -1,4 +1,4 @@
-import { TypeData } from '@modelberry/cli/plain'
+import { TypeData } from '@modelberry/mbfactory/plain'
 import chalk from 'chalk'
 import { Environment, KeyValueMap } from 'contentful-management/types'
 import { getContentfulLocales } from '../lib/get-contentful-locales'

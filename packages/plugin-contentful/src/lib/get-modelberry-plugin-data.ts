@@ -1,5 +1,5 @@
 import { ContentTypeFieldValidation } from 'contentful-management/types'
-import { ModelberryVariable } from '@modelberry/cli/plain'
+import { ModelberryVariable } from '@modelberry/mbfactory/plain'
 
 export type ValidationsMap = {
   [validationName: string]: ContentTypeFieldValidation

@@ -3,7 +3,7 @@ import {
   Environment,
   KeyValueMap,
 } from 'contentful-management/types'
-import { ModelberryInterface } from '@modelberry/cli/plain'
+import { ModelberryInterface } from '@modelberry/mbfactory/plain'
 
 export interface PushEntryToContentful {
   contentfulEnvironment: Environment

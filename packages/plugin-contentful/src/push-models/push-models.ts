@@ -1,5 +1,5 @@
 import chalk from 'chalk'
-import { TypeData } from '@modelberry/cli/plain'
+import { TypeData } from '@modelberry/mbfactory/plain'
 import { Environment } from 'contentful-management/types'
 import { ValidationsMap } from '../lib/get-modelberry-plugin-data'
 import { getModelFieldsAndControls } from './get-model-fields-and-controls'
