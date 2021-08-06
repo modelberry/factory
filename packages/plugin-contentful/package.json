@@ -12,13 +12,13 @@
     "react",
     "typescript"
   ],
-  "homepage": "https://github.com/modelberry/mbfactory#readme",
+  "homepage": "https://github.com/modelberry/factory#readme",
   "bugs": {
-    "url": "https://github.com/modelberry/mbfactory/issues"
+    "url": "https://github.com/modelberry/factory/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/modelberry/mbfactory.git"
+    "url": "git+https://github.com/modelberry/factory.git"
   },
   "license": "MIT",
   "author": "Jacco Meijer (https://www.jaccomeijer.nl)",
@@ -61,7 +61,7 @@
   "dependencies": {
     "chalk": "4.1.2",
     "contentful-management": "7.31.0",
-    "@modelberry/cli": "6.25.2"
+    "@modelberry/mbfactory": "6.25.2"
   },
   "engines": {
     "node": ">=16.0.0",

@@ -1,5 +1,5 @@
 {
-  "name": "@modelberry/cli",
+  "name": "@modelberry/mbfactory",
   "version": "6.25.2",
   "description": "Push Typescript models to a content platform",
   "keywords": [
@@ -12,13 +12,13 @@
     "react",
     "typescript"
   ],
-  "homepage": "https://github.com/modelberry/mbfactory#readme",
+  "homepage": "https://github.com/modelberry/factory#readme",
   "bugs": {
-    "url": "https://github.com/modelberry/mbfactory/issues"
+    "url": "https://github.com/modelberry/factory/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/modelberry/mbfactory.git"
+    "url": "git+https://github.com/modelberry/factory.git"
   },
   "license": "MIT",
   "author": "Jacco Meijer (https://www.jaccomeijer.nl)",
