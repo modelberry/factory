@@ -102,7 +102,7 @@ export const modelberryPluginData: ModelberryPluginData = {
     validations: {
       dropdown: { in: ['item A', 'item B', 'item C'] },
       media: { linkMimetypeGroup: ['image', 'video'] },
-      action: { linkContentType: ['action'] },
+      action: { linkContentType: ['testAction'] },
       shortString: { size: { max: 155, min: 0 } },
       camelCase: {
         regexp: { pattern: '^[a-z]+([A-Z][a-z0-9]+)*$', flags: '' },

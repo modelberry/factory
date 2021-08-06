@@ -1,10 +1,12 @@
 import {
   CreateEntryProps,
+  Entry,
   Environment,
   KeyValueMap,
 } from 'contentful-management/types'
 import { ModelberryInterface } from '@modelberry/mbfactory/plain'
 import chalk from 'chalk'
+import { getFieldIdWithoutPostfix } from '../lib/get-field-id-without-postfix'
 import { createLocalizedField, LocalizedFieldResponse } from './create-field'
 
 export interface PushEntryToContentful {
@@ -33,6 +35,7 @@ export const pushEntryToContentful = async ({
   let id
   const contentFields: ContentFields = {}
   for (const fieldId of Object.keys(fieldValues)) {
+    const fieldIdWithoutPostfix = getFieldIdWithoutPostfix({ fieldId })
     if (fieldId === 'sys') {
       id = fieldValues.sys.id
       continue
@@ -69,16 +72,20 @@ export const pushEntryToContentful = async ({
       value,
       localeCode: localeCode,
     })
-    contentFields[fieldId] = field
+    contentFields[fieldIdWithoutPostfix] = field
   }
 
+  let entry: Entry
   if (id) {
-    await contentfulEnvironment.createEntryWithId(contentTypeId, id, {
-      fields: {},
+    // TODO: If Entry exists, use entry.update() instead
+    entry = await contentfulEnvironment.createEntryWithId(contentTypeId, id, {
+      fields: contentFields,
     } as CreateEntryProps)
+    await entry.publish()
   } else {
-    await contentfulEnvironment.createEntry(contentTypeId, {
-      fields: {},
+    entry = await contentfulEnvironment.createEntry(contentTypeId, {
+      fields: contentFields,
     } as CreateEntryProps)
+    await entry.publish()
   }
 }

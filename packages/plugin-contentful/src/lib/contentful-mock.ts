@@ -2,6 +2,8 @@ import { Environment, Locale } from 'contentful-management/types'
 
 const entryMock = {
   mockedField: 'test',
+  publish: async () => entryMock,
+  update: async () => entryMock,
 }
 const localeMock = {
   items: [

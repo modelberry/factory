@@ -2,6 +2,7 @@
  * Action model, used to render links and buttons
  * @modelberry
  * - {@plugin "@modelberry/plugin-contentful/plain"}
+ * - {@displayField heading}
  * - {@type testAction}
  */
 export interface ContentfulAction {
