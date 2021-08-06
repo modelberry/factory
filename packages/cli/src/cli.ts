@@ -86,4 +86,6 @@ yargs(hideBin(process.argv))
   )
   .options(options)
   .demandCommand()
+  .recommendCommands()
+  .strict()
   .help().argv
