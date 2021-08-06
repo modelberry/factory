@@ -8,7 +8,7 @@ export interface CreateField {
 }
 
 export interface CreateLocalizedField extends CreateField {
-  locale: string
+  localeCode: string
 }
 
 export type SysLink = {
@@ -19,12 +19,15 @@ export type SysLink = {
   }
 }
 
-export const createLocalizedField = (args: CreateLocalizedField) => {
-  const { locale, ...rest } = args
-  return { [locale]: createField(rest) }
-}
-
 export type FieldResponse = string | SysLink | SysLink[]
+export type LocalizedFieldResponse = { [locale: string]: FieldResponse }
+
+export const createLocalizedField = (
+  args: CreateLocalizedField
+): LocalizedFieldResponse => {
+  const { localeCode, ...rest } = args
+  return { [localeCode]: createField(rest) }
+}
 
 export const createField = ({
   itemsLinkType,

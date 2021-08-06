@@ -17,7 +17,7 @@ export const pushContent = async ({
   const { defaultLocale } = await getContentfulLocales({
     contentfulEnvironment,
   })
-  log(chalk(`- default locale ${defaultLocale}`))
+  log(chalk(`- default locale: ${defaultLocale?.code}`))
   for (const wrType of Object.values(typeData)) {
     const interfaceTags = wrType.interface.interfaceTags || {}
     const typescriptInterfaceName = wrType.interface.typeName
@@ -40,6 +40,7 @@ export const pushContent = async ({
         await pushEntryToContentful({
           contentfulEnvironment,
           contentTypeId: interfaceTypeTag,
+          localeCode: defaultLocale?.code || 'en-US',
           fieldValues: fields,
           fields: wrType.interface.fields,
           variableName: wrVar.name!,

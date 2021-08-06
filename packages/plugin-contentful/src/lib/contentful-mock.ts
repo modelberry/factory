@@ -21,10 +21,12 @@ export const contentTypeMock = {
   update: async () => contentTypeMock,
 }
 export const createEntryWithId = jest.fn(async () => entryMock)
+export const createEntry = jest.fn(async () => entryMock)
 export const getLocales = jest.fn(async () => localeMock)
 export const getContentType = jest.fn(async () => contentTypeMock)
 export const createContentTypeWithId = jest.fn(async () => contentTypeMock)
 export const environmentMock = {
+  createEntry,
   createEntryWithId,
   createContentTypeWithId,
   getContentType,
