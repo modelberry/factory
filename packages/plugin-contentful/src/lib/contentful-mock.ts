@@ -15,9 +15,10 @@ const localeMock = {
   ] as Locale[],
 }
 export const contentTypeMock = {
+  fields: [],
+  getEditorInterface: async () => contentTypeMock,
   publish: async () => contentTypeMock,
   update: async () => contentTypeMock,
-  getEditorInterface: async () => contentTypeMock,
 }
 export const createEntryWithId = jest.fn(async () => entryMock)
 export const getLocales = jest.fn(async () => localeMock)
