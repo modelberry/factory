@@ -1,5 +1,5 @@
 import chalk from 'chalk'
-import { Control } from 'contentful-management/types'
+import { ContentFields, Control } from 'contentful-management/types'
 import { ModelberryInterface } from '@modelberry/mbfactory/plain'
 import { ValidationsMap } from '../lib/get-modelberry-plugin-data'
 import { getModelField } from './get-model-field'
@@ -15,10 +15,17 @@ export const getModelFieldsAndControls = ({
   validationsMap,
 }: GetModelFieldsAndControls) => {
   const controls: Control[] = []
-  const fields = []
+  const fields: ContentFields[] = []
   const log = console.log
   for (const [fieldId, field] of Object.entries(modelFields!)) {
-    log(chalk.underline(`${fieldId}`))
+    // Contentful adds the 'Collection' postfix to array types, this is why
+    // the Typescript definition includes a 'Collection' postfix. When
+    // creating the field, we should create the type without that postfix.
+    const collectionIndex = fieldId.indexOf('Collection')
+    const fieldIdWithoutPostfix =
+      collectionIndex > 0 ? fieldId.substring(0, collectionIndex) : fieldId
+
+    log(chalk.underline(`${fieldIdWithoutPostfix}`))
     const tags = field.tags || {}
 
     if ('@ignore' in tags) {
@@ -47,12 +54,15 @@ export const getModelFieldsAndControls = ({
     }
 
     const newField = getModelField({
-      fieldId,
+      fieldIdWithoutPostfix,
       fieldTags: tags,
       validationsMap,
     })
     if (newField) fields.push(newField)
-    const newControl = getModelControl({ fieldId, fieldTags: tags })
+    const newControl = getModelControl({
+      fieldIdWithoutPostfix,
+      fieldTags: tags,
+    })
     if (newControl) controls.push(newControl)
   }
   return { fields, controls }

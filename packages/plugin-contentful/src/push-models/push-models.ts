@@ -1,6 +1,6 @@
 import chalk from 'chalk'
 import { TypeData } from '@modelberry/mbfactory/plain'
-import { Environment } from 'contentful-management/types'
+import { ContentType, Environment } from 'contentful-management/types'
 import { ValidationsMap } from '../lib/get-modelberry-plugin-data'
 import { getModelFieldsAndControls } from './get-model-fields-and-controls'
 import { pushFieldsToContentful } from './push-fields-to-contentful'
@@ -49,13 +49,17 @@ export const pushModels = async ({
         description: interfaceTags['@description'],
         displayField: interfaceTags['@displayField'],
         fields,
-      }
+      } as ContentType
 
       const contentType = await pushFieldsToContentful({
         contentTypeData,
         contentfulEnvironment,
         interfaceTypeTag,
       })
+      if (!contentType) {
+        console.log(chalk.red(`- skipping`))
+        continue
+      }
       if (controls.length > 0) {
         console.log(chalk(`- pushing editor interface`))
         await pushControlsToContentful({ contentType, controls })

@@ -17,6 +17,7 @@ const globals = {
   path: '*',
   typescript: '*',
   '@microsoft/tsdoc': '*',
+  inquirer: '*',
   yargs: '*',
 }
 

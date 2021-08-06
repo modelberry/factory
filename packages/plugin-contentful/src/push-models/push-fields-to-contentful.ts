@@ -1,8 +1,15 @@
-import { Environment } from 'contentful-management/types'
+import {
+  ContentFields,
+  ContentType,
+  Environment,
+} from 'contentful-management/types'
+import { confirmOmitted } from './confirm-omitted'
+import { getMergedFields } from './get-merged-fields'
+import { getOmittedFields } from './get-omitted-fields'
 
 export interface PushFieldsToContentful {
   contentfulEnvironment: Environment
-  contentTypeData: any
+  contentTypeData: ContentType
   interfaceTypeTag: string
 }
 
@@ -11,11 +18,33 @@ export const pushFieldsToContentful = async ({
   contentTypeData,
   interfaceTypeTag,
 }: PushFieldsToContentful) => {
-  let contentType
+  let contentType: ContentType
   try {
-    // Fetch exiting and update
+    // Fetch existing content type
     contentType = await contentfulEnvironment.getContentType(interfaceTypeTag)
-    Object.assign(contentType, contentTypeData)
+    const omittedFields = getOmittedFields({
+      existingfields: contentType.fields,
+      newFields: contentTypeData.fields,
+    })
+    if (omittedFields.length) {
+      const confirmed = await confirmOmitted({ fields: omittedFields })
+      if (!confirmed) return
+    }
+    // Merge new fields with existing fields and mark missing fields as omitted
+    contentType.fields = getMergedFields({
+      existingfields: contentType.fields,
+      newFields: contentTypeData.fields,
+    }) as ContentFields[]
+    contentType.name = contentTypeData.name
+    contentType.description = contentTypeData.description
+    contentType.displayField = contentTypeData.displayField
+
+    // Update and set omitted fields on remote
+    contentType = await contentType.update()
+    contentType = await contentType.publish()
+    // Remove omitted fields locally
+    contentType.fields = contentType.fields.filter((field) => !field.omitted)
+    // Remove omitted fields on remote
     contentType = await contentType.update()
   } catch (contentfulError) {
     let errorData

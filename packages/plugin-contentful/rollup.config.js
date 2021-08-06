@@ -16,7 +16,9 @@ const globals = {
   fs: '*',
   path: '*',
   'contentful-management': '*',
+  deepmerge: '*',
   '@modelberry/mbfactory/plain': '*',
+  inquirer: '*',
 }
 
 const external = Object.keys(globals)

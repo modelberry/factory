@@ -4,13 +4,13 @@ import { ContentFields, FieldType } from 'contentful-management/types'
 import { ValidationsMap } from '../lib/get-modelberry-plugin-data'
 
 export interface GetModelField {
-  fieldId: string
+  fieldIdWithoutPostfix: string
   fieldTags: Record<string, string>
   validationsMap: ValidationsMap
 }
 
 export const getModelField = ({
-  fieldId,
+  fieldIdWithoutPostfix,
   fieldTags,
   validationsMap,
 }: GetModelField) => {
@@ -27,18 +27,12 @@ export const getModelField = ({
     }
   }
 
-  // Contentful adds the 'Collection' postfix to array types, this is why
-  // the Typescript definition includes a 'Collection' postfix. When
-  // creating the field, we should create the type without that postfix.
-  const collectionIndex = fieldId.indexOf('Collection')
-  const fieldIdWithoutPostfix =
-    collectionIndex > 0 ? fieldId.substring(0, collectionIndex) : fieldId
   const humanReadableFieldId = firstUpperCase(
     camelToSpaces(fieldIdWithoutPostfix)
   )
 
   const newField: ContentFields = {
-    id: fieldId,
+    id: fieldIdWithoutPostfix,
     // initialValue: { key: 'value' },
     linkType: fieldTags['@linkType'],
     localized: '@localized' in fieldTags,

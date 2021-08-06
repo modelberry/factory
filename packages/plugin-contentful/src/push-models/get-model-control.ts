@@ -2,15 +2,18 @@ import chalk from 'chalk'
 import { Control } from 'contentful-management/types'
 
 export interface GetModelControl {
-  fieldId: string
+  fieldIdWithoutPostfix: string
   fieldTags: Record<string, string>
 }
 
-export const getModelControl = ({ fieldId, fieldTags }: GetModelControl) => {
+export const getModelControl = ({
+  fieldIdWithoutPostfix,
+  fieldTags,
+}: GetModelControl) => {
   let control: Control | undefined
   if (fieldTags['@widget'] || fieldTags['@helpText']) {
     control = {
-      fieldId,
+      fieldId: fieldIdWithoutPostfix,
       widgetNamespace: 'builtin',
       widgetId: fieldTags['@widget'],
       settings: { helpText: fieldTags['@helpText'] },
