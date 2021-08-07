@@ -2,90 +2,55 @@ import {
   CreateEntryProps,
   Entry,
   Environment,
-  KeyValueMap,
 } from 'contentful-management/types'
-import { ModelberryInterface } from '@modelberry/mbfactory/plain'
-import chalk from 'chalk'
-import { getFieldIdWithoutPostfix } from '../lib/get-field-id-without-postfix'
-import { createLocalizedField, LocalizedFieldResponse } from './create-field'
+import { EntryFields } from './get-entry-fields'
 
 export interface PushEntryToContentful {
   contentfulEnvironment: Environment
   contentTypeId: string
-  localeCode: string
-  fieldValues: KeyValueMap
-  fields: ModelberryInterface['fields']
-  variableName: string
+  entryFields: EntryFields
+  entryId?: string
 }
 
 export const pushEntryToContentful = async ({
   contentfulEnvironment,
   contentTypeId,
-  localeCode,
-  fieldValues,
-  fields,
-  variableName,
+  entryFields,
+  entryId,
 }: PushEntryToContentful) => {
-  console.log(chalk(`- variable: ${variableName}`))
-
-  type ContentFields = {
-    [fieldId: string]: LocalizedFieldResponse
-  }
-
-  let id
-  const contentFields: ContentFields = {}
-  for (const fieldId of Object.keys(fieldValues)) {
-    const fieldIdWithoutPostfix = getFieldIdWithoutPostfix({ fieldId })
-    if (fieldId === 'sys') {
-      id = fieldValues.sys.id
-      continue
-    }
-    const fieldTags = (fields && fields[fieldId] && fields[fieldId].tags) || {}
-    const fieldValue = fieldValues && fieldValues[fieldId]
-    const itemsLinkType = fieldTags['@itemsLinkType']
-    const itemsType = fieldTags['@itemsType']
-    const linkType = fieldTags['@linkType']
-    const type = fieldTags['@type']
-    if (!type || !fieldValue) continue
-    let value
-    let itemsValue
-    if (type === 'Array') {
-      if (itemsType === 'Link') {
-        itemsValue = fieldValue.items.map((field: any) => field.sys?.id)
-        itemsValue = itemsValue.filter((field: any) => !!field)
-      } else {
-        itemsValue = fieldValue.items
-      }
-    } else {
-      if (type === 'Link') {
-        value = fieldValue.sys.id
-      } else {
-        value = fieldValue
-      }
-    }
-    const field = createLocalizedField({
-      itemsLinkType,
-      itemsType,
-      itemsValue,
-      linkType,
-      type,
-      value,
-      localeCode: localeCode,
-    })
-    contentFields[fieldIdWithoutPostfix] = field
-  }
-
   let entry: Entry
-  if (id) {
-    // TODO: If Entry exists, use entry.update() instead
-    entry = await contentfulEnvironment.createEntryWithId(contentTypeId, id, {
-      fields: contentFields,
-    } as CreateEntryProps)
-    await entry.publish()
+  if (entryId) {
+    try {
+      // Get existing entry
+      entry = await contentfulEnvironment.getEntry(entryId)
+      Object.assign(entry.fields, entryFields)
+      entry = await entry.update()
+      entry = await entry.publish()
+    } catch (contentfulError) {
+      let errorData
+      // We expect a 404, throw other errors if they occur
+      try {
+        errorData = JSON.parse(contentfulError.message)
+        if (errorData.status !== 404) throw contentfulError
+      } catch (jsonError) {
+        throw contentfulError
+      }
+      // Create a new entry with the entry id
+      entry = await contentfulEnvironment.createEntryWithId(
+        contentTypeId,
+        entryId,
+        {
+          fields: entryFields,
+        } as CreateEntryProps
+      )
+      entry = await entry.publish()
+    }
   } else {
+    // We don't have a specific id, the remote will assign a random one
     entry = await contentfulEnvironment.createEntry(contentTypeId, {
-      fields: contentFields,
+      fields: entryFields,
     } as CreateEntryProps)
-    await entry.publish()
+    entry = await entry.publish()
   }
+  return entry
 }

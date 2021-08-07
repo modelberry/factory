@@ -1,6 +1,7 @@
 import { Environment, Locale } from 'contentful-management/types'
 
 const entryMock = {
+  fields: {},
   mockedField: 'test',
   publish: async () => entryMock,
   update: async () => entryMock,
@@ -24,6 +25,7 @@ export const contentTypeMock = {
 }
 export const createEntryWithId = jest.fn(async () => entryMock)
 export const createEntry = jest.fn(async () => entryMock)
+export const getEntry = jest.fn(async () => entryMock)
 export const getLocales = jest.fn(async () => localeMock)
 export const getContentType = jest.fn(async () => contentTypeMock)
 export const createContentTypeWithId = jest.fn(async () => contentTypeMock)
@@ -31,6 +33,7 @@ export const environmentMock = {
   createEntry,
   createEntryWithId,
   createContentTypeWithId,
+  getEntry,
   getContentType,
   getLocales,
 } as unknown as Environment
