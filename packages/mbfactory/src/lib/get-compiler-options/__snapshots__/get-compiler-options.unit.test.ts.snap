@@ -15,6 +15,7 @@ Object {
     "src/lib/call-handler.unit.test.ts",
     "src/lib/case-helpers.ts",
     "src/lib/case-helpers.unit.test.ts",
+    "src/lib/get-and-report-options.ts",
     "src/lib/interface-to-doc-property.ts",
     "src/lib/is-exported-declaration.ts",
     "src/lib/parse-modelberry-interface.ts",

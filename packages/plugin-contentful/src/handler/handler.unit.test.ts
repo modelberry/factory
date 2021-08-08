@@ -65,6 +65,7 @@ describe('The handler should', () => {
     expect(consoleSpy.mock.calls).toEqual(envOkResponse)
     expect(pushModels).toHaveBeenCalledWith({
       contentfulEnvironment: environmentMock,
+      options: { force: true },
       typeData: {},
       validationsMap: {},
     })
@@ -82,6 +83,7 @@ describe('The handler should', () => {
     expect(consoleSpy.mock.calls).toEqual(envOkResponse)
     expect(pushContent).toHaveBeenCalledWith({
       contentfulEnvironment: environmentMock,
+      options: { force: true },
       typeData: {},
     })
   })
