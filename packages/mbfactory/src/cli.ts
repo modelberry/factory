@@ -4,18 +4,25 @@ import { PullArgv, pullCommand } from './commands/pull/pull'
 import { PushArgv, pushCommand } from './commands/push/push'
 
 type ModelberryOptions = {
-  filter: yargs.Options
+  dryRun: yargs.Options
+  force: yargs.Options
   locale: yargs.Options
-  outside: yargs.Options
-  yes: yargs.Options
+  type: yargs.Options
 }
 
 const options: ModelberryOptions = {
-  filter: {
+  dryRun: {
+    alias: 'd',
+    describe: 'Run without making any changes',
+    requiresArg: false,
+    type: 'boolean',
+  },
+  force: {
     alias: 'f',
-    describe: 'Filter by type value @modelberry {@type value}',
-    requiresArg: true,
-    type: 'string',
+    describe:
+      'Ignore all messages and warnings, use with care because content can be lost',
+    requiresArg: false,
+    type: 'boolean',
   },
   locale: {
     alias: 'l',
@@ -23,17 +30,11 @@ const options: ModelberryOptions = {
     requiresArg: true,
     type: 'string',
   },
-  outside: {
-    alias: 'o',
-    describe: 'Follow imports outside file folder',
-    requiresArg: false,
-    type: 'boolean',
-  },
-  yes: {
-    alias: 'y',
-    describe: 'Answer yes to all questions',
-    requiresArg: false,
-    type: 'boolean',
+  type: {
+    alias: 't',
+    describe: 'Filter by type value @modelberry {@type value}',
+    requiresArg: true,
+    type: 'string',
   },
 }
 
