@@ -5,8 +5,8 @@ Push and pull typescript models and content to and from a content management pla
 ## Todo
 
 - [ ] Cli options
-  - [ ] --dry-run
-  - [ ] --force
+  - [x] --dry-run
+  - [x] --force
   - [ ] --locale
   - [ ] --type
 - [ ] Publish to npm
