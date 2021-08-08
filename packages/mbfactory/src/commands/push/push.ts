@@ -5,6 +5,7 @@ import yargs from 'yargs'
 import { getAllPluginData } from '../../lib/get-all-plugin-data/get-all-plugin-data'
 import { getCompilerOptions } from '../../lib/get-compiler-options/get-compiler-options'
 import { ArgvType, callHandler, Options } from '../../lib/call-handler'
+import { getAndGeportOptions } from '../../lib/get-and-report-options'
 
 export type PushArgv = Options & {
   pushType: ArgvType
@@ -29,12 +30,7 @@ export const pushCommand = async ({ argv }: PushCommand) => {
     log(chalk.red(`- nothing to process in file: ${argv.file}`))
     return
   }
-  const options: Options = {
-    dryRun: argv.dryRun,
-    force: argv.force,
-    locale: argv.locale,
-    type: argv.type,
-  }
+  const options = getAndGeportOptions({ argv })
 
   for (const pluginName of Object.keys(allPluginData)) {
     await callHandler({

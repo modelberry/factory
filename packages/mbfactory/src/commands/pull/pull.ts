@@ -1,5 +1,6 @@
 import yargs from 'yargs'
 import { ArgvType, callHandler, Options } from '../../lib/call-handler'
+import { getAndGeportOptions } from '../../lib/get-and-report-options'
 
 export type PullArgv = Options & {
   pullType: ArgvType
@@ -12,12 +13,8 @@ export interface PullCommand {
 
 // TODO: Make pluginName a cli parameter
 export const pullCommand = async ({ argv }: PullCommand) => {
-  const options: Options = {
-    dryRun: argv.dryRun,
-    force: argv.force,
-    locale: argv.locale,
-    type: argv.type,
-  }
+  const options = getAndGeportOptions({ argv })
+
   await callHandler({
     command: 'pull',
     options,
