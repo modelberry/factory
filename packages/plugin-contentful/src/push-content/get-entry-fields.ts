@@ -4,7 +4,11 @@ import { getFieldIdWithoutPostfix } from '../lib/get-field-id-without-postfix'
 import { createLocalizedField, LocalizedFieldResponse } from './create-field'
 
 export interface GetEntryFields {
-  localeCode: string
+  localeCodes: {
+    default: string
+    interface?: string
+    cliOption?: string
+  }
   fieldValues: KeyValueMap
   fields: ModelberryInterface['fields']
 }
@@ -14,7 +18,7 @@ export type EntryFields = {
 }
 
 export const getEntryFields = ({
-  localeCode,
+  localeCodes,
   fieldValues,
   fields,
 }: GetEntryFields) => {
@@ -32,6 +36,7 @@ export const getEntryFields = ({
     const itemsType = fieldTags['@itemsType']
     const linkType = fieldTags['@linkType']
     const type = fieldTags['@type']
+    const fieldLocale = fieldTags['@locale']
     if (!type || !fieldValue) continue
     let value
     let itemsValue
@@ -56,7 +61,13 @@ export const getEntryFields = ({
       linkType,
       type,
       value,
-      localeCode: localeCode,
+      // Use locales in this order, cli overrides all others, remote default
+      // locale is a last resort
+      localeCode:
+        localeCodes.cliOption ||
+        fieldLocale ||
+        localeCodes.interface ||
+        localeCodes.default,
     })
     entryFields[fieldIdWithoutPostfix] = field
   }

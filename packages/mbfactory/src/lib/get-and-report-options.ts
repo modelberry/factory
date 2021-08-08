@@ -24,9 +24,7 @@ export const getAndGeportOptions = ({ argv }: GetAndGeportOptions) => {
   }
   if (options.locale) {
     console.log(
-      chalk.red(
-        `- NOT IMPLEMENTED: overriding @modelberry {@locale} with ${options.locale}`
-      )
+      chalk.red(`- overriding @modelberry {@locale} with ${options.locale}`)
     )
   }
   if (options.type) {

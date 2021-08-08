@@ -44,6 +44,11 @@
     {
       "allowMultiple": false,
       "syntaxKind": "inline",
+      "tagName": "@locale"
+    },
+    {
+      "allowMultiple": false,
+      "syntaxKind": "inline",
       "tagName": "@localized"
     },
     {

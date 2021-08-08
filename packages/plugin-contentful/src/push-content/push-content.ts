@@ -25,6 +25,7 @@ export const pushContent = async ({
     const interfaceTags = modelberryType.interface.interfaceTags || {}
     const typescriptInterfaceName = modelberryType.interface.typeName
     const interfaceTypeTag = interfaceTags['@type']
+    const interfaceLocaleTag = interfaceTags['@locale']
 
     log(chalk.bold.underline(`\n${typescriptInterfaceName}`))
     if ('@ignore' in interfaceTags) {
@@ -42,7 +43,11 @@ export const pushContent = async ({
       const fieldsArray = valueFn() as KeyValueMap[]
       for (const fields of fieldsArray) {
         const { entryId, entryFields } = getEntryFields({
-          localeCode: defaultLocale?.code || 'en-US',
+          localeCodes: {
+            default: defaultLocale?.code || 'en-US',
+            interface: interfaceLocaleTag,
+            cliOption: options.locale,
+          },
           fieldValues: fields,
           fields: modelberryType.interface.fields,
         })
