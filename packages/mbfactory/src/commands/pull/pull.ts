@@ -12,20 +12,10 @@ export interface PullCommand {
 
 // TODO: Make pluginName a cli parameter
 export const pullCommand = async ({ argv }: PullCommand) => {
-  if (argv.pullType === 'content') {
-    await callHandler({
-      command: 'pull',
-      type: 'content',
-      path: argv.path,
-      pluginName: 'contentful',
-    })
-  }
-  if (argv.pullType === 'models') {
-    await callHandler({
-      command: 'pull',
-      type: 'models',
-      path: argv.path,
-      pluginName: 'contentful',
-    })
-  }
+  await callHandler({
+    command: 'pull',
+    path: argv.path,
+    pluginName: 'contentful',
+    type: argv.pullType,
+  })
 }

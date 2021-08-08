@@ -32,10 +32,10 @@ export const pushCommand = async ({ argv }: PushCommand) => {
 
   for (const pluginName of Object.keys(allPluginData)) {
     await callHandler({
-      type: argv.pushType,
       command: 'push',
       pluginData: allPluginData[pluginName],
       pluginName,
+      type: argv.pushType,
     })
   }
 }
