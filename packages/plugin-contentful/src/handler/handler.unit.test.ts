@@ -42,10 +42,12 @@ describe('The handler should', () => {
 
   test('show environment warnings', async () => {
     setEnv()
+    // Test with force is true to prevent user interaction
     await handler({
       command: 'push',
-      type: 'models',
+      options: { force: true },
       pluginData: { types: {}, dataVar: {} },
+      type: 'models',
     })
     expect(consoleSpy.mock.calls).toEqual(envMissingResponse)
     expect(pushModels).toHaveBeenCalledTimes(0)
@@ -53,10 +55,12 @@ describe('The handler should', () => {
 
   test('call pushModels', async () => {
     setEnv('ok')
+    // Test with force is true to prevent user interaction
     await handler({
       command: 'push',
-      type: 'models',
+      options: { force: true },
       pluginData: { types: {}, dataVar: {} },
+      type: 'models',
     })
     expect(consoleSpy.mock.calls).toEqual(envOkResponse)
     expect(pushModels).toHaveBeenCalledWith({
@@ -68,10 +72,12 @@ describe('The handler should', () => {
 
   test('call pushContent', async () => {
     setEnv('ok')
+    // Test with force is true to prevent user interaction
     await handler({
       command: 'push',
-      type: 'content',
+      options: { force: true },
       pluginData: { types: {}, dataVar: {} },
+      type: 'content',
     })
     expect(consoleSpy.mock.calls).toEqual(envOkResponse)
     expect(pushContent).toHaveBeenCalledWith({

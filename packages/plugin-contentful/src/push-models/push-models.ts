@@ -15,6 +15,7 @@ export interface PushTypes {
 
 export const pushModels = async ({
   contentfulEnvironment,
+  options,
   typeData,
   validationsMap,
 }: PushTypes) => {
@@ -45,25 +46,35 @@ export const pushModels = async ({
       log(chalk.red(`- no valid fields found, skipping`))
     } else {
       log(chalk(`- pushing content type`))
-      const contentTypeData = {
-        name: interfaceTags['@name'] || interfaceTypeTag,
-        description: interfaceTags['@description'],
-        displayField: interfaceTags['@displayField'],
-        fields,
-      } as ContentType
+      let contentType: ContentType | undefined
+      let contentTypeData
+      if (!options.dryRun) {
+        contentTypeData = {
+          name: interfaceTags['@name'] || interfaceTypeTag,
+          description: interfaceTags['@description'],
+          displayField: interfaceTags['@displayField'],
+          fields,
+        } as ContentType
 
-      const contentType = await pushFieldsToContentful({
-        contentTypeData,
-        contentfulEnvironment,
-        interfaceTypeTag,
-      })
-      if (!contentType) {
-        console.log(chalk.red(`- skipping`))
-        continue
+        contentType = await pushFieldsToContentful({
+          contentTypeData,
+          contentfulEnvironment,
+          forceOption: options.force,
+          interfaceTypeTag,
+        })
       }
       if (controls.length > 0) {
         console.log(chalk(`- pushing editor interface`))
-        await pushControlsToContentful({ contentType, controls })
+        if (!options.dryRun) {
+          if (!contentType) {
+            console.log(chalk.red(`- skipping`))
+            continue
+          }
+          await pushControlsToContentful({
+            contentType,
+            controls,
+          })
+        }
       }
     }
   }

@@ -13,6 +13,7 @@ export interface PushTypes {
 
 export const pushContent = async ({
   contentfulEnvironment,
+  options,
   typeData,
 }: PushTypes) => {
   const log = console.log
@@ -52,12 +53,14 @@ export const pushContent = async ({
             } fields` + (entryId ? ` (id:${entryId})` : ``)
           )
         )
-        await pushEntryToContentful({
-          contentfulEnvironment,
-          contentTypeId: interfaceTypeTag,
-          entryFields,
-          entryId,
-        })
+        if (!options.dryRun) {
+          await pushEntryToContentful({
+            contentfulEnvironment,
+            contentTypeId: interfaceTypeTag,
+            entryFields,
+            entryId,
+          })
+        }
       }
     }
   }

@@ -10,12 +10,14 @@ import { getOmittedFields } from './get-omitted-fields'
 export interface PushFieldsToContentful {
   contentfulEnvironment: Environment
   contentTypeData: ContentType
+  forceOption?: boolean
   interfaceTypeTag: string
 }
 
 export const pushFieldsToContentful = async ({
   contentfulEnvironment,
   contentTypeData,
+  forceOption,
   interfaceTypeTag,
 }: PushFieldsToContentful) => {
   let contentType: ContentType
@@ -26,7 +28,7 @@ export const pushFieldsToContentful = async ({
       existingfields: contentType.fields,
       newFields: contentTypeData.fields,
     })
-    if (omittedFields.length) {
+    if (omittedFields.length && !forceOption) {
       const confirmed = await confirmOmitted({ fields: omittedFields })
       if (!confirmed) return
     }
