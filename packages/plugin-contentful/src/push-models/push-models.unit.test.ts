@@ -33,6 +33,7 @@ describe('Push models should', () => {
   test('process allTags correctly', async () => {
     await pushModels({
       contentfulEnvironment: environmentMock,
+      options: { force: true },
       typeData: allTags,
       validationsMap: { mockedValidation: {} },
     })
@@ -48,6 +49,7 @@ describe('Push models should', () => {
   test('process badValidation correctly', async () => {
     await pushModels({
       contentfulEnvironment: environmentMock,
+      options: { force: true },
       typeData: badValidation,
       validationsMap: { mockedValidation: {} },
     })
@@ -62,6 +64,7 @@ describe('Push models should', () => {
   test('process ignoreField correctly', async () => {
     await pushModels({
       contentfulEnvironment: environmentMock,
+      options: { force: true },
       typeData: ignoreField,
       validationsMap: { mockedValidation: {} },
     })
@@ -76,6 +79,7 @@ describe('Push models should', () => {
   test('process ignoreInterface correctly', async () => {
     await pushModels({
       contentfulEnvironment: environmentMock,
+      options: { force: true },
       typeData: ignoreInterface,
       validationsMap: { mockedValidation: {} },
     })
@@ -88,6 +92,7 @@ describe('Push models should', () => {
   test('process noFieldType correctly', async () => {
     await pushModels({
       contentfulEnvironment: environmentMock,
+      options: { force: true },
       typeData: noFieldType,
       validationsMap: { mockedValidation: {} },
     })
@@ -102,6 +107,7 @@ describe('Push models should', () => {
   test('process noInterfaceType correctly', async () => {
     await pushModels({
       contentfulEnvironment: environmentMock,
+      options: { force: true },
       typeData: noInterfaceType,
       validationsMap: { mockedValidation: {} },
     })

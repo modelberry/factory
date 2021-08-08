@@ -11,6 +11,7 @@ describe('Push content should', () => {
   test('process topicAction correctly', async () => {
     await pushContent({
       contentfulEnvironment: environmentMock,
+      options: { force: true },
       typeData: topicAction,
     })
   })
