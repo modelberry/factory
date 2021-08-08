@@ -8,8 +8,9 @@ import { getContentfulEnvironment } from '../lib/get-contentful-environment'
 
 export const handler: PushHandler = async ({
   command,
-  type,
+  options,
   pluginData,
+  type,
 }) => {
   const log = console.log
   const isValid = getAndValidateEnv()
@@ -18,13 +19,13 @@ export const handler: PushHandler = async ({
   if (process.env.MODELBERRY_PROJECT_NAME) {
     log(chalk(`- modelberry project: ${process.env.MODELBERRY_PROJECT_NAME}`))
   }
-
   const dataVarObj = getModelberryPluginData({ dataVar: pluginData.dataVar })
   const validationsMap = dataVarObj?.validations || {}
   const contentfulEnvironment = await getContentfulEnvironment()
   if (command === 'push' && type === 'models') {
     await pushModels({
       contentfulEnvironment,
+      options,
       typeData: pluginData.types,
       validationsMap,
     })
@@ -32,6 +33,7 @@ export const handler: PushHandler = async ({
   if (command === 'push' && type === 'content') {
     await pushContent({
       contentfulEnvironment,
+      options,
       typeData: pluginData.types,
     })
   }

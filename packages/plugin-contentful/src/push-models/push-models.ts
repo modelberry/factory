@@ -1,5 +1,5 @@
 import chalk from 'chalk'
-import { TypeData } from '@modelberry/mbfactory/plain'
+import { TypeData, Options } from '@modelberry/mbfactory/plain'
 import { ContentType, Environment } from 'contentful-management/types'
 import { ValidationsMap } from '../lib/get-modelberry-plugin-data'
 import { getModelFieldsAndControls } from './get-model-fields-and-controls'
@@ -8,6 +8,7 @@ import { pushControlsToContentful } from './push-controls-to-contentful'
 
 export interface PushTypes {
   contentfulEnvironment: Environment
+  options: Options
   typeData: TypeData
   validationsMap: ValidationsMap
 }

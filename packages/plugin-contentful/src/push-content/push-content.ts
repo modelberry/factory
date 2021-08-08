@@ -1,4 +1,4 @@
-import { TypeData } from '@modelberry/mbfactory/plain'
+import { Options, TypeData } from '@modelberry/mbfactory/plain'
 import chalk from 'chalk'
 import { Environment, KeyValueMap } from 'contentful-management/types'
 import { getContentfulLocales } from '../lib/get-contentful-locales'
@@ -7,6 +7,7 @@ import { pushEntryToContentful } from './push-entry-to-contentful'
 
 export interface PushTypes {
   contentfulEnvironment: Environment
+  options: Options
   typeData: TypeData
 }
 
