@@ -9,8 +9,8 @@ describe('The call handler should', () => {
 
   test('show an error when a plugin does not exist', async () => {
     await callHandler({
-      callCommand: 'push',
-      callType: 'content',
+      command: 'push',
+      type: 'content',
       pluginName: '@modelberry/does-not-exist',
     })
     expect(consoleSpy.mock.calls).toEqual([
@@ -22,8 +22,8 @@ describe('The call handler should', () => {
 
   test('show an error when a plugin does not have a handler', async () => {
     await callHandler({
-      callCommand: 'push',
-      callType: 'content',
+      command: 'push',
+      type: 'content',
       pluginName: 'chalk',
     })
     expect(consoleSpy.mock.calls).toEqual([

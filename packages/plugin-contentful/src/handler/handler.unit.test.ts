@@ -43,8 +43,8 @@ describe('The handler should', () => {
   test('show environment warnings', async () => {
     setEnv()
     await handler({
-      callCommand: 'push',
-      callType: 'models',
+      command: 'push',
+      type: 'models',
       pluginData: { types: {}, dataVar: {} },
     })
     expect(consoleSpy.mock.calls).toEqual(envMissingResponse)
@@ -54,8 +54,8 @@ describe('The handler should', () => {
   test('call pushModels', async () => {
     setEnv('ok')
     await handler({
-      callCommand: 'push',
-      callType: 'models',
+      command: 'push',
+      type: 'models',
       pluginData: { types: {}, dataVar: {} },
     })
     expect(consoleSpy.mock.calls).toEqual(envOkResponse)
@@ -69,8 +69,8 @@ describe('The handler should', () => {
   test('call pushContent', async () => {
     setEnv('ok')
     await handler({
-      callCommand: 'push',
-      callType: 'content',
+      command: 'push',
+      type: 'content',
       pluginData: { types: {}, dataVar: {} },
     })
     expect(consoleSpy.mock.calls).toEqual(envOkResponse)

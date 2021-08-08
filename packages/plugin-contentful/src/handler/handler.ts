@@ -7,8 +7,8 @@ import { pushContent } from '../push-content/push-content'
 import { getContentfulEnvironment } from '../lib/get-contentful-environment'
 
 export const handler: PushHandler = async ({
-  callCommand,
-  callType,
+  command,
+  type,
   pluginData,
 }) => {
   const log = console.log
@@ -22,14 +22,14 @@ export const handler: PushHandler = async ({
   const dataVarObj = getModelberryPluginData({ dataVar: pluginData.dataVar })
   const validationsMap = dataVarObj?.validations || {}
   const contentfulEnvironment = await getContentfulEnvironment()
-  if (callCommand === 'push' && callType === 'models') {
+  if (command === 'push' && type === 'models') {
     await pushModels({
       contentfulEnvironment,
       typeData: pluginData.types,
       validationsMap,
     })
   }
-  if (callCommand === 'push' && callType === 'content') {
+  if (command === 'push' && type === 'content') {
     await pushContent({
       contentfulEnvironment,
       typeData: pluginData.types,

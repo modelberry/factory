@@ -2,20 +2,20 @@ import chalk from 'chalk'
 import { TypeData, PluginData } from './get-all-plugin-data/get-all-plugin-data'
 import { ModelberryVariable } from './parse-modelberry-variable'
 
-export type CallCommand = 'push' | 'pull'
+export type Command = 'push' | 'pull'
 export type ArgvType = 'content' | 'models'
 
 export interface CallHandler {
-  callCommand: CallCommand
-  callType: ArgvType
+  command: Command
+  type: ArgvType
   path?: string
   pluginData?: PluginData
   pluginName: string
 }
 
 export type PushHandlerArgs = {
-  callCommand: CallCommand
-  callType: ArgvType
+  command: Command
+  type: ArgvType
   pluginData?: {
     types: TypeData
     dataVar: ModelberryVariable
@@ -29,8 +29,8 @@ export interface Module {
 }
 
 export const callHandler = async ({
-  callCommand,
-  callType,
+  command,
+  type,
   pluginData,
   pluginName,
 }: CallHandler) => {
@@ -46,7 +46,7 @@ export const callHandler = async ({
   }
 
   if (module.handler) {
-    await module.handler({ callCommand, callType, pluginData })
+    await module.handler({ command, type, pluginData })
   } else {
     log(chalk.red(`- could not find handler method on plugin`))
     return

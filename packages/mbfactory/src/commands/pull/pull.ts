@@ -2,7 +2,7 @@ import yargs from 'yargs'
 import { ArgvType, callHandler } from '../../lib/call-handler'
 
 export type PullArgv = {
-  type: ArgvType
+  pullType: ArgvType
   path: string
 }
 
@@ -12,18 +12,18 @@ export interface PullCommand {
 
 // TODO: Make pluginName a cli parameter
 export const pullCommand = async ({ argv }: PullCommand) => {
-  if (argv.type === 'content') {
+  if (argv.pullType === 'content') {
     await callHandler({
-      callCommand: 'pull',
-      callType: 'content',
+      command: 'pull',
+      type: 'content',
       path: argv.path,
       pluginName: 'contentful',
     })
   }
-  if (argv.type === 'models') {
+  if (argv.pullType === 'models') {
     await callHandler({
-      callCommand: 'pull',
-      callType: 'models',
+      command: 'pull',
+      type: 'models',
       path: argv.path,
       pluginName: 'contentful',
     })

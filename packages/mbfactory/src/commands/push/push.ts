@@ -7,7 +7,7 @@ import { getCompilerOptions } from '../../lib/get-compiler-options/get-compiler-
 import { ArgvType, callHandler } from '../../lib/call-handler'
 
 export type PushArgv = {
-  type: ArgvType
+  pushType: ArgvType
   file: string
 }
 
@@ -32,8 +32,8 @@ export const pushCommand = async ({ argv }: PushCommand) => {
 
   for (const pluginName of Object.keys(allPluginData)) {
     await callHandler({
-      callType: argv.type,
-      callCommand: 'push',
+      type: argv.pushType,
+      command: 'push',
       pluginData: allPluginData[pluginName],
       pluginName,
     })

@@ -4,14 +4,14 @@ import { PullArgv, pullCommand } from './commands/pull/pull'
 import { PushArgv, pushCommand } from './commands/push/push'
 
 type ModelberryOptions = {
-  dryRun: yargs.Options
+  'dry-run': yargs.Options
   force: yargs.Options
   locale: yargs.Options
   type: yargs.Options
 }
 
 const options: ModelberryOptions = {
-  dryRun: {
+  'dry-run': {
     alias: 'd',
     describe: 'Run without making any changes',
     requiresArg: false,
@@ -48,11 +48,11 @@ yargs(hideBin(process.argv))
   .alias('v', 'version')
   .wrap(null)
   .command(
-    'push <type> <file>',
+    'push <push-type> <file>',
     'push models or content to content platform',
     (yargs) => {
       yargs
-        .positional('type', {
+        .positional('push-type', {
           type: 'string',
           describe: 'push models or content',
           choices: ['models', 'content'],
@@ -67,11 +67,11 @@ yargs(hideBin(process.argv))
     }
   )
   .command(
-    'pull <type> <path>',
+    'pull <pull-type> <path>',
     'pull models or content from content platform',
     (yargs: yargs.Argv<any>) => {
       yargs
-        .positional('type', {
+        .positional('pulll-type', {
           type: 'string',
           describe: 'pull models or content',
           choices: ['models', 'content'],
