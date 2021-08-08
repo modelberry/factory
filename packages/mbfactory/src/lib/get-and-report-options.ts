@@ -28,9 +28,7 @@ export const getAndGeportOptions = ({ argv }: GetAndGeportOptions) => {
     )
   }
   if (options.type) {
-    console.log(
-      chalk.red(`- NOT IMPLEMENTED: filtering by type value ${options.type}`)
-    )
+    console.log(chalk.red(`- filtering by type value ${options.type}`))
   }
 
   return options

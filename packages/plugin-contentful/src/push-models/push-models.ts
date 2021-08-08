@@ -20,11 +20,13 @@ export const pushModels = async ({
   validationsMap,
 }: PushTypes) => {
   const log = console.log
-  for (const wrType of Object.values(typeData)) {
-    const modelFields = wrType.interface.fields || {}
-    const interfaceTags = wrType.interface.interfaceTags || {}
-    const typescriptInterfaceName = wrType.interface.typeName
+  for (const modelberryType of Object.values(typeData)) {
+    const modelFields = modelberryType.interface.fields || {}
+    const interfaceTags = modelberryType.interface.interfaceTags || {}
+    const typescriptInterfaceName = modelberryType.interface.typeName
     const interfaceTypeTag = interfaceTags['@type']
+
+    if (options.type && options.type !== interfaceTypeTag) continue
 
     log(chalk.bold.underline(`\n${typescriptInterfaceName}`))
     if ('@ignore' in interfaceTags) {

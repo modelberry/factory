@@ -27,6 +27,8 @@ export const pushContent = async ({
     const interfaceTypeTag = interfaceTags['@type']
     const interfaceLocaleTag = interfaceTags['@locale']
 
+    if (options.type && options.type !== interfaceTypeTag) continue
+
     log(chalk.bold.underline(`\n${typescriptInterfaceName}`))
     if ('@ignore' in interfaceTags) {
       log(chalk(`- ignoring interface`))
