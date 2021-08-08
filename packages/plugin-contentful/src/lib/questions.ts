@@ -4,7 +4,7 @@ export const continueQuestion = [
       {
         key: 'c',
         name: 'Continue',
-        value: 'x',
+        value: 'c',
       },
       {
         key: 'a',
