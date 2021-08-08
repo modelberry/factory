@@ -9,13 +9,13 @@ import {
   ModelberryVariable,
 } from '../parse-modelberry-variable'
 
-export type WrType = {
+export type ModelberryType = {
   interface: ModelberryInterface
   variables: ModelberryVariable[]
 }
 
 export type TypeData = {
-  [typeName: string]: WrType
+  [typeName: string]: ModelberryType
 }
 
 export type PluginData = {
