@@ -8,12 +8,13 @@ import { Arguments } from 'yargs'
 import { callHandler } from '../../lib/call-handler'
 import { PushArgv, pushCommand } from './push'
 
-const argv = {
-  type: 'content',
-  file: '',
-  $0: '',
+const argv: Arguments<PushArgv> = {
   _: [''],
-} as Arguments<PushArgv>
+  $0: '',
+  file: '',
+  options: {},
+  pushType: 'content',
+}
 
 describe('The push command should', () => {
   const consoleSpy = jest.spyOn(console, 'log').mockImplementation()

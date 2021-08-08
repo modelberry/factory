@@ -4,9 +4,9 @@ import chalk from 'chalk'
 import yargs from 'yargs'
 import { getAllPluginData } from '../../lib/get-all-plugin-data/get-all-plugin-data'
 import { getCompilerOptions } from '../../lib/get-compiler-options/get-compiler-options'
-import { ArgvType, callHandler } from '../../lib/call-handler'
+import { ArgvType, callHandler, Options } from '../../lib/call-handler'
 
-export type PushArgv = {
+export type PushArgv = Options & {
   pushType: ArgvType
   file: string
 }
@@ -29,10 +29,17 @@ export const pushCommand = async ({ argv }: PushCommand) => {
     log(chalk.red(`- nothing to process in file: ${argv.file}`))
     return
   }
+  const options: Options = {
+    dryRun: argv.dryRun,
+    force: argv.force,
+    locale: argv.locale,
+    type: argv.type,
+  }
 
   for (const pluginName of Object.keys(allPluginData)) {
     await callHandler({
       command: 'push',
+      options,
       pluginData: allPluginData[pluginName],
       pluginName,
       type: argv.pushType,

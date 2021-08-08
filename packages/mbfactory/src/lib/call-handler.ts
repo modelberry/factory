@@ -5,21 +5,34 @@ import { ModelberryVariable } from './parse-modelberry-variable'
 export type Command = 'push' | 'pull'
 export type ArgvType = 'content' | 'models'
 
+export type Options = {
+  /** Run without making any changes */
+  dryRun?: boolean
+  /** Ignore all messages and warnings, this could result in data loss */
+  force?: boolean
+  /** Override @modelberry {@locale} */
+  locale?: string
+  /** Filter by type value @modelberry {@type value} */
+  type?: string
+}
+
 export interface CallHandler {
   command: Command
-  type: ArgvType
+  options: Options
   path?: string
   pluginData?: PluginData
   pluginName: string
+  type: ArgvType
 }
 
 export type PushHandlerArgs = {
   command: Command
-  type: ArgvType
+  options: Options
   pluginData?: {
     types: TypeData
     dataVar: ModelberryVariable
   }
+  type: ArgvType
 }
 
 export type PushHandler = (args: PushHandlerArgs) => Promise<void>
@@ -30,9 +43,10 @@ export interface Module {
 
 export const callHandler = async ({
   command,
-  type,
+  options,
   pluginData,
   pluginName,
+  type,
 }: CallHandler) => {
   const log = console.log
   log(chalk.bold.underline(`\nRunning plugin`))
@@ -46,7 +60,7 @@ export const callHandler = async ({
   }
 
   if (module.handler) {
-    await module.handler({ command, type, pluginData })
+    await module.handler({ command, options, pluginData, type })
   } else {
     log(chalk.red(`- could not find handler method on plugin`))
     return

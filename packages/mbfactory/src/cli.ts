@@ -3,14 +3,14 @@ import { hideBin } from 'yargs/helpers'
 import { PullArgv, pullCommand } from './commands/pull/pull'
 import { PushArgv, pushCommand } from './commands/push/push'
 
-type ModelberryOptions = {
+type YargsOptions = {
   'dry-run': yargs.Options
   force: yargs.Options
   locale: yargs.Options
   type: yargs.Options
 }
 
-const options: ModelberryOptions = {
+const options: YargsOptions = {
   'dry-run': {
     alias: 'd',
     describe: 'Run without making any changes',
@@ -20,7 +20,7 @@ const options: ModelberryOptions = {
   force: {
     alias: 'f',
     describe:
-      'Ignore all messages and warnings, use with care because content can be lost',
+      'Ignore all messages and warnings, this could result in data loss',
     requiresArg: false,
     type: 'boolean',
   },

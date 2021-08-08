@@ -9,7 +9,13 @@ describe('The pull command should', () => {
 
   test('have tests', async () => {
     await pullCommand({
-      argv: { type: 'content', path: './dummy-path', $0: '', _: [''] },
+      argv: {
+        _: [''],
+        $0: '',
+        options: {},
+        path: './dummy-path',
+        pullType: 'content',
+      },
     })
     expect(consoleSpy).toHaveBeenCalled()
   })
