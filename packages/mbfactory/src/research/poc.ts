@@ -34,24 +34,24 @@ const makeInterfaceDeclaration = () => {
 }
 
 const abstractComment = `
- * @modelberry
- * - {@type Symbol}
- * - {@validation shortString}
- `
+* @modelberry
+* - {@type Symbol}
+* - {@validation shortString}
+`
 
 const interfaceComment = `
- * @modelberry
- * - {@plugin "@modelberry/plugin-contentful/plain"}
- * - {@type testTopic}
- * - {@displayField heading}
- * - {@description Topic model, a heading, an abstract and a call to action}
- `
+* @modelberry
+* - {@plugin "@modelberry/plugin-contentful/plain"}
+* - {@type testTopic}
+* - {@displayField heading}
+* - {@description Topic model, a heading, an abstract and a call to action}
+`
 
 export const poc = async () => {
-  const document = makeInterfaceDeclaration()
+  const interfaceDeclaration = makeInterfaceDeclaration()
 
   ts.addSyntheticLeadingComment(
-    document,
+    interfaceDeclaration,
     ts.SyntaxKind.MultiLineCommentTrivia,
     `*${interfaceComment}`,
     true
@@ -64,14 +64,6 @@ export const poc = async () => {
     true
   )
 
-  const sourceFile = ts.createSourceFile(
-    'source.ts',
-    '',
-    ts.ScriptTarget.Latest,
-    true,
-    ts.ScriptKind.TS
-  )
-
   const printer = ts.createPrinter({
     newLine: ts.NewLineKind.LineFeed,
     noEmitHelpers: true,
@@ -79,15 +71,23 @@ export const poc = async () => {
     removeComments: false,
   })
 
-  const output = printer.printNode(
+  const dummyFile = ts.createSourceFile(
+    'dummy.ts',
+    '',
+    ts.ScriptTarget.Latest,
+    false,
+    ts.ScriptKind.TS
+  )
+
+  const interfaceOutput = printer.printNode(
     ts.EmitHint.Unspecified,
-    document,
-    sourceFile
+    interfaceDeclaration,
+    dummyFile
   )
 
   // Format with prettier
   const prettierOptions = (await prettier.resolveConfig(process.cwd())) || {}
   if (!prettierOptions.parser) prettierOptions.parser = 'typescript'
-  const formattedOutput = prettier.format(output, prettierOptions)
+  const formattedOutput = prettier.format(interfaceOutput, prettierOptions)
   console.log(formattedOutput)
 }
