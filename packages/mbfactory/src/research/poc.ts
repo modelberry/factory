@@ -14,6 +14,13 @@ const sysProp = ts.factory.createPropertySignature(
   ])
 )
 
+const abstractProp = ts.factory.createPropertySignature(
+  undefined, // modifier
+  'abstract',
+  ts.factory.createToken(ts.SyntaxKind.QuestionToken),
+  ts.factory.createKeywordTypeNode(ts.SyntaxKind.StringKeyword)
+)
+
 const makeInterfaceDeclaration = () => {
   return ts.factory.createInterfaceDeclaration(
     undefined, // Decorators
@@ -21,7 +28,7 @@ const makeInterfaceDeclaration = () => {
     'ContentfulTopic', // Name
     undefined, // Type parameters
     undefined, // heritage classes
-    [sysProp] // members
+    [sysProp, abstractProp] // members
   )
 }
 
@@ -33,19 +40,44 @@ const resultFile = ts.createSourceFile(
   ts.ScriptKind.TS
 )
 
+const abstractComment = `
+ * @modelberry
+ * - {@type Symbol}
+ * - {@validation shortString}
+ `
+
+const interfaceComment = `
+ * @modelberry
+ * - {@plugin "@modelberry/plugin-contentful/plain"}
+ * - {@type testTopic}
+ * - {@displayField heading}
+ * - {@description Topic model, a heading, an abstract and a call to action}
+ `
+
 export const poc = () => {
   const printer = ts.createPrinter({ newLine: ts.NewLineKind.LineFeed })
 
-  const intDec = makeInterfaceDeclaration()
-
-  const result = printer.printNode(ts.EmitHint.Unspecified, intDec, resultFile)
+  const document = makeInterfaceDeclaration()
 
   ts.addSyntheticLeadingComment(
-    sysProp,
+    document,
     ts.SyntaxKind.MultiLineCommentTrivia,
-    'My long desired comment',
+    `*${interfaceComment}`,
     true
   )
 
-  console.log(result)
+  ts.addSyntheticLeadingComment(
+    abstractProp,
+    ts.SyntaxKind.MultiLineCommentTrivia,
+    `*${abstractComment}`,
+    true
+  )
+
+  const output = printer.printNode(
+    ts.EmitHint.Unspecified,
+    document,
+    resultFile
+  )
+
+  console.log(output)
 }
