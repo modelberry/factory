@@ -1,4 +1,5 @@
 import ts from 'typescript'
+import prettier from 'prettier'
 
 const sysProp = ts.factory.createPropertySignature(
   undefined, // modifier
@@ -32,14 +33,6 @@ const makeInterfaceDeclaration = () => {
   )
 }
 
-const resultFile = ts.createSourceFile(
-  'someFileName.ts',
-  '',
-  ts.ScriptTarget.Latest,
-  /*setParentNodes*/ false,
-  ts.ScriptKind.TS
-)
-
 const abstractComment = `
  * @modelberry
  * - {@type Symbol}
@@ -54,9 +47,7 @@ const interfaceComment = `
  * - {@description Topic model, a heading, an abstract and a call to action}
  `
 
-export const poc = () => {
-  const printer = ts.createPrinter({ newLine: ts.NewLineKind.LineFeed })
-
+export const poc = async () => {
   const document = makeInterfaceDeclaration()
 
   ts.addSyntheticLeadingComment(
@@ -73,11 +64,30 @@ export const poc = () => {
     true
   )
 
+  const sourceFile = ts.createSourceFile(
+    'source.ts',
+    '',
+    ts.ScriptTarget.Latest,
+    true,
+    ts.ScriptKind.TS
+  )
+
+  const printer = ts.createPrinter({
+    newLine: ts.NewLineKind.LineFeed,
+    noEmitHelpers: true,
+    omitTrailingSemicolon: true,
+    removeComments: false,
+  })
+
   const output = printer.printNode(
     ts.EmitHint.Unspecified,
     document,
-    resultFile
+    sourceFile
   )
 
-  console.log(output)
+  // Format with prettier
+  const prettierOptions = (await prettier.resolveConfig(process.cwd())) || {}
+  if (!prettierOptions.parser) prettierOptions.parser = 'typescript'
+  const formattedOutput = prettier.format(output, prettierOptions)
+  console.log(formattedOutput)
 }
