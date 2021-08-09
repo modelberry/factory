@@ -87,7 +87,7 @@ export const poc = async () => {
 
   // Format with prettier
   const prettierOptions = (await prettier.resolveConfig(process.cwd())) || {}
-  if (!prettierOptions.parser) prettierOptions.parser = 'typescript'
+  prettierOptions.parser = 'typescript'
   const formattedOutput = prettier.format(interfaceOutput, prettierOptions)
   console.log(formattedOutput)
 }
