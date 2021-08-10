@@ -56,4 +56,58 @@ export interface ContentfulTopic {
     heading?: string;
 }`)
   })
+
+  test('create a complex interface', async () => {
+    const intDec = createTsInterface({
+      blockTag: '@modelberry',
+      inlineTags: {
+        '@plugin': '"@modelberry/plugin-contentful/plain"',
+        '@type': 'testTopic',
+        '@displayField': 'heading',
+        '@description':
+          'Topic model, a heading, an abstract and a call to action',
+      },
+      fields: {
+        heading: {
+          blockTag: '@modelberry',
+          inlineTags: {
+            '@type': 'Symbol',
+            '@validation': 'shortString',
+          },
+          isRequired: false,
+          syntaxKind: ts.SyntaxKind.StringKeyword,
+        },
+        abstract: {
+          blockTag: '@modelberry',
+          inlineTags: {
+            '@type': 'Symbol',
+            '@validation': 'shortString',
+          },
+          isRequired: true,
+          syntaxKind: ts.SyntaxKind.StringKeyword,
+        },
+      },
+      isExported: true,
+      name: 'ContentfulTopic',
+    })
+    const output = await renderInterface(intDec)
+    expect(output).toEqual(`/** @modelberry
+* - {@plugin "@modelberry/plugin-contentful/plain"}
+* - {@type testTopic}
+* - {@displayField heading}
+* - {@description Topic model, a heading, an abstract and a call to action}
+*/
+export interface ContentfulTopic {
+    /** @modelberry
+    * - {@type Symbol}
+    * - {@validation shortString}
+    */
+    heading?: string;
+    /** @modelberry
+    * - {@type Symbol}
+    * - {@validation shortString}
+    */
+    abstract: string;
+}`)
+  })
 })
