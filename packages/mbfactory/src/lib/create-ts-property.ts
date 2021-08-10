@@ -44,7 +44,7 @@ export const createTsProperty = ({ propertyTree }: CreateTsProperty) => {
         ts.addSyntheticLeadingComment(
           property,
           ts.SyntaxKind.MultiLineCommentTrivia,
-          `*${node.comment}`,
+          `${node.comment}`,
           true
         )
       }

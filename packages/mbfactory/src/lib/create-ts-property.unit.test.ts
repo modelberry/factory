@@ -70,7 +70,7 @@ describe('Create ts property should', () => {
   })
 
   test('create an abstract property with comment', async () => {
-    const comment = `
+    const comment = `*
     * @modelberry
     * - {@type Symbol}
     * - {@validation shortString}

@@ -41,7 +41,7 @@ export const createTsInterface = ({
       node: {
         syntaxKind: field.syntaxKind,
         isRequired: field.isRequired,
-        comment: ` ${fieldComment}`,
+        comment: `* ${fieldComment}`,
       },
     }
   }
