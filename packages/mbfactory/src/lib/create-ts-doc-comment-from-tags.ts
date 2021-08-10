@@ -12,7 +12,7 @@ export const createTsDocCommentFromTags = ({
   inlineTags,
 }: CreateTsDocCommentFromTags) => {
   let comment = ``
-  comment += `* ${blockTag}\n`
+  comment += `${blockTag}\n`
   for (const inlineTag in inlineTags) {
     comment += `* - {${inlineTag} ${inlineTags[inlineTag]}}\n`
   }

@@ -12,7 +12,7 @@ describe('Create Ts Doc Comment From Tags should', () => {
           'Topic model, a heading, an abstract and a call to action',
       },
     })
-    expect(result).toEqual(`* @modelberry
+    expect(result).toEqual(`@modelberry
 * - {@plugin "@modelberry/plugin-contentful/plain"}
 * - {@type testTopic}
 * - {@displayField heading}

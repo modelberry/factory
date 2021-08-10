@@ -19,13 +19,41 @@ const renderInterface = async (interfaceDeclaration: ts.Node) => {
 describe('Create ts interface should', () => {
   test('create an interface', async () => {
     const intDec = createTsInterface({
+      blockTag: '@modelberry',
+      inlineTags: {
+        '@plugin': '"@modelberry/plugin-contentful/plain"',
+        '@type': 'testTopic',
+        '@displayField': 'heading',
+        '@description':
+          'Topic model, a heading, an abstract and a call to action',
+      },
+      fields: {
+        heading: {
+          blockTag: '@modelberry',
+          inlineTags: {
+            '@type': 'Symbol',
+            '@validation': 'shortString',
+          },
+          isRequired: false,
+          syntaxKind: ts.SyntaxKind.StringKeyword,
+        },
+      },
       isExported: true,
       name: 'ContentfulTopic',
     })
     const output = await renderInterface(intDec)
-    expect(output).toEqual(`/** My comment*/
+    expect(output).toEqual(`/** @modelberry
+* - {@plugin "@modelberry/plugin-contentful/plain"}
+* - {@type testTopic}
+* - {@displayField heading}
+* - {@description Topic model, a heading, an abstract and a call to action}
+*/
 export interface ContentfulTopic {
-    abstract?: string;
+    /** @modelberry
+    * - {@type Symbol}
+    * - {@validation shortString}
+    */
+    heading?: string;
 }`)
   })
 })
