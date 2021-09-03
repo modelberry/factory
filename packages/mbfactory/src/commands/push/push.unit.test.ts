@@ -1,5 +1,5 @@
-jest.mock('../../lib/call-handler')
-jest.mock('../../lib/get-all-plugin-data/get-all-plugin-data', () => ({
+jest.mock('../../call-handler/call-handler')
+jest.mock('../../get-all-plugin-data/get-all-plugin-data', () => ({
   getAllPluginData: () => ({}),
 }))
 

@@ -1,5 +1,5 @@
 // import chalk from 'chalk'
-jest.mock('../../lib/call-handler')
+jest.mock('../../call-handler/call-handler')
 jest.mock('fs/promises')
 
 import { mkdir } from 'fs/promises'
