@@ -1,6 +1,8 @@
 // import chalk from 'chalk'
 jest.mock('../../lib/call-handler')
+jest.mock('fs/promises')
 
+import { mkdir } from 'fs/promises'
 import { callHandler } from '../../lib/call-handler'
 import { pullCommand } from './pull'
 
@@ -23,5 +25,6 @@ describe('The pull command should', () => {
     })
     expect(consoleSpy.mock.calls).toEqual([])
     expect(callHandler).toHaveBeenCalledTimes(1)
+    expect(mkdir).toHaveBeenCalledWith('./dummy-path', { recursive: true })
   })
 })

@@ -1,3 +1,4 @@
+import { mkdir } from 'fs/promises'
 import yargs from 'yargs'
 import { ArgvType, callHandler, Options } from '../../lib/call-handler'
 import { getAndGeportOptions } from '../../lib/get-and-report-options'
@@ -15,6 +16,8 @@ export interface PullCommand {
 // TODO: Make pluginName a cli parameter
 export const pullCommand = async ({ argv }: PullCommand) => {
   const options = getAndGeportOptions({ argv })
+
+  await mkdir(argv.path, { recursive: true })
 
   await callHandler({
     command: 'pull',
