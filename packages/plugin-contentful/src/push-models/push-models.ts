@@ -6,7 +6,7 @@ import { getModelFieldsAndControls } from './get-model-fields-and-controls'
 import { pushFieldsToContentful } from './push-fields-to-contentful'
 import { pushControlsToContentful } from './push-controls-to-contentful'
 
-export interface PushTypes {
+export interface PushModels {
   contentfulEnvironment: Environment
   options: Options
   typeData: TypeData
@@ -18,7 +18,7 @@ export const pushModels = async ({
   options,
   typeData,
   validationsMap,
-}: PushTypes) => {
+}: PushModels) => {
   const log = console.log
   for (const modelberryType of Object.values(typeData)) {
     const modelFields = modelberryType.interface.fields || {}

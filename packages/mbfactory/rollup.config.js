@@ -14,6 +14,7 @@ const moduleName = pkg.name.replace(/^@.*\//, '')
 const author = rootPkg.author
 const globals = {
   fs: '*',
+  'fs/promises': '*',
   path: '*',
   typescript: '*',
   '@microsoft/tsdoc': '*',

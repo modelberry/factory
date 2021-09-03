@@ -13,7 +13,6 @@ export interface PullCommand {
   argv: yargs.Arguments<PullArgv>
 }
 
-// TODO: Make pluginName a cli parameter
 export const pullCommand = async ({ argv }: PullCommand) => {
   const options = getAndGeportOptions({ argv })
 

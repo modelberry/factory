@@ -5,7 +5,7 @@ import { getContentfulLocales } from '../lib/get-contentful-locales'
 import { getEntryFields } from './get-entry-fields'
 import { pushEntryToContentful } from './push-entry-to-contentful'
 
-export interface PushTypes {
+export interface PushContent {
   contentfulEnvironment: Environment
   options: Options
   typeData: TypeData
@@ -15,7 +15,7 @@ export const pushContent = async ({
   contentfulEnvironment,
   options,
   typeData,
-}: PushTypes) => {
+}: PushContent) => {
   const log = console.log
   const { defaultLocale } = await getContentfulLocales({
     contentfulEnvironment,

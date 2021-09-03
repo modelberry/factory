@@ -1,9 +1,13 @@
 jest.mock('../push-content/push-content')
 jest.mock('../push-models/push-models')
+jest.mock('../pull-content/pull-content')
+jest.mock('../pull-models/pull-models')
 jest.mock('contentful-management', () => ({ createClient }))
 
 import chalk from 'chalk'
 import { createClient, environmentMock } from '../lib/contentful-mock'
+import { pullContent } from '../pull-content/pull-content'
+import { pullModels } from '../pull-models/pull-models'
 import { pushContent } from '../push-content/push-content'
 import { pushModels } from '../push-models/push-models'
 import { handler } from './handler'
@@ -85,6 +89,40 @@ describe('The handler should', () => {
       contentfulEnvironment: environmentMock,
       options: { force: true },
       typeData: {},
+    })
+  })
+
+  test('call pullModels', async () => {
+    setEnv('ok')
+    // Test with force is true to prevent user interaction
+    await handler({
+      command: 'pull',
+      options: { force: true },
+      path: 'pull-test-path',
+      type: 'models',
+    })
+    expect(consoleSpy.mock.calls).toEqual(envOkResponse)
+    expect(pullModels).toHaveBeenCalledWith({
+      contentfulEnvironment: environmentMock,
+      options: { force: true },
+      path: 'pull-test-path',
+    })
+  })
+
+  test('call pullContent', async () => {
+    setEnv('ok')
+    // Test with force is true to prevent user interaction
+    await handler({
+      command: 'pull',
+      options: { force: true },
+      path: 'pull-test-path',
+      type: 'content',
+    })
+    expect(consoleSpy.mock.calls).toEqual(envOkResponse)
+    expect(pullContent).toHaveBeenCalledWith({
+      contentfulEnvironment: environmentMock,
+      options: { force: true },
+      path: 'pull-test-path',
     })
   })
 })
