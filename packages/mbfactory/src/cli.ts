@@ -67,7 +67,7 @@ yargs(hideBin(process.argv))
     }
   )
   .command(
-    'pull <pull-type> <path>',
+    'pull <pull-type> <plugin> <path>',
     'pull models or content from content platform',
     (yargs: yargs.Argv<any>) => {
       yargs
@@ -75,6 +75,10 @@ yargs(hideBin(process.argv))
           type: 'string',
           describe: 'pull models or content',
           choices: ['models', 'content'],
+        })
+        .positional('plugin', {
+          type: 'string',
+          describe: 'plugin to use for pull',
         })
         .positional('path', {
           type: 'string',

@@ -1,4 +1,7 @@
 // import chalk from 'chalk'
+jest.mock('../../lib/call-handler')
+
+import { callHandler } from '../../lib/call-handler'
 import { pullCommand } from './pull'
 
 describe('The pull command should', () => {
@@ -7,16 +10,18 @@ describe('The pull command should', () => {
     consoleSpy.mockReset()
   })
 
-  test('have tests', async () => {
+  test('call call handler', async () => {
     await pullCommand({
       argv: {
         _: [''],
         $0: '',
         options: {},
         path: './dummy-path',
+        plugin: 'contentful',
         pullType: 'content',
       },
     })
-    expect(consoleSpy).toHaveBeenCalled()
+    expect(consoleSpy.mock.calls).toEqual([])
+    expect(callHandler).toHaveBeenCalledTimes(1)
   })
 })
