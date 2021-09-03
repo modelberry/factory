@@ -1,8 +1,8 @@
 import ts from 'typescript'
 import {
-  createTsDocCommentFromTags,
+  tagsToTsDocComment,
   InlineTags,
-} from './create-ts-doc-comment-from-tags'
+} from '../lib/tags-to-ts-doc-comment'
 import { createTsProperty, PropertyTree } from './create-ts-property'
 
 export type InterfaceFields = {
@@ -29,11 +29,11 @@ export const createTsInterface = ({
   isExported,
   name,
 }: CreateTsInterface) => {
-  const interfaceComment = createTsDocCommentFromTags({ blockTag, inlineTags })
+  const interfaceComment = tagsToTsDocComment({ blockTag, inlineTags })
   const propertyTree: PropertyTree = {}
   for (const fieldId in fields) {
     const field = fields[fieldId]
-    const fieldComment = createTsDocCommentFromTags({
+    const fieldComment = tagsToTsDocComment({
       blockTag: field.blockTag,
       inlineTags: field.inlineTags,
     })

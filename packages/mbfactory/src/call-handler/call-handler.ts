@@ -1,6 +1,9 @@
 import chalk from 'chalk'
-import { TypeData, PluginData } from './get-all-plugin-data/get-all-plugin-data'
-import { ModelberryVariable } from './parse-modelberry-variable'
+import {
+  PluginData,
+  TypeData,
+} from '../get-all-plugin-data/get-all-plugin-data'
+import { ModelberryVariable } from '../modelberry-parser/parse-modelberry-variable'
 
 export type Command = 'push' | 'pull'
 export type ArgvType = 'content' | 'models'

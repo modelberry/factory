@@ -5,7 +5,7 @@ jest.mock('../../lib/get-all-plugin-data/get-all-plugin-data', () => ({
 
 import chalk from 'chalk'
 import { Arguments } from 'yargs'
-import { callHandler } from '../../lib/call-handler'
+import { callHandler } from '../../call-handler/call-handler'
 import { PushArgv, pushCommand } from './push'
 
 const argv: Arguments<PushArgv> = {

@@ -1,7 +1,7 @@
 import ts from 'typescript'
-import { createTsPrinter } from './create-ts-printer'
-import { createTsSourceFile } from './create-ts-source-file'
-import { printTsNode } from './print-ts-node'
+import { createTsPrinter } from '../ts-ast-helpers/create-ts-printer'
+import { createTsSourceFile } from '../ts-ast-helpers/create-ts-source-file'
+import { printTsNode } from '../ts-ast-helpers/print-ts-node'
 import { createTsInterface } from './create-ts-interface'
 
 const printer = createTsPrinter()

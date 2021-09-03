@@ -2,9 +2,9 @@ import { existsSync } from 'fs'
 import ts from 'typescript'
 import chalk from 'chalk'
 import yargs from 'yargs'
-import { getAllPluginData } from '../../lib/get-all-plugin-data/get-all-plugin-data'
-import { getCompilerOptions } from '../../lib/get-compiler-options/get-compiler-options'
-import { ArgvType, callHandler, Options } from '../../lib/call-handler'
+import { getAllPluginData } from '../../get-all-plugin-data/get-all-plugin-data'
+import { getCompilerOptions } from '../../get-compiler-options/get-compiler-options'
+import { ArgvType, callHandler, Options } from '../../call-handler/call-handler'
 import { getAndGeportOptions } from '../../lib/get-and-report-options'
 
 export type PushArgv = Options & {

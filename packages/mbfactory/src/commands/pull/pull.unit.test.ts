@@ -3,7 +3,7 @@ jest.mock('../../lib/call-handler')
 jest.mock('fs/promises')
 
 import { mkdir } from 'fs/promises'
-import { callHandler } from '../../lib/call-handler'
+import { callHandler } from '../../call-handler/call-handler'
 import { pullCommand } from './pull'
 
 describe('The pull command should', () => {

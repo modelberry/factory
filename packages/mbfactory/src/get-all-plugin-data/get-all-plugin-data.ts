@@ -3,11 +3,11 @@ import chalk from 'chalk'
 import {
   parseModelberryInterface,
   ModelberryInterface,
-} from '../parse-modelberry-interface'
+} from '../lib/parse-modelberry-interface'
 import {
   parseModelberryVariable,
   ModelberryVariable,
-} from '../parse-modelberry-variable'
+} from '../lib/parse-modelberry-variable'
 
 export type ModelberryType = {
   interface: ModelberryInterface

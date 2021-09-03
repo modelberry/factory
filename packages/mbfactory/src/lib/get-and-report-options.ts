@@ -2,7 +2,7 @@ import chalk from 'chalk'
 import yargs from 'yargs'
 import { PullArgv } from '../commands/pull/pull'
 import { PushArgv } from '../commands/push/push'
-import { Options } from './call-handler'
+import { Options } from '../call-handler/call-handler'
 
 export interface GetAndGeportOptions {
   argv: yargs.Arguments<PushArgv> | yargs.Arguments<PullArgv>

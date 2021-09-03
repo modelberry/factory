@@ -1,6 +1,6 @@
 import { mkdir } from 'fs/promises'
 import yargs from 'yargs'
-import { ArgvType, callHandler, Options } from '../../lib/call-handler'
+import { ArgvType, callHandler, Options } from '../../call-handler/call-handler'
 import { getAndGeportOptions } from '../../lib/get-and-report-options'
 
 export type PullArgv = Options & {

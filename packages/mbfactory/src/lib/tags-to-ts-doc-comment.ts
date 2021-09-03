@@ -2,15 +2,15 @@ export type InlineTags = {
   [tagName: string]: string
 }
 
-export interface CreateTsDocCommentFromTags {
+export interface TagsToTsDocComment {
   inlineTags: InlineTags
   blockTag: string
 }
 
-export const createTsDocCommentFromTags = ({
+export const tagsToTsDocComment = ({
   blockTag,
   inlineTags,
-}: CreateTsDocCommentFromTags) => {
+}: TagsToTsDocComment) => {
   let comment = ``
   comment += `${blockTag}\n`
   for (const inlineTag in inlineTags) {

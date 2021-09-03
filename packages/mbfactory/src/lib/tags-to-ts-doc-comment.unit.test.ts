@@ -1,8 +1,8 @@
-import { createTsDocCommentFromTags } from './create-ts-doc-comment-from-tags'
+import { tagsToTsDocComment } from './tags-to-ts-doc-comment'
 
 describe('Create Ts Doc Comment From Tags should', () => {
   test('create a comment', async () => {
-    const result = createTsDocCommentFromTags({
+    const result = tagsToTsDocComment({
       blockTag: '@modelberry',
       inlineTags: {
         '@plugin': '"@modelberry/plugin-contentful/plain"',

@@ -1,11 +1,11 @@
 import ts, { JSDocTagInfo, SymbolDisplayPart } from 'typescript'
 import chalk from 'chalk'
+import { stripDoubleQuotes } from '../lib/case-helpers'
+import { isExportedDeclaration } from './is-exported-declaration'
 import {
   DocProperty,
   interfaceToDocProperty,
 } from './interface-to-doc-property'
-import { isExportedDeclaration } from './is-exported-declaration'
-import { stripDoubleQuotes } from './case-helpers'
 
 export type ModelberryInterface = {
   fields?: {
