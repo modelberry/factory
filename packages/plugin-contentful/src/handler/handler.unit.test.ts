@@ -5,7 +5,7 @@ jest.mock('../pull-models/pull-models')
 jest.mock('contentful-management', () => ({ createClient }))
 
 import chalk from 'chalk'
-import { createClient, environmentMock } from '../lib/contentful-mock'
+import { createClient, environmentMock } from '../contentful-mock/contentful-mock'
 import { pullContent } from '../pull-content/pull-content'
 import { pullModels } from '../pull-models/pull-models'
 import { pushContent } from '../push-content/push-content'

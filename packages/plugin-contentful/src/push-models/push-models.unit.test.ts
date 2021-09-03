@@ -1,5 +1,5 @@
 import chalk from 'chalk'
-import { environmentMock } from '../lib/contentful-mock'
+import { environmentMock } from '../contentful-mock/contentful-mock'
 import { pushModels } from './push-models'
 import { allTags } from './__fixtures__/all-tags'
 import { badValidation } from './__fixtures__/bad-validation'

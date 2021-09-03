@@ -12,5 +12,8 @@ export const pullModels = async ({
   options,
 }: PullModels) => {
   const log = console.log
-  log(contentfulEnvironment, options)
+  log(options)
+  // const data = await contentfulEnvironment.getContentTypes()
+  const data = await contentfulEnvironment.getContentType('testTopic')
+  console.log(data)
 }
