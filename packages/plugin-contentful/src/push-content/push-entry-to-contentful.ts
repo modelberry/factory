@@ -26,7 +26,7 @@ export const pushEntryToContentful = async ({
       Object.assign(entry.fields, entryFields)
       entry = await entry.update()
       entry = await entry.publish()
-    } catch (contentfulError) {
+    } catch (contentfulError: any) {
       let errorData
       // We expect a 404, throw other errors if they occur
       try {

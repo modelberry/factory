@@ -1,5 +1,4 @@
 import ts from 'typescript'
-// import prettier from 'prettier'
 
 export interface PrintTsNode {
   node: ts.Node

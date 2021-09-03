@@ -13,12 +13,13 @@ import rootPkg from '../../package.json'
 const moduleName = pkg.name.replace(/^@.*\//, '')
 const author = rootPkg.author
 const globals = {
-  fs: '*',
-  path: '*',
-  'contentful-management': '*',
-  deepmerge: '*',
   '@modelberry/mbfactory/plain': '*',
+  'contentful-management': '*',
+  'fs/promises': '*',
+  deepmerge: '*',
+  fs: '*',
   inquirer: '*',
+  path: '*',
 }
 
 const external = Object.keys(globals)
