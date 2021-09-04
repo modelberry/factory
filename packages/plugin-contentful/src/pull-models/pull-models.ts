@@ -67,5 +67,7 @@ export const pullModels = async ({
     nodes,
   })
   log(await formatWithPrettier({ source: output }))
+  // TODO: Add validations as var statement
+  // TODO: Fetch editor interface and set @helpText and @widget
   log(validations)
 }
