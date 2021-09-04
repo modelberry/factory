@@ -14,6 +14,11 @@
     {
       "allowMultiple": false,
       "syntaxKind": "inline",
+      "tagName": "@disabled"
+    },
+    {
+      "allowMultiple": false,
+      "syntaxKind": "inline",
       "tagName": "@displayField"
     },
     {
