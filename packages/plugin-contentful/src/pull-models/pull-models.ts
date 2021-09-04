@@ -1,16 +1,15 @@
 import { ContentType, Environment } from 'contentful-management/types'
 import {
   createTsInterface,
-  createTsPrinter,
-  createTsSourceFile,
+  createDataVarStatement,
   firstUpperCase,
-  formatWithPrettier,
-  Node,
   Options,
-  printTsNodes,
+  camelToKebab,
 } from '@modelberry/mbfactory/plain'
+import chalk from 'chalk'
 import { copyKeysIfExists } from './copy-keys-if-exists'
 import { createFields } from './create-fields'
+import { writeSourceFile } from './write-source-file'
 
 export interface PullModels {
   contentfulEnvironment: Environment
@@ -21,6 +20,7 @@ export interface PullModels {
 export const pullModels = async ({
   contentfulEnvironment,
   options,
+  path,
 }: PullModels) => {
   const log = console.log
   const contentTypes: ContentType[] = []
@@ -32,7 +32,6 @@ export const pullModels = async ({
     response.items.forEach((ct) => contentTypes.push(ct))
   }
 
-  const nodes: Node[] = []
   const validations: Record<string, any> = {}
   for (const contentType of contentTypes) {
     const inlineTags: Record<string, any> = {}
@@ -55,19 +54,18 @@ export const pullModels = async ({
       isExported: true,
       name: 'Contentful' + firstUpperCase(contentType.name),
     })
-    nodes.push(interfaceDeclaration)
+    const filename = `${camelToKebab(contentType.name)}.ts`
+    log(chalk(`- writing source file ${path}/${filename}`))
+    await writeSourceFile({ nodes: [interfaceDeclaration], path, filename })
   }
-
-  const printer = createTsPrinter()
-  const sourceFile = createTsSourceFile()
-
-  const output = await printTsNodes({
-    printer,
-    sourceFile,
-    nodes,
+  const dataVarStatement = createDataVarStatement({ dataObject: validations })
+  const filename = 'validations.ts'
+  log(chalk(`- writing source file ${path}/${filename}`))
+  await writeSourceFile({
+    filename,
+    nodes: [dataVarStatement],
+    path,
   })
-  log(await formatWithPrettier({ source: output }))
-  // TODO: Add validations as var statement
+
   // TODO: Fetch editor interface and set @helpText and @widget
-  log(validations)
 }
