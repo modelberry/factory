@@ -33,6 +33,7 @@ export const pullModels = async ({
   }
 
   const nodes: Node[] = []
+  const validations: Record<string, any> = {}
   for (const contentType of contentTypes) {
     const inlineTags: Record<string, any> = {}
     inlineTags['@plugin'] = '"@modelberry/plugin-contentful/plain"'
@@ -43,7 +44,10 @@ export const pullModels = async ({
       source: contentType,
       target: inlineTags,
     })
-    const fields = createFields({ contentFields: contentType.fields })
+    const fields = createFields({
+      contentFields: contentType.fields,
+      validations,
+    })
     const interfaceDeclaration = createTsInterface({
       blockTag: '@modelberry',
       inlineTags,
@@ -63,4 +67,5 @@ export const pullModels = async ({
     nodes,
   })
   log(await formatWithPrettier({ source: output }))
+  log(validations)
 }

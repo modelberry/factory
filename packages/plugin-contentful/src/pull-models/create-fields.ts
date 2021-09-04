@@ -1,17 +1,17 @@
 import { ContentFields } from 'contentful-management/types'
 import { tsSyntaxKind } from '@modelberry/mbfactory/plain'
 import { copyKeysIfExists } from './copy-keys-if-exists'
+import { addValidations } from './add-validations'
 
 export interface CreateFields {
   contentFields: ContentFields[]
+  validations: Record<string, any>
 }
 
-export const createFields = ({ contentFields }: CreateFields) => {
+export const createFields = ({ contentFields, validations }: CreateFields) => {
   const fields: Record<string, any> = {}
   for (const contentField of contentFields) {
-    const inlineTags = {
-      '@validation': 'shortString',
-    }
+    const inlineTags: Record<string, any> = {}
     copyKeysIfExists({
       asTag: true,
       source: contentField,
@@ -26,6 +26,13 @@ export const createFields = ({ contentFields }: CreateFields) => {
         target: inlineTags,
         keys: ['type', 'linkType'],
       })
+      if (contentField.items.validations) {
+        addValidations({
+          add: contentField.items.validations,
+          tags: inlineTags,
+          validations,
+        })
+      }
     }
     if (contentField.type === 'Link') {
       copyKeysIfExists({
@@ -33,6 +40,13 @@ export const createFields = ({ contentFields }: CreateFields) => {
         source: contentField,
         target: inlineTags,
         keys: ['linkType'],
+      })
+    }
+    if (contentField.validations) {
+      addValidations({
+        add: contentField.validations,
+        tags: inlineTags,
+        validations,
       })
     }
     fields[contentField.id] = {
