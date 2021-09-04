@@ -32,7 +32,7 @@ export const pushEntryToContentful = async ({
       try {
         errorData = JSON.parse(contentfulError.message)
         if (errorData.status !== 404) throw contentfulError
-      } catch (jsonError) {
+      } catch (jsonError: any) {
         throw contentfulError
       }
       // Create a new entry with the entry id

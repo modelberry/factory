@@ -7,7 +7,7 @@ export const badValidation: TypeData = {
         heading: {
           tags: {
             '@type': 'Symbol',
-            '@validation': 'doesNotExist',
+            '@validations': 'doesNotExist',
           },
           type: 'string | undefined',
         },

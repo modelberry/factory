@@ -32,7 +32,7 @@ describe('Create ts interface should', () => {
           blockTag: '@modelberry',
           inlineTags: {
             '@type': 'Symbol',
-            '@validation': 'shortString',
+            '@validations': 'shortString',
           },
           isRequired: false,
           tsSyntaxKind: tsSyntaxKind.StringKeyword,
@@ -51,7 +51,7 @@ describe('Create ts interface should', () => {
 export interface ContentfulTopic {
     /** @modelberry
     * - {@type Symbol}
-    * - {@validation shortString}
+    * - {@validations shortString}
     */
     heading?: string;
 }`)
@@ -72,7 +72,7 @@ export interface ContentfulTopic {
           blockTag: '@modelberry',
           inlineTags: {
             '@type': 'Symbol',
-            '@validation': 'shortString',
+            '@validations': 'shortString',
           },
           isRequired: false,
           tsSyntaxKind: tsSyntaxKind.StringKeyword,
@@ -81,7 +81,7 @@ export interface ContentfulTopic {
           blockTag: '@modelberry',
           inlineTags: {
             '@type': 'Symbol',
-            '@validation': 'shortString',
+            '@validations': 'shortString',
           },
           isRequired: true,
           tsSyntaxKind: tsSyntaxKind.StringKeyword,
@@ -100,12 +100,12 @@ export interface ContentfulTopic {
 export interface ContentfulTopic {
     /** @modelberry
     * - {@type Symbol}
-    * - {@validation shortString}
+    * - {@validations shortString}
     */
     heading?: string;
     /** @modelberry
     * - {@type Symbol}
-    * - {@validation shortString}
+    * - {@validations shortString}
     */
     abstract: string;
 }`)

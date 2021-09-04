@@ -19,7 +19,7 @@ export interface ContentfulTopic {
 
   /** @modelberry
    * - {@type Symbol}
-   * - {@validation shortString} */
+   * - {@validations shortString} */
   abstract?: string
 
   /**
@@ -27,7 +27,7 @@ export interface ContentfulTopic {
    * - {@type Array}
    * - {@itemsType Link}
    * - {@itemsLinkType Entry}
-   * - {@validation action}
+   * - {@validations action}
    * - {@description Action field, this is the description}
    */
   actionsCollection?: {

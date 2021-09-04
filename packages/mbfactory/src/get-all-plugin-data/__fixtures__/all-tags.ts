@@ -17,7 +17,7 @@ export interface Topic {
    *   {@linkType Symbol}
    *   {@itemsType Link}
    *   {@itemsLinkType Entry}
-   *   {@validation unique}
+   *   {@validations unique}
    *   {@widget singleLine}
    * @defaultValue Default heading
    *

@@ -77,7 +77,7 @@ describe('Create ts property should', () => {
     const comment = `*
     * @modelberry
     * - {@type Symbol}
-    * - {@validation shortString}
+    * - {@validations shortString}
     `
     const propertyTree = {
       abstract: { node: { syntaxKind: ts.SyntaxKind.StringKeyword, comment } },
@@ -88,7 +88,7 @@ describe('Create ts property should', () => {
     /**
         * @modelberry
         * - {@type Symbol}
-        * - {@validation shortString}
+        * - {@validations shortString}
         */
     abstract?: string;
 }`)

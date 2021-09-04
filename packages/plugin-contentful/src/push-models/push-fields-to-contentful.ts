@@ -48,13 +48,13 @@ export const pushFieldsToContentful = async ({
     contentType.fields = contentType.fields.filter((field) => !field.omitted)
     // Remove omitted fields on remote
     contentType = await contentType.update()
-  } catch (contentfulError) {
+  } catch (contentfulError: any) {
     let errorData
     // We expect a 404, throw other errors if they occur
     try {
       errorData = JSON.parse(contentfulError.message)
       if (errorData.status !== 404) throw contentfulError
-    } catch (jsonError) {
+    } catch (jsonError: any) {
       throw contentfulError
     }
     // Create a new content type

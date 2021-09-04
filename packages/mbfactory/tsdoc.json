@@ -37,6 +37,11 @@
       "tagName": "@itemsLinkType"
     },
     {
+      "allowMultiple": true,
+      "syntaxKind": "inline",
+      "tagName": "@itemsValidations"
+    },
+    {
       "allowMultiple": false,
       "syntaxKind": "inline",
       "tagName": "@linkType"
@@ -74,7 +79,7 @@
     {
       "allowMultiple": true,
       "syntaxKind": "inline",
-      "tagName": "@validation"
+      "tagName": "@validations"
     },
     {
       "allowMultiple": false,

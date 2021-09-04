@@ -18,7 +18,7 @@ Object {
                 "@name": "Heading",
                 "@required": "",
                 "@type": "Array",
-                "@validation": "unique",
+                "@validations": "unique",
                 "@widget": "singleLine",
               },
               "type": "string",
@@ -152,7 +152,7 @@ Object {
             "abstract": Object {
               "tags": Object {
                 "@type": "Symbol",
-                "@validation": "shortString",
+                "@validations": "shortString",
               },
               "type": "string | undefined",
             },
@@ -162,7 +162,7 @@ Object {
                 "@itemsLinkType": "Entry",
                 "@itemsType": "Link",
                 "@type": "Array",
-                "@validation": "action",
+                "@validations": "action",
               },
               "type": "{ items: ContentfulAction[]; } | undefined",
             },

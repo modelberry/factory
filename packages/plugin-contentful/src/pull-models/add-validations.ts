@@ -21,7 +21,7 @@ export const getExistingValidation = ({
 export interface AddValidation {
   /** Array of validations from Contentful API */
   add: any[]
-  /** Object to add @validation inline tags to */
+  /** Object to add @validations inline tags to */
   tags: Record<string, any>
   /** Object to add validations to */
   validations: Record<string, any>
@@ -35,7 +35,7 @@ export const addValidations = ({ add, tags, validations }: AddValidation) => {
       validations,
     })
     if (existingValidationName) {
-      tags[`@validation__${tagCount}`] = existingValidationName
+      tags[`@validations__${tagCount}`] = existingValidationName
       continue
     }
     const codeAChar = 'A'.charCodeAt(0)
@@ -45,6 +45,6 @@ export const addValidations = ({ add, tags, validations }: AddValidation) => {
     )}`
     validations[validationName] = newValidation
     // The __xx postfix will be ignored when tags are converted intoi ts docs comments
-    tags[`@validation__${tagCount}`] = validationName
+    tags[`@validations__${tagCount}`] = validationName
   }
 }
