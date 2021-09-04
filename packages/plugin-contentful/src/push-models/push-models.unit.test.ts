@@ -7,6 +7,7 @@ import { ignoreField } from './__fixtures__/ignore-field'
 import { ignoreInterface } from './__fixtures__/ignore-interface'
 import { noFieldType } from './__fixtures__/no-field-type'
 import { noInterfaceType } from './__fixtures__/no-interface-type'
+import { multipleBadValidations } from './__fixtures__/multiple-bad-validations'
 
 const headingResponse = [
   [chalk.bold.underline('\nTopic')],
@@ -57,6 +58,22 @@ describe('Push models should', () => {
       [chalk.bold.underline('\nTopic')],
       [chalk.underline('heading')],
       [chalk.red('- validation doesNotExist not found')],
+      ...notPusingResponse,
+    ])
+  })
+
+  test('process multipleBadValidation correctly', async () => {
+    await pushModels({
+      contentfulEnvironment: environmentMock,
+      options: { force: true },
+      typeData: multipleBadValidations,
+      validationsMap: { mockedValidation: {} },
+    })
+    expect(consoleSpy.mock.calls).toEqual([
+      [chalk.bold.underline('\nTopic')],
+      [chalk.underline('heading')],
+      [chalk.red('- validation doesNotExist not found')],
+      [chalk.red('- validation doesNotExistEither not found')],
       ...notPusingResponse,
     ])
   })

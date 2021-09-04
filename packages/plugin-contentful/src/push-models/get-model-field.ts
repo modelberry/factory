@@ -1,7 +1,7 @@
-import chalk from 'chalk'
 import { camelToSpaces, firstUpperCase } from '@modelberry/mbfactory/plain'
 import { ContentFields, FieldType } from 'contentful-management/types'
 import { ValidationsMap } from '../lib/get-modelberry-plugin-data'
+import { getValidations } from './get-validations'
 
 export interface GetModelField {
   fieldIdWithoutPostfix: string
@@ -14,18 +14,12 @@ export const getModelField = ({
   fieldTags,
   validationsMap,
 }: GetModelField) => {
-  const log = console.log
-  // TODO: Add support for multiple validations
-  const validations = []
-  if (fieldTags['@validations']) {
-    if (fieldTags['@validations'] in validationsMap) {
-      log(chalk(`- validation ${fieldTags['@validations']}`))
-      validations.push(validationsMap[fieldTags['@validations']])
-    } else {
-      log(chalk.red(`- validation ${fieldTags['@validations']} not found`))
-      return
-    }
-  }
+  const { validations, validationNotFound } = getValidations({
+    fieldTags,
+    tag: '@validations',
+    validationsMap,
+  })
+  if (validationNotFound) return
 
   const humanReadableFieldId = firstUpperCase(
     camelToSpaces(fieldIdWithoutPostfix)
@@ -42,6 +36,12 @@ export const getModelField = ({
   }
   // Add validations to Array items if type === Array
   if (fieldTags['@type'] === 'Array') {
+    const { validations } = getValidations({
+      fieldTags,
+      tag: '@itemsValidations',
+      validationsMap,
+    })
+
     newField.id = fieldIdWithoutPostfix
     newField.items = {
       type: fieldTags['@itemsType'],
