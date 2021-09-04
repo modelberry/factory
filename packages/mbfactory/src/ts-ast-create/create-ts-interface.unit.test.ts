@@ -1,17 +1,17 @@
 import ts from 'typescript'
 import { createTsPrinter } from '../ts-ast-helpers/create-ts-printer'
 import { createTsSourceFile } from '../ts-ast-helpers/create-ts-source-file'
-import { printTsNode } from '../ts-ast-helpers/print-ts-node'
-import { createTsInterface } from './create-ts-interface'
+import { printTsNodes } from '../ts-ast-helpers/print-ts-nodes'
+import { createTsInterface, tsSyntaxKind } from './create-ts-interface'
 
 const printer = createTsPrinter()
 const sourceFile = createTsSourceFile()
 
 const renderInterface = async (interfaceDeclaration: ts.Node) => {
-  const output = await printTsNode({
+  const output = await printTsNodes({
     printer,
     sourceFile,
-    node: interfaceDeclaration,
+    nodes: [interfaceDeclaration],
   })
   return output
 }
@@ -35,7 +35,7 @@ describe('Create ts interface should', () => {
             '@validation': 'shortString',
           },
           isRequired: false,
-          syntaxKind: ts.SyntaxKind.StringKeyword,
+          tsSyntaxKind: tsSyntaxKind.StringKeyword,
         },
       },
       isExported: true,
@@ -75,7 +75,7 @@ export interface ContentfulTopic {
             '@validation': 'shortString',
           },
           isRequired: false,
-          syntaxKind: ts.SyntaxKind.StringKeyword,
+          tsSyntaxKind: tsSyntaxKind.StringKeyword,
         },
         abstract: {
           blockTag: '@modelberry',
@@ -84,7 +84,7 @@ export interface ContentfulTopic {
             '@validation': 'shortString',
           },
           isRequired: true,
-          syntaxKind: ts.SyntaxKind.StringKeyword,
+          tsSyntaxKind: tsSyntaxKind.StringKeyword,
         },
       },
       isExported: true,

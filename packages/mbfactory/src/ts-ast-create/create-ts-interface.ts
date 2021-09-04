@@ -1,16 +1,17 @@
 import ts from 'typescript'
-import {
-  tagsToTsDocComment,
-  InlineTags,
-} from '../lib/tags-to-ts-doc-comment'
+import { tagsToTsDocComment, InlineTags } from '../lib/tags-to-ts-doc-comment'
 import { createTsProperty, PropertyTree } from './create-ts-property'
+
+// Re-export ts types and consts because the ts library size slows down linting
+export const tsSyntaxKind = ts.SyntaxKind
+export type Node = ts.Node
 
 export type InterfaceFields = {
   [fieldId: string]: {
     blockTag: string
     inlineTags: InlineTags
     isRequired: boolean
-    syntaxKind?: ts.SyntaxKind
+    tsSyntaxKind?: ts.SyntaxKind
   }
 }
 
@@ -39,7 +40,7 @@ export const createTsInterface = ({
     })
     propertyTree[fieldId] = {
       node: {
-        syntaxKind: field.syntaxKind,
+        syntaxKind: field.tsSyntaxKind,
         isRequired: field.isRequired,
         comment: `* ${fieldComment}`,
       },

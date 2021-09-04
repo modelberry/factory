@@ -1,17 +1,17 @@
 import ts from 'typescript'
 import { createTsPrinter } from '../ts-ast-helpers/create-ts-printer'
 import { createTsSourceFile } from '../ts-ast-helpers/create-ts-source-file'
-import { printTsNode } from '../ts-ast-helpers/print-ts-node'
+import { printTsNodes } from '../ts-ast-helpers/print-ts-nodes'
 import { createDataVarStatement } from './create-data-var-statement'
 
 const printer = createTsPrinter()
 const sourceFile = createTsSourceFile()
 
 const renderVarStatement = async (varStatement: ts.Node) => {
-  const output = await printTsNode({
+  const output = await printTsNodes({
     printer,
     sourceFile,
-    node: varStatement,
+    nodes: [varStatement],
   })
   return output
 }

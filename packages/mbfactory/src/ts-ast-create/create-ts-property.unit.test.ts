@@ -1,14 +1,14 @@
 import ts from 'typescript'
 import { createTsPrinter } from '../ts-ast-helpers/create-ts-printer'
 import { createTsSourceFile } from '../ts-ast-helpers/create-ts-source-file'
-import { printTsNode } from '../ts-ast-helpers/print-ts-node'
+import { printTsNodes } from '../ts-ast-helpers/print-ts-nodes'
 import { createTsProperty } from './create-ts-property'
 
 const printer = createTsPrinter()
 const sourceFile = createTsSourceFile()
 
 const renderProps = async (members: ts.TypeElement[]) => {
-  const int = ts.factory.createInterfaceDeclaration(
+  const interfaceDeclaration = ts.factory.createInterfaceDeclaration(
     undefined, // Decorators
     [ts.factory.createToken(ts.SyntaxKind.ExportKeyword)],
     'ContentfulTopic',
@@ -16,7 +16,11 @@ const renderProps = async (members: ts.TypeElement[]) => {
     undefined, // heritage classes
     members
   )
-  const output = await printTsNode({ printer, sourceFile, node: int })
+  const output = await printTsNodes({
+    printer,
+    sourceFile,
+    nodes: [interfaceDeclaration],
+  })
   return output
 }
 
