@@ -68,4 +68,5 @@ export const pullModels = async ({
   })
 
   // TODO: Fetch editor interface and set @helpText and @widget
+  // TODO: Write proper tsSyntaxKind, all are StringKeyword string now
 }
