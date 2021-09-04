@@ -29,6 +29,7 @@ export const createFields = ({ contentFields, validations }: CreateFields) => {
       if (contentField.items.validations) {
         addValidations({
           add: contentField.items.validations,
+          tag: '@itemsValidations',
           tags: inlineTags,
           validations,
         })
@@ -45,6 +46,7 @@ export const createFields = ({ contentFields, validations }: CreateFields) => {
     if (contentField.validations) {
       addValidations({
         add: contentField.validations,
+        tag: '@validations',
         tags: inlineTags,
         validations,
       })
