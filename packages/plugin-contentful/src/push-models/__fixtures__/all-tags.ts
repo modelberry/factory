@@ -14,7 +14,7 @@ export const allTags: TypeData = {
             '@name': 'Heading',
             '@required': '',
             '@type': 'Array',
-            '@validations': 'mockedValidation',
+            '@itemsValidations': 'mockedValidation',
             '@widget': 'singleLine',
           },
           type: 'string | undefined',

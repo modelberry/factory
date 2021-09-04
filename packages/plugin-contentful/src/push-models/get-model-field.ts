@@ -14,13 +14,6 @@ export const getModelField = ({
   fieldTags,
   validationsMap,
 }: GetModelField) => {
-  const { validations, validationNotFound } = getValidations({
-    fieldTags,
-    tag: '@validations',
-    validationsMap,
-  })
-  if (validationNotFound) return
-
   const humanReadableFieldId = firstUpperCase(
     camelToSpaces(fieldIdWithoutPostfix)
   )
@@ -34,21 +27,29 @@ export const getModelField = ({
     required: '@required' in fieldTags,
     type: fieldTags['@type'] as FieldType['type'],
   }
+
   // Add validations to Array items if type === Array
   if (fieldTags['@type'] === 'Array') {
-    const { validations } = getValidations({
+    const { validations, validationNotFound } = getValidations({
       fieldTags,
       tag: '@itemsValidations',
       validationsMap,
     })
+    if (validationNotFound) return
 
-    newField.id = fieldIdWithoutPostfix
     newField.items = {
       type: fieldTags['@itemsType'],
       linkType: fieldTags['@itemsLinkType'],
       validations,
     }
   } else {
+    const { validations, validationNotFound } = getValidations({
+      fieldTags,
+      tag: '@validations',
+      validationsMap,
+    })
+    if (validationNotFound) return
+
     newField.validations = validations
   }
   return newField
