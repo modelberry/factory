@@ -69,6 +69,11 @@
     {
       "allowMultiple": false,
       "syntaxKind": "inline",
+      "tagName": "@omitted"
+    },
+    {
+      "allowMultiple": false,
+      "syntaxKind": "inline",
       "tagName": "@plugin"
     },
     {
