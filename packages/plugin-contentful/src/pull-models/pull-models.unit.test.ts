@@ -19,18 +19,18 @@ describe('Pull content should', () => {
     })
     expect(writeFile).toMatchSnapshot()
     expect(consoleSpy.mock.calls).toEqual([
-      [chalk('- writing source file ./dummy/test-topic.ts')],
-      [chalk('- writing source file ./dummy/test-action.ts')],
-      [chalk('- writing source file ./dummy/navigation-section.ts')],
-      [chalk('- writing source file ./dummy/topic-section.ts')],
-      [chalk('- writing source file ./dummy/topic.ts')],
-      [chalk('- writing source file ./dummy/text-section.ts')],
-      [chalk('- writing source file ./dummy/navigation-segment.ts')],
-      [chalk('- writing source file ./dummy/page.ts')],
-      [chalk('- writing source file ./dummy/globals.ts')],
-      [chalk('- writing source file ./dummy/embed.ts')],
-      [chalk('- writing source file ./dummy/action.ts')],
-      [chalk('- writing source file ./dummy/validations.ts')],
+      [chalk('- new source file ./dummy/test-topic.ts')],
+      [chalk('- new source file ./dummy/test-action.ts')],
+      [chalk('- new source file ./dummy/navigation-section.ts')],
+      [chalk('- new source file ./dummy/topic-section.ts')],
+      [chalk('- new source file ./dummy/topic.ts')],
+      [chalk('- new source file ./dummy/text-section.ts')],
+      [chalk('- new source file ./dummy/navigation-segment.ts')],
+      [chalk('- new source file ./dummy/page.ts')],
+      [chalk('- new source file ./dummy/globals.ts')],
+      [chalk('- new source file ./dummy/embed.ts')],
+      [chalk('- new source file ./dummy/action.ts')],
+      [chalk('- new source file ./dummy/validations.ts')],
     ])
   })
   test('pull correctly with type filter', async () => {
@@ -41,8 +41,8 @@ describe('Pull content should', () => {
     })
     expect(writeFile).toMatchSnapshot()
     expect(consoleSpy.mock.calls).toEqual([
-      [chalk('- writing source file ./dummy/test-topic.ts')],
-      [chalk('- writing source file ./dummy/validations.ts')],
+      [chalk('- new source file ./dummy/test-topic.ts')],
+      [chalk('- new source file ./dummy/validations.ts')],
     ])
   })
 })

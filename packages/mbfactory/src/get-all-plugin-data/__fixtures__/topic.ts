@@ -1,6 +1,6 @@
 // The import is like this because this package should not depend on
 // plugin-contentful. This fixture however may depend
-import { ModelberryPluginData } from '../../../../../plugin-contentful/build/plain'
+import { ModelberryPluginData } from '../../../../plugin-contentful/build/plain'
 import { ContentfulAction } from './topic-action'
 import { ContentfulAsset } from './topic-asset'
 

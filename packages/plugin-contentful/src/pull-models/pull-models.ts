@@ -6,10 +6,9 @@ import {
   Options,
   camelToKebab,
 } from '@modelberry/mbfactory/plain'
-import chalk from 'chalk'
 import { copyKeysIfExists } from './copy-keys-if-exists'
 import { createFields } from './create-fields'
-import { writeSourceFile } from './write-source-file'
+import { SourceFile, writeSourceFiles } from './write-source-file'
 import { getEditorInterfaces } from './get-editor-interfaces'
 
 export interface PullModels {
@@ -23,7 +22,7 @@ export const pullModels = async ({
   options,
   path,
 }: PullModels) => {
-  const log = console.log
+  const files: SourceFile[] = []
   const contentTypes: ContentType[] = []
   if (options.type) {
     const ctResponse = await contentfulEnvironment.getContentType(options.type)
@@ -57,17 +56,16 @@ export const pullModels = async ({
       name: 'Contentful' + firstUpperCase(contentType.name),
     })
     const filename = `${camelToKebab(contentType.name)}.ts`
-    log(chalk(`- writing source file ${path}/${filename}`))
-    await writeSourceFile({ nodes: [interfaceDeclaration], path, filename })
+    files.push({ nodes: [interfaceDeclaration], path, filename })
   }
   const dataVarStatement = createDataVarStatement({ dataObject: validations })
   const filename = 'validations.ts'
-  log(chalk(`- writing source file ${path}/${filename}`))
-  await writeSourceFile({
+  files.push({
     filename,
     nodes: [dataVarStatement],
     path,
   })
+  await writeSourceFiles({ files, options })
 
   // TODO: Write proper tsSyntaxKind, all are StringKeyword string now
 }
