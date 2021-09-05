@@ -3,17 +3,17 @@ import { tsSyntaxKind } from '@modelberry/mbfactory/plain'
 import { copyKeysIfExists } from './copy-keys-if-exists'
 import { addValidations } from './add-validations'
 
-export interface CreateFields {
+export interface GetFields {
   contentFields: ContentFields[]
   editorInterfaces: Record<string, any>
   validations: Record<string, any>
 }
 
-export const createFields = ({
+export const getFields = ({
   contentFields,
   editorInterfaces,
   validations,
-}: CreateFields) => {
+}: GetFields) => {
   const fields: Record<string, any> = {}
   for (const contentField of contentFields) {
     const inlineTags: Record<string, any> = {}

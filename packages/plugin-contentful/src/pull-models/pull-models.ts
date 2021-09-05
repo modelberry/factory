@@ -7,7 +7,7 @@ import {
   camelToKebab,
 } from '@modelberry/mbfactory/plain'
 import { copyKeysIfExists } from './copy-keys-if-exists'
-import { createFields } from './create-fields'
+import { getFields } from './get-fields'
 import { SourceFile, writeSourceFiles } from './write-source-file'
 import { getEditorInterfaces } from './get-editor-interfaces'
 
@@ -43,7 +43,7 @@ export const pullModels = async ({
       target: inlineTags,
     })
     const editorInterfaces = await getEditorInterfaces({ contentType })
-    const fields = createFields({
+    const fields = getFields({
       contentFields: contentType.fields,
       editorInterfaces,
       validations,
