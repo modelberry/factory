@@ -7,7 +7,7 @@ import {
   camelToKebab,
 } from '@modelberry/mbfactory/plain'
 import { copyKeysIfExists } from './copy-keys-if-exists'
-import { getFields } from './get-fields'
+import { getPropertyTree } from './get-property-tree'
 import { SourceFile, writeSourceFiles } from './write-source-files'
 import { getEditorInterfaces } from './get-editor-interfaces'
 
@@ -43,7 +43,7 @@ export const pullModels = async ({
       target: inlineTags,
     })
     const editorInterfaces = await getEditorInterfaces({ contentType })
-    const fields = getFields({
+    const propertyTree = getPropertyTree({
       contentFields: contentType.fields,
       editorInterfaces,
       validations,
@@ -51,7 +51,7 @@ export const pullModels = async ({
     const interfaceDeclaration = createTsInterface({
       blockTag: '@modelberry',
       inlineTags,
-      fields,
+      propertyTree,
       isExported: true,
       name: 'Contentful' + firstUpperCase(contentType.name),
     })
