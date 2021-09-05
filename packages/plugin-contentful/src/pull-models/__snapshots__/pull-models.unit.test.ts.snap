@@ -16,7 +16,7 @@ export interface ContentfulTestTopic {
    * - {@name Abstract}
    * - {@type Symbol}
    * - {@widgetId singleLine}
-   * - {@validations validationA}
+   * - {@validations size-min0-max155}
    */
   abstract?: string
   /** @modelberry
@@ -24,7 +24,7 @@ export interface ContentfulTestTopic {
    * - {@type Array}
    * - {@itemsType Link}
    * - {@itemsLinkType Entry}
-   * - {@itemsValidations validationB}
+   * - {@itemsValidations linkContentType-testAction}
    * - {@widgetId entryLinksEditor}
    */
   actions?: string
@@ -128,7 +128,7 @@ export interface ContentfulNavigationSection {
    * - {@type Link}
    * - {@linkType Entry}
    * - {@widgetId entryLinkEditor}
-   * - {@validations validationC}
+   * - {@validations linkContentType-action}
    */
   logoAction?: string
   /** @modelberry
@@ -136,7 +136,7 @@ export interface ContentfulNavigationSection {
    * - {@type Array}
    * - {@itemsType Link}
    * - {@itemsLinkType Entry}
-   * - {@itemsValidations validationD}
+   * - {@itemsValidations linkContentType-navigationSegment}
    * - {@widgetId entryLinksEditor}
    */
   header?: string
@@ -145,7 +145,7 @@ export interface ContentfulNavigationSection {
    * - {@type Array}
    * - {@itemsType Link}
    * - {@itemsLinkType Entry}
-   * - {@itemsValidations validationD}
+   * - {@itemsValidations linkContentType-navigationSegment}
    * - {@widgetId entryLinksEditor}
    */
   footer?: string
@@ -154,7 +154,7 @@ export interface ContentfulNavigationSection {
    * - {@type Link}
    * - {@linkType Entry}
    * - {@widgetId entryLinkEditor}
-   * - {@validations validationD}
+   * - {@validations linkContentType-navigationSegment}
    */
   social?: string
   /** @modelberry
@@ -162,7 +162,7 @@ export interface ContentfulNavigationSection {
    * - {@type Link}
    * - {@linkType Entry}
    * - {@widgetId entryLinkEditor}
-   * - {@validations validationD}
+   * - {@validations linkContentType-navigationSegment}
    */
   actions?: string
   /** @modelberry
@@ -170,7 +170,7 @@ export interface ContentfulNavigationSection {
    * - {@type Link}
    * - {@linkType Entry}
    * - {@widgetId entryLinkEditor}
-   * - {@validations validationD}
+   * - {@validations linkContentType-navigationSegment}
    */
   legal?: string
   /** @modelberry
@@ -178,7 +178,7 @@ export interface ContentfulNavigationSection {
    * - {@type Array}
    * - {@itemsType Link}
    * - {@itemsLinkType Entry}
-   * - {@itemsValidations validationD}
+   * - {@itemsValidations linkContentType-navigationSegment}
    * - {@widgetId entryLinksEditor}
    */
   information?: string
@@ -187,7 +187,7 @@ export interface ContentfulNavigationSection {
    * - {@type Array}
    * - {@itemsType Link}
    * - {@itemsLinkType Entry}
-   * - {@itemsValidations validationD}
+   * - {@itemsValidations linkContentType-navigationSegment}
    * - {@widgetId entryLinksEditor}
    */
   sitemap?: string
@@ -216,7 +216,7 @@ export interface ContentfulTopicSection {
    * - {@type Symbol}
    * - {@widgetId dropdown}
    * - {@helpText Hoe de sectie wordt weergegeven}
-   * - {@validations validationE}
+   * - {@validations in-block-card-divider}
    */
   variant?: string
   /** @modelberry
@@ -224,7 +224,7 @@ export interface ContentfulTopicSection {
    * - {@type Array}
    * - {@itemsType Link}
    * - {@itemsLinkType Entry}
-   * - {@itemsValidations validationF}
+   * - {@itemsValidations linkContentType-topic}
    * - {@widgetId entryLinksEditor}
    * - {@helpText Eén of meerder onderwerpen die worden weergegeven in de sectie}
    */
@@ -270,7 +270,7 @@ export interface ContentfulTopicSection {
    * - {@type Symbol}
    * - {@widgetId slugEditor}
    * - {@helpText Voorbeeld: mijn-event-id}
-   * - {@validations validationG}
+   * - {@validations unique-true}
    */
   eventId?: string
   /** @modelberry
@@ -278,7 +278,7 @@ export interface ContentfulTopicSection {
    * - {@type Symbol}
    * - {@widgetId dropdown}
    * - {@helpText Kies het thema voor deze sectie}
-   * - {@validations validationH}
+   * - {@validations in-glacierLight-glacierDark}
    */
   theme?: string
   /** @modelberry
@@ -329,7 +329,7 @@ export interface ContentfulTopic {
    * - {@itemsLinkType Asset}
    * - {@widgetId assetGalleryEditor}
    * - {@helpText Afbeelding bij het onderwerp}
-   * - {@validations validationI}
+   * - {@validations size-min1-max4}
    */
   media?: string
   /** @modelberry
@@ -337,7 +337,7 @@ export interface ContentfulTopic {
    * - {@type Symbol}
    * - {@widgetId dropdown}
    * - {@helpText Icoon bij het onderwerp}
-   * - {@validations validationJ}
+   * - {@validations in-activity-airplay-alert-circle}
    */
   icon?: string
   /** @modelberry
@@ -345,7 +345,7 @@ export interface ContentfulTopic {
    * - {@type Array}
    * - {@itemsType Link}
    * - {@itemsLinkType Entry}
-   * - {@itemsValidations validationC}
+   * - {@itemsValidations linkContentType-action}
    * - {@widgetId entryLinksEditor}
    * - {@helpText Eén of meerdere acties bij het onderwerp. Een actie heeft een eigen naam en kan ook linken naar een extern bron.}
    */
@@ -355,7 +355,7 @@ export interface ContentfulTopic {
    * - {@type Link}
    * - {@linkType Asset}
    * - {@widgetId assetLinkEditor}
-   * - {@validations validationK}
+   * - {@validations linkMimetypeGroup-image}
    */
   poster?: string
   /** @modelberry
@@ -364,7 +364,7 @@ export interface ContentfulTopic {
    * - {@linkType Entry}
    * - {@widgetId entryLinkEditor}
    * - {@helpText Voeg Youtube/Vimeo embed code toe. Note: Media embed ondersteund alleen Embed-type: html}
-   * - {@validations validationL}
+   * - {@validations linkContentType-embed}
    */
   mediaEmbed?: string
   /** @modelberry
@@ -398,7 +398,7 @@ export interface ContentfulTextSection {
    * - {@name Variant}
    * - {@type Symbol}
    * - {@widgetId dropdown}
-   * - {@validations validationM}
+   * - {@validations in-text}
    */
   variant?: string
   /** @modelberry
@@ -407,7 +407,7 @@ export interface ContentfulTextSection {
    * - {@type RichText}
    * - {@widgetId richTextEditor}
    * - {@helpText Eenvoudig opgemaakte tekstveld met kopjes en afbeeldingen}
-   * - {@validations validationN validationO}
+   * - {@validations enabledMarks-bold-italic-underline unknown}
    */
   text: string
   /** @modelberry
@@ -415,7 +415,7 @@ export interface ContentfulTextSection {
    * - {@type Symbol}
    * - {@widgetId slugEditor}
    * - {@helpText Voorbeeld: mijn-event-id}
-   * - {@validations validationG}
+   * - {@validations unique-true}
    */
   eventId?: string
   /** @modelberry
@@ -464,7 +464,7 @@ export interface ContentfulNavigationSegment {
    * - {@type Array}
    * - {@itemsType Link}
    * - {@itemsLinkType Entry}
-   * - {@itemsValidations validationC}
+   * - {@itemsValidations linkContentType-action}
    * - {@widgetId entryLinksEditor}
    * - {@helpText De pagina's in dit navigatie segment.}
    */
@@ -501,7 +501,7 @@ export interface ContentfulPage {
    * - {@type Symbol}
    * - {@widgetId singleLine}
    * - {@helpText Laatste deel van de URL naar deze pagina. Bijvoorbeeld: www.mijnsite.nl/stel-dit-deel-hier-in}
-   * - {@validations validationP validationG}
+   * - {@validations regexp-1 unique-true}
    */
   path: string
   /** @modelberry
@@ -510,7 +510,7 @@ export interface ContentfulPage {
    * - {@type Array}
    * - {@itemsType Link}
    * - {@itemsLinkType Entry}
-   * - {@itemsValidations validationQ}
+   * - {@itemsValidations linkContentType-navigationSection-tableSection-textSection}
    * - {@widgetId entryLinksEditor}
    * - {@helpText Kies de secties die met elkaar deze pagina vormen}
    */
@@ -520,7 +520,7 @@ export interface ContentfulPage {
    * - {@type Symbol}
    * - {@widgetId dropdown}
    * - {@helpText Kies het thema voor deze pagina}
-   * - {@validations validationH}
+   * - {@validations in-glacierLight-glacierDark}
    */
   theme?: string
   /** @modelberry
@@ -535,7 +535,7 @@ export interface ContentfulPage {
    * - {@type Symbol}
    * - {@widgetId singleLine}
    * - {@helpText Omschrijving van de pagina, gebruikt door zoek machines zoals Google}
-   * - {@validations validationA}
+   * - {@validations size-min0-max155}
    */
   seoDescription?: string
   /** @modelberry
@@ -544,7 +544,7 @@ export interface ContentfulPage {
    * - {@linkType Asset}
    * - {@widgetId assetLinkEditor}
    * - {@helpText Afbeelding bij de pagina, wordt meegegeven aan een link en weergegeven door social media}
-   * - {@validations validationK}
+   * - {@validations linkMimetypeGroup-image}
    */
   seoImage?: string
   /** @modelberry
@@ -615,7 +615,7 @@ export interface ContentfulGlobals {
    * - {@type Link}
    * - {@linkType Asset}
    * - {@widgetId assetLinkEditor}
-   * - {@validations validationK}
+   * - {@validations linkMimetypeGroup-image}
    */
   siteImage?: string
   /** @modelberry
@@ -623,7 +623,7 @@ export interface ContentfulGlobals {
    * - {@type Array}
    * - {@itemsType Link}
    * - {@itemsLinkType Entry}
-   * - {@itemsValidations validationL}
+   * - {@itemsValidations linkContentType-embed}
    * - {@widgetId entryLinksEditor}
    */
   siteEmbeds?: string
@@ -670,7 +670,7 @@ export interface ContentfulEmbed {
    * - {@name Type}
    * - {@type Symbol}
    * - {@widgetId dropdown}
-   * - {@validations validationR}
+   * - {@validations in-html-js-action-js-app}
    */
   type?: string
   /** @modelberry
@@ -717,7 +717,7 @@ export interface ContentfulAction {
    * - {@name Icon}
    * - {@type Symbol}
    * - {@widgetId dropdown}
-   * - {@validations validationS}
+   * - {@validations in-activity-airplay-alert-circle-19}
    */
   icon?: string
   /** @modelberry
@@ -726,7 +726,7 @@ export interface ContentfulAction {
    * - {@linkType Entry}
    * - {@widgetId entryLinkEditor}
    * - {@helpText De pagina waar de actie naar linkt (of gebruik de URL)}
-   * - {@validations validationT}
+   * - {@validations linkContentType-page}
    */
   page?: string
   /** @modelberry
@@ -734,7 +734,7 @@ export interface ContentfulAction {
    * - {@type Symbol}
    * - {@widgetId singleLine}
    * - {@helpText De URL waar de actie naar linkt (of gebruik de paginalink)}
-   * - {@validations validationU}
+   * - {@validations regexp-2}
    */
   url?: string
   /** @modelberry
@@ -756,7 +756,7 @@ export interface ContentfulAction {
    * - {@type Symbol}
    * - {@widgetId slugEditor}
    * - {@helpText Voorbeeld: mijn-event-id}
-   * - {@validations validationG}
+   * - {@validations unique-true}
    */
   eventId?: string
   /** @modelberry
@@ -772,11 +772,13 @@ export interface ContentfulAction {
     Array [
       "./dummy/validations.ts",
       "export const modelberryPluginData: ModelberryPluginData = {
-  validationA: { size: { max: 155, min: 0 } },
-  validationB: { linkContentType: ['testAction'] },
-  validationC: { linkContentType: ['action'] },
-  validationD: { linkContentType: ['navigationSegment'] },
-  validationE: {
+  'size-min0-max155': { size: { max: 155, min: 0 } },
+  'linkContentType-testAction': { linkContentType: ['testAction'] },
+  'linkContentType-action': { linkContentType: ['action'] },
+  'linkContentType-navigationSegment': {
+    linkContentType: ['navigationSegment'],
+  },
+  'in-block-card-divider': {
     in: [
       'block',
       'card',
@@ -791,11 +793,11 @@ export interface ContentfulAction {
       'video',
     ],
   },
-  validationF: { linkContentType: ['topic'] },
-  validationG: { unique: true },
-  validationH: { in: ['glacierLight', 'glacierDark'] },
-  validationI: { size: { min: 1, max: 4 } },
-  validationJ: {
+  'linkContentType-topic': { linkContentType: ['topic'] },
+  'unique-true': { unique: true },
+  'in-glacierLight-glacierDark': { in: ['glacierLight', 'glacierDark'] },
+  'size-min1-max4': { size: { min: 1, max: 4 } },
+  'in-activity-airplay-alert-circle': {
     in: [
       'activity',
       'airplay',
@@ -1081,14 +1083,14 @@ export interface ContentfulAction {
       'zoom-out',
     ],
   },
-  validationK: { linkMimetypeGroup: ['image'] },
-  validationL: { linkContentType: ['embed'] },
-  validationM: { in: ['text'] },
-  validationN: {
+  'linkMimetypeGroup-image': { linkMimetypeGroup: ['image'] },
+  'linkContentType-embed': { linkContentType: ['embed'] },
+  'in-text': { in: ['text'] },
+  'enabledMarks-bold-italic-underline': {
     enabledMarks: ['bold', 'italic', 'underline', 'code'],
     message: 'Only bold, italic, underline, and code marks are allowed',
   },
-  validationO: {
+  unknown: {
     nodes: {
       'embedded-entry-block': [{ linkContentType: ['embed', 'topicSection'] }],
       'embedded-entry-inline': [
@@ -1096,11 +1098,11 @@ export interface ContentfulAction {
       ],
     },
   },
-  validationP: {
+  'regexp-1': {
     message: 'Please use a valid path: /this/is/a/valid/path/with/:slug',
     regexp: { pattern: '^\\\\\\\\/[a-z0-9:\\\\\\\\._/~%\\\\\\\\-\\\\\\\\+&\\\\\\\\#\\\\\\\\?!=\\\\\\\\(\\\\\\\\)@]*$' },
   },
-  validationQ: {
+  'linkContentType-navigationSection-tableSection-textSection': {
     linkContentType: [
       'navigationSection',
       'tableSection',
@@ -1108,7 +1110,7 @@ export interface ContentfulAction {
       'topicSection',
     ],
   },
-  validationR: {
+  'in-html-js-action-js-app': {
     in: [
       'html',
       'js-action',
@@ -1118,7 +1120,7 @@ export interface ContentfulAction {
       'youtube',
     ],
   },
-  validationS: {
+  'in-activity-airplay-alert-circle-19': {
     in: [
       'activity',
       'airplay',
@@ -1404,8 +1406,8 @@ export interface ContentfulAction {
       'Github',
     ],
   },
-  validationT: { linkContentType: ['page'] },
-  validationU: {
+  'linkContentType-page': { linkContentType: ['page'] },
+  'regexp-2': {
     message: 'Please use a valid url: https://this/is/a/valid/url',
     regexp: {
       pattern:
@@ -1428,7 +1430,7 @@ export interface ContentfulTestTopic {
    * - {@name Abstract}
    * - {@type Symbol}
    * - {@widgetId singleLine}
-   * - {@validations validationA}
+   * - {@validations size-min0-max155}
    */
   abstract?: string
   /** @modelberry
@@ -1436,7 +1438,7 @@ export interface ContentfulTestTopic {
    * - {@type Array}
    * - {@itemsType Link}
    * - {@itemsLinkType Entry}
-   * - {@itemsValidations validationB}
+   * - {@itemsValidations linkContentType-testAction}
    * - {@widgetId entryLinksEditor}
    */
   actions?: string
@@ -1473,8 +1475,8 @@ export interface ContentfulTestTopic {
     Array [
       "./dummy/validations.ts",
       "export const modelberryPluginData: ModelberryPluginData = {
-  validationA: { size: { max: 155, min: 0 } },
-  validationB: { linkContentType: ['testAction'] },
+  'size-min0-max155': { size: { max: 155, min: 0 } },
+  'linkContentType-testAction': { linkContentType: ['testAction'] },
 }
 ",
     ],
@@ -1556,7 +1558,7 @@ export interface ContentfulTestTopic {
    * - {@name Abstract}
    * - {@type Symbol}
    * - {@widgetId singleLine}
-   * - {@validations validationA}
+   * - {@validations size-min0-max155}
    */
   abstract?: string
   /** @modelberry
@@ -1564,7 +1566,7 @@ export interface ContentfulTestTopic {
    * - {@type Array}
    * - {@itemsType Link}
    * - {@itemsLinkType Entry}
-   * - {@itemsValidations validationB}
+   * - {@itemsValidations linkContentType-testAction}
    * - {@widgetId entryLinksEditor}
    */
   actions?: string
@@ -1668,7 +1670,7 @@ export interface ContentfulNavigationSection {
    * - {@type Link}
    * - {@linkType Entry}
    * - {@widgetId entryLinkEditor}
-   * - {@validations validationC}
+   * - {@validations linkContentType-action}
    */
   logoAction?: string
   /** @modelberry
@@ -1676,7 +1678,7 @@ export interface ContentfulNavigationSection {
    * - {@type Array}
    * - {@itemsType Link}
    * - {@itemsLinkType Entry}
-   * - {@itemsValidations validationD}
+   * - {@itemsValidations linkContentType-navigationSegment}
    * - {@widgetId entryLinksEditor}
    */
   header?: string
@@ -1685,7 +1687,7 @@ export interface ContentfulNavigationSection {
    * - {@type Array}
    * - {@itemsType Link}
    * - {@itemsLinkType Entry}
-   * - {@itemsValidations validationD}
+   * - {@itemsValidations linkContentType-navigationSegment}
    * - {@widgetId entryLinksEditor}
    */
   footer?: string
@@ -1694,7 +1696,7 @@ export interface ContentfulNavigationSection {
    * - {@type Link}
    * - {@linkType Entry}
    * - {@widgetId entryLinkEditor}
-   * - {@validations validationD}
+   * - {@validations linkContentType-navigationSegment}
    */
   social?: string
   /** @modelberry
@@ -1702,7 +1704,7 @@ export interface ContentfulNavigationSection {
    * - {@type Link}
    * - {@linkType Entry}
    * - {@widgetId entryLinkEditor}
-   * - {@validations validationD}
+   * - {@validations linkContentType-navigationSegment}
    */
   actions?: string
   /** @modelberry
@@ -1710,7 +1712,7 @@ export interface ContentfulNavigationSection {
    * - {@type Link}
    * - {@linkType Entry}
    * - {@widgetId entryLinkEditor}
-   * - {@validations validationD}
+   * - {@validations linkContentType-navigationSegment}
    */
   legal?: string
   /** @modelberry
@@ -1718,7 +1720,7 @@ export interface ContentfulNavigationSection {
    * - {@type Array}
    * - {@itemsType Link}
    * - {@itemsLinkType Entry}
-   * - {@itemsValidations validationD}
+   * - {@itemsValidations linkContentType-navigationSegment}
    * - {@widgetId entryLinksEditor}
    */
   information?: string
@@ -1727,7 +1729,7 @@ export interface ContentfulNavigationSection {
    * - {@type Array}
    * - {@itemsType Link}
    * - {@itemsLinkType Entry}
-   * - {@itemsValidations validationD}
+   * - {@itemsValidations linkContentType-navigationSegment}
    * - {@widgetId entryLinksEditor}
    */
   sitemap?: string
@@ -1756,7 +1758,7 @@ export interface ContentfulTopicSection {
    * - {@type Symbol}
    * - {@widgetId dropdown}
    * - {@helpText Hoe de sectie wordt weergegeven}
-   * - {@validations validationE}
+   * - {@validations in-block-card-divider}
    */
   variant?: string
   /** @modelberry
@@ -1764,7 +1766,7 @@ export interface ContentfulTopicSection {
    * - {@type Array}
    * - {@itemsType Link}
    * - {@itemsLinkType Entry}
-   * - {@itemsValidations validationF}
+   * - {@itemsValidations linkContentType-topic}
    * - {@widgetId entryLinksEditor}
    * - {@helpText Eén of meerder onderwerpen die worden weergegeven in de sectie}
    */
@@ -1810,7 +1812,7 @@ export interface ContentfulTopicSection {
    * - {@type Symbol}
    * - {@widgetId slugEditor}
    * - {@helpText Voorbeeld: mijn-event-id}
-   * - {@validations validationG}
+   * - {@validations unique-true}
    */
   eventId?: string
   /** @modelberry
@@ -1818,7 +1820,7 @@ export interface ContentfulTopicSection {
    * - {@type Symbol}
    * - {@widgetId dropdown}
    * - {@helpText Kies het thema voor deze sectie}
-   * - {@validations validationH}
+   * - {@validations in-glacierLight-glacierDark}
    */
   theme?: string
   /** @modelberry
@@ -1869,7 +1871,7 @@ export interface ContentfulTopic {
    * - {@itemsLinkType Asset}
    * - {@widgetId assetGalleryEditor}
    * - {@helpText Afbeelding bij het onderwerp}
-   * - {@validations validationI}
+   * - {@validations size-min1-max4}
    */
   media?: string
   /** @modelberry
@@ -1877,7 +1879,7 @@ export interface ContentfulTopic {
    * - {@type Symbol}
    * - {@widgetId dropdown}
    * - {@helpText Icoon bij het onderwerp}
-   * - {@validations validationJ}
+   * - {@validations in-activity-airplay-alert-circle}
    */
   icon?: string
   /** @modelberry
@@ -1885,7 +1887,7 @@ export interface ContentfulTopic {
    * - {@type Array}
    * - {@itemsType Link}
    * - {@itemsLinkType Entry}
-   * - {@itemsValidations validationC}
+   * - {@itemsValidations linkContentType-action}
    * - {@widgetId entryLinksEditor}
    * - {@helpText Eén of meerdere acties bij het onderwerp. Een actie heeft een eigen naam en kan ook linken naar een extern bron.}
    */
@@ -1895,7 +1897,7 @@ export interface ContentfulTopic {
    * - {@type Link}
    * - {@linkType Asset}
    * - {@widgetId assetLinkEditor}
-   * - {@validations validationK}
+   * - {@validations linkMimetypeGroup-image}
    */
   poster?: string
   /** @modelberry
@@ -1904,7 +1906,7 @@ export interface ContentfulTopic {
    * - {@linkType Entry}
    * - {@widgetId entryLinkEditor}
    * - {@helpText Voeg Youtube/Vimeo embed code toe. Note: Media embed ondersteund alleen Embed-type: html}
-   * - {@validations validationL}
+   * - {@validations linkContentType-embed}
    */
   mediaEmbed?: string
   /** @modelberry
@@ -1938,7 +1940,7 @@ export interface ContentfulTextSection {
    * - {@name Variant}
    * - {@type Symbol}
    * - {@widgetId dropdown}
-   * - {@validations validationM}
+   * - {@validations in-text}
    */
   variant?: string
   /** @modelberry
@@ -1947,7 +1949,7 @@ export interface ContentfulTextSection {
    * - {@type RichText}
    * - {@widgetId richTextEditor}
    * - {@helpText Eenvoudig opgemaakte tekstveld met kopjes en afbeeldingen}
-   * - {@validations validationN validationO}
+   * - {@validations enabledMarks-bold-italic-underline unknown}
    */
   text: string
   /** @modelberry
@@ -1955,7 +1957,7 @@ export interface ContentfulTextSection {
    * - {@type Symbol}
    * - {@widgetId slugEditor}
    * - {@helpText Voorbeeld: mijn-event-id}
-   * - {@validations validationG}
+   * - {@validations unique-true}
    */
   eventId?: string
   /** @modelberry
@@ -2004,7 +2006,7 @@ export interface ContentfulNavigationSegment {
    * - {@type Array}
    * - {@itemsType Link}
    * - {@itemsLinkType Entry}
-   * - {@itemsValidations validationC}
+   * - {@itemsValidations linkContentType-action}
    * - {@widgetId entryLinksEditor}
    * - {@helpText De pagina's in dit navigatie segment.}
    */
@@ -2041,7 +2043,7 @@ export interface ContentfulPage {
    * - {@type Symbol}
    * - {@widgetId singleLine}
    * - {@helpText Laatste deel van de URL naar deze pagina. Bijvoorbeeld: www.mijnsite.nl/stel-dit-deel-hier-in}
-   * - {@validations validationP validationG}
+   * - {@validations regexp-1 unique-true}
    */
   path: string
   /** @modelberry
@@ -2050,7 +2052,7 @@ export interface ContentfulPage {
    * - {@type Array}
    * - {@itemsType Link}
    * - {@itemsLinkType Entry}
-   * - {@itemsValidations validationQ}
+   * - {@itemsValidations linkContentType-navigationSection-tableSection-textSection}
    * - {@widgetId entryLinksEditor}
    * - {@helpText Kies de secties die met elkaar deze pagina vormen}
    */
@@ -2060,7 +2062,7 @@ export interface ContentfulPage {
    * - {@type Symbol}
    * - {@widgetId dropdown}
    * - {@helpText Kies het thema voor deze pagina}
-   * - {@validations validationH}
+   * - {@validations in-glacierLight-glacierDark}
    */
   theme?: string
   /** @modelberry
@@ -2075,7 +2077,7 @@ export interface ContentfulPage {
    * - {@type Symbol}
    * - {@widgetId singleLine}
    * - {@helpText Omschrijving van de pagina, gebruikt door zoek machines zoals Google}
-   * - {@validations validationA}
+   * - {@validations size-min0-max155}
    */
   seoDescription?: string
   /** @modelberry
@@ -2084,7 +2086,7 @@ export interface ContentfulPage {
    * - {@linkType Asset}
    * - {@widgetId assetLinkEditor}
    * - {@helpText Afbeelding bij de pagina, wordt meegegeven aan een link en weergegeven door social media}
-   * - {@validations validationK}
+   * - {@validations linkMimetypeGroup-image}
    */
   seoImage?: string
   /** @modelberry
@@ -2155,7 +2157,7 @@ export interface ContentfulGlobals {
    * - {@type Link}
    * - {@linkType Asset}
    * - {@widgetId assetLinkEditor}
-   * - {@validations validationK}
+   * - {@validations linkMimetypeGroup-image}
    */
   siteImage?: string
   /** @modelberry
@@ -2163,7 +2165,7 @@ export interface ContentfulGlobals {
    * - {@type Array}
    * - {@itemsType Link}
    * - {@itemsLinkType Entry}
-   * - {@itemsValidations validationL}
+   * - {@itemsValidations linkContentType-embed}
    * - {@widgetId entryLinksEditor}
    */
   siteEmbeds?: string
@@ -2210,7 +2212,7 @@ export interface ContentfulEmbed {
    * - {@name Type}
    * - {@type Symbol}
    * - {@widgetId dropdown}
-   * - {@validations validationR}
+   * - {@validations in-html-js-action-js-app}
    */
   type?: string
   /** @modelberry
@@ -2257,7 +2259,7 @@ export interface ContentfulAction {
    * - {@name Icon}
    * - {@type Symbol}
    * - {@widgetId dropdown}
-   * - {@validations validationS}
+   * - {@validations in-activity-airplay-alert-circle-19}
    */
   icon?: string
   /** @modelberry
@@ -2266,7 +2268,7 @@ export interface ContentfulAction {
    * - {@linkType Entry}
    * - {@widgetId entryLinkEditor}
    * - {@helpText De pagina waar de actie naar linkt (of gebruik de URL)}
-   * - {@validations validationT}
+   * - {@validations linkContentType-page}
    */
   page?: string
   /** @modelberry
@@ -2274,7 +2276,7 @@ export interface ContentfulAction {
    * - {@type Symbol}
    * - {@widgetId singleLine}
    * - {@helpText De URL waar de actie naar linkt (of gebruik de paginalink)}
-   * - {@validations validationU}
+   * - {@validations regexp-2}
    */
   url?: string
   /** @modelberry
@@ -2296,7 +2298,7 @@ export interface ContentfulAction {
    * - {@type Symbol}
    * - {@widgetId slugEditor}
    * - {@helpText Voorbeeld: mijn-event-id}
-   * - {@validations validationG}
+   * - {@validations unique-true}
    */
   eventId?: string
   /** @modelberry
@@ -2312,11 +2314,13 @@ export interface ContentfulAction {
     Array [
       "./dummy/validations.ts",
       "export const modelberryPluginData: ModelberryPluginData = {
-  validationA: { size: { max: 155, min: 0 } },
-  validationB: { linkContentType: ['testAction'] },
-  validationC: { linkContentType: ['action'] },
-  validationD: { linkContentType: ['navigationSegment'] },
-  validationE: {
+  'size-min0-max155': { size: { max: 155, min: 0 } },
+  'linkContentType-testAction': { linkContentType: ['testAction'] },
+  'linkContentType-action': { linkContentType: ['action'] },
+  'linkContentType-navigationSegment': {
+    linkContentType: ['navigationSegment'],
+  },
+  'in-block-card-divider': {
     in: [
       'block',
       'card',
@@ -2331,11 +2335,11 @@ export interface ContentfulAction {
       'video',
     ],
   },
-  validationF: { linkContentType: ['topic'] },
-  validationG: { unique: true },
-  validationH: { in: ['glacierLight', 'glacierDark'] },
-  validationI: { size: { min: 1, max: 4 } },
-  validationJ: {
+  'linkContentType-topic': { linkContentType: ['topic'] },
+  'unique-true': { unique: true },
+  'in-glacierLight-glacierDark': { in: ['glacierLight', 'glacierDark'] },
+  'size-min1-max4': { size: { min: 1, max: 4 } },
+  'in-activity-airplay-alert-circle': {
     in: [
       'activity',
       'airplay',
@@ -2621,14 +2625,14 @@ export interface ContentfulAction {
       'zoom-out',
     ],
   },
-  validationK: { linkMimetypeGroup: ['image'] },
-  validationL: { linkContentType: ['embed'] },
-  validationM: { in: ['text'] },
-  validationN: {
+  'linkMimetypeGroup-image': { linkMimetypeGroup: ['image'] },
+  'linkContentType-embed': { linkContentType: ['embed'] },
+  'in-text': { in: ['text'] },
+  'enabledMarks-bold-italic-underline': {
     enabledMarks: ['bold', 'italic', 'underline', 'code'],
     message: 'Only bold, italic, underline, and code marks are allowed',
   },
-  validationO: {
+  unknown: {
     nodes: {
       'embedded-entry-block': [{ linkContentType: ['embed', 'topicSection'] }],
       'embedded-entry-inline': [
@@ -2636,11 +2640,11 @@ export interface ContentfulAction {
       ],
     },
   },
-  validationP: {
+  'regexp-1': {
     message: 'Please use a valid path: /this/is/a/valid/path/with/:slug',
     regexp: { pattern: '^\\\\\\\\/[a-z0-9:\\\\\\\\._/~%\\\\\\\\-\\\\\\\\+&\\\\\\\\#\\\\\\\\?!=\\\\\\\\(\\\\\\\\)@]*$' },
   },
-  validationQ: {
+  'linkContentType-navigationSection-tableSection-textSection': {
     linkContentType: [
       'navigationSection',
       'tableSection',
@@ -2648,7 +2652,7 @@ export interface ContentfulAction {
       'topicSection',
     ],
   },
-  validationR: {
+  'in-html-js-action-js-app': {
     in: [
       'html',
       'js-action',
@@ -2658,7 +2662,7 @@ export interface ContentfulAction {
       'youtube',
     ],
   },
-  validationS: {
+  'in-activity-airplay-alert-circle-19': {
     in: [
       'activity',
       'airplay',
@@ -2944,8 +2948,8 @@ export interface ContentfulAction {
       'Github',
     ],
   },
-  validationT: { linkContentType: ['page'] },
-  validationU: {
+  'linkContentType-page': { linkContentType: ['page'] },
+  'regexp-2': {
     message: 'Please use a valid url: https://this/is/a/valid/url',
     regexp: {
       pattern:

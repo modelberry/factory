@@ -1,4 +1,5 @@
 import deepEqual from 'deep-equal'
+import { getValidationName } from './get-validation-name'
 
 export interface GetExistingValidation {
   /** Validation to test */
@@ -49,11 +50,10 @@ export const addValidations = ({
       continue
     }
     // New validation, add to validations object with a new name
-    const codeAChar = 'A'.charCodeAt(0)
-    const validationCount = Object.keys(validations).length
-    const validationName = `validation${String.fromCharCode(
-      codeAChar + validationCount
-    )}`
+    const validationName = getValidationName({
+      val: newValidation,
+      vals: validations,
+    })
     validations[validationName] = newValidation
     validationNames.push(validationName)
     tags[tag] = validationNames.join(' ')
