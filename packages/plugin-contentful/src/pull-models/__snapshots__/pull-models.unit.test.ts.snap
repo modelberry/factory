@@ -234,37 +234,37 @@ export interface ContentfulTopicSection {
    * - {@type Boolean}
    * - {@widgetId boolean}
    */
-  hideIcon?: string
+  hideIcon?: boolean
   /** @modelberry
    * - {@name Hide media}
    * - {@type Boolean}
    * - {@widgetId boolean}
    */
-  hideMedia?: string
+  hideMedia?: boolean
   /** @modelberry
    * - {@name Hide heading}
    * - {@type Boolean}
    * - {@widgetId boolean}
    */
-  hideHeading?: string
+  hideHeading?: boolean
   /** @modelberry
    * - {@name Hide abstract}
    * - {@type Boolean}
    * - {@widgetId boolean}
    */
-  hideAbstract?: string
+  hideAbstract?: boolean
   /** @modelberry
    * - {@name Hide action}
    * - {@type Boolean}
    * - {@widgetId boolean}
    */
-  hideAction?: string
+  hideAction?: boolean
   /** @modelberry
    * - {@name Reversed order}
    * - {@type Boolean}
    * - {@widgetId boolean}
    */
-  reversedOrder?: string
+  reversedOrder?: boolean
   /** @modelberry
    * - {@name Event id}
    * - {@type Symbol}
@@ -1780,37 +1780,37 @@ export interface ContentfulTopicSection {
    * - {@type Boolean}
    * - {@widgetId boolean}
    */
-  hideIcon?: string
+  hideIcon?: boolean
   /** @modelberry
    * - {@name Hide media}
    * - {@type Boolean}
    * - {@widgetId boolean}
    */
-  hideMedia?: string
+  hideMedia?: boolean
   /** @modelberry
    * - {@name Hide heading}
    * - {@type Boolean}
    * - {@widgetId boolean}
    */
-  hideHeading?: string
+  hideHeading?: boolean
   /** @modelberry
    * - {@name Hide abstract}
    * - {@type Boolean}
    * - {@widgetId boolean}
    */
-  hideAbstract?: string
+  hideAbstract?: boolean
   /** @modelberry
    * - {@name Hide action}
    * - {@type Boolean}
    * - {@widgetId boolean}
    */
-  hideAction?: string
+  hideAction?: boolean
   /** @modelberry
    * - {@name Reversed order}
    * - {@type Boolean}
    * - {@widgetId boolean}
    */
-  reversedOrder?: string
+  reversedOrder?: boolean
   /** @modelberry
    * - {@name Event id}
    * - {@type Symbol}
