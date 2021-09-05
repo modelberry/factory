@@ -5,10 +5,15 @@ import { addValidations } from './add-validations'
 
 export interface CreateFields {
   contentFields: ContentFields[]
+  editorInterfaces: Record<string, any>
   validations: Record<string, any>
 }
 
-export const createFields = ({ contentFields, validations }: CreateFields) => {
+export const createFields = ({
+  contentFields,
+  editorInterfaces,
+  validations,
+}: CreateFields) => {
   const fields: Record<string, any> = {}
   for (const contentField of contentFields) {
     const inlineTags: Record<string, any> = {}
@@ -43,6 +48,12 @@ export const createFields = ({ contentFields, validations }: CreateFields) => {
         keys: ['linkType'],
       })
     }
+    copyKeysIfExists({
+      asTag: true,
+      keys: ['widgetId', 'widgetNamespace', 'helpText'],
+      source: editorInterfaces[contentField.id],
+      target: inlineTags,
+    })
     if (contentField.validations) {
       addValidations({
         add: contentField.validations,

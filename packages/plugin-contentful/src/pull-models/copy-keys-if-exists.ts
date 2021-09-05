@@ -8,7 +8,7 @@ export interface CopyKeysIfExists {
   // Key
   keys: string[]
   // Source object
-  source: Record<string, any>
+  source?: Record<string, any>
   // Target object
   target: Record<string, any>
 }
@@ -20,6 +20,7 @@ export const copyKeysIfExists = ({
   target,
   keys,
 }: CopyKeysIfExists) => {
+  if (!source) return
   for (const key of keys) {
     if (!source[key]) continue
     let targetKey = key

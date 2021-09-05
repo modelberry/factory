@@ -10,6 +10,7 @@ import chalk from 'chalk'
 import { copyKeysIfExists } from './copy-keys-if-exists'
 import { createFields } from './create-fields'
 import { writeSourceFile } from './write-source-file'
+import { getEditorInterfaces } from './get-editor-interfaces'
 
 export interface PullModels {
   contentfulEnvironment: Environment
@@ -25,16 +26,14 @@ export const pullModels = async ({
   const log = console.log
   const contentTypes: ContentType[] = []
   if (options.type) {
-    const response = await contentfulEnvironment.getContentType(options.type)
-    contentTypes.push(response)
+    const ctResponse = await contentfulEnvironment.getContentType(options.type)
+    contentTypes.push(ctResponse)
   } else {
-    const response = await contentfulEnvironment.getContentTypes()
-    response.items.forEach((ct) => contentTypes.push(ct))
+    const ctResponse = await contentfulEnvironment.getContentTypes()
+    ctResponse.items.forEach((ct) => contentTypes.push(ct))
   }
   const validations: Record<string, any> = {}
   for (const contentType of contentTypes) {
-    // const editorInterface = await contentType.getEditorInterface()
-    // log(editorInterface)
     const inlineTags: Record<string, any> = {}
     inlineTags['@plugin'] = '"@modelberry/plugin-contentful/plain"'
     inlineTags['@type'] = contentType.name
@@ -44,8 +43,10 @@ export const pullModels = async ({
       source: contentType,
       target: inlineTags,
     })
+    const editorInterfaces = await getEditorInterfaces({ contentType })
     const fields = createFields({
       contentFields: contentType.fields,
+      editorInterfaces,
       validations,
     })
     const interfaceDeclaration = createTsInterface({
@@ -68,6 +69,5 @@ export const pullModels = async ({
     path,
   })
 
-  // TODO: Fetch editor interface and set @helpText and @widget
   // TODO: Write proper tsSyntaxKind, all are StringKeyword string now
 }

@@ -44,6 +44,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Abstract}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
 * - {@validations validationA}
 ",
                     },
@@ -106,6 +108,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@itemsType Link}
 * - {@itemsLinkType Entry}
 * - {@itemsValidations validationB}
+* - {@widgetId entryLinksEditor}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -164,6 +168,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Heading}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -222,6 +228,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Icon}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -282,6 +290,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@type Array}
 * - {@itemsType Link}
 * - {@itemsLinkType Asset}
+* - {@widgetId assetLinksEditor}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -341,6 +351,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@name Poster}
 * - {@type Link}
 * - {@linkType Asset}
+* - {@widgetId assetLinkEditor}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -462,6 +474,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Anchor}
 * - {@type Symbol}
+* - {@widgetNamespace builtin}
+* - {@helpText Voorbeeld: mijn-anchor}
 ",
                     },
                   ],
@@ -520,6 +534,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Description}
 * - {@type Symbol}
+* - {@widgetNamespace builtin}
+* - {@helpText Omschrijving van de actie, voor zoekmachines}
 ",
                     },
                   ],
@@ -874,6 +890,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Title}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -933,6 +951,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@name Logo}
 * - {@type Link}
 * - {@linkType Asset}
+* - {@widgetId assetLinkEditor}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -992,6 +1012,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@name Logo action}
 * - {@type Link}
 * - {@linkType Entry}
+* - {@widgetId entryLinkEditor}
+* - {@widgetNamespace builtin}
 * - {@validations validationC}
 ",
                     },
@@ -1054,6 +1076,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@itemsType Link}
 * - {@itemsLinkType Entry}
 * - {@itemsValidations validationD}
+* - {@widgetId entryLinksEditor}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -1115,6 +1139,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@itemsType Link}
 * - {@itemsLinkType Entry}
 * - {@itemsValidations validationD}
+* - {@widgetId entryLinksEditor}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -1174,6 +1200,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@name Social}
 * - {@type Link}
 * - {@linkType Entry}
+* - {@widgetId entryLinkEditor}
+* - {@widgetNamespace builtin}
 * - {@validations validationD}
 ",
                     },
@@ -1234,6 +1262,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@name Actions}
 * - {@type Link}
 * - {@linkType Entry}
+* - {@widgetId entryLinkEditor}
+* - {@widgetNamespace builtin}
 * - {@validations validationD}
 ",
                     },
@@ -1294,6 +1324,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@name Legal}
 * - {@type Link}
 * - {@linkType Entry}
+* - {@widgetId entryLinkEditor}
+* - {@widgetNamespace builtin}
 * - {@validations validationD}
 ",
                     },
@@ -1356,6 +1388,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@itemsType Link}
 * - {@itemsLinkType Entry}
 * - {@itemsValidations validationD}
+* - {@widgetId entryLinksEditor}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -1417,6 +1451,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@itemsType Link}
 * - {@itemsLinkType Entry}
 * - {@itemsValidations validationD}
+* - {@widgetId entryLinksEditor}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -1540,6 +1576,9 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@name Titel binnen Contentful}
 * - {@required true}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
+* - {@helpText Alleen gebruikt in Contentful, wordt nooit getoond op de site zelf}
 ",
                     },
                   ],
@@ -1590,6 +1629,9 @@ exports[`Pull content should pull correctly with type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Sectie weergave}
 * - {@type Symbol}
+* - {@widgetId dropdown}
+* - {@widgetNamespace builtin}
+* - {@helpText Hoe de sectie wordt weergegeven}
 * - {@validations validationE}
 ",
                     },
@@ -1652,6 +1694,9 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@itemsType Link}
 * - {@itemsLinkType Entry}
 * - {@itemsValidations validationF}
+* - {@widgetId entryLinksEditor}
+* - {@widgetNamespace builtin}
+* - {@helpText Eén of meerder onderwerpen die worden weergegeven in de sectie}
 ",
                     },
                   ],
@@ -1710,6 +1755,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Hide icon}
 * - {@type Boolean}
+* - {@widgetId boolean}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -1768,6 +1815,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Hide media}
 * - {@type Boolean}
+* - {@widgetId boolean}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -1826,6 +1875,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Hide heading}
 * - {@type Boolean}
+* - {@widgetId boolean}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -1884,6 +1935,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Hide abstract}
 * - {@type Boolean}
+* - {@widgetId boolean}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -1942,6 +1995,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Hide action}
 * - {@type Boolean}
+* - {@widgetId boolean}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -2000,6 +2055,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Reversed order}
 * - {@type Boolean}
+* - {@widgetId boolean}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -2058,6 +2115,9 @@ exports[`Pull content should pull correctly with type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Event id}
 * - {@type Symbol}
+* - {@widgetId slugEditor}
+* - {@widgetNamespace builtin}
+* - {@helpText Voorbeeld: mijn-event-id}
 * - {@validations validationG}
 ",
                     },
@@ -2117,6 +2177,9 @@ exports[`Pull content should pull correctly with type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Sectie thema}
 * - {@type Symbol}
+* - {@widgetId dropdown}
+* - {@widgetNamespace builtin}
+* - {@helpText Kies het thema voor deze sectie}
 * - {@validations validationH}
 ",
                     },
@@ -2177,6 +2240,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@disabled true}
 * - {@name 1.0.0}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -2300,6 +2365,9 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@name Titel binnen Contentful}
 * - {@required true}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
+* - {@helpText Alleen gebruikt in Contentful, wordt nooit getoond op de site zelf}
 ",
                     },
                   ],
@@ -2350,6 +2418,9 @@ exports[`Pull content should pull correctly with type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Onderwerp titel}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
+* - {@helpText Titel van het onderwerp, zonder punt aan eind}
 ",
                     },
                   ],
@@ -2408,6 +2479,9 @@ exports[`Pull content should pull correctly with type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Onderwerp tekst}
 * - {@type Text}
+* - {@widgetId multipleLine}
+* - {@widgetNamespace builtin}
+* - {@helpText Korte omschrijving van het onderwerp, sluit af met een punt}
 ",
                     },
                   ],
@@ -2468,6 +2542,9 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@type Array}
 * - {@itemsType Link}
 * - {@itemsLinkType Asset}
+* - {@widgetId assetGalleryEditor}
+* - {@widgetNamespace builtin}
+* - {@helpText Afbeelding bij het onderwerp}
 * - {@validations validationI}
 ",
                     },
@@ -2527,6 +2604,9 @@ exports[`Pull content should pull correctly with type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Onderwerp icoon}
 * - {@type Symbol}
+* - {@widgetId dropdown}
+* - {@widgetNamespace builtin}
+* - {@helpText Icoon bij het onderwerp}
 * - {@validations validationJ}
 ",
                     },
@@ -2589,6 +2669,9 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@itemsType Link}
 * - {@itemsLinkType Entry}
 * - {@itemsValidations validationC}
+* - {@widgetId entryLinksEditor}
+* - {@widgetNamespace builtin}
+* - {@helpText Eén of meerdere acties bij het onderwerp. Een actie heeft een eigen naam en kan ook linken naar een extern bron.}
 ",
                     },
                   ],
@@ -2648,6 +2731,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@name Poster}
 * - {@type Link}
 * - {@linkType Asset}
+* - {@widgetId assetLinkEditor}
+* - {@widgetNamespace builtin}
 * - {@validations validationK}
 ",
                     },
@@ -2708,6 +2793,9 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@name Media embed}
 * - {@type Link}
 * - {@linkType Entry}
+* - {@widgetId entryLinkEditor}
+* - {@widgetNamespace builtin}
+* - {@helpText Voeg Youtube/Vimeo embed code toe. Note: Media embed ondersteund alleen Embed-type: html}
 * - {@validations validationL}
 ",
                     },
@@ -2768,6 +2856,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@disabled true}
 * - {@name 1.0.0}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -2891,6 +2981,9 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@name Titel binnen Contentful}
 * - {@required true}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
+* - {@helpText Alleen gebruikt in Contentful, wordt nooit getoond op de site zelf}
 ",
                     },
                   ],
@@ -2941,6 +3034,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Variant}
 * - {@type Symbol}
+* - {@widgetId dropdown}
+* - {@widgetNamespace builtin}
 * - {@validations validationM}
 ",
                     },
@@ -3001,6 +3096,9 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@name Tekst}
 * - {@required true}
 * - {@type RichText}
+* - {@widgetId richTextEditor}
+* - {@widgetNamespace builtin}
+* - {@helpText Eenvoudig opgemaakte tekstveld met kopjes en afbeeldingen}
 * - {@validations validationN validationO}
 ",
                     },
@@ -3052,6 +3150,9 @@ exports[`Pull content should pull correctly with type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Event id}
 * - {@type Symbol}
+* - {@widgetId slugEditor}
+* - {@widgetNamespace builtin}
+* - {@helpText Voorbeeld: mijn-event-id}
 * - {@validations validationG}
 ",
                     },
@@ -3112,6 +3213,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@disabled true}
 * - {@name 1.0.0}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -3235,6 +3338,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@name Titel binnen Contentful}
 * - {@required true}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@helpText Alleen gebruikt in Contentful, wordt nooit getoond op de site zelf}
 ",
                     },
                   ],
@@ -3285,6 +3390,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Navigatiesegment titel}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@helpText De naam van dit navigatiesegment. Alleen nodig bij meerdere segmenten.}
 ",
                     },
                   ],
@@ -3343,6 +3450,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Segment tekst}
 * - {@type Text}
+* - {@widgetId multipleLine}
+* - {@helpText Tekst voor dit menu segment}
 ",
                     },
                   ],
@@ -3404,6 +3513,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@itemsType Link}
 * - {@itemsLinkType Entry}
 * - {@itemsValidations validationC}
+* - {@widgetId entryLinksEditor}
+* - {@helpText De pagina's in dit navigatie segment.}
 ",
                     },
                   ],
@@ -3586,6 +3697,9 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@name Titel binnen Contentful}
 * - {@required true}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
+* - {@helpText Alleen gebruikt in Contentful, wordt nooit getoond op de site zelf}
 ",
                     },
                   ],
@@ -3637,6 +3751,9 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@name Pagina URL}
 * - {@required true}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
+* - {@helpText Laatste deel van de URL naar deze pagina. Bijvoorbeeld: www.mijnsite.nl/stel-dit-deel-hier-in}
 * - {@validations validationP validationG}
 ",
                     },
@@ -3692,6 +3809,9 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@itemsType Link}
 * - {@itemsLinkType Entry}
 * - {@itemsValidations validationQ}
+* - {@widgetId entryLinksEditor}
+* - {@widgetNamespace builtin}
+* - {@helpText Kies de secties die met elkaar deze pagina vormen}
 ",
                     },
                   ],
@@ -3742,6 +3862,9 @@ exports[`Pull content should pull correctly with type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Paginathema}
 * - {@type Symbol}
+* - {@widgetId dropdown}
+* - {@widgetNamespace builtin}
+* - {@helpText Kies het thema voor deze pagina}
 * - {@validations validationH}
 ",
                     },
@@ -3801,6 +3924,9 @@ exports[`Pull content should pull correctly with type filter 1`] = `
                       "text": "* @modelberry
 * - {@name SEO titel}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
+* - {@helpText Titel van de pagina, gebruikt door zoek machines zoals Google}
 ",
                     },
                   ],
@@ -3859,6 +3985,9 @@ exports[`Pull content should pull correctly with type filter 1`] = `
                       "text": "* @modelberry
 * - {@name SEO omschrijving}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
+* - {@helpText Omschrijving van de pagina, gebruikt door zoek machines zoals Google}
 * - {@validations validationA}
 ",
                     },
@@ -3919,6 +4048,9 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@name SEO afbeelding}
 * - {@type Link}
 * - {@linkType Asset}
+* - {@widgetId assetLinkEditor}
+* - {@widgetNamespace builtin}
+* - {@helpText Afbeelding bij de pagina, wordt meegegeven aan een link en weergegeven door social media}
 * - {@validations validationK}
 ",
                     },
@@ -3979,6 +4111,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@name Seo keywords}
 * - {@type Array}
 * - {@itemsType Symbol}
+* - {@widgetId tagEditor}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -4038,6 +4172,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@disabled true}
 * - {@name 1.0.0}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -4161,6 +4297,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@name Titel binnen Contentful}
 * - {@required true}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@helpText Alleen gebruikt in Contentful, wordt nooit getoond op de site zelf}
 ",
                     },
                   ],
@@ -4211,6 +4349,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Site auteur}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@helpText Beschiknaar in alle secties}
 ",
                     },
                   ],
@@ -4269,6 +4409,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Site omschrijving}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@helpText Omschrijving van de site, gebruikt door zoek machines zoals Google}
 ",
                     },
                   ],
@@ -4327,6 +4469,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Site titel}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@helpText Titel van de site, gebruikt door zoek machines zoals Google}
 ",
                     },
                   ],
@@ -4386,6 +4530,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@name Site sleutelwoorden}
 * - {@type Array}
 * - {@itemsType Symbol}
+* - {@widgetId tagEditor}
+* - {@helpText Sleutelwoorden voor de site, gebruikt door zoek machines zoals Google}
 ",
                     },
                   ],
@@ -4445,6 +4591,7 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@name Site image}
 * - {@type Link}
 * - {@linkType Asset}
+* - {@widgetId assetLinkEditor}
 * - {@validations validationK}
 ",
                     },
@@ -4507,6 +4654,7 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@itemsType Link}
 * - {@itemsLinkType Entry}
 * - {@itemsValidations validationL}
+* - {@widgetId entryLinksEditor}
 ",
                     },
                   ],
@@ -4565,6 +4713,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Direct naar content}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@helpText Tekst voor schermlezers om direct door te gaan naar de content.}
 ",
                     },
                   ],
@@ -4747,6 +4897,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@name Titel binnen Contentful}
 * - {@required true}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@helpText Alleen gebruikt in Contentful, wordt nooit getoond op de site zelf}
 ",
                     },
                   ],
@@ -4797,6 +4949,7 @@ exports[`Pull content should pull correctly with type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Code}
 * - {@type Text}
+* - {@widgetId multipleLine}
 ",
                     },
                   ],
@@ -4855,6 +5008,7 @@ exports[`Pull content should pull correctly with type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Type}
 * - {@type Symbol}
+* - {@widgetId dropdown}
 * - {@validations validationR}
 ",
                     },
@@ -5038,6 +5192,9 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@name Titel binnen Contentful}
 * - {@required true}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
+* - {@helpText Alleen gebruikt in Contentful, wordt nooit getoond op de site zelf}
 ",
                     },
                   ],
@@ -5088,6 +5245,9 @@ exports[`Pull content should pull correctly with type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Actie naam}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
+* - {@helpText Naam van de actie, zonder punt aan eind}
 ",
                     },
                   ],
@@ -5146,6 +5306,9 @@ exports[`Pull content should pull correctly with type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Actie omschrijving}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
+* - {@helpText Omschrijving van de actie, voor zoekmachines}
 ",
                     },
                   ],
@@ -5204,6 +5367,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Icon}
 * - {@type Symbol}
+* - {@widgetId dropdown}
+* - {@widgetNamespace builtin}
 * - {@validations validationS}
 ",
                     },
@@ -5264,6 +5429,9 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@name Actie paginalink}
 * - {@type Link}
 * - {@linkType Entry}
+* - {@widgetId entryLinkEditor}
+* - {@widgetNamespace builtin}
+* - {@helpText De pagina waar de actie naar linkt (of gebruik de URL)}
 * - {@validations validationT}
 ",
                     },
@@ -5323,6 +5491,9 @@ exports[`Pull content should pull correctly with type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Actie URL}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
+* - {@helpText De URL waar de actie naar linkt (of gebruik de paginalink)}
 * - {@validations validationU}
 ",
                     },
@@ -5382,6 +5553,9 @@ exports[`Pull content should pull correctly with type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Anchor}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
+* - {@helpText Voorbeeld: mijn-anchor}
 ",
                     },
                   ],
@@ -5440,6 +5614,9 @@ exports[`Pull content should pull correctly with type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Query}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
+* - {@helpText Voorbeeld: &x=1&y=2}
 ",
                     },
                   ],
@@ -5498,6 +5675,9 @@ exports[`Pull content should pull correctly with type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Event id}
 * - {@type Symbol}
+* - {@widgetId slugEditor}
+* - {@widgetNamespace builtin}
+* - {@helpText Voorbeeld: mijn-event-id}
 * - {@validations validationG}
 ",
                     },
@@ -5558,6 +5738,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@disabled true}
 * - {@name 1.0.0}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -25050,6 +25232,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Abstract}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
 * - {@validations validationA}
 ",
                     },
@@ -25112,6 +25296,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@itemsType Link}
 * - {@itemsLinkType Entry}
 * - {@itemsValidations validationB}
+* - {@widgetId entryLinksEditor}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -25170,6 +25356,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Heading}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -25228,6 +25416,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Icon}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -25288,6 +25478,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@type Array}
 * - {@itemsType Link}
 * - {@itemsLinkType Asset}
+* - {@widgetId assetLinksEditor}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -25347,6 +25539,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 * - {@name Poster}
 * - {@type Link}
 * - {@linkType Asset}
+* - {@widgetId assetLinkEditor}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -26295,6 +26489,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Abstract}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
 * - {@validations validationA}
 ",
                     },
@@ -26357,6 +26553,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 * - {@itemsType Link}
 * - {@itemsLinkType Entry}
 * - {@itemsValidations validationB}
+* - {@widgetId entryLinksEditor}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -26415,6 +26613,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Heading}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -26473,6 +26673,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Icon}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -26533,6 +26735,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 * - {@type Array}
 * - {@itemsType Link}
 * - {@itemsLinkType Asset}
+* - {@widgetId assetLinksEditor}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -26592,6 +26796,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 * - {@name Poster}
 * - {@type Link}
 * - {@linkType Asset}
+* - {@widgetId assetLinkEditor}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -26713,6 +26919,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Anchor}
 * - {@type Symbol}
+* - {@widgetNamespace builtin}
+* - {@helpText Voorbeeld: mijn-anchor}
 ",
                     },
                   ],
@@ -26771,6 +26979,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Description}
 * - {@type Symbol}
+* - {@widgetNamespace builtin}
+* - {@helpText Omschrijving van de actie, voor zoekmachines}
 ",
                     },
                   ],
@@ -27125,6 +27335,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Title}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -27184,6 +27396,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 * - {@name Logo}
 * - {@type Link}
 * - {@linkType Asset}
+* - {@widgetId assetLinkEditor}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -27243,6 +27457,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 * - {@name Logo action}
 * - {@type Link}
 * - {@linkType Entry}
+* - {@widgetId entryLinkEditor}
+* - {@widgetNamespace builtin}
 * - {@validations validationC}
 ",
                     },
@@ -27305,6 +27521,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 * - {@itemsType Link}
 * - {@itemsLinkType Entry}
 * - {@itemsValidations validationD}
+* - {@widgetId entryLinksEditor}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -27366,6 +27584,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 * - {@itemsType Link}
 * - {@itemsLinkType Entry}
 * - {@itemsValidations validationD}
+* - {@widgetId entryLinksEditor}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -27425,6 +27645,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 * - {@name Social}
 * - {@type Link}
 * - {@linkType Entry}
+* - {@widgetId entryLinkEditor}
+* - {@widgetNamespace builtin}
 * - {@validations validationD}
 ",
                     },
@@ -27485,6 +27707,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 * - {@name Actions}
 * - {@type Link}
 * - {@linkType Entry}
+* - {@widgetId entryLinkEditor}
+* - {@widgetNamespace builtin}
 * - {@validations validationD}
 ",
                     },
@@ -27545,6 +27769,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 * - {@name Legal}
 * - {@type Link}
 * - {@linkType Entry}
+* - {@widgetId entryLinkEditor}
+* - {@widgetNamespace builtin}
 * - {@validations validationD}
 ",
                     },
@@ -27607,6 +27833,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 * - {@itemsType Link}
 * - {@itemsLinkType Entry}
 * - {@itemsValidations validationD}
+* - {@widgetId entryLinksEditor}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -27668,6 +27896,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 * - {@itemsType Link}
 * - {@itemsLinkType Entry}
 * - {@itemsValidations validationD}
+* - {@widgetId entryLinksEditor}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -27791,6 +28021,9 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 * - {@name Titel binnen Contentful}
 * - {@required true}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
+* - {@helpText Alleen gebruikt in Contentful, wordt nooit getoond op de site zelf}
 ",
                     },
                   ],
@@ -27841,6 +28074,9 @@ exports[`Pull content should pull correctly without type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Sectie weergave}
 * - {@type Symbol}
+* - {@widgetId dropdown}
+* - {@widgetNamespace builtin}
+* - {@helpText Hoe de sectie wordt weergegeven}
 * - {@validations validationE}
 ",
                     },
@@ -27903,6 +28139,9 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 * - {@itemsType Link}
 * - {@itemsLinkType Entry}
 * - {@itemsValidations validationF}
+* - {@widgetId entryLinksEditor}
+* - {@widgetNamespace builtin}
+* - {@helpText Eén of meerder onderwerpen die worden weergegeven in de sectie}
 ",
                     },
                   ],
@@ -27961,6 +28200,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Hide icon}
 * - {@type Boolean}
+* - {@widgetId boolean}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -28019,6 +28260,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Hide media}
 * - {@type Boolean}
+* - {@widgetId boolean}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -28077,6 +28320,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Hide heading}
 * - {@type Boolean}
+* - {@widgetId boolean}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -28135,6 +28380,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Hide abstract}
 * - {@type Boolean}
+* - {@widgetId boolean}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -28193,6 +28440,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Hide action}
 * - {@type Boolean}
+* - {@widgetId boolean}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -28251,6 +28500,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Reversed order}
 * - {@type Boolean}
+* - {@widgetId boolean}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -28309,6 +28560,9 @@ exports[`Pull content should pull correctly without type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Event id}
 * - {@type Symbol}
+* - {@widgetId slugEditor}
+* - {@widgetNamespace builtin}
+* - {@helpText Voorbeeld: mijn-event-id}
 * - {@validations validationG}
 ",
                     },
@@ -28368,6 +28622,9 @@ exports[`Pull content should pull correctly without type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Sectie thema}
 * - {@type Symbol}
+* - {@widgetId dropdown}
+* - {@widgetNamespace builtin}
+* - {@helpText Kies het thema voor deze sectie}
 * - {@validations validationH}
 ",
                     },
@@ -28428,6 +28685,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 * - {@disabled true}
 * - {@name 1.0.0}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -28551,6 +28810,9 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 * - {@name Titel binnen Contentful}
 * - {@required true}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
+* - {@helpText Alleen gebruikt in Contentful, wordt nooit getoond op de site zelf}
 ",
                     },
                   ],
@@ -28601,6 +28863,9 @@ exports[`Pull content should pull correctly without type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Onderwerp titel}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
+* - {@helpText Titel van het onderwerp, zonder punt aan eind}
 ",
                     },
                   ],
@@ -28659,6 +28924,9 @@ exports[`Pull content should pull correctly without type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Onderwerp tekst}
 * - {@type Text}
+* - {@widgetId multipleLine}
+* - {@widgetNamespace builtin}
+* - {@helpText Korte omschrijving van het onderwerp, sluit af met een punt}
 ",
                     },
                   ],
@@ -28719,6 +28987,9 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 * - {@type Array}
 * - {@itemsType Link}
 * - {@itemsLinkType Asset}
+* - {@widgetId assetGalleryEditor}
+* - {@widgetNamespace builtin}
+* - {@helpText Afbeelding bij het onderwerp}
 * - {@validations validationI}
 ",
                     },
@@ -28778,6 +29049,9 @@ exports[`Pull content should pull correctly without type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Onderwerp icoon}
 * - {@type Symbol}
+* - {@widgetId dropdown}
+* - {@widgetNamespace builtin}
+* - {@helpText Icoon bij het onderwerp}
 * - {@validations validationJ}
 ",
                     },
@@ -28840,6 +29114,9 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 * - {@itemsType Link}
 * - {@itemsLinkType Entry}
 * - {@itemsValidations validationC}
+* - {@widgetId entryLinksEditor}
+* - {@widgetNamespace builtin}
+* - {@helpText Eén of meerdere acties bij het onderwerp. Een actie heeft een eigen naam en kan ook linken naar een extern bron.}
 ",
                     },
                   ],
@@ -28899,6 +29176,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 * - {@name Poster}
 * - {@type Link}
 * - {@linkType Asset}
+* - {@widgetId assetLinkEditor}
+* - {@widgetNamespace builtin}
 * - {@validations validationK}
 ",
                     },
@@ -28959,6 +29238,9 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 * - {@name Media embed}
 * - {@type Link}
 * - {@linkType Entry}
+* - {@widgetId entryLinkEditor}
+* - {@widgetNamespace builtin}
+* - {@helpText Voeg Youtube/Vimeo embed code toe. Note: Media embed ondersteund alleen Embed-type: html}
 * - {@validations validationL}
 ",
                     },
@@ -29019,6 +29301,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 * - {@disabled true}
 * - {@name 1.0.0}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -29142,6 +29426,9 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 * - {@name Titel binnen Contentful}
 * - {@required true}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
+* - {@helpText Alleen gebruikt in Contentful, wordt nooit getoond op de site zelf}
 ",
                     },
                   ],
@@ -29192,6 +29479,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Variant}
 * - {@type Symbol}
+* - {@widgetId dropdown}
+* - {@widgetNamespace builtin}
 * - {@validations validationM}
 ",
                     },
@@ -29252,6 +29541,9 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 * - {@name Tekst}
 * - {@required true}
 * - {@type RichText}
+* - {@widgetId richTextEditor}
+* - {@widgetNamespace builtin}
+* - {@helpText Eenvoudig opgemaakte tekstveld met kopjes en afbeeldingen}
 * - {@validations validationN validationO}
 ",
                     },
@@ -29303,6 +29595,9 @@ exports[`Pull content should pull correctly without type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Event id}
 * - {@type Symbol}
+* - {@widgetId slugEditor}
+* - {@widgetNamespace builtin}
+* - {@helpText Voorbeeld: mijn-event-id}
 * - {@validations validationG}
 ",
                     },
@@ -29363,6 +29658,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 * - {@disabled true}
 * - {@name 1.0.0}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -29486,6 +29783,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 * - {@name Titel binnen Contentful}
 * - {@required true}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@helpText Alleen gebruikt in Contentful, wordt nooit getoond op de site zelf}
 ",
                     },
                   ],
@@ -29536,6 +29835,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Navigatiesegment titel}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@helpText De naam van dit navigatiesegment. Alleen nodig bij meerdere segmenten.}
 ",
                     },
                   ],
@@ -29594,6 +29895,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Segment tekst}
 * - {@type Text}
+* - {@widgetId multipleLine}
+* - {@helpText Tekst voor dit menu segment}
 ",
                     },
                   ],
@@ -29655,6 +29958,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 * - {@itemsType Link}
 * - {@itemsLinkType Entry}
 * - {@itemsValidations validationC}
+* - {@widgetId entryLinksEditor}
+* - {@helpText De pagina's in dit navigatie segment.}
 ",
                     },
                   ],
@@ -29837,6 +30142,9 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 * - {@name Titel binnen Contentful}
 * - {@required true}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
+* - {@helpText Alleen gebruikt in Contentful, wordt nooit getoond op de site zelf}
 ",
                     },
                   ],
@@ -29888,6 +30196,9 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 * - {@name Pagina URL}
 * - {@required true}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
+* - {@helpText Laatste deel van de URL naar deze pagina. Bijvoorbeeld: www.mijnsite.nl/stel-dit-deel-hier-in}
 * - {@validations validationP validationG}
 ",
                     },
@@ -29943,6 +30254,9 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 * - {@itemsType Link}
 * - {@itemsLinkType Entry}
 * - {@itemsValidations validationQ}
+* - {@widgetId entryLinksEditor}
+* - {@widgetNamespace builtin}
+* - {@helpText Kies de secties die met elkaar deze pagina vormen}
 ",
                     },
                   ],
@@ -29993,6 +30307,9 @@ exports[`Pull content should pull correctly without type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Paginathema}
 * - {@type Symbol}
+* - {@widgetId dropdown}
+* - {@widgetNamespace builtin}
+* - {@helpText Kies het thema voor deze pagina}
 * - {@validations validationH}
 ",
                     },
@@ -30052,6 +30369,9 @@ exports[`Pull content should pull correctly without type filter 1`] = `
                       "text": "* @modelberry
 * - {@name SEO titel}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
+* - {@helpText Titel van de pagina, gebruikt door zoek machines zoals Google}
 ",
                     },
                   ],
@@ -30110,6 +30430,9 @@ exports[`Pull content should pull correctly without type filter 1`] = `
                       "text": "* @modelberry
 * - {@name SEO omschrijving}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
+* - {@helpText Omschrijving van de pagina, gebruikt door zoek machines zoals Google}
 * - {@validations validationA}
 ",
                     },
@@ -30170,6 +30493,9 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 * - {@name SEO afbeelding}
 * - {@type Link}
 * - {@linkType Asset}
+* - {@widgetId assetLinkEditor}
+* - {@widgetNamespace builtin}
+* - {@helpText Afbeelding bij de pagina, wordt meegegeven aan een link en weergegeven door social media}
 * - {@validations validationK}
 ",
                     },
@@ -30230,6 +30556,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 * - {@name Seo keywords}
 * - {@type Array}
 * - {@itemsType Symbol}
+* - {@widgetId tagEditor}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -30289,6 +30617,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 * - {@disabled true}
 * - {@name 1.0.0}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
@@ -30412,6 +30742,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 * - {@name Titel binnen Contentful}
 * - {@required true}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@helpText Alleen gebruikt in Contentful, wordt nooit getoond op de site zelf}
 ",
                     },
                   ],
@@ -30462,6 +30794,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Site auteur}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@helpText Beschiknaar in alle secties}
 ",
                     },
                   ],
@@ -30520,6 +30854,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Site omschrijving}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@helpText Omschrijving van de site, gebruikt door zoek machines zoals Google}
 ",
                     },
                   ],
@@ -30578,6 +30914,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Site titel}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@helpText Titel van de site, gebruikt door zoek machines zoals Google}
 ",
                     },
                   ],
@@ -30637,6 +30975,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 * - {@name Site sleutelwoorden}
 * - {@type Array}
 * - {@itemsType Symbol}
+* - {@widgetId tagEditor}
+* - {@helpText Sleutelwoorden voor de site, gebruikt door zoek machines zoals Google}
 ",
                     },
                   ],
@@ -30696,6 +31036,7 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 * - {@name Site image}
 * - {@type Link}
 * - {@linkType Asset}
+* - {@widgetId assetLinkEditor}
 * - {@validations validationK}
 ",
                     },
@@ -30758,6 +31099,7 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 * - {@itemsType Link}
 * - {@itemsLinkType Entry}
 * - {@itemsValidations validationL}
+* - {@widgetId entryLinksEditor}
 ",
                     },
                   ],
@@ -30816,6 +31158,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Direct naar content}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@helpText Tekst voor schermlezers om direct door te gaan naar de content.}
 ",
                     },
                   ],
@@ -30998,6 +31342,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 * - {@name Titel binnen Contentful}
 * - {@required true}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@helpText Alleen gebruikt in Contentful, wordt nooit getoond op de site zelf}
 ",
                     },
                   ],
@@ -31048,6 +31394,7 @@ exports[`Pull content should pull correctly without type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Code}
 * - {@type Text}
+* - {@widgetId multipleLine}
 ",
                     },
                   ],
@@ -31106,6 +31453,7 @@ exports[`Pull content should pull correctly without type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Type}
 * - {@type Symbol}
+* - {@widgetId dropdown}
 * - {@validations validationR}
 ",
                     },
@@ -31289,6 +31637,9 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 * - {@name Titel binnen Contentful}
 * - {@required true}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
+* - {@helpText Alleen gebruikt in Contentful, wordt nooit getoond op de site zelf}
 ",
                     },
                   ],
@@ -31339,6 +31690,9 @@ exports[`Pull content should pull correctly without type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Actie naam}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
+* - {@helpText Naam van de actie, zonder punt aan eind}
 ",
                     },
                   ],
@@ -31397,6 +31751,9 @@ exports[`Pull content should pull correctly without type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Actie omschrijving}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
+* - {@helpText Omschrijving van de actie, voor zoekmachines}
 ",
                     },
                   ],
@@ -31455,6 +31812,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Icon}
 * - {@type Symbol}
+* - {@widgetId dropdown}
+* - {@widgetNamespace builtin}
 * - {@validations validationS}
 ",
                     },
@@ -31515,6 +31874,9 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 * - {@name Actie paginalink}
 * - {@type Link}
 * - {@linkType Entry}
+* - {@widgetId entryLinkEditor}
+* - {@widgetNamespace builtin}
+* - {@helpText De pagina waar de actie naar linkt (of gebruik de URL)}
 * - {@validations validationT}
 ",
                     },
@@ -31574,6 +31936,9 @@ exports[`Pull content should pull correctly without type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Actie URL}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
+* - {@helpText De URL waar de actie naar linkt (of gebruik de paginalink)}
 * - {@validations validationU}
 ",
                     },
@@ -31633,6 +31998,9 @@ exports[`Pull content should pull correctly without type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Anchor}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
+* - {@helpText Voorbeeld: mijn-anchor}
 ",
                     },
                   ],
@@ -31691,6 +32059,9 @@ exports[`Pull content should pull correctly without type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Query}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
+* - {@helpText Voorbeeld: &x=1&y=2}
 ",
                     },
                   ],
@@ -31749,6 +32120,9 @@ exports[`Pull content should pull correctly without type filter 1`] = `
                       "text": "* @modelberry
 * - {@name Event id}
 * - {@type Symbol}
+* - {@widgetId slugEditor}
+* - {@widgetNamespace builtin}
+* - {@helpText Voorbeeld: mijn-event-id}
 * - {@validations validationG}
 ",
                     },
@@ -31809,6 +32183,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 * - {@disabled true}
 * - {@name 1.0.0}
 * - {@type Symbol}
+* - {@widgetId singleLine}
+* - {@widgetNamespace builtin}
 ",
                     },
                   ],
