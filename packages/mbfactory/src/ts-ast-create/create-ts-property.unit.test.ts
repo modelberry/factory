@@ -2,7 +2,7 @@ import ts from 'typescript'
 import { createTsPrinter } from '../ts-ast-helpers/create-ts-printer'
 import { createTsSourceFile } from '../ts-ast-helpers/create-ts-source-file'
 import { printTsNodes } from '../ts-ast-helpers/print-ts-nodes'
-import { createTsProperty } from './create-ts-property'
+import { createTsProperty, PropertyTree } from './create-ts-property'
 
 const printer = createTsPrinter()
 const sourceFile = createTsSourceFile()
@@ -26,8 +26,8 @@ const renderProps = async (members: ts.TypeElement[]) => {
 
 describe('Create ts property should', () => {
   test('create an abstract?: string property', async () => {
-    const propertyTree = {
-      abstract: { node: { syntaxKind: ts.SyntaxKind.StringKeyword } },
+    const propertyTree: PropertyTree = {
+      abstract: { node: { tsSyntaxKind: ts.SyntaxKind.StringKeyword } },
     }
     const members = createTsProperty({ propertyTree })
     const output = await renderProps(members)
@@ -37,10 +37,10 @@ describe('Create ts property should', () => {
   })
 
   test('create a sys.id? property', async () => {
-    const propertyTree = {
+    const propertyTree: PropertyTree = {
       sys: {
         node: { isRequired: true },
-        edges: { id: { node: { syntaxKind: ts.SyntaxKind.StringKeyword } } },
+        edges: { id: { node: { tsSyntaxKind: ts.SyntaxKind.StringKeyword } } },
       },
     }
     const members = createTsProperty({ propertyTree })
@@ -53,13 +53,13 @@ describe('Create ts property should', () => {
   })
 
   test('create a complex property', async () => {
-    const propertyTree = {
+    const propertyTree: PropertyTree = {
       sys: {
-        edges: { id: { node: { syntaxKind: ts.SyntaxKind.StringKeyword } } },
+        edges: { id: { node: { tsSyntaxKind: ts.SyntaxKind.StringKeyword } } },
       },
-      abstract: { node: { syntaxKind: ts.SyntaxKind.StringKeyword } },
+      abstract: { node: { tsSyntaxKind: ts.SyntaxKind.StringKeyword } },
       heading: {
-        node: { isRequired: true, syntaxKind: ts.SyntaxKind.StringKeyword },
+        node: { isRequired: true, tsSyntaxKind: ts.SyntaxKind.StringKeyword },
       },
     }
     const members = createTsProperty({ propertyTree })
@@ -79,8 +79,10 @@ describe('Create ts property should', () => {
     * - {@type Symbol}
     * - {@validations shortString}
     `
-    const propertyTree = {
-      abstract: { node: { syntaxKind: ts.SyntaxKind.StringKeyword, comment } },
+    const propertyTree: PropertyTree = {
+      abstract: {
+        node: { tsSyntaxKind: ts.SyntaxKind.StringKeyword, comment },
+      },
     }
     const members = createTsProperty({ propertyTree })
     const output = await renderProps(members)
@@ -100,14 +102,16 @@ describe('Create ts property should', () => {
     * - {@type Symbol}
     * - {@validations longString}
     `
-    const propertyTree = {
+    const propertyTree: PropertyTree = {
       sys: {
         node: { comment },
-        edges: { id: { node: { syntaxKind: ts.SyntaxKind.StringKeyword } } },
+        edges: { id: { node: { tsSyntaxKind: ts.SyntaxKind.StringKeyword } } },
       },
-      abstract: { node: { comment, syntaxKind: ts.SyntaxKind.StringKeyword } },
+      abstract: {
+        node: { comment, tsSyntaxKind: ts.SyntaxKind.StringKeyword },
+      },
       heading: {
-        node: { isRequired: true, syntaxKind: ts.SyntaxKind.StringKeyword },
+        node: { isRequired: true, tsSyntaxKind: ts.SyntaxKind.StringKeyword },
       },
     }
     const members = createTsProperty({ propertyTree })

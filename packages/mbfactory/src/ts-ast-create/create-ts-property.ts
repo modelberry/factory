@@ -3,7 +3,7 @@ import ts from 'typescript'
 export type PropertryNode = {
   comment?: string
   isRequired?: boolean
-  syntaxKind?: ts.SyntaxKind
+  tsSyntaxKind?: ts.SyntaxKind
 }
 
 export type PropertyTree = {
@@ -28,7 +28,7 @@ export const createTsProperty = ({ propertyTree }: CreateTsProperty) => {
       )
     } else if (node) {
       childNode = ts.factory.createKeywordTypeNode(
-        node.syntaxKind as ts.KeywordTypeSyntaxKind
+        node.tsSyntaxKind as ts.KeywordTypeSyntaxKind
       )
     }
     if (childNode) {
