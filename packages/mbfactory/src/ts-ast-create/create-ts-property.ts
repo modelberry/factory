@@ -2,8 +2,12 @@ import ts from 'typescript'
 
 export type PropertryNode = {
   comment?: string
+  isArrayTypeNode?: boolean
   isRequired?: boolean
-  tsSyntaxKind?: ts.SyntaxKind
+  /** Create a ts styntax kind keyword node like 'string', 'number' */
+  createKeywordTypeNode?: ts.SyntaxKind
+  /** Create a type reference node like 'Topic', 'Action' */
+  createTypeReferenceNode?: string
 }
 
 export type PropertyTree = {
@@ -27,9 +31,25 @@ export const createTsProperty = ({ propertyTree }: CreateTsProperty) => {
         createTsProperty({ propertyTree: edges })
       )
     } else if (node) {
-      childNode = ts.factory.createKeywordTypeNode(
-        node.tsSyntaxKind as ts.KeywordTypeSyntaxKind
-      )
+      if (node.createKeywordTypeNode) {
+        const keywordTypeNode = ts.factory.createKeywordTypeNode(
+          node.createKeywordTypeNode as ts.KeywordTypeSyntaxKind
+        )
+        if (node.isArrayTypeNode) {
+          childNode = ts.factory.createArrayTypeNode(keywordTypeNode)
+        } else {
+          childNode = keywordTypeNode
+        }
+      } else {
+        const typeReferenceNode = ts.factory.createTypeReferenceNode(
+          node.createTypeReferenceNode || 'UnknownType'
+        )
+        if (node.isArrayTypeNode) {
+          childNode = ts.factory.createArrayTypeNode(typeReferenceNode)
+        } else {
+          childNode = typeReferenceNode
+        }
+      }
     }
     if (childNode) {
       const property = ts.factory.createPropertySignature(

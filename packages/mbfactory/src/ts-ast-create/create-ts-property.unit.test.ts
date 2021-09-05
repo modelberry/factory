@@ -2,6 +2,7 @@ import ts from 'typescript'
 import { createTsPrinter } from '../ts-ast-helpers/create-ts-printer'
 import { createTsSourceFile } from '../ts-ast-helpers/create-ts-source-file'
 import { printTsNodes } from '../ts-ast-helpers/print-ts-nodes'
+import { tsSyntaxKind } from './create-ts-interface'
 import { createTsProperty, PropertyTree } from './create-ts-property'
 
 const printer = createTsPrinter()
@@ -10,7 +11,7 @@ const sourceFile = createTsSourceFile()
 const renderProps = async (members: ts.TypeElement[]) => {
   const interfaceDeclaration = ts.factory.createInterfaceDeclaration(
     undefined, // Decorators
-    [ts.factory.createToken(ts.SyntaxKind.ExportKeyword)],
+    [ts.factory.createToken(tsSyntaxKind.ExportKeyword)],
     'ContentfulTopic',
     undefined, // Type parameters
     undefined, // heritage classes
@@ -27,7 +28,9 @@ const renderProps = async (members: ts.TypeElement[]) => {
 describe('Create ts property should', () => {
   test('create an abstract?: string property', async () => {
     const propertyTree: PropertyTree = {
-      abstract: { node: { tsSyntaxKind: ts.SyntaxKind.StringKeyword } },
+      abstract: {
+        node: { createKeywordTypeNode: tsSyntaxKind.StringKeyword },
+      },
     }
     const members = createTsProperty({ propertyTree })
     const output = await renderProps(members)
@@ -36,11 +39,53 @@ describe('Create ts property should', () => {
 }`)
   })
 
+  test('create an abstract?: string[] property', async () => {
+    const propertyTree: PropertyTree = {
+      abstract: {
+        node: {
+          createKeywordTypeNode: tsSyntaxKind.StringKeyword,
+          isArrayTypeNode: true,
+        },
+      },
+    }
+    const members = createTsProperty({ propertyTree })
+    const output = await renderProps(members)
+    expect(output).toEqual(`export interface ContentfulTopic {
+    abstract?: string[];
+}`)
+  })
+
+  test('create an topic?: Topic property', async () => {
+    const propertyTree: PropertyTree = {
+      topic: { node: { createTypeReferenceNode: 'Topic' } },
+    }
+    const members = createTsProperty({ propertyTree })
+    const output = await renderProps(members)
+    expect(output).toEqual(`export interface ContentfulTopic {
+    topic?: Topic;
+}`)
+  })
+
+  test('create an topic?: Topic[] property', async () => {
+    const propertyTree: PropertyTree = {
+      topic: {
+        node: { createTypeReferenceNode: 'Topic', isArrayTypeNode: true },
+      },
+    }
+    const members = createTsProperty({ propertyTree })
+    const output = await renderProps(members)
+    expect(output).toEqual(`export interface ContentfulTopic {
+    topic?: Topic[];
+}`)
+  })
+
   test('create a sys.id? property', async () => {
     const propertyTree: PropertyTree = {
       sys: {
         node: { isRequired: true },
-        edges: { id: { node: { tsSyntaxKind: ts.SyntaxKind.StringKeyword } } },
+        edges: {
+          id: { node: { createKeywordTypeNode: tsSyntaxKind.StringKeyword } },
+        },
       },
     }
     const members = createTsProperty({ propertyTree })
@@ -55,11 +100,18 @@ describe('Create ts property should', () => {
   test('create a complex property', async () => {
     const propertyTree: PropertyTree = {
       sys: {
-        edges: { id: { node: { tsSyntaxKind: ts.SyntaxKind.StringKeyword } } },
+        edges: {
+          id: { node: { createKeywordTypeNode: tsSyntaxKind.StringKeyword } },
+        },
       },
-      abstract: { node: { tsSyntaxKind: ts.SyntaxKind.StringKeyword } },
+      abstract: {
+        node: { createKeywordTypeNode: tsSyntaxKind.StringKeyword },
+      },
       heading: {
-        node: { isRequired: true, tsSyntaxKind: ts.SyntaxKind.StringKeyword },
+        node: {
+          isRequired: true,
+          createKeywordTypeNode: ts.SyntaxKind.StringKeyword,
+        },
       },
     }
     const members = createTsProperty({ propertyTree })
@@ -81,7 +133,7 @@ describe('Create ts property should', () => {
     `
     const propertyTree: PropertyTree = {
       abstract: {
-        node: { tsSyntaxKind: ts.SyntaxKind.StringKeyword, comment },
+        node: { createKeywordTypeNode: ts.SyntaxKind.StringKeyword, comment },
       },
     }
     const members = createTsProperty({ propertyTree })
@@ -105,13 +157,18 @@ describe('Create ts property should', () => {
     const propertyTree: PropertyTree = {
       sys: {
         node: { comment },
-        edges: { id: { node: { tsSyntaxKind: ts.SyntaxKind.StringKeyword } } },
+        edges: {
+          id: { node: { createKeywordTypeNode: ts.SyntaxKind.StringKeyword } },
+        },
       },
       abstract: {
-        node: { comment, tsSyntaxKind: ts.SyntaxKind.StringKeyword },
+        node: { comment, createKeywordTypeNode: ts.SyntaxKind.StringKeyword },
       },
       heading: {
-        node: { isRequired: true, tsSyntaxKind: ts.SyntaxKind.StringKeyword },
+        node: {
+          isRequired: true,
+          createKeywordTypeNode: ts.SyntaxKind.StringKeyword,
+        },
       },
     }
     const members = createTsProperty({ propertyTree })

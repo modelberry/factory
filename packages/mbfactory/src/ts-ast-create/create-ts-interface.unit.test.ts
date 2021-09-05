@@ -41,7 +41,7 @@ describe('Create ts interface should', () => {
           node: {
             comment: `* ${comment}`,
             isRequired: false,
-            tsSyntaxKind: tsSyntaxKind.StringKeyword,
+            createKeywordTypeNode: tsSyntaxKind.StringKeyword,
           },
         },
       },
@@ -86,14 +86,14 @@ export interface ContentfulTopic {
           node: {
             comment: `* ${comment}`,
             isRequired: false,
-            tsSyntaxKind: tsSyntaxKind.StringKeyword,
+            createKeywordTypeNode: tsSyntaxKind.StringKeyword,
           },
         },
         abstract: {
           node: {
             comment: `* ${comment}`,
             isRequired: true,
-            tsSyntaxKind: tsSyntaxKind.StringKeyword,
+            createKeywordTypeNode: tsSyntaxKind.StringKeyword,
           },
         },
       },
