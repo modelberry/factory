@@ -18,13 +18,13 @@ This project is based on project Wheelroom <https://github.com/wheelroom/wheelro
   - [x] --force
   - [x] --locale
   - [x] --type
-- [ ] Pull models command
+- [x] Pull models command
   - [x] Implement model AST code printing
-  - [ ] Implement model fetching from remote
-  - [ ] Connect model fetching and code printing
+  - [x] Implement model fetching from remote
+  - [x] Connect model fetching and code printing
   - [x] Implement AST data variable code printing
-  - [ ] Implement validation fetching from remote
-  - [ ] Connect validation fetching and code printing
+  - [x] Implement validation fetching from remote
+  - [x] Connect validation fetching and code printing
 - [ ] Pull content command
   - [x] Implement AST content variable code printing
   - [ ] Implement content fetching from remote

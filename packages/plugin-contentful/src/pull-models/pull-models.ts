@@ -66,6 +66,4 @@ export const pullModels = async ({
     path,
   })
   await writeSourceFiles({ files, options })
-
-  // TODO: Write proper tsSyntaxKind, all are StringKeyword string now
 }
