@@ -21,11 +21,16 @@ export const getPropertyTree = ({
 }: GetPropertyTree) => {
   const propertyTree: PropertyTree = {
     __typename: {
-      node: { isRequired: false, tsSyntaxKind: tsSyntaxKind.StringKeyword },
+      node: {
+        isRequired: false,
+        createKeywordTypeNode: tsSyntaxKind.StringKeyword,
+      },
     },
     sys: {
       node: { isRequired: true },
-      edges: { id: { node: { tsSyntaxKind: tsSyntaxKind.StringKeyword } } },
+      edges: {
+        id: { node: { createKeywordTypeNode: tsSyntaxKind.StringKeyword } },
+      },
     },
   }
   for (const contentField of contentFields) {

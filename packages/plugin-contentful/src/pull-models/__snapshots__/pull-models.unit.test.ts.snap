@@ -31,7 +31,7 @@ export interface ContentfulTestTopic {
    * - {@itemsValidations linkContentType-testAction linkContentType-someOtherAction}
    * - {@widgetId entryLinksEditor}
    */
-  actions?: string
+  actions?: TestAction[]
   /** @modelberry
    * - {@name Heading}
    * - {@type Symbol}
@@ -51,14 +51,14 @@ export interface ContentfulTestTopic {
    * - {@itemsLinkType Asset}
    * - {@widgetId assetLinksEditor}
    */
-  media?: string
+  media?: ContentfulAsset[]
   /** @modelberry
    * - {@name Poster}
    * - {@type Link}
    * - {@linkType Asset}
    * - {@widgetId assetLinkEditor}
    */
-  poster?: string
+  poster?: ContentfulAsset
 }
 ",
     ],
@@ -134,7 +134,7 @@ export interface ContentfulNavigationSection {
    * - {@linkType Asset}
    * - {@widgetId assetLinkEditor}
    */
-  logo?: string
+  logo?: ContentfulAsset
   /** @modelberry
    * - {@name Logo action}
    * - {@type Link}
@@ -142,7 +142,7 @@ export interface ContentfulNavigationSection {
    * - {@widgetId entryLinkEditor}
    * - {@validations linkContentType-action}
    */
-  logoAction?: string
+  logoAction?: Action
   /** @modelberry
    * - {@name Header}
    * - {@type Array}
@@ -151,7 +151,7 @@ export interface ContentfulNavigationSection {
    * - {@itemsValidations linkContentType-navigationSegment}
    * - {@widgetId entryLinksEditor}
    */
-  header?: string
+  header?: NavigationSegment[]
   /** @modelberry
    * - {@name Footer}
    * - {@type Array}
@@ -160,7 +160,7 @@ export interface ContentfulNavigationSection {
    * - {@itemsValidations linkContentType-navigationSegment}
    * - {@widgetId entryLinksEditor}
    */
-  footer?: string
+  footer?: NavigationSegment[]
   /** @modelberry
    * - {@name Social}
    * - {@type Link}
@@ -168,7 +168,7 @@ export interface ContentfulNavigationSection {
    * - {@widgetId entryLinkEditor}
    * - {@validations linkContentType-navigationSegment}
    */
-  social?: string
+  social?: NavigationSegment
   /** @modelberry
    * - {@name Actions}
    * - {@type Link}
@@ -176,7 +176,7 @@ export interface ContentfulNavigationSection {
    * - {@widgetId entryLinkEditor}
    * - {@validations linkContentType-navigationSegment}
    */
-  actions?: string
+  actions?: NavigationSegment
   /** @modelberry
    * - {@name Legal}
    * - {@type Link}
@@ -184,7 +184,7 @@ export interface ContentfulNavigationSection {
    * - {@widgetId entryLinkEditor}
    * - {@validations linkContentType-navigationSegment}
    */
-  legal?: string
+  legal?: NavigationSegment
   /** @modelberry
    * - {@name Information}
    * - {@type Array}
@@ -193,7 +193,7 @@ export interface ContentfulNavigationSection {
    * - {@itemsValidations linkContentType-navigationSegment}
    * - {@widgetId entryLinksEditor}
    */
-  information?: string
+  information?: NavigationSegment[]
   /** @modelberry
    * - {@name Sitemap}
    * - {@type Array}
@@ -202,7 +202,7 @@ export interface ContentfulNavigationSection {
    * - {@itemsValidations linkContentType-navigationSegment}
    * - {@widgetId entryLinksEditor}
    */
-  sitemap?: string
+  sitemap?: NavigationSegment[]
 }
 ",
     ],
@@ -244,7 +244,7 @@ export interface ContentfulTopicSection {
    * - {@widgetId entryLinksEditor}
    * - {@helpText Eén of meerder onderwerpen die worden weergegeven in de sectie}
    */
-  topics?: string
+  topics?: Topic[]
   /** @modelberry
    * - {@name Hide icon}
    * - {@type Boolean}
@@ -351,7 +351,7 @@ export interface ContentfulTopic {
    * - {@helpText Afbeelding bij het onderwerp}
    * - {@validations size-min1-max4}
    */
-  media?: string
+  media?: ContentfulAsset[]
   /** @modelberry
    * - {@name Onderwerp icoon}
    * - {@type Symbol}
@@ -369,7 +369,7 @@ export interface ContentfulTopic {
    * - {@widgetId entryLinksEditor}
    * - {@helpText Eén of meerdere acties bij het onderwerp. Een actie heeft een eigen naam en kan ook linken naar een extern bron.}
    */
-  actions?: string
+  actions?: Action[]
   /** @modelberry
    * - {@name Poster}
    * - {@type Link}
@@ -377,7 +377,7 @@ export interface ContentfulTopic {
    * - {@widgetId assetLinkEditor}
    * - {@validations linkMimetypeGroup-image}
    */
-  poster?: string
+  poster?: ContentfulAsset
   /** @modelberry
    * - {@name Media embed}
    * - {@type Link}
@@ -386,7 +386,7 @@ export interface ContentfulTopic {
    * - {@helpText Voeg Youtube/Vimeo embed code toe. Note: Media embed ondersteund alleen Embed-type: html}
    * - {@validations linkContentType-embed}
    */
-  mediaEmbed?: string
+  mediaEmbed?: Embed
   /** @modelberry
    * - {@disabled true}
    * - {@name 1.0.0}
@@ -496,7 +496,7 @@ export interface ContentfulNavigationSegment {
    * - {@widgetId entryLinksEditor}
    * - {@helpText De pagina's in dit navigatie segment.}
    */
-  actions?: string
+  actions?: Action[]
   /** @modelberry
    * - {@disabled true}
    * - {@name 1.0.0}
@@ -546,7 +546,7 @@ export interface ContentfulPage {
    * - {@widgetId entryLinksEditor}
    * - {@helpText Kies de secties die met elkaar deze pagina vormen}
    */
-  sections: string
+  sections: (NavigationSection | TableSection | TextSection | TopicSection)[]
   /** @modelberry
    * - {@name Paginathema}
    * - {@type Symbol}
@@ -578,14 +578,14 @@ export interface ContentfulPage {
    * - {@helpText Afbeelding bij de pagina, wordt meegegeven aan een link en weergegeven door social media}
    * - {@validations linkMimetypeGroup-image}
    */
-  seoImage?: string
+  seoImage?: ContentfulAsset
   /** @modelberry
    * - {@name Seo keywords}
    * - {@type Array}
    * - {@itemsType Symbol}
    * - {@widgetId tagEditor}
    */
-  seoKeywords?: string
+  seoKeywords?: string[]
   /** @modelberry
    * - {@disabled true}
    * - {@name 1.0.0}
@@ -645,7 +645,7 @@ export interface ContentfulGlobals {
    * - {@widgetId tagEditor}
    * - {@helpText Sleutelwoorden voor de site, gebruikt door zoek machines zoals Google}
    */
-  siteKeywords?: string
+  siteKeywords?: string[]
   /** @modelberry
    * - {@name Site image}
    * - {@type Link}
@@ -653,7 +653,7 @@ export interface ContentfulGlobals {
    * - {@widgetId assetLinkEditor}
    * - {@validations linkMimetypeGroup-image}
    */
-  siteImage?: string
+  siteImage?: ContentfulAsset
   /** @modelberry
    * - {@name Site embeds}
    * - {@type Array}
@@ -662,7 +662,7 @@ export interface ContentfulGlobals {
    * - {@itemsValidations linkContentType-embed}
    * - {@widgetId entryLinksEditor}
    */
-  siteEmbeds?: string
+  siteEmbeds?: Embed[]
   /** @modelberry
    * - {@name Direct naar content}
    * - {@type Symbol}
@@ -772,7 +772,7 @@ export interface ContentfulAction {
    * - {@helpText De pagina waar de actie naar linkt (of gebruik de URL)}
    * - {@validations linkContentType-page}
    */
-  page?: string
+  page?: Page
   /** @modelberry
    * - {@name Actie URL}
    * - {@type Symbol}
@@ -1491,7 +1491,7 @@ export interface ContentfulTestTopic {
    * - {@itemsValidations linkContentType-testAction linkContentType-someOtherAction}
    * - {@widgetId entryLinksEditor}
    */
-  actions?: string
+  actions?: TestAction[]
   /** @modelberry
    * - {@name Heading}
    * - {@type Symbol}
@@ -1511,14 +1511,14 @@ export interface ContentfulTestTopic {
    * - {@itemsLinkType Asset}
    * - {@widgetId assetLinksEditor}
    */
-  media?: string
+  media?: ContentfulAsset[]
   /** @modelberry
    * - {@name Poster}
    * - {@type Link}
    * - {@linkType Asset}
    * - {@widgetId assetLinkEditor}
    */
-  poster?: string
+  poster?: ContentfulAsset
 }
 ",
     ],
@@ -1625,7 +1625,7 @@ export interface ContentfulTestTopic {
    * - {@itemsValidations linkContentType-testAction linkContentType-someOtherAction}
    * - {@widgetId entryLinksEditor}
    */
-  actions?: string
+  actions?: TestAction[]
   /** @modelberry
    * - {@name Heading}
    * - {@type Symbol}
@@ -1645,14 +1645,14 @@ export interface ContentfulTestTopic {
    * - {@itemsLinkType Asset}
    * - {@widgetId assetLinksEditor}
    */
-  media?: string
+  media?: ContentfulAsset[]
   /** @modelberry
    * - {@name Poster}
    * - {@type Link}
    * - {@linkType Asset}
    * - {@widgetId assetLinkEditor}
    */
-  poster?: string
+  poster?: ContentfulAsset
 }
 ",
     ],
@@ -1728,7 +1728,7 @@ export interface ContentfulNavigationSection {
    * - {@linkType Asset}
    * - {@widgetId assetLinkEditor}
    */
-  logo?: string
+  logo?: ContentfulAsset
   /** @modelberry
    * - {@name Logo action}
    * - {@type Link}
@@ -1736,7 +1736,7 @@ export interface ContentfulNavigationSection {
    * - {@widgetId entryLinkEditor}
    * - {@validations linkContentType-action}
    */
-  logoAction?: string
+  logoAction?: Action
   /** @modelberry
    * - {@name Header}
    * - {@type Array}
@@ -1745,7 +1745,7 @@ export interface ContentfulNavigationSection {
    * - {@itemsValidations linkContentType-navigationSegment}
    * - {@widgetId entryLinksEditor}
    */
-  header?: string
+  header?: NavigationSegment[]
   /** @modelberry
    * - {@name Footer}
    * - {@type Array}
@@ -1754,7 +1754,7 @@ export interface ContentfulNavigationSection {
    * - {@itemsValidations linkContentType-navigationSegment}
    * - {@widgetId entryLinksEditor}
    */
-  footer?: string
+  footer?: NavigationSegment[]
   /** @modelberry
    * - {@name Social}
    * - {@type Link}
@@ -1762,7 +1762,7 @@ export interface ContentfulNavigationSection {
    * - {@widgetId entryLinkEditor}
    * - {@validations linkContentType-navigationSegment}
    */
-  social?: string
+  social?: NavigationSegment
   /** @modelberry
    * - {@name Actions}
    * - {@type Link}
@@ -1770,7 +1770,7 @@ export interface ContentfulNavigationSection {
    * - {@widgetId entryLinkEditor}
    * - {@validations linkContentType-navigationSegment}
    */
-  actions?: string
+  actions?: NavigationSegment
   /** @modelberry
    * - {@name Legal}
    * - {@type Link}
@@ -1778,7 +1778,7 @@ export interface ContentfulNavigationSection {
    * - {@widgetId entryLinkEditor}
    * - {@validations linkContentType-navigationSegment}
    */
-  legal?: string
+  legal?: NavigationSegment
   /** @modelberry
    * - {@name Information}
    * - {@type Array}
@@ -1787,7 +1787,7 @@ export interface ContentfulNavigationSection {
    * - {@itemsValidations linkContentType-navigationSegment}
    * - {@widgetId entryLinksEditor}
    */
-  information?: string
+  information?: NavigationSegment[]
   /** @modelberry
    * - {@name Sitemap}
    * - {@type Array}
@@ -1796,7 +1796,7 @@ export interface ContentfulNavigationSection {
    * - {@itemsValidations linkContentType-navigationSegment}
    * - {@widgetId entryLinksEditor}
    */
-  sitemap?: string
+  sitemap?: NavigationSegment[]
 }
 ",
     ],
@@ -1838,7 +1838,7 @@ export interface ContentfulTopicSection {
    * - {@widgetId entryLinksEditor}
    * - {@helpText Eén of meerder onderwerpen die worden weergegeven in de sectie}
    */
-  topics?: string
+  topics?: Topic[]
   /** @modelberry
    * - {@name Hide icon}
    * - {@type Boolean}
@@ -1945,7 +1945,7 @@ export interface ContentfulTopic {
    * - {@helpText Afbeelding bij het onderwerp}
    * - {@validations size-min1-max4}
    */
-  media?: string
+  media?: ContentfulAsset[]
   /** @modelberry
    * - {@name Onderwerp icoon}
    * - {@type Symbol}
@@ -1963,7 +1963,7 @@ export interface ContentfulTopic {
    * - {@widgetId entryLinksEditor}
    * - {@helpText Eén of meerdere acties bij het onderwerp. Een actie heeft een eigen naam en kan ook linken naar een extern bron.}
    */
-  actions?: string
+  actions?: Action[]
   /** @modelberry
    * - {@name Poster}
    * - {@type Link}
@@ -1971,7 +1971,7 @@ export interface ContentfulTopic {
    * - {@widgetId assetLinkEditor}
    * - {@validations linkMimetypeGroup-image}
    */
-  poster?: string
+  poster?: ContentfulAsset
   /** @modelberry
    * - {@name Media embed}
    * - {@type Link}
@@ -1980,7 +1980,7 @@ export interface ContentfulTopic {
    * - {@helpText Voeg Youtube/Vimeo embed code toe. Note: Media embed ondersteund alleen Embed-type: html}
    * - {@validations linkContentType-embed}
    */
-  mediaEmbed?: string
+  mediaEmbed?: Embed
   /** @modelberry
    * - {@disabled true}
    * - {@name 1.0.0}
@@ -2090,7 +2090,7 @@ export interface ContentfulNavigationSegment {
    * - {@widgetId entryLinksEditor}
    * - {@helpText De pagina's in dit navigatie segment.}
    */
-  actions?: string
+  actions?: Action[]
   /** @modelberry
    * - {@disabled true}
    * - {@name 1.0.0}
@@ -2140,7 +2140,7 @@ export interface ContentfulPage {
    * - {@widgetId entryLinksEditor}
    * - {@helpText Kies de secties die met elkaar deze pagina vormen}
    */
-  sections: string
+  sections: (NavigationSection | TableSection | TextSection | TopicSection)[]
   /** @modelberry
    * - {@name Paginathema}
    * - {@type Symbol}
@@ -2172,14 +2172,14 @@ export interface ContentfulPage {
    * - {@helpText Afbeelding bij de pagina, wordt meegegeven aan een link en weergegeven door social media}
    * - {@validations linkMimetypeGroup-image}
    */
-  seoImage?: string
+  seoImage?: ContentfulAsset
   /** @modelberry
    * - {@name Seo keywords}
    * - {@type Array}
    * - {@itemsType Symbol}
    * - {@widgetId tagEditor}
    */
-  seoKeywords?: string
+  seoKeywords?: string[]
   /** @modelberry
    * - {@disabled true}
    * - {@name 1.0.0}
@@ -2239,7 +2239,7 @@ export interface ContentfulGlobals {
    * - {@widgetId tagEditor}
    * - {@helpText Sleutelwoorden voor de site, gebruikt door zoek machines zoals Google}
    */
-  siteKeywords?: string
+  siteKeywords?: string[]
   /** @modelberry
    * - {@name Site image}
    * - {@type Link}
@@ -2247,7 +2247,7 @@ export interface ContentfulGlobals {
    * - {@widgetId assetLinkEditor}
    * - {@validations linkMimetypeGroup-image}
    */
-  siteImage?: string
+  siteImage?: ContentfulAsset
   /** @modelberry
    * - {@name Site embeds}
    * - {@type Array}
@@ -2256,7 +2256,7 @@ export interface ContentfulGlobals {
    * - {@itemsValidations linkContentType-embed}
    * - {@widgetId entryLinksEditor}
    */
-  siteEmbeds?: string
+  siteEmbeds?: Embed[]
   /** @modelberry
    * - {@name Direct naar content}
    * - {@type Symbol}
@@ -2366,7 +2366,7 @@ export interface ContentfulAction {
    * - {@helpText De pagina waar de actie naar linkt (of gebruik de URL)}
    * - {@validations linkContentType-page}
    */
-  page?: string
+  page?: Page
   /** @modelberry
    * - {@name Actie URL}
    * - {@type Symbol}

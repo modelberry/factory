@@ -1,5 +1,10 @@
-import { tsSyntaxKind, PropertryNode } from '@modelberry/mbfactory/plain'
+import {
+  tsSyntaxKind,
+  PropertryNode,
+  PropertyTree,
+} from '@modelberry/mbfactory/plain'
 import { ContentFields } from 'contentful-management/types'
+import { getLinkContentType } from './get-link-content-type'
 
 export interface GetPropertyTreeField {
   comment: string
@@ -29,85 +34,87 @@ export const getPropertyTreeField = ({
   const node: PropertryNode = {
     comment,
     isRequired: required,
-    tsSyntaxKind: tsSyntaxKind.StringKeyword,
   }
+  const edges: PropertyTree = {}
   const field = {
     node,
   }
 
   switch (contentField.type) {
     case 'Symbol':
+      field.node.createKeywordTypeNode = tsSyntaxKind.StringKeyword
       return field
 
     case 'Text':
+      field.node.createKeywordTypeNode = tsSyntaxKind.StringKeyword
       return field
 
     case 'RichText':
-      // text?: {
-      //   json?: Document
-      //   links: {
-      //     assets: {
-      //       block: ContentfulAsset[]
-      //       hyperlink: ContentfulAsset[]
-      //     }
-      //     entries: {
-      //       block: ContentfulTextEntry[]
-      //       hyperlink: ContentfulTextEntry[]
-      //       inline: ContentfulTextEntry[]
-      //     }
-      //   }
-      // }
+      edges.json = {
+        node: {
+          createTypeReferenceNode: 'Document',
+        },
+      }
 
       break
 
     case 'Integer':
-      field.node.tsSyntaxKind = tsSyntaxKind.NumberKeyword
+      field.node.createKeywordTypeNode = tsSyntaxKind.NumberKeyword
       return field
 
     case 'Number':
-      field.node.tsSyntaxKind = tsSyntaxKind.NumberKeyword
+      field.node.createKeywordTypeNode = tsSyntaxKind.NumberKeyword
       return field
 
     case 'Date':
+      field.node.createKeywordTypeNode = tsSyntaxKind.StringKeyword
       return field
 
     case 'Boolean':
-      field.node.tsSyntaxKind = tsSyntaxKind.BooleanKeyword
+      field.node.createKeywordTypeNode = tsSyntaxKind.BooleanKeyword
       return field
 
     case 'Location':
+      field.node.createKeywordTypeNode = tsSyntaxKind.StringKeyword
       return field
 
     case 'Object':
+      field.node.createKeywordTypeNode = tsSyntaxKind.StringKeyword
       return field
 
     case 'Link':
       switch (contentField.linkType) {
         case 'Asset':
-          // ContentfulAsset
-          break
+          field.node.createTypeReferenceNode = 'ContentfulAsset'
+          return field
         case 'Entry':
-          // Use in validation lookup
-          break
+          field.node.createTypeReferenceNode = getLinkContentType({
+            contentField,
+          })
+          return field
       }
       break
     case 'Array':
+      field.node.isArrayTypeNode = true
       switch (contentField.items?.type) {
         case 'Symbol':
-          // string[]
-          break
+          field.node.createKeywordTypeNode = tsSyntaxKind.StringKeyword
+          return field
         case 'Link':
           switch (contentField.items?.linkType) {
             case 'Asset':
-              // ContentfulAsset[]
-              break
+              field.node.createTypeReferenceNode = 'ContentfulAsset'
+              return field
             case 'Entry':
-              // Use in validation lookup - Array
-              break
+              field.node.createTypeReferenceNode = getLinkContentType({
+                contentField,
+              })
+              return field
           }
           break
       }
       break
   }
+  field.node.createKeywordTypeNode = tsSyntaxKind.StringKeyword
   return field
 }
