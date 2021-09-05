@@ -1,4 +1,5 @@
 import { Environment, Locale } from 'contentful-management/types'
+import { editorInterfaces } from './editor-interfaces'
 import { getContentTypeResponse } from './get-content-type-response'
 import { getContentTypesResponse } from './get-content-types-response'
 import { getEntriesQueryResponse } from './get-entries-query-response'
@@ -20,20 +21,34 @@ const localeMock = {
     },
   ] as Locale[],
 }
-export const contentTypeMock = {
-  ...getContentTypeResponse,
-  getEditorInterface: async () => contentTypeMock,
-  publish: async () => contentTypeMock,
-  update: async () => contentTypeMock,
+export const getContentTypeMock = async (contentType: any) => ({
+  ...contentType,
+  getEditorInterface: async () => ({
+    ...editorInterfaces[contentType.name],
+    update: async () => editorInterfaces[contentType.name],
+  }),
+  publish: async () => await getContentTypeMock(contentType),
+  update: async () => await getContentTypeMock(contentType),
+})
+
+export const getContentTypesMock = async () => {
+  for (const ct of getContentTypesResponse.items)
+    Object.assign(ct, await getContentTypeMock(ct))
+  return getContentTypesResponse
 }
+
 export const createEntryWithId = jest.fn(async () => entryMock)
 export const createEntry = jest.fn(async () => entryMock)
 export const getEntry = jest.fn(async () => entryMock)
 export const getEntries = jest.fn(async () => getEntriesQueryResponse)
 export const getLocales = jest.fn(async () => localeMock)
-export const getContentType = jest.fn(async () => contentTypeMock)
-export const getContentTypes = jest.fn(async () => getContentTypesResponse)
-export const createContentTypeWithId = jest.fn(async () => contentTypeMock)
+export const getContentType = jest.fn(async () =>
+  getContentTypeMock(getContentTypeResponse)
+)
+export const getContentTypes = jest.fn(getContentTypesMock)
+export const createContentTypeWithId = jest.fn(async () =>
+  getContentTypeMock(getContentTypeResponse)
+)
 export const environmentMock = {
   createEntry,
   createEntryWithId,

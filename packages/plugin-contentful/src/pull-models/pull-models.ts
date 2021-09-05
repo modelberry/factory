@@ -31,9 +31,10 @@ export const pullModels = async ({
     const response = await contentfulEnvironment.getContentTypes()
     response.items.forEach((ct) => contentTypes.push(ct))
   }
-
   const validations: Record<string, any> = {}
   for (const contentType of contentTypes) {
+    // const editorInterface = await contentType.getEditorInterface()
+    // log(editorInterface)
     const inlineTags: Record<string, any> = {}
     inlineTags['@plugin'] = '"@modelberry/plugin-contentful/plain"'
     inlineTags['@type'] = contentType.name

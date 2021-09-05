@@ -1,7 +1,6 @@
 jest.mock('./write-source-file')
 
 import chalk from 'chalk'
-// import chalk from 'chalk'
 import { environmentMock } from '../contentful-mock/contentful-mock'
 import { pullModels } from './pull-models'
 import { writeSourceFile } from './write-source-file'
@@ -12,7 +11,7 @@ describe('Pull content should', () => {
     consoleSpy.mockReset()
   })
 
-  test('pull correctly', async () => {
+  test('pull correctly without type filter', async () => {
     await pullModels({
       contentfulEnvironment: environmentMock,
       options: { force: true },
@@ -31,6 +30,18 @@ describe('Pull content should', () => {
       [chalk('- writing source file ./dummy/globals.ts')],
       [chalk('- writing source file ./dummy/embed.ts')],
       [chalk('- writing source file ./dummy/action.ts')],
+      [chalk('- writing source file ./dummy/validations.ts')],
+    ])
+  })
+  test('pull correctly with type filter', async () => {
+    await pullModels({
+      contentfulEnvironment: environmentMock,
+      options: { force: true, type: 'testTopic' },
+      path: './dummy',
+    })
+    expect(writeSourceFile).toMatchSnapshot()
+    expect(consoleSpy.mock.calls).toEqual([
+      [chalk('- writing source file ./dummy/test-topic.ts')],
       [chalk('- writing source file ./dummy/validations.ts')],
     ])
   })
