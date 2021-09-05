@@ -1,7 +1,7 @@
 import { ContentFields } from 'contentful-management/types'
-import { tsSyntaxKind } from '@modelberry/mbfactory/plain'
 import { copyKeysIfExists } from './copy-keys-if-exists'
 import { addValidations } from './add-validations'
+import { getTsSyntaxKind } from './get-ts-syntax-kind'
 
 export interface GetFields {
   contentFields: ContentFields[]
@@ -62,11 +62,12 @@ export const getFields = ({
         validations,
       })
     }
+    const tsSyntaxKind = getTsSyntaxKind({ contentField })
     fields[contentField.id] = {
       blockTag: '@modelberry',
       inlineTags,
       isRequired: contentField.required,
-      tsSyntaxKind: tsSyntaxKind.StringKeyword,
+      tsSyntaxKind,
     }
   }
   return fields

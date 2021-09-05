@@ -35,10 +35,7 @@ export const getContentTypeResponse = {
       required: false,
       validations: [
         { size: { max: 155, min: 0 } },
-        { size: { max: 155, min: 0 } },
-        { size: { max: 155, min: 0 } },
-        { size: { max: 155, min: 0 } },
-        { size: { max: 155, min: 0 } },
+        { size: { max: 200, min: 100 } },
       ],
       disabled: false,
       omitted: false,
@@ -56,10 +53,7 @@ export const getContentTypeResponse = {
         type: 'Link',
         validations: [
           { linkContentType: ['testAction'] },
-          { linkContentType: ['testAction'] },
-          { linkContentType: ['testAction'] },
-          { linkContentType: ['testAction'] },
-          { linkContentType: ['testAction'] },
+          { linkContentType: ['someOtherAction'] },
         ],
         linkType: 'Entry',
       },

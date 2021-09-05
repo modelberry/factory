@@ -16,7 +16,7 @@ export interface ContentfulTestTopic {
    * - {@name Abstract}
    * - {@type Symbol}
    * - {@widgetId singleLine}
-   * - {@validations size-min0-max155}
+   * - {@validations size-min0-max155 size-min1000-max200}
    */
   abstract?: string
   /** @modelberry
@@ -24,7 +24,7 @@ export interface ContentfulTestTopic {
    * - {@type Array}
    * - {@itemsType Link}
    * - {@itemsLinkType Entry}
-   * - {@itemsValidations linkContentType-testAction}
+   * - {@itemsValidations linkContentType-testAction linkContentType-someOtherAction}
    * - {@widgetId entryLinksEditor}
    */
   actions?: string
@@ -717,7 +717,7 @@ export interface ContentfulAction {
    * - {@name Icon}
    * - {@type Symbol}
    * - {@widgetId dropdown}
-   * - {@validations in-activity-airplay-alert-circle-19}
+   * - {@validations in-activity-airplay-alert-circle-21}
    */
   icon?: string
   /** @modelberry
@@ -773,7 +773,9 @@ export interface ContentfulAction {
       "./dummy/validations.ts",
       "export const modelberryPluginData: ModelberryPluginData = {
   'size-min0-max155': { size: { max: 155, min: 0 } },
+  'size-min1000-max200': { size: { max: 200, min: 1000 } },
   'linkContentType-testAction': { linkContentType: ['testAction'] },
+  'linkContentType-someOtherAction': { linkContentType: ['someOtherAction'] },
   'linkContentType-action': { linkContentType: ['action'] },
   'linkContentType-navigationSegment': {
     linkContentType: ['navigationSegment'],
@@ -1120,7 +1122,7 @@ export interface ContentfulAction {
       'youtube',
     ],
   },
-  'in-activity-airplay-alert-circle-19': {
+  'in-activity-airplay-alert-circle-21': {
     in: [
       'activity',
       'airplay',
@@ -1430,7 +1432,7 @@ export interface ContentfulTestTopic {
    * - {@name Abstract}
    * - {@type Symbol}
    * - {@widgetId singleLine}
-   * - {@validations size-min0-max155}
+   * - {@validations size-min0-max155 size-min100-max200}
    */
   abstract?: string
   /** @modelberry
@@ -1438,7 +1440,7 @@ export interface ContentfulTestTopic {
    * - {@type Array}
    * - {@itemsType Link}
    * - {@itemsLinkType Entry}
-   * - {@itemsValidations linkContentType-testAction}
+   * - {@itemsValidations linkContentType-testAction linkContentType-someOtherAction}
    * - {@widgetId entryLinksEditor}
    */
   actions?: string
@@ -1476,7 +1478,9 @@ export interface ContentfulTestTopic {
       "./dummy/validations.ts",
       "export const modelberryPluginData: ModelberryPluginData = {
   'size-min0-max155': { size: { max: 155, min: 0 } },
+  'size-min100-max200': { size: { max: 200, min: 100 } },
   'linkContentType-testAction': { linkContentType: ['testAction'] },
+  'linkContentType-someOtherAction': { linkContentType: ['someOtherAction'] },
 }
 ",
     ],
@@ -1558,7 +1562,7 @@ export interface ContentfulTestTopic {
    * - {@name Abstract}
    * - {@type Symbol}
    * - {@widgetId singleLine}
-   * - {@validations size-min0-max155}
+   * - {@validations size-min0-max155 size-min1000-max200}
    */
   abstract?: string
   /** @modelberry
@@ -1566,7 +1570,7 @@ export interface ContentfulTestTopic {
    * - {@type Array}
    * - {@itemsType Link}
    * - {@itemsLinkType Entry}
-   * - {@itemsValidations linkContentType-testAction}
+   * - {@itemsValidations linkContentType-testAction linkContentType-someOtherAction}
    * - {@widgetId entryLinksEditor}
    */
   actions?: string
@@ -2259,7 +2263,7 @@ export interface ContentfulAction {
    * - {@name Icon}
    * - {@type Symbol}
    * - {@widgetId dropdown}
-   * - {@validations in-activity-airplay-alert-circle-19}
+   * - {@validations in-activity-airplay-alert-circle-21}
    */
   icon?: string
   /** @modelberry
@@ -2315,7 +2319,9 @@ export interface ContentfulAction {
       "./dummy/validations.ts",
       "export const modelberryPluginData: ModelberryPluginData = {
   'size-min0-max155': { size: { max: 155, min: 0 } },
+  'size-min1000-max200': { size: { max: 200, min: 1000 } },
   'linkContentType-testAction': { linkContentType: ['testAction'] },
+  'linkContentType-someOtherAction': { linkContentType: ['someOtherAction'] },
   'linkContentType-action': { linkContentType: ['action'] },
   'linkContentType-navigationSegment': {
     linkContentType: ['navigationSegment'],
@@ -2662,7 +2668,7 @@ export interface ContentfulAction {
       'youtube',
     ],
   },
-  'in-activity-airplay-alert-circle-19': {
+  'in-activity-airplay-alert-circle-21': {
     in: [
       'activity',
       'airplay',
