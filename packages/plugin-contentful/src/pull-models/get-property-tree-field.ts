@@ -1,8 +1,10 @@
-import { tsSyntaxKind } from '@modelberry/mbfactory/plain'
+import { tsSyntaxKind, PropertryNode } from '@modelberry/mbfactory/plain'
 import { ContentFields } from 'contentful-management/types'
 
-export interface GetTsSyntaxKind {
+export interface GetPropertyTreeField {
+  comment: string
   contentField: ContentFields
+  required: boolean
 }
 
 // export type ContentfulAsset = {
@@ -19,18 +21,26 @@ export interface GetTsSyntaxKind {
 //   width: number
 // }
 
-export const getTsSyntaxKind = ({ contentField }: GetTsSyntaxKind) => {
-  // __typename?: string
-  // sys?: {
-  //   id: string
-  // }
+export const getPropertyTreeField = ({
+  comment,
+  contentField,
+  required,
+}: GetPropertyTreeField) => {
+  const node: PropertryNode = {
+    comment,
+    isRequired: required,
+    tsSyntaxKind: tsSyntaxKind.StringKeyword,
+  }
+  const field = {
+    node,
+  }
 
   switch (contentField.type) {
     case 'Symbol':
-      return tsSyntaxKind.StringKeyword
+      return field
 
     case 'Text':
-      return tsSyntaxKind.StringKeyword
+      return field
 
     case 'RichText':
       // text?: {
@@ -51,22 +61,25 @@ export const getTsSyntaxKind = ({ contentField }: GetTsSyntaxKind) => {
       break
 
     case 'Integer':
-      return tsSyntaxKind.NumberKeyword
+      field.node.tsSyntaxKind = tsSyntaxKind.NumberKeyword
+      return field
 
     case 'Number':
-      return tsSyntaxKind.NumberKeyword
+      field.node.tsSyntaxKind = tsSyntaxKind.NumberKeyword
+      return field
 
     case 'Date':
-      return tsSyntaxKind.StringKeyword
+      return field
 
     case 'Boolean':
-      return tsSyntaxKind.BooleanKeyword
+      field.node.tsSyntaxKind = tsSyntaxKind.BooleanKeyword
+      return field
 
     case 'Location':
-      return tsSyntaxKind.StringKeyword
+      return field
 
     case 'Object':
-      return tsSyntaxKind.StringKeyword
+      return field
 
     case 'Link':
       switch (contentField.linkType) {
@@ -96,5 +109,5 @@ export const getTsSyntaxKind = ({ contentField }: GetTsSyntaxKind) => {
       }
       break
   }
-  return tsSyntaxKind.StringKeyword
+  return field
 }

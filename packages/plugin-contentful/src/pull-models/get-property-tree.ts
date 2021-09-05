@@ -1,8 +1,12 @@
 import { ContentFields } from 'contentful-management/types'
-import { PropertyTree, tagsToTsDocComment } from '@modelberry/mbfactory/plain'
+import {
+  PropertyTree,
+  tagsToTsDocComment,
+  tsSyntaxKind,
+} from '@modelberry/mbfactory/plain'
 import { copyKeysIfExists } from './copy-keys-if-exists'
 import { addValidations } from './add-validations'
-import { getTsSyntaxKind } from './get-ts-syntax-kind'
+import { getPropertyTreeField } from './get-property-tree-field'
 
 export interface GetPropertyTree {
   contentFields: ContentFields[]
@@ -15,7 +19,15 @@ export const getPropertyTree = ({
   editorInterfaces,
   validations,
 }: GetPropertyTree) => {
-  const propertyTree: PropertyTree = {}
+  const propertyTree: PropertyTree = {
+    __typename: {
+      node: { isRequired: false, tsSyntaxKind: tsSyntaxKind.StringKeyword },
+    },
+    sys: {
+      node: { isRequired: true },
+      edges: { id: { node: { tsSyntaxKind: tsSyntaxKind.StringKeyword } } },
+    },
+  }
   for (const contentField of contentFields) {
     const inlineTags: Record<string, any> = {}
     copyKeysIfExists({
@@ -63,18 +75,15 @@ export const getPropertyTree = ({
         validations,
       })
     }
-    const tsSyntaxKind = getTsSyntaxKind({ contentField })
     const comment = tagsToTsDocComment({
       blockTag: '@modelberry',
       inlineTags,
     })
-    propertyTree[contentField.id] = {
-      node: {
-        comment: `* ${comment}`,
-        isRequired: contentField.required,
-        tsSyntaxKind,
-      },
-    }
+    propertyTree[contentField.id] = getPropertyTreeField({
+      comment: `* ${comment}`,
+      contentField,
+      required: contentField.required,
+    })
   }
   return propertyTree
 }

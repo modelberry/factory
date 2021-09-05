@@ -12,6 +12,10 @@ exports[`Pull content should pull correctly with type filter 1`] = `
  * - {@description Topic model, a heading, an abstract and a call to action}
  */
 export interface ContentfulTestTopic {
+  __typename?: string
+  sys: {
+    id?: string
+  }
   /** @modelberry
    * - {@name Abstract}
    * - {@type Symbol}
@@ -66,6 +70,10 @@ export interface ContentfulTestTopic {
  * - {@displayField heading}
  */
 export interface ContentfulTestAction {
+  __typename?: string
+  sys: {
+    id?: string
+  }
   /** @modelberry
    * - {@name Anchor}
    * - {@type Symbol}
@@ -110,6 +118,10 @@ export interface ContentfulTestAction {
  * - {@description navigationSection}
  */
 export interface ContentfulNavigationSection {
+  __typename?: string
+  sys: {
+    id?: string
+  }
   /** @modelberry
    * - {@name Title}
    * - {@type Symbol}
@@ -203,6 +215,10 @@ export interface ContentfulNavigationSection {
  * - {@description Topic section}
  */
 export interface ContentfulTopicSection {
+  __typename?: string
+  sys: {
+    id?: string
+  }
   /** @modelberry
    * - {@name Titel binnen Contentful}
    * - {@required true}
@@ -300,6 +316,10 @@ export interface ContentfulTopicSection {
  * - {@description Topic}
  */
 export interface ContentfulTopic {
+  __typename?: string
+  sys: {
+    id?: string
+  }
   /** @modelberry
    * - {@name Titel binnen Contentful}
    * - {@required true}
@@ -386,6 +406,10 @@ export interface ContentfulTopic {
  * - {@description Text section}
  */
 export interface ContentfulTextSection {
+  __typename?: string
+  sys: {
+    id?: string
+  }
   /** @modelberry
    * - {@name Titel binnen Contentful}
    * - {@required true}
@@ -437,6 +461,10 @@ export interface ContentfulTextSection {
  * - {@description Navigation segment}
  */
 export interface ContentfulNavigationSegment {
+  __typename?: string
+  sys: {
+    id?: string
+  }
   /** @modelberry
    * - {@name Titel binnen Contentful}
    * - {@required true}
@@ -487,6 +515,10 @@ export interface ContentfulNavigationSegment {
  * - {@description Page}
  */
 export interface ContentfulPage {
+  __typename?: string
+  sys: {
+    id?: string
+  }
   /** @modelberry
    * - {@name Titel binnen Contentful}
    * - {@required true}
@@ -573,6 +605,10 @@ export interface ContentfulPage {
  * - {@description Globals}
  */
 export interface ContentfulGlobals {
+  __typename?: string
+  sys: {
+    id?: string
+  }
   /** @modelberry
    * - {@name Titel binnen Contentful}
    * - {@required true}
@@ -652,6 +688,10 @@ export interface ContentfulGlobals {
  * - {@description Embed}
  */
 export interface ContentfulEmbed {
+  __typename?: string
+  sys: {
+    id?: string
+  }
   /** @modelberry
    * - {@name Titel binnen Contentful}
    * - {@required true}
@@ -691,6 +731,10 @@ export interface ContentfulEmbed {
  * - {@description Action}
  */
 export interface ContentfulAction {
+  __typename?: string
+  sys: {
+    id?: string
+  }
   /** @modelberry
    * - {@name Titel binnen Contentful}
    * - {@required true}
@@ -1428,6 +1472,10 @@ export interface ContentfulAction {
  * - {@description Topic model, a heading, an abstract and a call to action}
  */
 export interface ContentfulTestTopic {
+  __typename?: string
+  sys: {
+    id?: string
+  }
   /** @modelberry
    * - {@name Abstract}
    * - {@type Symbol}
@@ -1558,6 +1606,10 @@ exports[`Pull content should pull correctly without type filter 1`] = `
  * - {@description Topic model, a heading, an abstract and a call to action}
  */
 export interface ContentfulTestTopic {
+  __typename?: string
+  sys: {
+    id?: string
+  }
   /** @modelberry
    * - {@name Abstract}
    * - {@type Symbol}
@@ -1612,6 +1664,10 @@ export interface ContentfulTestTopic {
  * - {@displayField heading}
  */
 export interface ContentfulTestAction {
+  __typename?: string
+  sys: {
+    id?: string
+  }
   /** @modelberry
    * - {@name Anchor}
    * - {@type Symbol}
@@ -1656,6 +1712,10 @@ export interface ContentfulTestAction {
  * - {@description navigationSection}
  */
 export interface ContentfulNavigationSection {
+  __typename?: string
+  sys: {
+    id?: string
+  }
   /** @modelberry
    * - {@name Title}
    * - {@type Symbol}
@@ -1749,6 +1809,10 @@ export interface ContentfulNavigationSection {
  * - {@description Topic section}
  */
 export interface ContentfulTopicSection {
+  __typename?: string
+  sys: {
+    id?: string
+  }
   /** @modelberry
    * - {@name Titel binnen Contentful}
    * - {@required true}
@@ -1846,6 +1910,10 @@ export interface ContentfulTopicSection {
  * - {@description Topic}
  */
 export interface ContentfulTopic {
+  __typename?: string
+  sys: {
+    id?: string
+  }
   /** @modelberry
    * - {@name Titel binnen Contentful}
    * - {@required true}
@@ -1932,6 +2000,10 @@ export interface ContentfulTopic {
  * - {@description Text section}
  */
 export interface ContentfulTextSection {
+  __typename?: string
+  sys: {
+    id?: string
+  }
   /** @modelberry
    * - {@name Titel binnen Contentful}
    * - {@required true}
@@ -1983,6 +2055,10 @@ export interface ContentfulTextSection {
  * - {@description Navigation segment}
  */
 export interface ContentfulNavigationSegment {
+  __typename?: string
+  sys: {
+    id?: string
+  }
   /** @modelberry
    * - {@name Titel binnen Contentful}
    * - {@required true}
@@ -2033,6 +2109,10 @@ export interface ContentfulNavigationSegment {
  * - {@description Page}
  */
 export interface ContentfulPage {
+  __typename?: string
+  sys: {
+    id?: string
+  }
   /** @modelberry
    * - {@name Titel binnen Contentful}
    * - {@required true}
@@ -2119,6 +2199,10 @@ export interface ContentfulPage {
  * - {@description Globals}
  */
 export interface ContentfulGlobals {
+  __typename?: string
+  sys: {
+    id?: string
+  }
   /** @modelberry
    * - {@name Titel binnen Contentful}
    * - {@required true}
@@ -2198,6 +2282,10 @@ export interface ContentfulGlobals {
  * - {@description Embed}
  */
 export interface ContentfulEmbed {
+  __typename?: string
+  sys: {
+    id?: string
+  }
   /** @modelberry
    * - {@name Titel binnen Contentful}
    * - {@required true}
@@ -2237,6 +2325,10 @@ export interface ContentfulEmbed {
  * - {@description Action}
  */
 export interface ContentfulAction {
+  __typename?: string
+  sys: {
+    id?: string
+  }
   /** @modelberry
    * - {@name Titel binnen Contentful}
    * - {@required true}
