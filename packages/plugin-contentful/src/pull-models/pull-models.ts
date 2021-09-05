@@ -8,7 +8,7 @@ import {
 } from '@modelberry/mbfactory/plain'
 import { copyKeysIfExists } from './copy-keys-if-exists'
 import { getFields } from './get-fields'
-import { SourceFile, writeSourceFiles } from './write-source-file'
+import { SourceFile, writeSourceFiles } from './write-source-files'
 import { getEditorInterfaces } from './get-editor-interfaces'
 
 export interface PullModels {
