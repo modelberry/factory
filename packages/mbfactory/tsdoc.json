@@ -94,7 +94,7 @@
     {
       "allowMultiple": false,
       "syntaxKind": "inline",
-      "tagName": "@widget"
+      "tagName": "@widgetid"
     }
   ]
 }

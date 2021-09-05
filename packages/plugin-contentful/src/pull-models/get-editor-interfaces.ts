@@ -19,6 +19,9 @@ export const getEditorInterfaces = async ({
           source: control,
           target: result[control.fieldId],
         })
+        // Remove default widgetNamespace 'builtin'
+        if (result[control.fieldId]['widgetNamespace'] === 'builtin')
+          delete result[control.fieldId]['widgetNamespace']
         copyKeysIfExists({
           keys: ['helpText'],
           source: control.settings,
