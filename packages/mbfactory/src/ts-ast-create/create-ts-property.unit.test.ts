@@ -93,4 +93,41 @@ describe('Create ts property should', () => {
     abstract?: string;
 }`)
   })
+
+  test('create a complex property with comments', async () => {
+    const comment = `*
+    * @modelberry
+    * - {@type Symbol}
+    * - {@validations longString}
+    `
+    const propertyTree = {
+      sys: {
+        node: { comment },
+        edges: { id: { node: { syntaxKind: ts.SyntaxKind.StringKeyword } } },
+      },
+      abstract: { node: { comment, syntaxKind: ts.SyntaxKind.StringKeyword } },
+      heading: {
+        node: { isRequired: true, syntaxKind: ts.SyntaxKind.StringKeyword },
+      },
+    }
+    const members = createTsProperty({ propertyTree })
+    const output = await renderProps(members)
+    expect(output).toEqual(`export interface ContentfulTopic {
+    /**
+        * @modelberry
+        * - {@type Symbol}
+        * - {@validations longString}
+        */
+    sys?: {
+        id?: string;
+    };
+    /**
+        * @modelberry
+        * - {@type Symbol}
+        * - {@validations longString}
+        */
+    abstract?: string;
+    heading: string;
+}`)
+  })
 })

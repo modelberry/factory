@@ -5,7 +5,26 @@ export interface GetTsSyntaxKind {
   contentField: ContentFields
 }
 
+// export type ContentfulAsset = {
+//   sys: {
+//     id: string
+//   }
+//   contentType: string
+//   description: string
+//   fileName: string
+//   height: number
+//   size: number
+//   title: string
+//   url: string
+//   width: number
+// }
+
 export const getTsSyntaxKind = ({ contentField }: GetTsSyntaxKind) => {
+  // __typename?: string
+  // sys?: {
+  //   id: string
+  // }
+
   switch (contentField.type) {
     case 'Symbol':
       return tsSyntaxKind.StringKeyword
@@ -50,17 +69,32 @@ export const getTsSyntaxKind = ({ contentField }: GetTsSyntaxKind) => {
       return tsSyntaxKind.StringKeyword
 
     case 'Link':
-      // linkType: Asset, Entry
+      switch (contentField.linkType) {
+        case 'Asset':
+          // ContentfulAsset
+          break
+        case 'Entry':
+          // Use in validation lookup
+          break
+      }
       break
     case 'Array':
-      // {type: 'Array', items: {type: 'Symbol'}}
-      // {type: 'Array', items: {type: 'Link', linkType: 'Entry'}}
-      // {type: 'Array', items: {type: 'Link', linkType: 'Asset'}}
-
+      switch (contentField.items?.type) {
+        case 'Symbol':
+          // string[]
+          break
+        case 'Link':
+          switch (contentField.items?.linkType) {
+            case 'Asset':
+              // ContentfulAsset[]
+              break
+            case 'Entry':
+              // Use in validation lookup - Array
+              break
+          }
+          break
+      }
       break
-
-    default:
-      return tsSyntaxKind.StringKeyword
   }
   return tsSyntaxKind.StringKeyword
 }
