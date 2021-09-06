@@ -78,6 +78,7 @@ export const getPropertyTreeField = ({
     case 'Link':
       switch (contentField.linkType) {
         case 'Asset':
+          namedImports.push('ContentfulAsset')
           field.node.createTypeReferenceNode = 'ContentfulAsset'
           return field
         case 'Entry':
@@ -99,6 +100,7 @@ export const getPropertyTreeField = ({
         case 'Link':
           switch (contentField.items?.linkType) {
             case 'Asset':
+              namedImports.push('ContentfulAsset')
               field.node.createTypeReferenceNode = 'ContentfulAsset'
               return field
             case 'Entry':
