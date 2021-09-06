@@ -25,7 +25,7 @@ export const handler: Handler = async ({
   }
   if (!options.force) {
     const answers = await inquirer.prompt(continueQuestion)
-    if (answers.policy === 'a') return
+    if (answers.policy === 'q') return
   }
 
   const contentfulEnvironment = await getContentfulEnvironment()

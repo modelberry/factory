@@ -2,9 +2,9 @@ export const continueQuestion = [
   {
     choices: [
       {
-        key: 'a',
-        name: 'Abort',
-        value: 'a',
+        key: 'q',
+        name: 'Quit',
+        value: 'q',
       },
       {
         key: 'c',
@@ -13,7 +13,7 @@ export const continueQuestion = [
       },
     ],
     default: 'c',
-    message: 'Continue or Abort?`:',
+    message: 'Continue or Quit?`:',
     name: 'policy',
     type: 'expand',
   },
