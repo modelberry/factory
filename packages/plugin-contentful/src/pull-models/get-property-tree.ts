@@ -94,7 +94,9 @@ export const getPropertyTree = ({
       blockTag: '@modelberry',
       inlineTags,
     })
-    propertyTree[contentField.id] = getPropertyTreeField({
+    const isArray = contentField.type === 'Array'
+    const fieldName = `${contentField.id}${isArray ? 'Collection' : ''}`
+    propertyTree[fieldName] = getPropertyTreeField({
       comment: `* ${comment}`,
       contentField,
       namedImports,

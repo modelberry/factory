@@ -28,19 +28,16 @@ export const getPropertyTreeField = ({
     isRequired: required,
   }
   const edges: PropertyTree = {}
-  const field = {
-    node,
-  }
   let contentTypes = []
 
   switch (contentField.type) {
     case 'Symbol':
-      field.node.createKeywordTypeNode = tsSyntaxKind.StringKeyword
-      return field
+      node.createKeywordTypeNode = tsSyntaxKind.StringKeyword
+      return { node }
 
     case 'Text':
-      field.node.createKeywordTypeNode = tsSyntaxKind.StringKeyword
-      return field
+      node.createKeywordTypeNode = tsSyntaxKind.StringKeyword
+      return { node }
 
     case 'RichText':
       edges.json = {
@@ -48,75 +45,82 @@ export const getPropertyTreeField = ({
           createTypeReferenceNode: 'Document',
         },
       }
-
-      break
+      return { node, edges }
 
     case 'Integer':
-      field.node.createKeywordTypeNode = tsSyntaxKind.NumberKeyword
-      return field
+      node.createKeywordTypeNode = tsSyntaxKind.NumberKeyword
+      return { node }
 
     case 'Number':
-      field.node.createKeywordTypeNode = tsSyntaxKind.NumberKeyword
-      return field
+      node.createKeywordTypeNode = tsSyntaxKind.NumberKeyword
+      return { node }
 
     case 'Date':
-      field.node.createKeywordTypeNode = tsSyntaxKind.StringKeyword
-      return field
+      node.createKeywordTypeNode = tsSyntaxKind.StringKeyword
+      return { node }
 
     case 'Boolean':
-      field.node.createKeywordTypeNode = tsSyntaxKind.BooleanKeyword
-      return field
+      node.createKeywordTypeNode = tsSyntaxKind.BooleanKeyword
+      return { node }
 
     case 'Location':
-      field.node.createKeywordTypeNode = tsSyntaxKind.StringKeyword
-      return field
+      node.createKeywordTypeNode = tsSyntaxKind.StringKeyword
+      return { node }
 
     case 'Object':
-      field.node.createKeywordTypeNode = tsSyntaxKind.StringKeyword
-      return field
+      node.createKeywordTypeNode = tsSyntaxKind.StringKeyword
+      return { node }
 
     case 'Link':
       switch (contentField.linkType) {
         case 'Asset':
           namedImports.push('ContentfulAsset')
-          field.node.createTypeReferenceNode = 'ContentfulAsset'
-          return field
+          node.createTypeReferenceNode = 'ContentfulAsset'
+          return { node }
         case 'Entry':
           contentTypes = getLinkContentTypes({ contentField })
           // Track content types for generating import statements later
           namedImports.push(...contentTypes)
-          field.node.createTypeReferenceNode = contentTypesToString({
+          node.createTypeReferenceNode = contentTypesToString({
             contentTypes,
           })
-          return field
+          return { node }
       }
       break
     case 'Array':
-      field.node.isArrayTypeNode = true
+      // Add an items property for arrays
+      edges.items = {
+        node: {
+          createTypeReferenceNode: 'items',
+          isArrayTypeNode: true,
+          isRequired: true,
+        },
+      }
+
       switch (contentField.items?.type) {
         case 'Symbol':
-          field.node.createKeywordTypeNode = tsSyntaxKind.StringKeyword
-          return field
+          edges.items.node!.createKeywordTypeNode = tsSyntaxKind.StringKeyword
+          return { node, edges }
         case 'Link':
           switch (contentField.items?.linkType) {
             case 'Asset':
               namedImports.push('ContentfulAsset')
-              field.node.createTypeReferenceNode = 'ContentfulAsset'
-              return field
+              edges.items.node!.createTypeReferenceNode = 'ContentfulAsset'
+              return { node, edges }
             case 'Entry':
               contentTypes = getLinkContentTypes({ contentField })
               // Track content types for generating import statements later
               namedImports.push(...contentTypes)
-              field.node.createTypeReferenceNode = contentTypesToString({
+              edges.items.node!.createTypeReferenceNode = contentTypesToString({
                 contentTypes,
                 isArray: true,
               })
-              return field
+              return { node, edges }
           }
           break
       }
       break
   }
-  field.node.createKeywordTypeNode = tsSyntaxKind.StringKeyword
-  return field
+  node.createKeywordTypeNode = tsSyntaxKind.StringKeyword
+  return { node }
 }
