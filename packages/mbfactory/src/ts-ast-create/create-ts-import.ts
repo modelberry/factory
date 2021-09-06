@@ -20,7 +20,7 @@ export const createTsImport = ({ namedImports, from }: CreateTsImport) => {
       undefined,
       ts.factory.createNamedImports(importSpecifiers)
     ),
-    ts.factory.createIdentifier(from)
+    ts.factory.createStringLiteral(from)
   )
   return importDeclaration
 }

@@ -1,15 +1,22 @@
 import { ContentType } from 'contentful-management/types'
 import { copyKeysIfExists } from './copy-keys-if-exists'
 
+export type EditorInterfaceTag = 'widgetId' | 'widgetNamespace' | 'helpText'
+export type EditorInterfaceTags = Partial<Record<EditorInterfaceTag, any>>
+
 export interface GetEditorInterfaces {
   contentType: ContentType
 }
 
+/**
+ * Fetch editor interfaces from Contentful remote API and return them as
+ * EditorInterfaceTags
+ */
 export const getEditorInterfaces = async ({
   contentType,
 }: GetEditorInterfaces) => {
   const editorInterfaceResponse = await contentType.getEditorInterface()
-  let editorInterfaces: Record<string, any> = {}
+  let editorInterfaces: EditorInterfaceTags = {}
   if (editorInterfaceResponse.controls) {
     editorInterfaces = editorInterfaceResponse.controls.reduce(
       (result: Record<string, any>, control) => {

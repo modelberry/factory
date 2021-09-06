@@ -1,12 +1,16 @@
 import {
   camelToKebab,
   camelToSpaces,
+  firstLowerCase,
   firstUpperCase,
   noTrailingSlash,
   stripDoubleQuotes,
 } from './case-helpers'
 
 describe('Case helpers', () => {
+  test('firstLowerCase', async () => {
+    expect(firstLowerCase('What is the case?')).toBe('what is the case?')
+  })
   test('firstUpperCase', async () => {
     expect(firstUpperCase('what is the case?')).toBe('What is the case?')
   })

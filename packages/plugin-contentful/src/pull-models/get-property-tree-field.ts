@@ -4,31 +4,23 @@ import {
   PropertyTree,
 } from '@modelberry/mbfactory/plain'
 import { ContentFields } from 'contentful-management/types'
-import { getLinkContentType } from './get-link-content-type'
+import {
+  contentTypesToString,
+  getLinkContentTypes,
+} from './get-link-content-types'
 
 export interface GetPropertyTreeField {
   comment: string
   contentField: ContentFields
+  /** Empty array that gets filled with named imports */
+  namedImports: string[]
   required: boolean
 }
-
-// export type ContentfulAsset = {
-//   sys: {
-//     id: string
-//   }
-//   contentType: string
-//   description: string
-//   fileName: string
-//   height: number
-//   size: number
-//   title: string
-//   url: string
-//   width: number
-// }
 
 export const getPropertyTreeField = ({
   comment,
   contentField,
+  namedImports,
   required,
 }: GetPropertyTreeField) => {
   const node: PropertryNode = {
@@ -39,6 +31,7 @@ export const getPropertyTreeField = ({
   const field = {
     node,
   }
+  let contentTypes = []
 
   switch (contentField.type) {
     case 'Symbol':
@@ -88,8 +81,11 @@ export const getPropertyTreeField = ({
           field.node.createTypeReferenceNode = 'ContentfulAsset'
           return field
         case 'Entry':
-          field.node.createTypeReferenceNode = getLinkContentType({
-            contentField,
+          contentTypes = getLinkContentTypes({ contentField })
+          // Track content types for generating import statements later
+          namedImports.push(...contentTypes)
+          field.node.createTypeReferenceNode = contentTypesToString({
+            contentTypes,
           })
           return field
       }
@@ -106,8 +102,12 @@ export const getPropertyTreeField = ({
               field.node.createTypeReferenceNode = 'ContentfulAsset'
               return field
             case 'Entry':
-              field.node.createTypeReferenceNode = getLinkContentType({
-                contentField,
+              contentTypes = getLinkContentTypes({ contentField })
+              // Track content types for generating import statements later
+              namedImports.push(...contentTypes)
+              field.node.createTypeReferenceNode = contentTypesToString({
+                contentTypes,
+                isArray: true,
               })
               return field
           }

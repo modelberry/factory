@@ -26,7 +26,7 @@ export interface AddValidation {
   tag: '@validations' | '@itemsValidations'
   /** Object to add inline tag to */
   tags: Record<string, any>
-  /** Object to add validations to */
+  /** Empty object that gets filled with validations */
   validations: Record<string, any>
 }
 

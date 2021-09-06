@@ -17,12 +17,20 @@ const renderNode = async (node: ts.Node) => {
 }
 
 describe('Create ts import should', () => {
-  test('create an import', async () => {
+  test('create an import from strings', async () => {
     const importNode = createTsImport({
       from: './test',
       namedImports: ['Topic', 'Action'],
     })
     const output = await renderNode(importNode)
-    expect(output).toEqual(`import { Topic, Action } from ./test`)
+    expect(output).toEqual(`import { Topic, Action } from "./test"`)
+  })
+  test('create an import from a string with back ticks', async () => {
+    const importNode = createTsImport({
+      from: `./${'test'}.ts`,
+      namedImports: ['Topic', 'Action'],
+    })
+    const output = await renderNode(importNode)
+    expect(output).toEqual(`import { Topic, Action } from "./test.ts"`)
   })
 })

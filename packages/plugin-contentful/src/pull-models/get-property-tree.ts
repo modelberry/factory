@@ -9,14 +9,24 @@ import { addValidations } from './add-validations'
 import { getPropertyTreeField } from './get-property-tree-field'
 
 export interface GetPropertyTree {
+  /** Fields used to build property tree from */
   contentFields: ContentFields[]
+  /** Editor settings to get 'widgetId', 'widgetNamespace' and 'helpText' tags from */
   editorInterfaces: Record<string, any>
+  /** Empty array that gets filled with named imports */
+  namedImports: string[]
+  /** Empty object that gets filled with validations */
   validations: Record<string, any>
 }
 
+/**
+ * Build property tree with all interface fields, this tree can be passed to
+ * createTsInterface to create the typescript interface definition
+ */
 export const getPropertyTree = ({
   contentFields,
   editorInterfaces,
+  namedImports,
   validations,
 }: GetPropertyTree) => {
   const propertyTree: PropertyTree = {
@@ -87,6 +97,7 @@ export const getPropertyTree = ({
     propertyTree[contentField.id] = getPropertyTreeField({
       comment: `* ${comment}`,
       contentField,
+      namedImports,
       required: contentField.required,
     })
   }

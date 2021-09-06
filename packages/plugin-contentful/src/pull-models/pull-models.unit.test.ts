@@ -31,6 +31,7 @@ describe('Pull content should', () => {
       [chalk('- new source file ./dummy/embed.ts')],
       [chalk('- new source file ./dummy/action.ts')],
       [chalk('- new source file ./dummy/validations.ts')],
+      [chalk('- new source file ./dummy/contentful-asset.ts')],
     ])
   })
   test('pull correctly with type filter', async () => {
@@ -43,6 +44,7 @@ describe('Pull content should', () => {
     expect(consoleSpy.mock.calls).toEqual([
       [chalk('- new source file ./dummy/test-topic.ts')],
       [chalk('- new source file ./dummy/validations.ts')],
+      [chalk('- new source file ./dummy/contentful-asset.ts')],
     ])
   })
 })
