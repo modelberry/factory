@@ -34,6 +34,8 @@ export const pullModels = async ({
     const ctResponse = await contentfulEnvironment.getContentTypes()
     ctResponse.items.forEach((ct) => contentTypes.push(ct))
   }
+  // Generate import statements for each type to be added to the main file
+  const allTypesImportStatements = []
   // Empty object that gets filled with validations
   const validations: Record<string, any> = {}
   for (const contentType of contentTypes) {
@@ -57,41 +59,39 @@ export const pullModels = async ({
       namedImports,
       validations,
     })
+    const interfaceName = 'Contentful' + firstUpperCase(contentType.name)
     const interfaceDeclaration = createTsInterface({
       blockTag: '@modelberry',
       inlineTags,
       propertyTree,
       isExported: true,
-      name: 'Contentful' + firstUpperCase(contentType.name),
+      name: interfaceName,
     })
     // Add imports for required types
     const uniqueNzmedImports = Array.from(new Set(namedImports))
-    const importStatements = uniqueNzmedImports.map((ni) =>
+    const entryImportStatements = uniqueNzmedImports.map((ni) =>
       createTsImport({
         namedImports: [`${ni}`],
         from: `./${camelToKebab(firstLowerCase(ni))}`,
       })
     )
     // Add source file for this interface
+    const filename = `contentful-${camelToKebab(contentType.name)}.ts`
     files.push({
-      filename: `contentful-${camelToKebab(contentType.name)}.ts`,
-      nodes: [...importStatements, interfaceDeclaration],
+      filename,
+      nodes: [...entryImportStatements, interfaceDeclaration],
       path,
     })
+    // Add import statements to be added to the main file
+    allTypesImportStatements.push(
+      createTsImport({ namedImports: [interfaceName], from: `./${filename}` })
+    )
   }
   const mbPluginDataImport = createTsImport({
     namedImports: ['ModelberryPluginData'],
     from: `@modelberry/plugin-contentful/plain`,
   })
   const dataObject = { '@modelberry/plugin-contentful/plain': { validations } }
-
-  // Add source file that defines Contentful validation objects
-  const dataVarStatement = createDataVarStatement({ dataObject })
-  files.push({
-    filename: 'contentful-validations.ts',
-    nodes: [mbPluginDataImport, dataVarStatement],
-    path,
-  })
 
   // Add source file that defines ContentfulAsset type
   const contentfulAsset = createContentfulAssetTypeDeclaration()
@@ -100,5 +100,15 @@ export const pullModels = async ({
     nodes: [contentfulAsset],
     path,
   })
+
+  // Add main source file that imports all types and defines Contentful
+  // validation objects
+  const dataVarStatement = createDataVarStatement({ dataObject })
+  files.push({
+    filename: 'main.ts',
+    nodes: [...allTypesImportStatements, mbPluginDataImport, dataVarStatement],
+    path,
+  })
+
   await writeSourceFiles({ files, options })
 }

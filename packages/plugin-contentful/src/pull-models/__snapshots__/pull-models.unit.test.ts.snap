@@ -867,8 +867,36 @@ export interface ContentfulAction {
 ",
     ],
     Array [
-      "./dummy/contentful-validations.ts",
-      "import { ModelberryPluginData } from '@modelberry/plugin-contentful/plain'
+      "./dummy/contentful-asset.ts",
+      "export type ContentfulAsset = {
+  sys: {
+    id: string
+  }
+  contentType: string
+  description: string
+  fileName: string
+  height: number
+  size: number
+  title: string
+  url: string
+  width: number
+}
+",
+    ],
+    Array [
+      "./dummy/main.ts",
+      "import { ContentfulTestTopic } from './contentful-test-topic.ts'
+import { ContentfulTestAction } from './contentful-test-action.ts'
+import { ContentfulNavigationSection } from './contentful-navigation-section.ts'
+import { ContentfulTopicSection } from './contentful-topic-section.ts'
+import { ContentfulTopic } from './contentful-topic.ts'
+import { ContentfulTextSection } from './contentful-text-section.ts'
+import { ContentfulNavigationSegment } from './contentful-navigation-segment.ts'
+import { ContentfulPage } from './contentful-page.ts'
+import { ContentfulGlobals } from './contentful-globals.ts'
+import { ContentfulEmbed } from './contentful-embed.ts'
+import { ContentfulAction } from './contentful-action.ts'
+import { ModelberryPluginData } from '@modelberry/plugin-contentful/plain'
 export const modelberryPluginData: ModelberryPluginData = {
   '@modelberry/plugin-contentful/plain': {
     validations: {
@@ -1526,23 +1554,6 @@ export const modelberryPluginData: ModelberryPluginData = {
 ",
     ],
     Array [
-      "./dummy/contentful-asset.ts",
-      "export type ContentfulAsset = {
-  sys: {
-    id: string
-  }
-  contentType: string
-  description: string
-  fileName: string
-  height: number
-  size: number
-  title: string
-  url: string
-  width: number
-}
-",
-    ],
-    Array [
       "./dummy/contentful-test-topic.ts",
       "import { ContentfulSomeOtherAction } from './contentful-some-other-action'
 import { ContentfulAsset } from './contentful-asset'
@@ -1608,23 +1619,6 @@ export interface ContentfulTestTopic {
 ",
     ],
     Array [
-      "./dummy/contentful-validations.ts",
-      "import { ModelberryPluginData } from '@modelberry/plugin-contentful/plain'
-export const modelberryPluginData: ModelberryPluginData = {
-  '@modelberry/plugin-contentful/plain': {
-    validations: {
-      'size-min0-max155': { size: { max: 155, min: 0 } },
-      'size-min100-max200': { size: { max: 200, min: 100 } },
-      'linkContentType-testAction': { linkContentType: ['testAction'] },
-      'linkContentType-someOtherAction': {
-        linkContentType: ['someOtherAction'],
-      },
-    },
-  },
-}
-",
-    ],
-    Array [
       "./dummy/contentful-asset.ts",
       "export type ContentfulAsset = {
   sys: {
@@ -1638,6 +1632,24 @@ export const modelberryPluginData: ModelberryPluginData = {
   title: string
   url: string
   width: number
+}
+",
+    ],
+    Array [
+      "./dummy/main.ts",
+      "import { ContentfulTestTopic } from './contentful-test-topic.ts'
+import { ModelberryPluginData } from '@modelberry/plugin-contentful/plain'
+export const modelberryPluginData: ModelberryPluginData = {
+  '@modelberry/plugin-contentful/plain': {
+    validations: {
+      'size-min0-max155': { size: { max: 155, min: 0 } },
+      'size-min100-max200': { size: { max: 200, min: 100 } },
+      'linkContentType-testAction': { linkContentType: ['testAction'] },
+      'linkContentType-someOtherAction': {
+        linkContentType: ['someOtherAction'],
+      },
+    },
+  },
 }
 ",
     ],
@@ -2578,8 +2590,36 @@ export interface ContentfulAction {
 ",
     ],
     Array [
-      "./dummy/contentful-validations.ts",
-      "import { ModelberryPluginData } from '@modelberry/plugin-contentful/plain'
+      "./dummy/contentful-asset.ts",
+      "export type ContentfulAsset = {
+  sys: {
+    id: string
+  }
+  contentType: string
+  description: string
+  fileName: string
+  height: number
+  size: number
+  title: string
+  url: string
+  width: number
+}
+",
+    ],
+    Array [
+      "./dummy/main.ts",
+      "import { ContentfulTestTopic } from './contentful-test-topic.ts'
+import { ContentfulTestAction } from './contentful-test-action.ts'
+import { ContentfulNavigationSection } from './contentful-navigation-section.ts'
+import { ContentfulTopicSection } from './contentful-topic-section.ts'
+import { ContentfulTopic } from './contentful-topic.ts'
+import { ContentfulTextSection } from './contentful-text-section.ts'
+import { ContentfulNavigationSegment } from './contentful-navigation-segment.ts'
+import { ContentfulPage } from './contentful-page.ts'
+import { ContentfulGlobals } from './contentful-globals.ts'
+import { ContentfulEmbed } from './contentful-embed.ts'
+import { ContentfulAction } from './contentful-action.ts'
+import { ModelberryPluginData } from '@modelberry/plugin-contentful/plain'
 export const modelberryPluginData: ModelberryPluginData = {
   '@modelberry/plugin-contentful/plain': {
     validations: {
@@ -3233,23 +3273,6 @@ export const modelberryPluginData: ModelberryPluginData = {
       },
     },
   },
-}
-",
-    ],
-    Array [
-      "./dummy/contentful-asset.ts",
-      "export type ContentfulAsset = {
-  sys: {
-    id: string
-  }
-  contentType: string
-  description: string
-  fileName: string
-  height: number
-  size: number
-  title: string
-  url: string
-  width: number
 }
 ",
     ],
