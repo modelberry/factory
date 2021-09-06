@@ -68,30 +68,31 @@ export const pullModels = async ({
     const uniqueNzmedImports = Array.from(new Set(namedImports))
     const importStatements = uniqueNzmedImports.map((ni) =>
       createTsImport({
-        namedImports: [`Contentful${ni}`],
-        from: `./contentful-${camelToKebab(firstLowerCase(ni))}`,
+        namedImports: [`${ni}`],
+        from: `./${camelToKebab(firstLowerCase(ni))}`,
       })
     )
     // Add source file for this interface
     files.push({
-      filename: `${camelToKebab(contentType.name)}.ts`,
+      filename: `contentful-${camelToKebab(contentType.name)}.ts`,
       nodes: [...importStatements, interfaceDeclaration],
       path,
     })
   }
-  const dataObject = { '@modelberry/plugin-contentful/plain': { validations } }
-  // Add source file that defines Contentful validation objects
   const mbPluginDataImport = createTsImport({
     namedImports: ['ModelberryPluginData'],
     from: `@modelberry/plugin-contentful/plain`,
   })
+  const dataObject = { '@modelberry/plugin-contentful/plain': { validations } }
 
+  // Add source file that defines Contentful validation objects
   const dataVarStatement = createDataVarStatement({ dataObject })
   files.push({
-    filename: 'validations.ts',
+    filename: 'contentful-validations.ts',
     nodes: [mbPluginDataImport, dataVarStatement],
     path,
   })
+
   // Add source file that defines ContentfulAsset type
   const contentfulAsset = createContentfulAssetTypeDeclaration()
   files.push({

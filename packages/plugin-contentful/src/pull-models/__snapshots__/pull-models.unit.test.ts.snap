@@ -4,8 +4,8 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 [MockFunction] {
   "calls": Array [
     Array [
-      "./dummy/test-topic.ts",
-      "import { SomeOtherAction } from './some-other-action.ts'
+      "./dummy/contentful-test-topic.ts",
+      "import { ContentfulSomeOtherAction } from './contentful-some-other-action'
 /** @modelberry
  * - {@plugin \\"@modelberry/plugin-contentful/plain\\"}
  * - {@type testTopic}
@@ -32,7 +32,7 @@ export interface ContentfulTestTopic {
    * - {@itemsValidations linkContentType-testAction linkContentType-someOtherAction}
    * - {@widgetId entryLinksEditor}
    */
-  actions?: SomeOtherAction[]
+  actions?: ContentfulSomeOtherAction[]
   /** @modelberry
    * - {@name Heading}
    * - {@type Symbol}
@@ -64,7 +64,7 @@ export interface ContentfulTestTopic {
 ",
     ],
     Array [
-      "./dummy/test-action.ts",
+      "./dummy/contentful-test-action.ts",
       "/** @modelberry
  * - {@plugin \\"@modelberry/plugin-contentful/plain\\"}
  * - {@type testAction}
@@ -111,9 +111,9 @@ export interface ContentfulTestAction {
 ",
     ],
     Array [
-      "./dummy/navigation-section.ts",
-      "import { Action } from './action.ts'
-import { NavigationSegment } from './navigation-segment.ts'
+      "./dummy/contentful-navigation-section.ts",
+      "import { ContentfulAction } from './contentful-action'
+import { ContentfulNavigationSegment } from './contentful-navigation-segment'
 /** @modelberry
  * - {@plugin \\"@modelberry/plugin-contentful/plain\\"}
  * - {@type navigationSection}
@@ -145,7 +145,7 @@ export interface ContentfulNavigationSection {
    * - {@widgetId entryLinkEditor}
    * - {@validations linkContentType-action}
    */
-  logoAction?: Action
+  logoAction?: ContentfulAction
   /** @modelberry
    * - {@name Header}
    * - {@type Array}
@@ -154,7 +154,7 @@ export interface ContentfulNavigationSection {
    * - {@itemsValidations linkContentType-navigationSegment}
    * - {@widgetId entryLinksEditor}
    */
-  header?: NavigationSegment[]
+  header?: ContentfulNavigationSegment[]
   /** @modelberry
    * - {@name Footer}
    * - {@type Array}
@@ -163,7 +163,7 @@ export interface ContentfulNavigationSection {
    * - {@itemsValidations linkContentType-navigationSegment}
    * - {@widgetId entryLinksEditor}
    */
-  footer?: NavigationSegment[]
+  footer?: ContentfulNavigationSegment[]
   /** @modelberry
    * - {@name Social}
    * - {@type Link}
@@ -171,7 +171,7 @@ export interface ContentfulNavigationSection {
    * - {@widgetId entryLinkEditor}
    * - {@validations linkContentType-navigationSegment}
    */
-  social?: NavigationSegment
+  social?: ContentfulNavigationSegment
   /** @modelberry
    * - {@name Actions}
    * - {@type Link}
@@ -179,7 +179,7 @@ export interface ContentfulNavigationSection {
    * - {@widgetId entryLinkEditor}
    * - {@validations linkContentType-navigationSegment}
    */
-  actions?: NavigationSegment
+  actions?: ContentfulNavigationSegment
   /** @modelberry
    * - {@name Legal}
    * - {@type Link}
@@ -187,7 +187,7 @@ export interface ContentfulNavigationSection {
    * - {@widgetId entryLinkEditor}
    * - {@validations linkContentType-navigationSegment}
    */
-  legal?: NavigationSegment
+  legal?: ContentfulNavigationSegment
   /** @modelberry
    * - {@name Information}
    * - {@type Array}
@@ -196,7 +196,7 @@ export interface ContentfulNavigationSection {
    * - {@itemsValidations linkContentType-navigationSegment}
    * - {@widgetId entryLinksEditor}
    */
-  information?: NavigationSegment[]
+  information?: ContentfulNavigationSegment[]
   /** @modelberry
    * - {@name Sitemap}
    * - {@type Array}
@@ -205,13 +205,13 @@ export interface ContentfulNavigationSection {
    * - {@itemsValidations linkContentType-navigationSegment}
    * - {@widgetId entryLinksEditor}
    */
-  sitemap?: NavigationSegment[]
+  sitemap?: ContentfulNavigationSegment[]
 }
 ",
     ],
     Array [
-      "./dummy/topic-section.ts",
-      "import { Topic } from './topic.ts'
+      "./dummy/contentful-topic-section.ts",
+      "import { ContentfulTopic } from './contentful-topic'
 /** @modelberry
  * - {@plugin \\"@modelberry/plugin-contentful/plain\\"}
  * - {@type topicSection}
@@ -248,7 +248,7 @@ export interface ContentfulTopicSection {
    * - {@widgetId entryLinksEditor}
    * - {@helpText Eén of meerder onderwerpen die worden weergegeven in de sectie}
    */
-  topics?: Topic[]
+  topics?: ContentfulTopic[]
   /** @modelberry
    * - {@name Hide icon}
    * - {@type Boolean}
@@ -312,9 +312,9 @@ export interface ContentfulTopicSection {
 ",
     ],
     Array [
-      "./dummy/topic.ts",
-      "import { Action } from './action.ts'
-import { Embed } from './embed.ts'
+      "./dummy/contentful-topic.ts",
+      "import { ContentfulAction } from './contentful-action'
+import { ContentfulEmbed } from './contentful-embed'
 /** @modelberry
  * - {@plugin \\"@modelberry/plugin-contentful/plain\\"}
  * - {@type topic}
@@ -375,7 +375,7 @@ export interface ContentfulTopic {
    * - {@widgetId entryLinksEditor}
    * - {@helpText Eén of meerdere acties bij het onderwerp. Een actie heeft een eigen naam en kan ook linken naar een extern bron.}
    */
-  actions?: Action[]
+  actions?: ContentfulAction[]
   /** @modelberry
    * - {@name Poster}
    * - {@type Link}
@@ -392,7 +392,7 @@ export interface ContentfulTopic {
    * - {@helpText Voeg Youtube/Vimeo embed code toe. Note: Media embed ondersteund alleen Embed-type: html}
    * - {@validations linkContentType-embed}
    */
-  mediaEmbed?: Embed
+  mediaEmbed?: ContentfulEmbed
   /** @modelberry
    * - {@disabled true}
    * - {@name 1.0.0}
@@ -404,7 +404,7 @@ export interface ContentfulTopic {
 ",
     ],
     Array [
-      "./dummy/text-section.ts",
+      "./dummy/contentful-text-section.ts",
       "/** @modelberry
  * - {@plugin \\"@modelberry/plugin-contentful/plain\\"}
  * - {@type textSection}
@@ -459,8 +459,8 @@ export interface ContentfulTextSection {
 ",
     ],
     Array [
-      "./dummy/navigation-segment.ts",
-      "import { Action } from './action.ts'
+      "./dummy/contentful-navigation-segment.ts",
+      "import { ContentfulAction } from './contentful-action'
 /** @modelberry
  * - {@plugin \\"@modelberry/plugin-contentful/plain\\"}
  * - {@type navigationSegment}
@@ -503,7 +503,7 @@ export interface ContentfulNavigationSegment {
    * - {@widgetId entryLinksEditor}
    * - {@helpText De pagina's in dit navigatie segment.}
    */
-  actions?: Action[]
+  actions?: ContentfulAction[]
   /** @modelberry
    * - {@disabled true}
    * - {@name 1.0.0}
@@ -514,11 +514,11 @@ export interface ContentfulNavigationSegment {
 ",
     ],
     Array [
-      "./dummy/page.ts",
-      "import { NavigationSection } from './navigation-section.ts'
-import { TableSection } from './table-section.ts'
-import { TextSection } from './text-section.ts'
-import { TopicSection } from './topic-section.ts'
+      "./dummy/contentful-page.ts",
+      "import { ContentfulNavigationSection } from './contentful-navigation-section'
+import { ContentfulTableSection } from './contentful-table-section'
+import { ContentfulTextSection } from './contentful-text-section'
+import { ContentfulTopicSection } from './contentful-topic-section'
 /** @modelberry
  * - {@plugin \\"@modelberry/plugin-contentful/plain\\"}
  * - {@type page}
@@ -557,7 +557,12 @@ export interface ContentfulPage {
    * - {@widgetId entryLinksEditor}
    * - {@helpText Kies de secties die met elkaar deze pagina vormen}
    */
-  sections: (NavigationSection | TableSection | TextSection | TopicSection)[]
+  sections: (
+    | ContentfulNavigationSection
+    | ContentfulTableSection
+    | ContentfulTextSection
+    | ContentfulTopicSection
+  )[]
   /** @modelberry
    * - {@name Paginathema}
    * - {@type Symbol}
@@ -608,8 +613,8 @@ export interface ContentfulPage {
 ",
     ],
     Array [
-      "./dummy/globals.ts",
-      "import { Embed } from './embed.ts'
+      "./dummy/contentful-globals.ts",
+      "import { ContentfulEmbed } from './contentful-embed'
 /** @modelberry
  * - {@plugin \\"@modelberry/plugin-contentful/plain\\"}
  * - {@type globals}
@@ -674,7 +679,7 @@ export interface ContentfulGlobals {
    * - {@itemsValidations linkContentType-embed}
    * - {@widgetId entryLinksEditor}
    */
-  siteEmbeds?: Embed[]
+  siteEmbeds?: ContentfulEmbed[]
   /** @modelberry
    * - {@name Direct naar content}
    * - {@type Symbol}
@@ -692,7 +697,7 @@ export interface ContentfulGlobals {
 ",
     ],
     Array [
-      "./dummy/embed.ts",
+      "./dummy/contentful-embed.ts",
       "/** @modelberry
  * - {@plugin \\"@modelberry/plugin-contentful/plain\\"}
  * - {@type embed}
@@ -735,8 +740,8 @@ export interface ContentfulEmbed {
 ",
     ],
     Array [
-      "./dummy/action.ts",
-      "import { Page } from './page.ts'
+      "./dummy/contentful-action.ts",
+      "import { ContentfulPage } from './contentful-page'
 /** @modelberry
  * - {@plugin \\"@modelberry/plugin-contentful/plain\\"}
  * - {@type action}
@@ -785,7 +790,7 @@ export interface ContentfulAction {
    * - {@helpText De pagina waar de actie naar linkt (of gebruik de URL)}
    * - {@validations linkContentType-page}
    */
-  page?: Page
+  page?: ContentfulPage
   /** @modelberry
    * - {@name Actie URL}
    * - {@type Symbol}
@@ -827,8 +832,9 @@ export interface ContentfulAction {
 ",
     ],
     Array [
-      "./dummy/validations.ts",
-      "export const modelberryPluginData: ModelberryPluginData = {
+      "./dummy/contentful-validations.ts",
+      "import { ModelberryPluginData } from '@modelberry/plugin-contentful/plain'
+export const modelberryPluginData: ModelberryPluginData = {
   '@modelberry/plugin-contentful/plain': {
     validations: {
       'size-min0-max155': { size: { max: 155, min: 0 } },
@@ -1502,8 +1508,8 @@ export interface ContentfulAction {
 ",
     ],
     Array [
-      "./dummy/test-topic.ts",
-      "import { SomeOtherAction } from './some-other-action.ts'
+      "./dummy/contentful-test-topic.ts",
+      "import { ContentfulSomeOtherAction } from './contentful-some-other-action'
 /** @modelberry
  * - {@plugin \\"@modelberry/plugin-contentful/plain\\"}
  * - {@type testTopic}
@@ -1530,7 +1536,7 @@ export interface ContentfulTestTopic {
    * - {@itemsValidations linkContentType-testAction linkContentType-someOtherAction}
    * - {@widgetId entryLinksEditor}
    */
-  actions?: SomeOtherAction[]
+  actions?: ContentfulSomeOtherAction[]
   /** @modelberry
    * - {@name Heading}
    * - {@type Symbol}
@@ -1562,8 +1568,9 @@ export interface ContentfulTestTopic {
 ",
     ],
     Array [
-      "./dummy/validations.ts",
-      "export const modelberryPluginData: ModelberryPluginData = {
+      "./dummy/contentful-validations.ts",
+      "import { ModelberryPluginData } from '@modelberry/plugin-contentful/plain'
+export const modelberryPluginData: ModelberryPluginData = {
   '@modelberry/plugin-contentful/plain': {
     validations: {
       'size-min0-max155': { size: { max: 155, min: 0 } },
@@ -1668,8 +1675,8 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 [MockFunction] {
   "calls": Array [
     Array [
-      "./dummy/test-topic.ts",
-      "import { SomeOtherAction } from './some-other-action.ts'
+      "./dummy/contentful-test-topic.ts",
+      "import { ContentfulSomeOtherAction } from './contentful-some-other-action'
 /** @modelberry
  * - {@plugin \\"@modelberry/plugin-contentful/plain\\"}
  * - {@type testTopic}
@@ -1696,7 +1703,7 @@ export interface ContentfulTestTopic {
    * - {@itemsValidations linkContentType-testAction linkContentType-someOtherAction}
    * - {@widgetId entryLinksEditor}
    */
-  actions?: SomeOtherAction[]
+  actions?: ContentfulSomeOtherAction[]
   /** @modelberry
    * - {@name Heading}
    * - {@type Symbol}
@@ -1728,7 +1735,7 @@ export interface ContentfulTestTopic {
 ",
     ],
     Array [
-      "./dummy/test-action.ts",
+      "./dummy/contentful-test-action.ts",
       "/** @modelberry
  * - {@plugin \\"@modelberry/plugin-contentful/plain\\"}
  * - {@type testAction}
@@ -1775,9 +1782,9 @@ export interface ContentfulTestAction {
 ",
     ],
     Array [
-      "./dummy/navigation-section.ts",
-      "import { Action } from './action.ts'
-import { NavigationSegment } from './navigation-segment.ts'
+      "./dummy/contentful-navigation-section.ts",
+      "import { ContentfulAction } from './contentful-action'
+import { ContentfulNavigationSegment } from './contentful-navigation-segment'
 /** @modelberry
  * - {@plugin \\"@modelberry/plugin-contentful/plain\\"}
  * - {@type navigationSection}
@@ -1809,7 +1816,7 @@ export interface ContentfulNavigationSection {
    * - {@widgetId entryLinkEditor}
    * - {@validations linkContentType-action}
    */
-  logoAction?: Action
+  logoAction?: ContentfulAction
   /** @modelberry
    * - {@name Header}
    * - {@type Array}
@@ -1818,7 +1825,7 @@ export interface ContentfulNavigationSection {
    * - {@itemsValidations linkContentType-navigationSegment}
    * - {@widgetId entryLinksEditor}
    */
-  header?: NavigationSegment[]
+  header?: ContentfulNavigationSegment[]
   /** @modelberry
    * - {@name Footer}
    * - {@type Array}
@@ -1827,7 +1834,7 @@ export interface ContentfulNavigationSection {
    * - {@itemsValidations linkContentType-navigationSegment}
    * - {@widgetId entryLinksEditor}
    */
-  footer?: NavigationSegment[]
+  footer?: ContentfulNavigationSegment[]
   /** @modelberry
    * - {@name Social}
    * - {@type Link}
@@ -1835,7 +1842,7 @@ export interface ContentfulNavigationSection {
    * - {@widgetId entryLinkEditor}
    * - {@validations linkContentType-navigationSegment}
    */
-  social?: NavigationSegment
+  social?: ContentfulNavigationSegment
   /** @modelberry
    * - {@name Actions}
    * - {@type Link}
@@ -1843,7 +1850,7 @@ export interface ContentfulNavigationSection {
    * - {@widgetId entryLinkEditor}
    * - {@validations linkContentType-navigationSegment}
    */
-  actions?: NavigationSegment
+  actions?: ContentfulNavigationSegment
   /** @modelberry
    * - {@name Legal}
    * - {@type Link}
@@ -1851,7 +1858,7 @@ export interface ContentfulNavigationSection {
    * - {@widgetId entryLinkEditor}
    * - {@validations linkContentType-navigationSegment}
    */
-  legal?: NavigationSegment
+  legal?: ContentfulNavigationSegment
   /** @modelberry
    * - {@name Information}
    * - {@type Array}
@@ -1860,7 +1867,7 @@ export interface ContentfulNavigationSection {
    * - {@itemsValidations linkContentType-navigationSegment}
    * - {@widgetId entryLinksEditor}
    */
-  information?: NavigationSegment[]
+  information?: ContentfulNavigationSegment[]
   /** @modelberry
    * - {@name Sitemap}
    * - {@type Array}
@@ -1869,13 +1876,13 @@ export interface ContentfulNavigationSection {
    * - {@itemsValidations linkContentType-navigationSegment}
    * - {@widgetId entryLinksEditor}
    */
-  sitemap?: NavigationSegment[]
+  sitemap?: ContentfulNavigationSegment[]
 }
 ",
     ],
     Array [
-      "./dummy/topic-section.ts",
-      "import { Topic } from './topic.ts'
+      "./dummy/contentful-topic-section.ts",
+      "import { ContentfulTopic } from './contentful-topic'
 /** @modelberry
  * - {@plugin \\"@modelberry/plugin-contentful/plain\\"}
  * - {@type topicSection}
@@ -1912,7 +1919,7 @@ export interface ContentfulTopicSection {
    * - {@widgetId entryLinksEditor}
    * - {@helpText Eén of meerder onderwerpen die worden weergegeven in de sectie}
    */
-  topics?: Topic[]
+  topics?: ContentfulTopic[]
   /** @modelberry
    * - {@name Hide icon}
    * - {@type Boolean}
@@ -1976,9 +1983,9 @@ export interface ContentfulTopicSection {
 ",
     ],
     Array [
-      "./dummy/topic.ts",
-      "import { Action } from './action.ts'
-import { Embed } from './embed.ts'
+      "./dummy/contentful-topic.ts",
+      "import { ContentfulAction } from './contentful-action'
+import { ContentfulEmbed } from './contentful-embed'
 /** @modelberry
  * - {@plugin \\"@modelberry/plugin-contentful/plain\\"}
  * - {@type topic}
@@ -2039,7 +2046,7 @@ export interface ContentfulTopic {
    * - {@widgetId entryLinksEditor}
    * - {@helpText Eén of meerdere acties bij het onderwerp. Een actie heeft een eigen naam en kan ook linken naar een extern bron.}
    */
-  actions?: Action[]
+  actions?: ContentfulAction[]
   /** @modelberry
    * - {@name Poster}
    * - {@type Link}
@@ -2056,7 +2063,7 @@ export interface ContentfulTopic {
    * - {@helpText Voeg Youtube/Vimeo embed code toe. Note: Media embed ondersteund alleen Embed-type: html}
    * - {@validations linkContentType-embed}
    */
-  mediaEmbed?: Embed
+  mediaEmbed?: ContentfulEmbed
   /** @modelberry
    * - {@disabled true}
    * - {@name 1.0.0}
@@ -2068,7 +2075,7 @@ export interface ContentfulTopic {
 ",
     ],
     Array [
-      "./dummy/text-section.ts",
+      "./dummy/contentful-text-section.ts",
       "/** @modelberry
  * - {@plugin \\"@modelberry/plugin-contentful/plain\\"}
  * - {@type textSection}
@@ -2123,8 +2130,8 @@ export interface ContentfulTextSection {
 ",
     ],
     Array [
-      "./dummy/navigation-segment.ts",
-      "import { Action } from './action.ts'
+      "./dummy/contentful-navigation-segment.ts",
+      "import { ContentfulAction } from './contentful-action'
 /** @modelberry
  * - {@plugin \\"@modelberry/plugin-contentful/plain\\"}
  * - {@type navigationSegment}
@@ -2167,7 +2174,7 @@ export interface ContentfulNavigationSegment {
    * - {@widgetId entryLinksEditor}
    * - {@helpText De pagina's in dit navigatie segment.}
    */
-  actions?: Action[]
+  actions?: ContentfulAction[]
   /** @modelberry
    * - {@disabled true}
    * - {@name 1.0.0}
@@ -2178,11 +2185,11 @@ export interface ContentfulNavigationSegment {
 ",
     ],
     Array [
-      "./dummy/page.ts",
-      "import { NavigationSection } from './navigation-section.ts'
-import { TableSection } from './table-section.ts'
-import { TextSection } from './text-section.ts'
-import { TopicSection } from './topic-section.ts'
+      "./dummy/contentful-page.ts",
+      "import { ContentfulNavigationSection } from './contentful-navigation-section'
+import { ContentfulTableSection } from './contentful-table-section'
+import { ContentfulTextSection } from './contentful-text-section'
+import { ContentfulTopicSection } from './contentful-topic-section'
 /** @modelberry
  * - {@plugin \\"@modelberry/plugin-contentful/plain\\"}
  * - {@type page}
@@ -2221,7 +2228,12 @@ export interface ContentfulPage {
    * - {@widgetId entryLinksEditor}
    * - {@helpText Kies de secties die met elkaar deze pagina vormen}
    */
-  sections: (NavigationSection | TableSection | TextSection | TopicSection)[]
+  sections: (
+    | ContentfulNavigationSection
+    | ContentfulTableSection
+    | ContentfulTextSection
+    | ContentfulTopicSection
+  )[]
   /** @modelberry
    * - {@name Paginathema}
    * - {@type Symbol}
@@ -2272,8 +2284,8 @@ export interface ContentfulPage {
 ",
     ],
     Array [
-      "./dummy/globals.ts",
-      "import { Embed } from './embed.ts'
+      "./dummy/contentful-globals.ts",
+      "import { ContentfulEmbed } from './contentful-embed'
 /** @modelberry
  * - {@plugin \\"@modelberry/plugin-contentful/plain\\"}
  * - {@type globals}
@@ -2338,7 +2350,7 @@ export interface ContentfulGlobals {
    * - {@itemsValidations linkContentType-embed}
    * - {@widgetId entryLinksEditor}
    */
-  siteEmbeds?: Embed[]
+  siteEmbeds?: ContentfulEmbed[]
   /** @modelberry
    * - {@name Direct naar content}
    * - {@type Symbol}
@@ -2356,7 +2368,7 @@ export interface ContentfulGlobals {
 ",
     ],
     Array [
-      "./dummy/embed.ts",
+      "./dummy/contentful-embed.ts",
       "/** @modelberry
  * - {@plugin \\"@modelberry/plugin-contentful/plain\\"}
  * - {@type embed}
@@ -2399,8 +2411,8 @@ export interface ContentfulEmbed {
 ",
     ],
     Array [
-      "./dummy/action.ts",
-      "import { Page } from './page.ts'
+      "./dummy/contentful-action.ts",
+      "import { ContentfulPage } from './contentful-page'
 /** @modelberry
  * - {@plugin \\"@modelberry/plugin-contentful/plain\\"}
  * - {@type action}
@@ -2449,7 +2461,7 @@ export interface ContentfulAction {
    * - {@helpText De pagina waar de actie naar linkt (of gebruik de URL)}
    * - {@validations linkContentType-page}
    */
-  page?: Page
+  page?: ContentfulPage
   /** @modelberry
    * - {@name Actie URL}
    * - {@type Symbol}
@@ -2491,8 +2503,9 @@ export interface ContentfulAction {
 ",
     ],
     Array [
-      "./dummy/validations.ts",
-      "export const modelberryPluginData: ModelberryPluginData = {
+      "./dummy/contentful-validations.ts",
+      "import { ModelberryPluginData } from '@modelberry/plugin-contentful/plain'
+export const modelberryPluginData: ModelberryPluginData = {
   '@modelberry/plugin-contentful/plain': {
     validations: {
       'size-min0-max155': { size: { max: 155, min: 0 } },

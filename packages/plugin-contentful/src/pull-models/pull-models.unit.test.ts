@@ -19,18 +19,18 @@ describe('Pull content should', () => {
     })
     expect(writeFile).toMatchSnapshot()
     expect(consoleSpy.mock.calls).toEqual([
-      [chalk('- new source file ./dummy/test-topic.ts')],
-      [chalk('- new source file ./dummy/test-action.ts')],
-      [chalk('- new source file ./dummy/navigation-section.ts')],
-      [chalk('- new source file ./dummy/topic-section.ts')],
-      [chalk('- new source file ./dummy/topic.ts')],
-      [chalk('- new source file ./dummy/text-section.ts')],
-      [chalk('- new source file ./dummy/navigation-segment.ts')],
-      [chalk('- new source file ./dummy/page.ts')],
-      [chalk('- new source file ./dummy/globals.ts')],
-      [chalk('- new source file ./dummy/embed.ts')],
-      [chalk('- new source file ./dummy/action.ts')],
-      [chalk('- new source file ./dummy/validations.ts')],
+      [chalk('- new source file ./dummy/contentful-test-topic.ts')],
+      [chalk('- new source file ./dummy/contentful-test-action.ts')],
+      [chalk('- new source file ./dummy/contentful-navigation-section.ts')],
+      [chalk('- new source file ./dummy/contentful-topic-section.ts')],
+      [chalk('- new source file ./dummy/contentful-topic.ts')],
+      [chalk('- new source file ./dummy/contentful-text-section.ts')],
+      [chalk('- new source file ./dummy/contentful-navigation-segment.ts')],
+      [chalk('- new source file ./dummy/contentful-page.ts')],
+      [chalk('- new source file ./dummy/contentful-globals.ts')],
+      [chalk('- new source file ./dummy/contentful-embed.ts')],
+      [chalk('- new source file ./dummy/contentful-action.ts')],
+      [chalk('- new source file ./dummy/contentful-validations.ts')],
       [chalk('- new source file ./dummy/contentful-asset.ts')],
     ])
   })
@@ -42,8 +42,8 @@ describe('Pull content should', () => {
     })
     expect(writeFile).toMatchSnapshot()
     expect(consoleSpy.mock.calls).toEqual([
-      [chalk('- new source file ./dummy/test-topic.ts')],
-      [chalk('- new source file ./dummy/validations.ts')],
+      [chalk('- new source file ./dummy/contentful-test-topic.ts')],
+      [chalk('- new source file ./dummy/contentful-validations.ts')],
       [chalk('- new source file ./dummy/contentful-asset.ts')],
     ])
   })

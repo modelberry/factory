@@ -12,8 +12,8 @@ export const getLinkContentTypes = ({ contentField }: GetLinkContentTypes) => {
   if (!field.validations) return []
   for (const validation of field.validations) {
     if (validation.linkContentType) {
-      contentTypes = validation.linkContentType.map((type: string) =>
-        firstUpperCase(type)
+      contentTypes = validation.linkContentType.map(
+        (type: string) => `Contentful${firstUpperCase(type)}`
       )
     }
   }
