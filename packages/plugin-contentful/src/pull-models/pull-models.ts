@@ -81,10 +81,15 @@ export const pullModels = async ({
   }
   const dataObject = { '@modelberry/plugin-contentful/plain': { validations } }
   // Add source file that defines Contentful validation objects
+  const mbPluginDataImport = createTsImport({
+    namedImports: ['ModelberryPluginData'],
+    from: `@modelberry/plugin-contentful/plain`,
+  })
+
   const dataVarStatement = createDataVarStatement({ dataObject })
   files.push({
     filename: 'validations.ts',
-    nodes: [dataVarStatement],
+    nodes: [mbPluginDataImport, dataVarStatement],
     path,
   })
   // Add source file that defines ContentfulAsset type
