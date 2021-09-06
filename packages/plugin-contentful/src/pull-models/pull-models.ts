@@ -68,8 +68,8 @@ export const pullModels = async ({
     const uniqueNzmedImports = Array.from(new Set(namedImports))
     const importStatements = uniqueNzmedImports.map((ni) =>
       createTsImport({
-        namedImports: [ni],
-        from: `./${camelToKebab(firstLowerCase(ni))}.ts`,
+        namedImports: [`Contentful${ni}`],
+        from: `./contentful-${camelToKebab(firstLowerCase(ni))}`,
       })
     )
     // Add source file for this interface
