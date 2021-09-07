@@ -8,7 +8,15 @@ describe('Pull content should', () => {
   //   consoleSpy.mockReset()
   // })
 
-  test('pull correctly', async () => {
+  test('pull correctly with type filter', async () => {
+    await pullContent({
+      contentfulEnvironment: environmentMock,
+      options: { force: true, type: 'testTopic' },
+      path: './dummy',
+    })
+    // expect(consoleSpy).toHaveBeenCalledTimes(1)
+  })
+  test('pull correctly without type filter', async () => {
     await pullContent({
       contentfulEnvironment: environmentMock,
       options: { force: true },

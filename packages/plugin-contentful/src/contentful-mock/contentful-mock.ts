@@ -3,6 +3,7 @@ import { editorInterfaces } from './editor-interfaces'
 import { getContentTypeResponse } from './get-content-type-response'
 import { getContentTypesResponse } from './get-content-types-response'
 import { getEntriesQueryResponse } from './get-entries-query-response'
+import { getEntriesResponse } from './get-entries-response'
 
 const entryMock = {
   fields: {},
@@ -37,10 +38,17 @@ export const getContentTypesMock = async () => {
   return getContentTypesResponse
 }
 
+export const getEntriesMock = async (query: any) => {
+  const entries = query ? getEntriesQueryResponse : getEntriesResponse
+  for (const entry of entries.items)
+    Object.assign(entry, await getContentTypeMock(entry))
+  return entries
+}
+
 export const createEntryWithId = jest.fn(async () => entryMock)
 export const createEntry = jest.fn(async () => entryMock)
 export const getEntry = jest.fn(async () => entryMock)
-export const getEntries = jest.fn(async () => getEntriesQueryResponse)
+export const getEntries = jest.fn(getEntriesMock)
 export const getLocales = jest.fn(async () => localeMock)
 export const getContentType = jest.fn(async () =>
   getContentTypeMock(getContentTypeResponse)
