@@ -19,6 +19,8 @@ const renderVarStatement = async (varStatement: ts.Node) => {
 describe('Create content variable should', () => {
   test('create a declaration', async () => {
     const varStatement = createContentVarStatement({
+      varName: 'myTopics',
+      varType: 'ContentfulTopic',
       contentArray: [
         {
           abstract: 'This is the abstract',
