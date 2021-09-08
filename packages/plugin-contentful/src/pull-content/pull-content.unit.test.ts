@@ -5,6 +5,11 @@ import chalk from 'chalk'
 import { environmentMock } from '../contentful-mock/contentful-mock'
 import { pullContent } from './pull-content'
 
+const localeResponse = [
+  [chalk('- remote default locale: en-US')],
+  [chalk('- pulling locale: en-US')],
+]
+
 describe('Pull content should', () => {
   const consoleSpy = jest.spyOn(console, 'log').mockImplementation()
   beforeEach(() => {
@@ -19,6 +24,7 @@ describe('Pull content should', () => {
     })
     expect(writeFile).toMatchSnapshot()
     expect(consoleSpy.mock.calls).toEqual([
+      ...localeResponse,
       [chalk('- new source file ./dummy/contentful-test-topic.ts')],
     ])
   })
@@ -30,6 +36,7 @@ describe('Pull content should', () => {
     })
     expect(writeFile).toMatchSnapshot()
     expect(consoleSpy.mock.calls).toEqual([
+      ...localeResponse,
       [chalk('- new source file ./dummy/contentful-test-topic.ts')],
       [chalk('- new source file ./dummy/contentful-test-action.ts')],
       [chalk('- new source file ./dummy/contentful-navigation-section.ts')],
