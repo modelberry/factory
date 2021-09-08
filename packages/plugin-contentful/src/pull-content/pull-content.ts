@@ -83,11 +83,10 @@ export const pullContent = async ({
   for (const contentTypeId of Object.keys(contentTypesById)) {
     const varType = `Contentful${firstUpperCase(contentTypeId)}`
     const varName = contentTypeId
+    // entry[fieldId].contentType.type
     const contentArray = contentTypesById[contentTypeId].entries.map((entry) =>
       Object.keys(entry).reduce((newEntry, fieldId) => {
-        newEntry[
-          fieldId
-        ] = `${entry[fieldId].contentType.type} = ${entry[fieldId].entry[localeCode]}`
+        newEntry[fieldId] = entry[fieldId].entry[localeCode]
         return newEntry
       }, {} as Record<string, any>)
     )

@@ -7,39 +7,53 @@ exports[`Pull content should pull correctly with type filter 1`] = `
       "./dummy/contentful-test-topic.ts",
       "export const testTopic: ContentfulTestTopic[] = [
   {
-    abstract: 'Symbol = This is the abstract',
-    actions: 'Array = [object Object]',
-    heading: 'Symbol = Heres the heading',
+    abstract: 'This is the abstract',
+    actions: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
+    ],
+    heading: 'Heres the heading',
   },
   {
-    abstract: 'Symbol = This is the abstract',
-    actions: 'Array = [object Object]',
-    heading: 'Symbol = Heres the heading',
+    abstract: 'This is the abstract',
+    actions: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
+    ],
+    heading: 'Heres the heading',
   },
   {
-    abstract: 'Symbol = This is the abstract',
-    actions: 'Array = [object Object]',
-    heading: 'Symbol = Heres the heading',
+    abstract: 'This is the abstract',
+    actions: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
+    ],
+    heading: 'Heres the heading',
   },
   {
-    abstract: 'Symbol = This is the abstract',
-    actions: 'Array = [object Object]',
-    heading: 'Symbol = Heres the heading',
+    abstract: 'This is the abstract',
+    actions: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
+    ],
+    heading: 'Heres the heading',
   },
   {
-    abstract: 'Symbol = This is the abstract',
-    actions: 'Array = [object Object]',
-    heading: 'Symbol = Heres the heading',
+    abstract: 'This is the abstract',
+    actions: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
+    ],
+    heading: 'Heres the heading',
   },
   {
-    abstract: 'Symbol = This is the abstract',
-    actions: 'Array = [object Object]',
-    heading: 'Symbol = Heres the heading',
+    abstract: 'This is the abstract',
+    actions: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
+    ],
+    heading: 'Heres the heading',
   },
   {
-    abstract: 'Symbol = This is the abstract',
-    actions: 'Array = [object Object]',
-    heading: 'Symbol = Heres the heading',
+    abstract: 'This is the abstract',
+    actions: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
+    ],
+    heading: 'Heres the heading',
   },
 ]
 ",
@@ -61,39 +75,53 @@ exports[`Pull content should pull correctly without type filter 1`] = `
       "./dummy/contentful-test-topic.ts",
       "export const testTopic: ContentfulTestTopic[] = [
   {
-    abstract: 'Symbol = This is the abstract',
-    actions: 'Array = [object Object]',
-    heading: 'Symbol = Heres the heading',
+    abstract: 'This is the abstract',
+    actions: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
+    ],
+    heading: 'Heres the heading',
   },
   {
-    abstract: 'Symbol = This is the abstract',
-    actions: 'Array = [object Object]',
-    heading: 'Symbol = Heres the heading',
+    abstract: 'This is the abstract',
+    actions: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
+    ],
+    heading: 'Heres the heading',
   },
   {
-    abstract: 'Symbol = This is the abstract',
-    actions: 'Array = [object Object]',
-    heading: 'Symbol = Heres the heading',
+    abstract: 'This is the abstract',
+    actions: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
+    ],
+    heading: 'Heres the heading',
   },
   {
-    abstract: 'Symbol = This is the abstract',
-    actions: 'Array = [object Object]',
-    heading: 'Symbol = Heres the heading',
+    abstract: 'This is the abstract',
+    actions: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
+    ],
+    heading: 'Heres the heading',
   },
   {
-    abstract: 'Symbol = This is the abstract',
-    actions: 'Array = [object Object]',
-    heading: 'Symbol = Heres the heading',
+    abstract: 'This is the abstract',
+    actions: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
+    ],
+    heading: 'Heres the heading',
   },
   {
-    abstract: 'Symbol = This is the abstract',
-    actions: 'Array = [object Object]',
-    heading: 'Symbol = Heres the heading',
+    abstract: 'This is the abstract',
+    actions: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
+    ],
+    heading: 'Heres the heading',
   },
   {
-    abstract: 'Symbol = This is the abstract',
-    actions: 'Array = [object Object]',
-    heading: 'Symbol = Heres the heading',
+    abstract: 'This is the abstract',
+    actions: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
+    ],
+    heading: 'Heres the heading',
   },
 ]
 ",
@@ -102,39 +130,53 @@ exports[`Pull content should pull correctly without type filter 1`] = `
       "./dummy/contentful-test-topic.ts",
       "export const testTopic: ContentfulTestTopic[] = [
   {
-    abstract: 'Symbol = This is the abstract',
-    actions: 'Array = [object Object]',
-    heading: 'Symbol = Heres the heading',
+    abstract: 'This is the abstract',
+    actions: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
+    ],
+    heading: 'Heres the heading',
   },
   {
-    abstract: 'Symbol = This is the abstract',
-    actions: 'Array = [object Object]',
-    heading: 'Symbol = Heres the heading',
+    abstract: 'This is the abstract',
+    actions: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
+    ],
+    heading: 'Heres the heading',
   },
   {
-    abstract: 'Symbol = This is the abstract',
-    actions: 'Array = [object Object]',
-    heading: 'Symbol = Heres the heading',
+    abstract: 'This is the abstract',
+    actions: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
+    ],
+    heading: 'Heres the heading',
   },
   {
-    abstract: 'Symbol = This is the abstract',
-    actions: 'Array = [object Object]',
-    heading: 'Symbol = Heres the heading',
+    abstract: 'This is the abstract',
+    actions: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
+    ],
+    heading: 'Heres the heading',
   },
   {
-    abstract: 'Symbol = This is the abstract',
-    actions: 'Array = [object Object]',
-    heading: 'Symbol = Heres the heading',
+    abstract: 'This is the abstract',
+    actions: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
+    ],
+    heading: 'Heres the heading',
   },
   {
-    abstract: 'Symbol = This is the abstract',
-    actions: 'Array = [object Object]',
-    heading: 'Symbol = Heres the heading',
+    abstract: 'This is the abstract',
+    actions: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
+    ],
+    heading: 'Heres the heading',
   },
   {
-    abstract: 'Symbol = This is the abstract',
-    actions: 'Array = [object Object]',
-    heading: 'Symbol = Heres the heading',
+    abstract: 'This is the abstract',
+    actions: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
+    ],
+    heading: 'Heres the heading',
   },
 ]
 ",
@@ -142,7 +184,7 @@ exports[`Pull content should pull correctly without type filter 1`] = `
     Array [
       "./dummy/contentful-test-action.ts",
       "export const testAction: ContentfulTestAction[] = [
-  { anchor: 'Symbol = anchor', heading: 'Symbol = Hello' },
+  { anchor: 'anchor', heading: 'Hello' },
 ]
 ",
     ],
@@ -150,24 +192,62 @@ exports[`Pull content should pull correctly without type filter 1`] = `
       "./dummy/contentful-navigation-section.ts",
       "export const navigationSection: ContentfulNavigationSection[] = [
   {
-    title: 'Symbol = Footer',
-    logo: 'Link = [object Object]',
-    logoAction: 'Link = [object Object]',
-    footer: 'Array = [object Object]',
-    social: 'Link = [object Object]',
-    actions: 'Link = [object Object]',
-    legal: 'Link = [object Object]',
-    information: 'Array = [object Object]',
-    sitemap:
-      'Array = [object Object],[object Object],[object Object],[object Object]',
+    title: 'Footer',
+    logo: { sys: { type: 'Link', linkType: 'Asset', id: 'demoAsset' } },
+    logoAction: {
+      sys: { type: 'Link', linkType: 'Entry', id: '2wOMVK2AzRoPCSlMWKOkf8' },
+    },
+    footer: [
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '46Llr8CWND2s32ehUET9co' },
+      },
+    ],
+    social: {
+      sys: { type: 'Link', linkType: 'Entry', id: '1gJE72r8DyBk7qWcvqmeAJ' },
+    },
+    actions: {
+      sys: { type: 'Link', linkType: 'Entry', id: '40QTKzb9DDZ6guDkRLOvHz' },
+    },
+    legal: {
+      sys: { type: 'Link', linkType: 'Entry', id: '46Llr8CWND2s32ehUET9co' },
+    },
+    information: [
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '46Llr8CWND2s32ehUET9co' },
+      },
+    ],
+    sitemap: [
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '6LCP6Bnenubii8ouyTDiKI' },
+      },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '6LCP6Bnenubii8ouyTDiKI' },
+      },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '6LCP6Bnenubii8ouyTDiKI' },
+      },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '6LCP6Bnenubii8ouyTDiKI' },
+      },
+    ],
   },
   {
-    title: 'Symbol = Header',
-    logo: 'Link = [object Object]',
-    logoAction: 'Link = [object Object]',
-    header: 'Array = [object Object]',
-    social: 'Link = [object Object]',
-    actions: 'Link = [object Object]',
+    title: 'Header',
+    logo: { sys: { type: 'Link', linkType: 'Asset', id: 'demoAsset' } },
+    logoAction: {
+      sys: { type: 'Link', linkType: 'Entry', id: '2wOMVK2AzRoPCSlMWKOkf8' },
+    },
+    header: [
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '46Llr8CWND2s32ehUET9co' },
+      },
+    ],
+    social: {
+      sys: { type: 'Link', linkType: 'Entry', id: '1gJE72r8DyBk7qWcvqmeAJ' },
+    },
+    actions: {
+      sys: { type: 'Link', linkType: 'Entry', id: '40QTKzb9DDZ6guDkRLOvHz' },
+    },
   },
 ]
 ",
@@ -176,163 +256,283 @@ exports[`Pull content should pull correctly without type filter 1`] = `
       "./dummy/contentful-topic-section.ts",
       "export const topicSection: ContentfulTopicSection[] = [
   {
-    title: 'Symbol = Jaco Beach topic section',
-    variant: 'Symbol = block',
-    topics: 'Array = [object Object],[object Object]',
-    eventId: 'Symbol = jaco-beach-topic-section',
+    title: 'Jaco Beach topic section',
+    variant: 'block',
+    topics: [
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '1eGF540LjYZaiXfvaK7ymF' },
+      },
+      { sys: { type: 'Link', linkType: 'Entry', id: 'WI2vnPBfQWkh1EW8G7Xd9' } },
+    ],
+    eventId: 'jaco-beach-topic-section',
   },
   {
-    title: 'Symbol = Navigation explained',
-    variant: 'Symbol = headline',
-    topics: 'Array = [object Object]',
-    eventId: 'Symbol = navigation-explained',
+    title: 'Navigation explained',
+    variant: 'headline',
+    topics: [
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '22MRUrrobVKebnBUhFuSA8' },
+      },
+    ],
+    eventId: 'navigation-explained',
   },
   {
-    title: 'Symbol = Text explained',
-    variant: 'Symbol = headline',
-    topics: 'Array = [object Object]',
-    eventId: 'Symbol = text-explained',
+    title: 'Text explained',
+    variant: 'headline',
+    topics: [
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '2I5U6OryWbEGvrJl8OVbil' },
+      },
+    ],
+    eventId: 'text-explained',
   },
   {
-    title: 'Symbol = Card explained',
-    variant: 'Symbol = headline',
-    topics: 'Array = [object Object]',
-    eventId: 'Symbol = card-explained',
+    title: 'Card explained',
+    variant: 'headline',
+    topics: [
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '4H7PGZKbHwNXiVz94FJkFN' },
+      },
+    ],
+    eventId: 'card-explained',
   },
   {
-    title: 'Symbol = Divider explained',
-    variant: 'Symbol = headline',
-    topics: 'Array = [object Object]',
-    eventId: 'Symbol = divider-exmplaed',
+    title: 'Divider explained',
+    variant: 'headline',
+    topics: [
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '3AKyoauLHp0mFGEHTaI4KP' },
+      },
+    ],
+    eventId: 'divider-exmplaed',
   },
   {
-    title: 'Symbol = Featured explained',
-    variant: 'Symbol = headline',
-    topics: 'Array = [object Object]',
-    eventId: 'Symbol = featured-explained',
+    title: 'Featured explained',
+    variant: 'headline',
+    topics: [
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '1WHQTD0Wj9c1NcdERperTE' },
+      },
+    ],
+    eventId: 'featured-explained',
   },
   {
-    title: 'Symbol = Gallery explained',
-    variant: 'Symbol = headline',
-    topics: 'Array = [object Object]',
-    eventId: 'Symbol = gallery-explained',
+    title: 'Gallery explained',
+    variant: 'headline',
+    topics: [
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '5PPHo1VjxDlApIDKuzwnqQ' },
+      },
+    ],
+    eventId: 'gallery-explained',
   },
   {
-    title: 'Symbol = Headline explained',
-    variant: 'Symbol = headline',
-    topics: 'Array = [object Object]',
-    eventId: 'Symbol = headline-explained',
+    title: 'Headline explained',
+    variant: 'headline',
+    topics: [
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '5PPHo1VjxDlApIDKuzwnqQ' },
+      },
+    ],
+    eventId: 'headline-explained',
   },
   {
-    title: 'Symbol = Hero explained',
-    variant: 'Symbol = headline',
-    topics: 'Array = [object Object]',
-    eventId: 'Symbol = hero-explained',
+    title: 'Hero explained',
+    variant: 'headline',
+    topics: [
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '2it8hFYdChPnEbQqGMTgWV' },
+      },
+    ],
+    eventId: 'hero-explained',
   },
   {
-    title: 'Symbol = Video explained',
-    variant: 'Symbol = headline',
-    topics: 'Array = [object Object]',
-    eventId: 'Symbol = video-explained',
+    title: 'Video explained',
+    variant: 'headline',
+    topics: [
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '5JDwtvwkcv24TXn9cKr2oA' },
+      },
+    ],
+    eventId: 'video-explained',
   },
   {
-    title: 'Symbol = Image explained',
-    variant: 'Symbol = headline',
-    topics: 'Array = [object Object]',
-    eventId: 'Symbol = image-explained',
+    title: 'Image explained',
+    variant: 'headline',
+    topics: [
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '1VQiPRsSq1GHPzbH3KSzGz' },
+      },
+    ],
+    eventId: 'image-explained',
   },
   {
-    title: 'Symbol = Quote explained',
-    variant: 'Symbol = headline',
-    topics: 'Array = [object Object]',
-    eventId: 'Symbol = quote-explained',
+    title: 'Quote explained',
+    variant: 'headline',
+    topics: [
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '2mx3d9npq47CnmbZc9PUBS' },
+      },
+    ],
+    eventId: 'quote-explained',
   },
   {
-    title: 'Symbol = Showcase explained',
-    variant: 'Symbol = headline',
-    topics: 'Array = [object Object]',
-    eventId: 'Symbol = showcase-explained',
+    title: 'Showcase explained',
+    variant: 'headline',
+    topics: [
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '63AL39Q1MufZYyew8kClMi' },
+      },
+    ],
+    eventId: 'showcase-explained',
   },
   {
-    title: 'Symbol = Block explained',
-    variant: 'Symbol = headline',
-    topics: 'Array = [object Object]',
-    eventId: 'Symbol = block-explained',
+    title: 'Block explained',
+    variant: 'headline',
+    topics: [
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '3clPCDvnshHuGaoXpGEZpB' },
+      },
+    ],
+    eventId: 'block-explained',
   },
   {
-    title: 'Symbol = Examples',
-    variant: 'Symbol = block',
-    topics:
-      'Array = [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]',
-    eventId: 'Symbol = all-variants-exmplained',
+    title: 'Examples',
+    variant: 'block',
+    topics: [
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '3clPCDvnshHuGaoXpGEZpB' },
+      },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '4H7PGZKbHwNXiVz94FJkFN' },
+      },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '3AKyoauLHp0mFGEHTaI4KP' },
+      },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '1WHQTD0Wj9c1NcdERperTE' },
+      },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '48uIeTzdy1IYdzLKTAXBY8' },
+      },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '5PPHo1VjxDlApIDKuzwnqQ' },
+      },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '2it8hFYdChPnEbQqGMTgWV' },
+      },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '1VQiPRsSq1GHPzbH3KSzGz' },
+      },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '22MRUrrobVKebnBUhFuSA8' },
+      },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '2mx3d9npq47CnmbZc9PUBS' },
+      },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '63AL39Q1MufZYyew8kClMi' },
+      },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '2I5U6OryWbEGvrJl8OVbil' },
+      },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '5JDwtvwkcv24TXn9cKr2oA' },
+      },
+    ],
+    eventId: 'all-variants-exmplained',
   },
   {
-    title: 'Symbol = Video examples',
-    variant: 'Symbol = video',
-    topics: 'Array = [object Object],[object Object]',
-    eventId: 'Symbol = video-examples',
+    title: 'Video examples',
+    variant: 'video',
+    topics: [
+      { sys: { type: 'Link', linkType: 'Entry', id: '7wxpcbgUHAhnHIRfjClpa' } },
+      { sys: { type: 'Link', linkType: 'Entry', id: '7wxpcbgUHAhnHIRfjClpa' } },
+    ],
+    eventId: 'video-examples',
   },
   {
-    title: 'Symbol = Showcase examples',
-    variant: 'Symbol = showcase',
-    topics:
-      'Array = [object Object],[object Object],[object Object],[object Object]',
-    eventId: 'Symbol = showcase-examples',
+    title: 'Showcase examples',
+    variant: 'showcase',
+    topics: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
+      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
+      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
+      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
+    ],
+    eventId: 'showcase-examples',
   },
   {
-    title: 'Symbol = Quote examples',
-    variant: 'Symbol = quote',
-    topics: 'Array = [object Object],[object Object]',
-    eventId: 'Symbol = quote-examples',
+    title: 'Quote examples',
+    variant: 'quote',
+    topics: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
+      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
+    ],
+    eventId: 'quote-examples',
   },
   {
-    title: 'Symbol = Image examples',
-    variant: 'Symbol = image',
-    topics: 'Array = [object Object],[object Object]',
-    eventId: 'Symbol = image-examples',
+    title: 'Image examples',
+    variant: 'image',
+    topics: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
+      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
+    ],
+    eventId: 'image-examples',
   },
   {
-    title: 'Symbol = Hero examples',
-    variant: 'Symbol = hero',
-    topics: 'Array = [object Object]',
-    eventId: 'Symbol = hero-examples',
+    title: 'Hero examples',
+    variant: 'hero',
+    topics: [{ sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } }],
+    eventId: 'hero-examples',
   },
   {
-    title: 'Symbol = Headline examples',
-    variant: 'Symbol = headline',
-    topics: 'Array = [object Object]',
-    eventId: 'Symbol = headline-examples',
+    title: 'Headline examples',
+    variant: 'headline',
+    topics: [{ sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } }],
+    eventId: 'headline-examples',
   },
   {
-    title: 'Symbol = Gallery examples',
-    variant: 'Symbol = gallery',
-    topics: 'Array = [object Object],[object Object]',
-    eventId: 'Symbol = gallery-examples',
+    title: 'Gallery examples',
+    variant: 'gallery',
+    topics: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
+      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
+    ],
+    eventId: 'gallery-examples',
   },
   {
-    title: 'Symbol = Featured examples',
-    variant: 'Symbol = featured',
-    topics: 'Array = [object Object],[object Object]',
-    eventId: 'Symbol = featured-examples',
+    title: 'Featured examples',
+    variant: 'featured',
+    topics: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
+      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
+    ],
+    eventId: 'featured-examples',
+  },
+  { title: 'Divider', variant: 'divider', eventId: 'divider-examples' },
+  {
+    title: 'Card examples',
+    variant: 'card',
+    topics: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
+      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
+      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
+      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
+      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
+    ],
+    eventId: 'card-examples',
   },
   {
-    title: 'Symbol = Divider',
-    variant: 'Symbol = divider',
-    eventId: 'Symbol = divider-examples',
-  },
-  {
-    title: 'Symbol = Card examples',
-    variant: 'Symbol = card',
-    topics:
-      'Array = [object Object],[object Object],[object Object],[object Object],[object Object]',
-    eventId: 'Symbol = card-examples',
-  },
-  {
-    title: 'Symbol = Block examples',
-    variant: 'Symbol = block',
-    topics:
-      'Array = [object Object],[object Object],[object Object],[object Object]',
-    eventId: 'Symbol = block-examples',
+    title: 'Block examples',
+    variant: 'block',
+    topics: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
+      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
+      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
+      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
+    ],
+    eventId: 'block-examples',
   },
 ]
 ",
@@ -341,146 +541,218 @@ exports[`Pull content should pull correctly without type filter 1`] = `
       "./dummy/contentful-topic.ts",
       "export const topic: ContentfulTopic[] = [
   {
-    title: 'Symbol = Jac\\\\u00F3 Beach topic',
-    heading: 'Symbol = Jac\\\\u00F3 Beach',
+    title: 'Jac\\\\u00F3 Beach topic',
+    heading: 'Jac\\\\u00F3 Beach',
     abstract:
-      'Text = Jac\\\\u00F3 is a district of the Garabito canton, in the Puntarenas province of Costa Rica. Jac\\\\u00F3 has a black sand beach that is 4 km (2.5 mi) long and is popular among surfers.',
-    media: 'Array = [object Object]',
-    icon: 'Symbol = sun',
-    actions: 'Array = [object Object]',
+      'Jac\\\\u00F3 is a district of the Garabito canton, in the Puntarenas province of Costa Rica. Jac\\\\u00F3 has a black sand beach that is 4 km (2.5 mi) long and is popular among surfers.',
+    media: [
+      {
+        sys: { type: 'Link', linkType: 'Asset', id: '5lPtGy7GYExeNUC4P3X9Te' },
+      },
+    ],
+    icon: 'sun',
+    actions: [
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '1mqAy6gAuztxgWhsDxxKQL' },
+      },
+    ],
   },
   {
-    title: 'Symbol = Another topic',
-    heading: 'Symbol = Another topic',
-    abstract: 'Text = This is the other topic',
-    media: 'Array = [object Object]',
-    icon: 'Symbol = archive',
-    actions: 'Array = [object Object]',
+    title: 'Another topic',
+    heading: 'Another topic',
+    abstract: 'This is the other topic',
+    media: [{ sys: { type: 'Link', linkType: 'Asset', id: 'demoAsset' } }],
+    icon: 'archive',
+    actions: [
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '5rKZYw23CJACn3TWtHDI5Y' },
+      },
+    ],
   },
   {
-    title: 'Symbol = Build great things with Wheelroom',
-    heading: 'Symbol = Build great things with Wheelroom',
+    title: 'Build great things with Wheelroom',
+    heading: 'Build great things with Wheelroom',
     abstract:
-      'Text = Wheelroom is a new approach to faster, cost efficient and more secure applications.',
-    media: 'Array = [object Object]',
-    icon: 'Symbol = box',
-    actions: 'Array = [object Object]',
+      'Wheelroom is a new approach to faster, cost efficient and more secure applications.',
+    media: [{ sys: { type: 'Link', linkType: 'Asset', id: 'demoAsset' } }],
+    icon: 'box',
+    actions: [{ sys: { type: 'Link', linkType: 'Entry', id: 'githubAction' } }],
   },
   {
-    title: 'Symbol = Image explained',
-    heading: 'Symbol = Image',
-    abstract: 'Text = Image shows the larger image.',
-    icon: 'Symbol = book-open',
-    actions: 'Array = [object Object]',
+    title: 'Image explained',
+    heading: 'Image',
+    abstract: 'Image shows the larger image.',
+    icon: 'book-open',
+    actions: [
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '3YKInGVlalsfYXX38Deaeh' },
+      },
+    ],
   },
   {
-    title: 'Symbol = Showcase explained',
-    heading: 'Symbol = Showcase',
+    title: 'Showcase explained',
+    heading: 'Showcase',
     abstract:
-      \\"Text = Showcase sets your topics on display in a modest way. Stacked on top of each other, it's a clear line-up.\\",
-    icon: 'Symbol = book-open',
-    actions: 'Array = [object Object]',
+      \\"Showcase sets your topics on display in a modest way. Stacked on top of each other, it's a clear line-up.\\",
+    icon: 'book-open',
+    actions: [
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '6oMJ77VICMAglDmH3EGofv' },
+      },
+    ],
   },
   {
-    title: 'Symbol = Headline explained',
-    heading: 'Symbol = Headline',
+    title: 'Headline explained',
+    heading: 'Headline',
     abstract:
-      'Text = Headlines are ideal page openers. Half way on a page they are useful for starting a new section.',
-    icon: 'Symbol = book-open',
-    actions: 'Array = [object Object]',
+      'Headlines are ideal page openers. Half way on a page they are useful for starting a new section.',
+    icon: 'book-open',
+    actions: [
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '7GEn9O3NKEMiXOfP9KJbGI' },
+      },
+    ],
   },
   {
-    title: 'Symbol = Block explained',
-    heading: 'Symbol = Block',
+    title: 'Block explained',
+    heading: 'Block',
     abstract:
-      'Text = Block gives overview to a set of topics. Stacked neatly next to each other they provide a clean display.',
-    icon: 'Symbol = book-open',
-    actions: 'Array = [object Object]',
+      'Block gives overview to a set of topics. Stacked neatly next to each other they provide a clean display.',
+    icon: 'book-open',
+    actions: [
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '5EqNfetjD3Taut7mXZBJYp' },
+      },
+    ],
   },
   {
-    title: 'Symbol = Card explained',
-    heading: 'Symbol = Card',
-    abstract: 'Text = Cards are on the table. Like cards are supposed to.',
-    icon: 'Symbol = book-open',
-    actions: 'Array = [object Object]',
+    title: 'Card explained',
+    heading: 'Card',
+    abstract: 'Cards are on the table. Like cards are supposed to.',
+    icon: 'book-open',
+    actions: [
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '6ixMk07zoxb9mSuqH1ftQz' },
+      },
+    ],
   },
   {
-    title: 'Symbol = Gallery explained',
-    heading: 'Symbol = Gallery',
-    abstract: 'Text = Gallery organises images on a grid.',
-    icon: 'Symbol = book-open',
-    actions: 'Array = [object Object]',
+    title: 'Gallery explained',
+    heading: 'Gallery',
+    abstract: 'Gallery organises images on a grid.',
+    icon: 'book-open',
+    actions: [
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '5qAwk9ZDhuMU0ggdwJPern' },
+      },
+    ],
   },
   {
-    title: 'Symbol = Featured explained',
-    heading: 'Symbol = Featured',
-    abstract: 'Text = Featured puts it on display. In a spacious room.',
-    icon: 'Symbol = book-open',
-    actions: 'Array = [object Object]',
+    title: 'Featured explained',
+    heading: 'Featured',
+    abstract: 'Featured puts it on display. In a spacious room.',
+    icon: 'book-open',
+    actions: [
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '6p9QKsFBcB8aDWZT5wSlNa' },
+      },
+    ],
   },
   {
-    title: 'Symbol = Quote explained',
-    heading: 'Symbol = Quote',
-    abstract: 'Text = Quote. No need to explain that.',
-    icon: 'Symbol = book-open',
-    actions: 'Array = [object Object]',
+    title: 'Quote explained',
+    heading: 'Quote',
+    abstract: 'Quote. No need to explain that.',
+    icon: 'book-open',
+    actions: [
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '7vV7WrXza4sOxS7Zs9pcv7' },
+      },
+    ],
   },
   {
-    title: 'Symbol = Hero explained',
-    heading: 'Symbol = Hero',
-    abstract: 'Text = Hero puts the message on top of the image.',
-    icon: 'Symbol = book-open',
-    actions: 'Array = [object Object]',
+    title: 'Hero explained',
+    heading: 'Hero',
+    abstract: 'Hero puts the message on top of the image.',
+    icon: 'book-open',
+    actions: [
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '6Ky1fr91nPqeC32GBCkEAA' },
+      },
+    ],
   },
   {
-    title: 'Symbol = Divider explained',
-    heading: 'Symbol = Divider explained',
+    title: 'Divider explained',
+    heading: 'Divider explained',
     abstract:
-      'Text = Diver splits in two. On longer pages the divider provides clean sections.',
-    icon: 'Symbol = book-open',
-    actions: 'Array = [object Object]',
+      'Diver splits in two. On longer pages the divider provides clean sections.',
+    icon: 'book-open',
+    actions: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'RFo69UE6gxFyhkX8bmRcf' } },
+    ],
   },
   {
-    title: 'Symbol = Video explained',
-    heading: 'Symbol = Video',
+    title: 'Video explained',
+    heading: 'Video',
     abstract:
-      'Text = Video moves the image. Upload your own images to the CMS, no need for anything else.',
-    icon: 'Symbol = book-open',
-    actions: 'Array = [object Object]',
+      'Video moves the image. Upload your own images to the CMS, no need for anything else.',
+    icon: 'book-open',
+    actions: [
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '1qoj0JTTSlwufhlsf57UlL' },
+      },
+    ],
   },
   {
-    title: 'Symbol = Text explained',
-    heading: 'Symbol = Text',
+    title: 'Text explained',
+    heading: 'Text',
     abstract:
-      'Text = Text is free style. Have it your own, including headings, images and all that.',
-    icon: 'Symbol = book-open',
-    actions: 'Array = [object Object]',
+      'Text is free style. Have it your own, including headings, images and all that.',
+    icon: 'book-open',
+    actions: [
+      { sys: { type: 'Link', linkType: 'Entry', id: '65l1uMjuDkqFnGQ4g4IEf' } },
+    ],
   },
   {
-    title: 'Symbol = Navigation explained',
-    heading: 'Symbol = Navigation',
+    title: 'Navigation explained',
+    heading: 'Navigation',
     abstract:
-      'Text = Navigation is for organising links. The best examples are at the top and bottom of this page.',
-    icon: 'Symbol = book-open',
-    actions: 'Array = [object Object]',
+      'Navigation is for organising links. The best examples are at the top and bottom of this page.',
+    icon: 'book-open',
+    actions: [
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '2xut4VcUhCE6EFSmqQusRN' },
+      },
+    ],
   },
   {
-    title: 'Symbol = Blue oil',
-    heading: 'Symbol = Blue oil',
+    title: 'Blue oil',
+    heading: 'Blue oil',
     abstract:
-      'Text = Blue is one of the three primary colours of pigments in painting and traditional colour theory, as well as in the RGB colour model.',
-    media:
-      'Array = [object Object],[object Object],[object Object],[object Object]',
-    icon: 'Symbol = book-open',
-    actions: 'Array = [object Object]',
-    poster: 'Link = [object Object]',
+      'Blue is one of the three primary colours of pigments in painting and traditional colour theory, as well as in the RGB colour model.',
+    media: [
+      {
+        sys: { type: 'Link', linkType: 'Asset', id: '7nWu7juGaOSwzN45OEnRul' },
+      },
+      {
+        sys: { type: 'Link', linkType: 'Asset', id: '4k0xHcYNagfevSvJ79jiI6' },
+      },
+      {
+        sys: { type: 'Link', linkType: 'Asset', id: '6Eo0rqX76pO7lDgPv6LaID' },
+      },
+      {
+        sys: { type: 'Link', linkType: 'Asset', id: '4Fd8qDYcDEwyyXn3zcVJpi' },
+      },
+    ],
+    icon: 'book-open',
+    actions: [{ sys: { type: 'Link', linkType: 'Entry', id: 'githubAction' } }],
+    poster: { sys: { type: 'Link', linkType: 'Asset', id: 'demoAsset' } },
   },
   {
-    title: 'Symbol = Page section examples',
-    heading: 'Symbol = Examples',
+    title: 'Page section examples',
+    heading: 'Examples',
     abstract:
-      'Text = Pages are build up out of sections. Each section has a flavour. We call them display variations.',
-    icon: 'Symbol = book-open',
+      'Pages are build up out of sections. Each section has a flavour. We call them display variations.',
+    icon: 'book-open',
   },
 ]
 ",
@@ -489,10 +761,436 @@ exports[`Pull content should pull correctly without type filter 1`] = `
       "./dummy/contentful-text-section.ts",
       "export const textSection: ContentfulTextSection[] = [
   {
-    title: 'Symbol = Test text section',
-    variant: 'Symbol = text',
-    text: 'RichText = [object Object]',
-    eventId: 'Symbol = test-text-section',
+    title: 'Test text section',
+    variant: 'text',
+    text: {
+      nodeType: 'document',
+      data: {},
+      content: [
+        {
+          nodeType: 'heading-1',
+          content: [
+            { nodeType: 'text', value: 'Heading 1', marks: [], data: {} },
+          ],
+          data: {},
+        },
+        {
+          nodeType: 'paragraph',
+          content: [
+            {
+              nodeType: 'text',
+              value: 'Body text with some settings. This is ',
+              marks: [],
+              data: {},
+            },
+            {
+              nodeType: 'text',
+              value: 'bold text',
+              marks: [{ type: 'bold' }],
+              data: {},
+            },
+            { nodeType: 'text', value: '. This is ', marks: [], data: {} },
+            {
+              nodeType: 'text',
+              value: 'italic',
+              marks: [{ type: 'italic' }],
+              data: {},
+            },
+            { nodeType: 'text', value: \\". Here's an \\", marks: [], data: {} },
+            {
+              nodeType: 'text',
+              value: 'underlined piece',
+              marks: [{ type: 'underline' }],
+              data: {},
+            },
+            { nodeType: 'text', value: '. This is a ', marks: [], data: {} },
+            {
+              nodeType: 'text',
+              value: 'code block',
+              marks: [{ type: 'code' }],
+              data: {},
+            },
+            { nodeType: 'text', value: '.', marks: [], data: {} },
+          ],
+          data: {},
+        },
+        {
+          nodeType: 'unordered-list',
+          content: [
+            {
+              nodeType: 'list-item',
+              content: [
+                {
+                  nodeType: 'paragraph',
+                  content: [
+                    { nodeType: 'text', value: '', marks: [], data: {} },
+                    {
+                      nodeType: 'hyperlink',
+                      content: [
+                        {
+                          nodeType: 'text',
+                          value: 'url to www.wheelroom.io',
+                          marks: [],
+                          data: {},
+                        },
+                      ],
+                      data: { uri: 'https://www.wheelroom.io' },
+                    },
+                    { nodeType: 'text', value: '', marks: [], data: {} },
+                  ],
+                  data: {},
+                },
+              ],
+              data: {},
+            },
+            {
+              nodeType: 'list-item',
+              content: [
+                {
+                  nodeType: 'paragraph',
+                  content: [
+                    { nodeType: 'text', value: '', marks: [], data: {} },
+                    {
+                      nodeType: 'entry-hyperlink',
+                      content: [
+                        {
+                          nodeType: 'text',
+                          value: 'page link to examples',
+                          marks: [],
+                          data: {},
+                        },
+                      ],
+                      data: {
+                        target: {
+                          sys: {
+                            id: '1yhZHA5w8ugUqI2Opz5hdd',
+                            type: 'Link',
+                            linkType: 'Entry',
+                          },
+                        },
+                      },
+                    },
+                    { nodeType: 'text', value: '', marks: [], data: {} },
+                  ],
+                  data: {},
+                },
+              ],
+              data: {},
+            },
+            {
+              nodeType: 'list-item',
+              content: [
+                {
+                  nodeType: 'paragraph',
+                  content: [
+                    { nodeType: 'text', value: '', marks: [], data: {} },
+                    {
+                      nodeType: 'asset-hyperlink',
+                      content: [
+                        {
+                          nodeType: 'text',
+                          value: 'link to wheel room logo',
+                          marks: [],
+                          data: {},
+                        },
+                      ],
+                      data: {
+                        target: {
+                          sys: {
+                            id: 'demoAsset',
+                            type: 'Link',
+                            linkType: 'Asset',
+                          },
+                        },
+                      },
+                    },
+                    { nodeType: 'text', value: '', marks: [], data: {} },
+                  ],
+                  data: {},
+                },
+              ],
+              data: {},
+            },
+          ],
+          data: {},
+        },
+        {
+          nodeType: 'heading-2',
+          content: [
+            { nodeType: 'text', value: 'Heading 2', marks: [], data: {} },
+          ],
+          data: {},
+        },
+        {
+          nodeType: 'ordered-list',
+          content: [
+            {
+              nodeType: 'list-item',
+              content: [
+                {
+                  nodeType: 'paragraph',
+                  content: [
+                    {
+                      nodeType: 'text',
+                      value: 'Body text nr 1',
+                      marks: [],
+                      data: {},
+                    },
+                  ],
+                  data: {},
+                },
+              ],
+              data: {},
+            },
+            {
+              nodeType: 'list-item',
+              content: [
+                {
+                  nodeType: 'paragraph',
+                  content: [
+                    {
+                      nodeType: 'text',
+                      value: 'Body text nr 2',
+                      marks: [],
+                      data: {},
+                    },
+                  ],
+                  data: {},
+                },
+              ],
+              data: {},
+            },
+            {
+              nodeType: 'list-item',
+              content: [
+                {
+                  nodeType: 'paragraph',
+                  content: [
+                    {
+                      nodeType: 'text',
+                      value: 'Body text nr 3',
+                      marks: [],
+                      data: {},
+                    },
+                  ],
+                  data: {},
+                },
+              ],
+              data: {},
+            },
+          ],
+          data: {},
+        },
+        {
+          nodeType: 'heading-3',
+          content: [
+            { nodeType: 'text', value: 'Heading 3', marks: [], data: {} },
+          ],
+          data: {},
+        },
+        {
+          nodeType: 'blockquote',
+          content: [
+            {
+              nodeType: 'paragraph',
+              content: [
+                {
+                  nodeType: 'text',
+                  value: 'Body text quote',
+                  marks: [],
+                  data: {},
+                },
+              ],
+              data: {},
+            },
+          ],
+          data: {},
+        },
+        {
+          nodeType: 'heading-4',
+          content: [
+            { nodeType: 'text', value: 'Heading 4', marks: [], data: {} },
+          ],
+          data: {},
+        },
+        {
+          nodeType: 'unordered-list',
+          content: [
+            {
+              nodeType: 'list-item',
+              content: [
+                {
+                  nodeType: 'paragraph',
+                  content: [
+                    {
+                      nodeType: 'text',
+                      value: 'Body text with some settings. This is ',
+                      marks: [],
+                      data: {},
+                    },
+                    {
+                      nodeType: 'text',
+                      value: 'bold text',
+                      marks: [{ type: 'bold' }],
+                      data: {},
+                    },
+                    {
+                      nodeType: 'text',
+                      value: '. This is ',
+                      marks: [],
+                      data: {},
+                    },
+                    {
+                      nodeType: 'text',
+                      value: 'italic',
+                      marks: [{ type: 'italic' }],
+                      data: {},
+                    },
+                    {
+                      nodeType: 'text',
+                      value: \\". Here's an \\",
+                      marks: [],
+                      data: {},
+                    },
+                    {
+                      nodeType: 'text',
+                      value: 'underlined piece',
+                      marks: [{ type: 'underline' }],
+                      data: {},
+                    },
+                    {
+                      nodeType: 'text',
+                      value: '. This is a ',
+                      marks: [],
+                      data: {},
+                    },
+                    {
+                      nodeType: 'text',
+                      value: 'code block',
+                      marks: [{ type: 'code' }],
+                      data: {},
+                    },
+                    { nodeType: 'text', value: '.', marks: [], data: {} },
+                  ],
+                  data: {},
+                },
+              ],
+              data: {},
+            },
+          ],
+          data: {},
+        },
+        { nodeType: 'hr', content: [], data: {} },
+        {
+          nodeType: 'paragraph',
+          content: [
+            {
+              nodeType: 'text',
+              value: 'Body text after the line',
+              marks: [],
+              data: {},
+            },
+          ],
+          data: {},
+        },
+        {
+          nodeType: 'heading-5',
+          content: [
+            { nodeType: 'text', value: 'Heading 5', marks: [], data: {} },
+          ],
+          data: {},
+        },
+        {
+          nodeType: 'paragraph',
+          content: [
+            { nodeType: 'text', value: 'Body text', marks: [], data: {} },
+          ],
+          data: {},
+        },
+        {
+          nodeType: 'heading-6',
+          content: [
+            { nodeType: 'text', value: 'Heading 6', marks: [], data: {} },
+          ],
+          data: {},
+        },
+        {
+          nodeType: 'paragraph',
+          content: [
+            { nodeType: 'text', value: 'Body text', marks: [], data: {} },
+          ],
+          data: {},
+        },
+        {
+          nodeType: 'embedded-entry-block',
+          content: [],
+          data: {
+            target: {
+              sys: {
+                id: '4gqjzFponPw2UQZc1e4WNM',
+                type: 'Link',
+                linkType: 'Entry',
+              },
+            },
+          },
+        },
+        {
+          nodeType: 'paragraph',
+          content: [
+            { nodeType: 'text', value: 'Body text', marks: [], data: {} },
+          ],
+          data: {},
+        },
+        {
+          nodeType: 'paragraph',
+          content: [
+            {
+              nodeType: 'text',
+              value: 'This line has a topic section ',
+              marks: [],
+              data: {},
+            },
+            {
+              nodeType: 'embedded-entry-inline',
+              content: [],
+              data: {
+                target: {
+                  sys: {
+                    id: '4gqjzFponPw2UQZc1e4WNM',
+                    type: 'Link',
+                    linkType: 'Entry',
+                  },
+                },
+              },
+            },
+            { nodeType: 'text', value: ', in the line.', marks: [], data: {} },
+          ],
+          data: {},
+        },
+        {
+          nodeType: 'paragraph',
+          content: [
+            { nodeType: 'text', value: 'Body text', marks: [], data: {} },
+          ],
+          data: {},
+        },
+        {
+          nodeType: 'embedded-asset-block',
+          content: [],
+          data: {
+            target: {
+              sys: { id: 'demoAsset', type: 'Link', linkType: 'Asset' },
+            },
+          },
+        },
+        {
+          nodeType: 'paragraph',
+          content: [{ nodeType: 'text', value: '', marks: [], data: {} }],
+          data: {},
+        },
+      ],
+    },
+    eventId: 'test-text-section',
   },
 ]
 ",
@@ -501,26 +1199,76 @@ exports[`Pull content should pull correctly without type filter 1`] = `
       "./dummy/contentful-navigation-segment.ts",
       "export const navigationSegment: ContentfulNavigationSegment[] = [
   {
-    title: 'Symbol = Sitemap segment',
-    heading: 'Symbol = Examples',
-    abstract: 'Text = All Wheelroom examples',
-    actions:
-      'Array = [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]',
+    title: 'Sitemap segment',
+    heading: 'Examples',
+    abstract: 'All Wheelroom examples',
+    actions: [
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '5EqNfetjD3Taut7mXZBJYp' },
+      },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '6ixMk07zoxb9mSuqH1ftQz' },
+      },
+      { sys: { type: 'Link', linkType: 'Entry', id: 'RFo69UE6gxFyhkX8bmRcf' } },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '6p9QKsFBcB8aDWZT5wSlNa' },
+      },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '5qAwk9ZDhuMU0ggdwJPern' },
+      },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '7GEn9O3NKEMiXOfP9KJbGI' },
+      },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '6Ky1fr91nPqeC32GBCkEAA' },
+      },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '3YKInGVlalsfYXX38Deaeh' },
+      },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '2xut4VcUhCE6EFSmqQusRN' },
+      },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '7vV7WrXza4sOxS7Zs9pcv7' },
+      },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '6oMJ77VICMAglDmH3EGofv' },
+      },
+      { sys: { type: 'Link', linkType: 'Entry', id: '65l1uMjuDkqFnGQ4g4IEf' } },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '1qoj0JTTSlwufhlsf57UlL' },
+      },
+    ],
   },
   {
-    title: 'Symbol = Actions segment',
-    heading: 'Symbol = Actions',
-    actions: 'Array = [object Object],[object Object]',
+    title: 'Actions segment',
+    heading: 'Actions',
+    actions: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'getStartedAction' } },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '5rKZYw23CJACn3TWtHDI5Y' },
+      },
+    ],
   },
   {
-    title: 'Symbol = Menu segment',
-    heading: 'Symbol = Wheelroom',
-    actions: 'Array = [object Object],[object Object],[object Object]',
+    title: 'Menu segment',
+    heading: 'Wheelroom',
+    actions: [
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '2wOMVK2AzRoPCSlMWKOkf8' },
+      },
+      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleAction' } },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '5rKZYw23CJACn3TWtHDI5Y' },
+      },
+    ],
   },
   {
-    title: 'Symbol = Social segment',
-    heading: 'Symbol = Social',
-    actions: 'Array = [object Object]',
+    title: 'Social segment',
+    heading: 'Social',
+    actions: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'getStartedAction' } },
+    ],
   },
 ]
 ",
@@ -529,96 +1277,253 @@ exports[`Pull content should pull correctly without type filter 1`] = `
       "./dummy/contentful-page.ts",
       "export const page: ContentfulPage[] = [
   {
-    title: 'Symbol = /',
-    path: 'Symbol = /',
-    sections: 'Array = [object Object],[object Object],[object Object]',
+    title: '/',
+    path: '/',
+    sections: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'Ahya76N7Fo9BrJqPY2BVo' } },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '2zajs22gdw0eheKrQuxwrg' },
+      },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '66ccn0Y5aVxWLBRnyYvtak' },
+      },
+    ],
   },
   {
-    title: 'Symbol = /another-page',
-    path: 'Symbol = /another-page',
-    sections: 'Array = [object Object],[object Object],[object Object]',
+    title: '/another-page',
+    path: '/another-page',
+    sections: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'Ahya76N7Fo9BrJqPY2BVo' } },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '4gqjzFponPw2UQZc1e4WNM' },
+      },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '66ccn0Y5aVxWLBRnyYvtak' },
+      },
+    ],
   },
   {
-    title: 'Symbol = /examples',
-    path: 'Symbol = /examples',
-    sections: 'Array = [object Object],[object Object],[object Object]',
+    title: '/examples',
+    path: '/examples',
+    sections: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'Ahya76N7Fo9BrJqPY2BVo' } },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '3Rt4gE2rlkKPaDHvFOJUcU' },
+      },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '66ccn0Y5aVxWLBRnyYvtak' },
+      },
+    ],
   },
   {
-    title: 'Symbol = /examples/card',
-    path: 'Symbol = /examples/card',
-    sections:
-      'Array = [object Object],[object Object],[object Object],[object Object],[object Object]',
+    title: '/examples/card',
+    path: '/examples/card',
+    sections: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'Ahya76N7Fo9BrJqPY2BVo' } },
+      { sys: { type: 'Link', linkType: 'Entry', id: 'MgY5x3ypYg1yQCRTO2HZ8' } },
+      { sys: { type: 'Link', linkType: 'Entry', id: 'yT3a2Mk65wfYjboLnnbfS' } },
+      { sys: { type: 'Link', linkType: 'Entry', id: 'jDlscjwcatAKygPeGhrDE' } },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '66ccn0Y5aVxWLBRnyYvtak' },
+      },
+    ],
   },
   {
-    title: 'Symbol = /examples/divider',
-    path: 'Symbol = /examples/divider',
-    sections:
-      'Array = [object Object],[object Object],[object Object],[object Object]',
+    title: '/examples/divider',
+    path: '/examples/divider',
+    sections: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'Ahya76N7Fo9BrJqPY2BVo' } },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '7xwGAWiEgxibeOWPX2YCVP' },
+      },
+      { sys: { type: 'Link', linkType: 'Entry', id: 'yT3a2Mk65wfYjboLnnbfS' } },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '66ccn0Y5aVxWLBRnyYvtak' },
+      },
+    ],
   },
   {
-    title: 'Symbol = /examples/featured',
-    path: 'Symbol = /examples/featured',
-    sections:
-      'Array = [object Object],[object Object],[object Object],[object Object],[object Object]',
+    title: '/examples/featured',
+    path: '/examples/featured',
+    sections: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'Ahya76N7Fo9BrJqPY2BVo' } },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '3B1MmF6zGc5bqPFB00nuDX' },
+      },
+      { sys: { type: 'Link', linkType: 'Entry', id: 'yT3a2Mk65wfYjboLnnbfS' } },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '1f1csS3THA46Ut7GryJ01h' },
+      },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '66ccn0Y5aVxWLBRnyYvtak' },
+      },
+    ],
   },
   {
-    title: 'Symbol = /examples/gallery',
-    path: 'Symbol = /examples/gallery',
-    sections:
-      'Array = [object Object],[object Object],[object Object],[object Object],[object Object]',
+    title: '/examples/gallery',
+    path: '/examples/gallery',
+    sections: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'Ahya76N7Fo9BrJqPY2BVo' } },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '3wCceTpXb1LbqagscXIdn5' },
+      },
+      { sys: { type: 'Link', linkType: 'Entry', id: 'yT3a2Mk65wfYjboLnnbfS' } },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '1Mg4Dw0EiNwM6hGt9nVJre' },
+      },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '66ccn0Y5aVxWLBRnyYvtak' },
+      },
+    ],
   },
   {
-    title: 'Symbol = /examples/headline',
-    path: 'Symbol = /examples/headline',
-    sections:
-      'Array = [object Object],[object Object],[object Object],[object Object],[object Object]',
+    title: '/examples/headline',
+    path: '/examples/headline',
+    sections: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'Ahya76N7Fo9BrJqPY2BVo' } },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '3ugbjgFt7TrUKHkrI2sJhr' },
+      },
+      { sys: { type: 'Link', linkType: 'Entry', id: 'yT3a2Mk65wfYjboLnnbfS' } },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '6Ouv1mYO2R7DMsRQKupXmC' },
+      },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '66ccn0Y5aVxWLBRnyYvtak' },
+      },
+    ],
   },
   {
-    title: 'Symbol = /examples/hero',
-    path: 'Symbol = /examples/hero',
-    sections:
-      'Array = [object Object],[object Object],[object Object],[object Object],[object Object]',
+    title: '/examples/hero',
+    path: '/examples/hero',
+    sections: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'Ahya76N7Fo9BrJqPY2BVo' } },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '7udwiyr8KSUjMUXo44P8ic' },
+      },
+      { sys: { type: 'Link', linkType: 'Entry', id: 'yT3a2Mk65wfYjboLnnbfS' } },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '38BYLeLQeXHRXmvVShqC0I' },
+      },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '66ccn0Y5aVxWLBRnyYvtak' },
+      },
+    ],
   },
   {
-    title: 'Symbol = /examples/video',
-    path: 'Symbol = /examples/video',
-    sections:
-      'Array = [object Object],[object Object],[object Object],[object Object],[object Object]',
+    title: '/examples/video',
+    path: '/examples/video',
+    sections: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'Ahya76N7Fo9BrJqPY2BVo' } },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '1VoUiNgzRMJ55DRHjGryaW' },
+      },
+      { sys: { type: 'Link', linkType: 'Entry', id: 'yT3a2Mk65wfYjboLnnbfS' } },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '6KYiy7e2rNIncJgx89XMn0' },
+      },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '66ccn0Y5aVxWLBRnyYvtak' },
+      },
+    ],
   },
   {
-    title: 'Symbol = /examples/image',
-    path: 'Symbol = /examples/image',
-    sections:
-      'Array = [object Object],[object Object],[object Object],[object Object],[object Object]',
+    title: '/examples/image',
+    path: '/examples/image',
+    sections: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'Ahya76N7Fo9BrJqPY2BVo' } },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '72KRNIAwImEsQ0zTgCfyLx' },
+      },
+      { sys: { type: 'Link', linkType: 'Entry', id: 'yT3a2Mk65wfYjboLnnbfS' } },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '6GBh5EOgOVNtjr8vHWWsfS' },
+      },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '66ccn0Y5aVxWLBRnyYvtak' },
+      },
+    ],
   },
   {
-    title: 'Symbol = /examples/quote',
-    path: 'Symbol = /examples/quote',
-    sections:
-      'Array = [object Object],[object Object],[object Object],[object Object],[object Object]',
+    title: '/examples/quote',
+    path: '/examples/quote',
+    sections: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'Ahya76N7Fo9BrJqPY2BVo' } },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '3ccJftqVouDCY7YQUIFImW' },
+      },
+      { sys: { type: 'Link', linkType: 'Entry', id: 'yT3a2Mk65wfYjboLnnbfS' } },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '1Cv1FTVYa9dFFlxtgeAfBx' },
+      },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '66ccn0Y5aVxWLBRnyYvtak' },
+      },
+    ],
   },
   {
-    title: 'Symbol = /examples/showcase',
-    path: 'Symbol = /examples/showcase',
-    sections:
-      'Array = [object Object],[object Object],[object Object],[object Object],[object Object]',
+    title: '/examples/showcase',
+    path: '/examples/showcase',
+    sections: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'Ahya76N7Fo9BrJqPY2BVo' } },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '4KanR0bTC8UdxKdXjQWYxF' },
+      },
+      { sys: { type: 'Link', linkType: 'Entry', id: 'yT3a2Mk65wfYjboLnnbfS' } },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '4UGaJlQA0bXqTp459GkYbd' },
+      },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '66ccn0Y5aVxWLBRnyYvtak' },
+      },
+    ],
   },
   {
-    title: 'Symbol = /examples/block',
-    path: 'Symbol = /examples/block',
-    sections:
-      'Array = [object Object],[object Object],[object Object],[object Object],[object Object]',
+    title: '/examples/block',
+    path: '/examples/block',
+    sections: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'Ahya76N7Fo9BrJqPY2BVo' } },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '4llLuRXhQCzdpdOJmNETWD' },
+      },
+      { sys: { type: 'Link', linkType: 'Entry', id: 'yT3a2Mk65wfYjboLnnbfS' } },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '7wYIWeiPCVhgj4vJaYvI6s' },
+      },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '66ccn0Y5aVxWLBRnyYvtak' },
+      },
+    ],
   },
   {
-    title: 'Symbol = /examples/navigation',
-    path: 'Symbol = /examples/navigation',
-    sections:
-      'Array = [object Object],[object Object],[object Object],[object Object],[object Object]',
+    title: '/examples/navigation',
+    path: '/examples/navigation',
+    sections: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'Ahya76N7Fo9BrJqPY2BVo' } },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '6RmfIqynqBsGIHZWcJEo4F' },
+      },
+      { sys: { type: 'Link', linkType: 'Entry', id: 'yT3a2Mk65wfYjboLnnbfS' } },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '3Rt4gE2rlkKPaDHvFOJUcU' },
+      },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '66ccn0Y5aVxWLBRnyYvtak' },
+      },
+    ],
   },
   {
-    title: 'Symbol = /examples/text',
-    path: 'Symbol = /examples/text',
-    sections: 'Array = [object Object],[object Object],[object Object]',
+    title: '/examples/text',
+    path: '/examples/text',
+    sections: [
+      { sys: { type: 'Link', linkType: 'Entry', id: 'Ahya76N7Fo9BrJqPY2BVo' } },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '64t3k4x73pm9lfrB1vUoQo' },
+      },
+      {
+        sys: { type: 'Link', linkType: 'Entry', id: '66ccn0Y5aVxWLBRnyYvtak' },
+      },
+    ],
   },
 ]
 ",
@@ -627,13 +1532,13 @@ exports[`Pull content should pull correctly without type filter 1`] = `
       "./dummy/contentful-globals.ts",
       "export const globals: ContentfulGlobals[] = [
   {
-    title: 'Symbol = Global settings for this site',
-    siteAuthor: 'Symbol = Wheelroom',
+    title: 'Global settings for this site',
+    siteAuthor: 'Wheelroom',
     siteDescription:
-      'Symbol = Wheelroom is an open source project and created for developers that want to work with the latest technology and services.',
-    siteHeading: 'Symbol = Wheelroom',
-    siteKeywords: 'Array = Wheelroom,Boilerplate,Example set',
-    skipToContentHeading: 'Symbol = Skip to Wheelroom content',
+      'Wheelroom is an open source project and created for developers that want to work with the latest technology and services.',
+    siteHeading: 'Wheelroom',
+    siteKeywords: ['Wheelroom', 'Boilerplate', 'Example set'],
+    skipToContentHeading: 'Skip to Wheelroom content',
   },
 ]
 ",
@@ -647,132 +1552,163 @@ exports[`Pull content should pull correctly without type filter 1`] = `
       "./dummy/contentful-action.ts",
       "export const action: ContentfulAction[] = [
   {
-    title: 'Symbol = Featured example',
-    heading: 'Symbol = Featured example',
-    page: 'Link = [object Object]',
-    eventId: 'Symbol = featured-example',
+    title: 'Featured example',
+    heading: 'Featured example',
+    page: {
+      sys: { type: 'Link', linkType: 'Entry', id: '3f79EHFeDaFfVooSOhxRyT' },
+    },
+    eventId: 'featured-example',
   },
   {
-    title: 'Symbol = Block example',
-    heading: 'Symbol = Block example',
-    page: 'Link = [object Object]',
-    eventId: 'Symbol = block-example',
+    title: 'Block example',
+    heading: 'Block example',
+    page: {
+      sys: { type: 'Link', linkType: 'Entry', id: '28Hdbwhn8eb9DDkynXsas2' },
+    },
+    eventId: 'block-example',
   },
   {
-    title: 'Symbol = Card example',
-    heading: 'Symbol = Card example',
-    page: 'Link = [object Object]',
-    eventId: 'Symbol = card-example',
+    title: 'Card example',
+    heading: 'Card example',
+    page: {
+      sys: { type: 'Link', linkType: 'Entry', id: '66uv0KTuWARnKdPU1U4vW' },
+    },
+    eventId: 'card-example',
   },
   {
-    title: 'Symbol = Gallery example',
-    heading: 'Symbol = Gallery example',
-    page: 'Link = [object Object]',
-    eventId: 'Symbol = gallery-example',
+    title: 'Gallery example',
+    heading: 'Gallery example',
+    page: {
+      sys: { type: 'Link', linkType: 'Entry', id: '3pPwDVOAIh3WLbQPUEKKO3' },
+    },
+    eventId: 'gallery-example',
   },
   {
-    title: 'Symbol = Showcase example',
-    heading: 'Symbol = Showcase example',
-    page: 'Link = [object Object]',
-    eventId: 'Symbol = showcase-example',
+    title: 'Showcase example',
+    heading: 'Showcase example',
+    page: {
+      sys: { type: 'Link', linkType: 'Entry', id: '27LvcEtjvg7Dph98DpCSwp' },
+    },
+    eventId: 'showcase-example',
   },
   {
-    title: 'Symbol = Quote example',
-    heading: 'Symbol = Quote example',
-    page: 'Link = [object Object]',
-    eventId: 'Symbol = quote-example',
+    title: 'Quote example',
+    heading: 'Quote example',
+    page: {
+      sys: { type: 'Link', linkType: 'Entry', id: '5UDAyWoKN3FqCCVCpRclWg' },
+    },
+    eventId: 'quote-example',
   },
   {
-    title: 'Symbol = Headline example',
-    heading: 'Symbol = Headline example',
-    page: 'Link = [object Object]',
-    eventId: 'Symbol = headline-example',
+    title: 'Headline example',
+    heading: 'Headline example',
+    page: {
+      sys: { type: 'Link', linkType: 'Entry', id: '3byPoEfSXx8QfyTaDzy3uO' },
+    },
+    eventId: 'headline-example',
   },
   {
-    title: 'Symbol = Image example',
-    heading: 'Symbol = Image example',
-    page: 'Link = [object Object]',
-    eventId: 'Symbol = image-example',
+    title: 'Image example',
+    heading: 'Image example',
+    page: {
+      sys: { type: 'Link', linkType: 'Entry', id: '7yLDwzKSZLXfJLrY5O0BMA' },
+    },
+    eventId: 'image-example',
   },
   {
-    title: 'Symbol = Text example',
-    heading: 'Symbol = Text example',
-    page: 'Link = [object Object]',
-    eventId: 'Symbol = text-example',
+    title: 'Text example',
+    heading: 'Text example',
+    page: {
+      sys: { type: 'Link', linkType: 'Entry', id: '4hivVLdh8W6AgmbcR1mTUu' },
+    },
+    eventId: 'text-example',
   },
   {
-    title: 'Symbol = Divider example',
-    heading: 'Symbol = Divider example',
-    page: 'Link = [object Object]',
-    eventId: 'Symbol = divider-example',
+    title: 'Divider example',
+    heading: 'Divider example',
+    page: {
+      sys: { type: 'Link', linkType: 'Entry', id: '5NSwAqPLFBltvlIECY1xDw' },
+    },
+    eventId: 'divider-example',
   },
   {
-    title: 'Symbol = Hero example',
-    heading: 'Symbol = Hero example',
-    page: 'Link = [object Object]',
-    eventId: 'Symbol = hero-example',
+    title: 'Hero example',
+    heading: 'Hero example',
+    page: {
+      sys: { type: 'Link', linkType: 'Entry', id: '4Sw1w3XX3573h0dmOkyDi0' },
+    },
+    eventId: 'hero-example',
   },
   {
-    title: 'Symbol = Video example',
-    heading: 'Symbol = Video example',
-    page: 'Link = [object Object]',
-    eventId: 'Symbol = video-example',
+    title: 'Video example',
+    heading: 'Video example',
+    page: {
+      sys: { type: 'Link', linkType: 'Entry', id: '5j4SEj7hRPyX3Oxx2s4KYF' },
+    },
+    eventId: 'video-example',
   },
   {
-    title: 'Symbol = Navigation example',
-    heading: 'Symbol = Navigation example',
-    page: 'Link = [object Object]',
-    eventId: 'Symbol = navigation-example',
+    title: 'Navigation example',
+    heading: 'Navigation example',
+    page: {
+      sys: { type: 'Link', linkType: 'Entry', id: '7Ip05T3pAnXYeL811kmAAt' },
+    },
+    eventId: 'navigation-example',
   },
   {
-    title: 'Symbol = Examples',
-    heading: 'Symbol = Examples',
+    title: 'Examples',
+    heading: 'Examples',
+    description: 'An overview of all the Wheelroom page-section exmaples',
+    page: {
+      sys: { type: 'Link', linkType: 'Entry', id: '1yhZHA5w8ugUqI2Opz5hdd' },
+    },
+    eventId: 'check-the-wheelroom-examples-action',
+  },
+  {
+    title: 'Home',
+    heading: 'Home',
+    description: 'Go to homepage',
+    page: {
+      sys: { type: 'Link', linkType: 'Entry', id: '55QHbJyaADuyITfeZiEFqP' },
+    },
+    eventId: 'home',
+  },
+  {
+    title: 'Wheelroom (action)',
+    heading: 'Wheelroom',
+    description: 'Go back to the Wheelroom homepage',
+    eventId: 'wheelroom-action',
+  },
+  {
+    title: 'Try Wheelroom for Free (action)',
+    heading: 'Try Wheelroom for Free',
+    description: 'Visit our Github Wheelroom code repository',
+    url: 'https://github.com/wheelroom/wheelroom',
+  },
+  {
+    title: 'Github',
+    heading: 'Github',
+    description: 'Visit our Github Wheelroom code repository',
+    icon: 'Github',
+    url: 'https://github.com/wheelroom/wheelroom',
+    eventId: 'github',
+  },
+  {
+    title: 'Another action',
+    heading: 'Another action',
+    page: {
+      sys: { type: 'Link', linkType: 'Entry', id: '1P2O5v7M4KEAmbmDAzgyCe' },
+    },
+    eventId: 'another-action',
+  },
+  {
+    title: 'Jac\\\\u00F3 Beach on Wikipedia',
+    heading: 'Jac\\\\u00F3 Beach on Wikipedia',
     description:
-      'Symbol = An overview of all the Wheelroom page-section exmaples',
-    page: 'Link = [object Object]',
-    eventId: 'Symbol = check-the-wheelroom-examples-action',
-  },
-  {
-    title: 'Symbol = Home',
-    heading: 'Symbol = Home',
-    description: 'Symbol = Go to homepage',
-    page: 'Link = [object Object]',
-    eventId: 'Symbol = home',
-  },
-  {
-    title: 'Symbol = Wheelroom (action)',
-    heading: 'Symbol = Wheelroom',
-    description: 'Symbol = Go back to the Wheelroom homepage',
-    eventId: 'Symbol = wheelroom-action',
-  },
-  {
-    title: 'Symbol = Try Wheelroom for Free (action)',
-    heading: 'Symbol = Try Wheelroom for Free',
-    description: 'Symbol = Visit our Github Wheelroom code repository',
-    url: 'Symbol = https://github.com/wheelroom/wheelroom',
-  },
-  {
-    title: 'Symbol = Github',
-    heading: 'Symbol = Github',
-    description: 'Symbol = Visit our Github Wheelroom code repository',
-    icon: 'Symbol = Github',
-    url: 'Symbol = https://github.com/wheelroom/wheelroom',
-    eventId: 'Symbol = github',
-  },
-  {
-    title: 'Symbol = Another action',
-    heading: 'Symbol = Another action',
-    page: 'Link = [object Object]',
-    eventId: 'Symbol = another-action',
-  },
-  {
-    title: 'Symbol = Jac\\\\u00F3 Beach on Wikipedia',
-    heading: 'Symbol = Jac\\\\u00F3 Beach on Wikipedia',
-    description:
-      'Symbol = Jac\\\\u00F3 was created on 16 September 1965. Segregated from Puntarenas.',
-    icon: 'Symbol = external-link',
-    url: 'Symbol = https://en.wikipedia.org/wiki/Jac\\\\u00F3,_Costa_Rica',
-    eventId: 'Symbol = jaco-beach',
+      'Jac\\\\u00F3 was created on 16 September 1965. Segregated from Puntarenas.',
+    icon: 'external-link',
+    url: 'https://en.wikipedia.org/wiki/Jac\\\\u00F3,_Costa_Rica',
+    eventId: 'jaco-beach',
   },
 ]
 ",
