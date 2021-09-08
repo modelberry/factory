@@ -27,11 +27,11 @@ This project is based on project Wheelroom <https://github.com/wheelroom/wheelro
   - [x] Connect validation fetching and code printing
 - [ ] Pull content command
   - [x] Implement AST content variable code printing
-  - [ ] Implement content fetching from remote
+  - [x] Implement content fetching from remote
   - [ ] Connect content fetching and code printing
-- [ ] Snaphshot testing of Contententful API
+- [x] Full Contententful API Mock
 - [ ] Publish to npm
-- [ ] Example
+- [ ] Examples
 - [ ] Doocument tsdoc inline tags for @modelberry block tag
 
 ## Roadmap
