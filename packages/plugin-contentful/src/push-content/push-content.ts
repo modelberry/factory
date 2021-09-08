@@ -20,7 +20,7 @@ export const pushContent = async ({
   const { defaultLocale } = await getContentfulLocales({
     contentfulEnvironment,
   })
-  log(chalk(`- default locale: ${defaultLocale?.code}`))
+  log(chalk(`- remote default locale: ${defaultLocale?.code}`))
   for (const modelberryType of Object.values(typeData)) {
     const interfaceTags = modelberryType.interface.interfaceTags || {}
     const typescriptInterfaceName = modelberryType.interface.typeName

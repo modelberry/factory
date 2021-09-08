@@ -9,7 +9,7 @@ describe('Push content should', () => {
     consoleSpy.mockReset()
   })
 
-  const headingResponse = [[chalk('- default locale: en-US')]]
+  const headingResponse = [[chalk('- remote default locale: en-US')]]
 
   const contentfulActionResponse = [
     [chalk.bold.underline('\nContentfulAction')],

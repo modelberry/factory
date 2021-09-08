@@ -1,4 +1,4 @@
-import { ContentType, Environment } from 'contentful-management/types'
+import { Environment } from 'contentful-management/types'
 import {
   createTsInterface,
   createTsImport,
@@ -8,9 +8,10 @@ import {
   camelToKebab,
   firstLowerCase,
 } from '@modelberry/mbfactory/plain'
+import { SourceFile, writeSourceFiles } from '../lib/write-source-files'
+import { fetchContentTypes } from '../lib/fetch-content-types'
 import { copyKeysIfExists } from './copy-keys-if-exists'
 import { getPropertyTree } from './get-property-tree'
-import { SourceFile, writeSourceFiles } from './write-source-files'
 import { getEditorInterfaces } from './get-editor-interfaces'
 import { createContentfulAssetTypeDeclaration } from './create-contentful-asset-type-declaration'
 
@@ -25,19 +26,15 @@ export const pullModels = async ({
   options,
   path,
 }: PullModels) => {
-  const files: SourceFile[] = []
-  const contentTypes: ContentType[] = []
-  if (options.type) {
-    const ctResponse = await contentfulEnvironment.getContentType(options.type)
-    contentTypes.push(ctResponse)
-  } else {
-    const ctResponse = await contentfulEnvironment.getContentTypes()
-    ctResponse.items.forEach((ct) => contentTypes.push(ct))
-  }
+  const contentTypes = await fetchContentTypes({
+    contentfulEnvironment,
+    options,
+  })
   // Generate import statements for each type to be added to the main file
   const allTypesImportStatements = []
   // Empty object that gets filled with validations
   const validations: Record<string, any> = {}
+  const files: SourceFile[] = []
   for (const contentType of contentTypes) {
     const inlineTags: Record<string, any> = {}
     inlineTags['@plugin'] = '"@modelberry/plugin-contentful/plain"'
