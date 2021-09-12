@@ -1,4 +1,4 @@
-## @modelberry/plugin-contentful 6.29.0
+# Changelog
 
 ## [6.29.0](https://github.com/modelberry/factory/compare/6.28.1...6.29.0) (2021-09-12)
 
