@@ -4,7 +4,8 @@ import chalk from 'chalk'
 import { writeSourceFiles } from '../lib/write-source-files'
 import { fetchContentTypes } from '../lib/fetch-content-types'
 import { getContentfulLocales } from '../lib/get-contentful-locales'
-import { ContentTypesById, getSourceFiles, NewEntry } from './get-source-files'
+import { getSourceFiles } from './get-source-files'
+import { EntriesByContentTypeId, EntryType } from './entries-by-content-type-id'
 
 export interface PullContent {
   contentfulEnvironment: Environment
@@ -31,12 +32,12 @@ export const pullContent = async ({
     contentfulEnvironment,
     options,
   })
-  // Organize content types by name
-  const contentTypesById: ContentTypesById = {}
+  // Initialize struture to organize entires per content type
+  const entriesByContentTypeId: EntriesByContentTypeId = {}
   contentTypes.forEach((contentType) => {
-    contentTypesById[contentType.name] = {
-      contentType: contentType,
-      entries: [],
+    entriesByContentTypeId[contentType.name] = {
+      contentType,
+      entryTypeList: [],
     }
   })
   const query = options.type
@@ -45,24 +46,24 @@ export const pullContent = async ({
       }
     : undefined
   // Fetch all entries
-  const entries = await contentfulEnvironment.getEntries(query)
+  const remoteEntries = await contentfulEnvironment.getEntries(query)
   // Find entries and organize them with the content type
-  for (const entry of entries.items) {
-    const contentTypeId = entry.sys.contentType.sys.id
-    const newEntry: NewEntry = {}
+  for (const remoteEntry of remoteEntries.items) {
+    const contentTypeId = remoteEntry.sys.contentType.sys.id
+    const entryType: EntryType = { sys: remoteEntry.sys, fields: {} }
     // Find fields for content type and entry and organize them together
-    for (const fieldId of Object.keys(entry.fields)) {
-      newEntry[fieldId] = {
-        contentType: contentTypesById[contentTypeId].contentType.fields.find(
-          (field: any) => field.id === fieldId
-        ),
-        entry: entry.fields[fieldId],
+    for (const fieldId of Object.keys(remoteEntry.fields)) {
+      entryType.fields[fieldId] = {
+        contentFieldType: entriesByContentTypeId[
+          contentTypeId
+        ].contentType.fields.find((field: any) => field.id === fieldId),
+        fieldValue: remoteEntry.fields[fieldId],
       }
     }
-    contentTypesById[contentTypeId].entries.push(newEntry)
+    entriesByContentTypeId[contentTypeId].entryTypeList.push(entryType)
   }
   const files = getSourceFiles({
-    contentTypesById,
+    entriesByContentTypeId,
     localeCode,
     path,
   })

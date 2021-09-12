@@ -25,10 +25,10 @@ This project is based on project Wheelroom <https://github.com/wheelroom/wheelro
   - [x] Implement AST data variable code printing
   - [x] Implement validation fetching from remote
   - [x] Connect validation fetching and code printing
-- [ ] Pull content command
+- [x] Pull content command
   - [x] Implement AST content variable code printing
   - [x] Implement content fetching from remote
-  - [ ] Connect content fetching and code printing
+  - [x] Connect content fetching and code printing
 - [x] Full Contententful API Mock
 - [ ] Publish to npm
 - [ ] Examples

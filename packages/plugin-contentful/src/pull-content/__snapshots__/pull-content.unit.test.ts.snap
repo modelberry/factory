@@ -7,52 +7,45 @@ exports[`Pull content should pull correctly with type filter 1`] = `
       "./dummy/contentful-test-topic.ts",
       "export const testTopic: ContentfulTestTopic[] = [
   {
+    sys: { id: '2v8GizBNh1oxbf6cKlpzJP' },
     abstract: 'This is the abstract',
-    actions: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
-    ],
+    actionsCollection: { items: [{ sys: { id: 'myContentActionId' } }] },
     heading: 'Heres the heading',
   },
   {
+    sys: { id: '1Ape34KYhU6POKOGNXzH1f' },
     abstract: 'This is the abstract',
-    actions: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
-    ],
+    actionsCollection: { items: [{ sys: { id: 'myContentActionId' } }] },
     heading: 'Heres the heading',
   },
   {
+    sys: { id: '20kpUk71ESQAc2QyuOmg69' },
     abstract: 'This is the abstract',
-    actions: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
-    ],
+    actionsCollection: { items: [{ sys: { id: 'myContentActionId' } }] },
     heading: 'Heres the heading',
   },
   {
+    sys: { id: '6Ot2aHmYhRahdWLU2T4ZJM' },
     abstract: 'This is the abstract',
-    actions: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
-    ],
+    actionsCollection: { items: [{ sys: { id: 'myContentActionId' } }] },
     heading: 'Heres the heading',
   },
   {
+    sys: { id: '5dM5w3tbATsziBAAa5gmjt' },
     abstract: 'This is the abstract',
-    actions: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
-    ],
+    actionsCollection: { items: [{ sys: { id: 'myContentActionId' } }] },
     heading: 'Heres the heading',
   },
   {
+    sys: { id: '2sWRJQiWyoSFVVG4TgPp66' },
     abstract: 'This is the abstract',
-    actions: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
-    ],
+    actionsCollection: { items: [{ sys: { id: 'myContentActionId' } }] },
     heading: 'Heres the heading',
   },
   {
+    sys: { id: '6BTjcj6BUz45rBw5grq10i' },
     abstract: 'This is the abstract',
-    actions: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
-    ],
+    actionsCollection: { items: [{ sys: { id: 'myContentActionId' } }] },
     heading: 'Heres the heading',
   },
 ]
@@ -75,52 +68,45 @@ exports[`Pull content should pull correctly without type filter 1`] = `
       "./dummy/contentful-test-topic.ts",
       "export const testTopic: ContentfulTestTopic[] = [
   {
+    sys: { id: '2v8GizBNh1oxbf6cKlpzJP' },
     abstract: 'This is the abstract',
-    actions: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
-    ],
+    actionsCollection: { items: [{ sys: { id: 'myContentActionId' } }] },
     heading: 'Heres the heading',
   },
   {
+    sys: { id: '1Ape34KYhU6POKOGNXzH1f' },
     abstract: 'This is the abstract',
-    actions: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
-    ],
+    actionsCollection: { items: [{ sys: { id: 'myContentActionId' } }] },
     heading: 'Heres the heading',
   },
   {
+    sys: { id: '20kpUk71ESQAc2QyuOmg69' },
     abstract: 'This is the abstract',
-    actions: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
-    ],
+    actionsCollection: { items: [{ sys: { id: 'myContentActionId' } }] },
     heading: 'Heres the heading',
   },
   {
+    sys: { id: '6Ot2aHmYhRahdWLU2T4ZJM' },
     abstract: 'This is the abstract',
-    actions: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
-    ],
+    actionsCollection: { items: [{ sys: { id: 'myContentActionId' } }] },
     heading: 'Heres the heading',
   },
   {
+    sys: { id: '5dM5w3tbATsziBAAa5gmjt' },
     abstract: 'This is the abstract',
-    actions: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
-    ],
+    actionsCollection: { items: [{ sys: { id: 'myContentActionId' } }] },
     heading: 'Heres the heading',
   },
   {
+    sys: { id: '2sWRJQiWyoSFVVG4TgPp66' },
     abstract: 'This is the abstract',
-    actions: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
-    ],
+    actionsCollection: { items: [{ sys: { id: 'myContentActionId' } }] },
     heading: 'Heres the heading',
   },
   {
+    sys: { id: '6BTjcj6BUz45rBw5grq10i' },
     abstract: 'This is the abstract',
-    actions: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
-    ],
+    actionsCollection: { items: [{ sys: { id: 'myContentActionId' } }] },
     heading: 'Heres the heading',
   },
 ]
@@ -130,52 +116,45 @@ exports[`Pull content should pull correctly without type filter 1`] = `
       "./dummy/contentful-test-topic.ts",
       "export const testTopic: ContentfulTestTopic[] = [
   {
+    sys: { id: '2v8GizBNh1oxbf6cKlpzJP' },
     abstract: 'This is the abstract',
-    actions: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
-    ],
+    actionsCollection: { items: [{ sys: { id: 'myContentActionId' } }] },
     heading: 'Heres the heading',
   },
   {
+    sys: { id: '1Ape34KYhU6POKOGNXzH1f' },
     abstract: 'This is the abstract',
-    actions: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
-    ],
+    actionsCollection: { items: [{ sys: { id: 'myContentActionId' } }] },
     heading: 'Heres the heading',
   },
   {
+    sys: { id: '20kpUk71ESQAc2QyuOmg69' },
     abstract: 'This is the abstract',
-    actions: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
-    ],
+    actionsCollection: { items: [{ sys: { id: 'myContentActionId' } }] },
     heading: 'Heres the heading',
   },
   {
+    sys: { id: '6Ot2aHmYhRahdWLU2T4ZJM' },
     abstract: 'This is the abstract',
-    actions: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
-    ],
+    actionsCollection: { items: [{ sys: { id: 'myContentActionId' } }] },
     heading: 'Heres the heading',
   },
   {
+    sys: { id: '5dM5w3tbATsziBAAa5gmjt' },
     abstract: 'This is the abstract',
-    actions: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
-    ],
+    actionsCollection: { items: [{ sys: { id: 'myContentActionId' } }] },
     heading: 'Heres the heading',
   },
   {
+    sys: { id: '2sWRJQiWyoSFVVG4TgPp66' },
     abstract: 'This is the abstract',
-    actions: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
-    ],
+    actionsCollection: { items: [{ sys: { id: 'myContentActionId' } }] },
     heading: 'Heres the heading',
   },
   {
+    sys: { id: '6BTjcj6BUz45rBw5grq10i' },
     abstract: 'This is the abstract',
-    actions: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'myContentActionId' } },
-    ],
+    actionsCollection: { items: [{ sys: { id: 'myContentActionId' } }] },
     heading: 'Heres the heading',
   },
 ]
@@ -184,7 +163,7 @@ exports[`Pull content should pull correctly without type filter 1`] = `
     Array [
       "./dummy/contentful-test-action.ts",
       "export const testAction: ContentfulTestAction[] = [
-  { anchor: 'anchor', heading: 'Hello' },
+  { sys: { id: 'myContentActionId' }, anchor: 'anchor', heading: 'Hello' },
 ]
 ",
     ],
@@ -192,62 +171,34 @@ exports[`Pull content should pull correctly without type filter 1`] = `
       "./dummy/contentful-navigation-section.ts",
       "export const navigationSection: ContentfulNavigationSection[] = [
   {
+    sys: { id: '66ccn0Y5aVxWLBRnyYvtak' },
     title: 'Footer',
-    logo: { sys: { type: 'Link', linkType: 'Asset', id: 'demoAsset' } },
-    logoAction: {
-      sys: { type: 'Link', linkType: 'Entry', id: '2wOMVK2AzRoPCSlMWKOkf8' },
+    logo: { sys: { id: 'demoAsset' } },
+    logoAction: { sys: { id: '2wOMVK2AzRoPCSlMWKOkf8' } },
+    footerCollection: { items: [{ sys: { id: '46Llr8CWND2s32ehUET9co' } }] },
+    social: { sys: { id: '1gJE72r8DyBk7qWcvqmeAJ' } },
+    actions: { sys: { id: '40QTKzb9DDZ6guDkRLOvHz' } },
+    legal: { sys: { id: '46Llr8CWND2s32ehUET9co' } },
+    informationCollection: {
+      items: [{ sys: { id: '46Llr8CWND2s32ehUET9co' } }],
     },
-    footer: [
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '46Llr8CWND2s32ehUET9co' },
-      },
-    ],
-    social: {
-      sys: { type: 'Link', linkType: 'Entry', id: '1gJE72r8DyBk7qWcvqmeAJ' },
+    sitemapCollection: {
+      items: [
+        { sys: { id: '6LCP6Bnenubii8ouyTDiKI' } },
+        { sys: { id: '6LCP6Bnenubii8ouyTDiKI' } },
+        { sys: { id: '6LCP6Bnenubii8ouyTDiKI' } },
+        { sys: { id: '6LCP6Bnenubii8ouyTDiKI' } },
+      ],
     },
-    actions: {
-      sys: { type: 'Link', linkType: 'Entry', id: '40QTKzb9DDZ6guDkRLOvHz' },
-    },
-    legal: {
-      sys: { type: 'Link', linkType: 'Entry', id: '46Llr8CWND2s32ehUET9co' },
-    },
-    information: [
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '46Llr8CWND2s32ehUET9co' },
-      },
-    ],
-    sitemap: [
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '6LCP6Bnenubii8ouyTDiKI' },
-      },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '6LCP6Bnenubii8ouyTDiKI' },
-      },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '6LCP6Bnenubii8ouyTDiKI' },
-      },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '6LCP6Bnenubii8ouyTDiKI' },
-      },
-    ],
   },
   {
+    sys: { id: 'Ahya76N7Fo9BrJqPY2BVo' },
     title: 'Header',
-    logo: { sys: { type: 'Link', linkType: 'Asset', id: 'demoAsset' } },
-    logoAction: {
-      sys: { type: 'Link', linkType: 'Entry', id: '2wOMVK2AzRoPCSlMWKOkf8' },
-    },
-    header: [
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '46Llr8CWND2s32ehUET9co' },
-      },
-    ],
-    social: {
-      sys: { type: 'Link', linkType: 'Entry', id: '1gJE72r8DyBk7qWcvqmeAJ' },
-    },
-    actions: {
-      sys: { type: 'Link', linkType: 'Entry', id: '40QTKzb9DDZ6guDkRLOvHz' },
-    },
+    logo: { sys: { id: 'demoAsset' } },
+    logoAction: { sys: { id: '2wOMVK2AzRoPCSlMWKOkf8' } },
+    headerCollection: { items: [{ sys: { id: '46Llr8CWND2s32ehUET9co' } }] },
+    social: { sys: { id: '1gJE72r8DyBk7qWcvqmeAJ' } },
+    actions: { sys: { id: '40QTKzb9DDZ6guDkRLOvHz' } },
   },
 ]
 ",
@@ -256,282 +207,240 @@ exports[`Pull content should pull correctly without type filter 1`] = `
       "./dummy/contentful-topic-section.ts",
       "export const topicSection: ContentfulTopicSection[] = [
   {
+    sys: { id: '4gqjzFponPw2UQZc1e4WNM' },
     title: 'Jaco Beach topic section',
     variant: 'block',
-    topics: [
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '1eGF540LjYZaiXfvaK7ymF' },
-      },
-      { sys: { type: 'Link', linkType: 'Entry', id: 'WI2vnPBfQWkh1EW8G7Xd9' } },
-    ],
+    topicsCollection: {
+      items: [
+        { sys: { id: '1eGF540LjYZaiXfvaK7ymF' } },
+        { sys: { id: 'WI2vnPBfQWkh1EW8G7Xd9' } },
+      ],
+    },
     eventId: 'jaco-beach-topic-section',
   },
   {
+    sys: { id: '6RmfIqynqBsGIHZWcJEo4F' },
     title: 'Navigation explained',
     variant: 'headline',
-    topics: [
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '22MRUrrobVKebnBUhFuSA8' },
-      },
-    ],
+    topicsCollection: { items: [{ sys: { id: '22MRUrrobVKebnBUhFuSA8' } }] },
     eventId: 'navigation-explained',
   },
   {
+    sys: { id: '64t3k4x73pm9lfrB1vUoQo' },
     title: 'Text explained',
     variant: 'headline',
-    topics: [
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '2I5U6OryWbEGvrJl8OVbil' },
-      },
-    ],
+    topicsCollection: { items: [{ sys: { id: '2I5U6OryWbEGvrJl8OVbil' } }] },
     eventId: 'text-explained',
   },
   {
+    sys: { id: 'MgY5x3ypYg1yQCRTO2HZ8' },
     title: 'Card explained',
     variant: 'headline',
-    topics: [
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '4H7PGZKbHwNXiVz94FJkFN' },
-      },
-    ],
+    topicsCollection: { items: [{ sys: { id: '4H7PGZKbHwNXiVz94FJkFN' } }] },
     eventId: 'card-explained',
   },
   {
+    sys: { id: '7xwGAWiEgxibeOWPX2YCVP' },
     title: 'Divider explained',
     variant: 'headline',
-    topics: [
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '3AKyoauLHp0mFGEHTaI4KP' },
-      },
-    ],
+    topicsCollection: { items: [{ sys: { id: '3AKyoauLHp0mFGEHTaI4KP' } }] },
     eventId: 'divider-exmplaed',
   },
   {
+    sys: { id: '3B1MmF6zGc5bqPFB00nuDX' },
     title: 'Featured explained',
     variant: 'headline',
-    topics: [
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '1WHQTD0Wj9c1NcdERperTE' },
-      },
-    ],
+    topicsCollection: { items: [{ sys: { id: '1WHQTD0Wj9c1NcdERperTE' } }] },
     eventId: 'featured-explained',
   },
   {
+    sys: { id: '3wCceTpXb1LbqagscXIdn5' },
     title: 'Gallery explained',
     variant: 'headline',
-    topics: [
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '5PPHo1VjxDlApIDKuzwnqQ' },
-      },
-    ],
+    topicsCollection: { items: [{ sys: { id: '5PPHo1VjxDlApIDKuzwnqQ' } }] },
     eventId: 'gallery-explained',
   },
   {
+    sys: { id: '3ugbjgFt7TrUKHkrI2sJhr' },
     title: 'Headline explained',
     variant: 'headline',
-    topics: [
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '5PPHo1VjxDlApIDKuzwnqQ' },
-      },
-    ],
+    topicsCollection: { items: [{ sys: { id: '5PPHo1VjxDlApIDKuzwnqQ' } }] },
     eventId: 'headline-explained',
   },
   {
+    sys: { id: '7udwiyr8KSUjMUXo44P8ic' },
     title: 'Hero explained',
     variant: 'headline',
-    topics: [
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '2it8hFYdChPnEbQqGMTgWV' },
-      },
-    ],
+    topicsCollection: { items: [{ sys: { id: '2it8hFYdChPnEbQqGMTgWV' } }] },
     eventId: 'hero-explained',
   },
   {
+    sys: { id: '1VoUiNgzRMJ55DRHjGryaW' },
     title: 'Video explained',
     variant: 'headline',
-    topics: [
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '5JDwtvwkcv24TXn9cKr2oA' },
-      },
-    ],
+    topicsCollection: { items: [{ sys: { id: '5JDwtvwkcv24TXn9cKr2oA' } }] },
     eventId: 'video-explained',
   },
   {
+    sys: { id: '72KRNIAwImEsQ0zTgCfyLx' },
     title: 'Image explained',
     variant: 'headline',
-    topics: [
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '1VQiPRsSq1GHPzbH3KSzGz' },
-      },
-    ],
+    topicsCollection: { items: [{ sys: { id: '1VQiPRsSq1GHPzbH3KSzGz' } }] },
     eventId: 'image-explained',
   },
   {
+    sys: { id: '3ccJftqVouDCY7YQUIFImW' },
     title: 'Quote explained',
     variant: 'headline',
-    topics: [
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '2mx3d9npq47CnmbZc9PUBS' },
-      },
-    ],
+    topicsCollection: { items: [{ sys: { id: '2mx3d9npq47CnmbZc9PUBS' } }] },
     eventId: 'quote-explained',
   },
   {
+    sys: { id: '4KanR0bTC8UdxKdXjQWYxF' },
     title: 'Showcase explained',
     variant: 'headline',
-    topics: [
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '63AL39Q1MufZYyew8kClMi' },
-      },
-    ],
+    topicsCollection: { items: [{ sys: { id: '63AL39Q1MufZYyew8kClMi' } }] },
     eventId: 'showcase-explained',
   },
   {
+    sys: { id: '4llLuRXhQCzdpdOJmNETWD' },
     title: 'Block explained',
     variant: 'headline',
-    topics: [
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '3clPCDvnshHuGaoXpGEZpB' },
-      },
-    ],
+    topicsCollection: { items: [{ sys: { id: '3clPCDvnshHuGaoXpGEZpB' } }] },
     eventId: 'block-explained',
   },
   {
+    sys: { id: '3Rt4gE2rlkKPaDHvFOJUcU' },
     title: 'Examples',
     variant: 'block',
-    topics: [
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '3clPCDvnshHuGaoXpGEZpB' },
-      },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '4H7PGZKbHwNXiVz94FJkFN' },
-      },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '3AKyoauLHp0mFGEHTaI4KP' },
-      },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '1WHQTD0Wj9c1NcdERperTE' },
-      },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '48uIeTzdy1IYdzLKTAXBY8' },
-      },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '5PPHo1VjxDlApIDKuzwnqQ' },
-      },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '2it8hFYdChPnEbQqGMTgWV' },
-      },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '1VQiPRsSq1GHPzbH3KSzGz' },
-      },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '22MRUrrobVKebnBUhFuSA8' },
-      },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '2mx3d9npq47CnmbZc9PUBS' },
-      },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '63AL39Q1MufZYyew8kClMi' },
-      },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '2I5U6OryWbEGvrJl8OVbil' },
-      },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '5JDwtvwkcv24TXn9cKr2oA' },
-      },
-    ],
+    topicsCollection: {
+      items: [
+        { sys: { id: '3clPCDvnshHuGaoXpGEZpB' } },
+        { sys: { id: '4H7PGZKbHwNXiVz94FJkFN' } },
+        { sys: { id: '3AKyoauLHp0mFGEHTaI4KP' } },
+        { sys: { id: '1WHQTD0Wj9c1NcdERperTE' } },
+        { sys: { id: '48uIeTzdy1IYdzLKTAXBY8' } },
+        { sys: { id: '5PPHo1VjxDlApIDKuzwnqQ' } },
+        { sys: { id: '2it8hFYdChPnEbQqGMTgWV' } },
+        { sys: { id: '1VQiPRsSq1GHPzbH3KSzGz' } },
+        { sys: { id: '22MRUrrobVKebnBUhFuSA8' } },
+        { sys: { id: '2mx3d9npq47CnmbZc9PUBS' } },
+        { sys: { id: '63AL39Q1MufZYyew8kClMi' } },
+        { sys: { id: '2I5U6OryWbEGvrJl8OVbil' } },
+        { sys: { id: '5JDwtvwkcv24TXn9cKr2oA' } },
+      ],
+    },
     eventId: 'all-variants-exmplained',
   },
   {
+    sys: { id: '6KYiy7e2rNIncJgx89XMn0' },
     title: 'Video examples',
     variant: 'video',
-    topics: [
-      { sys: { type: 'Link', linkType: 'Entry', id: '7wxpcbgUHAhnHIRfjClpa' } },
-      { sys: { type: 'Link', linkType: 'Entry', id: '7wxpcbgUHAhnHIRfjClpa' } },
-    ],
+    topicsCollection: {
+      items: [
+        { sys: { id: '7wxpcbgUHAhnHIRfjClpa' } },
+        { sys: { id: '7wxpcbgUHAhnHIRfjClpa' } },
+      ],
+    },
     eventId: 'video-examples',
   },
   {
+    sys: { id: '4UGaJlQA0bXqTp459GkYbd' },
     title: 'Showcase examples',
     variant: 'showcase',
-    topics: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
-      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
-      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
-      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
-    ],
+    topicsCollection: {
+      items: [
+        { sys: { id: 'exampleTopic' } },
+        { sys: { id: 'exampleTopic' } },
+        { sys: { id: 'exampleTopic' } },
+        { sys: { id: 'exampleTopic' } },
+      ],
+    },
     eventId: 'showcase-examples',
   },
   {
+    sys: { id: '1Cv1FTVYa9dFFlxtgeAfBx' },
     title: 'Quote examples',
     variant: 'quote',
-    topics: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
-      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
-    ],
+    topicsCollection: {
+      items: [{ sys: { id: 'exampleTopic' } }, { sys: { id: 'exampleTopic' } }],
+    },
     eventId: 'quote-examples',
   },
   {
+    sys: { id: '6GBh5EOgOVNtjr8vHWWsfS' },
     title: 'Image examples',
     variant: 'image',
-    topics: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
-      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
-    ],
+    topicsCollection: {
+      items: [{ sys: { id: 'exampleTopic' } }, { sys: { id: 'exampleTopic' } }],
+    },
     eventId: 'image-examples',
   },
   {
+    sys: { id: '38BYLeLQeXHRXmvVShqC0I' },
     title: 'Hero examples',
     variant: 'hero',
-    topics: [{ sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } }],
+    topicsCollection: { items: [{ sys: { id: 'exampleTopic' } }] },
     eventId: 'hero-examples',
   },
   {
+    sys: { id: '6Ouv1mYO2R7DMsRQKupXmC' },
     title: 'Headline examples',
     variant: 'headline',
-    topics: [{ sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } }],
+    topicsCollection: { items: [{ sys: { id: 'exampleTopic' } }] },
     eventId: 'headline-examples',
   },
   {
+    sys: { id: '1Mg4Dw0EiNwM6hGt9nVJre' },
     title: 'Gallery examples',
     variant: 'gallery',
-    topics: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
-      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
-    ],
+    topicsCollection: {
+      items: [{ sys: { id: 'exampleTopic' } }, { sys: { id: 'exampleTopic' } }],
+    },
     eventId: 'gallery-examples',
   },
   {
+    sys: { id: '1f1csS3THA46Ut7GryJ01h' },
     title: 'Featured examples',
     variant: 'featured',
-    topics: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
-      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
-    ],
+    topicsCollection: {
+      items: [{ sys: { id: 'exampleTopic' } }, { sys: { id: 'exampleTopic' } }],
+    },
     eventId: 'featured-examples',
   },
-  { title: 'Divider', variant: 'divider', eventId: 'divider-examples' },
   {
+    sys: { id: 'yT3a2Mk65wfYjboLnnbfS' },
+    title: 'Divider',
+    variant: 'divider',
+    eventId: 'divider-examples',
+  },
+  {
+    sys: { id: 'jDlscjwcatAKygPeGhrDE' },
     title: 'Card examples',
     variant: 'card',
-    topics: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
-      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
-      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
-      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
-      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
-    ],
+    topicsCollection: {
+      items: [
+        { sys: { id: 'exampleTopic' } },
+        { sys: { id: 'exampleTopic' } },
+        { sys: { id: 'exampleTopic' } },
+        { sys: { id: 'exampleTopic' } },
+        { sys: { id: 'exampleTopic' } },
+      ],
+    },
     eventId: 'card-examples',
   },
   {
+    sys: { id: '7wYIWeiPCVhgj4vJaYvI6s' },
     title: 'Block examples',
     variant: 'block',
-    topics: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
-      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
-      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
-      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleTopic' } },
-    ],
+    topicsCollection: {
+      items: [
+        { sys: { id: 'exampleTopic' } },
+        { sys: { id: 'exampleTopic' } },
+        { sys: { id: 'exampleTopic' } },
+        { sys: { id: 'exampleTopic' } },
+      ],
+    },
     eventId: 'block-examples',
   },
 ]
@@ -541,213 +450,165 @@ exports[`Pull content should pull correctly without type filter 1`] = `
       "./dummy/contentful-topic.ts",
       "export const topic: ContentfulTopic[] = [
   {
+    sys: { id: '1eGF540LjYZaiXfvaK7ymF' },
     title: 'Jac\\\\u00F3 Beach topic',
     heading: 'Jac\\\\u00F3 Beach',
     abstract:
       'Jac\\\\u00F3 is a district of the Garabito canton, in the Puntarenas province of Costa Rica. Jac\\\\u00F3 has a black sand beach that is 4 km (2.5 mi) long and is popular among surfers.',
-    media: [
-      {
-        sys: { type: 'Link', linkType: 'Asset', id: '5lPtGy7GYExeNUC4P3X9Te' },
-      },
-    ],
+    mediaCollection: { items: [{ sys: { id: '5lPtGy7GYExeNUC4P3X9Te' } }] },
     icon: 'sun',
-    actions: [
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '1mqAy6gAuztxgWhsDxxKQL' },
-      },
-    ],
+    actionsCollection: { items: [{ sys: { id: '1mqAy6gAuztxgWhsDxxKQL' } }] },
   },
   {
+    sys: { id: 'WI2vnPBfQWkh1EW8G7Xd9' },
     title: 'Another topic',
     heading: 'Another topic',
     abstract: 'This is the other topic',
-    media: [{ sys: { type: 'Link', linkType: 'Asset', id: 'demoAsset' } }],
+    mediaCollection: { items: [{ sys: { id: 'demoAsset' } }] },
     icon: 'archive',
-    actions: [
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '5rKZYw23CJACn3TWtHDI5Y' },
-      },
-    ],
+    actionsCollection: { items: [{ sys: { id: '5rKZYw23CJACn3TWtHDI5Y' } }] },
   },
   {
+    sys: { id: 'exampleTopic' },
     title: 'Build great things with Wheelroom',
     heading: 'Build great things with Wheelroom',
     abstract:
       'Wheelroom is a new approach to faster, cost efficient and more secure applications.',
-    media: [{ sys: { type: 'Link', linkType: 'Asset', id: 'demoAsset' } }],
+    mediaCollection: { items: [{ sys: { id: 'demoAsset' } }] },
     icon: 'box',
-    actions: [{ sys: { type: 'Link', linkType: 'Entry', id: 'githubAction' } }],
+    actionsCollection: { items: [{ sys: { id: 'githubAction' } }] },
   },
   {
+    sys: { id: '1VQiPRsSq1GHPzbH3KSzGz' },
     title: 'Image explained',
     heading: 'Image',
     abstract: 'Image shows the larger image.',
     icon: 'book-open',
-    actions: [
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '3YKInGVlalsfYXX38Deaeh' },
-      },
-    ],
+    actionsCollection: { items: [{ sys: { id: '3YKInGVlalsfYXX38Deaeh' } }] },
   },
   {
+    sys: { id: '63AL39Q1MufZYyew8kClMi' },
     title: 'Showcase explained',
     heading: 'Showcase',
     abstract:
       \\"Showcase sets your topics on display in a modest way. Stacked on top of each other, it's a clear line-up.\\",
     icon: 'book-open',
-    actions: [
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '6oMJ77VICMAglDmH3EGofv' },
-      },
-    ],
+    actionsCollection: { items: [{ sys: { id: '6oMJ77VICMAglDmH3EGofv' } }] },
   },
   {
+    sys: { id: '5PPHo1VjxDlApIDKuzwnqQ' },
     title: 'Headline explained',
     heading: 'Headline',
     abstract:
       'Headlines are ideal page openers. Half way on a page they are useful for starting a new section.',
     icon: 'book-open',
-    actions: [
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '7GEn9O3NKEMiXOfP9KJbGI' },
-      },
-    ],
+    actionsCollection: { items: [{ sys: { id: '7GEn9O3NKEMiXOfP9KJbGI' } }] },
   },
   {
+    sys: { id: '3clPCDvnshHuGaoXpGEZpB' },
     title: 'Block explained',
     heading: 'Block',
     abstract:
       'Block gives overview to a set of topics. Stacked neatly next to each other they provide a clean display.',
     icon: 'book-open',
-    actions: [
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '5EqNfetjD3Taut7mXZBJYp' },
-      },
-    ],
+    actionsCollection: { items: [{ sys: { id: '5EqNfetjD3Taut7mXZBJYp' } }] },
   },
   {
+    sys: { id: '4H7PGZKbHwNXiVz94FJkFN' },
     title: 'Card explained',
     heading: 'Card',
     abstract: 'Cards are on the table. Like cards are supposed to.',
     icon: 'book-open',
-    actions: [
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '6ixMk07zoxb9mSuqH1ftQz' },
-      },
-    ],
+    actionsCollection: { items: [{ sys: { id: '6ixMk07zoxb9mSuqH1ftQz' } }] },
   },
   {
+    sys: { id: '48uIeTzdy1IYdzLKTAXBY8' },
     title: 'Gallery explained',
     heading: 'Gallery',
     abstract: 'Gallery organises images on a grid.',
     icon: 'book-open',
-    actions: [
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '5qAwk9ZDhuMU0ggdwJPern' },
-      },
-    ],
+    actionsCollection: { items: [{ sys: { id: '5qAwk9ZDhuMU0ggdwJPern' } }] },
   },
   {
+    sys: { id: '1WHQTD0Wj9c1NcdERperTE' },
     title: 'Featured explained',
     heading: 'Featured',
     abstract: 'Featured puts it on display. In a spacious room.',
     icon: 'book-open',
-    actions: [
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '6p9QKsFBcB8aDWZT5wSlNa' },
-      },
-    ],
+    actionsCollection: { items: [{ sys: { id: '6p9QKsFBcB8aDWZT5wSlNa' } }] },
   },
   {
+    sys: { id: '2mx3d9npq47CnmbZc9PUBS' },
     title: 'Quote explained',
     heading: 'Quote',
     abstract: 'Quote. No need to explain that.',
     icon: 'book-open',
-    actions: [
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '7vV7WrXza4sOxS7Zs9pcv7' },
-      },
-    ],
+    actionsCollection: { items: [{ sys: { id: '7vV7WrXza4sOxS7Zs9pcv7' } }] },
   },
   {
+    sys: { id: '2it8hFYdChPnEbQqGMTgWV' },
     title: 'Hero explained',
     heading: 'Hero',
     abstract: 'Hero puts the message on top of the image.',
     icon: 'book-open',
-    actions: [
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '6Ky1fr91nPqeC32GBCkEAA' },
-      },
-    ],
+    actionsCollection: { items: [{ sys: { id: '6Ky1fr91nPqeC32GBCkEAA' } }] },
   },
   {
+    sys: { id: '3AKyoauLHp0mFGEHTaI4KP' },
     title: 'Divider explained',
     heading: 'Divider explained',
     abstract:
       'Diver splits in two. On longer pages the divider provides clean sections.',
     icon: 'book-open',
-    actions: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'RFo69UE6gxFyhkX8bmRcf' } },
-    ],
+    actionsCollection: { items: [{ sys: { id: 'RFo69UE6gxFyhkX8bmRcf' } }] },
   },
   {
+    sys: { id: '5JDwtvwkcv24TXn9cKr2oA' },
     title: 'Video explained',
     heading: 'Video',
     abstract:
       'Video moves the image. Upload your own images to the CMS, no need for anything else.',
     icon: 'book-open',
-    actions: [
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '1qoj0JTTSlwufhlsf57UlL' },
-      },
-    ],
+    actionsCollection: { items: [{ sys: { id: '1qoj0JTTSlwufhlsf57UlL' } }] },
   },
   {
+    sys: { id: '2I5U6OryWbEGvrJl8OVbil' },
     title: 'Text explained',
     heading: 'Text',
     abstract:
       'Text is free style. Have it your own, including headings, images and all that.',
     icon: 'book-open',
-    actions: [
-      { sys: { type: 'Link', linkType: 'Entry', id: '65l1uMjuDkqFnGQ4g4IEf' } },
-    ],
+    actionsCollection: { items: [{ sys: { id: '65l1uMjuDkqFnGQ4g4IEf' } }] },
   },
   {
+    sys: { id: '22MRUrrobVKebnBUhFuSA8' },
     title: 'Navigation explained',
     heading: 'Navigation',
     abstract:
       'Navigation is for organising links. The best examples are at the top and bottom of this page.',
     icon: 'book-open',
-    actions: [
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '2xut4VcUhCE6EFSmqQusRN' },
-      },
-    ],
+    actionsCollection: { items: [{ sys: { id: '2xut4VcUhCE6EFSmqQusRN' } }] },
   },
   {
+    sys: { id: '7wxpcbgUHAhnHIRfjClpa' },
     title: 'Blue oil',
     heading: 'Blue oil',
     abstract:
       'Blue is one of the three primary colours of pigments in painting and traditional colour theory, as well as in the RGB colour model.',
-    media: [
-      {
-        sys: { type: 'Link', linkType: 'Asset', id: '7nWu7juGaOSwzN45OEnRul' },
-      },
-      {
-        sys: { type: 'Link', linkType: 'Asset', id: '4k0xHcYNagfevSvJ79jiI6' },
-      },
-      {
-        sys: { type: 'Link', linkType: 'Asset', id: '6Eo0rqX76pO7lDgPv6LaID' },
-      },
-      {
-        sys: { type: 'Link', linkType: 'Asset', id: '4Fd8qDYcDEwyyXn3zcVJpi' },
-      },
-    ],
+    mediaCollection: {
+      items: [
+        { sys: { id: '7nWu7juGaOSwzN45OEnRul' } },
+        { sys: { id: '4k0xHcYNagfevSvJ79jiI6' } },
+        { sys: { id: '6Eo0rqX76pO7lDgPv6LaID' } },
+        { sys: { id: '4Fd8qDYcDEwyyXn3zcVJpi' } },
+      ],
+    },
     icon: 'book-open',
-    actions: [{ sys: { type: 'Link', linkType: 'Entry', id: 'githubAction' } }],
-    poster: { sys: { type: 'Link', linkType: 'Asset', id: 'demoAsset' } },
+    actionsCollection: { items: [{ sys: { id: 'githubAction' } }] },
+    poster: { sys: { id: 'demoAsset' } },
   },
   {
+    sys: { id: '4ySaERdGvt1F8lHaNY0kWk' },
     title: 'Page section examples',
     heading: 'Examples',
     abstract:
@@ -761,6 +622,7 @@ exports[`Pull content should pull correctly without type filter 1`] = `
       "./dummy/contentful-text-section.ts",
       "export const textSection: ContentfulTextSection[] = [
   {
+    sys: { id: '2zajs22gdw0eheKrQuxwrg' },
     title: 'Test text section',
     variant: 'text',
     text: {
@@ -1199,76 +1061,56 @@ exports[`Pull content should pull correctly without type filter 1`] = `
       "./dummy/contentful-navigation-segment.ts",
       "export const navigationSegment: ContentfulNavigationSegment[] = [
   {
+    sys: { id: '6LCP6Bnenubii8ouyTDiKI' },
     title: 'Sitemap segment',
     heading: 'Examples',
     abstract: 'All Wheelroom examples',
-    actions: [
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '5EqNfetjD3Taut7mXZBJYp' },
-      },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '6ixMk07zoxb9mSuqH1ftQz' },
-      },
-      { sys: { type: 'Link', linkType: 'Entry', id: 'RFo69UE6gxFyhkX8bmRcf' } },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '6p9QKsFBcB8aDWZT5wSlNa' },
-      },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '5qAwk9ZDhuMU0ggdwJPern' },
-      },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '7GEn9O3NKEMiXOfP9KJbGI' },
-      },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '6Ky1fr91nPqeC32GBCkEAA' },
-      },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '3YKInGVlalsfYXX38Deaeh' },
-      },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '2xut4VcUhCE6EFSmqQusRN' },
-      },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '7vV7WrXza4sOxS7Zs9pcv7' },
-      },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '6oMJ77VICMAglDmH3EGofv' },
-      },
-      { sys: { type: 'Link', linkType: 'Entry', id: '65l1uMjuDkqFnGQ4g4IEf' } },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '1qoj0JTTSlwufhlsf57UlL' },
-      },
-    ],
+    actionsCollection: {
+      items: [
+        { sys: { id: '5EqNfetjD3Taut7mXZBJYp' } },
+        { sys: { id: '6ixMk07zoxb9mSuqH1ftQz' } },
+        { sys: { id: 'RFo69UE6gxFyhkX8bmRcf' } },
+        { sys: { id: '6p9QKsFBcB8aDWZT5wSlNa' } },
+        { sys: { id: '5qAwk9ZDhuMU0ggdwJPern' } },
+        { sys: { id: '7GEn9O3NKEMiXOfP9KJbGI' } },
+        { sys: { id: '6Ky1fr91nPqeC32GBCkEAA' } },
+        { sys: { id: '3YKInGVlalsfYXX38Deaeh' } },
+        { sys: { id: '2xut4VcUhCE6EFSmqQusRN' } },
+        { sys: { id: '7vV7WrXza4sOxS7Zs9pcv7' } },
+        { sys: { id: '6oMJ77VICMAglDmH3EGofv' } },
+        { sys: { id: '65l1uMjuDkqFnGQ4g4IEf' } },
+        { sys: { id: '1qoj0JTTSlwufhlsf57UlL' } },
+      ],
+    },
   },
   {
+    sys: { id: '40QTKzb9DDZ6guDkRLOvHz' },
     title: 'Actions segment',
     heading: 'Actions',
-    actions: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'getStartedAction' } },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '5rKZYw23CJACn3TWtHDI5Y' },
-      },
-    ],
+    actionsCollection: {
+      items: [
+        { sys: { id: 'getStartedAction' } },
+        { sys: { id: '5rKZYw23CJACn3TWtHDI5Y' } },
+      ],
+    },
   },
   {
+    sys: { id: '46Llr8CWND2s32ehUET9co' },
     title: 'Menu segment',
     heading: 'Wheelroom',
-    actions: [
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '2wOMVK2AzRoPCSlMWKOkf8' },
-      },
-      { sys: { type: 'Link', linkType: 'Entry', id: 'exampleAction' } },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '5rKZYw23CJACn3TWtHDI5Y' },
-      },
-    ],
+    actionsCollection: {
+      items: [
+        { sys: { id: '2wOMVK2AzRoPCSlMWKOkf8' } },
+        { sys: { id: 'exampleAction' } },
+        { sys: { id: '5rKZYw23CJACn3TWtHDI5Y' } },
+      ],
+    },
   },
   {
+    sys: { id: '1gJE72r8DyBk7qWcvqmeAJ' },
     title: 'Social segment',
     heading: 'Social',
-    actions: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'getStartedAction' } },
-    ],
+    actionsCollection: { items: [{ sys: { id: 'getStartedAction' } }] },
   },
 ]
 ",
@@ -1277,253 +1119,219 @@ exports[`Pull content should pull correctly without type filter 1`] = `
       "./dummy/contentful-page.ts",
       "export const page: ContentfulPage[] = [
   {
+    sys: { id: '55QHbJyaADuyITfeZiEFqP' },
     title: '/',
     path: '/',
-    sections: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'Ahya76N7Fo9BrJqPY2BVo' } },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '2zajs22gdw0eheKrQuxwrg' },
-      },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '66ccn0Y5aVxWLBRnyYvtak' },
-      },
-    ],
+    sectionsCollection: {
+      items: [
+        { sys: { id: 'Ahya76N7Fo9BrJqPY2BVo' } },
+        { sys: { id: '2zajs22gdw0eheKrQuxwrg' } },
+        { sys: { id: '66ccn0Y5aVxWLBRnyYvtak' } },
+      ],
+    },
   },
   {
+    sys: { id: '1P2O5v7M4KEAmbmDAzgyCe' },
     title: '/another-page',
     path: '/another-page',
-    sections: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'Ahya76N7Fo9BrJqPY2BVo' } },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '4gqjzFponPw2UQZc1e4WNM' },
-      },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '66ccn0Y5aVxWLBRnyYvtak' },
-      },
-    ],
+    sectionsCollection: {
+      items: [
+        { sys: { id: 'Ahya76N7Fo9BrJqPY2BVo' } },
+        { sys: { id: '4gqjzFponPw2UQZc1e4WNM' } },
+        { sys: { id: '66ccn0Y5aVxWLBRnyYvtak' } },
+      ],
+    },
   },
   {
+    sys: { id: '1yhZHA5w8ugUqI2Opz5hdd' },
     title: '/examples',
     path: '/examples',
-    sections: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'Ahya76N7Fo9BrJqPY2BVo' } },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '3Rt4gE2rlkKPaDHvFOJUcU' },
-      },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '66ccn0Y5aVxWLBRnyYvtak' },
-      },
-    ],
+    sectionsCollection: {
+      items: [
+        { sys: { id: 'Ahya76N7Fo9BrJqPY2BVo' } },
+        { sys: { id: '3Rt4gE2rlkKPaDHvFOJUcU' } },
+        { sys: { id: '66ccn0Y5aVxWLBRnyYvtak' } },
+      ],
+    },
   },
   {
+    sys: { id: '66uv0KTuWARnKdPU1U4vW' },
     title: '/examples/card',
     path: '/examples/card',
-    sections: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'Ahya76N7Fo9BrJqPY2BVo' } },
-      { sys: { type: 'Link', linkType: 'Entry', id: 'MgY5x3ypYg1yQCRTO2HZ8' } },
-      { sys: { type: 'Link', linkType: 'Entry', id: 'yT3a2Mk65wfYjboLnnbfS' } },
-      { sys: { type: 'Link', linkType: 'Entry', id: 'jDlscjwcatAKygPeGhrDE' } },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '66ccn0Y5aVxWLBRnyYvtak' },
-      },
-    ],
+    sectionsCollection: {
+      items: [
+        { sys: { id: 'Ahya76N7Fo9BrJqPY2BVo' } },
+        { sys: { id: 'MgY5x3ypYg1yQCRTO2HZ8' } },
+        { sys: { id: 'yT3a2Mk65wfYjboLnnbfS' } },
+        { sys: { id: 'jDlscjwcatAKygPeGhrDE' } },
+        { sys: { id: '66ccn0Y5aVxWLBRnyYvtak' } },
+      ],
+    },
   },
   {
+    sys: { id: '5NSwAqPLFBltvlIECY1xDw' },
     title: '/examples/divider',
     path: '/examples/divider',
-    sections: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'Ahya76N7Fo9BrJqPY2BVo' } },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '7xwGAWiEgxibeOWPX2YCVP' },
-      },
-      { sys: { type: 'Link', linkType: 'Entry', id: 'yT3a2Mk65wfYjboLnnbfS' } },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '66ccn0Y5aVxWLBRnyYvtak' },
-      },
-    ],
+    sectionsCollection: {
+      items: [
+        { sys: { id: 'Ahya76N7Fo9BrJqPY2BVo' } },
+        { sys: { id: '7xwGAWiEgxibeOWPX2YCVP' } },
+        { sys: { id: 'yT3a2Mk65wfYjboLnnbfS' } },
+        { sys: { id: '66ccn0Y5aVxWLBRnyYvtak' } },
+      ],
+    },
   },
   {
+    sys: { id: '3f79EHFeDaFfVooSOhxRyT' },
     title: '/examples/featured',
     path: '/examples/featured',
-    sections: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'Ahya76N7Fo9BrJqPY2BVo' } },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '3B1MmF6zGc5bqPFB00nuDX' },
-      },
-      { sys: { type: 'Link', linkType: 'Entry', id: 'yT3a2Mk65wfYjboLnnbfS' } },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '1f1csS3THA46Ut7GryJ01h' },
-      },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '66ccn0Y5aVxWLBRnyYvtak' },
-      },
-    ],
+    sectionsCollection: {
+      items: [
+        { sys: { id: 'Ahya76N7Fo9BrJqPY2BVo' } },
+        { sys: { id: '3B1MmF6zGc5bqPFB00nuDX' } },
+        { sys: { id: 'yT3a2Mk65wfYjboLnnbfS' } },
+        { sys: { id: '1f1csS3THA46Ut7GryJ01h' } },
+        { sys: { id: '66ccn0Y5aVxWLBRnyYvtak' } },
+      ],
+    },
   },
   {
+    sys: { id: '3pPwDVOAIh3WLbQPUEKKO3' },
     title: '/examples/gallery',
     path: '/examples/gallery',
-    sections: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'Ahya76N7Fo9BrJqPY2BVo' } },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '3wCceTpXb1LbqagscXIdn5' },
-      },
-      { sys: { type: 'Link', linkType: 'Entry', id: 'yT3a2Mk65wfYjboLnnbfS' } },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '1Mg4Dw0EiNwM6hGt9nVJre' },
-      },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '66ccn0Y5aVxWLBRnyYvtak' },
-      },
-    ],
+    sectionsCollection: {
+      items: [
+        { sys: { id: 'Ahya76N7Fo9BrJqPY2BVo' } },
+        { sys: { id: '3wCceTpXb1LbqagscXIdn5' } },
+        { sys: { id: 'yT3a2Mk65wfYjboLnnbfS' } },
+        { sys: { id: '1Mg4Dw0EiNwM6hGt9nVJre' } },
+        { sys: { id: '66ccn0Y5aVxWLBRnyYvtak' } },
+      ],
+    },
   },
   {
+    sys: { id: '3byPoEfSXx8QfyTaDzy3uO' },
     title: '/examples/headline',
     path: '/examples/headline',
-    sections: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'Ahya76N7Fo9BrJqPY2BVo' } },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '3ugbjgFt7TrUKHkrI2sJhr' },
-      },
-      { sys: { type: 'Link', linkType: 'Entry', id: 'yT3a2Mk65wfYjboLnnbfS' } },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '6Ouv1mYO2R7DMsRQKupXmC' },
-      },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '66ccn0Y5aVxWLBRnyYvtak' },
-      },
-    ],
+    sectionsCollection: {
+      items: [
+        { sys: { id: 'Ahya76N7Fo9BrJqPY2BVo' } },
+        { sys: { id: '3ugbjgFt7TrUKHkrI2sJhr' } },
+        { sys: { id: 'yT3a2Mk65wfYjboLnnbfS' } },
+        { sys: { id: '6Ouv1mYO2R7DMsRQKupXmC' } },
+        { sys: { id: '66ccn0Y5aVxWLBRnyYvtak' } },
+      ],
+    },
   },
   {
+    sys: { id: '4Sw1w3XX3573h0dmOkyDi0' },
     title: '/examples/hero',
     path: '/examples/hero',
-    sections: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'Ahya76N7Fo9BrJqPY2BVo' } },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '7udwiyr8KSUjMUXo44P8ic' },
-      },
-      { sys: { type: 'Link', linkType: 'Entry', id: 'yT3a2Mk65wfYjboLnnbfS' } },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '38BYLeLQeXHRXmvVShqC0I' },
-      },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '66ccn0Y5aVxWLBRnyYvtak' },
-      },
-    ],
+    sectionsCollection: {
+      items: [
+        { sys: { id: 'Ahya76N7Fo9BrJqPY2BVo' } },
+        { sys: { id: '7udwiyr8KSUjMUXo44P8ic' } },
+        { sys: { id: 'yT3a2Mk65wfYjboLnnbfS' } },
+        { sys: { id: '38BYLeLQeXHRXmvVShqC0I' } },
+        { sys: { id: '66ccn0Y5aVxWLBRnyYvtak' } },
+      ],
+    },
   },
   {
+    sys: { id: '5j4SEj7hRPyX3Oxx2s4KYF' },
     title: '/examples/video',
     path: '/examples/video',
-    sections: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'Ahya76N7Fo9BrJqPY2BVo' } },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '1VoUiNgzRMJ55DRHjGryaW' },
-      },
-      { sys: { type: 'Link', linkType: 'Entry', id: 'yT3a2Mk65wfYjboLnnbfS' } },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '6KYiy7e2rNIncJgx89XMn0' },
-      },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '66ccn0Y5aVxWLBRnyYvtak' },
-      },
-    ],
+    sectionsCollection: {
+      items: [
+        { sys: { id: 'Ahya76N7Fo9BrJqPY2BVo' } },
+        { sys: { id: '1VoUiNgzRMJ55DRHjGryaW' } },
+        { sys: { id: 'yT3a2Mk65wfYjboLnnbfS' } },
+        { sys: { id: '6KYiy7e2rNIncJgx89XMn0' } },
+        { sys: { id: '66ccn0Y5aVxWLBRnyYvtak' } },
+      ],
+    },
   },
   {
+    sys: { id: '7yLDwzKSZLXfJLrY5O0BMA' },
     title: '/examples/image',
     path: '/examples/image',
-    sections: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'Ahya76N7Fo9BrJqPY2BVo' } },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '72KRNIAwImEsQ0zTgCfyLx' },
-      },
-      { sys: { type: 'Link', linkType: 'Entry', id: 'yT3a2Mk65wfYjboLnnbfS' } },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '6GBh5EOgOVNtjr8vHWWsfS' },
-      },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '66ccn0Y5aVxWLBRnyYvtak' },
-      },
-    ],
+    sectionsCollection: {
+      items: [
+        { sys: { id: 'Ahya76N7Fo9BrJqPY2BVo' } },
+        { sys: { id: '72KRNIAwImEsQ0zTgCfyLx' } },
+        { sys: { id: 'yT3a2Mk65wfYjboLnnbfS' } },
+        { sys: { id: '6GBh5EOgOVNtjr8vHWWsfS' } },
+        { sys: { id: '66ccn0Y5aVxWLBRnyYvtak' } },
+      ],
+    },
   },
   {
+    sys: { id: '5UDAyWoKN3FqCCVCpRclWg' },
     title: '/examples/quote',
     path: '/examples/quote',
-    sections: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'Ahya76N7Fo9BrJqPY2BVo' } },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '3ccJftqVouDCY7YQUIFImW' },
-      },
-      { sys: { type: 'Link', linkType: 'Entry', id: 'yT3a2Mk65wfYjboLnnbfS' } },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '1Cv1FTVYa9dFFlxtgeAfBx' },
-      },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '66ccn0Y5aVxWLBRnyYvtak' },
-      },
-    ],
+    sectionsCollection: {
+      items: [
+        { sys: { id: 'Ahya76N7Fo9BrJqPY2BVo' } },
+        { sys: { id: '3ccJftqVouDCY7YQUIFImW' } },
+        { sys: { id: 'yT3a2Mk65wfYjboLnnbfS' } },
+        { sys: { id: '1Cv1FTVYa9dFFlxtgeAfBx' } },
+        { sys: { id: '66ccn0Y5aVxWLBRnyYvtak' } },
+      ],
+    },
   },
   {
+    sys: { id: '27LvcEtjvg7Dph98DpCSwp' },
     title: '/examples/showcase',
     path: '/examples/showcase',
-    sections: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'Ahya76N7Fo9BrJqPY2BVo' } },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '4KanR0bTC8UdxKdXjQWYxF' },
-      },
-      { sys: { type: 'Link', linkType: 'Entry', id: 'yT3a2Mk65wfYjboLnnbfS' } },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '4UGaJlQA0bXqTp459GkYbd' },
-      },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '66ccn0Y5aVxWLBRnyYvtak' },
-      },
-    ],
+    sectionsCollection: {
+      items: [
+        { sys: { id: 'Ahya76N7Fo9BrJqPY2BVo' } },
+        { sys: { id: '4KanR0bTC8UdxKdXjQWYxF' } },
+        { sys: { id: 'yT3a2Mk65wfYjboLnnbfS' } },
+        { sys: { id: '4UGaJlQA0bXqTp459GkYbd' } },
+        { sys: { id: '66ccn0Y5aVxWLBRnyYvtak' } },
+      ],
+    },
   },
   {
+    sys: { id: '28Hdbwhn8eb9DDkynXsas2' },
     title: '/examples/block',
     path: '/examples/block',
-    sections: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'Ahya76N7Fo9BrJqPY2BVo' } },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '4llLuRXhQCzdpdOJmNETWD' },
-      },
-      { sys: { type: 'Link', linkType: 'Entry', id: 'yT3a2Mk65wfYjboLnnbfS' } },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '7wYIWeiPCVhgj4vJaYvI6s' },
-      },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '66ccn0Y5aVxWLBRnyYvtak' },
-      },
-    ],
+    sectionsCollection: {
+      items: [
+        { sys: { id: 'Ahya76N7Fo9BrJqPY2BVo' } },
+        { sys: { id: '4llLuRXhQCzdpdOJmNETWD' } },
+        { sys: { id: 'yT3a2Mk65wfYjboLnnbfS' } },
+        { sys: { id: '7wYIWeiPCVhgj4vJaYvI6s' } },
+        { sys: { id: '66ccn0Y5aVxWLBRnyYvtak' } },
+      ],
+    },
   },
   {
+    sys: { id: '7Ip05T3pAnXYeL811kmAAt' },
     title: '/examples/navigation',
     path: '/examples/navigation',
-    sections: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'Ahya76N7Fo9BrJqPY2BVo' } },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '6RmfIqynqBsGIHZWcJEo4F' },
-      },
-      { sys: { type: 'Link', linkType: 'Entry', id: 'yT3a2Mk65wfYjboLnnbfS' } },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '3Rt4gE2rlkKPaDHvFOJUcU' },
-      },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '66ccn0Y5aVxWLBRnyYvtak' },
-      },
-    ],
+    sectionsCollection: {
+      items: [
+        { sys: { id: 'Ahya76N7Fo9BrJqPY2BVo' } },
+        { sys: { id: '6RmfIqynqBsGIHZWcJEo4F' } },
+        { sys: { id: 'yT3a2Mk65wfYjboLnnbfS' } },
+        { sys: { id: '3Rt4gE2rlkKPaDHvFOJUcU' } },
+        { sys: { id: '66ccn0Y5aVxWLBRnyYvtak' } },
+      ],
+    },
   },
   {
+    sys: { id: '4hivVLdh8W6AgmbcR1mTUu' },
     title: '/examples/text',
     path: '/examples/text',
-    sections: [
-      { sys: { type: 'Link', linkType: 'Entry', id: 'Ahya76N7Fo9BrJqPY2BVo' } },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '64t3k4x73pm9lfrB1vUoQo' },
-      },
-      {
-        sys: { type: 'Link', linkType: 'Entry', id: '66ccn0Y5aVxWLBRnyYvtak' },
-      },
-    ],
+    sectionsCollection: {
+      items: [
+        { sys: { id: 'Ahya76N7Fo9BrJqPY2BVo' } },
+        { sys: { id: '64t3k4x73pm9lfrB1vUoQo' } },
+        { sys: { id: '66ccn0Y5aVxWLBRnyYvtak' } },
+      ],
+    },
   },
 ]
 ",
@@ -1532,12 +1340,15 @@ exports[`Pull content should pull correctly without type filter 1`] = `
       "./dummy/contentful-globals.ts",
       "export const globals: ContentfulGlobals[] = [
   {
+    sys: { id: 'siteGlobals' },
     title: 'Global settings for this site',
     siteAuthor: 'Wheelroom',
     siteDescription:
       'Wheelroom is an open source project and created for developers that want to work with the latest technology and services.',
     siteHeading: 'Wheelroom',
-    siteKeywords: ['Wheelroom', 'Boilerplate', 'Example set'],
+    siteKeywordsCollection: {
+      items: ['Wheelroom', 'Boilerplate', 'Example set'],
+    },
     skipToContentHeading: 'Skip to Wheelroom content',
   },
 ]
@@ -1552,140 +1363,128 @@ exports[`Pull content should pull correctly without type filter 1`] = `
       "./dummy/contentful-action.ts",
       "export const action: ContentfulAction[] = [
   {
+    sys: { id: '6p9QKsFBcB8aDWZT5wSlNa' },
     title: 'Featured example',
     heading: 'Featured example',
-    page: {
-      sys: { type: 'Link', linkType: 'Entry', id: '3f79EHFeDaFfVooSOhxRyT' },
-    },
+    page: { sys: { id: '3f79EHFeDaFfVooSOhxRyT' } },
     eventId: 'featured-example',
   },
   {
+    sys: { id: '5EqNfetjD3Taut7mXZBJYp' },
     title: 'Block example',
     heading: 'Block example',
-    page: {
-      sys: { type: 'Link', linkType: 'Entry', id: '28Hdbwhn8eb9DDkynXsas2' },
-    },
+    page: { sys: { id: '28Hdbwhn8eb9DDkynXsas2' } },
     eventId: 'block-example',
   },
   {
+    sys: { id: '6ixMk07zoxb9mSuqH1ftQz' },
     title: 'Card example',
     heading: 'Card example',
-    page: {
-      sys: { type: 'Link', linkType: 'Entry', id: '66uv0KTuWARnKdPU1U4vW' },
-    },
+    page: { sys: { id: '66uv0KTuWARnKdPU1U4vW' } },
     eventId: 'card-example',
   },
   {
+    sys: { id: '5qAwk9ZDhuMU0ggdwJPern' },
     title: 'Gallery example',
     heading: 'Gallery example',
-    page: {
-      sys: { type: 'Link', linkType: 'Entry', id: '3pPwDVOAIh3WLbQPUEKKO3' },
-    },
+    page: { sys: { id: '3pPwDVOAIh3WLbQPUEKKO3' } },
     eventId: 'gallery-example',
   },
   {
+    sys: { id: '6oMJ77VICMAglDmH3EGofv' },
     title: 'Showcase example',
     heading: 'Showcase example',
-    page: {
-      sys: { type: 'Link', linkType: 'Entry', id: '27LvcEtjvg7Dph98DpCSwp' },
-    },
+    page: { sys: { id: '27LvcEtjvg7Dph98DpCSwp' } },
     eventId: 'showcase-example',
   },
   {
+    sys: { id: '7vV7WrXza4sOxS7Zs9pcv7' },
     title: 'Quote example',
     heading: 'Quote example',
-    page: {
-      sys: { type: 'Link', linkType: 'Entry', id: '5UDAyWoKN3FqCCVCpRclWg' },
-    },
+    page: { sys: { id: '5UDAyWoKN3FqCCVCpRclWg' } },
     eventId: 'quote-example',
   },
   {
+    sys: { id: '7GEn9O3NKEMiXOfP9KJbGI' },
     title: 'Headline example',
     heading: 'Headline example',
-    page: {
-      sys: { type: 'Link', linkType: 'Entry', id: '3byPoEfSXx8QfyTaDzy3uO' },
-    },
+    page: { sys: { id: '3byPoEfSXx8QfyTaDzy3uO' } },
     eventId: 'headline-example',
   },
   {
+    sys: { id: '3YKInGVlalsfYXX38Deaeh' },
     title: 'Image example',
     heading: 'Image example',
-    page: {
-      sys: { type: 'Link', linkType: 'Entry', id: '7yLDwzKSZLXfJLrY5O0BMA' },
-    },
+    page: { sys: { id: '7yLDwzKSZLXfJLrY5O0BMA' } },
     eventId: 'image-example',
   },
   {
+    sys: { id: '65l1uMjuDkqFnGQ4g4IEf' },
     title: 'Text example',
     heading: 'Text example',
-    page: {
-      sys: { type: 'Link', linkType: 'Entry', id: '4hivVLdh8W6AgmbcR1mTUu' },
-    },
+    page: { sys: { id: '4hivVLdh8W6AgmbcR1mTUu' } },
     eventId: 'text-example',
   },
   {
+    sys: { id: 'RFo69UE6gxFyhkX8bmRcf' },
     title: 'Divider example',
     heading: 'Divider example',
-    page: {
-      sys: { type: 'Link', linkType: 'Entry', id: '5NSwAqPLFBltvlIECY1xDw' },
-    },
+    page: { sys: { id: '5NSwAqPLFBltvlIECY1xDw' } },
     eventId: 'divider-example',
   },
   {
+    sys: { id: '6Ky1fr91nPqeC32GBCkEAA' },
     title: 'Hero example',
     heading: 'Hero example',
-    page: {
-      sys: { type: 'Link', linkType: 'Entry', id: '4Sw1w3XX3573h0dmOkyDi0' },
-    },
+    page: { sys: { id: '4Sw1w3XX3573h0dmOkyDi0' } },
     eventId: 'hero-example',
   },
   {
+    sys: { id: '1qoj0JTTSlwufhlsf57UlL' },
     title: 'Video example',
     heading: 'Video example',
-    page: {
-      sys: { type: 'Link', linkType: 'Entry', id: '5j4SEj7hRPyX3Oxx2s4KYF' },
-    },
+    page: { sys: { id: '5j4SEj7hRPyX3Oxx2s4KYF' } },
     eventId: 'video-example',
   },
   {
+    sys: { id: '2xut4VcUhCE6EFSmqQusRN' },
     title: 'Navigation example',
     heading: 'Navigation example',
-    page: {
-      sys: { type: 'Link', linkType: 'Entry', id: '7Ip05T3pAnXYeL811kmAAt' },
-    },
+    page: { sys: { id: '7Ip05T3pAnXYeL811kmAAt' } },
     eventId: 'navigation-example',
   },
   {
+    sys: { id: 'exampleAction' },
     title: 'Examples',
     heading: 'Examples',
     description: 'An overview of all the Wheelroom page-section exmaples',
-    page: {
-      sys: { type: 'Link', linkType: 'Entry', id: '1yhZHA5w8ugUqI2Opz5hdd' },
-    },
+    page: { sys: { id: '1yhZHA5w8ugUqI2Opz5hdd' } },
     eventId: 'check-the-wheelroom-examples-action',
   },
   {
+    sys: { id: '2wOMVK2AzRoPCSlMWKOkf8' },
     title: 'Home',
     heading: 'Home',
     description: 'Go to homepage',
-    page: {
-      sys: { type: 'Link', linkType: 'Entry', id: '55QHbJyaADuyITfeZiEFqP' },
-    },
+    page: { sys: { id: '55QHbJyaADuyITfeZiEFqP' } },
     eventId: 'home',
   },
   {
+    sys: { id: 'brandAction' },
     title: 'Wheelroom (action)',
     heading: 'Wheelroom',
     description: 'Go back to the Wheelroom homepage',
     eventId: 'wheelroom-action',
   },
   {
+    sys: { id: 'githubAction' },
     title: 'Try Wheelroom for Free (action)',
     heading: 'Try Wheelroom for Free',
     description: 'Visit our Github Wheelroom code repository',
     url: 'https://github.com/wheelroom/wheelroom',
   },
   {
+    sys: { id: 'getStartedAction' },
     title: 'Github',
     heading: 'Github',
     description: 'Visit our Github Wheelroom code repository',
@@ -1694,14 +1493,14 @@ exports[`Pull content should pull correctly without type filter 1`] = `
     eventId: 'github',
   },
   {
+    sys: { id: '5rKZYw23CJACn3TWtHDI5Y' },
     title: 'Another action',
     heading: 'Another action',
-    page: {
-      sys: { type: 'Link', linkType: 'Entry', id: '1P2O5v7M4KEAmbmDAzgyCe' },
-    },
+    page: { sys: { id: '1P2O5v7M4KEAmbmDAzgyCe' } },
     eventId: 'another-action',
   },
   {
+    sys: { id: '1mqAy6gAuztxgWhsDxxKQL' },
     title: 'Jac\\\\u00F3 Beach on Wikipedia',
     heading: 'Jac\\\\u00F3 Beach on Wikipedia',
     description:
