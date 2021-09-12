@@ -1,28 +1,10 @@
-import { ContentType, Environment } from 'contentful-management/types'
-import {
-  Options,
-  createContentVarStatement,
-  firstUpperCase,
-  camelToKebab,
-} from '@modelberry/mbfactory/plain'
+import { Environment } from 'contentful-management/types'
+import { Options } from '@modelberry/mbfactory/plain'
 import chalk from 'chalk'
-import { SourceFile, writeSourceFiles } from '../lib/write-source-files'
+import { writeSourceFiles } from '../lib/write-source-files'
 import { fetchContentTypes } from '../lib/fetch-content-types'
 import { getContentfulLocales } from '../lib/get-contentful-locales'
-
-type NewEntry = {
-  [fieldId: string]: {
-    contentType: any
-    entry: any
-  }
-}
-
-type ContentTypesById = {
-  [contentTypeName: string]: {
-    contentType: ContentType
-    entries: NewEntry[]
-  }
-}
+import { ContentTypesById, getSourceFiles, NewEntry } from './get-source-files'
 
 export interface PullContent {
   contentfulEnvironment: Environment
@@ -79,28 +61,10 @@ export const pullContent = async ({
     }
     contentTypesById[contentTypeId].entries.push(newEntry)
   }
-  const files: SourceFile[] = []
-  for (const contentTypeId of Object.keys(contentTypesById)) {
-    const varType = `Contentful${firstUpperCase(contentTypeId)}`
-    const varName = contentTypeId
-    // entry[fieldId].contentType.type
-    const contentArray = contentTypesById[contentTypeId].entries.map((entry) =>
-      Object.keys(entry).reduce((newEntry, fieldId) => {
-        newEntry[fieldId] = entry[fieldId].entry[localeCode]
-        return newEntry
-      }, {} as Record<string, any>)
-    )
-    const contentVarStatement = createContentVarStatement({
-      contentArray,
-      varName,
-      varType,
-    })
-    const filename = `contentful-${camelToKebab(contentTypeId)}.ts`
-    files.push({
-      filename,
-      nodes: [contentVarStatement],
-      path,
-    })
-  }
+  const files = getSourceFiles({
+    contentTypesById,
+    localeCode,
+    path,
+  })
   await writeSourceFiles({ files, options })
 }
