@@ -32,9 +32,17 @@ This project is based on project Wheelroom <https://github.com/wheelroom/wheelro
 - [x] Full Contententful API Mock
 - [x] Publish to npm
 - [x] Alpha testing
-- [ ] Implement imporvements from Alpha test
-  - [ ] Warn for non existing inline tags
-  - [ ] Provide suggestions for common mistakes (like @validate instead of @validations)
+  - [ ] Push models
+    - [ ] Implement improvements from Alpha test
+    - [ ] Warn for non existing inline tags
+    - [ ] Provide suggestions for common mistakes (like @validate instead of @validations)
+    - [ ] Respect field order, field order now changes
+  - [ ] Push content
+    - [ ] Implement improvements from Alpha test
+  - [ ] Pull models
+    - [ ] Implement improvements from Alpha test
+  - [ ] Pull content
+    - [ ] Implement improvements from Alpha test
 - [ ] Beta testing
 - [ ] Examples
 - [ ] Doocument tsdoc inline tags for @modelberry block tag
