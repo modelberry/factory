@@ -31,7 +31,11 @@ This project is based on project Wheelroom <https://github.com/wheelroom/wheelro
   - [x] Connect content fetching and code printing
 - [x] Full Contententful API Mock
 - [x] Publish to npm
-- [ ] Alpha and beta testing
+- [x] Alpha testing
+- [ ] Implement imporvements from Alpha test
+  - [ ] Warn for non existing inline tags
+  - [ ] Provide suggestions for common mistakes (like @validate instead of @validations)
+- [ ] Beta testing
 - [ ] Examples
 - [ ] Doocument tsdoc inline tags for @modelberry block tag
 
