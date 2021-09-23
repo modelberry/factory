@@ -45,7 +45,7 @@ export const pullModels = async ({
   })
   files.push({
     filename: 'main.ts',
-    nodes: [...allTypesImportStatements, mbPluginDataImport, dataVarStatement],
+    nodes: [mbPluginDataImport, ...allTypesImportStatements, dataVarStatement],
     path,
   })
 

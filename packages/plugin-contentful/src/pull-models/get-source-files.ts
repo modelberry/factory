@@ -69,15 +69,18 @@ export const getSourceFiles = async ({
       })
     )
     // Add source file for this interface
-    const filename = `contentful-${camelToKebab(contentType.name)}.ts`
+    const filenameWithoutExt = `contentful-${camelToKebab(contentType.name)}`
     files.push({
-      filename,
+      filename: `${filenameWithoutExt}.ts`,
       nodes: [...entryImportStatements, interfaceDeclaration],
       path,
     })
     // Add import statements to be added to the main file
     allTypesImportStatements.push(
-      createTsImport({ namedImports: [interfaceName], from: `./${filename}` })
+      createTsImport({
+        namedImports: [interfaceName],
+        from: `./${filenameWithoutExt}`,
+      })
     )
   }
 
