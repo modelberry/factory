@@ -1,10 +1,10 @@
-## @modelberry/plugin-contentful 6.29.3
+## @modelberry/plugin-contentful 6.29.4
 
-### [6.29.3](https://github.com/modelberry/factory/compare/6.29.2...6.29.3) (2021-09-23)
+### [6.29.4](https://github.com/modelberry/factory/compare/6.29.3...6.29.4) (2021-09-28)
 
 
-### Bug Fixes
+### Commits
 
-* remove extensions from imports in main.ts ([053359f](https://github.com/modelberry/factory/commit/053359fa8780187e9c6a85498bbee85feb3a93f3))
+* add [@ignore](https://github.com/ignore) tags to __typename and sys ([4daf033](https://github.com/modelberry/factory/commit/4daf0332a174ebd27a6a279deb0f5eb9e35b6e9f))
 
 
