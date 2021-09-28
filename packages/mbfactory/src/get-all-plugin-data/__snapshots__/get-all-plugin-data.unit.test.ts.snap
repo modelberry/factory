@@ -19,7 +19,7 @@ Object {
                 "@required": "",
                 "@type": "Array",
                 "@validations": "unique",
-                "@widget": "singleLine",
+                "@widgetId": "singleLine",
               },
               "type": "string",
             },

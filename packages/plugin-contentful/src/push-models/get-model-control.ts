@@ -11,15 +11,15 @@ export const getModelControl = ({
   fieldTags,
 }: GetModelControl) => {
   let control: Control | undefined
-  if (fieldTags['@widget'] || fieldTags['@helpText']) {
+  if (fieldTags['@widgetId'] || fieldTags['@helpText']) {
     control = {
       fieldId: fieldIdWithoutPostfix,
       widgetNamespace: 'builtin',
-      widgetId: fieldTags['@widget'],
+      widgetId: fieldTags['@widgetId'],
       settings: { helpText: fieldTags['@helpText'] },
     }
-    if (fieldTags['@widget']) {
-      console.log(chalk(`- editor control ${fieldTags['@widget']}`))
+    if (fieldTags['@widgetId']) {
+      console.log(chalk(`- editor control ${fieldTags['@widgetId']}`))
     }
     if (fieldTags['@helpText']) {
       console.log(chalk(`- help text`))
