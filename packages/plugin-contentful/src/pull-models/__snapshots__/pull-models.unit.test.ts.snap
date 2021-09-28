@@ -14,7 +14,9 @@ import { ContentfulAsset } from './contentful-asset'
  * - {@description Topic model, a heading, an abstract and a call to action}
  */
 export interface ContentfulTestTopic {
+  /** @modelberry {@ignore} */
   __typename?: string
+  /** @modelberry {@ignore} */
   sys: {
     id?: string
   }
@@ -76,7 +78,9 @@ export interface ContentfulTestTopic {
  * - {@displayField heading}
  */
 export interface ContentfulTestAction {
+  /** @modelberry {@ignore} */
   __typename?: string
+  /** @modelberry {@ignore} */
   sys: {
     id?: string
   }
@@ -127,7 +131,9 @@ import { ContentfulNavigationSegment } from './contentful-navigation-segment'
  * - {@description navigationSection}
  */
 export interface ContentfulNavigationSection {
+  /** @modelberry {@ignore} */
   __typename?: string
+  /** @modelberry {@ignore} */
   sys: {
     id?: string
   }
@@ -233,7 +239,9 @@ export interface ContentfulNavigationSection {
  * - {@description Topic section}
  */
 export interface ContentfulTopicSection {
+  /** @modelberry {@ignore} */
   __typename?: string
+  /** @modelberry {@ignore} */
   sys: {
     id?: string
   }
@@ -339,7 +347,9 @@ import { ContentfulEmbed } from './contentful-embed'
  * - {@description Topic}
  */
 export interface ContentfulTopic {
+  /** @modelberry {@ignore} */
   __typename?: string
+  /** @modelberry {@ignore} */
   sys: {
     id?: string
   }
@@ -433,7 +443,9 @@ export interface ContentfulTopic {
  * - {@description Text section}
  */
 export interface ContentfulTextSection {
+  /** @modelberry {@ignore} */
   __typename?: string
+  /** @modelberry {@ignore} */
   sys: {
     id?: string
   }
@@ -491,7 +503,9 @@ export interface ContentfulTextSection {
  * - {@description Navigation segment}
  */
 export interface ContentfulNavigationSegment {
+  /** @modelberry {@ignore} */
   __typename?: string
+  /** @modelberry {@ignore} */
   sys: {
     id?: string
   }
@@ -552,7 +566,9 @@ import { ContentfulAsset } from './contentful-asset'
  * - {@description Page}
  */
 export interface ContentfulPage {
+  /** @modelberry {@ignore} */
   __typename?: string
+  /** @modelberry {@ignore} */
   sys: {
     id?: string
   }
@@ -653,7 +669,9 @@ import { ContentfulEmbed } from './contentful-embed'
  * - {@description Globals}
  */
 export interface ContentfulGlobals {
+  /** @modelberry {@ignore} */
   __typename?: string
+  /** @modelberry {@ignore} */
   sys: {
     id?: string
   }
@@ -740,7 +758,9 @@ export interface ContentfulGlobals {
  * - {@description Embed}
  */
 export interface ContentfulEmbed {
+  /** @modelberry {@ignore} */
   __typename?: string
+  /** @modelberry {@ignore} */
   sys: {
     id?: string
   }
@@ -784,7 +804,9 @@ export interface ContentfulEmbed {
  * - {@description Action}
  */
 export interface ContentfulAction {
+  /** @modelberry {@ignore} */
   __typename?: string
+  /** @modelberry {@ignore} */
   sys: {
     id?: string
   }
@@ -1564,7 +1586,9 @@ import { ContentfulAsset } from './contentful-asset'
  * - {@description Topic model, a heading, an abstract and a call to action}
  */
 export interface ContentfulTestTopic {
+  /** @modelberry {@ignore} */
   __typename?: string
+  /** @modelberry {@ignore} */
   sys: {
     id?: string
   }
@@ -1737,7 +1761,9 @@ import { ContentfulAsset } from './contentful-asset'
  * - {@description Topic model, a heading, an abstract and a call to action}
  */
 export interface ContentfulTestTopic {
+  /** @modelberry {@ignore} */
   __typename?: string
+  /** @modelberry {@ignore} */
   sys: {
     id?: string
   }
@@ -1799,7 +1825,9 @@ export interface ContentfulTestTopic {
  * - {@displayField heading}
  */
 export interface ContentfulTestAction {
+  /** @modelberry {@ignore} */
   __typename?: string
+  /** @modelberry {@ignore} */
   sys: {
     id?: string
   }
@@ -1850,7 +1878,9 @@ import { ContentfulNavigationSegment } from './contentful-navigation-segment'
  * - {@description navigationSection}
  */
 export interface ContentfulNavigationSection {
+  /** @modelberry {@ignore} */
   __typename?: string
+  /** @modelberry {@ignore} */
   sys: {
     id?: string
   }
@@ -1956,7 +1986,9 @@ export interface ContentfulNavigationSection {
  * - {@description Topic section}
  */
 export interface ContentfulTopicSection {
+  /** @modelberry {@ignore} */
   __typename?: string
+  /** @modelberry {@ignore} */
   sys: {
     id?: string
   }
@@ -2062,7 +2094,9 @@ import { ContentfulEmbed } from './contentful-embed'
  * - {@description Topic}
  */
 export interface ContentfulTopic {
+  /** @modelberry {@ignore} */
   __typename?: string
+  /** @modelberry {@ignore} */
   sys: {
     id?: string
   }
@@ -2156,7 +2190,9 @@ export interface ContentfulTopic {
  * - {@description Text section}
  */
 export interface ContentfulTextSection {
+  /** @modelberry {@ignore} */
   __typename?: string
+  /** @modelberry {@ignore} */
   sys: {
     id?: string
   }
@@ -2214,7 +2250,9 @@ export interface ContentfulTextSection {
  * - {@description Navigation segment}
  */
 export interface ContentfulNavigationSegment {
+  /** @modelberry {@ignore} */
   __typename?: string
+  /** @modelberry {@ignore} */
   sys: {
     id?: string
   }
@@ -2275,7 +2313,9 @@ import { ContentfulAsset } from './contentful-asset'
  * - {@description Page}
  */
 export interface ContentfulPage {
+  /** @modelberry {@ignore} */
   __typename?: string
+  /** @modelberry {@ignore} */
   sys: {
     id?: string
   }
@@ -2376,7 +2416,9 @@ import { ContentfulEmbed } from './contentful-embed'
  * - {@description Globals}
  */
 export interface ContentfulGlobals {
+  /** @modelberry {@ignore} */
   __typename?: string
+  /** @modelberry {@ignore} */
   sys: {
     id?: string
   }
@@ -2463,7 +2505,9 @@ export interface ContentfulGlobals {
  * - {@description Embed}
  */
 export interface ContentfulEmbed {
+  /** @modelberry {@ignore} */
   __typename?: string
+  /** @modelberry {@ignore} */
   sys: {
     id?: string
   }
@@ -2507,7 +2551,9 @@ export interface ContentfulEmbed {
  * - {@description Action}
  */
 export interface ContentfulAction {
+  /** @modelberry {@ignore} */
   __typename?: string
+  /** @modelberry {@ignore} */
   sys: {
     id?: string
   }

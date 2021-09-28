@@ -29,15 +29,17 @@ export const getPropertyTree = ({
   namedImports,
   validations,
 }: GetPropertyTree) => {
+  const ignoreComment = `* @modelberry {@ignore} `
   const propertyTree: PropertyTree = {
     __typename: {
       node: {
         isRequired: false,
+        comment: ignoreComment,
         createKeywordTypeNode: tsSyntaxKind.StringKeyword,
       },
     },
     sys: {
-      node: { isRequired: true },
+      node: { isRequired: true, comment: ignoreComment },
       edges: {
         id: { node: { createKeywordTypeNode: tsSyntaxKind.StringKeyword } },
       },
