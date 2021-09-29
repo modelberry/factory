@@ -6,6 +6,7 @@ import {
 import { confirmOmitted } from './confirm-omitted'
 import { getMergedFields } from './get-merged-fields'
 import { getOmittedFields } from './get-omitted-fields'
+import { keepOrdered } from './keep-ordered'
 
 export interface PushFieldsToContentful {
   contentfulEnvironment: Environment
@@ -33,10 +34,17 @@ export const pushFieldsToContentful = async ({
       if (!confirmed) return
     }
     // Merge new fields with existing fields and mark missing fields as omitted
-    contentType.fields = getMergedFields({
+    const mergedFields = getMergedFields({
       existingfields: contentType.fields,
       newFields: contentTypeData.fields,
     }) as ContentFields[]
+    // By now the field order has changed. New fields have been moved to the end
+    // of the array. Restore the field order and apply changes
+    contentType.fields = keepOrdered({
+      orderedIds: contentType.fields.map((field) => field.id),
+      newFields: mergedFields,
+    })
+
     contentType.name = contentTypeData.name
     contentType.description = contentTypeData.description
     contentType.displayField = contentTypeData.displayField

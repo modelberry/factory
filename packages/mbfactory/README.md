@@ -25,15 +25,15 @@ Push and pull typescript models and content to and from a content management pla
 - [x] Full Contententful API Mock
 - [x] Publish to npm
 - [x] Alpha testing
-  - [ ] Push models, Implement improvements from Alpha test
+  - [x] Push models, Implement improvements from Alpha test
     - [x] Warn for non existing inline tags
     - [x] Provide suggestions for common mistakes (like @validate instead of @validations)
-    - [ ] Respect field order, field order now changes
-  - [ ] Push content, Implement improvements from Alpha test
-  - [ ] Pull models, Implement improvements from Alpha test
+    - [x] Respect field order, field order now changes
+  - [x] Pull models, Implement improvements from Alpha test
     - [x] Fix extensions and import order in generated main.ts
     - [x] Add @ignore tags to typename and sys as shown below
-  - [ ] Pull content, Implement improvements from Alpha test
+  - [ ] Push content, Collect and implement improvements from Alpha test
+  - [ ] Pull content, Collect and implement improvements from Alpha test
 - [ ] Beta testing
 - [ ] Examples
 - [ ] Doocument tsdoc inline tags for @modelberry block tag
