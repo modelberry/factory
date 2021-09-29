@@ -9,6 +9,11 @@
     {
       "allowMultiple": false,
       "syntaxKind": "inline",
+      "tagName": "@plugin"
+    },
+    {
+      "allowMultiple": false,
+      "syntaxKind": "inline",
       "tagName": "@description"
     },
     {
@@ -70,11 +75,6 @@
       "allowMultiple": false,
       "syntaxKind": "inline",
       "tagName": "@omitted"
-    },
-    {
-      "allowMultiple": false,
-      "syntaxKind": "inline",
-      "tagName": "@plugin"
     },
     {
       "allowMultiple": false,

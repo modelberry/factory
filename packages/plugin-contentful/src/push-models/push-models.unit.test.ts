@@ -8,6 +8,8 @@ import { ignoreInterface } from './__fixtures__/ignore-interface'
 import { noFieldType } from './__fixtures__/no-field-type'
 import { noInterfaceType } from './__fixtures__/no-interface-type'
 import { multipleBadValidations } from './__fixtures__/multiple-bad-validations'
+import { badFieldTag } from './__fixtures__/bad-field-tag'
+import { badInterfaceTag } from './__fixtures__/bad-interface-tag'
 
 const headingResponse = [
   [chalk.bold.underline('\nTopic')],
@@ -20,7 +22,7 @@ const pushingResponse = [
   [chalk('- pushing editor interface')],
 ]
 
-const notPusingResponse = [
+const notPushingResponse = [
   [chalk.bold('\nPushing to Contentful')],
   [chalk.red('- no valid fields found, skipping')],
 ]
@@ -58,7 +60,7 @@ describe('Push models should', () => {
       [chalk.bold.underline('\nTopic')],
       [chalk.underline('heading')],
       [chalk.red('- validation doesNotExist not found')],
-      ...notPusingResponse,
+      ...notPushingResponse,
     ])
   })
 
@@ -74,7 +76,7 @@ describe('Push models should', () => {
       [chalk.underline('heading')],
       [chalk.red('- validation doesNotExist not found')],
       [chalk.red('- validation doesNotExistEither not found')],
-      ...notPusingResponse,
+      ...notPushingResponse,
     ])
   })
 
@@ -89,7 +91,7 @@ describe('Push models should', () => {
       [chalk.bold.underline('\nTopic')],
       [chalk.underline('heading')],
       [chalk('- ignoring field')],
-      ...notPusingResponse,
+      ...notPushingResponse,
     ])
   })
 
@@ -117,7 +119,7 @@ describe('Push models should', () => {
       [chalk.bold.underline('\nTopic')],
       [chalk.underline('heading')],
       [chalk.red('- no @type inline tag')],
-      ...notPusingResponse,
+      ...notPushingResponse,
     ])
   })
 
@@ -131,6 +133,45 @@ describe('Push models should', () => {
     expect(consoleSpy.mock.calls).toEqual([
       [chalk.bold.underline('\nTopic')],
       [chalk.red('- no @type inline tag')],
+    ])
+  })
+
+  test('process badInterfaceTag correctly', async () => {
+    await pushModels({
+      contentfulEnvironment: environmentMock,
+      options: { force: true },
+      typeData: badInterfaceTag,
+      validationsMap: { mockedValidation: {} },
+    })
+    expect(consoleSpy.mock.calls).toEqual([
+      [chalk.bold.underline('\nTopic')],
+      [
+        chalk.red(
+          '- Unknown interface tag: @bad. Valid interface tags are: @description, @locale, @localized, @name, @plugin, @type'
+        ),
+      ],
+      [chalk.underline('heading')],
+      [chalk('- editor control singleLine')],
+      ...pushingResponse,
+    ])
+  })
+
+  test('process badFieldTag correctly', async () => {
+    await pushModels({
+      contentfulEnvironment: environmentMock,
+      options: { force: true },
+      typeData: badFieldTag,
+      validationsMap: { mockedValidation: {} },
+    })
+    expect(consoleSpy.mock.calls).toEqual([
+      ...headingResponse,
+      [
+        chalk.red(
+          '- Unknown field tag: @bad. Valid field tags are: @description, @disabled, @displayField, @ignore, @helpText, @itemsType, @itemsLinkType, @itemsValidations, @linkType, @locale, @localized, @name, @omitted, @required, @type, @validations, @widgetId'
+        ),
+      ],
+      [chalk('- editor control singleLine')],
+      ...pushingResponse,
     ])
   })
 })

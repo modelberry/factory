@@ -2,6 +2,7 @@ import chalk from 'chalk'
 import { TypeData, Options } from '@modelberry/mbfactory/plain'
 import { ContentType, Environment } from 'contentful-management/types'
 import { ValidationsMap } from '../lib/get-modelberry-plugin-data'
+import { checkTags } from '../check-tags/check-tags'
 import { getModelFieldsAndControls } from './get-model-fields-and-controls'
 import { pushFieldsToContentful } from './push-fields-to-contentful'
 import { pushControlsToContentful } from './push-controls-to-contentful'
@@ -37,6 +38,7 @@ export const pushModels = async ({
       log(chalk.red(`- no @type inline tag`))
       continue
     }
+    checkTags({ interfaceTags })
 
     const { fields, controls } = getModelFieldsAndControls({
       modelFields,

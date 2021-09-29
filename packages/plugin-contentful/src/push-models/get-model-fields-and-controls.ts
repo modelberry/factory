@@ -3,6 +3,7 @@ import { ContentFields, Control } from 'contentful-management/types'
 import { ModelberryInterface } from '@modelberry/mbfactory/plain'
 import { ValidationsMap } from '../lib/get-modelberry-plugin-data'
 import { getFieldIdWithoutPostfix } from '../lib/get-field-id-without-postfix'
+import { checkTags } from '../check-tags/check-tags'
 import { getModelField } from './get-model-field'
 import { getModelControl } from './get-model-control'
 
@@ -23,6 +24,7 @@ export const getModelFieldsAndControls = ({
 
     log(chalk.underline(`${fieldIdWithoutPostfix}`))
     const tags = field.tags || {}
+    checkTags({ fieldTags: tags })
 
     if ('@ignore' in tags) {
       log(chalk(`- ignoring field`))

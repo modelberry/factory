@@ -26,8 +26,8 @@ Push and pull typescript models and content to and from a content management pla
 - [x] Publish to npm
 - [x] Alpha testing
   - [ ] Push models, Implement improvements from Alpha test
-    - [ ] Warn for non existing inline tags
-    - [ ] Provide suggestions for common mistakes (like @validate instead of @validations)
+    - [x] Warn for non existing inline tags
+    - [x] Provide suggestions for common mistakes (like @validate instead of @validations)
     - [ ] Respect field order, field order now changes
   - [ ] Push content, Implement improvements from Alpha test
   - [ ] Pull models, Implement improvements from Alpha test
