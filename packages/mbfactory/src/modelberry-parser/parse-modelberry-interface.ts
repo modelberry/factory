@@ -16,7 +16,7 @@ export type ModelberryInterface = {
       type?: string
     }
   }
-  /** The inline tags defined within the @modelberry tagon the interface */
+  /** The inline tags defined within the @modelberry tag on the interface */
   interfaceTags?: Record<string, string>
   /** The typescript type of the interface  */
   typeName?: string
