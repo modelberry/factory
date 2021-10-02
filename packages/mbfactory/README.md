@@ -4,36 +4,4 @@ Push and pull typescript models and content to and from a content management pla
 
 ## Todo
 
-- [x] Push models command
-- [x] Push content command
-- [x] Cli options
-  - [x] --dry-run
-  - [x] --force
-  - [x] --locale
-  - [x] --type
-- [x] Pull models command
-  - [x] Implement model AST code printing
-  - [x] Implement model fetching from remote
-  - [x] Connect model fetching and code printing
-  - [x] Implement AST data variable code printing
-  - [x] Implement validation fetching from remote
-  - [x] Connect validation fetching and code printing
-- [x] Pull content command
-  - [x] Implement AST content variable code printing
-  - [x] Implement content fetching from remote
-  - [x] Connect content fetching and code printing
-- [x] Full Contententful API Mock
-- [x] Publish to npm
-- [x] Alpha testing
-  - [x] Push models, Implement improvements from Alpha test
-    - [x] Warn for non existing inline tags
-    - [x] Provide suggestions for common mistakes (like @validate instead of @validations)
-    - [x] Respect field order, field order now changes
-  - [x] Pull models, Implement improvements from Alpha test
-    - [x] Fix extensions and import order in generated main.ts
-    - [x] Add @ignore tags to typename and sys as shown below
-  - [ ] Push content, Collect and implement improvements from Alpha test
-  - [ ] Pull content, Collect and implement improvements from Alpha test
-- [ ] Beta testing
-- [ ] Examples
-- [ ] Doocument tsdoc inline tags for @modelberry block tag
+Moved all [issues](https://github.com/modelberry/factory/milestones) to github.
