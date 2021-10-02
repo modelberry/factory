@@ -71,7 +71,7 @@ export const getSourceFiles = ({
       varName,
       varType,
     })
-    const filename = `contentful-${camelToKebab(contentTypeId)}.ts`
+    const filename = `contentful-${camelToKebab(contentTypeId)}-content.ts`
     files.push({
       filename,
       nodes: [contentVarStatement],
