@@ -35,7 +35,7 @@ export const pullContent = async ({
   // Initialize struture to organize entires per content type
   const entriesByContentTypeId: EntriesByContentTypeId = {}
   contentTypes.forEach((contentType) => {
-    entriesByContentTypeId[contentType.name] = {
+    entriesByContentTypeId[contentType.sys.id] = {
       contentType,
       entryTypeList: [],
     }
