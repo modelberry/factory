@@ -34,10 +34,11 @@ export const getSourceFiles = async ({
   for (const contentType of contentTypes) {
     const inlineTags: Record<string, any> = {}
     inlineTags['@plugin'] = '"@modelberry/plugin-contentful/plain"'
-    inlineTags['@type'] = contentType.name
+    const contentTypeId = contentType.sys.id
+    inlineTags['@type'] = contentTypeId
     copyKeysIfExists({
       asTag: true,
-      keys: ['displayField', 'description'],
+      keys: ['displayField', 'description', 'name'],
       source: contentType,
       target: inlineTags,
     })
@@ -52,7 +53,7 @@ export const getSourceFiles = async ({
       namedImports,
       validations,
     })
-    const interfaceName = 'Contentful' + firstUpperCase(contentType.name)
+    const interfaceName = 'Contentful' + firstUpperCase(contentTypeId)
     const interfaceDeclaration = createTsInterface({
       blockTag: '@modelberry',
       inlineTags,
@@ -69,7 +70,7 @@ export const getSourceFiles = async ({
       })
     )
     // Add source file for this interface
-    const filenameWithoutExt = `contentful-${camelToKebab(contentType.name)}`
+    const filenameWithoutExt = `contentful-${camelToKebab(contentTypeId)}`
     files.push({
       filename: `${filenameWithoutExt}.ts`,
       nodes: [...entryImportStatements, interfaceDeclaration],
