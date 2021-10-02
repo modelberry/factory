@@ -4,7 +4,7 @@ exports[`Pull content should pull correctly with type filter 1`] = `
 [MockFunction] {
   "calls": Array [
     Array [
-      "./dummy/contentful-test-topic.ts",
+      "./dummy/contentful-test-topic-content.ts",
       "export const testTopic: ContentfulTestTopic[] = [
   {
     sys: { id: '2v8GizBNh1oxbf6cKlpzJP' },
@@ -65,7 +65,7 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 [MockFunction] {
   "calls": Array [
     Array [
-      "./dummy/contentful-test-topic.ts",
+      "./dummy/contentful-test-topic-content.ts",
       "export const testTopic: ContentfulTestTopic[] = [
   {
     sys: { id: '2v8GizBNh1oxbf6cKlpzJP' },
@@ -113,7 +113,7 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 ",
     ],
     Array [
-      "./dummy/contentful-test-topic.ts",
+      "./dummy/contentful-test-topic-content.ts",
       "export const testTopic: ContentfulTestTopic[] = [
   {
     sys: { id: '2v8GizBNh1oxbf6cKlpzJP' },
@@ -161,14 +161,14 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 ",
     ],
     Array [
-      "./dummy/contentful-test-action.ts",
+      "./dummy/contentful-test-action-content.ts",
       "export const testAction: ContentfulTestAction[] = [
   { sys: { id: 'myContentActionId' }, anchor: 'anchor', heading: 'Hello' },
 ]
 ",
     ],
     Array [
-      "./dummy/contentful-navigation-section.ts",
+      "./dummy/contentful-navigation-section-content.ts",
       "export const navigationSection: ContentfulNavigationSection[] = [
   {
     sys: { id: '66ccn0Y5aVxWLBRnyYvtak' },
@@ -204,7 +204,7 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 ",
     ],
     Array [
-      "./dummy/contentful-topic-section.ts",
+      "./dummy/contentful-topic-section-content.ts",
       "export const topicSection: ContentfulTopicSection[] = [
   {
     sys: { id: '4gqjzFponPw2UQZc1e4WNM' },
@@ -447,7 +447,7 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 ",
     ],
     Array [
-      "./dummy/contentful-topic.ts",
+      "./dummy/contentful-topic-content.ts",
       "export const topic: ContentfulTopic[] = [
   {
     sys: { id: '1eGF540LjYZaiXfvaK7ymF' },
@@ -619,7 +619,7 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 ",
     ],
     Array [
-      "./dummy/contentful-text-section.ts",
+      "./dummy/contentful-text-section-content.ts",
       "export const textSection: ContentfulTextSection[] = [
   {
     sys: { id: '2zajs22gdw0eheKrQuxwrg' },
@@ -1058,7 +1058,7 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 ",
     ],
     Array [
-      "./dummy/contentful-navigation-segment.ts",
+      "./dummy/contentful-navigation-segment-content.ts",
       "export const navigationSegment: ContentfulNavigationSegment[] = [
   {
     sys: { id: '6LCP6Bnenubii8ouyTDiKI' },
@@ -1116,7 +1116,7 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 ",
     ],
     Array [
-      "./dummy/contentful-page.ts",
+      "./dummy/contentful-page-content.ts",
       "export const page: ContentfulPage[] = [
   {
     sys: { id: '55QHbJyaADuyITfeZiEFqP' },
@@ -1337,7 +1337,7 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 ",
     ],
     Array [
-      "./dummy/contentful-globals.ts",
+      "./dummy/contentful-globals-content.ts",
       "export const globals: ContentfulGlobals[] = [
   {
     sys: { id: 'siteGlobals' },
@@ -1355,12 +1355,12 @@ exports[`Pull content should pull correctly without type filter 1`] = `
 ",
     ],
     Array [
-      "./dummy/contentful-embed.ts",
+      "./dummy/contentful-embed-content.ts",
       "export const embed: ContentfulEmbed[] = []
 ",
     ],
     Array [
-      "./dummy/contentful-action.ts",
+      "./dummy/contentful-action-content.ts",
       "export const action: ContentfulAction[] = [
   {
     sys: { id: '6p9QKsFBcB8aDWZT5wSlNa' },
