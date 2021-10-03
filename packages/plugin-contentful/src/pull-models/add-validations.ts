@@ -54,6 +54,10 @@ export const addValidations = ({
       val: newValidation,
       vals: validations,
     })
+    // Add empty flags. Typescript defs require this but the API does not return
+    // this.
+    if (newValidation.regexp && !newValidation.regexp.flags)
+      newValidation.regexp.flags = ''
     validations[validationName] = newValidation
     validationNames.push(validationName)
     tags[tag] = validationNames.join(' ')
