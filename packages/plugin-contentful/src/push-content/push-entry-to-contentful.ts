@@ -1,3 +1,4 @@
+import chalk from 'chalk'
 import {
   CreateEntryProps,
   Entry,
@@ -10,6 +11,17 @@ export interface PushEntryToContentful {
   contentTypeId: string
   entryFields: EntryFields
   entryId?: string
+}
+
+const publishEntry = async (entry: Entry) => {
+  const log = console.log
+  let newEntry = entry
+  try {
+    newEntry = await entry.publish()
+  } catch {
+    log(chalk(`- could not publish entry, pushed as draft`))
+  }
+  return newEntry
 }
 
 export const pushEntryToContentful = async ({
@@ -25,7 +37,7 @@ export const pushEntryToContentful = async ({
       entry = await contentfulEnvironment.getEntry(entryId)
       Object.assign(entry.fields, entryFields)
       entry = await entry.update()
-      entry = await entry.publish()
+      entry = await publishEntry(entry)
     } catch (contentfulError: any) {
       let errorData
       // We expect a 404, throw other errors if they occur
@@ -43,7 +55,7 @@ export const pushEntryToContentful = async ({
           fields: entryFields,
         } as CreateEntryProps
       )
-      entry = await entry.publish()
+      entry = await publishEntry(entry)
     }
   } else {
     // We don't have a specific id, the remote will assign a random one
