@@ -31,6 +31,7 @@ describe('Pull content should', () => {
       [chalk('- new source file ./dummy/contentful-embed.ts')],
       [chalk('- new source file ./dummy/contentful-action.ts')],
       [chalk('- new source file ./dummy/contentful-asset.ts')],
+      [chalk('- new source file ./dummy/contentful-reference.ts')],
       [chalk('- new source file ./dummy/main.ts')],
     ])
   })
@@ -44,6 +45,7 @@ describe('Pull content should', () => {
     expect(consoleSpy.mock.calls).toEqual([
       [chalk('- new source file ./dummy/contentful-test-topic.ts')],
       [chalk('- new source file ./dummy/contentful-asset.ts')],
+      [chalk('- new source file ./dummy/contentful-reference.ts')],
       [chalk('- new source file ./dummy/main.ts')],
     ])
   })
