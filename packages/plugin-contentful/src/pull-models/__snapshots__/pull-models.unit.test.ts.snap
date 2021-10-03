@@ -927,7 +927,7 @@ export interface ContentfulAction {
     ],
     Array [
       "./dummy/contentful-reference.ts",
-      "export interface ContentfulReference {
+      "export type ContentfulReference = {
   sys: {
     id: string
   }
@@ -1125,7 +1125,7 @@ export interface ContentfulTestTopic {
     ],
     Array [
       "./dummy/contentful-reference.ts",
-      "export interface ContentfulReference {
+      "export type ContentfulReference = {
   sys: {
     id: string
   }
@@ -2155,7 +2155,7 @@ export interface ContentfulAction {
     ],
     Array [
       "./dummy/contentful-reference.ts",
-      "export interface ContentfulReference {
+      "export type ContentfulReference = {
   sys: {
     id: string
   }
