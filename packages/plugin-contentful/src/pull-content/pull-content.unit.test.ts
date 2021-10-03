@@ -26,6 +26,7 @@ describe('Pull content should', () => {
     expect(consoleSpy.mock.calls).toEqual([
       ...localeResponse,
       [chalk('- new source file ./dummy/contentful-test-topic-content.ts')],
+      [chalk('- new source file ./dummy/main-content.ts')],
     ])
   })
   test('pull correctly without type filter', async () => {
@@ -56,6 +57,7 @@ describe('Pull content should', () => {
       [chalk('- new source file ./dummy/contentful-globals-content.ts')],
       [chalk('- new source file ./dummy/contentful-embed-content.ts')],
       [chalk('- new source file ./dummy/contentful-action-content.ts')],
+      [chalk('- new source file ./dummy/main-content.ts')],
     ])
   })
 })

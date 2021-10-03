@@ -63,7 +63,7 @@ export const getSourceFiles = async ({
     })
     // Add imports for required types
     const uniqueNzmedImports = Array.from(new Set(namedImports))
-    const entryImportStatements = uniqueNzmedImports.map((ni) =>
+    const entryImportStatement = uniqueNzmedImports.map((ni) =>
       createTsImport({
         namedImports: [`${ni}`],
         from: `./${camelToKebab(firstLowerCase(ni))}`,
@@ -73,7 +73,7 @@ export const getSourceFiles = async ({
     const filenameWithoutExt = `contentful-${camelToKebab(contentTypeId)}`
     files.push({
       filename: `${filenameWithoutExt}.ts`,
-      nodes: [...entryImportStatements, interfaceDeclaration],
+      nodes: [...entryImportStatement, interfaceDeclaration],
       path,
     })
     // Add import statements to be added to the main file

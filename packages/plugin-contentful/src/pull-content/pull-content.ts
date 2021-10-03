@@ -1,5 +1,5 @@
 import { Environment } from 'contentful-management/types'
-import { Options } from '@modelberry/mbfactory/plain'
+import { Options, Node } from '@modelberry/mbfactory/plain'
 import chalk from 'chalk'
 import { writeSourceFiles } from '../lib/write-source-files'
 import { fetchContentTypes } from '../lib/fetch-content-types'
@@ -62,9 +62,17 @@ export const pullContent = async ({
     }
     entriesByContentTypeId[contentTypeId].entryTypeList.push(entryType)
   }
+  // Generate import statements for each type to be added to the main file
+  const allTypesImportStatements: Node[] = []
   const files = getSourceFiles({
+    allTypesImportStatements,
     entriesByContentTypeId,
     localeCode,
+    path,
+  })
+  files.push({
+    filename: 'main-content.ts',
+    nodes: allTypesImportStatements,
     path,
   })
   await writeSourceFiles({ files, options })

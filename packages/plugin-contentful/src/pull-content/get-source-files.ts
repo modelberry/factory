@@ -2,12 +2,16 @@ import {
   createContentVarStatement,
   firstUpperCase,
   camelToKebab,
+  createTsImport,
+  Node,
 } from '@modelberry/mbfactory/plain'
 import { SourceFile } from '../lib/write-source-files'
 import { EntriesByContentTypeId, EntryType } from './entries-by-content-type-id'
 import { removeLinkAndLinkType } from './remove-link-and-link-type'
 
 export interface GetSourceFiles {
+  /** Empty node list, for each generated type an import statement is added */
+  allTypesImportStatements: Node[]
   entriesByContentTypeId: EntriesByContentTypeId
   localeCode: string
   path: string
@@ -30,6 +34,7 @@ export interface GetSourceFiles {
  *
  */
 export const getSourceFiles = ({
+  allTypesImportStatements,
   entriesByContentTypeId,
   localeCode,
   path,
@@ -66,17 +71,33 @@ export const getSourceFiles = ({
         contentArray.push(addEntry)
       }
     )
+    // Add import statements to be added to the main file
+    const modelFilenameWithoutExt = `contentful-${camelToKebab(contentTypeId)}`
+    const modelImportStatement = createTsImport({
+      namedImports: [varType],
+      from: `./${modelFilenameWithoutExt}`,
+    })
+
     const contentVarStatement = createContentVarStatement({
       contentArray,
       varName,
       varType,
     })
-    const filename = `contentful-${camelToKebab(contentTypeId)}-content.ts`
+    const filenameWithoutExt = `contentful-${camelToKebab(
+      contentTypeId
+    )}-content`
     files.push({
-      filename,
-      nodes: [contentVarStatement],
+      filename: `${filenameWithoutExt}.ts`,
+      nodes: [modelImportStatement, contentVarStatement],
       path,
     })
+    // Add import statements to be added to the main file
+    allTypesImportStatements.push(
+      createTsImport({
+        namedImports: [varName],
+        from: `./${filenameWithoutExt}`,
+      })
+    )
   }
   return files
 }
