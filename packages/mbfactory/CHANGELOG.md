@@ -1,5 +1,17 @@
 # Changelog
 
+### [6.30.2](https://github.com/modelberry/factory/compare/6.30.1...6.30.2) (2021-10-03)
+
+
+### Documentation
+
+* moved issues to github ([e8800d7](https://github.com/modelberry/factory/commit/e8800d743f44f7014f4d26f943608f2c0554a386))
+
+
+### Commits
+
+* change option color from red to blue ([277cc77](https://github.com/modelberry/factory/commit/277cc77a3e87476f75ecd609076f1fa5df757c93))
+
 ### [6.30.1](https://github.com/modelberry/factory/compare/6.30.0...6.30.1) (2021-10-02)
 
 ## [6.30.0](https://github.com/modelberry/factory/compare/6.29.5...6.30.0) (2021-09-29)

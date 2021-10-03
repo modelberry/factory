@@ -1,6 +1,6 @@
 {
   "name": "@modelberry/mbfactory",
-  "version": "6.30.1",
+  "version": "6.30.2",
   "description": "Push Typescript models to a content platform",
   "keywords": [
     "any",
