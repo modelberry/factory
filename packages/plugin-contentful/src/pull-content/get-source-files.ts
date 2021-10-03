@@ -49,7 +49,7 @@ export const getSourceFiles = ({
               items: remoteEntryFieldValue,
             }
           } else if (remoteFieldType?.type === 'RichText') {
-            // TODO: Maybe convert all nodeTypes from string into numbers
+            // TODO: (maybe?) Convert all nodeTypes from string into numbers
             addEntry[fieldId] = {
               json: remoteEntryFieldValue,
             }

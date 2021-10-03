@@ -1,10 +1,14 @@
+export type RichTextObject = {
+  json: any
+}
+
 export interface CreateField {
   itemsLinkType?: string
   itemsType?: string
   itemsValue?: string[]
   linkType?: string
   type: string
-  value?: string
+  value?: string | RichTextObject
 }
 
 export interface CreateLocalizedField extends CreateField {
@@ -43,7 +47,7 @@ export const createField = ({
     case 'Integer':
     case 'Symbol':
     case 'Text':
-      return value!
+      return value! as string
 
     case 'Array':
       return itemsValue!.map(
@@ -55,13 +59,13 @@ export const createField = ({
           }) as SysLink
       )
 
-    // case 'RichText':
-    // TODO: return a document from mark down parser
+    case 'RichText':
+      return (value as RichTextObject)!.json
 
     case 'Link':
       return {
         sys: {
-          id: value!,
+          id: value! as string,
           linkType: linkType!,
           type,
         },
