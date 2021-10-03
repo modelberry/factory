@@ -42,7 +42,13 @@ export const getPropertyTreeField = ({
     case 'RichText':
       edges.json = {
         node: {
-          createTypeReferenceNode: 'Document',
+          // import { Document } from '@contentful/rich-text-types'
+          //
+          // Document needs BLOCKS, INLINE enums. Use any type here instead of
+          // Document. This is because nodeType expects ENUM numbers (BLOCKS,
+          // INLINE, etc.), while the API returns strings like 'heading-1' and
+          // 'text'.
+          createTypeReferenceNode: 'any',
         },
       }
       return { node, edges }
@@ -74,11 +80,12 @@ export const getPropertyTreeField = ({
     case 'Link':
       switch (contentField.linkType) {
         case 'Asset':
-          namedImports.push('ContentfulAsset')
-          node.createTypeReferenceNode = 'ContentfulAsset'
+          namedImports.push('ContentfulAsset', 'ContentfulReference')
+          node.createTypeReferenceNode = 'ContentfulAsset | ContentfulReference'
           return { node }
         case 'Entry':
           contentTypes = getLinkContentTypes({ contentField })
+          contentTypes.push('ContentfulReference')
           // Track content types for generating import statements later
           namedImports.push(...contentTypes)
           node.createTypeReferenceNode = contentTypesToString({
@@ -104,11 +111,13 @@ export const getPropertyTreeField = ({
         case 'Link':
           switch (contentField.items?.linkType) {
             case 'Asset':
-              namedImports.push('ContentfulAsset')
-              edges.items.node!.createTypeReferenceNode = 'ContentfulAsset'
+              namedImports.push('ContentfulAsset', 'ContentfulReference')
+              edges.items.node!.createTypeReferenceNode =
+                'ContentfulAsset | ContentfulReference'
               return { node, edges }
             case 'Entry':
               contentTypes = getLinkContentTypes({ contentField })
+              contentTypes.push('ContentfulReference')
               // Track content types for generating import statements later
               namedImports.push(...contentTypes)
               edges.items.node!.createTypeReferenceNode = contentTypesToString({
