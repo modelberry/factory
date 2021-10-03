@@ -51,6 +51,8 @@ export const generateName = ({ val, vals }: GenerateName) => {
     return `enabledNodeTypes-${val.enabledNodeTypes.slice(0, 3).join('-')}`
   } else if (val.enabledMarks) {
     return `enabledMarks-${val.enabledMarks.slice(0, 3).join('-')}`
+  } else if (val.nodes) {
+    return `richText`
   }
   return 'unknown'
 }
