@@ -12,6 +12,7 @@ import { copyKeysIfExists } from './copy-keys-if-exists'
 import { getPropertyTree } from './get-property-tree'
 import { getEditorInterfaces } from './get-editor-interfaces'
 import { createContentfulAssetTypeDeclaration } from './create-contentful-asset-type-declaration'
+import { createContentfulReferenceTypeDeclaration } from './create-contentful-reference-type-declaration'
 
 export interface GetSourceFiles {
   /** Empty node list, for each generated type an import statement is added */
@@ -61,9 +62,10 @@ export const getSourceFiles = async ({
       isExported: true,
       name: interfaceName,
     })
+
     // Add imports for required types
     const uniqueNzmedImports = Array.from(new Set(namedImports))
-    const entryImportStatement = uniqueNzmedImports.map((ni) =>
+    const entryImportStatements = uniqueNzmedImports.map((ni) =>
       createTsImport({
         namedImports: [`${ni}`],
         from: `./${camelToKebab(firstLowerCase(ni))}`,
@@ -73,7 +75,7 @@ export const getSourceFiles = async ({
     const filenameWithoutExt = `contentful-${camelToKebab(contentTypeId)}`
     files.push({
       filename: `${filenameWithoutExt}.ts`,
-      nodes: [...entryImportStatement, interfaceDeclaration],
+      nodes: [...entryImportStatements, interfaceDeclaration],
       path,
     })
     // Add import statements to be added to the main file
@@ -92,5 +94,13 @@ export const getSourceFiles = async ({
     nodes: [contentfulAsset],
     path,
   })
+  // Add source file that defines ContentfulReference type
+  const contentfulReference = createContentfulReferenceTypeDeclaration()
+  files.push({
+    filename: 'contentful-reference.ts',
+    nodes: [contentfulReference],
+    path,
+  })
+
   return files
 }
