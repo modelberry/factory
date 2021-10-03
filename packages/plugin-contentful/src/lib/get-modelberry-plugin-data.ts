@@ -1,8 +1,13 @@
 import { ContentTypeFieldValidation } from 'contentful-management/types'
 import { ModelberryVariable } from '@modelberry/mbfactory/plain'
 
+export type Validation = ContentTypeFieldValidation & {
+  message?: string
+  nodes?: any
+}
+
 export type ValidationsMap = {
-  [validationName: string]: ContentTypeFieldValidation
+  [validationName: string]: Validation
 }
 
 export type ModelberryPluginData = {
