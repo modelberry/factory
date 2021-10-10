@@ -5,6 +5,8 @@ export const getContentfulEnvironment = async () => {
     accessToken: process.env.CONTENTFUL_CMA_TOKEN!,
   })
   const space = await client.getSpace(process.env.CONTENTFUL_SPACE_ID!)
-  const environment = await space.getEnvironment('master')
+  const environment = await space.getEnvironment(
+    process.env.CONTENTFUL_ENVIRONMENT || 'master'
+  )
   return environment
 }
