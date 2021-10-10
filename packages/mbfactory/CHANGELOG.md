@@ -1,5 +1,7 @@
 # Changelog
 
+### [6.30.3](https://github.com/modelberry/factory/compare/6.30.2...6.30.3) (2021-10-10)
+
 ### [6.30.2](https://github.com/modelberry/factory/compare/6.30.1...6.30.2) (2021-10-03)
 
 
