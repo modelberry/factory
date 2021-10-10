@@ -41,7 +41,7 @@ export const pushFieldsToContentful = async ({
     // By now the field order has changed. New fields have been moved to the end
     // of the array. Restore the field order and apply changes
     contentType.fields = keepOrdered({
-      orderedIds: contentType.fields.map((field) => field.id),
+      orderedIds: contentTypeData.fields.map((field) => field.id),
       newFields: mergedFields,
     })
 
