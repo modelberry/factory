@@ -45,7 +45,7 @@ export const getEntryFields = ({
         itemsValue = fieldValue.items.map((field: any) => field.sys?.id)
         itemsValue = itemsValue.filter((field: any) => !!field)
       } else {
-        itemsValue = fieldValue.items
+        itemsValue = fieldValue
       }
     } else {
       if (type === 'Link') {
