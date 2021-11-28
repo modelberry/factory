@@ -660,9 +660,7 @@ export interface ContentfulPage {
    * - {@itemsType Symbol}
    * - {@widgetId tagEditor}
    */
-  seoKeywordsCollection?: {
-    items: string[]
-  }
+  seoKeywords?: string[]
   /** @modelberry
    * - {@disabled true}
    * - {@name 1.0.0}
@@ -728,9 +726,7 @@ export interface ContentfulGlobals {
    * - {@widgetId tagEditor}
    * - {@helpText Sleutelwoorden voor de site, gebruikt door zoek machines zoals Google}
    */
-  siteKeywordsCollection?: {
-    items: string[]
-  }
+  siteKeywords?: string[]
   /** @modelberry
    * - {@name Site image}
    * - {@type Link}
@@ -1888,9 +1884,7 @@ export interface ContentfulPage {
    * - {@itemsType Symbol}
    * - {@widgetId tagEditor}
    */
-  seoKeywordsCollection?: {
-    items: string[]
-  }
+  seoKeywords?: string[]
   /** @modelberry
    * - {@disabled true}
    * - {@name 1.0.0}
@@ -1956,9 +1950,7 @@ export interface ContentfulGlobals {
    * - {@widgetId tagEditor}
    * - {@helpText Sleutelwoorden voor de site, gebruikt door zoek machines zoals Google}
    */
-  siteKeywordsCollection?: {
-    items: string[]
-  }
+  siteKeywords?: string[]
   /** @modelberry
    * - {@name Site image}
    * - {@type Link}

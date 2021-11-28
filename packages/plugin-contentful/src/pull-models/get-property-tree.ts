@@ -97,7 +97,12 @@ export const getPropertyTree = ({
       inlineTags,
     })
     const isArray = contentField.type === 'Array'
-    const fieldName = `${contentField.id}${isArray ? 'Collection' : ''}`
+    // Do not add Collection postfix to arrays of symbols
+    const isItemsTypeSymbol = contentField.items?.type === 'Symbol'
+
+    const fieldName = `${contentField.id}${
+      isArray && !isItemsTypeSymbol ? 'Collection' : ''
+    }`
     propertyTree[fieldName] = getPropertyTreeField({
       comment: `* ${comment}`,
       contentField,

@@ -45,8 +45,15 @@ export const getSourceFiles = ({
           })
           const remoteFieldType = entryType.fields[fieldId].contentFieldType
           if (remoteFieldType?.type === 'Array') {
-            addEntry[`${fieldId}Collection`] = {
-              items: remoteEntryFieldValue,
+            const itemsType =
+              entryType.fields[fieldId].contentFieldType?.items?.type
+            if (itemsType === 'Symbol') {
+              // Same as the default below, but more explicit to code it this way
+              addEntry[fieldId] = remoteEntryFieldValue
+            } else {
+              addEntry[`${fieldId}Collection`] = {
+                items: remoteEntryFieldValue,
+              }
             }
           } else if (remoteFieldType?.type === 'RichText') {
             // TODO: (maybe?) Convert all nodeTypes from string into numbers

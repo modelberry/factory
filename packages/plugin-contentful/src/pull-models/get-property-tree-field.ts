@@ -106,8 +106,10 @@ export const getPropertyTreeField = ({
 
       switch (contentField.items?.type) {
         case 'Symbol':
-          edges.items.node!.createKeywordTypeNode = tsSyntaxKind.StringKeyword
-          return { node, edges }
+          // Remove items wrapper for an array of symbols
+          node.createKeywordTypeNode = tsSyntaxKind.StringKeyword
+          node.isArrayTypeNode = true
+          return { node }
         case 'Link':
           switch (contentField.items?.linkType) {
             case 'Asset':
