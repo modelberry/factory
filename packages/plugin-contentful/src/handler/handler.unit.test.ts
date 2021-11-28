@@ -22,8 +22,6 @@ const envMissingResponse = [
   [chalk.red('- CONTENTFUL_ENVIRONMENT env variable is missing')],
 ]
 
-const envOkResponse = [[chalk('- modelberry project: ok')]]
-
 // Make sure not to read .env.development
 process.env.NODE_ENV = 'test'
 
@@ -39,6 +37,15 @@ const setEnv = (value?: string) => {
     delete process.env.CONTENTFUL_CMA_TOKEN
     delete process.env.CONTENTFUL_ENVIRONMENT
   }
+}
+
+const myTestType = {
+  interface: {
+    interfaceTags: {
+      '@type': 'testType',
+    },
+  },
+  variables: [],
 }
 
 describe('The handler should', () => {
@@ -66,14 +73,26 @@ describe('The handler should', () => {
     await handler({
       command: 'push',
       options: { force: true },
-      pluginData: { types: {}, dataVar: {} },
+      pluginData: {
+        types: {
+          myTestType,
+        },
+        dataVar: {},
+      },
       type: 'models',
     })
-    expect(consoleSpy.mock.calls).toEqual(envOkResponse)
+    expect(consoleSpy.mock.calls).toEqual([
+      [chalk('- modelberry project: ok')],
+      [chalk('- pushing models to Contentful')],
+      [chalk.black('- all models: testType')],
+      [chalk('- force enabled, ignoring all messages and warnings')],
+    ])
     expect(pushModels).toHaveBeenCalledWith({
       contentfulEnvironment: environmentMock,
       options: { force: true },
-      typeData: {},
+      typeData: {
+        myTestType,
+      },
       validationsMap: {},
     })
   })
@@ -84,14 +103,26 @@ describe('The handler should', () => {
     await handler({
       command: 'push',
       options: { force: true },
-      pluginData: { types: {}, dataVar: {} },
+      pluginData: {
+        types: {
+          myTestType,
+        },
+        dataVar: {},
+      },
       type: 'content',
     })
-    expect(consoleSpy.mock.calls).toEqual(envOkResponse)
+    expect(consoleSpy.mock.calls).toEqual([
+      [chalk('- modelberry project: ok')],
+      [chalk('- pushing content to Contentful')],
+      [chalk.black('- all models: testType')],
+      [chalk('- force enabled, ignoring all messages and warnings')],
+    ])
     expect(pushContent).toHaveBeenCalledWith({
       contentfulEnvironment: environmentMock,
       options: { force: true },
-      typeData: {},
+      typeData: {
+        myTestType,
+      },
     })
   })
 
@@ -104,7 +135,12 @@ describe('The handler should', () => {
       path: 'pull-test-path',
       type: 'models',
     })
-    expect(consoleSpy.mock.calls).toEqual(envOkResponse)
+    expect(consoleSpy.mock.calls).toEqual([
+      [chalk('- modelberry project: ok')],
+      [chalk('- pulling models from Contentful')],
+      [chalk('- write to: pull-test-path')],
+      [chalk('- force enabled, ignoring all messages and warnings')],
+    ])
     expect(pullModels).toHaveBeenCalledWith({
       contentfulEnvironment: environmentMock,
       options: { force: true },
@@ -121,7 +157,12 @@ describe('The handler should', () => {
       path: 'pull-test-path',
       type: 'content',
     })
-    expect(consoleSpy.mock.calls).toEqual(envOkResponse)
+    expect(consoleSpy.mock.calls).toEqual([
+      [chalk('- modelberry project: ok')],
+      [chalk('- pulling content from Contentful')],
+      [chalk('- write to: pull-test-path')],
+      [chalk('- force enabled, ignoring all messages and warnings')],
+    ])
     expect(pullContent).toHaveBeenCalledWith({
       contentfulEnvironment: environmentMock,
       options: { force: true },
