@@ -1,5 +1,12 @@
 # Changelog
 
+### [6.30.6](https://github.com/modelberry/factory/compare/6.30.5...6.30.6) (2021-11-28)
+
+
+### Bug Fixes
+
+* [#37](https://github.com/modelberry/factory/issues/37) ([30052c6](https://github.com/modelberry/factory/commit/30052c663bbe16fa39ee30a7a30f4370876cd911))
+
 ### [6.30.5](https://github.com/modelberry/factory/compare/6.30.4...6.30.5) (2021-11-28)
 
 
