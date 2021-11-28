@@ -1,5 +1,21 @@
 # Changelog
 
+### [6.30.5](https://github.com/modelberry/factory/compare/6.30.4...6.30.5) (2021-11-28)
+
+
+### Bug Fixes
+
+* [#62](https://github.com/modelberry/factory/issues/62) ([7719ad6](https://github.com/modelberry/factory/commit/7719ad6e87b31a2488a350b963ba82f8d2b2d9b2))
+
+
+### Commits
+
+* adapt to jest v27 ([c0294f0](https://github.com/modelberry/factory/commit/c0294f0ff5aeb18a8c421ebe0bbf41dbcf6ba825))
+* add test scripts ([5c26a3b](https://github.com/modelberry/factory/commit/5c26a3b9388dcd3b474dc1aa155b93c3dce2e806))
+* downgrade chalk ([f3e0c96](https://github.com/modelberry/factory/commit/f3e0c96be8eb6b919d41ea1705b7e30fe058e79b))
+* remove snapshots ([6e60e10](https://github.com/modelberry/factory/commit/6e60e10e3b11015b8f6bfbfff143998e5491e1dd))
+* update packages ([f633b07](https://github.com/modelberry/factory/commit/f633b079fd88b22230dba798a2895d9badaed37b))
+
 ### [6.30.3](https://github.com/modelberry/factory/compare/6.30.2...6.30.3) (2021-10-10)
 
 ### [6.30.2](https://github.com/modelberry/factory/compare/6.30.1...6.30.2) (2021-10-03)
