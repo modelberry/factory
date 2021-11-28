@@ -1,4 +1,3 @@
-import chalk from 'chalk'
 import yargs from 'yargs'
 import { PullArgv } from '../commands/pull/pull'
 import { PushArgv } from '../commands/push/push'
@@ -15,25 +14,5 @@ export const getAndGeportOptions = ({ argv }: GetAndGeportOptions) => {
     locale: argv.locale,
     type: argv.type,
   }
-
-  if (options.dryRun) {
-    console.log(
-      chalk.blue(`- dry run enabled, running without making any changes`)
-    )
-  }
-  if (options.force) {
-    console.log(
-      chalk.blue(`- force enabled, ignoring all messages and warnings`)
-    )
-  }
-  if (options.locale) {
-    console.log(
-      chalk.blue(`- overriding @modelberry {@locale} with ${options.locale}`)
-    )
-  }
-  if (options.type) {
-    console.log(chalk.blue(`- filtering by type value ${options.type}`))
-  }
-
   return options
 }

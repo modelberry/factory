@@ -58,7 +58,7 @@ export const pullContent = async ({
     remoteEntries = await contentfulEnvironment.getEntries(query)
     log(
       chalk(
-        `- fetched ${remoteEntries.items.length} of ${remoteEntries.total} entries (limit: ${remoteEntries.limit})`
+        `- fetched ${remoteEntries.items.length} of ${remoteEntries.total} entries (in batches of ${remoteEntries.limit})`
       )
     )
     query.skip = query.skip! + batchSize

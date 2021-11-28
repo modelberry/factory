@@ -23,6 +23,50 @@ export const handler: Handler = async ({
   if (process.env.MODELBERRY_PROJECT_NAME) {
     log(chalk(`- modelberry project: ${process.env.MODELBERRY_PROJECT_NAME}`))
   }
+  if (command === 'push' && pluginData?.types) {
+    const atTypeList = Object.values(pluginData?.types)
+      .map((type) => type.interface.interfaceTags?.['@type'])
+      .filter((atType) => !options?.type || options?.type === atType)
+      .join(', ')
+    const modelList = chalk[atTypeList ? 'black' : 'red'](
+      `- ${options?.type ? 'filtered' : 'all'} models: ${atTypeList || 'none'}`
+    )
+
+    if (type === 'models') {
+      log(chalk(`- pushing models to Contentful`))
+      log(modelList)
+    }
+    if (type === 'content') {
+      log(chalk(`- pushing content to Contentful`))
+      log(modelList)
+    }
+    if (!atTypeList) {
+      return
+    }
+  }
+  if (command === 'pull') {
+    if (type === 'models') {
+      log(chalk(`- pulling models from Contentful`))
+      log(chalk(`- write to: ${path}`))
+    }
+    if (type === 'content') {
+      log(chalk(`- pulling content from Contentful`))
+      log(chalk(`- write to: ${path}`))
+    }
+  }
+
+  if (options.dryRun) {
+    console.log(chalk(`- dry run enabled, running without making any changes`))
+  }
+  if (options.force) {
+    console.log(chalk(`- force enabled, ignoring all messages and warnings`))
+  }
+  if (options.locale) {
+    console.log(
+      chalk(`- overriding @modelberry {@locale} with ${options.locale}`)
+    )
+  }
+
   if (!options.force) {
     const answers = await inquirer.prompt(continueQuestion)
     if (answers.policy === 'q') return

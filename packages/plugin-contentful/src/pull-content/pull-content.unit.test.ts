@@ -28,7 +28,7 @@ describe('Pull content should', () => {
       [chalk('- fetching content types')],
       [chalk('- fetched 1 content type')],
       [chalk('- fetching entries')],
-      [chalk('- fetched 7 of 7 entries (limit: 100)')],
+      [chalk('- fetched 7 of 7 entries (in batches of 100)')],
       [chalk('- new source file ./dummy/contentful-test-topic-content.ts')],
       [chalk('- new source file ./dummy/main-content.ts')],
     ])
@@ -45,7 +45,7 @@ describe('Pull content should', () => {
       [chalk('- fetching content types')],
       [chalk('- fetched 11 content types')],
       [chalk('- fetching entries')],
-      [chalk('- fetched 96 of 96 entries (limit: 100)')],
+      [chalk('- fetched 96 of 96 entries (in batches of 100)')],
       [chalk('- new source file ./dummy/contentful-test-topic-content.ts')],
       [chalk('- new source file ./dummy/contentful-test-action-content.ts')],
       [
