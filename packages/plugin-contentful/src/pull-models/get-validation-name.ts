@@ -7,12 +7,13 @@ export interface GetValidationName {
 
 export const getValidationName = ({ val, vals }: GetValidationName) => {
   const name = generateName({ val, vals })
+  const sanitizedName = name.replace(/\s/g, '')
   // When name already exists, add a unique number
-  if (name in vals) {
+  if (sanitizedName in vals) {
     const objects = Object.values(vals)
-    return `${name}-${objects.length + 1}`
+    return `${sanitizedName}-${objects.length + 1}`
   }
-  return name
+  return sanitizedName
 }
 
 export interface GenerateName {
