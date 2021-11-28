@@ -1,9 +1,9 @@
 module.exports = {
-  roots: ['<rootDir>/src'],
-  transform: {
-    '^.+\\.(ts|tsx)$': 'ts-jest',
-  },
+  roots: [
+    '<rootDir>/src',
+  ],
   moduleNameMapper: {
     '@modelberry/mbfactory/plain': '<rootDir>/../../packages/mbfactory/build/plain.cjs',
   },
+  preset: 'ts-jest',
 }

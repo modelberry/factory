@@ -8,6 +8,7 @@ export interface CreateTsImport {
 export const createTsImport = ({ namedImports, from }: CreateTsImport) => {
   const importSpecifiers = namedImports.map((name) =>
     ts.factory.createImportSpecifier(
+      false,
       undefined,
       ts.factory.createIdentifier(name)
     )
