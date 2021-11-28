@@ -39,9 +39,14 @@ export const getPropertyTree = ({
       },
     },
     sys: {
-      node: { isRequired: true, comment: ignoreComment },
+      node: { isRequired: false, comment: ignoreComment },
       edges: {
-        id: { node: { createKeywordTypeNode: tsSyntaxKind.StringKeyword } },
+        id: {
+          node: {
+            isRequired: false,
+            createKeywordTypeNode: tsSyntaxKind.StringKeyword,
+          },
+        },
       },
     },
   }
