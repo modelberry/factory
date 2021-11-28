@@ -60,7 +60,8 @@
     "build:types": "tsc -p tsconfig.json --declaration --emitDeclarationOnly --declarationDir build",
     "clean": "rimraf build/*",
     "dev": "rollup --config --watch",
-    "dev-poc": "npx jest --testRegex src/research/poc-test.ts --watch"
+    "dev-poc": "npx jest --testRegex src/research/poc-test.ts --watch",
+    "pull-test": "./build/cli.cjs pull content @modelberry/plugin-contentful/plain test1"
   },
   "engines": {
     "node": ">=16.0.0",

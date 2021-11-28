@@ -39,7 +39,9 @@ export const getContentTypesMock = async () => {
 }
 
 export const getEntriesMock = async (query: any) => {
-  const entries = query ? getEntriesQueryResponse : getEntriesResponse
+  const entries = query.content_type
+    ? getEntriesQueryResponse
+    : getEntriesResponse
   for (const entry of entries.items)
     Object.assign(entry, await getContentTypeMock(entry))
   return entries

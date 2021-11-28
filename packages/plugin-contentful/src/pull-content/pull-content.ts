@@ -1,4 +1,4 @@
-import { Environment } from 'contentful-management/types'
+import { Environment, QueryOptions } from 'contentful-management/types'
 import { Options, Node } from '@modelberry/mbfactory/plain'
 import chalk from 'chalk'
 import { writeSourceFiles } from '../lib/write-source-files'
@@ -27,11 +27,18 @@ export const pullContent = async ({
   const localeCode = options.locale || defaultLocale?.code || 'en-US'
   log(chalk(`- remote default locale: ${defaultLocale?.code}`))
   log(chalk(`- pulling locale: ${localeCode}`))
-
+  log(chalk(`- fetching content types`))
   const contentTypes = await fetchContentTypes({
     contentfulEnvironment,
     options,
   })
+  log(
+    chalk(
+      `- fetched ${contentTypes.length} content ${
+        contentTypes.length > 1 ? 'types' : 'type'
+      }`
+    )
+  )
   // Initialize struture to organize entires per content type
   const entriesByContentTypeId: EntriesByContentTypeId = {}
   contentTypes.forEach((contentType) => {
@@ -40,13 +47,22 @@ export const pullContent = async ({
       entryTypeList: [],
     }
   })
-  const query = options.type
-    ? {
-        content_type: 'testTopic',
-      }
-    : undefined
+  const query: QueryOptions = { skip: 0 }
+  if (options.type) query['content_type'] = options.type
   // Fetch all entries
-  const remoteEntries = await contentfulEnvironment.getEntries(query)
+  log(chalk(`- fetching entries`))
+  const batchSize = 100
+  let remoteEntries
+  do {
+    query.limit = batchSize
+    remoteEntries = await contentfulEnvironment.getEntries(query)
+    log(
+      chalk(
+        `- fetched ${remoteEntries.items.length} of ${remoteEntries.total} entries (limit: ${remoteEntries.limit})`
+      )
+    )
+    query.skip = query.skip! + batchSize
+  } while (query.skip <= remoteEntries.total)
   // Find entries and organize them with the content type
   for (const remoteEntry of remoteEntries.items) {
     const contentTypeId = remoteEntry.sys.contentType.sys.id
