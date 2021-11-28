@@ -6,6 +6,8 @@ export interface GetMergedFields {
   newFields: ContentFields[]
 }
 
+const overwriteMerge = (destinationArray: any, sourceArray: any) => sourceArray
+
 export const getMergedFields = ({
   existingfields,
   newFields,
@@ -19,7 +21,8 @@ export const getMergedFields = ({
     if (matchingNewField) {
       mergedFields[existingField.id] = deepmerge(
         existingField,
-        matchingNewField
+        matchingNewField,
+        { arrayMerge: overwriteMerge }
       )
     } else {
       // Ommit all fields that are not new

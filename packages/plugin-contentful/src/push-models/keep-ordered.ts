@@ -11,5 +11,7 @@ export const keepOrdered = ({ orderedIds, newFields }: KeepOrdered) => {
     const field = newFields.find((field) => field.id === fieldId)
     if (field) orderedFields.push(field)
   }
-  return orderedFields
+  // Add omitted fields to the end
+  const omittedFields = newFields.filter((field) => field.omitted)
+  return [...orderedFields, ...omittedFields]
 }
