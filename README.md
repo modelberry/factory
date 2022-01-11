@@ -15,4 +15,4 @@ This repo contains two packages:
 
 ## Docs
 
-Docs are at [modelberry/mbfactory-docs](https://github.com/modelberry/mbfactory-docs/blob/main/README.md).
+Docs and examples are at [modelberry/mbfactory-docs](https://github.com/modelberry/mbfactory-docs/blob/main/README.md).
