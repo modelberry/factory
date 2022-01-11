@@ -39,7 +39,7 @@ const options: YargsOptions = {
 }
 
 yargs(hideBin(process.argv))
-  .scriptName('factory')
+  .scriptName('mbfactory')
   .usage('Usage: $0 <command> [options]')
   .demandCommand(1, 'Command required. Use --help to list all commands.')
   .recommendCommands()
