@@ -1,6 +1,8 @@
 # Pull models
 
-TBW
+```bash
+mbfactory pull <pull-type> <plugin> <path>
+```
 
 ## Table of contents
 

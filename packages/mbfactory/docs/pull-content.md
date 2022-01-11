@@ -1,6 +1,8 @@
 # Pull content
 
-TBW
+```bash
+mbfactory pull <pull-type> <plugin> <path>
+```
 
 ## Table of contents
 

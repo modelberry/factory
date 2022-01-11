@@ -1,6 +1,8 @@
 # Push models
 
-TBW
+```bash
+mbfactory push <push-type> <file>
+```
 
 ## Table of contents
 
