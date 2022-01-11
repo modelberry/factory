@@ -10,5 +10,9 @@ First there was [Wheelroom](https://github.com/wheelroom/wheelroom). Then came t
 
 This repo contains two packages:
 
-- [@modelberry/mbfactory](https://github.com/modelberry/factory/tree/main/packages/mbfactory)
-- [@modelberry/plugin-contentful](https://github.com/modelberry/factory/tree/main/packages/plugin-contentful)
+- [@modelberry/mbfactory](https://github.com/modelberry/factory/blob/main/packages/mbfactory)
+- [@modelberry/plugin-contentful](https://github.com/modelberry/factory/blob/main/packages/plugin-contentful)
+
+## Docs
+
+Docs are at [modelberry/mbfactory-docs](https://github.com/modelberry/mbfactory-docs/blob/main/README.md).
