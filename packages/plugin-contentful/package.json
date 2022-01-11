@@ -61,7 +61,7 @@
   "dependencies": {
     "@modelberry/mbfactory": "6.30.6",
     "chalk": "4.1.2",
-    "contentful-management": "7.45.2",
+    "contentful-management": "7.49.0",
     "deep-equal": "2.0.5",
     "deepmerge": "4.2.2",
     "inquirer": "8.2.0"
