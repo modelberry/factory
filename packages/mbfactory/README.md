@@ -9,10 +9,8 @@ Install [Node.js](https://nodejs.org) version 16 or higher.
 ## Install
 
 ```bash
-npm install -g @modelberry/mbfactory
+npm install -g @modelberry/mbfactory @modelberry/plugin-contentful
 ```
-
-This will install the required plugin `@modelberry/plugin-contentful` as a dependency.
 
 ## Check for succesful install
 
