@@ -1,5 +1,20 @@
 # Changelog
 
+### [6.30.7](https://github.com/modelberry/factory/compare/6.30.6...6.30.7) (2022-01-11)
+
+
+### Commits
+
+* update packages ([082e5b5](https://github.com/modelberry/factory/commit/082e5b5194e1ea73070dcde3c683840657a2c454))
+
+
+### Documentation
+
+* add examples to text ([15dfd10](https://github.com/modelberry/factory/commit/15dfd10069a761f0904d9709fa4bc5afd382d4b1))
+* add getting started ([8d3ecda](https://github.com/modelberry/factory/commit/8d3ecdae906f0c95f47f6acc190064b8319a0936))
+* move docs to mbfactgory-docs ([acd6b42](https://github.com/modelberry/factory/commit/acd6b42b314537be9a6e74a29aa13cec8851fc8d))
+* setup draft outline ([e144bde](https://github.com/modelberry/factory/commit/e144bde8be1be2a2a0cb812b1c06bfd3be1a754b))
+
 ### [6.30.6](https://github.com/modelberry/factory/compare/6.30.5...6.30.6) (2021-11-28)
 
 
