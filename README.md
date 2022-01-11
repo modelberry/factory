@@ -1,14 +1,14 @@
-# Modelberry factory
+# Modelberry
 
-## Under maintenance
-
-This project is at a very early developement stage. Not suitable for production
-yet.
+Sync Typescript to Contentful. Two way. Models and content.
 
 ## Wheelroom
 
-This project is based on project Wheelroom <https://github.com/wheelroom/wheelroom>
+First there was [Wheelroom](https://github.com/wheelroom/wheelroom). Then came the [UI Library](https://blue.modelberry.com). This evolved into the [Modelberry factory](https://www.modelberry.com) as we know it.
 
-## Roadmap
+## Monorepo
 
-- TBW
+This repo contains two packages:
+
+- [@modelberry/mbfactory](https://github.com/modelberry/factory/tree/main/packages/mbfactory)
+- [@modelberry/plugin-contentful](https://github.com/modelberry/factory/tree/main/packages/plugin-contentful)
