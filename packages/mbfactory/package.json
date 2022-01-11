@@ -70,6 +70,7 @@
     "npm": ">=7.11.1"
   },
   "dependencies": {
+    "@modelberry/plugin-contentful": "6.30.6",
     "chalk": "4.1.2",
     "contentful-management": "7.49.0",
     "inquirer": "8.2.0",
