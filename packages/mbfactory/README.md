@@ -22,7 +22,7 @@ mbfactory --help
 
 ## Setup environment
 
-Copy and [the env template](https://github.com/modelberry/factory/blob/main/packages/mbfactory/template.env.development) into: `.env.development`
+Copy [the env template](https://github.com/modelberry/factory/blob/main/packages/mbfactory/template.env.development) to: `.env.development`
 
 Edit the project name and copy the secrets from the Contentful web ui under `Settings -> API keys`.
 
