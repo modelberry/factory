@@ -4,7 +4,7 @@ Sync Typescript to Contentful. Two way. Models and content.
 
 ## Requirements
 
-Install [Node.js](https://nodejs.org) version 16 or higher.
+Mbfactory requires [Node.js](https://nodejs.org) version 16 or higher.
 
 ## Install
 
@@ -26,6 +26,16 @@ Edit the env file and set:
 
 - `CONTENTFUL_PERSONAL_ACCESS_TOKEN` ([where can I find this?](https://www.contentful.com/help/personal-access-tokens/#how-to-get-a-personal-access-token-the-web-app))
 - `CONTENTFUL_SPACE_ID` ([where can I find this?](https://www.contentful.com/help/find-space-id/))
+
+## Typescript compiler API
+
+Mbfactory uses the [Typescript compiler API](https://github.com/Microsoft/TypeScript/wiki/Using-the-Compiler-API) which requires a valid `tsconfig.json`. Use your existing config or create an empty one:
+
+```json
+{
+  "compilerOptions": {}
+}
+```
 
 ## Next
 
