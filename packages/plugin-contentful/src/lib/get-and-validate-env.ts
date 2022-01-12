@@ -14,8 +14,8 @@ export const getAndValidateEnv = () => {
     log(chalk.red(`- CONTENTFUL_SPACE_ID env variable is missing`))
     isValid = false
   }
-  if (!process.env.CONTENTFUL_CMA_TOKEN) {
-    log(chalk.red(`- CONTENTFUL_CMA_TOKEN env variable is missing`))
+  if (!process.env.CONTENTFUL_PERSONAL_ACCESS_TOKEN) {
+    log(chalk.red(`- CONTENTFUL_PERSONAL_ACCESS_TOKEN env variable is missing`))
     isValid = false
   }
   if (!process.env.CONTENTFUL_ENVIRONMENT) {

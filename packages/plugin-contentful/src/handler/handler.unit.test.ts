@@ -18,7 +18,7 @@ import { handler } from './handler'
 const envMissingResponse = [
   [chalk.blue('- MODELBERRY_PROJECT_NAME env variable not found')],
   [chalk.red('- CONTENTFUL_SPACE_ID env variable is missing')],
-  [chalk.red('- CONTENTFUL_CMA_TOKEN env variable is missing')],
+  [chalk.red('- CONTENTFUL_PERSONAL_ACCESS_TOKEN env variable is missing')],
   [chalk.red('- CONTENTFUL_ENVIRONMENT env variable is missing')],
 ]
 
@@ -29,12 +29,12 @@ const setEnv = (value?: string) => {
   if (value) {
     process.env.MODELBERRY_PROJECT_NAME = value
     process.env.CONTENTFUL_SPACE_ID = value
-    process.env.CONTENTFUL_CMA_TOKEN = value
+    process.env.CONTENTFUL_PERSONAL_ACCESS_TOKEN = value
     process.env.CONTENTFUL_ENVIRONMENT = value
   } else {
     delete process.env.MODELBERRY_PROJECT_NAME
     delete process.env.CONTENTFUL_SPACE_ID
-    delete process.env.CONTENTFUL_CMA_TOKEN
+    delete process.env.CONTENTFUL_PERSONAL_ACCESS_TOKEN
     delete process.env.CONTENTFUL_ENVIRONMENT
   }
 }

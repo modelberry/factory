@@ -24,7 +24,7 @@ Copy [the env template](https://github.com/modelberry/factory/blob/main/packages
 
 Edit the env file and set:
 
-- `CONTENTFUL_CMA_TOKEN` ([where can I find this?](https://www.contentful.com/help/personal-access-tokens/#how-to-get-a-personal-access-token-the-web-app))
+- `CONTENTFUL_PERSONAL_ACCESS_TOKEN` ([where can I find this?](https://www.contentful.com/help/personal-access-tokens/#how-to-get-a-personal-access-token-the-web-app))
 - `CONTENTFUL_SPACE_ID` ([where can I find this?](https://www.contentful.com/help/find-space-id/))
 
 ## Next
