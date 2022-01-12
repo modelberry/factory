@@ -22,7 +22,10 @@ mbfactory --help
 
 Copy [the env template](https://github.com/modelberry/factory/blob/main/packages/mbfactory/template.env.development) to: `.env.development`
 
-Edit the project name and copy the secrets from the Contentful web ui under `Settings -> API keys`.
+Edit the env file and set:
+
+- `CONTENTFUL_CMA_TOKEN` ([where can I find this?](https://www.contentful.com/help/personal-access-tokens/#how-to-get-a-personal-access-token-the-web-app))
+- `CONTENTFUL_SPACE_ID` ([where can I find this?](https://www.contentful.com/help/find-space-id/))
 
 ## Next
 
