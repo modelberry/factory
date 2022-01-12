@@ -9,28 +9,32 @@ export const checkTags = ({ fieldTags, interfaceTags }: CheckTags) => {
   const log = console.log
 
   if (interfaceTags) {
-    const validInterfaceTags = Object.keys(allTags)
-      .filter((tagName) => allTags[tagName].interface)
-      .join(', ')
+    const validInterfaceTags = Object.keys(allTags).filter(
+      (tagName) => allTags[tagName].interface
+    )
     for (const interfaceTag of Object.keys(interfaceTags)) {
-      if (!(interfaceTag in allTags)) {
+      if (!validInterfaceTags.includes(interfaceTag)) {
         log(
           chalk.red(
-            `- Unknown interface tag: ${interfaceTag}. Valid interface tags are: ${validInterfaceTags}`
+            `- Unknown interface tag: ${interfaceTag}. Valid interface tags are: ${validInterfaceTags.join(
+              ', '
+            )}`
           )
         )
       }
     }
   }
   if (fieldTags) {
-    const validFieldTags = Object.keys(allTags)
-      .filter((tagName) => allTags[tagName].field)
-      .join(', ')
+    const validFieldTags = Object.keys(allTags).filter(
+      (tagName) => allTags[tagName].field
+    )
     for (const fieldTag of Object.keys(fieldTags)) {
-      if (!(fieldTag in allTags)) {
+      if (!validFieldTags.includes(fieldTag)) {
         log(
           chalk.red(
-            `- Unknown field tag: ${fieldTag}. Valid field tags are: ${validFieldTags}`
+            `- Unknown field tag: ${fieldTag}. Valid field tags are: ${validFieldTags.join(
+              ', '
+            )}`
           )
         )
       }

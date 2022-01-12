@@ -13,7 +13,7 @@ export const allTags: AllTags = {
     field: true,
   },
   '@displayField': {
-    field: true,
+    interface: true,
   },
   '@ignore': {
     field: true,

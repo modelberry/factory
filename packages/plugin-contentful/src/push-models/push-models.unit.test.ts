@@ -147,7 +147,7 @@ describe('Push models should', () => {
       [chalk.bold.underline('\nTopic')],
       [
         chalk.red(
-          '- Unknown interface tag: @bad. Valid interface tags are: @description, @locale, @localized, @name, @plugin, @type'
+          '- Unknown interface tag: @bad. Valid interface tags are: @description, @displayField, @locale, @localized, @name, @plugin, @type'
         ),
       ],
       [chalk.underline('heading')],
@@ -167,7 +167,7 @@ describe('Push models should', () => {
       ...headingResponse,
       [
         chalk.red(
-          '- Unknown field tag: @bad. Valid field tags are: @description, @disabled, @displayField, @ignore, @helpText, @itemsType, @itemsLinkType, @itemsValidations, @linkType, @locale, @localized, @name, @omitted, @required, @type, @validations, @widgetId'
+          '- Unknown field tag: @bad. Valid field tags are: @description, @disabled, @ignore, @helpText, @itemsType, @itemsLinkType, @itemsValidations, @linkType, @locale, @localized, @name, @omitted, @required, @type, @validations, @widgetId'
         ),
       ],
       [chalk('- editor control singleLine')],
