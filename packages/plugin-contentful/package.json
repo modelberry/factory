@@ -1,6 +1,6 @@
 {
   "name": "@modelberry/plugin-contentful",
-  "version": "6.30.9",
+  "version": "6.30.10",
   "description": "Contentful plugin for Modelberry factory",
   "keywords": [
     "any",
