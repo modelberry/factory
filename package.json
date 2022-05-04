@@ -1,6 +1,6 @@
 {
   "name": "@modelberry/factory",
-  "version": "6.30.11",
+  "version": "6.30.12",
   "private": true,
   "description": "Modelberry factory command line tool with plugins",
   "keywords": [

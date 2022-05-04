@@ -1,5 +1,13 @@
 # Changelog
 
+### [6.30.12](https://github.com/modelberry/factory/compare/6.30.11...6.30.12) (2022-05-04)
+
+
+### Commits
+
+* **deps:** bump follow-redirects in /packages/plugin-contentful ([742f02f](https://github.com/modelberry/factory/commit/742f02f4ee5de79be3f99c275eb5e7be0080cbf3))
+* update packages ([0ffa1b8](https://github.com/modelberry/factory/commit/0ffa1b8d945ce34a764d9c47b9faa96bafc9df77))
+
 ### [6.30.11](https://github.com/modelberry/factory/compare/6.30.10...6.30.11) (2022-03-28)
 
 ### [6.30.10](https://github.com/modelberry/factory/compare/6.30.9...6.30.10) (2022-03-28)
