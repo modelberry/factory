@@ -38,6 +38,44 @@ const options: YargsOptions = {
   },
 }
 
+const pushBuilder: yargs.BuilderCallback<any, any> = (yargs) => {
+  yargs
+    .positional('push-type', {
+      type: 'string',
+      describe: 'push models or content',
+      choices: ['models', 'content'],
+    })
+    .positional('file', {
+      type: 'string',
+      describe: 'path to source file',
+    })
+}
+
+const pushHandler = (argv: yargs.ArgumentsCamelCase<PushArgv>) => {
+  pushCommand({ argv })
+}
+
+const pullBuilder: yargs.BuilderCallback<any, any> = (yargs) => {
+  yargs
+    .positional('pulll-type', {
+      type: 'string',
+      describe: 'pull models or content',
+      choices: ['models', 'content'],
+    })
+    .positional('plugin', {
+      type: 'string',
+      describe: 'plugin to use for pull',
+    })
+    .positional('path', {
+      type: 'string',
+      describe: 'path where source files are created',
+    })
+}
+
+const pullHandler = (argv: yargs.ArgumentsCamelCase<PullArgv>) => {
+  pullCommand({ argv })
+}
+
 yargs(hideBin(process.argv))
   .scriptName('mbfactory')
   .usage('Usage: $0 <command> [options]')
@@ -50,44 +88,14 @@ yargs(hideBin(process.argv))
   .command(
     'push <push-type> <file>',
     'push models or content to content platform',
-    (yargs) => {
-      yargs
-        .positional('push-type', {
-          type: 'string',
-          describe: 'push models or content',
-          choices: ['models', 'content'],
-        })
-        .positional('file', {
-          type: 'string',
-          describe: 'path to source file',
-        })
-    },
-    (argv: yargs.Arguments<PushArgv>) => {
-      pushCommand({ argv })
-    }
+    pushBuilder,
+    pushHandler
   )
   .command(
     'pull <pull-type> <plugin> <path>',
     'pull models or content from content platform',
-    (yargs: yargs.Argv<any>) => {
-      yargs
-        .positional('pulll-type', {
-          type: 'string',
-          describe: 'pull models or content',
-          choices: ['models', 'content'],
-        })
-        .positional('plugin', {
-          type: 'string',
-          describe: 'plugin to use for pull',
-        })
-        .positional('path', {
-          type: 'string',
-          describe: 'path where source files are created',
-        })
-    },
-    (argv: yargs.Arguments<PullArgv>) => {
-      pullCommand({ argv })
-    }
+    pullBuilder,
+    pullHandler
   )
   .options(options)
   .demandCommand()
