@@ -1,4 +1,11 @@
-import { Environment, QueryOptions } from 'contentful-management/types'
+import {
+  Collection,
+  Entry,
+  EntryProps,
+  Environment,
+  KeyValueMap,
+  QueryOptions,
+} from 'contentful-management/types'
 import { Options, Node } from '@modelberry/mbfactory/plain'
 import chalk from 'chalk'
 import { writeSourceFiles } from '../lib/write-source-files'
@@ -52,19 +59,21 @@ export const pullContent = async ({
   // Fetch all entries
   log(chalk(`- fetching entries`))
   const batchSize = 100
-  let remoteEntries
+  let remoteEntries: Entry[] = []
+  let collection: Collection<Entry, EntryProps<KeyValueMap>>
   do {
     query.limit = batchSize
-    remoteEntries = await contentfulEnvironment.getEntries(query)
+    collection = await contentfulEnvironment.getEntries(query)
+    remoteEntries = remoteEntries.concat(collection.items)
     log(
       chalk(
-        `- fetched ${remoteEntries.items.length} of ${remoteEntries.total} entries (in batches of ${remoteEntries.limit})`
+        `- fetched ${remoteEntries.length} of ${collection.total} entries (in batches of ${collection.limit})`
       )
     )
     query.skip = query.skip! + batchSize
-  } while (query.skip <= remoteEntries.total)
+  } while (query.skip <= collection.total)
   // Find entries and organize them with the content type
-  for (const remoteEntry of remoteEntries.items) {
+  for (const remoteEntry of remoteEntries) {
     const contentTypeId = remoteEntry.sys.contentType.sys.id
     const entryType: EntryType = { sys: remoteEntry.sys, fields: {} }
     // Find fields for content type and entry and organize them together
