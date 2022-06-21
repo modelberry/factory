@@ -54,7 +54,7 @@ export const testTopic: ContentfulTestTopic[] = [
     ],
     Array [
       "./dummy/main-content.ts",
-      "import { testTopic } from './contentful-test-topic-content'
+      "export * from './contentful-test-topic-content'
 ",
     ],
   ],
@@ -125,7 +125,7 @@ export const testTopic: ContentfulTestTopic[] = [
     ],
     Array [
       "./dummy/main-content.ts",
-      "import { testTopic } from './contentful-test-topic-content'
+      "export * from './contentful-test-topic-content'
 ",
     ],
     Array [
@@ -1546,17 +1546,17 @@ export const action: ContentfulAction[] = [
     ],
     Array [
       "./dummy/main-content.ts",
-      "import { testTopic } from './contentful-test-topic-content'
-import { testAction } from './contentful-test-action-content'
-import { navigationSection } from './contentful-navigation-section-content'
-import { topicSection } from './contentful-topic-section-content'
-import { topic } from './contentful-topic-content'
-import { textSection } from './contentful-text-section-content'
-import { navigationSegment } from './contentful-navigation-segment-content'
-import { page } from './contentful-page-content'
-import { globals } from './contentful-globals-content'
-import { embed } from './contentful-embed-content'
-import { action } from './contentful-action-content'
+      "export * from './contentful-test-topic-content'
+export * from './contentful-test-action-content'
+export * from './contentful-navigation-section-content'
+export * from './contentful-topic-section-content'
+export * from './contentful-topic-content'
+export * from './contentful-text-section-content'
+export * from './contentful-navigation-segment-content'
+export * from './contentful-page-content'
+export * from './contentful-globals-content'
+export * from './contentful-embed-content'
+export * from './contentful-action-content'
 ",
     ],
   ],

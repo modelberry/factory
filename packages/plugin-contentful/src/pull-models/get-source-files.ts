@@ -1,5 +1,6 @@
 import {
   createTsInterface,
+  createTsExport,
   createTsImport,
   firstUpperCase,
   camelToKebab,
@@ -64,8 +65,8 @@ export const getSourceFiles = async ({
     })
 
     // Add imports for required types
-    const uniqueNzmedImports = Array.from(new Set(namedImports))
-    const entryImportStatements = uniqueNzmedImports.map((ni) =>
+    const uniqueNamedImports = Array.from(new Set(namedImports))
+    const entryImportStatements = uniqueNamedImports.map((ni) =>
       createTsImport({
         namedImports: [`${ni}`],
         from: `./${camelToKebab(firstLowerCase(ni))}`,
@@ -80,8 +81,8 @@ export const getSourceFiles = async ({
     })
     // Add import statements to be added to the main file
     allTypesImportStatements.push(
-      createTsImport({
-        namedImports: [interfaceName],
+      createTsExport({
+        namedExports: [],
         from: `./${filenameWithoutExt}`,
       })
     )

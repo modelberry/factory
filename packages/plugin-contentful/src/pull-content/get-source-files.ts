@@ -2,6 +2,7 @@ import {
   createContentVarStatement,
   firstUpperCase,
   camelToKebab,
+  createTsExport,
   createTsImport,
   Node,
 } from '@modelberry/mbfactory/plain'
@@ -89,8 +90,8 @@ export const getSourceFiles = ({
     })
     // Add import statements to be added to the main file
     allTypesImportStatements.push(
-      createTsImport({
-        namedImports: [varName],
+      createTsExport({
+        namedExports: [],
         from: `./${filenameWithoutExt}`,
       })
     )

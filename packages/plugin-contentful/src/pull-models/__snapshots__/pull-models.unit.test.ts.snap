@@ -933,17 +933,17 @@ export interface ContentfulAction {
     Array [
       "./dummy/main.ts",
       "import { ModelberryPluginData } from '@modelberry/plugin-contentful/plain'
-import { ContentfulTestTopic } from './contentful-test-topic'
-import { ContentfulTestAction } from './contentful-test-action'
-import { ContentfulNavigationSection } from './contentful-navigation-section'
-import { ContentfulTopicSection } from './contentful-topic-section'
-import { ContentfulTopic } from './contentful-topic'
-import { ContentfulTextSection } from './contentful-text-section'
-import { ContentfulNavigationSegment } from './contentful-navigation-segment'
-import { ContentfulPage } from './contentful-page'
-import { ContentfulGlobals } from './contentful-globals'
-import { ContentfulEmbed } from './contentful-embed'
-import { ContentfulAction } from './contentful-action'
+export * from './contentful-test-topic'
+export * from './contentful-test-action'
+export * from './contentful-navigation-section'
+export * from './contentful-topic-section'
+export * from './contentful-topic'
+export * from './contentful-text-section'
+export * from './contentful-navigation-segment'
+export * from './contentful-page'
+export * from './contentful-globals'
+export * from './contentful-embed'
+export * from './contentful-action'
 export const modelberryPluginData: ModelberryPluginData = {
   '@modelberry/plugin-contentful/plain': {
     validations: {
@@ -1131,7 +1131,7 @@ export interface ContentfulTestTopic {
     Array [
       "./dummy/main.ts",
       "import { ModelberryPluginData } from '@modelberry/plugin-contentful/plain'
-import { ContentfulTestTopic } from './contentful-test-topic'
+export * from './contentful-test-topic'
 export const modelberryPluginData: ModelberryPluginData = {
   '@modelberry/plugin-contentful/plain': {
     validations: {
@@ -2157,17 +2157,17 @@ export interface ContentfulAction {
     Array [
       "./dummy/main.ts",
       "import { ModelberryPluginData } from '@modelberry/plugin-contentful/plain'
-import { ContentfulTestTopic } from './contentful-test-topic'
-import { ContentfulTestAction } from './contentful-test-action'
-import { ContentfulNavigationSection } from './contentful-navigation-section'
-import { ContentfulTopicSection } from './contentful-topic-section'
-import { ContentfulTopic } from './contentful-topic'
-import { ContentfulTextSection } from './contentful-text-section'
-import { ContentfulNavigationSegment } from './contentful-navigation-segment'
-import { ContentfulPage } from './contentful-page'
-import { ContentfulGlobals } from './contentful-globals'
-import { ContentfulEmbed } from './contentful-embed'
-import { ContentfulAction } from './contentful-action'
+export * from './contentful-test-topic'
+export * from './contentful-test-action'
+export * from './contentful-navigation-section'
+export * from './contentful-topic-section'
+export * from './contentful-topic'
+export * from './contentful-text-section'
+export * from './contentful-navigation-segment'
+export * from './contentful-page'
+export * from './contentful-globals'
+export * from './contentful-embed'
+export * from './contentful-action'
 export const modelberryPluginData: ModelberryPluginData = {
   '@modelberry/plugin-contentful/plain': {
     validations: {
