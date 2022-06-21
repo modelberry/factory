@@ -1,10 +1,21 @@
-## @modelberry/plugin-contentful 6.30.13
+## @modelberry/mbfactory 6.30.14
 
-### [6.30.13](https://github.com/modelberry/factory/compare/6.30.12...6.30.13) (2022-06-07)
+### [6.30.14](https://github.com/modelberry/factory/compare/6.30.13...6.30.14) (2022-06-21)
 
 
 ### Bug Fixes
 
-* [#68](https://github.com/modelberry/factory/issues/68) ([0c8c55c](https://github.com/modelberry/factory/commit/0c8c55cd97221de66c3f96dd552d349a35a53f94))
+* [#60](https://github.com/modelberry/factory/issues/60) ([c582334](https://github.com/modelberry/factory/commit/c58233467771b012790a6f6c6fa8184c56a186d8))
+
+
+
+## @modelberry/plugin-contentful 6.30.14
+
+### [6.30.14](https://github.com/modelberry/factory/compare/6.30.13...6.30.14) (2022-06-21)
+
+
+### Bug Fixes
+
+* [#60](https://github.com/modelberry/factory/issues/60) ([c582334](https://github.com/modelberry/factory/commit/c58233467771b012790a6f6c6fa8184c56a186d8))
 
 
