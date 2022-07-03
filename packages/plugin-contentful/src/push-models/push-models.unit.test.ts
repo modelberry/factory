@@ -2,14 +2,15 @@ import chalk from 'chalk'
 import { environmentMock } from '../contentful-mock/contentful-mock'
 import { pushModels } from './push-models'
 import { allTags } from './__fixtures__/all-tags'
+import { badArraySymbol } from './__fixtures__/bad-array-symbol'
+import { badFieldTag } from './__fixtures__/bad-field-tag'
+import { badInterfaceTag } from './__fixtures__/bad-interface-tag'
 import { badValidation } from './__fixtures__/bad-validation'
 import { ignoreField } from './__fixtures__/ignore-field'
 import { ignoreInterface } from './__fixtures__/ignore-interface'
+import { multipleBadValidations } from './__fixtures__/multiple-bad-validations'
 import { noFieldType } from './__fixtures__/no-field-type'
 import { noInterfaceType } from './__fixtures__/no-interface-type'
-import { multipleBadValidations } from './__fixtures__/multiple-bad-validations'
-import { badFieldTag } from './__fixtures__/bad-field-tag'
-import { badInterfaceTag } from './__fixtures__/bad-interface-tag'
 
 const headingResponse = [
   [chalk.bold.underline('\nTopic')],
@@ -172,6 +173,20 @@ describe('Push models should', () => {
       ],
       [chalk('- editor control singleLine')],
       ...pushingResponse,
+    ])
+  })
+  test('process badArraySymbol correctly', async () => {
+    await pushModels({
+      contentfulEnvironment: environmentMock,
+      options: { force: true },
+      typeData: badArraySymbol,
+      validationsMap: { mockedValidation: {} },
+    })
+    expect(consoleSpy.mock.calls).toEqual([
+      [chalk.bold.underline('\nTopic')],
+      [chalk.underline('keywords')],
+      [chalk.red('- @type=Array, @itemsType=Symbol must be of type string')],
+      ...notPushingResponse,
     ])
   })
 })

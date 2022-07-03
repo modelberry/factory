@@ -50,6 +50,14 @@ export const getModelFieldsAndControls = ({
       log(chalk.red(`- @type=Array, @itemsType=Link without @itemsLinkType`))
       continue
     }
+    if (
+      tags['@type'] === 'Array' &&
+      tags['@itemsType'] === 'Symbol' &&
+      field.type?.trim().startsWith('{')
+    ) {
+      log(chalk.red(`- @type=Array, @itemsType=Symbol must be of type string`))
+      continue
+    }
 
     const newField = getModelField({
       fieldIdWithoutPostfix,
