@@ -1,19 +1,26 @@
-## @modelberry/mbfactory 6.30.15
+## @modelberry/mbfactory 6.30.16
 
-### [6.30.15](https://github.com/modelberry/factory/compare/6.30.14...6.30.15) (2022-07-03)
+### [6.30.16](https://github.com/modelberry/factory/compare/6.30.15...6.30.16) (2022-07-03)
 
 
 
-## @modelberry/plugin-contentful 6.30.15
+## @modelberry/plugin-contentful 6.30.16
 
-### [6.30.15](https://github.com/modelberry/factory/compare/6.30.14...6.30.15) (2022-07-03)
+### [6.30.16](https://github.com/modelberry/factory/compare/6.30.15...6.30.16) (2022-07-03)
 
 
 ### Bug Fixes
 
-* [#43](https://github.com/modelberry/factory/issues/43) ([33350fc](https://github.com/modelberry/factory/commit/33350fc459b3732055c273d3f0f795fabb2a241f))
-* [#45](https://github.com/modelberry/factory/issues/45) ([f2434e1](https://github.com/modelberry/factory/commit/f2434e1b77d27fc795234ffada9ab0bc17476a3f))
-* [#50](https://github.com/modelberry/factory/issues/50) ([5755022](https://github.com/modelberry/factory/commit/57550225369641bc19823b7b20b8e217604d70b7))
-* [#57](https://github.com/modelberry/factory/issues/57) ([2f4e995](https://github.com/modelberry/factory/commit/2f4e99504df602669f000a513d99dcb2a43e70a7))
+* [#51](https://github.com/modelberry/factory/issues/51), [#52](https://github.com/modelberry/factory/issues/52) ([2c4bebf](https://github.com/modelberry/factory/commit/2c4bebfa0f07a286db5f633b442da31803149525))
+
+
+### Commits
+
+* do not repeat chalk lines ([a4587fc](https://github.com/modelberry/factory/commit/a4587fcf516edcc197634ee21e1bb0fda03323ff))
+
+
+### Code Refactoring
+
+* into separate fetchEntries ([889c7f6](https://github.com/modelberry/factory/commit/889c7f64be5d489e6e801bd09a78e1370b490bbf))
 
 
