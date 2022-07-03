@@ -13,13 +13,13 @@ describe('Push content should', () => {
 
   const contentfulActionResponse = [
     [chalk.bold.underline('\nContentfulAction')],
-    [chalk.underline('myActions')],
+    [chalk('- parsing js variable: myActions')],
     [chalk('- pushing entry testAction with 1 fields (id:myContentActionId)')],
   ]
 
   const contentfulTopicResponse = [
     [chalk.bold.underline('\nContentfulTopic')],
-    [chalk.underline('myTopics')],
+    [chalk('- parsing js variable: myTopics')],
     [chalk('- pushing entry testTopic with 2 fields')],
   ]
 

@@ -40,7 +40,7 @@ export const pushContent = async ({
     }
 
     for (const mbVariable of modelberryType.variables) {
-      console.log(chalk.underline(`${mbVariable.name}`))
+      console.log(chalk(`- parsing js variable: ${mbVariable.name}`))
       const valueFn = new Function(`return ${mbVariable.value}`)
       const fieldsArray = valueFn() as KeyValueMap[]
       for (const fields of fieldsArray) {
