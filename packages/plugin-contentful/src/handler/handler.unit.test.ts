@@ -83,6 +83,8 @@ describe('The handler should', () => {
     })
     expect(consoleSpy.mock.calls).toEqual([
       [chalk('- modelberry project: ok')],
+      [chalk('- contentful space id: ok')],
+      [chalk('- contentful environment: ok')],
       [chalk('- pushing models to Contentful')],
       [chalk.black('- all models: testType')],
       [chalk('- force enabled, ignoring all messages and warnings')],
@@ -113,6 +115,8 @@ describe('The handler should', () => {
     })
     expect(consoleSpy.mock.calls).toEqual([
       [chalk('- modelberry project: ok')],
+      [chalk('- contentful space id: ok')],
+      [chalk('- contentful environment: ok')],
       [chalk('- pushing content to Contentful')],
       [chalk.black('- all models: testType')],
       [chalk('- force enabled, ignoring all messages and warnings')],
@@ -137,6 +141,8 @@ describe('The handler should', () => {
     })
     expect(consoleSpy.mock.calls).toEqual([
       [chalk('- modelberry project: ok')],
+      [chalk('- contentful space id: ok')],
+      [chalk('- contentful environment: ok')],
       [chalk('- pulling models from Contentful')],
       [chalk('- write to: pull-test-path')],
       [chalk('- force enabled, ignoring all messages and warnings')],
@@ -159,6 +165,8 @@ describe('The handler should', () => {
     })
     expect(consoleSpy.mock.calls).toEqual([
       [chalk('- modelberry project: ok')],
+      [chalk('- contentful space id: ok')],
+      [chalk('- contentful environment: ok')],
       [chalk('- pulling content from Contentful')],
       [chalk('- write to: pull-test-path')],
       [chalk('- force enabled, ignoring all messages and warnings')],

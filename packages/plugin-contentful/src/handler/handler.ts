@@ -20,9 +20,10 @@ export const handler: Handler = async ({
   const log = console.log
   const isValid = getAndValidateEnv()
   if (!isValid) return
-  if (process.env.MODELBERRY_PROJECT_NAME) {
-    log(chalk(`- modelberry project: ${process.env.MODELBERRY_PROJECT_NAME}`))
-  }
+  log(chalk(`- modelberry project: ${process.env.MODELBERRY_PROJECT_NAME}`))
+  log(chalk(`- contentful space id: ${process.env.CONTENTFUL_SPACE_ID}`))
+  log(chalk(`- contentful environment: ${process.env.CONTENTFUL_ENVIRONMENT}`))
+
   if (command === 'push' && pluginData?.types) {
     const atTypeList = Object.values(pluginData?.types)
       .map((type) => type.interface.interfaceTags?.['@type'])
