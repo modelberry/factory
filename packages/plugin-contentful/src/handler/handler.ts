@@ -9,6 +9,7 @@ import { getContentfulEnvironment } from '../lib/get-contentful-environment'
 import { continueQuestion } from '../lib/questions'
 import { pullModels } from '../pull-models/pull-models'
 import { pullContent } from '../pull-content/pull-content'
+import { fetchStatistics } from '../lib/fetch-statistics'
 
 export const handler: Handler = async ({
   command,
@@ -57,23 +58,25 @@ export const handler: Handler = async ({
   }
 
   if (options.dryRun) {
-    console.log(chalk(`- dry run enabled, running without making any changes`))
+    log(chalk(`- dry run enabled, running without making any changes`))
   }
   if (options.force) {
-    console.log(chalk(`- force enabled, ignoring all messages and warnings`))
+    log(chalk(`- force enabled, ignoring all messages and warnings`))
   }
   if (options.locale) {
-    console.log(
-      chalk(`- overriding @modelberry {@locale} with ${options.locale}`)
-    )
+    log(chalk(`- overriding @modelberry {@locale} with ${options.locale}`))
   }
+
+  const contentfulEnvironment = await getContentfulEnvironment()
+  const statistics = await fetchStatistics({ contentfulEnvironment })
+  log(chalk(`- entries found at Contentful: ${statistics.entriesTotal}`))
+  log(chalk(`- models found at Contentful: ${statistics.contentTypesTotal}`))
 
   if (!options.force) {
     const answers = await inquirer.prompt(continueQuestion)
     if (answers.policy === 'q') return
   }
 
-  const contentfulEnvironment = await getContentfulEnvironment()
   if (command === 'push' && type === 'models') {
     if (!pluginData) return
     const dataVarObj = getModelberryPluginData({ dataVar: pluginData.dataVar })

@@ -28,6 +28,11 @@ const envResponseOk = [
   [chalk('- contentful environment: ok')],
 ]
 
+const statisticsResponseOk = [
+  [chalk('- entries found at Contentful: 96')],
+  [chalk('- models found at Contentful: 11')],
+]
+
 // Make sure not to read .env.development
 process.env.NODE_ENV = 'test'
 
@@ -92,6 +97,7 @@ describe('The handler should', () => {
       [chalk('- pushing models to Contentful')],
       [chalk.black('- all models: testType')],
       [chalk('- force enabled, ignoring all messages and warnings')],
+      ...statisticsResponseOk,
     ])
     expect(pushModels).toHaveBeenCalledWith({
       contentfulEnvironment: environmentMock,
@@ -122,6 +128,7 @@ describe('The handler should', () => {
       [chalk('- pushing content to Contentful')],
       [chalk.black('- all models: testType')],
       [chalk('- force enabled, ignoring all messages and warnings')],
+      ...statisticsResponseOk,
     ])
     expect(pushContent).toHaveBeenCalledWith({
       contentfulEnvironment: environmentMock,
@@ -146,6 +153,7 @@ describe('The handler should', () => {
       [chalk('- pulling models from Contentful')],
       [chalk('- write to: pull-test-path')],
       [chalk('- force enabled, ignoring all messages and warnings')],
+      ...statisticsResponseOk,
     ])
     expect(pullModels).toHaveBeenCalledWith({
       contentfulEnvironment: environmentMock,
@@ -168,6 +176,7 @@ describe('The handler should', () => {
       [chalk('- pulling content from Contentful')],
       [chalk('- write to: pull-test-path')],
       [chalk('- force enabled, ignoring all messages and warnings')],
+      ...statisticsResponseOk,
     ])
     expect(pullContent).toHaveBeenCalledWith({
       contentfulEnvironment: environmentMock,
