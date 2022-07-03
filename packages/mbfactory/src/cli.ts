@@ -1,5 +1,6 @@
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
+import { DiffArgv, diffCommand } from './commands/diff/diff'
 import { PullArgv, pullCommand } from './commands/pull/pull'
 import { PushArgv, pushCommand } from './commands/push/push'
 
@@ -40,6 +41,9 @@ const options: YargsOptions = {
   },
 }
 
+/**
+ * PUSH COMMAND
+ *********************************/
 const pushBuilder: yargs.BuilderCallback<any, any> = (yargs) => {
   yargs
     .positional('push-type', {
@@ -56,6 +60,10 @@ const pushBuilder: yargs.BuilderCallback<any, any> = (yargs) => {
 const pushHandler = (argv: yargs.ArgumentsCamelCase<PushArgv>) => {
   pushCommand({ argv })
 }
+
+/**
+ * PULL COMMAND
+ *********************************/
 
 const pullBuilder: yargs.BuilderCallback<any, any> = (yargs) => {
   yargs
@@ -78,6 +86,27 @@ const pullHandler = (argv: yargs.ArgumentsCamelCase<PullArgv>) => {
   pullCommand({ argv })
 }
 
+/**
+ * DIFF COMMAND
+ *********************************/
+
+const diffBuilder: yargs.BuilderCallback<any, any> = (yargs) => {
+  yargs
+    .positional('diffl-type', {
+      type: 'string',
+      describe: 'diff models or content',
+      choices: ['models', 'content'],
+    })
+    .positional('file', {
+      type: 'string',
+      describe: 'path to source file',
+    })
+}
+
+const diffHandler = (argv: yargs.ArgumentsCamelCase<DiffArgv>) => {
+  diffCommand({ argv })
+}
+
 yargs(hideBin(process.argv))
   .scriptName('mbfactory')
   .usage('Usage: $0 <command> [options]')
@@ -98,6 +127,12 @@ yargs(hideBin(process.argv))
     'pull models or content from content platform',
     pullBuilder,
     pullHandler
+  )
+  .command(
+    'diff <diff-type> <file>',
+    'compare locally defined models or content with content platform',
+    diffBuilder,
+    diffHandler
   )
   .options(options)
   .demandCommand()

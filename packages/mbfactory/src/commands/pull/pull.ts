@@ -1,7 +1,7 @@
 import { mkdir } from 'fs/promises'
 import yargs from 'yargs'
 import { ArgvType, callHandler, Options } from '../../call-handler/call-handler'
-import { getAndGeportOptions } from '../../lib/get-and-report-options'
+import { getAndReportOptions } from '../../lib/get-and-report-options'
 
 export type PullArgv = Options & {
   path: string
@@ -14,7 +14,7 @@ export interface PullCommand {
 }
 
 export const pullCommand = async ({ argv }: PullCommand) => {
-  const options = getAndGeportOptions({ argv })
+  const options = getAndReportOptions({ argv })
 
   await mkdir(argv.path, { recursive: true })
 

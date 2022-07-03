@@ -7,16 +7,16 @@ import { getCompilerOptions } from '../../get-compiler-options/get-compiler-opti
 import { ArgvType, callHandler, Options } from '../../call-handler/call-handler'
 import { getAndReportOptions } from '../../lib/get-and-report-options'
 
-export type PushArgv = Options & {
-  pushType: ArgvType
+export type DiffArgv = Options & {
+  diffType: ArgvType
   file: string
 }
 
-export interface PushCommand {
-  argv: yargs.Arguments<PushArgv>
+export interface DiffCommand {
+  argv: yargs.Arguments<DiffArgv>
 }
 
-export const pushCommand = async ({ argv }: PushCommand) => {
+export const diffCommand = async ({ argv }: DiffCommand) => {
   const log = console.log
   log(chalk.bold.underline(`\nAnalyzing source files`))
   if (!existsSync(argv.file)) {
@@ -34,11 +34,11 @@ export const pushCommand = async ({ argv }: PushCommand) => {
 
   for (const pluginName of Object.keys(allPluginData)) {
     await callHandler({
-      command: 'push',
+      command: 'diff',
       options,
       pluginData: allPluginData[pluginName],
       pluginName,
-      type: argv.pushType,
+      type: argv.diffType,
     })
   }
 }

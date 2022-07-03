@@ -5,7 +5,7 @@ import {
 } from '../get-all-plugin-data/get-all-plugin-data'
 import { ModelberryVariable } from '../modelberry-parser/parse-modelberry-variable'
 
-export type Command = 'push' | 'pull'
+export type Command = 'push' | 'pull' | 'diff'
 export type ArgvType = 'content' | 'models'
 
 export type Options = {

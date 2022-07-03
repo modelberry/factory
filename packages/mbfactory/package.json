@@ -58,12 +58,15 @@
     "build:lint": "echo SUPERSLOW! eslint 'src/**/*.{js,ts,tsx}'",
     "build:test": "jest --silent --passWithNoTests",
     "build:types": "tsc -p tsconfig.json --declaration --emitDeclarationOnly --declarationDir build",
+    "build:executable": "chmod +x ./build/cli.cjs",
     "clean": "rimraf build/*",
     "dev": "rollup --config --watch",
     "pull-content": "./build/cli.cjs pull content @modelberry/plugin-contentful/plain test",
     "pull-models": "./build/cli.cjs pull models @modelberry/plugin-contentful/plain test",
     "push-content": "./build/cli.cjs push content test/main-content.ts",
-    "push-models": "./build/cli.cjs push models test/main.ts"
+    "push-models": "./build/cli.cjs push models test/main.ts",
+    "diff-content": "./build/cli.cjs diff content test/main-content.ts",
+    "diff-models": "./build/cli.cjs diff models test/main.ts"
   },
   "engines": {
     "node": ">=16.0.0",
