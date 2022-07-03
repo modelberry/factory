@@ -25,36 +25,42 @@ export const handler: Handler = async ({
   log(chalk(`- contentful space id: ${process.env.CONTENTFUL_SPACE_ID}`))
   log(chalk(`- contentful environment: ${process.env.CONTENTFUL_ENVIRONMENT}`))
 
+  let modelList = ''
   if (command === 'push' && pluginData?.types) {
     const atTypeList = Object.values(pluginData?.types)
       .map((type) => type.interface.interfaceTags?.['@type'])
       .filter((atType) => !options?.type || options?.type === atType)
       .join(', ')
-    const modelList = chalk[atTypeList ? 'black' : 'red'](
-      `- ${options?.type ? 'filtered' : 'all'} models: ${atTypeList || 'none'}`
-    )
-
-    if (type === 'models') {
-      log(chalk(`- pushing models to Contentful`))
-      log(modelList)
-    }
-    if (type === 'content') {
-      log(chalk(`- pushing content to Contentful`))
-      log(modelList)
-    }
     if (!atTypeList) {
+      log(chalk.red('- no models found'))
       return
     }
+    modelList = chalk(
+      `- ${options?.type ? 'filtered' : 'all'} models: ${atTypeList || 'none'}`
+    )
   }
-  if (command === 'pull') {
-    if (type === 'models') {
-      log(chalk(`- pulling models from Contentful`))
-      log(chalk(`- write to: ${path}`))
-    }
-    if (type === 'content') {
-      log(chalk(`- pulling content from Contentful`))
-      log(chalk(`- write to: ${path}`))
-    }
+
+  if (command === 'push' && type === 'models') {
+    log(chalk(`- pushing models to Contentful`))
+    log(modelList)
+  }
+  if (command === 'push' && type === 'content') {
+    log(chalk(`- pushing content to Contentful`))
+    log(modelList)
+  }
+  if (command === 'pull' && type === 'models') {
+    log(chalk(`- pulling models from Contentful`))
+    log(chalk(`- write to: ${path}`))
+  }
+  if (command === 'pull' && type === 'content') {
+    log(chalk(`- pulling content from Contentful`))
+    log(chalk(`- write to: ${path}`))
+  }
+  if (command === 'diff' && type === 'models') {
+    log(chalk(`- comparing local models with Contentful`))
+  }
+  if (command === 'diff' && type === 'content') {
+    log(chalk(`- comparing local content with Contentful`))
   }
 
   if (options.dryRun) {

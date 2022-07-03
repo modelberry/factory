@@ -95,7 +95,7 @@ describe('The handler should', () => {
     expect(consoleSpy.mock.calls).toEqual([
       ...envResponseOk,
       [chalk('- pushing models to Contentful')],
-      [chalk.black('- all models: testType')],
+      [chalk('- all models: testType')],
       [chalk('- force enabled, ignoring all messages and warnings')],
       ...statisticsResponseOk,
     ])
@@ -126,7 +126,7 @@ describe('The handler should', () => {
     expect(consoleSpy.mock.calls).toEqual([
       ...envResponseOk,
       [chalk('- pushing content to Contentful')],
-      [chalk.black('- all models: testType')],
+      [chalk('- all models: testType')],
       [chalk('- force enabled, ignoring all messages and warnings')],
       ...statisticsResponseOk,
     ])
@@ -182,6 +182,65 @@ describe('The handler should', () => {
       contentfulEnvironment: environmentMock,
       options: { force: true },
       path: 'pull-test-path',
+    })
+  })
+
+  test('call diffModels', async () => {
+    setEnv('ok')
+    // Test with force is true to prevent user interaction
+    await handler({
+      command: 'diff',
+      options: { force: true },
+      pluginData: {
+        types: {
+          myTestType,
+        },
+        dataVar: {},
+      },
+      type: 'models',
+    })
+    expect(consoleSpy.mock.calls).toEqual([
+      ...envResponseOk,
+      [chalk('- comparing local models with Contentful')],
+      [chalk('- force enabled, ignoring all messages and warnings')],
+      ...statisticsResponseOk,
+    ])
+    expect(pushModels).toHaveBeenCalledWith({
+      contentfulEnvironment: environmentMock,
+      options: { force: true },
+      typeData: {
+        myTestType,
+      },
+      validationsMap: {},
+    })
+  })
+
+  test('call diffContent', async () => {
+    setEnv('ok')
+    // Test with force is true to prevent user interaction
+    await handler({
+      command: 'diff',
+      options: { force: true },
+      pluginData: {
+        types: {
+          myTestType,
+        },
+        dataVar: {},
+      },
+      type: 'content',
+    })
+    expect(consoleSpy.mock.calls).toEqual([
+      ...envResponseOk,
+      [chalk('- comparing local content with Contentful')],
+      [chalk('- force enabled, ignoring all messages and warnings')],
+      ...statisticsResponseOk,
+    ])
+    expect(pushContent).toHaveBeenCalledWith({
+      contentfulEnvironment: environmentMock,
+      options: { force: true },
+      typeData: {
+        myTestType,
+      },
     })
   })
 })
