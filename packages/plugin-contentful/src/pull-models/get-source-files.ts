@@ -44,6 +44,9 @@ export const getSourceFiles = async ({
       source: contentType,
       target: inlineTags,
     })
+    // Remove @name when tag value equals value of @type tag
+    if (inlineTags['@name'] && inlineTags['@name'] === inlineTags['@type'])
+      delete inlineTags['@name']
     // Fetch editor interfaces from Contentful remote API
     const editorInterfaces = await getEditorInterfaces({ contentType })
     // Empty array that gets filled with named imports

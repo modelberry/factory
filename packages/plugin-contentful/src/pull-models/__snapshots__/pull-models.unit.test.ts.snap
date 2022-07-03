@@ -13,7 +13,6 @@ import { ContentfulAsset } from './contentful-asset'
  * - {@type testTopic}
  * - {@displayField heading}
  * - {@description Topic model, a heading, an abstract and a call to action}
- * - {@name testTopic}
  */
 export interface ContentfulTestTopic {
   /** @modelberry {@ignore} */
@@ -78,7 +77,6 @@ export interface ContentfulTestTopic {
  * - {@plugin \\"@modelberry/plugin-contentful/plain\\"}
  * - {@type testAction}
  * - {@displayField heading}
- * - {@name testAction}
  */
 export interface ContentfulTestAction {
   /** @modelberry {@ignore} */
@@ -133,7 +131,6 @@ import { ContentfulNavigationSegment } from './contentful-navigation-segment'
  * - {@type navigationSection}
  * - {@displayField title}
  * - {@description navigationSection}
- * - {@name navigationSection}
  */
 export interface ContentfulNavigationSection {
   /** @modelberry {@ignore} */
@@ -243,7 +240,6 @@ import { ContentfulReference } from './contentful-reference'
  * - {@type topicSection}
  * - {@displayField title}
  * - {@description Topic section}
- * - {@name topicSection}
  */
 export interface ContentfulTopicSection {
   /** @modelberry {@ignore} */
@@ -353,7 +349,6 @@ import { ContentfulEmbed } from './contentful-embed'
  * - {@type topic}
  * - {@displayField title}
  * - {@description Topic}
- * - {@name topic}
  */
 export interface ContentfulTopic {
   /** @modelberry {@ignore} */
@@ -450,7 +445,6 @@ export interface ContentfulTopic {
  * - {@type textSection}
  * - {@displayField title}
  * - {@description Text section}
- * - {@name textSection}
  */
 export interface ContentfulTextSection {
   /** @modelberry {@ignore} */
@@ -512,7 +506,6 @@ import { ContentfulReference } from './contentful-reference'
  * - {@type navigationSegment}
  * - {@displayField title}
  * - {@description Navigation segment}
- * - {@name navigationSegment}
  */
 export interface ContentfulNavigationSegment {
   /** @modelberry {@ignore} */
@@ -577,7 +570,6 @@ import { ContentfulAsset } from './contentful-asset'
  * - {@type page}
  * - {@displayField title}
  * - {@description Page}
- * - {@name page}
  */
 export interface ContentfulPage {
   /** @modelberry {@ignore} */
@@ -681,7 +673,6 @@ import { ContentfulEmbed } from './contentful-embed'
  * - {@type globals}
  * - {@displayField title}
  * - {@description Globals}
- * - {@name globals}
  */
 export interface ContentfulGlobals {
   /** @modelberry {@ignore} */
@@ -769,7 +760,6 @@ export interface ContentfulGlobals {
  * - {@type embed}
  * - {@displayField title}
  * - {@description Embed}
- * - {@name embed}
  */
 export interface ContentfulEmbed {
   /** @modelberry {@ignore} */
@@ -817,7 +807,6 @@ import { ContentfulReference } from './contentful-reference'
  * - {@type action}
  * - {@displayField title}
  * - {@description Action}
- * - {@name action}
  */
 export interface ContentfulAction {
   /** @modelberry {@ignore} */
@@ -1043,7 +1032,6 @@ import { ContentfulAsset } from './contentful-asset'
  * - {@type testTopic}
  * - {@displayField heading}
  * - {@description Topic model, a heading, an abstract and a call to action}
- * - {@name testTopic}
  */
 export interface ContentfulTestTopic {
   /** @modelberry {@ignore} */
@@ -1237,7 +1225,6 @@ import { ContentfulAsset } from './contentful-asset'
  * - {@type testTopic}
  * - {@displayField heading}
  * - {@description Topic model, a heading, an abstract and a call to action}
- * - {@name testTopic}
  */
 export interface ContentfulTestTopic {
   /** @modelberry {@ignore} */
@@ -1302,7 +1289,6 @@ export interface ContentfulTestTopic {
  * - {@plugin \\"@modelberry/plugin-contentful/plain\\"}
  * - {@type testAction}
  * - {@displayField heading}
- * - {@name testAction}
  */
 export interface ContentfulTestAction {
   /** @modelberry {@ignore} */
@@ -1357,7 +1343,6 @@ import { ContentfulNavigationSegment } from './contentful-navigation-segment'
  * - {@type navigationSection}
  * - {@displayField title}
  * - {@description navigationSection}
- * - {@name navigationSection}
  */
 export interface ContentfulNavigationSection {
   /** @modelberry {@ignore} */
@@ -1467,7 +1452,6 @@ import { ContentfulReference } from './contentful-reference'
  * - {@type topicSection}
  * - {@displayField title}
  * - {@description Topic section}
- * - {@name topicSection}
  */
 export interface ContentfulTopicSection {
   /** @modelberry {@ignore} */
@@ -1577,7 +1561,6 @@ import { ContentfulEmbed } from './contentful-embed'
  * - {@type topic}
  * - {@displayField title}
  * - {@description Topic}
- * - {@name topic}
  */
 export interface ContentfulTopic {
   /** @modelberry {@ignore} */
@@ -1674,7 +1657,6 @@ export interface ContentfulTopic {
  * - {@type textSection}
  * - {@displayField title}
  * - {@description Text section}
- * - {@name textSection}
  */
 export interface ContentfulTextSection {
   /** @modelberry {@ignore} */
@@ -1736,7 +1718,6 @@ import { ContentfulReference } from './contentful-reference'
  * - {@type navigationSegment}
  * - {@displayField title}
  * - {@description Navigation segment}
- * - {@name navigationSegment}
  */
 export interface ContentfulNavigationSegment {
   /** @modelberry {@ignore} */
@@ -1801,7 +1782,6 @@ import { ContentfulAsset } from './contentful-asset'
  * - {@type page}
  * - {@displayField title}
  * - {@description Page}
- * - {@name page}
  */
 export interface ContentfulPage {
   /** @modelberry {@ignore} */
@@ -1905,7 +1885,6 @@ import { ContentfulEmbed } from './contentful-embed'
  * - {@type globals}
  * - {@displayField title}
  * - {@description Globals}
- * - {@name globals}
  */
 export interface ContentfulGlobals {
   /** @modelberry {@ignore} */
@@ -1993,7 +1972,6 @@ export interface ContentfulGlobals {
  * - {@type embed}
  * - {@displayField title}
  * - {@description Embed}
- * - {@name embed}
  */
 export interface ContentfulEmbed {
   /** @modelberry {@ignore} */
@@ -2041,7 +2019,6 @@ import { ContentfulReference } from './contentful-reference'
  * - {@type action}
  * - {@displayField title}
  * - {@description Action}
- * - {@name action}
  */
 export interface ContentfulAction {
   /** @modelberry {@ignore} */
