@@ -17,6 +17,7 @@ const options: YargsOptions = {
     requiresArg: false,
     type: 'boolean',
   },
+  // TODO: Change force into silent
   force: {
     alias: 'f',
     describe:
@@ -30,6 +31,7 @@ const options: YargsOptions = {
     requiresArg: true,
     type: 'string',
   },
+  // TODO: Change type into filter
   type: {
     alias: 't',
     describe: 'Filter by type value @modelberry {@type value}',
