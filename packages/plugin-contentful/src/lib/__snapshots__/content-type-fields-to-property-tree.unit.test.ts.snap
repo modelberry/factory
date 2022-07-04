@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`contentTypeFieldsToPropertyTree should create a property tree 1`] = `
+Object {
+  "__typename": Object {
+    "node": Object {
+      "blockTag": "@modelberry",
+      "createKeywordTypeNode": 149,
+      "inlineTags": Object {
+        "@ignore": "",
+      },
+      "isRequired": false,
+    },
+  },
+  "actions": Object {
+    "node": Object {
+      "blockTag": "@modelberry",
+      "createKeywordTypeNode": 149,
+      "inlineTags": Object {
+        "@name": "Actions",
+        "@widgetId": "entryLinksEditor",
+      },
+      "isRequired": false,
+    },
+  },
+  "heading": Object {
+    "node": Object {
+      "blockTag": "@modelberry",
+      "createKeywordTypeNode": 149,
+      "inlineTags": Object {
+        "@localized": true,
+        "@name": "Heading",
+        "@type": "Symbol",
+        "@widgetId": "singleLine",
+      },
+      "isRequired": false,
+    },
+  },
+  "sys": Object {
+    "edges": Object {
+      "id": Object {
+        "node": Object {
+          "createKeywordTypeNode": 149,
+          "isRequired": false,
+        },
+      },
+    },
+    "node": Object {
+      "blockTag": "@modelberry",
+      "inlineTags": Object {
+        "@ignore": "",
+      },
+      "isRequired": false,
+    },
+  },
+}
+`;
