@@ -59,6 +59,9 @@ export const addValidations = ({
     if (newValidation.regexp && !newValidation.regexp.flags)
       newValidation.regexp.flags = ''
     validations[validationName] = newValidation
+
+    // No need to add if we have this validation already
+    if (validationNames.includes(validationName)) continue
     validationNames.push(validationName)
     tags[tag] = validationNames.join(' ')
   }

@@ -6,7 +6,7 @@ export interface EntriesToJsVariables {
   entryTypeList: EntryType[]
 }
 
-// Convert the Contentful entries into the a js content array
+// Convert the Contentful entries into a js content array
 export const entriesToJsVariables = ({
   localeCode,
   entryTypeList,
