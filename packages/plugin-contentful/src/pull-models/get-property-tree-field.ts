@@ -2,6 +2,7 @@ import {
   tsSyntaxKind,
   PropertryNode,
   PropertyTree,
+  InlineTags,
 } from '@modelberry/mbfactory/plain'
 import { ContentFields } from 'contentful-management/types'
 import {
@@ -10,7 +11,8 @@ import {
 } from './get-link-content-types'
 
 export interface GetPropertyTreeField {
-  comment: string
+  blockTag: string
+  inlineTags: InlineTags
   contentField: ContentFields
   /** Empty array that gets filled with named imports */
   namedImports: string[]
@@ -18,13 +20,15 @@ export interface GetPropertyTreeField {
 }
 
 export const getPropertyTreeField = ({
-  comment,
+  blockTag,
+  inlineTags,
   contentField,
   namedImports,
   required,
 }: GetPropertyTreeField) => {
   const node: PropertryNode = {
-    comment,
+    blockTag,
+    inlineTags,
     isRequired: required,
   }
   const edges: PropertyTree = {}

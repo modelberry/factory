@@ -15,9 +15,13 @@ import { ContentfulAsset } from './contentful-asset'
  * - {@description Topic model, a heading, an abstract and a call to action}
  */
 export interface ContentfulTestTopic {
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   __typename?: string
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   sys?: {
     id?: string
   }
@@ -79,9 +83,13 @@ export interface ContentfulTestTopic {
  * - {@displayField heading}
  */
 export interface ContentfulTestAction {
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   __typename?: string
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   sys?: {
     id?: string
   }
@@ -133,9 +141,13 @@ import { ContentfulNavigationSegment } from './contentful-navigation-segment'
  * - {@description navigationSection}
  */
 export interface ContentfulNavigationSection {
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   __typename?: string
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   sys?: {
     id?: string
   }
@@ -242,9 +254,13 @@ import { ContentfulReference } from './contentful-reference'
  * - {@description Topic section}
  */
 export interface ContentfulTopicSection {
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   __typename?: string
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   sys?: {
     id?: string
   }
@@ -351,9 +367,13 @@ import { ContentfulEmbed } from './contentful-embed'
  * - {@description Topic}
  */
 export interface ContentfulTopic {
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   __typename?: string
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   sys?: {
     id?: string
   }
@@ -447,9 +467,13 @@ export interface ContentfulTopic {
  * - {@description Text section}
  */
 export interface ContentfulTextSection {
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   __typename?: string
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   sys?: {
     id?: string
   }
@@ -508,9 +532,13 @@ import { ContentfulReference } from './contentful-reference'
  * - {@description Navigation segment}
  */
 export interface ContentfulNavigationSegment {
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   __typename?: string
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   sys?: {
     id?: string
   }
@@ -572,9 +600,13 @@ import { ContentfulAsset } from './contentful-asset'
  * - {@description Page}
  */
 export interface ContentfulPage {
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   __typename?: string
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   sys?: {
     id?: string
   }
@@ -675,9 +707,13 @@ import { ContentfulEmbed } from './contentful-embed'
  * - {@description Globals}
  */
 export interface ContentfulGlobals {
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   __typename?: string
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   sys?: {
     id?: string
   }
@@ -762,9 +798,13 @@ export interface ContentfulGlobals {
  * - {@description Embed}
  */
 export interface ContentfulEmbed {
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   __typename?: string
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   sys?: {
     id?: string
   }
@@ -809,9 +849,13 @@ import { ContentfulReference } from './contentful-reference'
  * - {@description Action}
  */
 export interface ContentfulAction {
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   __typename?: string
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   sys?: {
     id?: string
   }
@@ -1034,9 +1078,13 @@ import { ContentfulAsset } from './contentful-asset'
  * - {@description Topic model, a heading, an abstract and a call to action}
  */
 export interface ContentfulTestTopic {
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   __typename?: string
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   sys?: {
     id?: string
   }
@@ -1227,9 +1275,13 @@ import { ContentfulAsset } from './contentful-asset'
  * - {@description Topic model, a heading, an abstract and a call to action}
  */
 export interface ContentfulTestTopic {
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   __typename?: string
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   sys?: {
     id?: string
   }
@@ -1291,9 +1343,13 @@ export interface ContentfulTestTopic {
  * - {@displayField heading}
  */
 export interface ContentfulTestAction {
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   __typename?: string
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   sys?: {
     id?: string
   }
@@ -1345,9 +1401,13 @@ import { ContentfulNavigationSegment } from './contentful-navigation-segment'
  * - {@description navigationSection}
  */
 export interface ContentfulNavigationSection {
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   __typename?: string
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   sys?: {
     id?: string
   }
@@ -1454,9 +1514,13 @@ import { ContentfulReference } from './contentful-reference'
  * - {@description Topic section}
  */
 export interface ContentfulTopicSection {
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   __typename?: string
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   sys?: {
     id?: string
   }
@@ -1563,9 +1627,13 @@ import { ContentfulEmbed } from './contentful-embed'
  * - {@description Topic}
  */
 export interface ContentfulTopic {
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   __typename?: string
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   sys?: {
     id?: string
   }
@@ -1659,9 +1727,13 @@ export interface ContentfulTopic {
  * - {@description Text section}
  */
 export interface ContentfulTextSection {
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   __typename?: string
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   sys?: {
     id?: string
   }
@@ -1720,9 +1792,13 @@ import { ContentfulReference } from './contentful-reference'
  * - {@description Navigation segment}
  */
 export interface ContentfulNavigationSegment {
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   __typename?: string
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   sys?: {
     id?: string
   }
@@ -1784,9 +1860,13 @@ import { ContentfulAsset } from './contentful-asset'
  * - {@description Page}
  */
 export interface ContentfulPage {
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   __typename?: string
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   sys?: {
     id?: string
   }
@@ -1887,9 +1967,13 @@ import { ContentfulEmbed } from './contentful-embed'
  * - {@description Globals}
  */
 export interface ContentfulGlobals {
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   __typename?: string
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   sys?: {
     id?: string
   }
@@ -1974,9 +2058,13 @@ export interface ContentfulGlobals {
  * - {@description Embed}
  */
 export interface ContentfulEmbed {
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   __typename?: string
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   sys?: {
     id?: string
   }
@@ -2021,9 +2109,13 @@ import { ContentfulReference } from './contentful-reference'
  * - {@description Action}
  */
 export interface ContentfulAction {
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   __typename?: string
-  /** @modelberry {@ignore} */
+  /** @modelberry
+   * - {@ignore }
+   */
   sys?: {
     id?: string
   }

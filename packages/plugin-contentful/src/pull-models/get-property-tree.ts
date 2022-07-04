@@ -1,9 +1,5 @@
 import { ContentFields } from 'contentful-management/types'
-import {
-  PropertyTree,
-  tagsToTsDocComment,
-  tsSyntaxKind,
-} from '@modelberry/mbfactory/plain'
+import { PropertyTree, tsSyntaxKind } from '@modelberry/mbfactory/plain'
 import { copyKeysIfExists } from './copy-keys-if-exists'
 import { addValidations } from './add-validations'
 import { getPropertyTreeField } from './get-property-tree-field'
@@ -29,17 +25,25 @@ export const getPropertyTree = ({
   namedImports,
   validations,
 }: GetPropertyTree) => {
-  const ignoreComment = `* @modelberry {@ignore} `
   const propertyTree: PropertyTree = {
     __typename: {
       node: {
         isRequired: false,
-        comment: ignoreComment,
+        blockTag: '@modelberry',
+        inlineTags: {
+          '@ignore': '',
+        },
         createKeywordTypeNode: tsSyntaxKind.StringKeyword,
       },
     },
     sys: {
-      node: { isRequired: false, comment: ignoreComment },
+      node: {
+        isRequired: false,
+        blockTag: '@modelberry',
+        inlineTags: {
+          '@ignore': '',
+        },
+      },
       edges: {
         id: {
           node: {
@@ -97,10 +101,6 @@ export const getPropertyTree = ({
         validations,
       })
     }
-    const comment = tagsToTsDocComment({
-      blockTag: '@modelberry',
-      inlineTags,
-    })
     const isArray = contentField.type === 'Array'
     // Do not add Collection postfix to arrays of symbols
     const isItemsTypeSymbol = contentField.items?.type === 'Symbol'
@@ -109,7 +109,8 @@ export const getPropertyTree = ({
       isArray && !isItemsTypeSymbol ? 'Collection' : ''
     }`
     propertyTree[fieldName] = getPropertyTreeField({
-      comment: `* ${comment}`,
+      blockTag: '@modelberry',
+      inlineTags,
       contentField,
       namedImports,
       required: contentField.required,

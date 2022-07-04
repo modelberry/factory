@@ -1,8 +1,14 @@
 import ts from 'typescript'
+import { InlineTags, tagsToTsDocComment } from '../lib/tags-to-ts-doc-comment'
 
 export type PropertryNode = {
-  comment?: string
+  /** When defined create a commant with the block tag */
+  blockTag?: string
+  /** Tags used for property comment */
+  inlineTags?: InlineTags
+  /** Create array type node */
   isArrayTypeNode?: boolean
+  /** Create a node that is required */
   isRequired?: boolean
   /** Create a ts styntax kind keyword node like 'string', 'number' */
   createKeywordTypeNode?: ts.SyntaxKind
@@ -60,11 +66,16 @@ export const createTsProperty = ({ propertyTree }: CreateTsProperty) => {
           : ts.factory.createToken(ts.SyntaxKind.QuestionToken),
         childNode
       )
-      if (node?.comment) {
+      if (node?.blockTag && node?.inlineTags) {
+        const comment = tagsToTsDocComment({
+          blockTag: node.blockTag,
+          inlineTags: node.inlineTags,
+        })
+
         ts.addSyntheticLeadingComment(
           property,
           ts.SyntaxKind.MultiLineCommentTrivia,
-          `${node.comment}`,
+          `* ${comment}`,
           true
         )
       }

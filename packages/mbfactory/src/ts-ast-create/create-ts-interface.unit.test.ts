@@ -1,5 +1,4 @@
 import ts from 'typescript'
-import { tagsToTsDocComment } from '../lib/tags-to-ts-doc-comment'
 import { createTsPrinter } from '../ts-ast-helpers/create-ts-printer'
 import { createTsSourceFile } from '../ts-ast-helpers/create-ts-source-file'
 import { printTsNodes } from '../ts-ast-helpers/print-ts-nodes'
@@ -19,14 +18,6 @@ const renderInterface = async (interfaceDeclaration: ts.Node) => {
 
 describe('Create ts interface should', () => {
   test('create an interface', async () => {
-    const comment = tagsToTsDocComment({
-      blockTag: '@modelberry',
-      inlineTags: {
-        '@type': 'Symbol',
-        '@validations': 'shortString',
-      },
-    })
-
     const intDec = createTsInterface({
       blockTag: '@modelberry',
       inlineTags: {
@@ -39,7 +30,11 @@ describe('Create ts interface should', () => {
       propertyTree: {
         heading: {
           node: {
-            comment: `* ${comment}`,
+            blockTag: '@modelberry',
+            inlineTags: {
+              '@type': 'Symbol',
+              '@validations': 'shortString',
+            },
             isRequired: false,
             createKeywordTypeNode: tsSyntaxKind.StringKeyword,
           },
@@ -65,13 +60,6 @@ export interface ContentfulTopic {
   })
 
   test('create a complex interface', async () => {
-    const comment = tagsToTsDocComment({
-      blockTag: '@modelberry',
-      inlineTags: {
-        '@type': 'Symbol',
-        '@validations': 'shortString',
-      },
-    })
     const intDec = createTsInterface({
       blockTag: '@modelberry',
       inlineTags: {
@@ -84,14 +72,22 @@ export interface ContentfulTopic {
       propertyTree: {
         heading: {
           node: {
-            comment: `* ${comment}`,
+            blockTag: '@modelberry',
+            inlineTags: {
+              '@type': 'Symbol',
+              '@validations': 'shortString',
+            },
             isRequired: false,
             createKeywordTypeNode: tsSyntaxKind.StringKeyword,
           },
         },
         abstract: {
           node: {
-            comment: `* ${comment}`,
+            blockTag: '@modelberry',
+            inlineTags: {
+              '@type': 'Symbol',
+              '@validations': 'shortString',
+            },
             isRequired: true,
             createKeywordTypeNode: tsSyntaxKind.StringKeyword,
           },

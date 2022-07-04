@@ -126,43 +126,43 @@ describe('Create ts property should', () => {
   })
 
   test('create an abstract property with comment', async () => {
-    const comment = `*
-    * @modelberry
-    * - {@type Symbol}
-    * - {@validations shortString}
-    `
     const propertyTree: PropertyTree = {
       abstract: {
-        node: { createKeywordTypeNode: ts.SyntaxKind.StringKeyword, comment },
+        node: {
+          createKeywordTypeNode: ts.SyntaxKind.StringKeyword,
+          blockTag: '@modelberry',
+          inlineTags: { '@type': 'Symbol', '@validations': 'shortString' },
+        },
       },
     }
     const members = createTsProperty({ propertyTree })
     const output = await renderProps(members)
     expect(output).toEqual(`export interface ContentfulTopic {
-    /**
-        * @modelberry
-        * - {@type Symbol}
-        * - {@validations shortString}
-        */
+    /** @modelberry
+    * - {@type Symbol}
+    * - {@validations shortString}
+    */
     abstract?: string;
 }`)
   })
 
   test('create a complex property with comments', async () => {
-    const comment = `*
-    * @modelberry
-    * - {@type Symbol}
-    * - {@validations longString}
-    `
     const propertyTree: PropertyTree = {
       sys: {
-        node: { comment },
+        node: {
+          blockTag: '@modelberry',
+          inlineTags: { '@type': 'Symbol', '@validations': 'longString' },
+        },
         edges: {
           id: { node: { createKeywordTypeNode: ts.SyntaxKind.StringKeyword } },
         },
       },
       abstract: {
-        node: { comment, createKeywordTypeNode: ts.SyntaxKind.StringKeyword },
+        node: {
+          blockTag: '@modelberry',
+          inlineTags: { '@type': 'Symbol', '@validations': 'longString' },
+          createKeywordTypeNode: ts.SyntaxKind.StringKeyword,
+        },
       },
       heading: {
         node: {
@@ -174,19 +174,17 @@ describe('Create ts property should', () => {
     const members = createTsProperty({ propertyTree })
     const output = await renderProps(members)
     expect(output).toEqual(`export interface ContentfulTopic {
-    /**
-        * @modelberry
-        * - {@type Symbol}
-        * - {@validations longString}
-        */
+    /** @modelberry
+    * - {@type Symbol}
+    * - {@validations longString}
+    */
     sys?: {
         id?: string;
     };
-    /**
-        * @modelberry
-        * - {@type Symbol}
-        * - {@validations longString}
-        */
+    /** @modelberry
+    * - {@type Symbol}
+    * - {@validations longString}
+    */
     abstract?: string;
     heading: string;
 }`)
