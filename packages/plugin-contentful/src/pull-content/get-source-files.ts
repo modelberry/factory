@@ -7,8 +7,8 @@ import {
   Node,
 } from '@modelberry/mbfactory/plain'
 import { SourceFile } from '../lib/write-source-files'
+import { entriesToJsVariables } from '../lib/entries-to-js-variables'
 import { EntriesByContentTypeId } from './entries-by-content-type-id'
-import { getContentArray } from './get-content-array'
 
 export interface GetSourceFiles {
   /** Empty node list, for each generated type an import statement is added */
@@ -30,10 +30,9 @@ export const getSourceFiles = ({
     const varType = `Contentful${firstUpperCase(contentTypeId)}`
     const varName = contentTypeId
     // Get the content of the js variables from the Contentful entries
-    const contentArray: any[] = getContentArray({
-      entriesByContentTypeId,
+    const contentArray: any[] = entriesToJsVariables({
+      entryTypeList: entriesByContentTypeId[contentTypeId].entryTypeList,
       localeCode,
-      contentTypeId,
     })
     // Add import statements to be added to the main file
     const modelFilenameWithoutExt = `contentful-${camelToKebab(contentTypeId)}`
