@@ -4,7 +4,7 @@ import { copyKeysIfExists } from './copy-keys-if-exists'
 export type EditorInterfaceTag = 'widgetId' | 'widgetNamespace' | 'helpText'
 export type EditorInterfaceTags = Partial<Record<EditorInterfaceTag, any>>
 
-export interface GetEditorInterfaces {
+export interface FetchEditorInterfaces {
   contentType: ContentType
 }
 
@@ -12,9 +12,9 @@ export interface GetEditorInterfaces {
  * Fetch editor interfaces from Contentful remote API and return them as
  * EditorInterfaceTags
  */
-export const getEditorInterfaces = async ({
+export const fetchEditorInterfaces = async ({
   contentType,
-}: GetEditorInterfaces) => {
+}: FetchEditorInterfaces) => {
   const editorInterfaceResponse = await contentType.getEditorInterface()
   let editorInterfaces: EditorInterfaceTags = {}
   if (editorInterfaceResponse.controls) {

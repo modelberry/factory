@@ -9,9 +9,9 @@ import {
 } from '@modelberry/mbfactory/plain'
 import { ContentType } from 'contentful-management/types'
 import { SourceFile } from '../lib/write-source-files'
-import { copyKeysIfExists } from './copy-keys-if-exists'
-import { getPropertyTree } from './get-property-tree'
-import { getEditorInterfaces } from './get-editor-interfaces'
+import { contentTypeFieldsToPropertyTree } from '../lib/content-type-fields-to-property-tree'
+import { contentTypeToInlineTags } from '../lib/content-type-to-inline-tags'
+import { fetchEditorInterfaces } from '../lib/fetch-editor-interfaces'
 import { createContentfulAssetTypeDeclaration } from './create-contentful-asset-type-declaration'
 import { createContentfulReferenceTypeDeclaration } from './create-contentful-reference-type-declaration'
 
@@ -34,26 +34,15 @@ export const getSourceFiles = async ({
 }: GetSourceFiles) => {
   const files: SourceFile[] = []
   for (const contentType of contentTypes) {
-    const inlineTags: Record<string, any> = {}
-    inlineTags['@plugin'] = '"@modelberry/plugin-contentful/plain"'
+    const inlineTags = contentTypeToInlineTags({ contentType })
     const contentTypeId = contentType.sys.id
-    inlineTags['@type'] = contentTypeId
-    copyKeysIfExists({
-      asTag: true,
-      keys: ['displayField', 'description', 'name'],
-      source: contentType,
-      target: inlineTags,
-    })
-    // Remove @name when tag value equals value of @type tag
-    if (inlineTags['@name'] && inlineTags['@name'] === inlineTags['@type'])
-      delete inlineTags['@name']
     // Fetch editor interfaces from Contentful remote API
-    const editorInterfaces = await getEditorInterfaces({ contentType })
+    const editorInterfaces = await fetchEditorInterfaces({ contentType })
     // Empty array that gets filled with named imports
     const namedImports: string[] = []
     // Get propterty tree that defines all fields for the interface
-    const propertyTree = getPropertyTree({
-      contentFields: contentType.fields,
+    const propertyTree = contentTypeFieldsToPropertyTree({
+      contentTypeFields: contentType.fields,
       editorInterfaces,
       namedImports,
       validations,

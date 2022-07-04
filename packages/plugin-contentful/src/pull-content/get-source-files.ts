@@ -8,7 +8,7 @@ import {
 } from '@modelberry/mbfactory/plain'
 import { SourceFile } from '../lib/write-source-files'
 import { entriesToJsVariables } from '../lib/entries-to-js-variables'
-import { EntriesByContentTypeId } from './entries-by-content-type-id'
+import { EntriesByContentTypeId } from '../lib/entries-by-content-type-id'
 
 export interface GetSourceFiles {
   /** Empty node list, for each generated type an import statement is added */

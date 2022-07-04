@@ -5,8 +5,11 @@ import { writeSourceFiles } from '../lib/write-source-files'
 import { fetchContentTypes } from '../lib/fetch-content-types'
 import { getContentfulLocales } from '../lib/get-contentful-locales'
 import { fetchEntries } from '../lib/fetch-entries'
+import {
+  EntriesByContentTypeId,
+  EntryType,
+} from '../lib/entries-by-content-type-id'
 import { getSourceFiles } from './get-source-files'
-import { EntriesByContentTypeId, EntryType } from './entries-by-content-type-id'
 
 export interface PullContent {
   contentfulEnvironment: Environment

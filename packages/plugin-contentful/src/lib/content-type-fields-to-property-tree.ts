@@ -1,12 +1,12 @@
 import { ContentFields } from 'contentful-management/types'
 import { PropertyTree, tsSyntaxKind } from '@modelberry/mbfactory/plain'
+import { getPropertyTreeField } from './get-property-tree-field'
 import { copyKeysIfExists } from './copy-keys-if-exists'
 import { addValidations } from './add-validations'
-import { getPropertyTreeField } from './get-property-tree-field'
 
-export interface GetPropertyTree {
+export interface ContentTypeFieldsToPropertyTree {
   /** Fields used to build property tree from */
-  contentFields: ContentFields[]
+  contentTypeFields: ContentFields[]
   /** Editor settings to get 'widgetId', 'widgetNamespace' and 'helpText' tags from */
   editorInterfaces: Record<string, any>
   /** Empty array that gets filled with named imports */
@@ -19,12 +19,12 @@ export interface GetPropertyTree {
  * Build property tree with all interface fields, this tree can be passed to
  * createTsInterface to create the typescript interface definition
  */
-export const getPropertyTree = ({
-  contentFields,
+export const contentTypeFieldsToPropertyTree = ({
+  contentTypeFields,
   editorInterfaces,
   namedImports,
   validations,
-}: GetPropertyTree) => {
+}: ContentTypeFieldsToPropertyTree) => {
   const propertyTree: PropertyTree = {
     __typename: {
       node: {
@@ -54,35 +54,35 @@ export const getPropertyTree = ({
       },
     },
   }
-  for (const contentField of contentFields) {
+  for (const contentTypeField of contentTypeFields) {
     const inlineTags: Record<string, any> = {}
     copyKeysIfExists({
       asTag: true,
-      source: contentField,
+      source: contentTypeField,
       target: inlineTags,
       keys: ['disabled', 'localized', 'name', 'omited', 'required', 'type'],
     })
-    if (contentField.type === 'Array' && contentField.items) {
+    if (contentTypeField.type === 'Array' && contentTypeField.items) {
       copyKeysIfExists({
         asItems: true,
         asTag: true,
-        source: contentField.items,
+        source: contentTypeField.items,
         target: inlineTags,
         keys: ['type', 'linkType'],
       })
-      if (contentField.items.validations) {
+      if (contentTypeField.items.validations) {
         addValidations({
-          add: contentField.items.validations,
+          add: contentTypeField.items.validations,
           tag: '@itemsValidations',
           tags: inlineTags,
           validations,
         })
       }
     }
-    if (contentField.type === 'Link') {
+    if (contentTypeField.type === 'Link') {
       copyKeysIfExists({
         asTag: true,
-        source: contentField,
+        source: contentTypeField,
         target: inlineTags,
         keys: ['linkType'],
       })
@@ -90,30 +90,30 @@ export const getPropertyTree = ({
     copyKeysIfExists({
       asTag: true,
       keys: ['widgetId', 'widgetNamespace', 'helpText'],
-      source: editorInterfaces[contentField.id],
+      source: editorInterfaces[contentTypeField.id],
       target: inlineTags,
     })
-    if (contentField.validations) {
+    if (contentTypeField.validations) {
       addValidations({
-        add: contentField.validations,
+        add: contentTypeField.validations,
         tag: '@validations',
         tags: inlineTags,
         validations,
       })
     }
-    const isArray = contentField.type === 'Array'
+    const isArray = contentTypeField.type === 'Array'
     // Do not add Collection postfix to arrays of symbols
-    const isItemsTypeSymbol = contentField.items?.type === 'Symbol'
+    const isItemsTypeSymbol = contentTypeField.items?.type === 'Symbol'
 
-    const fieldName = `${contentField.id}${
+    const fieldName = `${contentTypeField.id}${
       isArray && !isItemsTypeSymbol ? 'Collection' : ''
     }`
     propertyTree[fieldName] = getPropertyTreeField({
       blockTag: '@modelberry',
       inlineTags,
-      contentField,
+      contentField: contentTypeField,
       namedImports,
-      required: contentField.required,
+      required: contentTypeField.required,
     })
   }
   return propertyTree
