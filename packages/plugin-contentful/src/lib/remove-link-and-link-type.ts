@@ -1,7 +1,7 @@
 import { SysLink } from 'contentful-management/types'
 
 export interface RemoveLinkAndLinkType {
-  fieldValue: SysLink | SysLink[] | Record<string, any>
+  fieldValue: SysLink | SysLink[] | Record<string, any> | string
 }
 
 export const removeLinkAndLinkType = ({
@@ -16,7 +16,7 @@ export const removeLinkAndLinkType = ({
       }
     })
   } else {
-    if (fieldValue.sys) {
+    if (typeof fieldValue === 'object' && fieldValue.sys) {
       delete (fieldValue.sys as any).type
       delete (fieldValue.sys as any).linkType
     }

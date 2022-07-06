@@ -1,14 +1,15 @@
 import {
   ContentFields,
   ContentType,
+  EntityMetaSysProps,
   SysLink,
 } from 'contentful-management/types'
 
 export type EntryTypeField = {
   contentFieldType?: ContentFields
   fieldValue: {
-    /** Either syslink, an array of syslinks or a record of fieldIds */
-    [localeCode: string]: SysLink | SysLink[] | Record<string, any>
+    /** Either syslink, an array of syslinks, a string Symbol value or a record of fieldIds */
+    [localeCode: string]: SysLink | SysLink[] | Record<string, any> | string
   }
 }
 
@@ -16,13 +17,9 @@ export type EntryTypeFields = {
   [fieldId: string]: EntryTypeField
 }
 
-export type Sys = {
-  id: string
-}
-
 export type EntryType = {
-  sys: Sys
   fields: EntryTypeFields
+  sys: EntityMetaSysProps
 }
 
 export type EntriesByContentTypeId = {

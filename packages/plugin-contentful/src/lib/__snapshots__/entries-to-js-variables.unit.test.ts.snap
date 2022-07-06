@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`entriesToJsVariables should convert entries to js variables 1`] = `
+Array [
+  Object {
+    "abstract": "This is the abstract",
+    "actions": Array [
+      Object {
+        "sys": Object {
+          "id": "myContentActionId",
+        },
+      },
+    ],
+    "heading": "Heres the heading",
+    "sys": Object {
+      "id": "2v8GizBNh1oxbf6cKlpzJP",
+    },
+  },
+]
+`;
