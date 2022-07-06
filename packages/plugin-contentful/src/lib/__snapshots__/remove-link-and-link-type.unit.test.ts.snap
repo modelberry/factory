@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`removeLinkAndLinkType should remove link and linkType 1`] = `
+Object {
+  "disabled": false,
+  "id": "social",
+  "linkType": "Entry",
+  "localized": false,
+  "name": "Social",
+  "omitted": false,
+  "required": false,
+  "type": "Link",
+  "validations": Array [
+    Object {
+      "linkContentType": Array [
+        "navigationSegment",
+      ],
+    },
+  ],
+}
+`;
+
+exports[`removeLinkAndLinkType should remove link and linkType from items 1`] = `
+Object {
+  "disabled": false,
+  "id": "footer",
+  "items": Object {
+    "linkType": "Entry",
+    "type": "Link",
+    "validations": Array [
+      Object {
+        "linkContentType": Array [
+          "navigationSegment",
+        ],
+      },
+    ],
+  },
+  "localized": false,
+  "name": "Footer",
+  "omitted": false,
+  "required": false,
+  "type": "Array",
+  "validations": Array [],
+}
+`;
