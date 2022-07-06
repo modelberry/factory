@@ -5,10 +5,8 @@ import {
   InlineTags,
 } from '@modelberry/mbfactory/plain'
 import { ContentFields } from 'contentful-management/types'
-import {
-  contentTypesToString,
-  getLinkContentTypes,
-} from './get-link-content-types'
+import { contentTypesToString } from './content-types-to-string'
+import { getLinkContentTypes } from './get-link-content-types'
 
 export interface GetPropertyTreeField {
   blockTag: string
