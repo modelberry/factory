@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`fetchContentTypes should fetch content types 1`] = `
+exports[`fetchContentTypes should fetch content types from mock 1`] = `
 Array [
   Object {
     "description": "Topic model, a heading, an abstract and a call to action",
