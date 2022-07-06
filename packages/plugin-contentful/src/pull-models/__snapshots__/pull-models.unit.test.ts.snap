@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Pull content should pull correctly with type filter 1`] = `
+exports[`Pull models should pull correctly with type filter 1`] = `
 [MockFunction] {
   "calls": Array [
     Array [
@@ -1260,7 +1260,7 @@ export const modelberryPluginData: ModelberryPluginData = {
 }
 `;
 
-exports[`Pull content should pull correctly without type filter 1`] = `
+exports[`Pull models should pull correctly without type filter 1`] = `
 [MockFunction] {
   "calls": Array [
     Array [

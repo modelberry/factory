@@ -2,6 +2,8 @@ jest.mock('../push-content/push-content')
 jest.mock('../push-models/push-models')
 jest.mock('../pull-content/pull-content')
 jest.mock('../pull-models/pull-models')
+jest.mock('../diff-content/diff-content')
+jest.mock('../diff-models/diff-models')
 jest.mock('contentful-management', () => ({ createClient }))
 
 import chalk from 'chalk'
@@ -13,6 +15,8 @@ import { pullContent } from '../pull-content/pull-content'
 import { pullModels } from '../pull-models/pull-models'
 import { pushContent } from '../push-content/push-content'
 import { pushModels } from '../push-models/push-models'
+import { diffContent } from '../diff-content/diff-content'
+import { diffModels } from '../diff-models/diff-models'
 import { handler } from './handler'
 
 const envMissingResponse = [
@@ -205,7 +209,7 @@ describe('The handler should', () => {
       [chalk('- force enabled, ignoring all messages and warnings')],
       ...statisticsResponseOk,
     ])
-    expect(pushModels).toHaveBeenCalledWith({
+    expect(diffModels).toHaveBeenCalledWith({
       contentfulEnvironment: environmentMock,
       options: { force: true },
       typeData: {
@@ -235,7 +239,7 @@ describe('The handler should', () => {
       [chalk('- force enabled, ignoring all messages and warnings')],
       ...statisticsResponseOk,
     ])
-    expect(pushContent).toHaveBeenCalledWith({
+    expect(diffContent).toHaveBeenCalledWith({
       contentfulEnvironment: environmentMock,
       options: { force: true },
       typeData: {

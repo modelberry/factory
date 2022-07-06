@@ -10,6 +10,8 @@ import { continueQuestion } from '../lib/questions'
 import { pullModels } from '../pull-models/pull-models'
 import { pullContent } from '../pull-content/pull-content'
 import { fetchStatistics } from '../lib/fetch-statistics'
+import { diffModels } from '../diff-models/diff-models'
+import { diffContent } from '../diff-content/diff-content'
 
 export const handler: Handler = async ({
   command,
@@ -116,6 +118,25 @@ export const handler: Handler = async ({
       contentfulEnvironment,
       options,
       path,
+    })
+  }
+  if (command === 'diff' && type === 'models') {
+    if (!pluginData) return
+    const dataVarObj = getModelberryPluginData({ dataVar: pluginData.dataVar })
+    const validationsMap = dataVarObj?.validations || {}
+    await diffModels({
+      contentfulEnvironment,
+      options,
+      typeData: pluginData.types,
+      validationsMap,
+    })
+  }
+  if (command === 'diff' && type === 'content') {
+    if (!pluginData) return
+    await diffContent({
+      contentfulEnvironment,
+      options,
+      typeData: pluginData.types,
     })
   }
 }

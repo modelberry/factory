@@ -5,7 +5,7 @@ import chalk from 'chalk'
 import { environmentMock } from '../contentful-mock/contentful-mock'
 import { pullModels } from './pull-models'
 
-describe('Pull content should', () => {
+describe('Pull models should', () => {
   const consoleSpy = jest.spyOn(console, 'log').mockImplementation()
   beforeEach(() => {
     consoleSpy.mockReset()
