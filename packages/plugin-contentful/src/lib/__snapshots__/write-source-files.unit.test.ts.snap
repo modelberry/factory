@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`writeSourceFiles should do not write files on dry run 1`] = `[MockFunction]`;
+
+exports[`writeSourceFiles should write files 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      "/test-path/main.ts",
+      "",
+    ],
+    Array [
+      "/test-path/second.ts",
+      "",
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getContentfulEnvironment should return a Contentful environment from mock 1`] = `
+Object {
+  "createContentTypeWithId": [MockFunction],
+  "createEntry": [MockFunction],
+  "createEntryWithId": [MockFunction],
+  "getContentType": [MockFunction],
+  "getContentTypes": [MockFunction],
+  "getEntries": [MockFunction],
+  "getEntry": [MockFunction],
+  "getLocales": [MockFunction],
+}
+`;
