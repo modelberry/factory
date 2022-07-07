@@ -91,7 +91,7 @@ describe('Push models should', () => {
     expect(consoleSpy.mock.calls).toEqual([
       [chalk.bold.underline('\nTopic')],
       [chalk.underline('heading')],
-      [chalk('- ignoring field')],
+      [chalk('- skipping because @ignore')],
       ...notPushingResponse,
     ])
   })
@@ -105,7 +105,7 @@ describe('Push models should', () => {
     })
     expect(consoleSpy.mock.calls).toEqual([
       [chalk.bold.underline('\nTopic')],
-      [chalk('- ignoring interface')],
+      [chalk('- skipping because @ignore')],
     ])
   })
 
@@ -133,7 +133,7 @@ describe('Push models should', () => {
     })
     expect(consoleSpy.mock.calls).toEqual([
       [chalk.bold.underline('\nTopic')],
-      [chalk.red('- no @type inline tag')],
+      [chalk.red('- skipping because no @type inline tag')],
     ])
   })
 

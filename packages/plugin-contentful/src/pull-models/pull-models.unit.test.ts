@@ -19,6 +19,8 @@ describe('Pull models should', () => {
     })
     expect(writeFile).toMatchSnapshot()
     expect(consoleSpy.mock.calls).toEqual([
+      [chalk('- fetching content types')],
+      [chalk('- fetched 11 content types')],
       [chalk('- new source file ./dummy/contentful-test-topic.ts')],
       [chalk('- new source file ./dummy/contentful-test-action.ts')],
       [chalk('- new source file ./dummy/contentful-navigation-section.ts')],
@@ -43,6 +45,8 @@ describe('Pull models should', () => {
     })
     expect(writeFile).toMatchSnapshot()
     expect(consoleSpy.mock.calls).toEqual([
+      [chalk('- fetching content types')],
+      [chalk('- fetched 1 content type')],
       [chalk('- new source file ./dummy/contentful-test-topic.ts')],
       [chalk('- new source file ./dummy/contentful-asset.ts')],
       [chalk('- new source file ./dummy/contentful-reference.ts')],

@@ -34,7 +34,7 @@ const envResponseOk = [
 
 const statisticsResponseOk = [
   [chalk('- entries found at Contentful: 96')],
-  [chalk('- models found at Contentful: 11')],
+  [chalk('- content types found at Contentful: 11')],
 ]
 
 // Make sure not to read .env.development

@@ -1,4 +1,5 @@
 import { Options } from '@modelberry/mbfactory/plain'
+import chalk from 'chalk'
 import { ContentType, Environment } from 'contentful-management/types'
 
 export interface FetchContentTypes {
@@ -10,6 +11,9 @@ export const fetchContentTypes = async ({
   contentfulEnvironment,
   options,
 }: FetchContentTypes) => {
+  const log = console.log
+  log(chalk(`- fetching content types`))
+
   let contentTypes: ContentType[] = []
   if (options.type) {
     const ctResponse = await contentfulEnvironment.getContentType(options.type)
@@ -18,5 +22,12 @@ export const fetchContentTypes = async ({
     const ctResponse = await contentfulEnvironment.getContentTypes()
     contentTypes = ctResponse.items
   }
+  log(
+    chalk(
+      `- fetched ${contentTypes.length} content ${
+        contentTypes.length > 1 ? 'types' : 'type'
+      }`
+    )
+  )
   return contentTypes
 }

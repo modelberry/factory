@@ -3,12 +3,9 @@ import { Options, Node } from '@modelberry/mbfactory/plain'
 import chalk from 'chalk'
 import { writeSourceFiles } from '../lib/write-source-files'
 import { fetchContentTypes } from '../lib/fetch-content-types'
-import { getContentfulLocales } from '../lib/get-contentful-locales'
+import { fetchLocales } from '../lib/fetch-locales'
 import { fetchEntries } from '../lib/fetch-entries'
-import {
-  EntriesByContentTypeId,
-  EntryType,
-} from '../lib/entries-by-content-type-id'
+import { organizeEntriesByContentType } from '../lib/organize-entries-by-content-type'
 import { getSourceFiles } from './get-source-files'
 
 export interface PullContent {
@@ -23,58 +20,29 @@ export const pullContent = async ({
   path,
 }: PullContent) => {
   const log = console.log
-  const { defaultLocale } = await getContentfulLocales({
+  const { defaultLocale } = await fetchLocales({
     contentfulEnvironment,
   })
   // Use locales in this order, cli overrides all others, remote default
   // locale is a last resort
   const localeCode = options.locale || defaultLocale?.code || 'en-US'
-  log(chalk(`- remote default locale: ${defaultLocale?.code}`))
   log(chalk(`- pulling locale: ${localeCode}`))
-  log(chalk(`- fetching content types`))
   const contentTypes = await fetchContentTypes({
     contentfulEnvironment,
     options,
   })
-  log(
-    chalk(
-      `- fetched ${contentTypes.length} content ${
-        contentTypes.length > 1 ? 'types' : 'type'
-      }`
-    )
-  )
-  // Initialize struture to organize entires per content type
-  const entriesByContentTypeId: EntriesByContentTypeId = {}
-  contentTypes.forEach((contentType) => {
-    entriesByContentTypeId[contentType.sys.id] = {
-      contentType,
-      entryTypeList: [],
-    }
-  })
-
   // Fetch all entries
-  log(chalk(`- fetching entries`))
   const remoteEntries = await fetchEntries({
     contentfulEnvironment,
     options,
     localeCode,
   })
 
-  // Find entries and organize them with the content type
-  for (const remoteEntry of remoteEntries) {
-    const contentTypeId = remoteEntry.sys.contentType.sys.id
-    const entryType: EntryType = { sys: remoteEntry.sys, fields: {} }
-    // Find fields for content type and entry and organize them together
-    for (const fieldId of Object.keys(remoteEntry.fields)) {
-      entryType.fields[fieldId] = {
-        contentFieldType: entriesByContentTypeId[
-          contentTypeId
-        ].contentType.fields.find((field: any) => field.id === fieldId),
-        fieldValue: remoteEntry.fields[fieldId],
-      }
-    }
-    entriesByContentTypeId[contentTypeId].entryTypeList.push(entryType)
-  }
+  const entriesByContentTypeId = organizeEntriesByContentType({
+    contentTypes,
+    remoteEntries,
+  })
+
   // Generate import statements for each type to be added to the main file
   const allTypesImportStatements: Node[] = []
   const files = getSourceFiles({

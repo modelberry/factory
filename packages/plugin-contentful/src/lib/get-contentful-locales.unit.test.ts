@@ -1,5 +1,5 @@
 import { environmentMock } from '../contentful-mock/contentful-mock'
-import { getContentfulLocales } from './get-contentful-locales'
+import { fetchLocales } from './fetch-locales'
 
 describe('getContentfulLocales should', () => {
   const consoleSpy = jest.spyOn(console, 'log').mockImplementation()
@@ -7,7 +7,7 @@ describe('getContentfulLocales should', () => {
     consoleSpy.mockReset()
   })
   test('get locales from mock', async () => {
-    const locales = await getContentfulLocales({
+    const locales = await fetchLocales({
       contentfulEnvironment: environmentMock,
     })
     expect(locales).toMatchSnapshot()

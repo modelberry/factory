@@ -3,6 +3,7 @@ import { TypeData, Options } from '@modelberry/mbfactory/plain'
 import { ContentType, Environment } from 'contentful-management/types'
 import { ValidationsMap } from '../lib/get-modelberry-plugin-data'
 import { checkTags } from '../check-tags/check-tags'
+import { mustIgnoreInterface } from '../check-tags/must-ignore-interface'
 import { getModelFieldsAndControls } from './get-model-fields-and-controls'
 import { pushFieldsToContentful } from './push-fields-to-contentful'
 import { pushControlsToContentful } from './push-controls-to-contentful'
@@ -27,17 +28,8 @@ export const pushModels = async ({
     const typescriptInterfaceName = modelberryType.interface.typeName
     const interfaceTypeTag = interfaceTags['@type']
 
-    if (options.type && options.type !== interfaceTypeTag) continue
-
     log(chalk.bold.underline(`\n${typescriptInterfaceName}`))
-    if ('@ignore' in interfaceTags) {
-      log(chalk(`- ignoring interface`))
-      continue
-    }
-    if (!interfaceTypeTag) {
-      log(chalk.red(`- no @type inline tag`))
-      continue
-    }
+    if (mustIgnoreInterface({ options, interfaceTags })) continue
     checkTags({ interfaceTags })
 
     const { fields, controls } = getModelFieldsAndControls({

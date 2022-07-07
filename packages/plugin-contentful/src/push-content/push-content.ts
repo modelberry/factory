@@ -1,7 +1,9 @@
 import { Options, TypeData } from '@modelberry/mbfactory/plain'
 import chalk from 'chalk'
 import { Environment, KeyValueMap } from 'contentful-management/types'
-import { getContentfulLocales } from '../lib/get-contentful-locales'
+import { checkTags } from '../check-tags/check-tags'
+import { mustIgnoreInterface } from '../check-tags/must-ignore-interface'
+import { fetchLocales } from '../lib/fetch-locales'
 import { getEntryFields } from './get-entry-fields'
 import { pushEntryToContentful } from './push-entry-to-contentful'
 
@@ -17,27 +19,18 @@ export const pushContent = async ({
   typeData,
 }: PushContent) => {
   const log = console.log
-  const { defaultLocale } = await getContentfulLocales({
+  const { defaultLocale } = await fetchLocales({
     contentfulEnvironment,
   })
-  log(chalk(`- remote default locale: ${defaultLocale?.code}`))
   for (const modelberryType of Object.values(typeData)) {
     const interfaceTags = modelberryType.interface.interfaceTags || {}
     const typescriptInterfaceName = modelberryType.interface.typeName
     const interfaceTypeTag = interfaceTags['@type']
     const interfaceLocaleTag = interfaceTags['@locale']
 
-    if (options.type && options.type !== interfaceTypeTag) continue
-
     log(chalk.bold.underline(`\n${typescriptInterfaceName}`))
-    if ('@ignore' in interfaceTags) {
-      log(chalk(`- ignoring interface`))
-      continue
-    }
-    if (!interfaceTypeTag) {
-      log(chalk.red(`- no @type inline tag`))
-      continue
-    }
+    if (mustIgnoreInterface({ options, interfaceTags })) continue
+    checkTags({ interfaceTags })
 
     for (const mbVariable of modelberryType.variables) {
       console.log(chalk(`- parsing js variable: ${mbVariable.name}`))

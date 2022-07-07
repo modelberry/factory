@@ -21,6 +21,7 @@ export const fetchEntries = async ({
   localeCode,
 }: FetchEntries) => {
   const log = console.log
+  log(chalk(`- fetching entries`))
   const query: QueryOptions = { skip: 0, locale: localeCode }
   if (options.type) query['content_type'] = options.type
 

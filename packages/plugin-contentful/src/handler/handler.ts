@@ -34,7 +34,7 @@ export const handler: Handler = async ({
       .filter((atType) => !options?.type || options?.type === atType)
       .join(', ')
     if (!atTypeList) {
-      log(chalk.red('- no models found'))
+      log(chalk.red('- no content types found'))
       return
     }
     modelList = chalk(
@@ -78,7 +78,11 @@ export const handler: Handler = async ({
   const contentfulEnvironment = await getContentfulEnvironment()
   const statistics = await fetchStatistics({ contentfulEnvironment })
   log(chalk(`- entries found at Contentful: ${statistics.entriesTotal}`))
-  log(chalk(`- models found at Contentful: ${statistics.contentTypesTotal}`))
+  log(
+    chalk(
+      `- content types found at Contentful: ${statistics.contentTypesTotal}`
+    )
+  )
 
   if (!options.force) {
     const answers = await inquirer.prompt(continueQuestion)

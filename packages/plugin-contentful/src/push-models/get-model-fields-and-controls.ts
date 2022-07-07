@@ -27,7 +27,7 @@ export const getModelFieldsAndControls = ({
     checkTags({ fieldTags: tags })
 
     if ('@ignore' in tags) {
-      log(chalk(`- ignoring field`))
+      log(chalk(`- skipping because @ignore`))
       continue
     }
     if (!tags['@type']) {
