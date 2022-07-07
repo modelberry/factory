@@ -4,35 +4,42 @@ import {
   createTsExport,
   createTsImport,
   Node,
+  PropertyTree,
 } from '@modelberry/mbfactory/plain'
-import { ContentType } from 'contentful-management/types'
 import { SourceFile } from '../lib/write-source-files'
 import { createAstNodes } from './create-ast-nodes'
 import { createContentfulAssetTypeDeclaration } from './create-contentful-asset-type-declaration'
 import { createContentfulReferenceTypeDeclaration } from './create-contentful-reference-type-declaration'
-import { modelGenerator } from './model-generator'
 
 export interface GetSourceFiles {
-  /** Content types to generate source file for */
-  contentTypes: ContentType[]
   /** Source files path */
   path: string
   /** Empty object to save Contentful validations to */
   validations: Record<string, any>
+  modelGenInstance: AsyncGenerator<
+    {
+      contentTypeId: string
+      inlineTags: Record<string, any>
+      interfaceName: string
+      namedImports: string[]
+      propertyTree: PropertyTree
+    },
+    void,
+    unknown
+  >
 }
 
 export const getSourceFiles = async ({
-  contentTypes,
   path,
   validations,
+  modelGenInstance,
 }: GetSourceFiles) => {
   // Generate import statements for each type to be added to the main file
   const allTypesImportStatements: Node[] = []
 
   const files: SourceFile[] = []
 
-  const modelGen = modelGenerator({ contentTypes, validations })
-  for await (const model of modelGen) {
+  for await (const model of modelGenInstance) {
     const nodes = createAstNodes(model)
 
     // Add source file for this interface
