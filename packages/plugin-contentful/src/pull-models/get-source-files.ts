@@ -1,23 +1,18 @@
 import {
-  createTsInterface,
+  camelToKebab,
+  createDataVarStatement,
   createTsExport,
   createTsImport,
-  firstUpperCase,
-  camelToKebab,
-  firstLowerCase,
   Node,
 } from '@modelberry/mbfactory/plain'
 import { ContentType } from 'contentful-management/types'
 import { SourceFile } from '../lib/write-source-files'
-import { contentTypeFieldsToPropertyTree } from '../lib/content-type-fields-to-property-tree'
-import { contentTypeToInlineTags } from '../lib/content-type-to-inline-tags'
-import { fetchEditorInterfaces } from '../lib/fetch-editor-interfaces'
+import { createAstNodes } from './create-ast-nodes'
 import { createContentfulAssetTypeDeclaration } from './create-contentful-asset-type-declaration'
 import { createContentfulReferenceTypeDeclaration } from './create-contentful-reference-type-declaration'
+import { modelGenerator } from './model-generator'
 
 export interface GetSourceFiles {
-  /** Empty node list, for each generated type an import statement is added */
-  allTypesImportStatements: Node[]
   /** Content types to generate source file for */
   contentTypes: ContentType[]
   /** Source files path */
@@ -27,48 +22,24 @@ export interface GetSourceFiles {
 }
 
 export const getSourceFiles = async ({
-  allTypesImportStatements,
   contentTypes,
   path,
   validations,
 }: GetSourceFiles) => {
-  const files: SourceFile[] = []
-  for (const contentType of contentTypes) {
-    const inlineTags = contentTypeToInlineTags({ contentType })
-    const contentTypeId = contentType.sys.id
-    // Fetch editor interfaces from Contentful remote API
-    const editorInterfaces = await fetchEditorInterfaces({ contentType })
-    // Empty array that gets filled with named imports
-    const namedImports: string[] = []
-    // Get propterty tree that defines all fields for the interface
-    const propertyTree = contentTypeFieldsToPropertyTree({
-      contentTypeFields: contentType.fields,
-      editorInterfaces,
-      namedImports,
-      validations,
-    })
-    const interfaceName = 'Contentful' + firstUpperCase(contentTypeId)
-    const interfaceDeclaration = createTsInterface({
-      blockTag: '@modelberry',
-      inlineTags,
-      propertyTree,
-      isExported: true,
-      name: interfaceName,
-    })
+  // Generate import statements for each type to be added to the main file
+  const allTypesImportStatements: Node[] = []
 
-    // Add imports for required types
-    const uniqueNamedImports = Array.from(new Set(namedImports))
-    const entryImportStatements = uniqueNamedImports.map((ni) =>
-      createTsImport({
-        namedImports: [`${ni}`],
-        from: `./${camelToKebab(firstLowerCase(ni))}`,
-      })
-    )
+  const files: SourceFile[] = []
+
+  const modelGen = modelGenerator({ contentTypes, validations })
+  for await (const model of modelGen) {
+    const nodes = createAstNodes(model)
+
     // Add source file for this interface
-    const filenameWithoutExt = `contentful-${camelToKebab(contentTypeId)}`
+    const filenameWithoutExt = `contentful-${camelToKebab(model.contentTypeId)}`
     files.push({
       filename: `${filenameWithoutExt}.ts`,
-      nodes: [...entryImportStatements, interfaceDeclaration],
+      nodes,
       path,
     })
     // Add import statements to be added to the main file
@@ -92,6 +63,20 @@ export const getSourceFiles = async ({
   files.push({
     filename: 'contentful-reference.ts',
     nodes: [contentfulReference],
+    path,
+  })
+
+  // Add main source file that imports all types and defines Contentful
+  // validation objects
+  const dataObject = { '@modelberry/plugin-contentful/plain': { validations } }
+  const dataVarStatement = createDataVarStatement({ dataObject })
+  const mbPluginDataImport = createTsImport({
+    namedImports: ['ModelberryPluginData'],
+    from: `@modelberry/plugin-contentful/plain`,
+  })
+  files.push({
+    filename: 'main.ts',
+    nodes: [mbPluginDataImport, ...allTypesImportStatements, dataVarStatement],
     path,
   })
 
