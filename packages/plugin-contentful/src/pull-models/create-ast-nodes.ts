@@ -5,6 +5,7 @@ import {
   firstLowerCase,
   PropertyTree,
 } from '@modelberry/mbfactory/plain'
+import ts from 'typescript'
 
 export interface CreateAstNodes {
   inlineTags: Record<string, any>
@@ -18,7 +19,7 @@ export const createAstNodes = ({
   interfaceName,
   namedImports,
   propertyTree,
-}: CreateAstNodes) => {
+}: CreateAstNodes): (ts.ImportDeclaration | ts.InterfaceDeclaration)[] => {
   const interfaceDeclaration = createTsInterface({
     blockTag: '@modelberry',
     inlineTags,

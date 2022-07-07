@@ -6,6 +6,7 @@ Object {
   "allowUmdGlobalAccess": true,
   "configFilePath": undefined,
   "declaration": false,
+  "downlevelIteration": true,
   "esModuleInterop": true,
   "forceConsistentCasingInFileNames": true,
   "jsx": 4,
