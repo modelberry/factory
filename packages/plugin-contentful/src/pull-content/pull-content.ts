@@ -54,7 +54,11 @@ export const pullContent = async ({
 
   // Fetch all entries
   log(chalk(`- fetching entries`))
-  const remoteEntries = await fetchEntries({ contentfulEnvironment, options })
+  const remoteEntries = await fetchEntries({
+    contentfulEnvironment,
+    options,
+    localeCode,
+  })
 
   // Find entries and organize them with the content type
   for (const remoteEntry of remoteEntries) {

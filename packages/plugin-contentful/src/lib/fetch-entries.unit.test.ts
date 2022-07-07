@@ -6,11 +6,21 @@ describe('fetchEntries should', () => {
   beforeEach(() => {
     consoleSpy.mockReset()
   })
-  test('fetch entries from mock', async () => {
+  test('fetch entries from mock with en-US locale', async () => {
     const entries = await fetchEntries({
       contentfulEnvironment: environmentMock,
+      localeCode: 'en-US',
       options: {},
     })
     expect(entries).toMatchSnapshot()
+  })
+  test('fetch entries from mock with en-GB locale', async () => {
+    await expect(
+      fetchEntries({
+        contentfulEnvironment: environmentMock,
+        localeCode: 'nl-NL',
+        options: {},
+      })
+    ).rejects.toEqual('Status 400 - Bad locale')
   })
 })

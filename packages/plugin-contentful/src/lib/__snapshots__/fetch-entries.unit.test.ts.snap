@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`fetchEntries should fetch entries from mock 1`] = `
+exports[`fetchEntries should fetch entries from mock with en-US locale 1`] = `
 Array [
   Object {
     "fields": Object {

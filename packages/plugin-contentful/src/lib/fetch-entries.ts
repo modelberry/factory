@@ -12,14 +12,16 @@ import {
 export interface FetchEntries {
   options: Options
   contentfulEnvironment: Environment
+  localeCode: string
 }
 
 export const fetchEntries = async ({
   contentfulEnvironment,
   options,
+  localeCode,
 }: FetchEntries) => {
   const log = console.log
-  const query: QueryOptions = { skip: 0 }
+  const query: QueryOptions = { skip: 0, locale: localeCode }
   if (options.type) query['content_type'] = options.type
 
   const batchSize = 100

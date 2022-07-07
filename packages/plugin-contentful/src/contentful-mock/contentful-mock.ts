@@ -39,6 +39,8 @@ export const getContentTypesMock = async () => {
 }
 
 export const getEntriesMock = async (query: any) => {
+  // Mimic a response 400 when a bad locale is requested
+  if (query.locale && query.locale !== 'en-US') throw 'Status 400 - Bad locale'
   const entries = query.content_type
     ? getEntriesQueryResponse
     : getEntriesResponse
