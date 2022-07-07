@@ -3,6 +3,7 @@
     "allowJs": true,
     "allowUmdGlobalAccess": true,
     "declaration": true,
+    "downlevelIteration": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "jsx": "react-jsx",
