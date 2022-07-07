@@ -1,17 +1,56 @@
-import { firstUpperCase } from '@modelberry/mbfactory/plain'
+import { firstUpperCase, Options } from '@modelberry/mbfactory/plain'
+import chalk from 'chalk'
+import { Environment } from 'contentful-management/types'
 import { entriesToJsVariables } from '../lib/entries-to-js-variables'
-import { EntriesByContentTypeId } from '../lib/entries-by-content-type-id'
+import { fetchContentTypes } from '../lib/fetch-content-types'
+import { fetchEntries } from '../lib/fetch-entries'
+import { fetchLocales } from '../lib/fetch-locales'
+import { organizeEntriesByContentType } from '../lib/organize-entries-by-content-type'
 
 export interface EntryGenerator {
-  /** Empty node list, for each generated type an import statement is added */
-  entriesByContentTypeId: EntriesByContentTypeId
-  localeCode: string
+  contentfulEnvironment: Environment
+  options: Options
 }
 
-export function* entryGenerator({
-  entriesByContentTypeId,
-  localeCode,
+export type EntryGeneratorInstance = AsyncGenerator<
+  {
+    contentTypeId: string
+    varType: string
+    varName: string
+    contentArray: any[]
+  },
+  void,
+  unknown
+>
+
+// Fetch all required data, then loop and yield an object for each entry
+export async function* entryGenerator({
+  contentfulEnvironment,
+  options,
 }: EntryGenerator) {
+  const log = console.log
+  const { defaultLocale } = await fetchLocales({
+    contentfulEnvironment,
+  })
+  // Use locales in this order, cli overrides all others, remote default
+  // locale is a last resort
+  const localeCode = options.locale || defaultLocale?.code || 'en-US'
+  log(chalk(`- pulling locale: ${localeCode}`))
+  const contentTypes = await fetchContentTypes({
+    contentfulEnvironment,
+    options,
+  })
+  // Fetch all entries
+  const remoteEntries = await fetchEntries({
+    contentfulEnvironment,
+    options,
+    localeCode,
+  })
+  const entriesByContentTypeId = organizeEntriesByContentType({
+    contentTypes,
+    remoteEntries,
+  })
+
   // Each content type is a file with: export const myType: MyType = [...]
   for (const contentTypeId of Object.keys(entriesByContentTypeId)) {
     const varType = `Contentful${firstUpperCase(contentTypeId)}`

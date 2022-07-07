@@ -1,12 +1,8 @@
 import { Environment } from 'contentful-management/types'
 import { Options } from '@modelberry/mbfactory/plain'
-import chalk from 'chalk'
 import { writeSourceFiles } from '../lib/write-source-files'
-import { fetchContentTypes } from '../lib/fetch-content-types'
-import { fetchLocales } from '../lib/fetch-locales'
-import { fetchEntries } from '../lib/fetch-entries'
-import { organizeEntriesByContentType } from '../lib/organize-entries-by-content-type'
 import { getSourceFiles } from './get-source-files'
+import { entryGenerator } from './entry-generator'
 
 export interface PullContent {
   contentfulEnvironment: Environment
@@ -19,31 +15,12 @@ export const pullContent = async ({
   options,
   path,
 }: PullContent) => {
-  const log = console.log
-  const { defaultLocale } = await fetchLocales({
-    contentfulEnvironment,
-  })
-  // Use locales in this order, cli overrides all others, remote default
-  // locale is a last resort
-  const localeCode = options.locale || defaultLocale?.code || 'en-US'
-  log(chalk(`- pulling locale: ${localeCode}`))
-  const contentTypes = await fetchContentTypes({
+  const entryGenInstance = entryGenerator({
     contentfulEnvironment,
     options,
   })
-  // Fetch all entries
-  const remoteEntries = await fetchEntries({
-    contentfulEnvironment,
-    options,
-    localeCode,
-  })
-  const entriesByContentTypeId = organizeEntriesByContentType({
-    contentTypes,
-    remoteEntries,
-  })
-  const files = getSourceFiles({
-    entriesByContentTypeId,
-    localeCode,
+  const files = await getSourceFiles({
+    entryGenInstance,
     path,
   })
   await writeSourceFiles({ files, options })
