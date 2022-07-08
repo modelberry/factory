@@ -5,10 +5,7 @@ import chalk from 'chalk'
 import { environmentMock } from '../contentful-mock/contentful-mock'
 import { pullContent } from './pull-content'
 
-const localeResponse = [
-  [chalk('- remote default locale: en-US')],
-  [chalk('- pulling locale: en-US')],
-]
+const localeResponse = [[chalk('- remote default locale: en-US')]]
 
 describe('Pull content should', () => {
   const consoleSpy = jest.spyOn(console, 'log').mockImplementation()

@@ -9,6 +9,14 @@ describe('getContentfulLocales should', () => {
   test('get locales from mock', async () => {
     const locales = await fetchLocales({
       contentfulEnvironment: environmentMock,
+      options: { locale: 'en-US' },
+    })
+    expect(locales).toMatchSnapshot()
+  })
+  test('return badCliLocate for a locale that does not exist from mock', async () => {
+    const locales = await fetchLocales({
+      contentfulEnvironment: environmentMock,
+      options: { locale: 'es-ES' },
     })
     expect(locales).toMatchSnapshot()
   })

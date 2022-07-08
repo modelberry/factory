@@ -72,7 +72,7 @@ export const handler: Handler = async ({
     log(chalk(`- force enabled, ignoring all messages and warnings`))
   }
   if (options.locale) {
-    log(chalk(`- overriding @modelberry {@locale} with ${options.locale}`))
+    log(chalk(`- using locale: ${options.locale}`))
   }
 
   const contentfulEnvironment = await getContentfulEnvironment()

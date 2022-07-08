@@ -1,6 +1,7 @@
 import { Environment } from 'contentful-management/types'
 import { Options } from '@modelberry/mbfactory/plain'
 import { writeSourceFiles } from '../lib/write-source-files'
+import { fetchLocales } from '../lib/fetch-locales'
 import { getSourceFiles } from './get-source-files'
 import { remoteEntryGenerator } from './remote-entry-generator'
 
@@ -15,8 +16,18 @@ export const pullContent = async ({
   options,
   path,
 }: PullContent) => {
+  const { badCliLocale, defaultLocaleCode, cliLocaleCode } = await fetchLocales(
+    {
+      contentfulEnvironment,
+      options,
+    }
+  )
+  if (badCliLocale) return
+  const localeCode = cliLocaleCode || defaultLocaleCode
+
   const remoteEntryIterator = remoteEntryGenerator({
     contentfulEnvironment,
+    localeCode,
     options,
   })
   const files = await getSourceFiles({

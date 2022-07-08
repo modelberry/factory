@@ -17,17 +17,21 @@ export const pushContent = async ({
   options,
   typeData,
 }: PushContent) => {
-  const { defaultLocale } = await fetchLocales({
-    contentfulEnvironment,
-  })
+  const { badCliLocale, defaultLocaleCode, cliLocaleCode } = await fetchLocales(
+    {
+      contentfulEnvironment,
+      options,
+    }
+  )
+  if (badCliLocale) return
   const localVariableIterator = localVariableGenerator({ options, typeData })
   for (const localVariable of localVariableIterator) {
     for (const fieldValues of localVariable.fieldValuesArray) {
       const { entryId, entryFields } = getEntryFields({
         localeCodes: {
-          default: defaultLocale?.code || 'en-US',
+          default: defaultLocaleCode,
           interface: localVariable.interfaceLocaleTag,
-          cliOption: options.locale,
+          cliOption: cliLocaleCode,
         },
         fieldValues,
         fields: localVariable.fields,

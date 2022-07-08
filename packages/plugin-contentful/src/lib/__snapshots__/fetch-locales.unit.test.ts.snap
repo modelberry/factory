@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getContentfulLocales should get locales from mock 1`] = `
+Object {
+  "cliLocaleCode": "en-US",
+  "defaultLocaleCode": "en-US",
+  "locales": Array [
+    Object {
+      "code": "en-US",
+      "default": true,
+      "fallbackCode": "en-US",
+      "name": "English (United States)",
+      "optional": false,
+    },
+  ],
+}
+`;
+
+exports[`getContentfulLocales should return badCliLocate for a locale that does not exist from mock 1`] = `
+Object {
+  "badCliLocale": true,
+  "defaultLocaleCode": "en-US",
+  "locales": Array [
+    Object {
+      "code": "en-US",
+      "default": true,
+      "fallbackCode": "en-US",
+      "name": "English (United States)",
+      "optional": false,
+    },
+  ],
+}
+`;

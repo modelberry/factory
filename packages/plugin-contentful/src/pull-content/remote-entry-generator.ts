@@ -1,14 +1,13 @@
 import { firstUpperCase, Options } from '@modelberry/mbfactory/plain'
-import chalk from 'chalk'
 import { Environment } from 'contentful-management/types'
 import { entriesToJsVariables } from '../lib/entries-to-js-variables'
 import { fetchContentTypes } from '../lib/fetch-content-types'
 import { fetchEntries } from '../lib/fetch-entries'
-import { fetchLocales } from '../lib/fetch-locales'
 import { organizeEntriesByContentType } from '../lib/organize-entries-by-content-type'
 
 export interface RemoteEntryGenerator {
   contentfulEnvironment: Environment
+  localeCode: string
   options: Options
 }
 
@@ -26,16 +25,9 @@ export type RemoteEntryIterator = AsyncGenerator<
 // Fetch all required data, then loop and yield an object for each entry
 export async function* remoteEntryGenerator({
   contentfulEnvironment,
+  localeCode,
   options,
 }: RemoteEntryGenerator) {
-  const log = console.log
-  const { defaultLocale } = await fetchLocales({
-    contentfulEnvironment,
-  })
-  // Use locales in this order, cli overrides all others, remote default
-  // locale is a last resort
-  const localeCode = options.locale || defaultLocale?.code || 'en-US'
-  log(chalk(`- pulling locale: ${localeCode}`))
   const contentTypes = await fetchContentTypes({
     contentfulEnvironment,
     options,
