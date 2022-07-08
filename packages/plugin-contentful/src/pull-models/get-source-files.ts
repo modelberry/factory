@@ -4,46 +4,38 @@ import {
   createTsExport,
   createTsImport,
   Node,
-  PropertyTree,
 } from '@modelberry/mbfactory/plain'
 import { SourceFile } from '../lib/write-source-files'
 import { createAstNodes } from './create-ast-nodes'
 import { createContentfulAssetTypeDeclaration } from './create-contentful-asset-type-declaration'
 import { createContentfulReferenceTypeDeclaration } from './create-contentful-reference-type-declaration'
+import { RemoteContentTypeIterator } from './remote-content-type-generator'
 
 export interface GetSourceFiles {
   /** Source files path */
   path: string
   /** Empty object to save Contentful validations to */
   validations: Record<string, any>
-  modelGenInstance: AsyncGenerator<
-    {
-      contentTypeId: string
-      inlineTags: Record<string, any>
-      interfaceName: string
-      namedImports: string[]
-      propertyTree: PropertyTree
-    },
-    void,
-    unknown
-  >
+  remoteContentTypeIterator: RemoteContentTypeIterator
 }
 
 export const getSourceFiles = async ({
   path,
   validations,
-  modelGenInstance,
+  remoteContentTypeIterator,
 }: GetSourceFiles) => {
   // Generate import statements for each type to be added to the main file
   const allTypesImportStatements: Node[] = []
 
   const files: SourceFile[] = []
 
-  for await (const model of modelGenInstance) {
-    const nodes = createAstNodes(model)
+  for await (const contentType of remoteContentTypeIterator) {
+    const nodes = createAstNodes(contentType)
 
     // Add source file for this interface
-    const filenameWithoutExt = `contentful-${camelToKebab(model.contentTypeId)}`
+    const filenameWithoutExt = `contentful-${camelToKebab(
+      contentType.contentTypeId
+    )}`
     files.push({
       filename: `${filenameWithoutExt}.ts`,
       nodes,

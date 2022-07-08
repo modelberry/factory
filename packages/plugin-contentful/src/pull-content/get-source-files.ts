@@ -1,21 +1,21 @@
 import { camelToKebab, createTsExport, Node } from '@modelberry/mbfactory/plain'
 import { SourceFile } from '../lib/write-source-files'
-import { EntryGeneratorInstance } from './entry-generator'
+import { RemoteEntryIterator } from './remote-entry-generator'
 import { createAstNodes } from './create-ast-nodes'
 
 export interface GetSourceFiles {
-  entryGenInstance: EntryGeneratorInstance
+  remoteEntryIterator: RemoteEntryIterator
   path: string
 }
 
 export const getSourceFiles = async ({
-  entryGenInstance,
+  remoteEntryIterator,
   path,
 }: GetSourceFiles) => {
   // Generate import statements for each type to be added to the main file
   const allTypesImportStatements: Node[] = []
   const files: SourceFile[] = []
-  for await (const entry of entryGenInstance) {
+  for await (const entry of remoteEntryIterator) {
     const nodes = createAstNodes(entry)
     const filenameWithoutExt = `contentful-${camelToKebab(
       entry.contentTypeId

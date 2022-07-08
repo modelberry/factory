@@ -7,12 +7,12 @@ import { fetchEntries } from '../lib/fetch-entries'
 import { fetchLocales } from '../lib/fetch-locales'
 import { organizeEntriesByContentType } from '../lib/organize-entries-by-content-type'
 
-export interface EntryGenerator {
+export interface RemoteEntryGenerator {
   contentfulEnvironment: Environment
   options: Options
 }
 
-export type EntryGeneratorInstance = AsyncGenerator<
+export type RemoteEntryIterator = AsyncGenerator<
   {
     contentTypeId: string
     varType: string
@@ -24,10 +24,10 @@ export type EntryGeneratorInstance = AsyncGenerator<
 >
 
 // Fetch all required data, then loop and yield an object for each entry
-export async function* entryGenerator({
+export async function* remoteEntryGenerator({
   contentfulEnvironment,
   options,
-}: EntryGenerator) {
+}: RemoteEntryGenerator) {
   const log = console.log
   const { defaultLocale } = await fetchLocales({
     contentfulEnvironment,
