@@ -2,11 +2,9 @@ import chalk from 'chalk'
 import { TypeData, Options } from '@modelberry/mbfactory/plain'
 import { ContentType, Environment } from 'contentful-management/types'
 import { ValidationsMap } from '../lib/get-modelberry-plugin-data'
-import { checkTags } from '../check-tags/check-tags'
-import { mustIgnoreInterface } from '../check-tags/must-ignore-interface'
-import { getModelFieldsAndControls } from './get-model-fields-and-controls'
 import { pushFieldsToContentful } from './push-fields-to-contentful'
 import { pushControlsToContentful } from './push-controls-to-contentful'
+import { localContentTypeGenerator } from './local-content-type-generator'
 
 export interface PushModels {
   contentfulEnvironment: Environment
@@ -22,23 +20,15 @@ export const pushModels = async ({
   validationsMap,
 }: PushModels) => {
   const log = console.log
-  for (const modelberryType of Object.values(typeData)) {
-    const modelFields = modelberryType.interface.fields || {}
-    const interfaceTags = modelberryType.interface.interfaceTags || {}
-    const typescriptInterfaceName = modelberryType.interface.typeName
-    const interfaceTypeTag = interfaceTags['@type']
 
-    log(chalk.bold.underline(`\n${typescriptInterfaceName}`))
-    if (mustIgnoreInterface({ options, interfaceTags })) continue
-    checkTags({ interfaceTags })
-
-    const { fields, controls } = getModelFieldsAndControls({
-      modelFields,
-      validationsMap,
-    })
-
+  const localContentTypeIterator = localContentTypeGenerator({
+    options,
+    typeData,
+    validationsMap,
+  })
+  for (const localContentType of localContentTypeIterator) {
     log(chalk.bold(`\nPushing to Contentful`))
-    if (fields.length < 1) {
+    if (localContentType.fields.length < 1) {
       log(chalk.red(`- no valid fields found, skipping`))
     } else {
       log(chalk(`- pushing content type`))
@@ -46,20 +36,22 @@ export const pushModels = async ({
       let contentTypeData
       if (!options.dryRun) {
         contentTypeData = {
-          name: interfaceTags['@name'] || interfaceTypeTag,
-          description: interfaceTags['@description'],
-          displayField: interfaceTags['@displayField'],
-          fields,
+          name:
+            localContentType.interfaceTags['@name'] ||
+            localContentType.interfaceTypeTag,
+          description: localContentType.interfaceTags['@description'],
+          displayField: localContentType.interfaceTags['@displayField'],
+          fields: localContentType.fields,
         } as ContentType
 
         contentType = await pushFieldsToContentful({
           contentTypeData,
           contentfulEnvironment,
           forceOption: options.force,
-          interfaceTypeTag,
+          interfaceTypeTag: localContentType.interfaceTypeTag,
         })
       }
-      if (controls.length > 0) {
+      if (localContentType.controls.length > 0) {
         console.log(chalk(`- pushing editor interface`))
         if (!options.dryRun) {
           if (!contentType) {
@@ -68,7 +60,7 @@ export const pushModels = async ({
           }
           await pushControlsToContentful({
             contentType,
-            controls,
+            controls: localContentType.controls,
           })
         }
       }

@@ -1,4 +1,15 @@
-export interface LocalContentTypeGenerator {}
+import { Options, TypeData } from '@modelberry/mbfactory/plain'
+import chalk from 'chalk'
+import { checkTags } from '../check-tags/check-tags'
+import { mustIgnoreInterface } from '../check-tags/must-ignore-interface'
+import { ValidationsMap } from '../lib/get-modelberry-plugin-data'
+import { getModelFieldsAndControls } from './get-model-fields-and-controls'
+
+export interface LocalContentTypeGenerator {
+  options: Options
+  typeData: TypeData
+  validationsMap: ValidationsMap
+}
 
 export type LocalContentTypeIterator = AsyncGenerator<
   {
@@ -13,4 +24,26 @@ export type LocalContentTypeIterator = AsyncGenerator<
 
 // Loop through content types from local source files and yield an object for
 // each entry
-export async function* localContentTypeGenerator({}: LocalContentTypeGenerator) {}
+export function* localContentTypeGenerator({
+  options,
+  typeData,
+  validationsMap,
+}: LocalContentTypeGenerator) {
+  const log = console.log
+  for (const modelberryType of Object.values(typeData)) {
+    const modelFields = modelberryType.interface.fields || {}
+    const interfaceTags = modelberryType.interface.interfaceTags || {}
+    const typescriptInterfaceName = modelberryType.interface.typeName
+    const interfaceTypeTag = interfaceTags['@type']
+
+    log(chalk.bold.underline(`\n${typescriptInterfaceName}`))
+    if (mustIgnoreInterface({ options, interfaceTags })) continue
+    checkTags({ interfaceTags })
+
+    const { fields, controls } = getModelFieldsAndControls({
+      modelFields,
+      validationsMap,
+    })
+    yield { fields, controls, interfaceTypeTag, interfaceTags }
+  }
+}
