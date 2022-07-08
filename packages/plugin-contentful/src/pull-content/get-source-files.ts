@@ -15,10 +15,10 @@ export const getSourceFiles = async ({
   // Generate import statements for each type to be added to the main file
   const allTypesImportStatements: Node[] = []
   const files: SourceFile[] = []
-  for await (const entry of remoteEntryIterator) {
-    const nodes = createAstNodes(entry)
+  for await (const remoteEntry of remoteEntryIterator) {
+    const nodes = createAstNodes(remoteEntry)
     const filenameWithoutExt = `contentful-${camelToKebab(
-      entry.contentTypeId
+      remoteEntry.contentTypeId
     )}-content`
     files.push({
       filename: `${filenameWithoutExt}.ts`,

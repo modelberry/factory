@@ -29,12 +29,12 @@ export const getSourceFiles = async ({
 
   const files: SourceFile[] = []
 
-  for await (const contentType of remoteContentTypeIterator) {
-    const nodes = createAstNodes(contentType)
+  for await (const remoteContentType of remoteContentTypeIterator) {
+    const nodes = createAstNodes(remoteContentType)
 
     // Add source file for this interface
     const filenameWithoutExt = `contentful-${camelToKebab(
-      contentType.contentTypeId
+      remoteContentType.contentTypeId
     )}`
     files.push({
       filename: `${filenameWithoutExt}.ts`,

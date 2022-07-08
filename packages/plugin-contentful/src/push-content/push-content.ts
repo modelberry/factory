@@ -21,20 +21,20 @@ export const pushContent = async ({
     contentfulEnvironment,
   })
   const localVariableIterator = localVariableGenerator({ options, typeData })
-  for (const mbVariable of localVariableIterator) {
-    for (const fieldValues of mbVariable.fieldValuesArray) {
+  for (const localVariable of localVariableIterator) {
+    for (const fieldValues of localVariable.fieldValuesArray) {
       const { entryId, entryFields } = getEntryFields({
         localeCodes: {
           default: defaultLocale?.code || 'en-US',
-          interface: mbVariable.interfaceLocaleTag,
+          interface: localVariable.interfaceLocaleTag,
           cliOption: options.locale,
         },
         fieldValues,
-        fields: mbVariable.fields,
+        fields: localVariable.fields,
       })
       console.log(
         chalk(
-          `- pushing entry ${mbVariable.interfaceTypeTag} with ${
+          `- pushing entry ${localVariable.interfaceTypeTag} with ${
             Object.keys(entryFields).length
           } fields` + (entryId ? ` (id:${entryId})` : ``)
         )
@@ -42,7 +42,7 @@ export const pushContent = async ({
       if (!options.dryRun) {
         await pushEntryToContentful({
           contentfulEnvironment,
-          contentTypeId: mbVariable.interfaceTypeTag,
+          contentTypeId: localVariable.interfaceTypeTag,
           entryFields,
           entryId,
         })

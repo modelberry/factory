@@ -1,7 +1,9 @@
 import { Environment } from 'contentful-management/types'
 import { Options, TypeData } from '@modelberry/mbfactory/plain'
-import { fetchContentTypes } from '../lib/fetch-content-types'
 import { ValidationsMap } from '../lib/get-modelberry-plugin-data'
+import { remoteContentTypeGenerator } from '../pull-models/remote-content-type-generator'
+import { localContentTypeGenerator } from '../push-models/local-content-type-generator'
+import { asyncIteratorToArray } from '../lib/async-iterator-to-array'
 
 export interface DiffModels {
   contentfulEnvironment: Environment
@@ -16,11 +18,26 @@ export const diffModels = async ({
   typeData,
   validationsMap,
 }: DiffModels) => {
-  const contentTypes = await fetchContentTypes({
+  // Empty object that gets filled with validations
+  const validations: Record<string, any> = {}
+
+  const remoteContentTypeIterator = remoteContentTypeGenerator({
     contentfulEnvironment,
     options,
+    validations,
   })
-  console.log('contentTypes', contentTypes)
-  console.log('typeData', typeData)
-  console.log('validationsMap', validationsMap)
+  const remoteContentTypes = await asyncIteratorToArray(
+    remoteContentTypeIterator
+  )
+  const localContentTypeIterator = localContentTypeGenerator({
+    options,
+    typeData,
+    validationsMap,
+  })
+  const localContentTypes = Array.from(localContentTypeIterator)
+
+  for (const remoteContentType of remoteContentTypes) {
+    console.log('remoteContentType =>', remoteContentType.interfaceName)
+    console.log(localContentTypes.length)
+  }
 }
