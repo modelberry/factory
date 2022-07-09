@@ -1,12 +1,9 @@
-import chalk from 'chalk'
+jest.mock('../lib/logger')
+
+import { logger } from '../lib/logger'
 import { callHandler } from './call-handler'
 
 describe('The call handler should', () => {
-  const consoleSpy = jest.spyOn(console, 'log').mockImplementation()
-  beforeEach(() => {
-    consoleSpy.mockReset()
-  })
-
   test('show an error when a plugin does not exist', async () => {
     await callHandler({
       command: 'push',
@@ -14,11 +11,13 @@ describe('The call handler should', () => {
       pluginName: '@modelberry/does-not-exist',
       type: 'content',
     })
-    expect(consoleSpy.mock.calls).toEqual([
-      [chalk.bold.underline(`\nRunning plugin`)],
-      [chalk('- plugin: @modelberry/does-not-exist')],
-      [chalk.red('- could not find plugin (MODULE_NOT_FOUND)')],
-    ])
+    expect(logger.h1).toHaveBeenLastCalledWith(`\nRunning plugin`)
+    expect(logger.p).toHaveBeenLastCalledWith(
+      '- plugin: @modelberry/does-not-exist'
+    )
+    expect(logger.error).toHaveBeenCalledWith(
+      '- could not find plugin (MODULE_NOT_FOUND)'
+    )
   })
 
   test('show an error when a plugin does not have a handler', async () => {
@@ -28,10 +27,10 @@ describe('The call handler should', () => {
       pluginName: 'chalk',
       type: 'content',
     })
-    expect(consoleSpy.mock.calls).toEqual([
-      [chalk.bold.underline(`\nRunning plugin`)],
-      [chalk('- plugin: chalk')],
-      [chalk.red('- could not find handler method on plugin')],
-    ])
+    expect(logger.h1).toHaveBeenLastCalledWith(`\nRunning plugin`)
+    expect(logger.p).toHaveBeenLastCalledWith(`- plugin: chalk`)
+    expect(logger.error).toHaveBeenLastCalledWith(
+      `- could not find handler method on plugin`
+    )
   })
 })

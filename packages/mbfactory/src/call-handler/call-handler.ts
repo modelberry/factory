@@ -1,8 +1,8 @@
-import chalk from 'chalk'
 import {
   PluginData,
   TypeData,
 } from '../get-all-plugin-data/get-all-plugin-data'
+import { logger } from '../lib/logger'
 import { ModelberryVariable } from '../modelberry-parser/parse-modelberry-variable'
 
 export type Command = 'push' | 'pull' | 'diff'
@@ -53,21 +53,20 @@ export const callHandler = async ({
   pluginName,
   type,
 }: CallHandler) => {
-  const log = console.log
-  log(chalk.bold.underline(`\nRunning plugin`))
-  console.log(chalk(`- plugin: ${pluginName}`))
+  logger.h1(`\nRunning plugin`)
+  logger.p(`- plugin: ${pluginName}`)
   let module: Module = {}
   try {
     module = <Module>await import(pluginName)
   } catch (e: any) {
-    console.log(chalk.red(`- could not find plugin (${e.code})`))
+    logger.error(`- could not find plugin (${e.code})`)
     return
   }
 
   if (module.handler) {
     await module.handler({ command, options, path, pluginData, type })
   } else {
-    log(chalk.red(`- could not find handler method on plugin`))
+    logger.error(`- could not find handler method on plugin`)
     return
   }
 }
