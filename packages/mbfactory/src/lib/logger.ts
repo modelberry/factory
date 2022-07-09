@@ -6,38 +6,39 @@ export interface LoggerInit {
 }
 
 export type Logger = {
-  bus: string[]
   error: (message: string) => void
   h1: (message: string) => void
   h2: (message: string) => void
   h3: (message: string) => void
-  p: (message: string) => void
   init: (args: LoggerInit) => void
+  log: (message: string) => void
   options: Options
+  p: (message: string) => void
 }
 
 export type LoggerFactory = () => Logger
 
 export const LoggerFactory: LoggerFactory = () => ({
+  error(message: string) {
+    this.log(chalk.red(message))
+  },
   bus: [] as string[],
   h1(message: string) {
-    this.bus.push(chalk.bold.underline(message))
+    this.log(chalk.bold.underline(message))
   },
   h2(message: string) {
-    this.bus.push(chalk.underline(message))
+    this.log(chalk.bold(message))
   },
   h3(message: string) {
-    this.bus.push(chalk.bold(message))
+    this.log(chalk.underline(message))
   },
-  p(message: string) {
-    this.bus.push(chalk(message))
-  },
-  error(message: string) {
-    this.bus.push(chalk(message))
-  },
-  options: {},
   init({ options }: LoggerInit) {
     Object.assign(this.options, options)
+  },
+  log: console.log,
+  options: {},
+  p(message: string) {
+    this.log(chalk(message))
   },
 })
 
