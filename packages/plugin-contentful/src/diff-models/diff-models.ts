@@ -1,5 +1,5 @@
 import { Environment } from 'contentful-management/types'
-import { Options, TypeData } from '@modelberry/mbfactory/plain'
+import { logger, Options, TypeData } from '@modelberry/mbfactory/plain'
 import { ValidationsMap } from '../lib/get-modelberry-plugin-data'
 import { remoteContentTypeGenerator } from '../pull-models/remote-content-type-generator'
 import { localContentTypeGenerator } from '../push-models/local-content-type-generator'
@@ -26,6 +26,8 @@ export const diffModels = async ({
     options,
     validations,
   })
+  // Mute logging when fetching remote and local content types
+  logger.mute = true
   const remoteContentTypes = await asyncIteratorToArray(
     remoteContentTypeIterator
   )
@@ -35,7 +37,12 @@ export const diffModels = async ({
     validationsMap,
   })
   const localContentTypes = Array.from(localContentTypeIterator)
+  logger.mute = false
 
-  let dum = typeof remoteContentTypes + typeof localContentTypes
-  if (dum) dum = dum + dum
+  for (const remoteContentType of remoteContentTypes) {
+    for (const localContentType of localContentTypes) {
+      console.log('remoteContentType', remoteContentType)
+      console.log('localContentType', localContentType)
+    }
+  }
 }

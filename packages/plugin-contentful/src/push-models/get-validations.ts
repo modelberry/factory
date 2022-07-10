@@ -18,10 +18,10 @@ export const getValidations = ({
     const validationsList = fieldTags[tag].split(' ')
     for (const validation of validationsList) {
       if (validation in validationsMap) {
-        logger.p((`- validation ${validation}`))
+        logger.p(`- validation ${validation}`)
         validations.push(validationsMap[validation])
       } else {
-        logger.error((`- validation ${validation} not found`))
+        logger.error(`- validation ${validation} not found`)
         validationNotFound = true
       }
     }

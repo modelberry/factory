@@ -18,7 +18,7 @@ const publishEntry = async (entry: Entry) => {
   try {
     newEntry = await entry.publish()
   } catch {
-    logger.p((`- could not publish entry, pushed as draft`))
+    logger.p(`- could not publish entry, pushed as draft`)
   }
   return newEntry
 }

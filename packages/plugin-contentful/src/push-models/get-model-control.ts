@@ -19,10 +19,10 @@ export const getModelControl = ({
       settings: { helpText: fieldTags['@helpText'] },
     }
     if (fieldTags['@widgetId']) {
-      logger.p((`- editor control ${fieldTags['@widgetId']}`))
+      logger.p(`- editor control ${fieldTags['@widgetId']}`)
     }
     if (fieldTags['@helpText']) {
-      logger.p((`- help text`))
+      logger.p(`- help text`)
     }
   }
   return control

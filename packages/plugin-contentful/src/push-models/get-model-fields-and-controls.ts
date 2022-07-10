@@ -20,24 +20,24 @@ export const getModelFieldsAndControls = ({
   for (const [fieldId, field] of Object.entries(modelFields!)) {
     const fieldIdWithoutPostfix = getFieldIdWithoutPostfix({ fieldId })
 
-    logger.h3((`${fieldIdWithoutPostfix}`))
+    logger.h3(`${fieldIdWithoutPostfix}`)
     const tags = field.tags || {}
     checkTags({ fieldTags: tags })
 
     if ('@ignore' in tags) {
-      logger.p((`- skipping because @ignore`))
+      logger.p(`- skipping because @ignore`)
       continue
     }
     if (!tags['@type']) {
-      logger.error((`- no @type inline tag`))
+      logger.error(`- no @type inline tag`)
       continue
     }
     if (tags['@type'] === 'Link' && !tags['@linkType']) {
-      logger.error((`- @type=Link without @linkType`))
+      logger.error(`- @type=Link without @linkType`)
       continue
     }
     if (tags['@type'] === 'Array' && !tags['@itemsType']) {
-      logger.error((`- @type=Array without @itemsType`))
+      logger.error(`- @type=Array without @itemsType`)
       continue
     }
     if (
@@ -45,7 +45,7 @@ export const getModelFieldsAndControls = ({
       tags['@itemsType'] === 'Link' &&
       !tags['@itemsLinkType']
     ) {
-      logger.error((`- @type=Array, @itemsType=Link without @itemsLinkType`))
+      logger.error(`- @type=Array, @itemsType=Link without @itemsLinkType`)
       continue
     }
     if (
@@ -53,7 +53,7 @@ export const getModelFieldsAndControls = ({
       tags['@itemsType'] === 'Symbol' &&
       field.type?.trim().startsWith('{')
     ) {
-      logger.error((`- @type=Array, @itemsType=Symbol must be of type string`))
+      logger.error(`- @type=Array, @itemsType=Symbol must be of type string`)
       continue
     }
 

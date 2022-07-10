@@ -1,11 +1,11 @@
 import ts, { JSDocTagInfo, SymbolDisplayPart } from 'typescript'
 import { stripDoubleQuotes } from '../lib/case-helpers'
+import { logger } from '../lib/logger'
 import { isExportedDeclaration } from './is-exported-declaration'
 import {
   DocProperty,
   interfaceToDocProperty,
 } from './interface-to-doc-property'
-import { logger } from '../lib/logger'
 
 export type ModelberryInterface = {
   fields?: {
@@ -85,8 +85,8 @@ export const parseModelberryInterface = ({
   })
   /**
    * Checking for tags. Only check the tags that are required for exporting to a
-   * plugin. That makes the @modelberry block tag and the @plugin inline tag
-   * required. All others like @type are optional at this point.
+   * plugin. That makes the 'modelberry' block tag and the 'plugin' inline tag
+   * required. All others like 'type' are optional at this point.
    */
   if (!ModelberryTag) {
     logger.error(

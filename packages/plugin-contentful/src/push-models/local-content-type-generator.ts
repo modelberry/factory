@@ -34,7 +34,7 @@ export function* localContentTypeGenerator({
     const typescriptInterfaceName = modelberryType.interface.typeName
     const interfaceTypeTag = interfaceTags['@type']
 
-    logger.h1((`\n${typescriptInterfaceName}`))
+    logger.h1(`\n${typescriptInterfaceName}`)
     if (mustIgnoreInterface({ options, interfaceTags })) continue
     checkTags({ interfaceTags })
 
