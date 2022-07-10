@@ -28,7 +28,7 @@ export function* localSourceVariableGenerator({
     const localInterfaceTags = localModelberryType.interface.interfaceTags || {}
     const localTypescriptInterfaceName = localModelberryType.interface.typeName
     const localInterfaceTypeTag = localInterfaceTags['@type']
-    const interfaceLocaleTag = localInterfaceTags['@locale']
+    const localInterfaceLocaleTag = localInterfaceTags['@locale']
     const localFields = localModelberryType.interface.fields
 
     logger.h1(`\n${localTypescriptInterfaceName}`)
@@ -45,7 +45,7 @@ export function* localSourceVariableGenerator({
         fieldValuesArray: localFieldValuesArray,
         modelberryType: localModelberryType,
         interfaceTypeTag: localInterfaceTypeTag,
-        interfaceLocaleTag,
+        interfaceLocaleTag: localInterfaceLocaleTag,
       }
     }
   }

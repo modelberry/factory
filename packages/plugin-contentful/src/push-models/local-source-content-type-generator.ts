@@ -29,19 +29,26 @@ export function* localSourceContentTypeGenerator({
   validationsMap,
 }: LocalSourceContentTypeGenerator) {
   for (const localModelberryType of Object.values(typeData)) {
-    const contentTypeFields = localModelberryType.interface.fields || {}
-    const interfaceTags = localModelberryType.interface.interfaceTags || {}
-    const typescriptInterfaceName = localModelberryType.interface.typeName
-    const interfaceTypeTag = interfaceTags['@type']
+    const localContentTypeFields = localModelberryType.interface.fields || {}
+    const localInterfaceTags = localModelberryType.interface.interfaceTags || {}
+    const localTypescriptInterfaceName = localModelberryType.interface.typeName
+    const localInterfaceTypeTag = localInterfaceTags['@type']
 
-    logger.h1(`\n${typescriptInterfaceName}`)
-    if (mustIgnoreInterface({ options, interfaceTags })) continue
-    checkTags({ interfaceTags })
+    logger.h1(`\n${localTypescriptInterfaceName}`)
+    if (mustIgnoreInterface({ options, interfaceTags: localInterfaceTags }))
+      continue
+    checkTags({ interfaceTags: localInterfaceTags })
 
+    // TODO: Move outside
     const { fields, controls } = getModelFieldsAndControls({
-      contentTypeFields,
+      contentTypeFields: localContentTypeFields,
       validationsMap,
     })
-    yield { fields, controls, interfaceTypeTag, interfaceTags }
+    yield {
+      fields,
+      controls,
+      interfaceTypeTag: localInterfaceTypeTag,
+      interfaceTags: localInterfaceTags,
+    }
   }
 }
