@@ -7,17 +7,17 @@ import { getModelField } from './get-model-field'
 import { getModelControl } from './get-model-control'
 
 export interface GetModelFieldsAndControls {
-  modelFields: ModelberryInterface['fields']
+  contentTypeFields: ModelberryInterface['fields']
   validationsMap: ValidationsMap
 }
 
 export const getModelFieldsAndControls = ({
-  modelFields,
+  contentTypeFields,
   validationsMap,
 }: GetModelFieldsAndControls) => {
   const controls: Control[] = []
   const fields: ContentFields[] = []
-  for (const [fieldId, field] of Object.entries(modelFields!)) {
+  for (const [fieldId, field] of Object.entries(contentTypeFields!)) {
     const fieldIdWithoutPostfix = getFieldIdWithoutPostfix({ fieldId })
 
     logger.h3(`${fieldIdWithoutPostfix}`)

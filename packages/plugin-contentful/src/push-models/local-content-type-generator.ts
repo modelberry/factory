@@ -29,7 +29,7 @@ export function* localContentTypeGenerator({
   validationsMap,
 }: LocalContentTypeGenerator) {
   for (const modelberryType of Object.values(typeData)) {
-    const modelFields = modelberryType.interface.fields || {}
+    const contentTypeFields = modelberryType.interface.fields || {}
     const interfaceTags = modelberryType.interface.interfaceTags || {}
     const typescriptInterfaceName = modelberryType.interface.typeName
     const interfaceTypeTag = interfaceTags['@type']
@@ -39,7 +39,7 @@ export function* localContentTypeGenerator({
     checkTags({ interfaceTags })
 
     const { fields, controls } = getModelFieldsAndControls({
-      modelFields,
+      contentTypeFields,
       validationsMap,
     })
     yield { fields, controls, interfaceTypeTag, interfaceTags }
