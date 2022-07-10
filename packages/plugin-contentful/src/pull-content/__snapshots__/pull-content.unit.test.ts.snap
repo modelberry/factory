@@ -124,60 +124,6 @@ export const testTopic: ContentfulTestTopic[] = [
 ",
     ],
     Array [
-      "./dummy/main-content.ts",
-      "export * from './contentful-test-topic-content'
-",
-    ],
-    Array [
-      "./dummy/contentful-test-topic-content.ts",
-      "import { ContentfulTestTopic } from './contentful-test-topic'
-export const testTopic: ContentfulTestTopic[] = [
-  {
-    sys: { id: '2v8GizBNh1oxbf6cKlpzJP' },
-    abstract: 'This is the abstract',
-    actionsCollection: { items: [{ sys: { id: 'myContentActionId' } }] },
-    heading: 'Heres the heading',
-  },
-  {
-    sys: { id: '1Ape34KYhU6POKOGNXzH1f' },
-    abstract: 'This is the abstract',
-    actionsCollection: { items: [{ sys: { id: 'myContentActionId' } }] },
-    heading: 'Heres the heading',
-  },
-  {
-    sys: { id: '20kpUk71ESQAc2QyuOmg69' },
-    abstract: 'This is the abstract',
-    actionsCollection: { items: [{ sys: { id: 'myContentActionId' } }] },
-    heading: 'Heres the heading',
-  },
-  {
-    sys: { id: '6Ot2aHmYhRahdWLU2T4ZJM' },
-    abstract: 'This is the abstract',
-    actionsCollection: { items: [{ sys: { id: 'myContentActionId' } }] },
-    heading: 'Heres the heading',
-  },
-  {
-    sys: { id: '5dM5w3tbATsziBAAa5gmjt' },
-    abstract: 'This is the abstract',
-    actionsCollection: { items: [{ sys: { id: 'myContentActionId' } }] },
-    heading: 'Heres the heading',
-  },
-  {
-    sys: { id: '2sWRJQiWyoSFVVG4TgPp66' },
-    abstract: 'This is the abstract',
-    actionsCollection: { items: [{ sys: { id: 'myContentActionId' } }] },
-    heading: 'Heres the heading',
-  },
-  {
-    sys: { id: '6BTjcj6BUz45rBw5grq10i' },
-    abstract: 'This is the abstract',
-    actionsCollection: { items: [{ sys: { id: 'myContentActionId' } }] },
-    heading: 'Heres the heading',
-  },
-]
-",
-    ],
-    Array [
       "./dummy/contentful-test-action-content.ts",
       "import { ContentfulTestAction } from './contentful-test-action'
 export const testAction: ContentfulTestAction[] = [
@@ -1561,14 +1507,6 @@ export * from './contentful-action-content'
     ],
   ],
   "results": Array [
-    Object {
-      "type": "return",
-      "value": undefined,
-    },
-    Object {
-      "type": "return",
-      "value": undefined,
-    },
     Object {
       "type": "return",
       "value": undefined,
