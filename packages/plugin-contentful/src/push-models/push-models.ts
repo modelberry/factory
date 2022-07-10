@@ -4,6 +4,8 @@ import { ValidationsMap } from '../lib/get-modelberry-plugin-data'
 import { pushFieldsToContentful } from './push-fields-to-contentful'
 import { pushControlsToContentful } from './push-controls-to-contentful'
 import { localSourceContentTypeGenerator } from './local-source-content-type-generator'
+import { getRemoteTargetContentTypeFields } from './get-remote-target-content-type-fields'
+import { getRemoteTargetContentTypeControls } from './get-remote-target-content-type-controls'
 
 export interface PushModels {
   contentfulEnvironment: Environment
@@ -21,14 +23,21 @@ export const pushModels = async ({
   const localSourceContentTypeIterator = localSourceContentTypeGenerator({
     options,
     typeData,
-    validationsMap,
   })
   for (const localSourceContentType of localSourceContentTypeIterator) {
     logger.h2(`\nPushing to Contentful`)
-    if (localSourceContentType.fields.length < 1) {
+    const remoteFields = getRemoteTargetContentTypeFields({
+      contentTypeFields: localSourceContentType.fields,
+      validationsMap,
+    })
+    const remoteControls = getRemoteTargetContentTypeControls({
+      contentTypeFields: localSourceContentType.fields,
+    })
+    if (remoteFields.length < 1) {
       logger.error(`- no valid fields found, skipping`)
     } else {
       logger.p(`- pushing content type`)
+
       let contentType: ContentType | undefined
       let contentTypeData
       if (!options.dryRun) {
@@ -38,7 +47,7 @@ export const pushModels = async ({
             localSourceContentType.interfaceTypeTag,
           description: localSourceContentType.interfaceTags['@description'],
           displayField: localSourceContentType.interfaceTags['@displayField'],
-          fields: localSourceContentType.fields,
+          fields: remoteFields,
         } as ContentType
 
         contentType = await pushFieldsToContentful({
@@ -48,7 +57,7 @@ export const pushModels = async ({
           interfaceTypeTag: localSourceContentType.interfaceTypeTag,
         })
       }
-      if (localSourceContentType.controls.length > 0) {
+      if (remoteControls.length > 0) {
         logger.p(`- pushing editor interface`)
         if (!options.dryRun) {
           if (!contentType) {
@@ -57,7 +66,7 @@ export const pushModels = async ({
           }
           await pushControlsToContentful({
             contentType,
-            controls: localSourceContentType.controls,
+            controls: remoteControls,
           })
         }
       }

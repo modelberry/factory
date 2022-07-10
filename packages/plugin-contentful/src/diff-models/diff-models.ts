@@ -16,7 +16,6 @@ export const diffModels = async ({
   contentfulEnvironment,
   options,
   typeData,
-  validationsMap,
 }: DiffModels) => {
   // Empty object that gets filled with validations
   const validations: Record<string, any> = {}
@@ -34,7 +33,6 @@ export const diffModels = async ({
   const localContentTypeIterator = localSourceContentTypeGenerator({
     options,
     typeData,
-    validationsMap,
   })
   const localContentTypes = Array.from(localContentTypeIterator)
   logger.mute = false

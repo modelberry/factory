@@ -1,7 +1,7 @@
 import { Options, TypeData, logger } from '@modelberry/mbfactory/plain'
 import { KeyValueMap } from 'contentful-management/types'
 import { checkTags } from '../check-tags/check-tags'
-import { mustIgnoreInterface } from '../check-tags/must-ignore-interface'
+import { isValidInterface } from '../check-tags/is-valid-interface'
 
 export interface LocalSourceVariableGenerator {
   options: Options
@@ -32,7 +32,7 @@ export function* localSourceVariableGenerator({
     const localFields = localModelberryType.interface.fields
 
     logger.h1(`\n${localTypescriptInterfaceName}`)
-    if (mustIgnoreInterface({ options, interfaceTags: localInterfaceTags }))
+    if (isValidInterface({ options, interfaceTags: localInterfaceTags }))
       continue
     checkTags({ interfaceTags: localInterfaceTags })
     for (const mbVariable of localModelberryType.variables) {

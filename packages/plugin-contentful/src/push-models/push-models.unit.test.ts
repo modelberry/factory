@@ -55,10 +55,10 @@ describe('Push models should', () => {
 
     expect(logSpy.h1).toHaveBeenCalledWith('\nTopic')
     expect(logSpy.h3).toHaveBeenCalledWith('heading')
+    expect(logSpy.h2).toHaveBeenCalledWith('\nPushing to Contentful')
     expect(logSpy.error).toHaveBeenCalledWith(
       '- validation doesNotExist not found'
     )
-    expect(logSpy.h2).toHaveBeenCalledWith('\nPushing to Contentful')
     expect(logSpy.error).toHaveBeenCalledWith(
       '- no valid fields found, skipping'
     )

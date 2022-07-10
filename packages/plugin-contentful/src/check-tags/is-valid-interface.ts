@@ -1,14 +1,14 @@
 import { logger, Options } from '@modelberry/mbfactory/plain'
 
-export interface MustIgnoreInterface {
+export interface IsValidInterface {
   options: Options
   interfaceTags: Record<string, string>
 }
 
-export const mustIgnoreInterface = ({
+export const isValidInterface = ({
   options,
   interfaceTags,
-}: MustIgnoreInterface) => {
+}: IsValidInterface) => {
   const interfaceTypeTag = interfaceTags['@type']
   // Check if a filter is used, ignore if it does not pass filter
   if (options.filter && options.filter !== interfaceTypeTag) {

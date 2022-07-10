@@ -1,13 +1,11 @@
 import { Options, TypeData, logger } from '@modelberry/mbfactory/plain'
 import { checkTags } from '../check-tags/check-tags'
-import { mustIgnoreInterface } from '../check-tags/must-ignore-interface'
-import { ValidationsMap } from '../lib/get-modelberry-plugin-data'
-import { getModelFieldsAndControls } from './get-model-fields-and-controls'
+import { isValidInterface } from '../check-tags/is-valid-interface'
+import { getValidatedLocalSourceFields } from './get-validated-local-source-fields'
 
 export interface LocalSourceContentTypeGenerator {
   options: Options
   typeData: TypeData
-  validationsMap: ValidationsMap
 }
 
 export type LocalSourceContentTypeIterator = AsyncGenerator<
@@ -26,7 +24,6 @@ export type LocalSourceContentTypeIterator = AsyncGenerator<
 export function* localSourceContentTypeGenerator({
   options,
   typeData,
-  validationsMap,
 }: LocalSourceContentTypeGenerator) {
   for (const localModelberryType of Object.values(typeData)) {
     const localContentTypeFields = localModelberryType.interface.fields || {}
@@ -35,18 +32,15 @@ export function* localSourceContentTypeGenerator({
     const localInterfaceTypeTag = localInterfaceTags['@type']
 
     logger.h1(`\n${localTypescriptInterfaceName}`)
-    if (mustIgnoreInterface({ options, interfaceTags: localInterfaceTags }))
+    if (isValidInterface({ options, interfaceTags: localInterfaceTags }))
       continue
     checkTags({ interfaceTags: localInterfaceTags })
 
-    // TODO: Move outside
-    const { fields, controls } = getModelFieldsAndControls({
+    const validLocalFields = getValidatedLocalSourceFields({
       contentTypeFields: localContentTypeFields,
-      validationsMap,
     })
     yield {
-      fields,
-      controls,
+      fields: validLocalFields,
       interfaceTypeTag: localInterfaceTypeTag,
       interfaceTags: localInterfaceTags,
     }
