@@ -6,23 +6,23 @@ export interface LoggerInit {
 }
 
 export type Logger = {
-  error: (message: string) => void
+  init: (args: LoggerInit) => void
   h1: (message: string) => void
   h2: (message: string) => void
   h3: (message: string) => void
+  p: (message: string) => void
   info: (message: string) => void
   warning: (message: string) => void
-  init: (args: LoggerInit) => void
+  error: (message: string) => void
   log: (message: string | any) => void
   options: Options
-  p: (message: string) => void
 }
 
 export type LoggerFactory = () => Logger
 
 export const LoggerFactory: LoggerFactory = () => ({
-  error(message: string) {
-    this.log(chalk.red(message))
+  init({ options }: LoggerInit) {
+    Object.assign(this.options, options)
   },
   h1(message: string) {
     this.log(chalk.bold.underline(message))
@@ -33,20 +33,20 @@ export const LoggerFactory: LoggerFactory = () => ({
   h3(message: string) {
     this.log(chalk.underline(message))
   },
+  p(message: string) {
+    this.log(chalk(message))
+  },
   info(message: string) {
     this.log(chalk.blue(message))
   },
   warning(message: string) {
     this.log(chalk.red.bold(message))
   },
-  init({ options }: LoggerInit) {
-    Object.assign(this.options, options)
+  error(message: string) {
+    this.log(chalk.red(message))
   },
   log: console.log,
   options: {},
-  p(message: string) {
-    this.log(chalk(message))
-  },
 })
 
 export const logger = LoggerFactory()
