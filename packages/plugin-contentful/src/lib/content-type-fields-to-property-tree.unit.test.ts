@@ -48,6 +48,10 @@ const validations = {
 }
 
 describe('contentTypeFieldsToPropertyTree should', () => {
+  afterEach(() => {
+    jest.clearAllMocks()
+  })
+
   test('create a property tree', async () => {
     const propertyTree = contentTypeFieldsToPropertyTree({
       contentTypeFields,

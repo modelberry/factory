@@ -1,5 +1,4 @@
-import { Options, TypeData } from '@modelberry/mbfactory/plain'
-import chalk from 'chalk'
+import { Options, TypeData, logger } from '@modelberry/mbfactory/plain'
 import { checkTags } from '../check-tags/check-tags'
 import { mustIgnoreInterface } from '../check-tags/must-ignore-interface'
 import { ValidationsMap } from '../lib/get-modelberry-plugin-data'
@@ -29,14 +28,13 @@ export function* localContentTypeGenerator({
   typeData,
   validationsMap,
 }: LocalContentTypeGenerator) {
-  const log = console.log
   for (const modelberryType of Object.values(typeData)) {
     const modelFields = modelberryType.interface.fields || {}
     const interfaceTags = modelberryType.interface.interfaceTags || {}
     const typescriptInterfaceName = modelberryType.interface.typeName
     const interfaceTypeTag = interfaceTags['@type']
 
-    log(chalk.bold.underline(`\n${typescriptInterfaceName}`))
+    logger.h1((`\n${typescriptInterfaceName}`))
     if (mustIgnoreInterface({ options, interfaceTags })) continue
     checkTags({ interfaceTags })
 

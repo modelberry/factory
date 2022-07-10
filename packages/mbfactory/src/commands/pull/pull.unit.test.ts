@@ -1,4 +1,3 @@
-// import chalk from 'chalk'
 jest.mock('../../call-handler/call-handler')
 jest.mock('fs/promises')
 
@@ -7,9 +6,8 @@ import { callHandler } from '../../call-handler/call-handler'
 import { pullCommand } from './pull'
 
 describe('The pull command should', () => {
-  const consoleSpy = jest.spyOn(console, 'log').mockImplementation()
-  beforeEach(() => {
-    consoleSpy.mockReset()
+  afterEach(() => {
+    jest.clearAllMocks()
   })
 
   test('call call handler', async () => {
@@ -23,7 +21,6 @@ describe('The pull command should', () => {
         pullType: 'content',
       },
     })
-    expect(consoleSpy.mock.calls).toEqual([])
     expect(callHandler).toHaveBeenCalledTimes(1)
     expect(mkdir).toHaveBeenCalledWith('./dummy-path', { recursive: true })
   })

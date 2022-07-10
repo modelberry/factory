@@ -1,6 +1,10 @@
 import { getLinkContentTypes } from './get-link-content-types'
 
 describe('getLinkContentTypes should', () => {
+  afterEach(() => {
+    jest.clearAllMocks()
+  })
+
   test('create link contentTypes', async () => {
     const contentField = {
       id: 'logoAction',

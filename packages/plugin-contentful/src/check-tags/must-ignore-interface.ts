@@ -1,5 +1,4 @@
-import { Options } from '@modelberry/mbfactory/plain'
-import chalk from 'chalk'
+import { logger, Options } from '@modelberry/mbfactory/plain'
 
 export interface MustIgnoreInterface {
   options: Options
@@ -11,19 +10,18 @@ export const mustIgnoreInterface = ({
   interfaceTags,
 }: MustIgnoreInterface) => {
   const interfaceTypeTag = interfaceTags['@type']
-  const log = console.log
   // Check if a filter is used, ignore if it does not pass filter
   if (options.type && options.type !== interfaceTypeTag) {
-    log(chalk(`- skipping because does not match filter`))
+    logger.p(`- skipping because does not match filter`)
     return true
   }
 
   if ('@ignore' in interfaceTags) {
-    log(chalk(`- skipping because @ignore`))
+    logger.p(`- skipping because @ignore`)
     return true
   }
   if (!interfaceTypeTag) {
-    log(chalk.red(`- skipping because no @type inline tag`))
+    logger.error(`- skipping because no @type inline tag`)
     return true
   }
   return false

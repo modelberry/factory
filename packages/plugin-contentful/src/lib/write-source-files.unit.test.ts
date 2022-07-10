@@ -1,14 +1,9 @@
 jest.mock('fs/promises')
 
 import { writeFile } from 'fs/promises'
-import chalk from 'chalk'
 import { writeSourceFiles } from './write-source-files'
 
 describe('writeSourceFiles should', () => {
-  const consoleSpy = jest.spyOn(console, 'log').mockImplementation()
-  beforeEach(() => {
-    consoleSpy.mockReset()
-  })
   afterEach(() => {
     jest.clearAllMocks()
   })

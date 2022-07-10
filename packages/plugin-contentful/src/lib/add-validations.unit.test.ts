@@ -16,6 +16,10 @@ const validationC: ContentTypeFieldValidation = {
 }
 
 describe('addValidations should', () => {
+  afterEach(() => {
+    jest.clearAllMocks()
+  })
+
   test('add a validation correctly', async () => {
     const validations = {}
     const tags = { '@validations': 'existingValidation' }

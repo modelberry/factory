@@ -17,6 +17,10 @@ const renderVarStatement = async (varStatement: ts.Node) => {
 }
 
 describe('Create content variable should', () => {
+  afterEach(() => {
+    jest.clearAllMocks()
+  })
+
   test('create a declaration', async () => {
     const varStatement = createContentVarStatement({
       varName: 'myTopics',

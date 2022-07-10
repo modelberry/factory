@@ -8,6 +8,10 @@ import {
 } from './case-helpers'
 
 describe('Case helpers', () => {
+  afterEach(() => {
+    jest.clearAllMocks()
+  })
+
   test('firstLowerCase', async () => {
     expect(firstLowerCase('What is the case?')).toBe('what is the case?')
   })

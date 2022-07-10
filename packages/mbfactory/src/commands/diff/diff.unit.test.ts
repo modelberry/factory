@@ -3,10 +3,18 @@ jest.mock('../../get-all-plugin-data/get-all-plugin-data', () => ({
   getAllPluginData: () => ({}),
 }))
 
-import chalk from 'chalk'
 import { Arguments } from 'yargs'
 import { callHandler } from '../../call-handler/call-handler'
+import { logger } from '../../lib/logger'
 import { DiffArgv, diffCommand } from './diff'
+
+const logSpy = {
+  h1: jest.spyOn(logger, 'h1').mockImplementation(),
+  h2: jest.spyOn(logger, 'h2').mockImplementation(),
+  h3: jest.spyOn(logger, 'h3').mockImplementation(),
+  p: jest.spyOn(logger, 'p').mockImplementation(),
+  error: jest.spyOn(logger, 'error').mockImplementation(),
+}
 
 const argv: Arguments<DiffArgv> = {
   _: [''],
@@ -17,18 +25,16 @@ const argv: Arguments<DiffArgv> = {
 }
 
 describe('The diff command should', () => {
-  const consoleSpy = jest.spyOn(console, 'log').mockImplementation()
-  beforeEach(() => {
-    consoleSpy.mockReset()
+  afterEach(() => {
+    jest.clearAllMocks()
   })
 
   test('report an error on file does not exist', async () => {
     argv.file = './src/commands/diff/__fixtures__/xxx.ts'
     await diffCommand({ argv })
 
-    expect(consoleSpy).toHaveBeenNthCalledWith(
-      2,
-      chalk.red('- file not found: ./src/commands/diff/__fixtures__/xxx.ts')
+    expect(logSpy.error).toHaveBeenCalledWith(
+      '- file not found: ./src/commands/diff/__fixtures__/xxx.ts'
     )
     expect(callHandler).toHaveBeenCalledTimes(0)
   })
@@ -36,11 +42,8 @@ describe('The diff command should', () => {
   test('report nothing to process when file exists', async () => {
     argv.file = './src/commands/diff/__fixtures__/dummy-file.ts'
     await diffCommand({ argv })
-    expect(consoleSpy).toHaveBeenNthCalledWith(
-      2,
-      chalk.red(
-        '- nothing to process in file: ./src/commands/diff/__fixtures__/dummy-file.ts'
-      )
+    expect(logSpy.error).toHaveBeenCalledWith(
+      '- nothing to process in file: ./src/commands/diff/__fixtures__/dummy-file.ts'
     )
     expect(callHandler).toHaveBeenCalledTimes(0)
   })

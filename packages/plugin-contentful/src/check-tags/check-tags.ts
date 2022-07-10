@@ -1,4 +1,4 @@
-import chalk from 'chalk'
+import { logger } from '@modelberry/mbfactory/plain'
 import { allTags } from './all-tags'
 
 export interface CheckTags {
@@ -6,20 +6,16 @@ export interface CheckTags {
   interfaceTags?: Record<string, string>
 }
 export const checkTags = ({ fieldTags, interfaceTags }: CheckTags) => {
-  const log = console.log
-
   if (interfaceTags) {
     const validInterfaceTags = Object.keys(allTags).filter(
       (tagName) => allTags[tagName].interface
     )
     for (const interfaceTag of Object.keys(interfaceTags)) {
       if (!validInterfaceTags.includes(interfaceTag)) {
-        log(
-          chalk.red(
-            `- Unknown interface tag: ${interfaceTag}. Valid interface tags are: ${validInterfaceTags.join(
-              ', '
-            )}`
-          )
+        logger.error(
+          `- Unknown interface tag: ${interfaceTag}. Valid interface tags are: ${validInterfaceTags.join(
+            ', '
+          )}`
         )
       }
     }
@@ -30,12 +26,10 @@ export const checkTags = ({ fieldTags, interfaceTags }: CheckTags) => {
     )
     for (const fieldTag of Object.keys(fieldTags)) {
       if (!validFieldTags.includes(fieldTag)) {
-        log(
-          chalk.red(
-            `- Unknown field tag: ${fieldTag}. Valid field tags are: ${validFieldTags.join(
-              ', '
-            )}`
-          )
+        logger.error(
+          `- Unknown field tag: ${fieldTag}. Valid field tags are: ${validFieldTags.join(
+            ', '
+          )}`
         )
       }
     }

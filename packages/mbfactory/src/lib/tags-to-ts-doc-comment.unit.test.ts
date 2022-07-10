@@ -1,6 +1,10 @@
 import { tagsToTsDocComment } from './tags-to-ts-doc-comment'
 
 describe('Create Ts Doc Comment From Tags should', () => {
+  afterEach(() => {
+    jest.clearAllMocks()
+  })
+
   test('create a comment', async () => {
     const result = tagsToTsDocComment({
       blockTag: '@modelberry',

@@ -1,6 +1,10 @@
 import { removeLinkAndLinkType } from './remove-link-and-link-type'
 
 describe('removeLinkAndLinkType should', () => {
+  afterEach(() => {
+    jest.clearAllMocks()
+  })
+
   test('remove link and linkType from items', async () => {
     const fieldValue = {
       id: 'footer',

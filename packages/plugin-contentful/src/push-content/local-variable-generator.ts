@@ -1,5 +1,4 @@
-import { Options, TypeData } from '@modelberry/mbfactory/plain'
-import chalk from 'chalk'
+import { Options, TypeData, logger } from '@modelberry/mbfactory/plain'
 import { KeyValueMap } from 'contentful-management/types'
 import { checkTags } from '../check-tags/check-tags'
 import { mustIgnoreInterface } from '../check-tags/must-ignore-interface'
@@ -25,7 +24,6 @@ export function* localVariableGenerator({
   options,
   typeData,
 }: LocalVariableGenerator) {
-  const log = console.log
   for (const modelberryType of Object.values(typeData)) {
     const interfaceTags = modelberryType.interface.interfaceTags || {}
     const typescriptInterfaceName = modelberryType.interface.typeName
@@ -33,11 +31,11 @@ export function* localVariableGenerator({
     const interfaceLocaleTag = interfaceTags['@locale']
     const fields = modelberryType.interface.fields
 
-    log(chalk.bold.underline(`\n${typescriptInterfaceName}`))
+    logger.h1(`\n${typescriptInterfaceName}`)
     if (mustIgnoreInterface({ options, interfaceTags })) continue
     checkTags({ interfaceTags })
     for (const mbVariable of modelberryType.variables) {
-      console.log(chalk(`- parsing js variable: ${mbVariable.name}`))
+      logger.p(`- parsing js variable: ${mbVariable.name}`)
       const valueFn = new Function(`return ${mbVariable.value}`)
       const fieldValuesArray = valueFn() as KeyValueMap[]
 

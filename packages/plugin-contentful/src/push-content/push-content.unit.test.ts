@@ -1,27 +1,21 @@
-import chalk from 'chalk'
+import { logger } from '@modelberry/mbfactory/plain'
 import { environmentMock } from '../contentful-mock/contentful-mock'
 import { pushContent } from './push-content'
 import { topicAction } from './__fixtures__/topic-action'
 
+const logSpy = {
+  h1: jest.spyOn(logger, 'h1').mockImplementation(),
+  h2: jest.spyOn(logger, 'h2').mockImplementation(),
+  h3: jest.spyOn(logger, 'h3').mockImplementation(),
+  p: jest.spyOn(logger, 'p').mockImplementation(),
+  info: jest.spyOn(logger, 'info').mockImplementation(),
+  error: jest.spyOn(logger, 'error').mockImplementation(),
+}
+
 describe('Push content should', () => {
-  const consoleSpy = jest.spyOn(console, 'log').mockImplementation()
-  beforeEach(() => {
-    consoleSpy.mockReset()
+  afterEach(() => {
+    jest.clearAllMocks()
   })
-
-  const headingResponse = [[chalk('- remote default locale: en-US')]]
-
-  const contentfulActionResponse = [
-    [chalk.bold.underline('\nContentfulAction')],
-    [chalk('- parsing js variable: myActions')],
-    [chalk('- pushing entry testAction with 1 fields (id:myContentActionId)')],
-  ]
-
-  const contentfulTopicResponse = [
-    [chalk.bold.underline('\nContentfulTopic')],
-    [chalk('- parsing js variable: myTopics')],
-    [chalk('- pushing entry testTopic with 2 fields')],
-  ]
 
   test('process topicAction correctly', async () => {
     await pushContent({
@@ -29,10 +23,16 @@ describe('Push content should', () => {
       options: { force: true },
       typeData: topicAction,
     })
-    expect(consoleSpy.mock.calls).toEqual([
-      ...headingResponse,
-      ...contentfulActionResponse,
-      ...contentfulTopicResponse,
-    ])
+    expect(logSpy.p).toHaveBeenCalledWith('- remote default locale: en-US')
+    expect(logSpy.h1).toHaveBeenCalledWith('\nContentfulAction')
+    expect(logSpy.p).toHaveBeenCalledWith('- parsing js variable: myActions')
+    expect(logSpy.p).toHaveBeenCalledWith(
+      '- pushing entry testAction with 1 fields (id:myContentActionId)'
+    )
+    expect(logSpy.h1).toHaveBeenCalledWith('\nContentfulTopic')
+    expect(logSpy.p).toHaveBeenCalledWith('- parsing js variable: myTopics')
+    expect(logSpy.p).toHaveBeenCalledWith(
+      '- pushing entry testTopic with 2 fields'
+    )
   })
 })

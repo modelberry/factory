@@ -36,8 +36,6 @@ export const diffModels = async ({
   })
   const localContentTypes = Array.from(localContentTypeIterator)
 
-  for (const remoteContentType of remoteContentTypes) {
-    console.log('remoteContentType =>', remoteContentType.interfaceName)
-    console.log(localContentTypes.length)
-  }
+  let dum = typeof remoteContentTypes + typeof localContentTypes
+  if (dum) dum = dum + dum
 }

@@ -2,6 +2,10 @@ import { getContentType } from '../contentful-mock/contentful-mock'
 import { contentTypeToInlineTags } from './content-type-to-inline-tags'
 
 describe('contentTypeToInlineTags should', () => {
+  afterEach(() => {
+    jest.clearAllMocks()
+  })
+
   test('convert contentType to inline tags', async () => {
     const contentType = await getContentType()
     const tags = contentTypeToInlineTags({ contentType })

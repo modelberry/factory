@@ -6,7 +6,7 @@ jest.mock('../diff-content/diff-content')
 jest.mock('../diff-models/diff-models')
 jest.mock('contentful-management', () => ({ createClient }))
 
-import chalk from 'chalk'
+import { logger } from '@modelberry/mbfactory/plain'
 import {
   createClient,
   environmentMock,
@@ -19,23 +19,14 @@ import { diffContent } from '../diff-content/diff-content'
 import { diffModels } from '../diff-models/diff-models'
 import { handler } from './handler'
 
-const envMissingResponse = [
-  [chalk.blue('- MODELBERRY_PROJECT_NAME env variable not found')],
-  [chalk.red('- CONTENTFUL_SPACE_ID env variable is missing')],
-  [chalk.red('- CONTENTFUL_PERSONAL_ACCESS_TOKEN env variable is missing')],
-  [chalk.red('- CONTENTFUL_ENVIRONMENT env variable is missing')],
-]
-
-const envResponseOk = [
-  [chalk('- modelberry project: ok')],
-  [chalk('- contentful space id: ok')],
-  [chalk('- contentful environment: ok')],
-]
-
-const statisticsResponseOk = [
-  [chalk('- entries found at Contentful: 96')],
-  [chalk('- content types found at Contentful: 11')],
-]
+const logSpy = {
+  h1: jest.spyOn(logger, 'h1').mockImplementation(),
+  h2: jest.spyOn(logger, 'h2').mockImplementation(),
+  h3: jest.spyOn(logger, 'h3').mockImplementation(),
+  p: jest.spyOn(logger, 'p').mockImplementation(),
+  info: jest.spyOn(logger, 'info').mockImplementation(),
+  error: jest.spyOn(logger, 'error').mockImplementation(),
+}
 
 // Make sure not to read .env.development
 process.env.NODE_ENV = 'test'
@@ -64,9 +55,8 @@ const myTestType = {
 }
 
 describe('The handler should', () => {
-  const consoleSpy = jest.spyOn(console, 'log').mockImplementation()
-  beforeEach(() => {
-    consoleSpy.mockReset()
+  afterEach(() => {
+    jest.clearAllMocks()
   })
 
   test('show environment warnings', async () => {
@@ -78,7 +68,19 @@ describe('The handler should', () => {
       pluginData: { types: {}, dataVar: {} },
       type: 'models',
     })
-    expect(consoleSpy.mock.calls).toEqual(envMissingResponse)
+    expect(logSpy.info).toHaveBeenCalledWith(
+      '- MODELBERRY_PROJECT_NAME env variable not found'
+    )
+    expect(logSpy.info).toHaveBeenCalledWith(
+      '- CONTENTFUL_SPACE_ID env variable is missing'
+    )
+    expect(logSpy.info).toHaveBeenCalledWith(
+      '- CONTENTFUL_PERSONAL_ACCESS_TOKEN env variable is missing'
+    )
+    expect(logSpy.info).toHaveBeenCalledWith(
+      '- CONTENTFUL_ENVIRONMENT env variable is missing'
+    )
+
     expect(pushModels).toHaveBeenCalledTimes(0)
   })
 
@@ -96,13 +98,18 @@ describe('The handler should', () => {
       },
       type: 'models',
     })
-    expect(consoleSpy.mock.calls).toEqual([
-      ...envResponseOk,
-      [chalk('- pushing models to Contentful')],
-      [chalk('- all models: testType')],
-      [chalk('- force enabled, ignoring all messages and warnings')],
-      ...statisticsResponseOk,
-    ])
+    expect(logSpy.p).toHaveBeenCalledWith('- modelberry project: ok')
+    expect(logSpy.p).toHaveBeenCalledWith('- contentful space id: ok')
+    expect(logSpy.p).toHaveBeenCalledWith('- contentful environment: ok')
+    expect(logSpy.p).toHaveBeenCalledWith('- pushing models to Contentful')
+    expect(logSpy.p).toHaveBeenCalledWith('- all models: testType')
+    expect(logSpy.p).toHaveBeenCalledWith(
+      '- force enabled, ignoring all messages and warnings'
+    )
+    expect(logSpy.p).toHaveBeenCalledWith('- entries found at Contentful: 96')
+    expect(logSpy.p).toHaveBeenCalledWith(
+      '- content types found at Contentful: 11'
+    )
     expect(pushModels).toHaveBeenCalledWith({
       contentfulEnvironment: environmentMock,
       options: { force: true },
@@ -127,13 +134,21 @@ describe('The handler should', () => {
       },
       type: 'content',
     })
-    expect(consoleSpy.mock.calls).toEqual([
-      ...envResponseOk,
-      [chalk('- pushing content to Contentful')],
-      [chalk('- all models: testType')],
-      [chalk('- force enabled, ignoring all messages and warnings')],
-      ...statisticsResponseOk,
-    ])
+    expect(logSpy.info).toHaveBeenCalledWith('- modelberry project: ok')
+    expect(logSpy.info).toHaveBeenCalledWith('- contentful space id: ok')
+    expect(logSpy.info).toHaveBeenCalledWith('- contentful environment: ok')
+    expect(logSpy.info).toHaveBeenCalledWith('- pushing content to Contentful')
+    expect(logSpy.info).toHaveBeenCalledWith('- all models: testType')
+    expect(logSpy.info).toHaveBeenCalledWith(
+      '- force enabled, ignoring all messages and warnings'
+    )
+    expect(logSpy.info).toHaveBeenCalledWith(
+      '- entries found at Contentful: 96'
+    )
+    expect(logSpy.info).toHaveBeenCalledWith(
+      '- content types found at Contentful: 11'
+    )
+
     expect(pushContent).toHaveBeenCalledWith({
       contentfulEnvironment: environmentMock,
       options: { force: true },
@@ -152,13 +167,20 @@ describe('The handler should', () => {
       path: 'pull-test-path',
       type: 'models',
     })
-    expect(consoleSpy.mock.calls).toEqual([
-      ...envResponseOk,
-      [chalk('- pulling models from Contentful')],
-      [chalk('- write to: pull-test-path')],
-      [chalk('- force enabled, ignoring all messages and warnings')],
-      ...statisticsResponseOk,
-    ])
+
+    expect(logSpy.p).toHaveBeenCalledWith('- modelberry project: ok')
+    expect(logSpy.p).toHaveBeenCalledWith('- contentful space id: ok')
+    expect(logSpy.p).toHaveBeenCalledWith('- contentful environment: ok')
+    expect(logSpy.p).toHaveBeenCalledWith('- pulling models from Contentful')
+    expect(logSpy.p).toHaveBeenCalledWith('- write to: pull-test-path')
+    expect(logSpy.p).toHaveBeenCalledWith(
+      '- force enabled, ignoring all messages and warnings'
+    )
+    expect(logSpy.p).toHaveBeenCalledWith('- entries found at Contentful: 96')
+    expect(logSpy.p).toHaveBeenCalledWith(
+      '- content types found at Contentful: 11'
+    )
+
     expect(pullModels).toHaveBeenCalledWith({
       contentfulEnvironment: environmentMock,
       options: { force: true },
@@ -175,13 +197,20 @@ describe('The handler should', () => {
       path: 'pull-test-path',
       type: 'content',
     })
-    expect(consoleSpy.mock.calls).toEqual([
-      ...envResponseOk,
-      [chalk('- pulling content from Contentful')],
-      [chalk('- write to: pull-test-path')],
-      [chalk('- force enabled, ignoring all messages and warnings')],
-      ...statisticsResponseOk,
-    ])
+
+    expect(logSpy.p).toHaveBeenCalledWith('- modelberry project: ok')
+    expect(logSpy.p).toHaveBeenCalledWith('- contentful space id: ok')
+    expect(logSpy.p).toHaveBeenCalledWith('- contentful environment: ok')
+    expect(logSpy.p).toHaveBeenCalledWith('- pulling content from Contentful')
+    expect(logSpy.p).toHaveBeenCalledWith('- write to: pull-test-path')
+    expect(logSpy.p).toHaveBeenCalledWith(
+      '- force enabled, ignoring all messages and warnings'
+    )
+    expect(logSpy.p).toHaveBeenCalledWith('- entries found at Contentful: 96')
+    expect(logSpy.p).toHaveBeenCalledWith(
+      '- content types found at Contentful: 11'
+    )
+
     expect(pullContent).toHaveBeenCalledWith({
       contentfulEnvironment: environmentMock,
       options: { force: true },
@@ -203,12 +232,21 @@ describe('The handler should', () => {
       },
       type: 'models',
     })
-    expect(consoleSpy.mock.calls).toEqual([
-      ...envResponseOk,
-      [chalk('- comparing local models with Contentful')],
-      [chalk('- force enabled, ignoring all messages and warnings')],
-      ...statisticsResponseOk,
-    ])
+
+    expect(logSpy.p).toHaveBeenCalledWith('- modelberry project: ok')
+    expect(logSpy.p).toHaveBeenCalledWith('- contentful space id: ok')
+    expect(logSpy.p).toHaveBeenCalledWith('- contentful environment: ok')
+    expect(logSpy.p).toHaveBeenCalledWith(
+      '- comparing local models with Contentful'
+    )
+    expect(logSpy.p).toHaveBeenCalledWith(
+      '- force enabled, ignoring all messages and warnings'
+    )
+    expect(logSpy.p).toHaveBeenCalledWith('- entries found at Contentful: 96')
+    expect(logSpy.p).toHaveBeenCalledWith(
+      '- content types found at Contentful: 11'
+    )
+
     expect(diffModels).toHaveBeenCalledWith({
       contentfulEnvironment: environmentMock,
       options: { force: true },
@@ -233,12 +271,21 @@ describe('The handler should', () => {
       },
       type: 'content',
     })
-    expect(consoleSpy.mock.calls).toEqual([
-      ...envResponseOk,
-      [chalk('- comparing local content with Contentful')],
-      [chalk('- force enabled, ignoring all messages and warnings')],
-      ...statisticsResponseOk,
-    ])
+
+    expect(logSpy.p).toHaveBeenCalledWith('- modelberry project: ok')
+    expect(logSpy.p).toHaveBeenCalledWith('- contentful space id: ok')
+    expect(logSpy.p).toHaveBeenCalledWith('- contentful environment: ok')
+    expect(logSpy.p).toHaveBeenCalledWith(
+      '- comparing local content with Contentful'
+    )
+    expect(logSpy.p).toHaveBeenCalledWith(
+      '- force enabled, ignoring all messages and warnings'
+    )
+    expect(logSpy.p).toHaveBeenCalledWith('- entries found at Contentful: 96')
+    expect(logSpy.p).toHaveBeenCalledWith(
+      '- content types found at Contentful: 11'
+    )
+
     expect(diffContent).toHaveBeenCalledWith({
       contentfulEnvironment: environmentMock,
       options: { force: true },

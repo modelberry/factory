@@ -2,10 +2,10 @@ import { environmentMock } from '../contentful-mock/contentful-mock'
 import { fetchEntries } from './fetch-entries'
 
 describe('fetchEntries should', () => {
-  const consoleSpy = jest.spyOn(console, 'log').mockImplementation()
-  beforeEach(() => {
-    consoleSpy.mockReset()
+  afterEach(() => {
+    jest.clearAllMocks()
   })
+
   test('fetch entries from mock with en-US locale', async () => {
     const entries = await fetchEntries({
       contentfulEnvironment: environmentMock,

@@ -17,6 +17,10 @@ const renderNode = async (node: ts.Node) => {
 }
 
 describe('Create ts export should', () => {
+  afterEach(() => {
+    jest.clearAllMocks()
+  })
+
   test('create an export * from test', async () => {
     const exportNode = createTsExport({
       from: './test',

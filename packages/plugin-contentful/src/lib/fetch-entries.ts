@@ -1,5 +1,4 @@
-import { Options } from '@modelberry/mbfactory/plain'
-import chalk from 'chalk'
+import { Options, logger } from '@modelberry/mbfactory/plain'
 import {
   Collection,
   Entry,
@@ -20,8 +19,7 @@ export const fetchEntries = async ({
   options,
   localeCode,
 }: FetchEntries) => {
-  const log = console.log
-  log(chalk(`- fetching entries`))
+  logger.p(`- fetching entries`)
   const query: QueryOptions = { skip: 0, locale: localeCode }
   if (options.type) query['content_type'] = options.type
 
@@ -32,11 +30,10 @@ export const fetchEntries = async ({
     query.limit = batchSize
     collection = await contentfulEnvironment.getEntries(query)
     remoteEntries = remoteEntries.concat(collection.items)
-    log(
-      chalk(
-        `- fetched ${remoteEntries.length} of ${collection.total} entries (in batches of ${collection.limit})`
-      )
+    logger.p(
+      `- fetched ${remoteEntries.length} of ${collection.total} entries (in batches of ${collection.limit})`
     )
+
     query.skip = query.skip! + batchSize
   } while (query.skip <= collection.total)
 

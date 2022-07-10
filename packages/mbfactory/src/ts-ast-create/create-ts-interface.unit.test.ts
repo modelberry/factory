@@ -17,6 +17,10 @@ const renderInterface = async (interfaceDeclaration: ts.Node) => {
 }
 
 describe('Create ts interface should', () => {
+  afterEach(() => {
+    jest.clearAllMocks()
+  })
+
   test('create an interface', async () => {
     const intDec = createTsInterface({
       blockTag: '@modelberry',

@@ -1,6 +1,10 @@
 import { copyKeysIfExists } from './copy-keys-if-exists'
 
 describe('copyKeysIfExists should', () => {
+  afterEach(() => {
+    jest.clearAllMocks()
+  })
+
   test('copy existing keys', async () => {
     const source = { keyA: 'A value', keyB: 'B value' }
     const target = {}

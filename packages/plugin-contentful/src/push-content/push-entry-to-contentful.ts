@@ -1,4 +1,4 @@
-import chalk from 'chalk'
+import { logger } from '@modelberry/mbfactory/plain'
 import {
   CreateEntryProps,
   Entry,
@@ -14,12 +14,11 @@ export interface PushEntryToContentful {
 }
 
 const publishEntry = async (entry: Entry) => {
-  const log = console.log
   let newEntry = entry
   try {
     newEntry = await entry.publish()
   } catch {
-    log(chalk(`- could not publish entry, pushed as draft`))
+    logger.p((`- could not publish entry, pushed as draft`))
   }
   return newEntry
 }

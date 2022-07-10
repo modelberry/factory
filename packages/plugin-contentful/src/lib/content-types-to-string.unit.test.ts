@@ -1,6 +1,10 @@
 import { contentTypesToString } from './content-types-to-string'
 
 describe('contentTypesToString should', () => {
+  afterEach(() => {
+    jest.clearAllMocks()
+  })
+
   test('convert three contentTypes to a string', async () => {
     const contentTypes = ['Action', 'Page', 'Topic']
     const stringValue = contentTypesToString({

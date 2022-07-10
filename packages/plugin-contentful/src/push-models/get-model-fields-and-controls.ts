@@ -1,6 +1,5 @@
-import chalk from 'chalk'
 import { ContentFields, Control } from 'contentful-management/types'
-import { ModelberryInterface } from '@modelberry/mbfactory/plain'
+import { ModelberryInterface, logger } from '@modelberry/mbfactory/plain'
 import { ValidationsMap } from '../lib/get-modelberry-plugin-data'
 import { getFieldIdWithoutPostfix } from '../lib/get-field-id-without-postfix'
 import { checkTags } from '../check-tags/check-tags'
@@ -18,28 +17,27 @@ export const getModelFieldsAndControls = ({
 }: GetModelFieldsAndControls) => {
   const controls: Control[] = []
   const fields: ContentFields[] = []
-  const log = console.log
   for (const [fieldId, field] of Object.entries(modelFields!)) {
     const fieldIdWithoutPostfix = getFieldIdWithoutPostfix({ fieldId })
 
-    log(chalk.underline(`${fieldIdWithoutPostfix}`))
+    logger.h3((`${fieldIdWithoutPostfix}`))
     const tags = field.tags || {}
     checkTags({ fieldTags: tags })
 
     if ('@ignore' in tags) {
-      log(chalk(`- skipping because @ignore`))
+      logger.p((`- skipping because @ignore`))
       continue
     }
     if (!tags['@type']) {
-      log(chalk.red(`- no @type inline tag`))
+      logger.error((`- no @type inline tag`))
       continue
     }
     if (tags['@type'] === 'Link' && !tags['@linkType']) {
-      log(chalk.red(`- @type=Link without @linkType`))
+      logger.error((`- @type=Link without @linkType`))
       continue
     }
     if (tags['@type'] === 'Array' && !tags['@itemsType']) {
-      log(chalk.red(`- @type=Array without @itemsType`))
+      logger.error((`- @type=Array without @itemsType`))
       continue
     }
     if (
@@ -47,7 +45,7 @@ export const getModelFieldsAndControls = ({
       tags['@itemsType'] === 'Link' &&
       !tags['@itemsLinkType']
     ) {
-      log(chalk.red(`- @type=Array, @itemsType=Link without @itemsLinkType`))
+      logger.error((`- @type=Array, @itemsType=Link without @itemsLinkType`))
       continue
     }
     if (
@@ -55,7 +53,7 @@ export const getModelFieldsAndControls = ({
       tags['@itemsType'] === 'Symbol' &&
       field.type?.trim().startsWith('{')
     ) {
-      log(chalk.red(`- @type=Array, @itemsType=Symbol must be of type string`))
+      logger.error((`- @type=Array, @itemsType=Symbol must be of type string`))
       continue
     }
 

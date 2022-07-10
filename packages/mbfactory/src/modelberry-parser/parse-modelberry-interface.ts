@@ -1,11 +1,11 @@
 import ts, { JSDocTagInfo, SymbolDisplayPart } from 'typescript'
-import chalk from 'chalk'
 import { stripDoubleQuotes } from '../lib/case-helpers'
 import { isExportedDeclaration } from './is-exported-declaration'
 import {
   DocProperty,
   interfaceToDocProperty,
 } from './interface-to-doc-property'
+import { logger } from '../lib/logger'
 
 export type ModelberryInterface = {
   fields?: {
@@ -61,7 +61,6 @@ export const parseModelberryInterface = ({
   checker,
   node,
 }: ParseInterface): ModelberryInterface | undefined => {
-  const log = console.log
   const wrInterface: ModelberryInterface = {}
 
   if (
@@ -77,7 +76,7 @@ export const parseModelberryInterface = ({
   if (!docProperty.name) return
   wrInterface.typeName = docProperty.name
   if (!docProperty.jSDocTags?.length) {
-    log(chalk.red(`- no TSDoc tags (${wrInterface.typeName})`))
+    logger.error(`- no TSDoc tags (${wrInterface.typeName})`)
     return
   }
   const ModelberryTag = getTagByName({
@@ -90,10 +89,8 @@ export const parseModelberryInterface = ({
    * required. All others like @type are optional at this point.
    */
   if (!ModelberryTag) {
-    log(
-      chalk.red(
-        `- no @modelberry block tag for interface (${wrInterface.typeName})`
-      )
+    logger.error(
+      `- no @modelberry block tag for interface (${wrInterface.typeName})`
     )
     return
   }
@@ -101,7 +98,7 @@ export const parseModelberryInterface = ({
   const tags = getInlineTags({ search: text })
 
   if (!tags['@plugin']) {
-    log(chalk.red(`- no @plugin inline tag (${wrInterface.typeName})`))
+    logger.error(`- no @plugin inline tag (${wrInterface.typeName})`)
     return
   }
   // Strip double quotes from plugin name, double quotes are needed when an
@@ -132,10 +129,8 @@ export const parseModelberryInterface = ({
         type: docProperty.type,
       }
     } else {
-      log(
-        chalk.red(
-          `- no @modelberry block tag for field (${wrInterface.typeName}/${docProperty.name})`
-        )
+      logger.error(
+        `- no @modelberry block tag for field (${wrInterface.typeName}/${docProperty.name})`
       )
     }
   })

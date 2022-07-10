@@ -21,6 +21,10 @@ const dataVar = {
 }
 
 describe('getModelberryPluginData should', () => {
+  afterEach(() => {
+    jest.clearAllMocks()
+  })
+
   test('get data correctly', async () => {
     const data = getModelberryPluginData({ dataVar })
     expect(data).toMatchSnapshot()

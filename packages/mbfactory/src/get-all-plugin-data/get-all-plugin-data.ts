@@ -1,5 +1,5 @@
 import ts from 'typescript'
-import chalk from 'chalk'
+import { logger } from '../lib/logger'
 import {
   parseModelberryInterface,
   ModelberryInterface,
@@ -34,12 +34,11 @@ export interface GetPluginData {
 export const getAllPluginData = ({ program }: GetPluginData) => {
   const allPluginData: AllPluginData = {}
   const checker = program.getTypeChecker()
-  const log = console.log
 
   let dataVar = {}
   for (const sourceFile of program.getSourceFiles()) {
     if (sourceFile.isDeclarationFile) continue
-    log(chalk.underline(sourceFile.fileName))
+    logger.h3(sourceFile.fileName)
     const wrInterfaces: ModelberryInterface[] = []
     const modelberryVariables: ModelberryVariable[] = []
 
@@ -56,12 +55,10 @@ export const getAllPluginData = ({ program }: GetPluginData) => {
       ) {
         modelberryVariables.push(mbVariable)
       } else if (mbVariable.name && !mbVariable.isArray) {
-        log(chalk.blue(`- content variable, not an array: ${mbVariable.name}`))
+        logger.info(`- content variable, not an array: ${mbVariable.name}`)
       } else {
         if (mbVariable.name && !mbVariable.isExported)
-          log(
-            chalk.blue(`- content variable, not exported: ${mbVariable.name}`)
-          )
+          logger.info(`- content variable, not exported: ${mbVariable.name}`)
       }
     })
     // Order interfaces by interface and type
@@ -95,10 +92,8 @@ export const getAllPluginData = ({ program }: GetPluginData) => {
         }
       }
       if (!lookupSuccess) {
-        log(
-          chalk.blue(
-            `- content variable, no type match: ${mbVariable.type}/${mbVariable.name}`
-          )
+        logger.info(
+          `- content variable, no type match: ${mbVariable.type}/${mbVariable.name}`
         )
       }
     }

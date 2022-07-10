@@ -17,6 +17,6 @@ export const diffContent = async ({
     contentfulEnvironment,
     options,
   })
-  console.log('contentTypes', contentTypes)
-  console.log('typeData', typeData)
+  let dum = typeof typeData + typeof contentTypes
+  if (dum) dum = dum + dum
 }

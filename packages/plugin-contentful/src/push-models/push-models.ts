@@ -1,5 +1,4 @@
-import chalk from 'chalk'
-import { TypeData, Options } from '@modelberry/mbfactory/plain'
+import { TypeData, Options, logger } from '@modelberry/mbfactory/plain'
 import { ContentType, Environment } from 'contentful-management/types'
 import { ValidationsMap } from '../lib/get-modelberry-plugin-data'
 import { pushFieldsToContentful } from './push-fields-to-contentful'
@@ -19,19 +18,17 @@ export const pushModels = async ({
   typeData,
   validationsMap,
 }: PushModels) => {
-  const log = console.log
-
   const localContentTypeIterator = localContentTypeGenerator({
     options,
     typeData,
     validationsMap,
   })
   for (const localContentType of localContentTypeIterator) {
-    log(chalk.bold(`\nPushing to Contentful`))
+    logger.h2(`\nPushing to Contentful`)
     if (localContentType.fields.length < 1) {
-      log(chalk.red(`- no valid fields found, skipping`))
+      logger.error(`- no valid fields found, skipping`)
     } else {
-      log(chalk(`- pushing content type`))
+      logger.p(`- pushing content type`)
       let contentType: ContentType | undefined
       let contentTypeData
       if (!options.dryRun) {
@@ -52,10 +49,10 @@ export const pushModels = async ({
         })
       }
       if (localContentType.controls.length > 0) {
-        console.log(chalk(`- pushing editor interface`))
+        logger.p(`- pushing editor interface`)
         if (!options.dryRun) {
           if (!contentType) {
-            console.log(chalk.red(`- skipping`))
+            logger.error(`- skipping`)
             continue
           }
           await pushControlsToContentful({

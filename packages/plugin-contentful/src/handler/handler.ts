@@ -1,5 +1,4 @@
-import chalk from 'chalk'
-import { Handler } from '@modelberry/mbfactory/plain'
+import { Handler, logger } from '@modelberry/mbfactory/plain'
 import inquirer from 'inquirer'
 import { getModelberryPluginData } from '../lib/get-modelberry-plugin-data'
 import { getAndValidateEnv } from '../lib/get-and-validate-env'
@@ -20,12 +19,11 @@ export const handler: Handler = async ({
   pluginData,
   type,
 }) => {
-  const log = console.log
   const isValid = getAndValidateEnv()
   if (!isValid) return
-  log(chalk(`- modelberry project: ${process.env.MODELBERRY_PROJECT_NAME}`))
-  log(chalk(`- contentful space id: ${process.env.CONTENTFUL_SPACE_ID}`))
-  log(chalk(`- contentful environment: ${process.env.CONTENTFUL_ENVIRONMENT}`))
+  logger.p(`- modelberry project: ${process.env.MODELBERRY_PROJECT_NAME}`)
+  logger.p(`- contentful space id: ${process.env.CONTENTFUL_SPACE_ID}`)
+  logger.p(`- contentful environment: ${process.env.CONTENTFUL_ENVIRONMENT}`)
 
   let modelList = ''
   if (command === 'push' && pluginData?.types) {
@@ -34,54 +32,52 @@ export const handler: Handler = async ({
       .filter((atType) => !options?.type || options?.type === atType)
       .join(', ')
     if (!atTypeList) {
-      log(chalk.red('- no content types found'))
+      logger.error('- no content types found')
       return
     }
-    modelList = chalk(
-      `- ${options?.type ? 'filtered' : 'all'} models: ${atTypeList || 'none'}`
-    )
+    modelList = `- ${options?.type ? 'filtered' : 'all'} models: ${
+      atTypeList || 'none'
+    }`
   }
 
   if (command === 'push' && type === 'models') {
-    log(chalk(`- pushing models to Contentful`))
-    log(modelList)
+    logger.p(`- pushing models to Contentful`)
+    logger.p(modelList)
   }
   if (command === 'push' && type === 'content') {
-    log(chalk(`- pushing content to Contentful`))
-    log(modelList)
+    logger.p(`- pushing content to Contentful`)
+    logger.p(modelList)
   }
   if (command === 'pull' && type === 'models') {
-    log(chalk(`- pulling models from Contentful`))
-    log(chalk(`- write to: ${path}`))
+    logger.p(`- pulling models from Contentful`)
+    logger.p(`- write to: ${path}`)
   }
   if (command === 'pull' && type === 'content') {
-    log(chalk(`- pulling content from Contentful`))
-    log(chalk(`- write to: ${path}`))
+    logger.p(`- pulling content from Contentful`)
+    logger.p(`- write to: ${path}`)
   }
   if (command === 'diff' && type === 'models') {
-    log(chalk(`- comparing local models with Contentful`))
+    logger.p(`- comparing local models with Contentful`)
   }
   if (command === 'diff' && type === 'content') {
-    log(chalk(`- comparing local content with Contentful`))
+    logger.p(`- comparing local content with Contentful`)
   }
 
   if (options.dryRun) {
-    log(chalk(`- dry run enabled, running without making any changes`))
+    logger.p(`- dry run enabled, running without making any changes`)
   }
   if (options.force) {
-    log(chalk(`- force enabled, ignoring all messages and warnings`))
+    logger.p(`- force enabled, ignoring all messages and warnings`)
   }
   if (options.locale) {
-    log(chalk(`- using locale: ${options.locale}`))
+    logger.p(`- using locale: ${options.locale}`)
   }
 
   const contentfulEnvironment = await getContentfulEnvironment()
   const statistics = await fetchStatistics({ contentfulEnvironment })
-  log(chalk(`- entries found at Contentful: ${statistics.entriesTotal}`))
-  log(
-    chalk(
-      `- content types found at Contentful: ${statistics.contentTypesTotal}`
-    )
+  logger.p(`- entries found at Contentful: ${statistics.entriesTotal}`)
+  logger.p(
+    `- content types found at Contentful: ${statistics.contentTypesTotal}`
   )
 
   if (!options.force) {

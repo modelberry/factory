@@ -17,6 +17,10 @@ const renderNode = async (node: ts.Node) => {
 }
 
 describe('Create ts import should', () => {
+  afterEach(() => {
+    jest.clearAllMocks()
+  })
+
   test('create an import from strings', async () => {
     const importNode = createTsImport({
       from: './test',

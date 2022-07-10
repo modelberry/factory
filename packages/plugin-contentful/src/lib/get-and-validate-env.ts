@@ -1,25 +1,24 @@
-import chalk from 'chalk'
+import { logger } from '@modelberry/mbfactory/plain'
 import { config } from 'dotenv'
 
 export const getAndValidateEnv = () => {
   const nodeEnv = process.env.NODE_ENV || 'development'
   const envPath = `.env.${nodeEnv}`
-  const log = console.log
   config({ path: envPath })
   let isValid = true
   if (!process.env.MODELBERRY_PROJECT_NAME) {
-    log(chalk.blue(`- MODELBERRY_PROJECT_NAME env variable not found`))
+    logger.info((`- MODELBERRY_PROJECT_NAME env variable not found`))
   }
   if (!process.env.CONTENTFUL_SPACE_ID) {
-    log(chalk.red(`- CONTENTFUL_SPACE_ID env variable is missing`))
+    logger.error((`- CONTENTFUL_SPACE_ID env variable is missing`))
     isValid = false
   }
   if (!process.env.CONTENTFUL_PERSONAL_ACCESS_TOKEN) {
-    log(chalk.red(`- CONTENTFUL_PERSONAL_ACCESS_TOKEN env variable is missing`))
+    logger.error((`- CONTENTFUL_PERSONAL_ACCESS_TOKEN env variable is missing`))
     isValid = false
   }
   if (!process.env.CONTENTFUL_ENVIRONMENT) {
-    log(chalk.red(`- CONTENTFUL_ENVIRONMENT env variable is missing`))
+    logger.error((`- CONTENTFUL_ENVIRONMENT env variable is missing`))
     isValid = false
   }
   return isValid

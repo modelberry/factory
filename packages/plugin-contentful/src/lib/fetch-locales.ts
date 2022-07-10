@@ -1,5 +1,4 @@
-import { Options } from '@modelberry/mbfactory/plain'
-import chalk from 'chalk'
+import { Options, logger } from '@modelberry/mbfactory/plain'
 import { Environment, Locale } from 'contentful-management/types'
 
 export interface FetchLocales {
@@ -21,7 +20,7 @@ export const fetchLocales = async ({
   const result = await contentfulEnvironment.getLocales()
   const locales = result.items
   const defaultLocale = locales.find((locale: any) => locale.default)
-  console.log(chalk(`- remote default locale: ${defaultLocale?.code}`))
+  logger.p(`- remote default locale: ${defaultLocale?.code}`)
 
   const response: FetchLocalesReponse = {
     locales,
@@ -32,9 +31,7 @@ export const fetchLocales = async ({
     if (cliLocale) {
       response.cliLocaleCode = options.locale
     } else {
-      console.log(
-        chalk.red(`- could not find cli locale ${options.locale} at remote`)
-      )
+      logger.error(`- could not find cli locale ${options.locale} at remote`)
       response.badCliLocale = true
     }
   }

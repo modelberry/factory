@@ -82,6 +82,10 @@ const validationDoesNotExist = {
 const validations: Record<string, ContentTypeFieldValidation> = {}
 
 describe('getValidationName should', () => {
+  afterEach(() => {
+    jest.clearAllMocks()
+  })
+
   test('create a new name for validationLinkContentType', async () => {
     const validationName = getValidationName({
       val: validationLinkContentType,

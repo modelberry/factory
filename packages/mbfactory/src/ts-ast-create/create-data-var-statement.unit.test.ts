@@ -17,6 +17,10 @@ const renderVarStatement = async (varStatement: ts.Node) => {
 }
 
 describe('Create data variable should', () => {
+  afterEach(() => {
+    jest.clearAllMocks()
+  })
+
   test('create a declaration', async () => {
     const varStatement = createDataVarStatement({
       dataObject: {

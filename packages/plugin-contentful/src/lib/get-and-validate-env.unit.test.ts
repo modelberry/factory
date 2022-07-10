@@ -1,4 +1,3 @@
-import chalk from 'chalk'
 import { getAndValidateEnv } from './get-and-validate-env'
 
 const setEnv = (value?: string) => {
@@ -23,9 +22,8 @@ const envMissingResponse = [
 ]
 
 describe('getAndValidateEnv should', () => {
-  const consoleSpy = jest.spyOn(console, 'log').mockImplementation()
-  beforeEach(() => {
-    consoleSpy.mockReset()
+  afterEach(() => {
+    jest.clearAllMocks()
   })
 
   test('validate a good env', async () => {

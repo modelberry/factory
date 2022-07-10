@@ -4,6 +4,10 @@ import { createClient } from '../contentful-mock/contentful-mock'
 import { getContentfulEnvironment } from './get-contentful-environment'
 
 describe('getContentfulEnvironment should', () => {
+  afterEach(() => {
+    jest.clearAllMocks()
+  })
+
   test('return a Contentful environment from mock', async () => {
     const contentfulEnvironment = await getContentfulEnvironment()
     expect(contentfulEnvironment).toMatchSnapshot()

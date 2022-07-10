@@ -1,14 +1,22 @@
-import chalk from 'chalk'
 import ts from 'typescript'
 import { getCompilerOptions } from '../get-compiler-options/get-compiler-options'
+import { logger } from '../lib/logger'
 import { getAllPluginData } from './get-all-plugin-data'
 
 // jest.setTimeout(20000)
 
+const logSpy = {
+  h1: jest.spyOn(logger, 'h1').mockImplementation(),
+  h2: jest.spyOn(logger, 'h2').mockImplementation(),
+  h3: jest.spyOn(logger, 'h3').mockImplementation(),
+  p: jest.spyOn(logger, 'p').mockImplementation(),
+  info: jest.spyOn(logger, 'info').mockImplementation(),
+  error: jest.spyOn(logger, 'error').mockImplementation(),
+}
+
 describe('getAllPluginData should', () => {
-  const consoleSpy = jest.spyOn(console, 'log').mockImplementation()
-  beforeEach(() => {
-    consoleSpy.mockReset()
+  afterEach(() => {
+    jest.clearAllMocks()
   })
 
   const compilerOptions = getCompilerOptions()
@@ -31,9 +39,8 @@ describe('getAllPluginData should', () => {
     const file = './src/get-all-plugin-data/__fixtures__/no-tags.ts'
     const program = ts.createProgram([file], compilerOptions.options)
     getAllPluginData({ program })
-    expect(consoleSpy).toHaveBeenNthCalledWith(
-      1,
-      chalk.underline('src/get-all-plugin-data/__fixtures__/no-tags.ts')
+    expect(logSpy.h3).toHaveBeenCalledWith(
+      'src/get-all-plugin-data/__fixtures__/no-tags.ts'
     )
   })
 
@@ -41,20 +48,14 @@ describe('getAllPluginData should', () => {
     const file = './src/get-all-plugin-data/__fixtures__/no-tags.ts'
     const program = ts.createProgram([file], compilerOptions.options)
     getAllPluginData({ program })
-    expect(consoleSpy).toHaveBeenNthCalledWith(
-      2,
-      chalk.red('- no TSDoc tags (Topic)')
-    )
+    expect(logSpy.error).toHaveBeenCalledWith('- no TSDoc tags (Topic)')
   })
 
   test('report warnings for no-plugin-tag (parse-wr-interface)', async () => {
     const file = './src/get-all-plugin-data/__fixtures__/no-plugin-tag'
     const program = ts.createProgram([file], compilerOptions.options)
     getAllPluginData({ program })
-    expect(consoleSpy).toHaveBeenNthCalledWith(
-      2,
-      chalk.red('- no @plugin inline tag (Topic)')
-    )
+    expect(logSpy.error).toHaveBeenCalledWith('- no @plugin inline tag (Topic)')
   })
 
   test('report warnings for no-modelberry-field-tag (parse-wr-interface)', async () => {
@@ -62,9 +63,8 @@ describe('getAllPluginData should', () => {
       './src/get-all-plugin-data/__fixtures__/no-modelberry-field-tag'
     const program = ts.createProgram([file], compilerOptions.options)
     getAllPluginData({ program })
-    expect(consoleSpy).toHaveBeenNthCalledWith(
-      2,
-      chalk.red('- no @modelberry block tag for field (Topic/heading)')
+    expect(logSpy.error).toHaveBeenCalledWith(
+      '- no @modelberry block tag for field (Topic/heading)'
     )
   })
 
@@ -73,9 +73,8 @@ describe('getAllPluginData should', () => {
       './src/get-all-plugin-data/__fixtures__/no-modelberry-interface-tag'
     const program = ts.createProgram([file], compilerOptions.options)
     getAllPluginData({ program })
-    expect(consoleSpy).toHaveBeenNthCalledWith(
-      2,
-      chalk.red('- no @modelberry block tag for interface (Topic)')
+    expect(logSpy.error).toHaveBeenCalledWith(
+      '- no @modelberry block tag for interface (Topic)'
     )
   })
 })

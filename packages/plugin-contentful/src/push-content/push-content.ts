@@ -1,5 +1,4 @@
-import { Options, TypeData } from '@modelberry/mbfactory/plain'
-import chalk from 'chalk'
+import { logger, Options, TypeData } from '@modelberry/mbfactory/plain'
 import { Environment } from 'contentful-management/types'
 import { fetchLocales } from '../lib/fetch-locales'
 import { getEntryFields } from './get-entry-fields'
@@ -36,12 +35,10 @@ export const pushContent = async ({
         fieldValues,
         fields: localVariable.fields,
       })
-      console.log(
-        chalk(
-          `- pushing entry ${localVariable.interfaceTypeTag} with ${
-            Object.keys(entryFields).length
-          } fields` + (entryId ? ` (id:${entryId})` : ``)
-        )
+      logger.p(
+        `- pushing entry ${localVariable.interfaceTypeTag} with ${
+          Object.keys(entryFields).length
+        } fields` + (entryId ? ` (id:${entryId})` : ``)
       )
       if (!options.dryRun) {
         await pushEntryToContentful({

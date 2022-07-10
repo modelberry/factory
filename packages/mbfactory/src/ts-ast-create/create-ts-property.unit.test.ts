@@ -26,6 +26,10 @@ const renderProps = async (members: ts.TypeElement[]) => {
 }
 
 describe('Create ts property should', () => {
+  afterEach(() => {
+    jest.clearAllMocks()
+  })
+
   test('create an abstract?: string property', async () => {
     const propertyTree: PropertyTree = {
       abstract: {

@@ -1,4 +1,4 @@
-import chalk from 'chalk'
+import { logger } from '@modelberry/mbfactory/plain'
 import { Control } from 'contentful-management/types'
 
 export interface GetModelControl {
@@ -19,10 +19,10 @@ export const getModelControl = ({
       settings: { helpText: fieldTags['@helpText'] },
     }
     if (fieldTags['@widgetId']) {
-      console.log(chalk(`- editor control ${fieldTags['@widgetId']}`))
+      logger.p((`- editor control ${fieldTags['@widgetId']}`))
     }
     if (fieldTags['@helpText']) {
-      console.log(chalk(`- help text`))
+      logger.p((`- help text`))
     }
   }
   return control

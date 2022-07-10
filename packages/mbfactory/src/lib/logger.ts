@@ -10,8 +10,10 @@ export type Logger = {
   h1: (message: string) => void
   h2: (message: string) => void
   h3: (message: string) => void
+  info: (message: string) => void
+  warning: (message: string) => void
   init: (args: LoggerInit) => void
-  log: (message: string) => void
+  log: (message: string | any) => void
   options: Options
   p: (message: string) => void
 }
@@ -22,7 +24,6 @@ export const LoggerFactory: LoggerFactory = () => ({
   error(message: string) {
     this.log(chalk.red(message))
   },
-  bus: [] as string[],
   h1(message: string) {
     this.log(chalk.bold.underline(message))
   },
@@ -31,6 +32,12 @@ export const LoggerFactory: LoggerFactory = () => ({
   },
   h3(message: string) {
     this.log(chalk.underline(message))
+  },
+  info(message: string) {
+    this.log(chalk.blue(message))
+  },
+  warning(message: string) {
+    this.log(chalk.red.bold(message))
   },
   init({ options }: LoggerInit) {
     Object.assign(this.options, options)

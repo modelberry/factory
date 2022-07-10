@@ -81,6 +81,10 @@ const entryType: EntryType = {
 }
 
 describe('entriesToJsVariables should', () => {
+  afterEach(() => {
+    jest.clearAllMocks()
+  })
+
   const entryTypeList: EntryType[] = [entryType]
   const localeCode = 'en-US'
   test('convert entries to js variables', async () => {
