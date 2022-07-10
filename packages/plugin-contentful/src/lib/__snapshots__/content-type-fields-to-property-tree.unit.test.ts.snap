@@ -5,7 +5,7 @@ Object {
   "__typename": Object {
     "node": Object {
       "blockTag": "@modelberry",
-      "createKeywordTypeNode": 149,
+      "createKeywordTypeNode": 150,
       "inlineTags": Object {
         "@ignore": "",
       },
@@ -15,7 +15,7 @@ Object {
   "actions": Object {
     "node": Object {
       "blockTag": "@modelberry",
-      "createKeywordTypeNode": 149,
+      "createKeywordTypeNode": 150,
       "inlineTags": Object {
         "@name": "Actions",
         "@widgetId": "entryLinksEditor",
@@ -26,7 +26,7 @@ Object {
   "heading": Object {
     "node": Object {
       "blockTag": "@modelberry",
-      "createKeywordTypeNode": 149,
+      "createKeywordTypeNode": 150,
       "inlineTags": Object {
         "@localized": true,
         "@name": "Heading",
@@ -40,7 +40,7 @@ Object {
     "edges": Object {
       "id": Object {
         "node": Object {
-          "createKeywordTypeNode": 149,
+          "createKeywordTypeNode": 150,
           "isRequired": false,
         },
       },

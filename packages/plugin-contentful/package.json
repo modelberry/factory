@@ -52,7 +52,7 @@
   "scripts": {
     "build": "npm-run-all clean build:*",
     "build:compile": "rollup --config",
-    "build:lint": "eslint --cache 'src/**/*.{js,ts,tsx}'",
+    "slow:lint": "eslint --cache 'src/**/*.{ts,tsx}'",
     "build:test": "jest --silent --passWithNoTests",
     "build:types": "tsc -p tsconfig.json --declaration --emitDeclarationOnly --declarationDir build",
     "clean": "rimraf build/*",
@@ -61,10 +61,10 @@
   "dependencies": {
     "@modelberry/mbfactory": "6.30.16",
     "chalk": "4.1.2",
-    "contentful-management": "10.3.0",
+    "contentful-management": "10.8.0",
     "deep-equal": "2.0.5",
     "deepmerge": "4.2.2",
-    "inquirer": "8.2.4"
+    "inquirer": "8.2.3"
   },
   "engines": {
     "node": ">=16.0.0",

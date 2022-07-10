@@ -55,7 +55,7 @@
   "scripts": {
     "build": "npm-run-all clean build:*",
     "build:compile": "rollup --config",
-    "build:lint": "eslint --cache 'src/**/*.{js,ts,tsx}'",
+    "slow:lint": "eslint --cache 'src/**/*.{ts,tsx}'",
     "build:test": "jest --silent --passWithNoTests",
     "build:types": "tsc -p tsconfig.json --declaration --emitDeclarationOnly --declarationDir build",
     "build:executable": "chmod +x ./build/cli.cjs",
@@ -74,10 +74,10 @@
   },
   "dependencies": {
     "chalk": "4.1.2",
-    "contentful-management": "8.2.2",
-    "inquirer": "8.2.2",
-    "prettier": "2.6.1",
-    "typescript": "4.6.3",
-    "yargs": "17.4.0"
+    "contentful-management": "10.8.0",
+    "inquirer": "8.2.3",
+    "prettier": "2.7.1",
+    "typescript": "4.7.4",
+    "yargs": "17.5.1"
   }
 }
