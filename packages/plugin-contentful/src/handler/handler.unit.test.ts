@@ -71,13 +71,13 @@ describe('The handler should', () => {
     expect(logSpy.info).toHaveBeenCalledWith(
       '- MODELBERRY_PROJECT_NAME env variable not found'
     )
-    expect(logSpy.info).toHaveBeenCalledWith(
+    expect(logSpy.error).toHaveBeenCalledWith(
       '- CONTENTFUL_SPACE_ID env variable is missing'
     )
-    expect(logSpy.info).toHaveBeenCalledWith(
+    expect(logSpy.error).toHaveBeenCalledWith(
       '- CONTENTFUL_PERSONAL_ACCESS_TOKEN env variable is missing'
     )
-    expect(logSpy.info).toHaveBeenCalledWith(
+    expect(logSpy.error).toHaveBeenCalledWith(
       '- CONTENTFUL_ENVIRONMENT env variable is missing'
     )
 
@@ -134,18 +134,16 @@ describe('The handler should', () => {
       },
       type: 'content',
     })
-    expect(logSpy.info).toHaveBeenCalledWith('- modelberry project: ok')
-    expect(logSpy.info).toHaveBeenCalledWith('- contentful space id: ok')
-    expect(logSpy.info).toHaveBeenCalledWith('- contentful environment: ok')
-    expect(logSpy.info).toHaveBeenCalledWith('- pushing content to Contentful')
-    expect(logSpy.info).toHaveBeenCalledWith('- all models: testType')
-    expect(logSpy.info).toHaveBeenCalledWith(
+    expect(logSpy.p).toHaveBeenCalledWith('- modelberry project: ok')
+    expect(logSpy.p).toHaveBeenCalledWith('- contentful space id: ok')
+    expect(logSpy.p).toHaveBeenCalledWith('- contentful environment: ok')
+    expect(logSpy.p).toHaveBeenCalledWith('- pushing content to Contentful')
+    expect(logSpy.p).toHaveBeenCalledWith('- all models: testType')
+    expect(logSpy.p).toHaveBeenCalledWith(
       '- force enabled, ignoring all messages and warnings'
     )
-    expect(logSpy.info).toHaveBeenCalledWith(
-      '- entries found at Contentful: 96'
-    )
-    expect(logSpy.info).toHaveBeenCalledWith(
+    expect(logSpy.p).toHaveBeenCalledWith('- entries found at Contentful: 96')
+    expect(logSpy.p).toHaveBeenCalledWith(
       '- content types found at Contentful: 11'
     )
 

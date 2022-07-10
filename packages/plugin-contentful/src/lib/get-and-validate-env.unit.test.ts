@@ -1,4 +1,14 @@
+import { logger } from '@modelberry/mbfactory/plain'
 import { getAndValidateEnv } from './get-and-validate-env'
+
+const logSpy = {
+  h1: jest.spyOn(logger, 'h1').mockImplementation(),
+  h2: jest.spyOn(logger, 'h2').mockImplementation(),
+  h3: jest.spyOn(logger, 'h3').mockImplementation(),
+  p: jest.spyOn(logger, 'p').mockImplementation(),
+  info: jest.spyOn(logger, 'info').mockImplementation(),
+  error: jest.spyOn(logger, 'error').mockImplementation(),
+}
 
 const setEnv = (value?: string) => {
   if (value) {
@@ -14,13 +24,6 @@ const setEnv = (value?: string) => {
   }
 }
 
-const envMissingResponse = [
-  [chalk.blue('- MODELBERRY_PROJECT_NAME env variable not found')],
-  [chalk.red('- CONTENTFUL_SPACE_ID env variable is missing')],
-  [chalk.red('- CONTENTFUL_PERSONAL_ACCESS_TOKEN env variable is missing')],
-  [chalk.red('- CONTENTFUL_ENVIRONMENT env variable is missing')],
-]
-
 describe('getAndValidateEnv should', () => {
   afterEach(() => {
     jest.clearAllMocks()
@@ -30,12 +33,25 @@ describe('getAndValidateEnv should', () => {
     setEnv('ok')
     const isValid = getAndValidateEnv()
     expect(isValid).toEqual(true)
-    expect(consoleSpy.mock.calls).toEqual([])
+    expect(logSpy.info).toHaveBeenCalledTimes(0)
+    expect(logSpy.error).toHaveBeenCalledTimes(0)
   })
   test('invalidate a bad env', async () => {
     setEnv('')
     const isValid = getAndValidateEnv()
     expect(isValid).toEqual(false)
-    expect(consoleSpy.mock.calls).toEqual(envMissingResponse)
+
+    expect(logSpy.info).toHaveBeenCalledWith(
+      '- MODELBERRY_PROJECT_NAME env variable not found'
+    )
+    expect(logSpy.error).toHaveBeenCalledWith(
+      '- CONTENTFUL_SPACE_ID env variable is missing'
+    )
+    expect(logSpy.error).toHaveBeenCalledWith(
+      '- CONTENTFUL_PERSONAL_ACCESS_TOKEN env variable is missing'
+    )
+    expect(logSpy.error).toHaveBeenCalledWith(
+      '- CONTENTFUL_ENVIRONMENT env variable is missing'
+    )
   })
 })
