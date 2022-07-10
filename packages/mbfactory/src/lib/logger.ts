@@ -16,6 +16,7 @@ export type Logger = {
   error: (message: string) => void
   log: (message: string | any) => void
   options: Options
+  mute: boolean
 }
 
 export type LoggerFactory = () => Logger
@@ -45,8 +46,12 @@ export const LoggerFactory: LoggerFactory = () => ({
   error(message: string) {
     this.log(chalk.red(message))
   },
-  log: console.log,
+  log(message: string) {
+    if (this.mute) return
+    console.log(message)
+  },
   options: {},
+  mute: false,
 })
 
 export const logger = LoggerFactory()
