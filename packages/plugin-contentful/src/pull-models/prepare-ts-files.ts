@@ -9,32 +9,32 @@ import { SourceFile } from '../lib/write-source-files'
 import { createAstNodes } from './create-ast-nodes'
 import { createContentfulAssetTypeDeclaration } from './create-contentful-asset-type-declaration'
 import { createContentfulReferenceTypeDeclaration } from './create-contentful-reference-type-declaration'
-import { RemoteContentTypeIterator } from './remote-content-type-generator'
+import { RemoteSourceContentTypeIterator } from './remote-source-content-type-generator'
 
-export interface GetSourceFiles {
+export interface PrepareTsFiles {
   /** Source files path */
   path: string
   /** Empty object to save Contentful validations to */
   validations: Record<string, any>
-  remoteContentTypeIterator: RemoteContentTypeIterator
+  remoteSourceContentTypeIterator: RemoteSourceContentTypeIterator
 }
 
-export const getSourceFiles = async ({
+export const prepareTsFiles = async ({
   path,
   validations,
-  remoteContentTypeIterator,
-}: GetSourceFiles) => {
+  remoteSourceContentTypeIterator,
+}: PrepareTsFiles) => {
   // Generate import statements for each type to be added to the main file
   const allTypesImportStatements: Node[] = []
 
   const files: SourceFile[] = []
 
-  for await (const remoteContentType of remoteContentTypeIterator) {
-    const nodes = createAstNodes(remoteContentType)
+  for await (const remoteSourceContentType of remoteSourceContentTypeIterator) {
+    const nodes = createAstNodes(remoteSourceContentType)
 
     // Add source file for this interface
     const filenameWithoutExt = `contentful-${camelToKebab(
-      remoteContentType.contentTypeId
+      remoteSourceContentType.contentTypeId
     )}`
     files.push({
       filename: `${filenameWithoutExt}.ts`,

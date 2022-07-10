@@ -9,14 +9,14 @@ import { contentTypeToInlineTags } from '../lib/content-type-to-inline-tags'
 import { fetchContentTypes } from '../lib/fetch-content-types'
 import { fetchEditorInterfaces } from '../lib/fetch-editor-interfaces'
 
-export interface RemoteContentTypeGenerator {
+export interface RemoteSourceContentTypeGenerator {
   contentfulEnvironment: Environment
   options: Options
   /** Empty object to save Contentful validations to */
   validations: Record<string, any>
 }
 
-export type RemoteContentTypeIterator = AsyncGenerator<
+export type RemoteSourceContentTypeIterator = AsyncGenerator<
   {
     contentTypeId: string
     inlineTags: Record<string, any>
@@ -28,38 +28,43 @@ export type RemoteContentTypeIterator = AsyncGenerator<
   unknown
 >
 
-export async function* remoteContentTypeGenerator({
+export async function* remoteSourceContentTypeGenerator({
   contentfulEnvironment,
   options,
   validations,
-}: RemoteContentTypeGenerator) {
-  const contentTypes = await fetchContentTypes({
+}: RemoteSourceContentTypeGenerator) {
+  const remoteContentTypes = await fetchContentTypes({
     contentfulEnvironment,
     options,
   })
 
   // Fetch all required data, then loop and yield an object for each contentType
-  for (const contentType of contentTypes) {
-    const inlineTags = contentTypeToInlineTags({ contentType })
-    const contentTypeId = contentType.sys.id
+  for (const remoteContentType of remoteContentTypes) {
+    const remoteInlineTags = contentTypeToInlineTags({
+      contentType: remoteContentType,
+    })
+    const remoteContentTypeId = remoteContentType.sys.id
     // Fetch editor interfaces from Contentful remote API
-    const editorInterfaces = await fetchEditorInterfaces({ contentType })
+    const editorInterfaces = await fetchEditorInterfaces({
+      contentType: remoteContentType,
+    })
     // Empty array that gets filled with named imports
-    const namedImports: string[] = []
+    const remoteNamedImports: string[] = []
     // Get propterty tree that defines all fields for the interface
-    const propertyTree = contentTypeFieldsToPropertyTree({
-      contentTypeFields: contentType.fields,
+    const remotePropertyTree = contentTypeFieldsToPropertyTree({
+      contentTypeFields: remoteContentType.fields,
       editorInterfaces,
-      namedImports,
+      namedImports: remoteNamedImports,
       validations,
     })
-    const interfaceName = 'Contentful' + firstUpperCase(contentTypeId)
+    const remoteInterfaceName =
+      'Contentful' + firstUpperCase(remoteContentTypeId)
     yield {
-      contentTypeId,
-      inlineTags,
-      interfaceName,
-      namedImports,
-      propertyTree,
+      contentTypeId: remoteContentTypeId,
+      inlineTags: remoteInlineTags,
+      interfaceName: remoteInterfaceName,
+      namedImports: remoteNamedImports,
+      propertyTree: remotePropertyTree,
     }
   }
 }

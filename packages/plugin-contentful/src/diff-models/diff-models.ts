@@ -1,8 +1,8 @@
 import { Environment } from 'contentful-management/types'
 import { logger, Options, TypeData } from '@modelberry/mbfactory/plain'
 import { ValidationsMap } from '../lib/get-modelberry-plugin-data'
-import { remoteContentTypeGenerator } from '../pull-models/remote-content-type-generator'
-import { localContentTypeGenerator } from '../push-models/local-content-type-generator'
+import { remoteSourceContentTypeGenerator } from '../pull-models/remote-source-content-type-generator'
+import { localSourceContentTypeGenerator } from '../push-models/local-source-content-type-generator'
 import { asyncIteratorToArray } from '../lib/async-iterator-to-array'
 
 export interface DiffModels {
@@ -21,17 +21,17 @@ export const diffModels = async ({
   // Empty object that gets filled with validations
   const validations: Record<string, any> = {}
 
-  const remoteContentTypeIterator = remoteContentTypeGenerator({
+  const remoteSourceContentTypeIterator = remoteSourceContentTypeGenerator({
     contentfulEnvironment,
     options,
     validations,
   })
   // Mute logging when fetching remote and local content types
   logger.mute = true
-  const remoteContentTypes = await asyncIteratorToArray(
-    remoteContentTypeIterator
+  const remoteSourceContentTypes = await asyncIteratorToArray(
+    remoteSourceContentTypeIterator
   )
-  const localContentTypeIterator = localContentTypeGenerator({
+  const localContentTypeIterator = localSourceContentTypeGenerator({
     options,
     typeData,
     validationsMap,
@@ -39,10 +39,10 @@ export const diffModels = async ({
   const localContentTypes = Array.from(localContentTypeIterator)
   logger.mute = false
 
-  for (const remoteContentType of remoteContentTypes) {
+  for (const remoteSourceContentType of remoteSourceContentTypes) {
     for (const localContentType of localContentTypes) {
-      console.log('remoteContentType', remoteContentType)
-      console.log('localContentType', localContentType)
+      logger.object('remoteSourceContentType', remoteSourceContentType)
+      logger.object('localContentType', localContentType)
     }
   }
 }

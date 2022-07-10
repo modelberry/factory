@@ -3,7 +3,7 @@ import { ContentType, Environment } from 'contentful-management/types'
 import { ValidationsMap } from '../lib/get-modelberry-plugin-data'
 import { pushFieldsToContentful } from './push-fields-to-contentful'
 import { pushControlsToContentful } from './push-controls-to-contentful'
-import { localContentTypeGenerator } from './local-content-type-generator'
+import { localSourceContentTypeGenerator } from './local-source-content-type-generator'
 
 export interface PushModels {
   contentfulEnvironment: Environment
@@ -18,14 +18,14 @@ export const pushModels = async ({
   typeData,
   validationsMap,
 }: PushModels) => {
-  const localContentTypeIterator = localContentTypeGenerator({
+  const localSourceContentTypeIterator = localSourceContentTypeGenerator({
     options,
     typeData,
     validationsMap,
   })
-  for (const localContentType of localContentTypeIterator) {
+  for (const localSourceContentType of localSourceContentTypeIterator) {
     logger.h2(`\nPushing to Contentful`)
-    if (localContentType.fields.length < 1) {
+    if (localSourceContentType.fields.length < 1) {
       logger.error(`- no valid fields found, skipping`)
     } else {
       logger.p(`- pushing content type`)
@@ -34,21 +34,21 @@ export const pushModels = async ({
       if (!options.dryRun) {
         contentTypeData = {
           name:
-            localContentType.interfaceTags['@name'] ||
-            localContentType.interfaceTypeTag,
-          description: localContentType.interfaceTags['@description'],
-          displayField: localContentType.interfaceTags['@displayField'],
-          fields: localContentType.fields,
+            localSourceContentType.interfaceTags['@name'] ||
+            localSourceContentType.interfaceTypeTag,
+          description: localSourceContentType.interfaceTags['@description'],
+          displayField: localSourceContentType.interfaceTags['@displayField'],
+          fields: localSourceContentType.fields,
         } as ContentType
 
         contentType = await pushFieldsToContentful({
           contentTypeData,
           contentfulEnvironment,
           yesOption: options.yes,
-          interfaceTypeTag: localContentType.interfaceTypeTag,
+          interfaceTypeTag: localSourceContentType.interfaceTypeTag,
         })
       }
-      if (localContentType.controls.length > 0) {
+      if (localSourceContentType.controls.length > 0) {
         logger.p(`- pushing editor interface`)
         if (!options.dryRun) {
           if (!contentType) {
@@ -57,7 +57,7 @@ export const pushModels = async ({
           }
           await pushControlsToContentful({
             contentType,
-            controls: localContentType.controls,
+            controls: localSourceContentType.controls,
           })
         }
       }

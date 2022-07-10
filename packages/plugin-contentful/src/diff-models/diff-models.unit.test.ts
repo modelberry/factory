@@ -12,6 +12,7 @@ const logSpy = {
   p: jest.spyOn(logger, 'p').mockImplementation(),
   info: jest.spyOn(logger, 'info').mockImplementation(),
   error: jest.spyOn(logger, 'error').mockImplementation(),
+  log: jest.spyOn(logger, 'log').mockImplementation(),
 }
 
 describe('Diff models should', () => {

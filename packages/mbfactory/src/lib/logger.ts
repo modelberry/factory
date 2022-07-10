@@ -1,3 +1,4 @@
+import { inspect } from 'util'
 import chalk from 'chalk'
 import { Options } from '../call-handler/call-handler'
 
@@ -14,7 +15,8 @@ export type Logger = {
   info: (message: string) => void
   warning: (message: string) => void
   error: (message: string) => void
-  log: (message: string | any) => void
+  log: (message: string) => void
+  object: (heading: string, object: any) => void
   options: Options
   mute: boolean
 }
@@ -49,6 +51,10 @@ export const LoggerFactory: LoggerFactory = () => ({
   log(message: string) {
     if (this.mute) return
     console.log(message)
+  },
+  object(heading: string, object: any) {
+    if (this.mute) return
+    console.log(heading, inspect(object, false, 10, true))
   },
   options: {},
   mute: false,

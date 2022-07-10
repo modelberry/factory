@@ -1,8 +1,8 @@
 import { Environment } from 'contentful-management/types'
 import { Options } from '@modelberry/mbfactory/plain'
 import { writeSourceFiles } from '../lib/write-source-files'
-import { getSourceFiles } from './get-source-files'
-import { remoteContentTypeGenerator } from './remote-content-type-generator'
+import { prepareTsFiles } from './prepare-ts-files'
+import { remoteSourceContentTypeGenerator } from './remote-source-content-type-generator'
 
 export interface PullModels {
   contentfulEnvironment: Environment
@@ -17,13 +17,13 @@ export const pullModels = async ({
 }: PullModels) => {
   // Empty object that gets filled with validations
   const validations: Record<string, any> = {}
-  const remoteContentTypeIterator = remoteContentTypeGenerator({
+  const remoteSourceContentTypeIterator = remoteSourceContentTypeGenerator({
     contentfulEnvironment,
     options,
     validations,
   })
-  const files = await getSourceFiles({
-    remoteContentTypeIterator,
+  const files = await prepareTsFiles({
+    remoteSourceContentTypeIterator,
     path,
     validations,
   })

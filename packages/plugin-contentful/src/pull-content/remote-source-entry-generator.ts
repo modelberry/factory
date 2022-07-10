@@ -11,7 +11,7 @@ export interface RemoteEntryGenerator {
   options: Options
 }
 
-export type RemoteEntryIterator = AsyncGenerator<
+export type RemoteSourceEntryIterator = AsyncGenerator<
   {
     contentTypeId: string
     varType: string
@@ -23,7 +23,7 @@ export type RemoteEntryIterator = AsyncGenerator<
 >
 
 // Fetch all required data, then loop and yield an object for each entry
-export async function* remoteEntryGenerator({
+export async function* remoteSourceEntryGenerator({
   contentfulEnvironment,
   localeCode,
   options,
@@ -44,14 +44,19 @@ export async function* remoteEntryGenerator({
   })
 
   // Each content type is a file with: export const myType: MyType = [...]
-  for (const contentTypeId of Object.keys(entriesByContentTypeId)) {
-    const varType = `Contentful${firstUpperCase(contentTypeId)}`
-    const varName = contentTypeId
+  for (const remoteContentTypeId of Object.keys(entriesByContentTypeId)) {
+    const remoteVarType = `Contentful${firstUpperCase(remoteContentTypeId)}`
+    const remoteVarName = remoteContentTypeId
     // Get the content of the js variables from the Contentful entries
-    const contentArray: any[] = entriesToJsVariables({
-      entryTypeList: entriesByContentTypeId[contentTypeId].entryTypeList,
+    const remoteContentArray: any[] = entriesToJsVariables({
+      entryTypeList: entriesByContentTypeId[remoteContentTypeId].entryTypeList,
       localeCode,
     })
-    yield { contentTypeId, varType, varName, contentArray }
+    yield {
+      contentTypeId: remoteContentTypeId,
+      varType: remoteVarType,
+      varName: remoteVarName,
+      contentArray: remoteContentArray,
+    }
   }
 }

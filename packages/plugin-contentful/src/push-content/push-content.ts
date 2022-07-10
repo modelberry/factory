@@ -2,7 +2,7 @@ import { logger, Options, TypeData } from '@modelberry/mbfactory/plain'
 import { Environment } from 'contentful-management/types'
 import { fetchLocales } from '../lib/fetch-locales'
 import { getEntryFields } from './get-entry-fields'
-import { localVariableGenerator } from './local-variable-generator'
+import { localSourceVariableGenerator } from './local-source-variable-generator'
 import { pushEntryToContentful } from './push-entry-to-contentful'
 
 export interface PushContent {
@@ -23,27 +23,30 @@ export const pushContent = async ({
     }
   )
   if (badCliLocale) return
-  const localVariableIterator = localVariableGenerator({ options, typeData })
-  for (const localVariable of localVariableIterator) {
-    for (const fieldValues of localVariable.fieldValuesArray) {
+  const localSourceVariableIterator = localSourceVariableGenerator({
+    options,
+    typeData,
+  })
+  for (const localSourceVariable of localSourceVariableIterator) {
+    for (const fieldValues of localSourceVariable.fieldValuesArray) {
       const { entryId, entryFields } = getEntryFields({
         localeCodes: {
           default: defaultLocaleCode,
-          interface: localVariable.interfaceLocaleTag,
+          interface: localSourceVariable.interfaceLocaleTag,
           cliOption: cliLocaleCode,
         },
         fieldValues,
-        fields: localVariable.fields,
+        fields: localSourceVariable.fields,
       })
       logger.p(
-        `- pushing entry ${localVariable.interfaceTypeTag} with ${
+        `- pushing entry ${localSourceVariable.interfaceTypeTag} with ${
           Object.keys(entryFields).length
         } fields` + (entryId ? ` (id:${entryId})` : ``)
       )
       if (!options.dryRun) {
         await pushEntryToContentful({
           contentfulEnvironment,
-          contentTypeId: localVariable.interfaceTypeTag,
+          contentTypeId: localSourceVariable.interfaceTypeTag,
           entryFields,
           entryId,
         })
