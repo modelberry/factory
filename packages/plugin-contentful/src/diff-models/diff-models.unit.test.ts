@@ -22,7 +22,7 @@ describe('Diff models should', () => {
   test('show model differences correctly', async () => {
     await diffModels({
       contentfulEnvironment: environmentMock,
-      options: { force: true },
+      options: { yes: true },
       typeData: allTags,
       validationsMap: { mockedValidation: {} },
     })

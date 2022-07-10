@@ -11,12 +11,12 @@ export type ArgvType = 'content' | 'models'
 export type Options = {
   /** Run without making any changes */
   dryRun?: boolean
-  /** Ignore all messages and warnings, this could result in data loss */
-  force?: boolean
+  /** Filter by type value @modelberry {@type value} */
+  filter?: string
   /** Override @modelberry {@locale} */
   locale?: string
-  /** Filter by type value @modelberry {@type value} */
-  type?: string
+  /** Answer yes to all messages and warnings, this could result in data loss */
+  yes?: boolean
 }
 
 export interface CallHandler {

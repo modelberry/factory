@@ -22,7 +22,7 @@ describe('Pull models should', () => {
   test('pull correctly without type filter', async () => {
     await pullModels({
       contentfulEnvironment: environmentMock,
-      options: { force: true },
+      options: { yes: true },
       path: './dummy',
     })
     expect(writeFile).toMatchSnapshot()
@@ -73,7 +73,7 @@ describe('Pull models should', () => {
   test('pull correctly with type filter', async () => {
     await pullModels({
       contentfulEnvironment: environmentMock,
-      options: { force: true, type: 'testTopic' },
+      options: { yes: true, filter: 'testTopic' },
       path: './dummy',
     })
     expect(writeFile).toMatchSnapshot()

@@ -14,9 +14,9 @@ export interface GetAndGeportOptions {
 export const getAndReportOptions = ({ argv }: GetAndGeportOptions) => {
   const options: Options = {
     dryRun: argv.dryRun,
-    force: argv.force,
+    filter: argv.filter,
     locale: argv.locale,
-    type: argv.type,
+    yes: argv.yes,
   }
   return options
 }

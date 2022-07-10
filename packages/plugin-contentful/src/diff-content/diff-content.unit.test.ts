@@ -22,7 +22,7 @@ describe('Diff content should', () => {
   test('show content differences correctly', async () => {
     await diffContent({
       contentfulEnvironment: environmentMock,
-      options: { force: true },
+      options: { yes: true },
       typeData: allTags,
     })
   })

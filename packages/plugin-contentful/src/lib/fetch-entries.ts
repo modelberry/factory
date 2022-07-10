@@ -21,7 +21,7 @@ export const fetchEntries = async ({
 }: FetchEntries) => {
   logger.p(`- fetching entries`)
   const query: QueryOptions = { skip: 0, locale: localeCode }
-  if (options.type) query['content_type'] = options.type
+  if (options.filter) query['content_type'] = options.filter
 
   const batchSize = 100
   let remoteEntries: Entry[] = []

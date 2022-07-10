@@ -61,10 +61,10 @@ describe('The handler should', () => {
 
   test('show environment warnings', async () => {
     setEnv()
-    // Test with force is true to prevent user interaction
+    // Test with 'yes' option to prevent user interaction
     await handler({
       command: 'push',
-      options: { force: true },
+      options: { yes: true },
       pluginData: { types: {}, dataVar: {} },
       type: 'models',
     })
@@ -86,10 +86,10 @@ describe('The handler should', () => {
 
   test('call pushModels', async () => {
     setEnv('ok')
-    // Test with force is true to prevent user interaction
+    // Test with 'yes' option to prevent user interaction
     await handler({
       command: 'push',
-      options: { force: true },
+      options: { yes: true },
       pluginData: {
         types: {
           myTestType,
@@ -104,7 +104,7 @@ describe('The handler should', () => {
     expect(logSpy.p).toHaveBeenCalledWith('- pushing models to Contentful')
     expect(logSpy.p).toHaveBeenCalledWith('- all models: testType')
     expect(logSpy.p).toHaveBeenCalledWith(
-      '- force enabled, ignoring all messages and warnings'
+      '- yes option, answering yes to all messages and warnings'
     )
     expect(logSpy.p).toHaveBeenCalledWith('- entries found at Contentful: 96')
     expect(logSpy.p).toHaveBeenCalledWith(
@@ -112,7 +112,7 @@ describe('The handler should', () => {
     )
     expect(pushModels).toHaveBeenCalledWith({
       contentfulEnvironment: environmentMock,
-      options: { force: true },
+      options: { yes: true },
       typeData: {
         myTestType,
       },
@@ -122,10 +122,10 @@ describe('The handler should', () => {
 
   test('call pushContent', async () => {
     setEnv('ok')
-    // Test with force is true to prevent user interaction
+    // Test with 'yes' option to prevent user interaction
     await handler({
       command: 'push',
-      options: { force: true },
+      options: { yes: true },
       pluginData: {
         types: {
           myTestType,
@@ -140,7 +140,7 @@ describe('The handler should', () => {
     expect(logSpy.p).toHaveBeenCalledWith('- pushing content to Contentful')
     expect(logSpy.p).toHaveBeenCalledWith('- all models: testType')
     expect(logSpy.p).toHaveBeenCalledWith(
-      '- force enabled, ignoring all messages and warnings'
+      '- yes option, answering yes to all messages and warnings'
     )
     expect(logSpy.p).toHaveBeenCalledWith('- entries found at Contentful: 96')
     expect(logSpy.p).toHaveBeenCalledWith(
@@ -149,7 +149,7 @@ describe('The handler should', () => {
 
     expect(pushContent).toHaveBeenCalledWith({
       contentfulEnvironment: environmentMock,
-      options: { force: true },
+      options: { yes: true },
       typeData: {
         myTestType,
       },
@@ -158,10 +158,10 @@ describe('The handler should', () => {
 
   test('call pullModels', async () => {
     setEnv('ok')
-    // Test with force is true to prevent user interaction
+    // Test with 'yes' option to prevent user interaction
     await handler({
       command: 'pull',
-      options: { force: true },
+      options: { yes: true },
       path: 'pull-test-path',
       type: 'models',
     })
@@ -172,7 +172,7 @@ describe('The handler should', () => {
     expect(logSpy.p).toHaveBeenCalledWith('- pulling models from Contentful')
     expect(logSpy.p).toHaveBeenCalledWith('- write to: pull-test-path')
     expect(logSpy.p).toHaveBeenCalledWith(
-      '- force enabled, ignoring all messages and warnings'
+      '- yes option, answering yes to all messages and warnings'
     )
     expect(logSpy.p).toHaveBeenCalledWith('- entries found at Contentful: 96')
     expect(logSpy.p).toHaveBeenCalledWith(
@@ -181,17 +181,17 @@ describe('The handler should', () => {
 
     expect(pullModels).toHaveBeenCalledWith({
       contentfulEnvironment: environmentMock,
-      options: { force: true },
+      options: { yes: true },
       path: 'pull-test-path',
     })
   })
 
   test('call pullContent', async () => {
     setEnv('ok')
-    // Test with force is true to prevent user interaction
+    // Test with 'yes' option to prevent user interaction
     await handler({
       command: 'pull',
-      options: { force: true },
+      options: { yes: true },
       path: 'pull-test-path',
       type: 'content',
     })
@@ -202,7 +202,7 @@ describe('The handler should', () => {
     expect(logSpy.p).toHaveBeenCalledWith('- pulling content from Contentful')
     expect(logSpy.p).toHaveBeenCalledWith('- write to: pull-test-path')
     expect(logSpy.p).toHaveBeenCalledWith(
-      '- force enabled, ignoring all messages and warnings'
+      '- yes option, answering yes to all messages and warnings'
     )
     expect(logSpy.p).toHaveBeenCalledWith('- entries found at Contentful: 96')
     expect(logSpy.p).toHaveBeenCalledWith(
@@ -211,17 +211,17 @@ describe('The handler should', () => {
 
     expect(pullContent).toHaveBeenCalledWith({
       contentfulEnvironment: environmentMock,
-      options: { force: true },
+      options: { yes: true },
       path: 'pull-test-path',
     })
   })
 
   test('call diffModels', async () => {
     setEnv('ok')
-    // Test with force is true to prevent user interaction
+    // Test with 'yes' option to prevent user interaction
     await handler({
       command: 'diff',
-      options: { force: true },
+      options: { yes: true },
       pluginData: {
         types: {
           myTestType,
@@ -238,7 +238,7 @@ describe('The handler should', () => {
       '- comparing local models with Contentful'
     )
     expect(logSpy.p).toHaveBeenCalledWith(
-      '- force enabled, ignoring all messages and warnings'
+      '- yes option, answering yes to all messages and warnings'
     )
     expect(logSpy.p).toHaveBeenCalledWith('- entries found at Contentful: 96')
     expect(logSpy.p).toHaveBeenCalledWith(
@@ -247,7 +247,7 @@ describe('The handler should', () => {
 
     expect(diffModels).toHaveBeenCalledWith({
       contentfulEnvironment: environmentMock,
-      options: { force: true },
+      options: { yes: true },
       typeData: {
         myTestType,
       },
@@ -257,10 +257,10 @@ describe('The handler should', () => {
 
   test('call diffContent', async () => {
     setEnv('ok')
-    // Test with force is true to prevent user interaction
+    // Test with 'yes' option to prevent user interaction
     await handler({
       command: 'diff',
-      options: { force: true },
+      options: { yes: true },
       pluginData: {
         types: {
           myTestType,
@@ -277,7 +277,7 @@ describe('The handler should', () => {
       '- comparing local content with Contentful'
     )
     expect(logSpy.p).toHaveBeenCalledWith(
-      '- force enabled, ignoring all messages and warnings'
+      '- yes option, answering yes to all messages and warnings'
     )
     expect(logSpy.p).toHaveBeenCalledWith('- entries found at Contentful: 96')
     expect(logSpy.p).toHaveBeenCalledWith(
@@ -286,7 +286,7 @@ describe('The handler should', () => {
 
     expect(diffContent).toHaveBeenCalledWith({
       contentfulEnvironment: environmentMock,
-      options: { force: true },
+      options: { yes: true },
       typeData: {
         myTestType,
       },

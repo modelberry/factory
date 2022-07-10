@@ -31,7 +31,7 @@ export const writeSourceFiles = async ({
   const sourceFile = createTsSourceFile()
 
   let skipAll = options.dryRun
-  let writeAll = options.force
+  let writeAll = options.yes
   for (const file of files) {
     const filename = `${file.path}/${file.filename}`
     const fileExists = existsSync(filename)

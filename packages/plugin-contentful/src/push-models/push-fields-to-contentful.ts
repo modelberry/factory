@@ -11,14 +11,14 @@ import { keepOrdered } from './keep-ordered'
 export interface PushFieldsToContentful {
   contentfulEnvironment: Environment
   contentTypeData: ContentType
-  forceOption?: boolean
+  yesOption?: boolean
   interfaceTypeTag: string
 }
 
 export const pushFieldsToContentful = async ({
   contentfulEnvironment,
   contentTypeData,
-  forceOption,
+  yesOption,
   interfaceTypeTag,
 }: PushFieldsToContentful) => {
   let contentType: ContentType
@@ -29,7 +29,7 @@ export const pushFieldsToContentful = async ({
       existingfields: contentType.fields,
       newFields: contentTypeData.fields,
     })
-    if (omittedFields.length && !forceOption) {
+    if (omittedFields.length && !yesOption) {
       const confirmed = await confirmOmitted({ fields: omittedFields })
       if (!confirmed) return
     }

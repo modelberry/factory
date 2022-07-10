@@ -13,8 +13,10 @@ export const fetchContentTypes = async ({
   logger.p(`- fetching content types`)
 
   let contentTypes: ContentType[] = []
-  if (options.type) {
-    const ctResponse = await contentfulEnvironment.getContentType(options.type)
+  if (options.filter) {
+    const ctResponse = await contentfulEnvironment.getContentType(
+      options.filter
+    )
     contentTypes.push(ctResponse)
   } else {
     const ctResponse = await contentfulEnvironment.getContentTypes()

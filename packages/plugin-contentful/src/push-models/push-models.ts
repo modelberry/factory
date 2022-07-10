@@ -44,7 +44,7 @@ export const pushModels = async ({
         contentType = await pushFieldsToContentful({
           contentTypeData,
           contentfulEnvironment,
-          forceOption: options.force,
+          yesOption: options.yes,
           interfaceTypeTag: localContentType.interfaceTypeTag,
         })
       }

@@ -33,7 +33,7 @@ describe('writeSourceFiles should', () => {
     ]
     await writeSourceFiles({
       files,
-      options: { force: true },
+      options: { yes: true },
     })
     expect(writeFile).toMatchSnapshot()
     expect(logSpy.p).toHaveBeenCalledWith(
@@ -58,7 +58,7 @@ describe('writeSourceFiles should', () => {
     ]
     await writeSourceFiles({
       files,
-      options: { force: true, dryRun: true },
+      options: { yes: true, dryRun: true },
     })
     expect(writeFile).toMatchSnapshot()
     expect(logSpy.p).toHaveBeenCalledWith(

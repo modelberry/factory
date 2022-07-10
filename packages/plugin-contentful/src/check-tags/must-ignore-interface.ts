@@ -11,7 +11,7 @@ export const mustIgnoreInterface = ({
 }: MustIgnoreInterface) => {
   const interfaceTypeTag = interfaceTags['@type']
   // Check if a filter is used, ignore if it does not pass filter
-  if (options.type && options.type !== interfaceTypeTag) {
+  if (options.filter && options.filter !== interfaceTypeTag) {
     logger.p(`- skipping because does not match filter`)
     return true
   }

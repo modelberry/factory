@@ -29,13 +29,13 @@ export const handler: Handler = async ({
   if (command === 'push' && pluginData?.types) {
     const atTypeList = Object.values(pluginData?.types)
       .map((type) => type.interface.interfaceTags?.['@type'])
-      .filter((atType) => !options?.type || options?.type === atType)
+      .filter((atType) => !options?.filter || options?.filter === atType)
       .join(', ')
     if (!atTypeList) {
       logger.error('- no content types found')
       return
     }
-    modelList = `- ${options?.type ? 'filtered' : 'all'} models: ${
+    modelList = `- ${options?.filter ? 'filtered' : 'all'} models: ${
       atTypeList || 'none'
     }`
   }
@@ -66,8 +66,8 @@ export const handler: Handler = async ({
   if (options.dryRun) {
     logger.p(`- dry run enabled, running without making any changes`)
   }
-  if (options.force) {
-    logger.p(`- force enabled, ignoring all messages and warnings`)
+  if (options.yes) {
+    logger.p(`- yes option, answering yes to all messages and warnings`)
   }
   if (options.locale) {
     logger.p(`- using locale: ${options.locale}`)
@@ -80,7 +80,7 @@ export const handler: Handler = async ({
     `- content types found at Contentful: ${statistics.contentTypesTotal}`
   )
 
-  if (!options.force) {
+  if (!options.yes) {
     const answers = await inquirer.prompt(continueQuestion)
     if (answers.policy === 'q') return
   }

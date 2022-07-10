@@ -6,9 +6,9 @@ import { PushArgv, pushCommand } from './commands/push/push'
 
 type YargsOptions = {
   'dry-run': yargs.Options
-  force: yargs.Options
+  filter: yargs.Options
   locale: yargs.Options
-  type: yargs.Options
+  yes: yargs.Options
 }
 
 const options: YargsOptions = {
@@ -18,13 +18,11 @@ const options: YargsOptions = {
     requiresArg: false,
     type: 'boolean',
   },
-  // TODO: Change force into silent
-  force: {
+  filter: {
     alias: 'f',
-    describe:
-      'Ignore all messages and warnings, this could result in data loss',
-    requiresArg: false,
-    type: 'boolean',
+    describe: 'Filter by type value @modelberry {@type value}',
+    requiresArg: true,
+    type: 'string',
   },
   locale: {
     alias: 'l',
@@ -32,12 +30,12 @@ const options: YargsOptions = {
     requiresArg: true,
     type: 'string',
   },
-  // TODO: Change type into filter
-  type: {
-    alias: 't',
-    describe: 'Filter by type value @modelberry {@type value}',
-    requiresArg: true,
-    type: 'string',
+  yes: {
+    alias: 'y',
+    describe:
+      'Answer yes to all messages and warnings, this could result in data loss',
+    requiresArg: false,
+    type: 'boolean',
   },
 }
 

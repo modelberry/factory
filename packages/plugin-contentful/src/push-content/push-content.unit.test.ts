@@ -20,7 +20,7 @@ describe('Push content should', () => {
   test('process topicAction correctly', async () => {
     await pushContent({
       contentfulEnvironment: environmentMock,
-      options: { force: true },
+      options: { yes: true },
       typeData: topicAction,
     })
     expect(logSpy.p).toHaveBeenCalledWith('- remote default locale: en-US')
