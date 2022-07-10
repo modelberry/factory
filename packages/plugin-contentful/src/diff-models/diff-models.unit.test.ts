@@ -2,7 +2,7 @@ jest.mock('fs/promises')
 
 import { logger } from '@modelberry/mbfactory/plain'
 import { environmentMock } from '../contentful-mock/contentful-mock'
-import { allTags } from './__fixtures__/all-tags'
+import { multipleContentTypes } from './__fixtures__/multiple-content-types'
 import { diffModels } from './diff-models'
 
 const logSpy = {
@@ -24,7 +24,8 @@ describe('Diff models should', () => {
     await diffModels({
       contentfulEnvironment: environmentMock,
       options: { yes: true },
-      typeData: allTags,
+      typeData:
+        multipleContentTypes['@modelberry/plugin-contentful/plain'].types,
       validationsMap: { mockedValidation: {} },
     })
   })

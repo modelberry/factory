@@ -2,7 +2,7 @@ jest.mock('fs/promises')
 
 import { logger } from '@modelberry/mbfactory/plain'
 import { environmentMock } from '../contentful-mock/contentful-mock'
-import { allTags } from './__fixtures__/all-tags'
+import { multipleContentTypes } from './__fixtures__/multiple-content-types'
 import { diffContent } from './diff-content'
 
 const logSpy = {
@@ -23,7 +23,8 @@ describe('Diff content should', () => {
     await diffContent({
       contentfulEnvironment: environmentMock,
       options: { yes: true },
-      typeData: allTags,
+      typeData:
+        multipleContentTypes['@modelberry/plugin-contentful/plain'].types,
     })
   })
   expect(logSpy.p).toHaveBeenCalledTimes(0)

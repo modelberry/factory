@@ -38,8 +38,8 @@ export const diffModels = async ({
   logger.mute = false
 
   for (const remoteSourceContentType of remoteSourceContentTypes) {
+    logger.object('remoteSourceContentType', remoteSourceContentType)
     for (const localContentType of localContentTypes) {
-      logger.object('remoteSourceContentType', remoteSourceContentType)
       logger.object('localContentType', localContentType)
     }
   }

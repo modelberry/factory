@@ -43,6 +43,7 @@ export function* localSourceContentTypeGenerator({
       fields: validLocalFields,
       interfaceTypeTag: localInterfaceTypeTag,
       interfaceTags: localInterfaceTags,
+      interfaceName: localTypescriptInterfaceName,
     }
   }
 }
