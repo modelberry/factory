@@ -4,6 +4,5 @@
     "sourceMap": false
   },
   "extends": "../../tsconfig.json",
-  "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["**/__fixtures__/**/*"]
+  "include": ["src/**/*.ts", "src/**/*.tsx"]
 }

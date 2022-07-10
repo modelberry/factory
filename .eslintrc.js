@@ -3,7 +3,12 @@ module.exports = {
     browser: true,
     node: true,
   },
-  ignorePatterns: ['**/node_modules/**', '**/*.js', '**/build/**'],
+  ignorePatterns: [
+    '**/node_modules/**',
+    '**/build/**',
+    '**/*.js',
+    '**/__fixtures__/**',
+  ],
   parser: '@typescript-eslint/parser',
   extends: [
     'eslint:recommended',
