@@ -1,18 +1,18 @@
 import { Environment } from 'contentful-management/types'
 import { Options, TypeData } from '@modelberry/mbfactory/plain'
-import { fetchContentTypes } from '../../pull/models/fetch-content-types'
+import { fetchContentTypes } from '../models/fetch-content-types'
 
-export interface PushContentDiff {
+export interface PullDiffContent {
   contentfulEnvironment: Environment
   options: Options
   typeData: TypeData
 }
 
-export const pushContentDiff = async ({
+export const pullDiffContent = async ({
   contentfulEnvironment,
   options,
   typeData,
-}: PushContentDiff) => {
+}: PullDiffContent) => {
   const contentTypes = await fetchContentTypes({
     contentfulEnvironment,
     options,

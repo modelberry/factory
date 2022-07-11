@@ -1,14 +1,14 @@
 import { Handler, logger } from '@modelberry/mbfactory/plain'
 import inquirer from 'inquirer'
-import { getModelberryPluginData } from '../push/models/get-modelberry-plugin-data'
-import { getAndValidateEnv } from '../lib/get-and-validate-env'
 import { pushModels } from '../push/models/push-models'
 import { pushContent } from '../push/content/push-content'
-import { getContentfulEnvironment } from '../lib/get-contentful-environment'
-import { continueQuestion } from '../lib/questions'
 import { pullModels } from '../pull/models/pull-models'
 import { pullContent } from '../pull/content/pull-content'
-import { fetchStatistics } from '../lib/fetch-statistics'
+import { getAndValidateEnv } from './get-and-validate-env'
+import { getContentfulEnvironment } from './get-contentful-environment'
+import { continueQuestion } from './questions'
+import { fetchStatistics } from './fetch-statistics'
+import { getModelberryPluginData } from './get-modelberry-plugin-data'
 
 export const handler: Handler = async ({
   command,
@@ -39,38 +39,34 @@ export const handler: Handler = async ({
   }
 
   if (command === 'push' && type === 'models') {
-    if (options.diff) {
-      logger.p(`- comparing local models to Contentful models`)
-      logger.p(modelList)
-    } else {
-      logger.p(`- pushing models to Contentful`)
-      logger.p(modelList)
-    }
+    logger.p(`- pushing models to Contentful`)
+    logger.p(modelList)
+  }
+  if (command === 'push-diff' && type === 'models') {
+    logger.p(`- comparing local models to Contentful models`)
+    logger.p(modelList)
   }
   if (command === 'push' && type === 'content') {
-    if (options.diff) {
-      logger.p(`- comparing local content to Contentful content`)
-      logger.p(modelList)
-    } else {
-      logger.p(`- pushing content to Contentful`)
-      logger.p(modelList)
-    }
+    logger.p(`- pushing content to Contentful`)
+    logger.p(modelList)
+  }
+  if (command === 'push-diff' && type === 'content') {
+    logger.p(`- comparing local content to Contentful content`)
+    logger.p(modelList)
   }
   if (command === 'pull' && type === 'models') {
-    if (options.diff) {
-      logger.p(`- comparing Contentful models to local models`)
-    } else {
-      logger.p(`- pulling models from Contentful`)
-      logger.p(`- write to: ${path}`)
-    }
+    logger.p(`- pulling models from Contentful`)
+    logger.p(`- write to: ${path}`)
+  }
+  if (command === 'pull-diff' && type === 'models') {
+    logger.p(`- comparing Contentful models to local models`)
   }
   if (command === 'pull' && type === 'content') {
-    if (options.diff) {
-      logger.p(`- comparing Contentful content to local content`)
-    } else {
-      logger.p(`- pulling content from Contentful`)
-      logger.p(`- write to: ${path}`)
-    }
+    logger.p(`- pulling content from Contentful`)
+    logger.p(`- write to: ${path}`)
+  }
+  if (command === 'pull-diff' && type === 'content') {
+    logger.p(`- comparing Contentful content to local content`)
   }
 
   if (options.dryRun) {

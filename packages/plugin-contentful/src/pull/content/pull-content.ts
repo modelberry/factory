@@ -4,7 +4,6 @@ import { writeSourceFiles } from '../../lib/write-source-files'
 import { fetchLocales } from '../../lib/fetch-locales'
 import { prepareTsFiles } from './prepare-ts-files'
 import { remoteSourceEntryGenerator } from './remote-source-entry-generator'
-import { pullContentDiff } from './pull-content-diff'
 
 export interface PullContent {
   contentfulEnvironment: Environment
@@ -17,15 +16,6 @@ export const pullContent = async ({
   options,
   path,
 }: PullContent) => {
-  // TODO: Fix required arguments
-  if (options.diff) {
-    pullContentDiff({
-      contentfulEnvironment,
-      options,
-      typeData: {},
-    })
-  }
-
   const { badCliLocale, defaultLocaleCode, cliLocaleCode } = await fetchLocales(
     {
       contentfulEnvironment,

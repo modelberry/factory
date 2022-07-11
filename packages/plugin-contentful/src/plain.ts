@@ -1,2 +1,2 @@
 export * from './handler/handler'
-export * from './push/models/get-modelberry-plugin-data'
+export * from './handler/get-modelberry-plugin-data'

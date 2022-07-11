@@ -1,7 +1,7 @@
 import { camelToSpaces, firstUpperCase } from '@modelberry/mbfactory/plain'
 import { ContentFields, FieldType } from 'contentful-management/types'
-import { ValidationsMap } from './get-modelberry-plugin-data'
-import { getValidations } from './get-validations'
+import { ValidationsMap } from '../../handler/get-modelberry-plugin-data'
+import { getValidations } from '../../handler/get-validations'
 
 export interface GetModelField {
   fieldIdWithoutPostfix: string

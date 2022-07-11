@@ -1,7 +1,7 @@
 import { logger } from '@modelberry/mbfactory/plain'
 import { ContentFields } from 'contentful-management/types'
 import inquirer from 'inquirer'
-import { omitQuestion } from '../../lib/questions'
+import { omitQuestion } from '../../handler/questions'
 
 interface ConfirmOmitted {
   fields: ContentFields[]

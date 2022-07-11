@@ -10,7 +10,7 @@ import {
   logger,
 } from '@modelberry/mbfactory/plain'
 import inquirer from 'inquirer'
-import { overwriteQuestion } from '../lib/questions'
+import { overwriteQuestion } from '../handler/questions'
 
 export type SourceFile = {
   filename: string

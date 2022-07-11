@@ -3,7 +3,7 @@ jest.mock('fs/promises')
 import { logger } from '@modelberry/mbfactory/plain'
 import { environmentMock } from '../../contentful-mock/contentful-mock'
 import { multipleContentTypes } from './__fixtures__/multiple-content-types'
-import { pullContentDiff } from './pull-content-diff'
+import { pushDiffContent } from './push-diff-content'
 
 const logSpy = {
   h1: jest.spyOn(logger, 'h1').mockImplementation(),
@@ -14,13 +14,13 @@ const logSpy = {
   error: jest.spyOn(logger, 'error').mockImplementation(),
 }
 
-describe('Diff content should', () => {
+describe('Push diff content should', () => {
   afterEach(() => {
     jest.clearAllMocks()
   })
 
   test('show content differences correctly', async () => {
-    await pullContentDiff({
+    await pushDiffContent({
       contentfulEnvironment: environmentMock,
       options: { yes: true },
       typeData:
