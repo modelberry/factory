@@ -1,5 +1,5 @@
 import { logger } from '@modelberry/mbfactory/plain'
-import { environmentMock } from '../contentful-mock/contentful-mock'
+import { environmentMock } from '../../contentful-mock/contentful-mock'
 import { pushModels } from './push-models'
 import { allTags } from './__fixtures__/all-tags'
 import { badArraySymbol } from './__fixtures__/bad-array-symbol'

@@ -1,4 +1,4 @@
-import { getContentType } from '../contentful-mock/contentful-mock'
+import { getContentType } from '../../contentful-mock/contentful-mock'
 import { contentTypeToInlineTags } from './content-type-to-inline-tags'
 
 describe('contentTypeToInlineTags should', () => {

@@ -1,7 +1,7 @@
 import { Options, TypeData, logger } from '@modelberry/mbfactory/plain'
 import { KeyValueMap } from 'contentful-management/types'
-import { checkTags } from '../check-tags/check-tags'
-import { isValidInterface } from '../check-tags/is-valid-interface'
+import { checkTags } from '../../check-tags/check-tags'
+import { isValidInterface } from '../../check-tags/is-valid-interface'
 
 export interface LocalSourceVariableGenerator {
   options: Options

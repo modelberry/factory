@@ -1,5 +1,5 @@
 import { logger } from '@modelberry/mbfactory/plain'
-import { environmentMock } from '../contentful-mock/contentful-mock'
+import { environmentMock } from '../../contentful-mock/contentful-mock'
 import { fetchEntries } from './fetch-entries'
 
 const logSpy = {

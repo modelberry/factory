@@ -1,6 +1,6 @@
 import { Control } from 'contentful-management/types'
 import { ModelberryInterface } from '@modelberry/mbfactory/plain'
-import { getFieldIdWithoutPostfix } from '../lib/get-field-id-without-postfix'
+import { getFieldIdWithoutPostfix } from '../../lib/get-field-id-without-postfix'
 import { getModelControl } from './get-model-control'
 
 export interface GetRemoteTargetContentTypeControls {

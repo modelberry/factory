@@ -1,7 +1,7 @@
 import { Environment } from 'contentful-management/types'
 import { logger, Options, TypeData } from '@modelberry/mbfactory/plain'
-import { remoteSourceContentTypeGenerator } from '../pull-models/remote-source-content-type-generator'
-import { asyncIteratorToArray } from '../lib/async-iterator-to-array'
+import { remoteSourceContentTypeGenerator } from '../../pull/models/remote-source-content-type-generator'
+import { asyncIteratorToArray } from '../../lib/async-iterator-to-array'
 import { ValidationsMap } from './get-modelberry-plugin-data'
 import { localSourceContentTypeGenerator } from './local-source-content-type-generator'
 

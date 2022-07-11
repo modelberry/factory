@@ -2,7 +2,7 @@ jest.mock('fs/promises')
 
 import { writeFile } from 'fs/promises'
 import { logger } from '@modelberry/mbfactory/plain'
-import { environmentMock } from '../contentful-mock/contentful-mock'
+import { environmentMock } from '../../contentful-mock/contentful-mock'
 import { pullContent } from './pull-content'
 
 const logSpy = {

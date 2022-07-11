@@ -1,4 +1,4 @@
-import { getContentType } from '../contentful-mock/contentful-mock'
+import { getContentType } from '../../contentful-mock/contentful-mock'
 import { fetchEditorInterfaces } from './fetch-editor-interfaces'
 
 describe('fetchEditorInterfaces should', () => {

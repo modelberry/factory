@@ -1,9 +1,6 @@
-jest.mock('fs/promises')
-
 import { logger } from '@modelberry/mbfactory/plain'
-import { environmentMock } from '../contentful-mock/contentful-mock'
-import { multipleContentTypes } from './__fixtures__/multiple-content-types'
-import { diffContent } from './diff'
+import { environmentMock } from '../../contentful-mock/contentful-mock'
+import { fetchContentTypes } from './fetch-content-types'
 
 const logSpy = {
   h1: jest.spyOn(logger, 'h1').mockImplementation(),
@@ -14,18 +11,18 @@ const logSpy = {
   error: jest.spyOn(logger, 'error').mockImplementation(),
 }
 
-describe('Diff content should', () => {
+describe('fetchContentTypes should', () => {
   afterEach(() => {
     jest.clearAllMocks()
   })
 
-  test('show content differences correctly', async () => {
-    await diffContent({
+  test('fetch content types from mock', async () => {
+    const contentTypes = await fetchContentTypes({
       contentfulEnvironment: environmentMock,
-      options: { yes: true },
-      typeData:
-        multipleContentTypes['@modelberry/plugin-contentful/plain'].types,
+      options: {},
     })
+    expect(contentTypes).toMatchSnapshot()
+    expect(logSpy.p).toHaveBeenCalledWith('- fetching content types')
+    expect(logSpy.p).toHaveBeenCalledWith('- fetched 11 content types')
   })
-  expect(logSpy.p).toHaveBeenCalledTimes(0)
 })

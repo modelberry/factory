@@ -1,6 +1,6 @@
 import { Environment } from 'contentful-management/types'
 import { Options, TypeData } from '@modelberry/mbfactory/plain'
-import { fetchContentTypes } from '../pull-models/fetch-content-types'
+import { fetchContentTypes } from '../../pull/models/fetch-content-types'
 
 export interface DiffContent {
   contentfulEnvironment: Environment

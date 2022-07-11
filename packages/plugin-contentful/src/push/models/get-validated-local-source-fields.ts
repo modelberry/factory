@@ -1,7 +1,7 @@
 import { ModelberryInterface, logger } from '@modelberry/mbfactory/plain'
-import { getFieldIdWithoutPostfix } from '../lib/get-field-id-without-postfix'
-import { checkTags } from '../check-tags/check-tags'
-import { isValidField } from '../check-tags/is-valid-field'
+import { getFieldIdWithoutPostfix } from '../../lib/get-field-id-without-postfix'
+import { checkTags } from '../../check-tags/check-tags'
+import { isValidField } from '../../check-tags/is-valid-field'
 
 export interface GetValidatedLocalSourceFields {
   contentTypeFields: ModelberryInterface['fields']

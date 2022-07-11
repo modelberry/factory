@@ -1,6 +1,6 @@
 import { logger, Options, TypeData } from '@modelberry/mbfactory/plain'
 import { Environment } from 'contentful-management/types'
-import { fetchLocales } from '../lib/fetch-locales'
+import { fetchLocales } from '../../lib/fetch-locales'
 import { getEntryFields } from './get-entry-fields'
 import { localSourceVariableGenerator } from './local-source-variable-generator'
 import { pushEntryToContentful } from './push-entry-to-contentful'

@@ -1,6 +1,6 @@
 import { KeyValueMap } from 'contentful-management/types'
 import { ModelberryInterface } from '@modelberry/mbfactory/plain'
-import { getFieldIdWithoutPostfix } from '../lib/get-field-id-without-postfix'
+import { getFieldIdWithoutPostfix } from '../../lib/get-field-id-without-postfix'
 import { createLocalizedField, LocalizedFieldResponse } from './create-field'
 
 export interface GetEntryFields {

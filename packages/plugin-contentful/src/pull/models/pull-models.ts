@@ -1,6 +1,6 @@
 import { Environment } from 'contentful-management/types'
 import { Options } from '@modelberry/mbfactory/plain'
-import { writeSourceFiles } from '../lib/write-source-files'
+import { writeSourceFiles } from '../../lib/write-source-files'
 import { prepareTsFiles } from './prepare-ts-files'
 import { remoteSourceContentTypeGenerator } from './remote-source-content-type-generator'
 

@@ -1,13 +1,13 @@
 import { Handler, logger } from '@modelberry/mbfactory/plain'
 import inquirer from 'inquirer'
-import { getModelberryPluginData } from '../push-models/get-modelberry-plugin-data'
+import { getModelberryPluginData } from '../push/models/get-modelberry-plugin-data'
 import { getAndValidateEnv } from '../lib/get-and-validate-env'
-import { pushModels } from '../push-models/push-models'
-import { pushContent } from '../push-content/push-content'
+import { pushModels } from '../push/models/push-models'
+import { pushContent } from '../push/content/push-content'
 import { getContentfulEnvironment } from '../lib/get-contentful-environment'
 import { continueQuestion } from '../lib/questions'
-import { pullModels } from '../pull-models/pull-models'
-import { pullContent } from '../pull-content/pull-content'
+import { pullModels } from '../pull/models/pull-models'
+import { pullContent } from '../pull/content/pull-content'
 import { fetchStatistics } from '../lib/fetch-statistics'
 
 export const handler: Handler = async ({

@@ -1,6 +1,6 @@
 import { firstUpperCase, Options } from '@modelberry/mbfactory/plain'
 import { Environment } from 'contentful-management/types'
-import { fetchContentTypes } from '../pull-models/fetch-content-types'
+import { fetchContentTypes } from '../../pull/models/fetch-content-types'
 import { fetchEntries } from './fetch-entries'
 import { organizeEntriesByContentType } from './organize-entries-by-content-type'
 import { entriesToJsVariables } from './entries-to-js-variables'

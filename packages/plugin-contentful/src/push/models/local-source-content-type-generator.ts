@@ -1,6 +1,6 @@
 import { Options, TypeData, logger } from '@modelberry/mbfactory/plain'
-import { checkTags } from '../check-tags/check-tags'
-import { isValidInterface } from '../check-tags/is-valid-interface'
+import { checkTags } from '../../check-tags/check-tags'
+import { isValidInterface } from '../../check-tags/is-valid-interface'
 import { getValidatedLocalSourceFields } from './get-validated-local-source-fields'
 
 export interface LocalSourceContentTypeGenerator {
