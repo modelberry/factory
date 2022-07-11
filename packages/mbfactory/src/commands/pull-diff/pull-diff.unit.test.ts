@@ -22,7 +22,7 @@ const argv: Arguments<PullDiffArgv> = {
   $0: '',
   file: '',
   options: {},
-  pullDiffType: 'content',
+  diffType: 'content',
 }
 
 describe('The pull-diff command should', () => {

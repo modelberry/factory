@@ -22,7 +22,7 @@ const argv: Arguments<PushDiffArgv> = {
   $0: '',
   file: '',
   options: {},
-  pushDiffType: 'content',
+  diffType: 'content',
 }
 
 describe('The push-diff command should', () => {

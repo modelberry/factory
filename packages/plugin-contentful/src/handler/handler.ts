@@ -4,6 +4,10 @@ import { pushModels } from '../push/models/push-models'
 import { pushContent } from '../push/content/push-content'
 import { pullModels } from '../pull/models/pull-models'
 import { pullContent } from '../pull/content/pull-content'
+import { pullDiffContent } from '../pull/content/pull-diff-content'
+import { pullDiffModels } from '../pull/models/pull-diff-models'
+import { pushDiffContent } from '../push/content/push-diff-content'
+import { pushDiffModels } from '../push/models/push-diff-models'
 import { getAndValidateEnv } from './get-and-validate-env'
 import { getContentfulEnvironment } from './get-contentful-environment'
 import { continueQuestion } from './questions'
@@ -22,6 +26,8 @@ export const handler: Handler = async ({
   logger.p(`- modelberry project: ${process.env.MODELBERRY_PROJECT_NAME}`)
   logger.p(`- contentful space id: ${process.env.CONTENTFUL_SPACE_ID}`)
   logger.p(`- contentful environment: ${process.env.CONTENTFUL_ENVIRONMENT}`)
+  logger.p(`command: ${command}`)
+  logger.p(`type: ${type}`)
 
   let modelList = ''
   if (command === 'push' && pluginData?.types) {
@@ -124,6 +130,44 @@ export const handler: Handler = async ({
       contentfulEnvironment,
       options,
       path,
+    })
+  }
+  if (command === 'push-diff' && type === 'models') {
+    if (!pluginData) return
+    const dataVarObj = getModelberryPluginData({ dataVar: pluginData.dataVar })
+    const validationsMap = dataVarObj?.validations || {}
+    await pushDiffModels({
+      contentfulEnvironment,
+      options,
+      typeData: pluginData.types,
+      validationsMap,
+    })
+  }
+  if (command === 'push-diff' && type === 'content') {
+    if (!pluginData) return
+    await pushDiffContent({
+      contentfulEnvironment,
+      options,
+      typeData: pluginData.types,
+    })
+  }
+  if (command === 'pull-diff' && type === 'models') {
+    if (!pluginData) return
+    const dataVarObj = getModelberryPluginData({ dataVar: pluginData.dataVar })
+    const validationsMap = dataVarObj?.validations || {}
+    await pullDiffModels({
+      contentfulEnvironment,
+      options,
+      typeData: pluginData.types,
+      validationsMap,
+    })
+  }
+  if (command === 'pull-diff' && type === 'content') {
+    if (!pluginData) return
+    await pullDiffContent({
+      contentfulEnvironment,
+      options,
+      typeData: pluginData.types,
     })
   }
 }

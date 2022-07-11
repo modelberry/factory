@@ -8,7 +8,7 @@ import { getAndReportOptions } from '../../lib/get-and-report-options'
 import { logger } from '../../lib/logger'
 
 export type PushDiffArgv = Options & {
-  pushDiffType: ArgvType
+  diffType: ArgvType
   file: string
 }
 
@@ -37,7 +37,7 @@ export const pushDiffCommand = async ({ argv }: PushDiffCommand) => {
       options,
       pluginData: allPluginData[pluginName],
       pluginName,
-      type: argv.pushDiffType,
+      type: argv.diffType,
     })
   }
 }
