@@ -9,8 +9,6 @@ import { continueQuestion } from '../lib/questions'
 import { pullModels } from '../pull-models/pull-models'
 import { pullContent } from '../pull-content/pull-content'
 import { fetchStatistics } from '../lib/fetch-statistics'
-import { diffModels } from '../diff-models/diff-models'
-import { diffContent } from '../diff-content/diff-content'
 
 export const handler: Handler = async ({
   command,
@@ -56,12 +54,12 @@ export const handler: Handler = async ({
     logger.p(`- pulling content from Contentful`)
     logger.p(`- write to: ${path}`)
   }
-  if (command === 'diff' && type === 'models') {
-    logger.p(`- comparing local models with Contentful`)
-  }
-  if (command === 'diff' && type === 'content') {
-    logger.p(`- comparing local content with Contentful`)
-  }
+  // if (command === 'diff' && type === 'models') {
+  //   logger.p(`- comparing local models with Contentful`)
+  // }
+  // if (command === 'diff' && type === 'content') {
+  //   logger.p(`- comparing local content with Contentful`)
+  // }
 
   if (options.dryRun) {
     logger.p(`- dry run enabled, running without making any changes`)
@@ -120,23 +118,23 @@ export const handler: Handler = async ({
       path,
     })
   }
-  if (command === 'diff' && type === 'models') {
-    if (!pluginData) return
-    const dataVarObj = getModelberryPluginData({ dataVar: pluginData.dataVar })
-    const validationsMap = dataVarObj?.validations || {}
-    await diffModels({
-      contentfulEnvironment,
-      options,
-      typeData: pluginData.types,
-      validationsMap,
-    })
-  }
-  if (command === 'diff' && type === 'content') {
-    if (!pluginData) return
-    await diffContent({
-      contentfulEnvironment,
-      options,
-      typeData: pluginData.types,
-    })
-  }
+  // if (command === 'diff' && type === 'models') {
+  //   if (!pluginData) return
+  //   const dataVarObj = getModelberryPluginData({ dataVar: pluginData.dataVar })
+  //   const validationsMap = dataVarObj?.validations || {}
+  //   await diffModels({
+  //     contentfulEnvironment,
+  //     options,
+  //     typeData: pluginData.types,
+  //     validationsMap,
+  //   })
+  // }
+  // if (command === 'diff' && type === 'content') {
+  //   if (!pluginData) return
+  //   await diffContent({
+  //     contentfulEnvironment,
+  //     options,
+  //     typeData: pluginData.types,
+  //   })
+  // }
 }

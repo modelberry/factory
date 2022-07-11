@@ -2,8 +2,6 @@ jest.mock('../push-content/push-content')
 jest.mock('../push-models/push-models')
 jest.mock('../pull-content/pull-content')
 jest.mock('../pull-models/pull-models')
-jest.mock('../diff-content/diff-content')
-jest.mock('../diff-models/diff-models')
 jest.mock('contentful-management', () => ({ createClient }))
 
 import { logger } from '@modelberry/mbfactory/plain'
@@ -15,8 +13,6 @@ import { pullContent } from '../pull-content/pull-content'
 import { pullModels } from '../pull-models/pull-models'
 import { pushContent } from '../push-content/push-content'
 import { pushModels } from '../push-models/push-models'
-import { diffContent } from '../diff-content/diff-content'
-import { diffModels } from '../diff-models/diff-models'
 import { handler } from './handler'
 
 const logSpy = {
@@ -213,83 +209,6 @@ describe('The handler should', () => {
       contentfulEnvironment: environmentMock,
       options: { yes: true },
       path: 'pull-test-path',
-    })
-  })
-
-  test('call diffModels', async () => {
-    setEnv('ok')
-    // Test with 'yes' option to prevent user interaction
-    await handler({
-      command: 'diff',
-      options: { yes: true },
-      pluginData: {
-        types: {
-          myTestType,
-        },
-        dataVar: {},
-      },
-      type: 'models',
-    })
-
-    expect(logSpy.p).toHaveBeenCalledWith('- modelberry project: ok')
-    expect(logSpy.p).toHaveBeenCalledWith('- contentful space id: ok')
-    expect(logSpy.p).toHaveBeenCalledWith('- contentful environment: ok')
-    expect(logSpy.p).toHaveBeenCalledWith(
-      '- comparing local models with Contentful'
-    )
-    expect(logSpy.p).toHaveBeenCalledWith(
-      '- yes option, answering yes to all messages and warnings'
-    )
-    expect(logSpy.p).toHaveBeenCalledWith('- entries found at Contentful: 96')
-    expect(logSpy.p).toHaveBeenCalledWith(
-      '- content types found at Contentful: 11'
-    )
-
-    expect(diffModels).toHaveBeenCalledWith({
-      contentfulEnvironment: environmentMock,
-      options: { yes: true },
-      typeData: {
-        myTestType,
-      },
-      validationsMap: {},
-    })
-  })
-
-  test('call diffContent', async () => {
-    setEnv('ok')
-    // Test with 'yes' option to prevent user interaction
-    await handler({
-      command: 'diff',
-      options: { yes: true },
-      pluginData: {
-        types: {
-          myTestType,
-        },
-        dataVar: {},
-      },
-      type: 'content',
-    })
-
-    expect(logSpy.p).toHaveBeenCalledWith('- modelberry project: ok')
-    expect(logSpy.p).toHaveBeenCalledWith('- contentful space id: ok')
-    expect(logSpy.p).toHaveBeenCalledWith('- contentful environment: ok')
-    expect(logSpy.p).toHaveBeenCalledWith(
-      '- comparing local content with Contentful'
-    )
-    expect(logSpy.p).toHaveBeenCalledWith(
-      '- yes option, answering yes to all messages and warnings'
-    )
-    expect(logSpy.p).toHaveBeenCalledWith('- entries found at Contentful: 96')
-    expect(logSpy.p).toHaveBeenCalledWith(
-      '- content types found at Contentful: 11'
-    )
-
-    expect(diffContent).toHaveBeenCalledWith({
-      contentfulEnvironment: environmentMock,
-      options: { yes: true },
-      typeData: {
-        myTestType,
-      },
     })
   })
 })
