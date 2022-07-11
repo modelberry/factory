@@ -16,7 +16,7 @@ const options: YargsOptions = {
     alias: 'd',
     describe: 'Show differences between local and remote, do not make changes',
     requiresArg: true,
-    type: 'string',
+    type: 'boolean',
   },
   'dry-run': {
     alias: 'd',

@@ -39,27 +39,39 @@ export const handler: Handler = async ({
   }
 
   if (command === 'push' && type === 'models') {
-    logger.p(`- pushing models to Contentful`)
-    logger.p(modelList)
+    if (options.diff) {
+      logger.p(`- comparing local models to Contentful models`)
+      logger.p(modelList)
+    } else {
+      logger.p(`- pushing models to Contentful`)
+      logger.p(modelList)
+    }
   }
   if (command === 'push' && type === 'content') {
-    logger.p(`- pushing content to Contentful`)
-    logger.p(modelList)
+    if (options.diff) {
+      logger.p(`- comparing local content to Contentful content`)
+      logger.p(modelList)
+    } else {
+      logger.p(`- pushing content to Contentful`)
+      logger.p(modelList)
+    }
   }
   if (command === 'pull' && type === 'models') {
-    logger.p(`- pulling models from Contentful`)
-    logger.p(`- write to: ${path}`)
+    if (options.diff) {
+      logger.p(`- comparing Contentful models to local models`)
+    } else {
+      logger.p(`- pulling models from Contentful`)
+      logger.p(`- write to: ${path}`)
+    }
   }
   if (command === 'pull' && type === 'content') {
-    logger.p(`- pulling content from Contentful`)
-    logger.p(`- write to: ${path}`)
+    if (options.diff) {
+      logger.p(`- comparing Contentful content to local content`)
+    } else {
+      logger.p(`- pulling content from Contentful`)
+      logger.p(`- write to: ${path}`)
+    }
   }
-  // if (command === 'diff' && type === 'models') {
-  //   logger.p(`- comparing local models with Contentful`)
-  // }
-  // if (command === 'diff' && type === 'content') {
-  //   logger.p(`- comparing local content with Contentful`)
-  // }
 
   if (options.dryRun) {
     logger.p(`- dry run enabled, running without making any changes`)
@@ -118,23 +130,4 @@ export const handler: Handler = async ({
       path,
     })
   }
-  // if (command === 'diff' && type === 'models') {
-  //   if (!pluginData) return
-  //   const dataVarObj = getModelberryPluginData({ dataVar: pluginData.dataVar })
-  //   const validationsMap = dataVarObj?.validations || {}
-  //   await diffModels({
-  //     contentfulEnvironment,
-  //     options,
-  //     typeData: pluginData.types,
-  //     validationsMap,
-  //   })
-  // }
-  // if (command === 'diff' && type === 'content') {
-  //   if (!pluginData) return
-  //   await diffContent({
-  //     contentfulEnvironment,
-  //     options,
-  //     typeData: pluginData.types,
-  //   })
-  // }
 }

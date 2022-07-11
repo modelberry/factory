@@ -3,6 +3,7 @@ import { Environment } from 'contentful-management/types'
 import { fetchLocales } from '../../lib/fetch-locales'
 import { getEntryFields } from './get-entry-fields'
 import { localSourceVariableGenerator } from './local-source-variable-generator'
+import { pushContentDiff } from './push-content-diff'
 import { pushEntryToContentful } from './push-entry-to-contentful'
 
 export interface PushContent {
@@ -16,6 +17,15 @@ export const pushContent = async ({
   options,
   typeData,
 }: PushContent) => {
+  // TODO: Fix required arguments
+  if (options.diff) {
+    pushContentDiff({
+      contentfulEnvironment,
+      options,
+      typeData: {},
+    })
+  }
+
   const { badCliLocale, defaultLocaleCode, cliLocaleCode } = await fetchLocales(
     {
       contentfulEnvironment,

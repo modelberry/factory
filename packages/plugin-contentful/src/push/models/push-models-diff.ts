@@ -5,18 +5,18 @@ import { asyncIteratorToArray } from '../../lib/async-iterator-to-array'
 import { ValidationsMap } from './get-modelberry-plugin-data'
 import { localSourceContentTypeGenerator } from './local-source-content-type-generator'
 
-export interface DiffModels {
+export interface PushModelsDiff {
   contentfulEnvironment: Environment
   options: Options
   typeData: TypeData
   validationsMap: ValidationsMap
 }
 
-export const diffModels = async ({
+export const pushModelsDiff = async ({
   contentfulEnvironment,
   options,
   typeData,
-}: DiffModels) => {
+}: PushModelsDiff) => {
   // Empty object that gets filled with validations
   const validations: Record<string, any> = {}
 

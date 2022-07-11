@@ -6,6 +6,7 @@ import { pushControlsToContentful } from './push-controls-to-contentful'
 import { localSourceContentTypeGenerator } from './local-source-content-type-generator'
 import { getRemoteTargetContentTypeFields } from './get-remote-target-content-type-fields'
 import { getRemoteTargetContentTypeControls } from './get-remote-target-content-type-controls'
+import { pushModelsDiff } from './push-models-diff'
 
 export interface PushModels {
   contentfulEnvironment: Environment
@@ -20,6 +21,16 @@ export const pushModels = async ({
   typeData,
   validationsMap,
 }: PushModels) => {
+  // TODO: Fix required arguments
+  if (options.diff) {
+    pushModelsDiff({
+      contentfulEnvironment,
+      options,
+      typeData: {},
+      validationsMap: {},
+    })
+  }
+
   const localSourceContentTypeIterator = localSourceContentTypeGenerator({
     options,
     typeData,

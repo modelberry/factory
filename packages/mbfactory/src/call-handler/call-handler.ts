@@ -9,6 +9,8 @@ export type Command = 'push' | 'pull' | 'diff'
 export type ArgvType = 'content' | 'models'
 
 export type Options = {
+  /** Show differences between local and remote, do not make changes */
+  diff?: boolean
   /** Run without making any changes */
   dryRun?: boolean
   /** Filter by type value @modelberry {@type value} */
