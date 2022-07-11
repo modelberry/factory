@@ -1,5 +1,5 @@
 import { logger } from '@modelberry/mbfactory/plain'
-import { ValidationsMap } from '../lib/get-modelberry-plugin-data'
+import { ValidationsMap } from './get-modelberry-plugin-data'
 
 export interface GetValidations {
   fieldTags: Record<string, string>

@@ -1,6 +1,6 @@
 import { Handler, logger } from '@modelberry/mbfactory/plain'
 import inquirer from 'inquirer'
-import { getModelberryPluginData } from '../lib/get-modelberry-plugin-data'
+import { getModelberryPluginData } from '../push-models/get-modelberry-plugin-data'
 import { getAndValidateEnv } from '../lib/get-and-validate-env'
 import { pushModels } from '../push-models/push-models'
 import { pushContent } from '../push-content/push-content'

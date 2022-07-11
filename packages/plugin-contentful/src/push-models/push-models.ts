@@ -1,6 +1,6 @@
 import { TypeData, Options, logger } from '@modelberry/mbfactory/plain'
 import { ContentType, Environment } from 'contentful-management/types'
-import { ValidationsMap } from '../lib/get-modelberry-plugin-data'
+import { ValidationsMap } from './get-modelberry-plugin-data'
 import { pushFieldsToContentful } from './push-fields-to-contentful'
 import { pushControlsToContentful } from './push-controls-to-contentful'
 import { localSourceContentTypeGenerator } from './local-source-content-type-generator'

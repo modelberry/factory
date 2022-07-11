@@ -1,5 +1,5 @@
-import { EntryType } from './entries-by-content-type-id'
 import { removeLinkAndLinkType } from './remove-link-and-link-type'
+import { EntryType } from './entries-by-content-type-id'
 
 export interface EntriesToJsVariables {
   localeCode: string

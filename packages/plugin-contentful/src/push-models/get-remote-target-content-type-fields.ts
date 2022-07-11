@@ -1,7 +1,7 @@
 import { ContentFields } from 'contentful-management/types'
 import { ModelberryInterface } from '@modelberry/mbfactory/plain'
-import { ValidationsMap } from '../lib/get-modelberry-plugin-data'
 import { getFieldIdWithoutPostfix } from '../lib/get-field-id-without-postfix'
+import { ValidationsMap } from './get-modelberry-plugin-data'
 import { getModelField } from './get-model-field'
 
 export interface GetRemoteTargetContentTypeFields {

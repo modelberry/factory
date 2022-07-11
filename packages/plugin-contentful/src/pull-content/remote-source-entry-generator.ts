@@ -1,9 +1,9 @@
 import { firstUpperCase, Options } from '@modelberry/mbfactory/plain'
 import { Environment } from 'contentful-management/types'
-import { entriesToJsVariables } from '../lib/entries-to-js-variables'
-import { fetchContentTypes } from '../lib/fetch-content-types'
-import { fetchEntries } from '../lib/fetch-entries'
-import { organizeEntriesByContentType } from '../lib/organize-entries-by-content-type'
+import { fetchContentTypes } from '../pull-models/fetch-content-types'
+import { fetchEntries } from './fetch-entries'
+import { organizeEntriesByContentType } from './organize-entries-by-content-type'
+import { entriesToJsVariables } from './entries-to-js-variables'
 
 export interface RemoteEntryGenerator {
   contentfulEnvironment: Environment

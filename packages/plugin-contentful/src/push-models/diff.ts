@@ -1,8 +1,8 @@
 import { Environment } from 'contentful-management/types'
 import { logger, Options, TypeData } from '@modelberry/mbfactory/plain'
-import { ValidationsMap } from '../lib/get-modelberry-plugin-data'
 import { remoteSourceContentTypeGenerator } from '../pull-models/remote-source-content-type-generator'
 import { asyncIteratorToArray } from '../lib/async-iterator-to-array'
+import { ValidationsMap } from './get-modelberry-plugin-data'
 import { localSourceContentTypeGenerator } from './local-source-content-type-generator'
 
 export interface DiffModels {
