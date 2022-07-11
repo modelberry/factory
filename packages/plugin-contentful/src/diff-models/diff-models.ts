@@ -37,10 +37,14 @@ export const diffModels = async ({
   const localContentTypes = Array.from(localContentTypeIterator)
   logger.mute = false
 
-  for (const remoteSourceContentType of remoteSourceContentTypes) {
-    logger.object('remoteSourceContentType', remoteSourceContentType)
-    for (const localContentType of localContentTypes) {
-      logger.object('localContentType', localContentType)
-    }
-  }
+  const localIds = localContentTypes.map((i) => i.interfaceTypeTag)
+  const remoteIds = remoteSourceContentTypes.map((i) => i.contentTypeId)
+  const allIds = Array.from(new Set([...localIds, ...remoteIds]))
+  const intersectIds = localIds.filter((id) => remoteIds.includes(id))
+  const localOnlyIds = localIds.filter((id) => !intersectIds.includes(id))
+  const remoteOnlyIds = remoteIds.filter((id) => !intersectIds.includes(id))
+  logger.p(`All: ${allIds.join(', ')}`)
+  logger.p(`Intersect: ${intersectIds.join(', ')}`)
+  logger.p(`Local only: ${remoteOnlyIds.join(', ')}`)
+  logger.p(`Remote only: ${localOnlyIds.join(', ')}`)
 }

@@ -16,14 +16,16 @@ export interface RemoteSourceContentTypeGenerator {
   validations: Record<string, any>
 }
 
+export type RemoteSourceContentTypeYields = {
+  contentTypeId: string
+  inlineTags: Record<string, any>
+  interfaceName: string
+  namedImports: string[]
+  propertyTree: PropertyTree
+}
+
 export type RemoteSourceContentTypeIterator = AsyncGenerator<
-  {
-    contentTypeId: string
-    inlineTags: Record<string, any>
-    interfaceName: string
-    namedImports: string[]
-    propertyTree: PropertyTree
-  },
+  RemoteSourceContentTypeYields,
   void,
   unknown
 >

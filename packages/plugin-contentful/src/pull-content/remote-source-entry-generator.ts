@@ -11,13 +11,15 @@ export interface RemoteEntryGenerator {
   options: Options
 }
 
+export type RemoteSourceEntryYields = {
+  contentTypeId: string
+  varType: string
+  varName: string
+  contentArray: any[]
+}
+
 export type RemoteSourceEntryIterator = AsyncGenerator<
-  {
-    contentTypeId: string
-    varType: string
-    varName: string
-    contentArray: any[]
-  },
+  RemoteSourceEntryYields,
   void,
   unknown
 >
