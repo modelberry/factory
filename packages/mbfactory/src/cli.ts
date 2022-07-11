@@ -1,10 +1,11 @@
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
+import { PullDiffArgv, pullDiffCommand } from './commands/pull-diff/pull-diff'
 import { PullArgv, pullCommand } from './commands/pull/pull'
+import { PushDiffArgv, pushDiffCommand } from './commands/push-diff/push-diff'
 import { PushArgv, pushCommand } from './commands/push/push'
 
 type YargsOptions = {
-  diff: yargs.Options
   'dry-run': yargs.Options
   filter: yargs.Options
   locale: yargs.Options
@@ -12,12 +13,6 @@ type YargsOptions = {
 }
 
 const options: YargsOptions = {
-  diff: {
-    alias: 'd',
-    describe: 'Show differences between local and remote, do not make changes',
-    requiresArg: true,
-    type: 'boolean',
-  },
   'dry-run': {
     alias: 'd',
     describe: 'Run without making any changes',
@@ -90,6 +85,31 @@ const pullHandler = (argv: yargs.ArgumentsCamelCase<PullArgv>) => {
   pullCommand({ argv })
 }
 
+/**
+ * DIFF COMMAND
+ *********************************/
+
+const diffBuilder: yargs.BuilderCallback<any, any> = (yargs) => {
+  yargs
+    .positional('diff-type', {
+      type: 'string',
+      describe: 'diff models or content',
+      choices: ['models', 'content'],
+    })
+    .positional('file', {
+      type: 'string',
+      describe: 'path to source file',
+    })
+}
+
+const pullDiffHandler = (argv: yargs.ArgumentsCamelCase<PullDiffArgv>) => {
+  pullDiffCommand({ argv })
+}
+
+const pushDiffHandler = (argv: yargs.ArgumentsCamelCase<PushDiffArgv>) => {
+  pushDiffCommand({ argv })
+}
+
 yargs(hideBin(process.argv))
   .scriptName('mbfactory')
   .usage('Usage: $0 <command> [options]')
@@ -110,6 +130,18 @@ yargs(hideBin(process.argv))
     'pull models or content from content platform',
     pullBuilder,
     pullHandler
+  )
+  .command(
+    'push-diff <diff-type> <file>',
+    'show changes when pushing models or content, do not make changes',
+    diffBuilder,
+    pushDiffHandler
+  )
+  .command(
+    'pull-diff <diff-type> <file>',
+    'show changes when pulling models or content, do not make changes',
+    diffBuilder,
+    pullDiffHandler
   )
   .options(options)
   .demandCommand()
