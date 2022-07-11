@@ -65,8 +65,10 @@
     "pull-models": "./build/cli.cjs pull models @modelberry/plugin-contentful/plain test",
     "push-content": "./build/cli.cjs push content test/main-content.ts",
     "push-models": "./build/cli.cjs push models test/main.ts",
-    "diff-content": "./build/cli.cjs diff content test/main-content.ts",
-    "diff-models": "./build/cli.cjs diff models test/main.ts"
+    "push-diff-content": "./build/cli.cjs push-diff content test/main-content.ts",
+    "push-diff-models": "./build/cli.cjs push-diff models test/main.ts",
+    "pull-diff-content": "./build/cli.cjs pull-diff content test/main-content.ts",
+    "pull-diff-models": "./build/cli.cjs pull-diff models test/main.ts"
   },
   "engines": {
     "node": ">=16.0.0",
