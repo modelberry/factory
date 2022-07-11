@@ -102,9 +102,11 @@ describe('The handler should', () => {
     expect(logSpy.p).toHaveBeenCalledWith(
       '- yes option, answering yes to all messages and warnings'
     )
-    expect(logSpy.p).toHaveBeenCalledWith('- entries found at Contentful: 96')
     expect(logSpy.p).toHaveBeenCalledWith(
-      '- content types found at Contentful: 11'
+      '- total entries found at Contentful: 96'
+    )
+    expect(logSpy.p).toHaveBeenCalledWith(
+      '- total content types found at Contentful: 11'
     )
     expect(pushModels).toHaveBeenCalledWith({
       contentfulEnvironment: environmentMock,
@@ -138,9 +140,11 @@ describe('The handler should', () => {
     expect(logSpy.p).toHaveBeenCalledWith(
       '- yes option, answering yes to all messages and warnings'
     )
-    expect(logSpy.p).toHaveBeenCalledWith('- entries found at Contentful: 96')
     expect(logSpy.p).toHaveBeenCalledWith(
-      '- content types found at Contentful: 11'
+      '- total entries found at Contentful: 96'
+    )
+    expect(logSpy.p).toHaveBeenCalledWith(
+      '- total content types found at Contentful: 11'
     )
 
     expect(pushContent).toHaveBeenCalledWith({
@@ -170,9 +174,11 @@ describe('The handler should', () => {
     expect(logSpy.p).toHaveBeenCalledWith(
       '- yes option, answering yes to all messages and warnings'
     )
-    expect(logSpy.p).toHaveBeenCalledWith('- entries found at Contentful: 96')
     expect(logSpy.p).toHaveBeenCalledWith(
-      '- content types found at Contentful: 11'
+      '- total entries found at Contentful: 96'
+    )
+    expect(logSpy.p).toHaveBeenCalledWith(
+      '- total content types found at Contentful: 11'
     )
 
     expect(pullModels).toHaveBeenCalledWith({
@@ -200,9 +206,11 @@ describe('The handler should', () => {
     expect(logSpy.p).toHaveBeenCalledWith(
       '- yes option, answering yes to all messages and warnings'
     )
-    expect(logSpy.p).toHaveBeenCalledWith('- entries found at Contentful: 96')
     expect(logSpy.p).toHaveBeenCalledWith(
-      '- content types found at Contentful: 11'
+      '- total entries found at Contentful: 96'
+    )
+    expect(logSpy.p).toHaveBeenCalledWith(
+      '- total content types found at Contentful: 11'
     )
 
     expect(pullContent).toHaveBeenCalledWith({

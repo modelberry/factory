@@ -26,11 +26,11 @@ export const handler: Handler = async ({
   logger.p(`- modelberry project: ${process.env.MODELBERRY_PROJECT_NAME}`)
   logger.p(`- contentful space id: ${process.env.CONTENTFUL_SPACE_ID}`)
   logger.p(`- contentful environment: ${process.env.CONTENTFUL_ENVIRONMENT}`)
-  logger.p(`command: ${command}`)
-  logger.p(`type: ${type}`)
 
   let modelList = ''
-  if (command === 'push' && pluginData?.types) {
+  const createNodeList =
+    command === 'push' || command === 'push-diff' || command === 'pull-diff'
+  if (createNodeList && pluginData?.types) {
     const atTypeList = Object.values(pluginData?.types)
       .map((type) => type.interface.interfaceTags?.['@type'])
       .filter((atType) => !options?.filter || options?.filter === atType)
@@ -87,9 +87,9 @@ export const handler: Handler = async ({
 
   const contentfulEnvironment = await getContentfulEnvironment()
   const statistics = await fetchStatistics({ contentfulEnvironment })
-  logger.p(`- entries found at Contentful: ${statistics.entriesTotal}`)
+  logger.p(`- total entries found at Contentful: ${statistics.entriesTotal}`)
   logger.p(
-    `- content types found at Contentful: ${statistics.contentTypesTotal}`
+    `- total content types found at Contentful: ${statistics.contentTypesTotal}`
   )
 
   if (!options.yes) {

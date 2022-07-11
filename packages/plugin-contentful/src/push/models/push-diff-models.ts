@@ -47,4 +47,5 @@ export const pushDiffModels = async ({
   logger.p(`Intersect: ${intersectIds.join(', ')}`)
   logger.p(`Local only: ${remoteOnlyIds.join(', ')}`)
   logger.p(`Remote only: ${localOnlyIds.join(', ')}`)
+  logger.h1('\nSorry, this has not yet been implemented\n')
 }

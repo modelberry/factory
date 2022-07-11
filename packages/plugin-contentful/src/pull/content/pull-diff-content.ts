@@ -1,6 +1,5 @@
 import { Environment } from 'contentful-management/types'
-import { Options, TypeData } from '@modelberry/mbfactory/plain'
-import { fetchContentTypes } from '../models/fetch-content-types'
+import { logger, Options, TypeData } from '@modelberry/mbfactory/plain'
 
 export interface PullDiffContent {
   contentfulEnvironment: Environment
@@ -13,10 +12,5 @@ export const pullDiffContent = async ({
   options,
   typeData,
 }: PullDiffContent) => {
-  const contentTypes = await fetchContentTypes({
-    contentfulEnvironment,
-    options,
-  })
-  let dum = typeof typeData + typeof contentTypes
-  if (dum) dum = dum + dum
+  logger.h1('\nSorry, this has not yet been implemented\n')
 }
