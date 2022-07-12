@@ -23,14 +23,50 @@ export const handler: Handler = async ({
 }) => {
   const isValid = getAndValidateEnv()
   if (!isValid) return
+
+  // Log environment
   logger.p(`- modelberry project: ${process.env.MODELBERRY_PROJECT_NAME}`)
   logger.p(`- contentful space id: ${process.env.CONTENTFUL_SPACE_ID}`)
   logger.p(`- contentful environment: ${process.env.CONTENTFUL_ENVIRONMENT}`)
 
-  let modelList = ''
-  const createNodeList =
-    command === 'push' || command === 'push-diff' || command === 'pull-diff'
-  if (createNodeList && pluginData?.types) {
+  // Log heading
+  if (command === 'push' && type === 'models') {
+    logger.h1(`\nPushing models to Contentful`)
+  }
+  if (command === 'push-diff' && type === 'models') {
+    logger.h1(`\nComparing local models to Contentful models`)
+  }
+  if (command === 'push' && type === 'content') {
+    logger.h1(`\nPushing content to Contentful`)
+  }
+  if (command === 'push-diff' && type === 'content') {
+    logger.h1(`\nComparing local content to Contentful content`)
+  }
+  if (command === 'pull' && type === 'models') {
+    logger.h1(`\nPulling models from Contentful`)
+  }
+  if (command === 'pull-diff' && type === 'models') {
+    logger.h1(`\nComparing Contentful models to local models`)
+  }
+  if (command === 'pull' && type === 'content') {
+    logger.h1(`\nPulling content from Contentful`)
+  }
+  if (command === 'pull-diff' && type === 'content') {
+    logger.h1(`\nComparing Contentful content to local content`)
+  }
+
+  // Log path
+  if (command === 'pull') {
+    logger.p(`- write to: ${path}`)
+  }
+
+  // Log node list
+  if (
+    (command === 'push' ||
+      command === 'push-diff' ||
+      command === 'pull-diff') &&
+    pluginData?.types
+  ) {
     const atTypeList = Object.values(pluginData?.types)
       .map((type) => type.interface.interfaceTags?.['@type'])
       .filter((atType) => !options?.filter || options?.filter === atType)
@@ -39,42 +75,13 @@ export const handler: Handler = async ({
       logger.error('- no content types found')
       return
     }
-    modelList = `- ${options?.filter ? 'filtered' : 'all'} models: ${
+    const modelList = `- ${options?.filter ? 'filtered' : 'all'} models: ${
       atTypeList || 'none'
     }`
+    logger.p(modelList)
   }
 
-  if (command === 'push' && type === 'models') {
-    logger.p(`- pushing models to Contentful`)
-    logger.p(modelList)
-  }
-  if (command === 'push-diff' && type === 'models') {
-    logger.p(`- comparing local models to Contentful models`)
-    logger.p(modelList)
-  }
-  if (command === 'push' && type === 'content') {
-    logger.p(`- pushing content to Contentful`)
-    logger.p(modelList)
-  }
-  if (command === 'push-diff' && type === 'content') {
-    logger.p(`- comparing local content to Contentful content`)
-    logger.p(modelList)
-  }
-  if (command === 'pull' && type === 'models') {
-    logger.p(`- pulling models from Contentful`)
-    logger.p(`- write to: ${path}`)
-  }
-  if (command === 'pull-diff' && type === 'models') {
-    logger.p(`- comparing Contentful models to local models`)
-  }
-  if (command === 'pull' && type === 'content') {
-    logger.p(`- pulling content from Contentful`)
-    logger.p(`- write to: ${path}`)
-  }
-  if (command === 'pull-diff' && type === 'content') {
-    logger.p(`- comparing Contentful content to local content`)
-  }
-
+  // Report when options are enabled
   if (options.dryRun) {
     logger.p(`- dry run enabled, running without making any changes`)
   }
@@ -86,10 +93,10 @@ export const handler: Handler = async ({
   }
 
   const contentfulEnvironment = await getContentfulEnvironment()
+  logger.p(`- fetching statisitcs from Contentful...`)
   const statistics = await fetchStatistics({ contentfulEnvironment })
-  logger.p(`- total entries found at Contentful: ${statistics.entriesTotal}`)
   logger.p(
-    `- total content types found at Contentful: ${statistics.contentTypesTotal}`
+    `- stats: entries: ${statistics.entriesTotal}, content types: ${statistics.contentTypesTotal}`
   )
 
   if (!options.yes) {

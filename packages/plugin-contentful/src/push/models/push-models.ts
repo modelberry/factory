@@ -36,7 +36,7 @@ export const pushModels = async ({
     if (remoteFields.length < 1) {
       logger.error(`- no valid fields found, skipping`)
     } else {
-      logger.p(`- pushing content type`)
+      logger.p(`- pushing content type...`)
 
       let contentType: ContentType | undefined
       let contentTypeData
@@ -58,7 +58,7 @@ export const pushModels = async ({
         })
       }
       if (remoteControls.length > 0) {
-        logger.p(`- pushing editor interface`)
+        logger.p(`- pushing editor interface...`)
         if (!options.dryRun) {
           if (!contentType) {
             logger.error(`- skipping`)

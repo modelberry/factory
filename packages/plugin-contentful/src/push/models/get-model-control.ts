@@ -1,4 +1,3 @@
-import { logger } from '@modelberry/mbfactory/plain'
 import { Control } from 'contentful-management/types'
 
 export interface GetModelControl {
@@ -17,12 +16,6 @@ export const getModelControl = ({
       widgetNamespace: 'builtin',
       widgetId: fieldTags['@widgetId'],
       settings: { helpText: fieldTags['@helpText'] },
-    }
-    if (fieldTags['@widgetId']) {
-      logger.p(`- editor control ${fieldTags['@widgetId']}`)
-    }
-    if (fieldTags['@helpText']) {
-      logger.p(`- help text`)
     }
   }
   return control

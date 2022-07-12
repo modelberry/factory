@@ -38,11 +38,8 @@ describe('Push models should', () => {
     expect(logSpy.h2).toHaveBeenCalledWith('\nPushing to Contentful')
     expect(logSpy.h3).toHaveBeenCalledWith('heading')
 
-    expect(logSpy.p).toHaveBeenCalledWith('- validation mockedValidation')
-    expect(logSpy.p).toHaveBeenCalledWith('- editor control singleLine')
-    expect(logSpy.p).toHaveBeenCalledWith('- help text')
-    expect(logSpy.p).toHaveBeenCalledWith('- pushing content type')
-    expect(logSpy.p).toHaveBeenCalledWith('- pushing editor interface')
+    expect(logSpy.p).toHaveBeenCalledWith('- pushing content type...')
+    expect(logSpy.p).toHaveBeenCalledWith('- pushing editor interface...')
   })
 
   test('process badValidation correctly', async () => {
@@ -159,10 +156,9 @@ describe('Push models should', () => {
       '- Unknown interface tag: @bad. Valid interface tags are: @description, @displayField, @locale, @localized, @name, @plugin, @type'
     )
     expect(logSpy.h3).toHaveBeenCalledWith('heading')
-    expect(logSpy.p).toHaveBeenCalledWith('- editor control singleLine')
     expect(logSpy.h2).toHaveBeenCalledWith('\nPushing to Contentful')
-    expect(logSpy.p).toHaveBeenCalledWith('- pushing content type')
-    expect(logSpy.p).toHaveBeenCalledWith('- pushing editor interface')
+    expect(logSpy.p).toHaveBeenCalledWith('- pushing content type...')
+    expect(logSpy.p).toHaveBeenCalledWith('- pushing editor interface...')
   })
 
   test('process badFieldTag correctly', async () => {
@@ -178,10 +174,9 @@ describe('Push models should', () => {
     expect(logSpy.error).toHaveBeenCalledWith(
       '- Unknown field tag: @bad. Valid field tags are: @description, @disabled, @ignore, @helpText, @itemsType, @itemsLinkType, @itemsValidations, @linkType, @locale, @localized, @name, @omitted, @required, @type, @validations, @widgetId'
     )
-    expect(logSpy.p).toHaveBeenCalledWith('- editor control singleLine')
     expect(logSpy.h2).toHaveBeenCalledWith('\nPushing to Contentful')
-    expect(logSpy.p).toHaveBeenCalledWith('- pushing content type')
-    expect(logSpy.p).toHaveBeenCalledWith('- pushing editor interface')
+    expect(logSpy.p).toHaveBeenCalledWith('- pushing content type...')
+    expect(logSpy.p).toHaveBeenCalledWith('- pushing editor interface...')
   })
   test('process badArraySymbol correctly', async () => {
     await pushModels({

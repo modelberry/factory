@@ -97,17 +97,19 @@ describe('The handler should', () => {
     expect(logSpy.p).toHaveBeenCalledWith('- modelberry project: ok')
     expect(logSpy.p).toHaveBeenCalledWith('- contentful space id: ok')
     expect(logSpy.p).toHaveBeenCalledWith('- contentful environment: ok')
-    expect(logSpy.p).toHaveBeenCalledWith('- pushing models to Contentful')
+
+    expect(logSpy.h1).toHaveBeenCalledWith('\nPushing models to Contentful')
     expect(logSpy.p).toHaveBeenCalledWith('- all models: testType')
     expect(logSpy.p).toHaveBeenCalledWith(
       '- yes option, answering yes to all messages and warnings'
     )
     expect(logSpy.p).toHaveBeenCalledWith(
-      '- total entries found at Contentful: 96'
+      '- fetching statisitcs from Contentful...'
     )
     expect(logSpy.p).toHaveBeenCalledWith(
-      '- total content types found at Contentful: 11'
+      '- stats: entries: 96, content types: 11'
     )
+
     expect(pushModels).toHaveBeenCalledWith({
       contentfulEnvironment: environmentMock,
       options: { yes: true },
@@ -135,16 +137,17 @@ describe('The handler should', () => {
     expect(logSpy.p).toHaveBeenCalledWith('- modelberry project: ok')
     expect(logSpy.p).toHaveBeenCalledWith('- contentful space id: ok')
     expect(logSpy.p).toHaveBeenCalledWith('- contentful environment: ok')
-    expect(logSpy.p).toHaveBeenCalledWith('- pushing content to Contentful')
+
+    expect(logSpy.h1).toHaveBeenCalledWith('\nPushing content to Contentful')
     expect(logSpy.p).toHaveBeenCalledWith('- all models: testType')
     expect(logSpy.p).toHaveBeenCalledWith(
       '- yes option, answering yes to all messages and warnings'
     )
     expect(logSpy.p).toHaveBeenCalledWith(
-      '- total entries found at Contentful: 96'
+      '- fetching statisitcs from Contentful...'
     )
     expect(logSpy.p).toHaveBeenCalledWith(
-      '- total content types found at Contentful: 11'
+      '- stats: entries: 96, content types: 11'
     )
 
     expect(pushContent).toHaveBeenCalledWith({
@@ -169,16 +172,17 @@ describe('The handler should', () => {
     expect(logSpy.p).toHaveBeenCalledWith('- modelberry project: ok')
     expect(logSpy.p).toHaveBeenCalledWith('- contentful space id: ok')
     expect(logSpy.p).toHaveBeenCalledWith('- contentful environment: ok')
-    expect(logSpy.p).toHaveBeenCalledWith('- pulling models from Contentful')
+
+    expect(logSpy.h1).toHaveBeenCalledWith('\nPulling models from Contentful')
     expect(logSpy.p).toHaveBeenCalledWith('- write to: pull-test-path')
     expect(logSpy.p).toHaveBeenCalledWith(
       '- yes option, answering yes to all messages and warnings'
     )
     expect(logSpy.p).toHaveBeenCalledWith(
-      '- total entries found at Contentful: 96'
+      '- fetching statisitcs from Contentful...'
     )
     expect(logSpy.p).toHaveBeenCalledWith(
-      '- total content types found at Contentful: 11'
+      '- stats: entries: 96, content types: 11'
     )
 
     expect(pullModels).toHaveBeenCalledWith({
@@ -201,16 +205,17 @@ describe('The handler should', () => {
     expect(logSpy.p).toHaveBeenCalledWith('- modelberry project: ok')
     expect(logSpy.p).toHaveBeenCalledWith('- contentful space id: ok')
     expect(logSpy.p).toHaveBeenCalledWith('- contentful environment: ok')
-    expect(logSpy.p).toHaveBeenCalledWith('- pulling content from Contentful')
+
+    expect(logSpy.h1).toHaveBeenCalledWith('\nPulling content from Contentful')
     expect(logSpy.p).toHaveBeenCalledWith('- write to: pull-test-path')
     expect(logSpy.p).toHaveBeenCalledWith(
       '- yes option, answering yes to all messages and warnings'
     )
     expect(logSpy.p).toHaveBeenCalledWith(
-      '- total entries found at Contentful: 96'
+      '- fetching statisitcs from Contentful...'
     )
     expect(logSpy.p).toHaveBeenCalledWith(
-      '- total content types found at Contentful: 11'
+      '- stats: entries: 96, content types: 11'
     )
 
     expect(pullContent).toHaveBeenCalledWith({
