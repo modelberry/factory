@@ -1,4 +1,10 @@
-import { Options, TypeData, logger } from '@modelberry/mbfactory/plain'
+import {
+  Options,
+  TypeData,
+  logger,
+  ModelberryInterface,
+  ModelberryType,
+} from '@modelberry/mbfactory/plain'
 import { KeyValueMap } from 'contentful-management/types'
 import { checkTags } from '../../check-tags/check-tags'
 import { isValidInterface } from '../../check-tags/is-valid-interface'
@@ -8,13 +14,16 @@ export interface LocalSourceVariableGenerator {
   typeData: TypeData
 }
 
+export type LocalSourceVariableYield = {
+  fields: ModelberryInterface['fields']
+  fieldValuesArray: KeyValueMap[]
+  modelberryType: ModelberryType
+  interfaceTypeTag: string
+  interfaceLocaleTag: string
+}
+
 export type LocalSourceVariableIterator = AsyncGenerator<
-  {
-    contentTypeId: string
-    varType: string
-    varName: string
-    contentArray: any[]
-  },
+  LocalSourceVariableYield,
   void,
   unknown
 >

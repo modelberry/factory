@@ -2,22 +2,36 @@ import { inspect } from 'util'
 import chalk from 'chalk'
 import { Options } from '../call-handler/call-handler'
 
+export type LoggerType = 'h1' | 'h2' | 'h3' | 'info' | 'p' | 'warning' | 'error'
+
 export interface LoggerInit {
   options: Options
 }
 
 export type Logger = {
+  /** Not used */
   init: (args: LoggerInit) => void
+  /** Heading 1 */
   h1: (message: string) => void
+  /** Heading 2 */
   h2: (message: string) => void
+  /** Heading 3 */
   h3: (message: string) => void
+  /** Paragraph */
   p: (message: string) => void
+  /** Information message */
   info: (message: string) => void
+  /** Warning message */
   warning: (message: string) => void
+  /** Error message */
   error: (message: string) => void
+  /** Internally used by all log types */
   log: (message: string) => void
+  /** For debugging, logs a formatted object */
   object: (heading: string, object: any) => void
+  /** Not used */
   options: Options
+  /** When set to true, logging is disabled */
   mute: boolean
 }
 

@@ -1,4 +1,9 @@
-import { Options, TypeData, logger } from '@modelberry/mbfactory/plain'
+import {
+  Options,
+  TypeData,
+  logger,
+  ModelberryInterface,
+} from '@modelberry/mbfactory/plain'
 import { checkTags } from '../../check-tags/check-tags'
 import { isValidInterface } from '../../check-tags/is-valid-interface'
 import { getValidatedLocalSourceFields } from './get-validated-local-source-fields'
@@ -8,13 +13,15 @@ export interface LocalSourceContentTypeGenerator {
   typeData: TypeData
 }
 
+export type LocalSourceContentTypeYield = {
+  fields: ModelberryInterface['fields']
+  interfaceTypeTag: string
+  interfaceTags: Record<string, string>
+  interfaceName: string | undefined
+}
+
 export type LocalSourceContentTypeIterator = AsyncGenerator<
-  {
-    contentTypeId: string
-    varType: string
-    varName: string
-    contentArray: any[]
-  },
+  LocalSourceContentTypeYield,
   void,
   unknown
 >

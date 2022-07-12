@@ -11,7 +11,7 @@ export interface RemoteEntryGenerator {
   options: Options
 }
 
-export type RemoteSourceEntryYields = {
+export type RemoteSourceEntryYield = {
   contentTypeId: string
   varType: string
   varName: string
@@ -19,7 +19,7 @@ export type RemoteSourceEntryYields = {
 }
 
 export type RemoteSourceEntryIterator = AsyncGenerator<
-  RemoteSourceEntryYields,
+  RemoteSourceEntryYield,
   void,
   unknown
 >
