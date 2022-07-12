@@ -47,5 +47,7 @@ export const pullDiffModels = async ({
   logger.p(`Intersect: ${intersectIds.join(', ')}`)
   logger.p(`Local only: ${remoteOnlyIds.join(', ')}`)
   logger.p(`Remote only: ${localOnlyIds.join(', ')}`)
-  logger.h1('\nSorry, this has not yet been implemented\n')
+  logger.h2(
+    '\nNOTE: This feature is experimental and still under development\n'
+  )
 }

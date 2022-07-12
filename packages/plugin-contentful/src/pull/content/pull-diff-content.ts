@@ -12,5 +12,7 @@ export const pullDiffContent = async ({
   options,
   typeData,
 }: PullDiffContent) => {
-  logger.h1('\nSorry, this has not yet been implemented\n')
+  logger.h2(
+    '\nNOTE: This feature is experimental and still under development\n'
+  )
 }
