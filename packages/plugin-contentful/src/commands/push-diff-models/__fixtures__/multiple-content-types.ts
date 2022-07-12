@@ -30,19 +30,7 @@ export const multipleContentTypes = {
               },
               type: 'string | undefined',
             },
-            eventId: {
-              tags: {
-                '@type': 'Symbol',
-              },
-              type: 'string | undefined',
-            },
             heading: {
-              tags: {
-                '@type': 'Symbol',
-              },
-              type: 'string | undefined',
-            },
-            query: {
               tags: {
                 '@type': 'Symbol',
               },
@@ -148,6 +136,34 @@ export const multipleContentTypes = {
               "[ { abstract: 'This is the abstract', actionsCollection: { items: [ { sys: { id: 'myContentActionId', }, }, ], }, heading: 'Heres the heading', }, ]",
           },
         ],
+      },
+
+      NewLocalField: {
+        interface: {
+          fields: {
+            abstract: {
+              tags: {
+                '@type': 'Symbol',
+                '@validations': 'shortString',
+              },
+              type: 'string | undefined',
+            },
+            heading: {
+              tags: {
+                '@type': 'Symbol',
+              },
+              type: 'string | undefined',
+            },
+          },
+          interfaceTags: {
+            '@description': 'New local field, to be added to remote',
+            '@displayField': 'heading',
+            '@plugin': '@modelberry/plugin-contentful/plain',
+            '@type': 'newLocalField',
+          },
+          typeName: 'NewLocalField',
+        },
+        variables: [],
       },
     },
   },

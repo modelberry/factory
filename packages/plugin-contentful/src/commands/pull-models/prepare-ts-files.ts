@@ -7,6 +7,7 @@ import {
 } from '@modelberry/mbfactory/plain'
 import { SourceFile } from '../../write-source-files/write-source-files'
 import { RemoteSourceContentTypeIterator } from '../../generators/remote-source-content-type-generator/remote-source-content-type-generator'
+import { systemFieldspropertyTree } from '../../generators/remote-source-content-type-generator/content-type-fields-to-property-tree'
 import { createAstNodes } from './create-ast-nodes'
 import { createContentfulAssetTypeDeclaration } from './create-contentful-asset-type-declaration'
 import { createContentfulReferenceTypeDeclaration } from './create-contentful-reference-type-declaration'
@@ -30,6 +31,11 @@ export const prepareTsFiles = async ({
   const files: SourceFile[] = []
 
   for await (const remoteSourceContentType of remoteSourceContentTypeIterator) {
+    // Add sys and __typename to property tree
+    Object.assign(
+      remoteSourceContentType.propertyTree,
+      systemFieldspropertyTree
+    )
     const nodes = createAstNodes(remoteSourceContentType)
 
     // Add source file for this interface

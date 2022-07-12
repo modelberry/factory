@@ -1,19 +1,19 @@
 jest.mock('fs/promises')
 
-import { logger } from '@modelberry/mbfactory/plain'
+// import { logger } from '@modelberry/mbfactory/plain'
 import { environmentMock } from '../../contentful-mock/contentful-mock'
 import { multipleContentTypes } from './__fixtures__/multiple-content-types'
 import { pushDiffModels } from './push-diff-models'
 
-const logSpy = {
-  h1: jest.spyOn(logger, 'h1').mockImplementation(),
-  h2: jest.spyOn(logger, 'h2').mockImplementation(),
-  h3: jest.spyOn(logger, 'h3').mockImplementation(),
-  p: jest.spyOn(logger, 'p').mockImplementation(),
-  info: jest.spyOn(logger, 'info').mockImplementation(),
-  error: jest.spyOn(logger, 'error').mockImplementation(),
-  log: jest.spyOn(logger, 'log').mockImplementation(),
-}
+// const logSpy = {
+//   h1: jest.spyOn(logger, 'h1').mockImplementation(),
+//   h2: jest.spyOn(logger, 'h2').mockImplementation(),
+//   h3: jest.spyOn(logger, 'h3').mockImplementation(),
+//   p: jest.spyOn(logger, 'p').mockImplementation(),
+//   info: jest.spyOn(logger, 'info').mockImplementation(),
+//   error: jest.spyOn(logger, 'error').mockImplementation(),
+//   log: jest.spyOn(logger, 'log').mockImplementation(),
+// }
 
 describe('Push diff models should', () => {
   afterEach(() => {
@@ -29,5 +29,5 @@ describe('Push diff models should', () => {
       validationsMap: { mockedValidation: {} },
     })
   })
-  expect(logSpy.p).toHaveBeenCalledTimes(0)
+  // expect(logSpy.p).toHaveBeenCalledTimes(0)
 })

@@ -16,6 +16,40 @@ export interface ContentTypeFieldsToPropertyTree {
 }
 
 /**
+ * The sys and __typename fields are added to models with the 'ignore' field tag
+ * when generating Typescript source files
+ */
+export const systemFieldspropertyTree: PropertyTree = {
+  __typename: {
+    node: {
+      isRequired: false,
+      blockTag: '@modelberry',
+      inlineTags: {
+        '@ignore': '',
+      },
+      createKeywordTypeNode: tsSyntaxKind.StringKeyword,
+    },
+  },
+  sys: {
+    node: {
+      isRequired: false,
+      blockTag: '@modelberry',
+      inlineTags: {
+        '@ignore': '',
+      },
+    },
+    edges: {
+      id: {
+        node: {
+          isRequired: false,
+          createKeywordTypeNode: tsSyntaxKind.StringKeyword,
+        },
+      },
+    },
+  },
+}
+
+/**
  * Build property tree with all interface fields, this tree can be passed to
  * createTsInterface to create the typescript interface definition
  */
@@ -25,35 +59,7 @@ export const contentTypeFieldsToPropertyTree = ({
   namedImports,
   validations,
 }: ContentTypeFieldsToPropertyTree) => {
-  const propertyTree: PropertyTree = {
-    __typename: {
-      node: {
-        isRequired: false,
-        blockTag: '@modelberry',
-        inlineTags: {
-          '@ignore': '',
-        },
-        createKeywordTypeNode: tsSyntaxKind.StringKeyword,
-      },
-    },
-    sys: {
-      node: {
-        isRequired: false,
-        blockTag: '@modelberry',
-        inlineTags: {
-          '@ignore': '',
-        },
-      },
-      edges: {
-        id: {
-          node: {
-            isRequired: false,
-            createKeywordTypeNode: tsSyntaxKind.StringKeyword,
-          },
-        },
-      },
-    },
-  }
+  const propertyTree: PropertyTree = {}
   for (const contentTypeField of contentTypeFields) {
     const inlineTags: Record<string, any> = {}
     copyKeysIfExists({
