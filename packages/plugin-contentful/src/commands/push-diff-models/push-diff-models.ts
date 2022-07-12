@@ -107,9 +107,13 @@ export const pushDiffModels = async ({
             // When the tagColor is black, we compare the tag value
             if (tagColor === 'black') {
               // Get local tag value
-              const localTagValue = localField?.tags?.[tagId] || 'none'
+              let localTagValue: string | boolean | undefined =
+                localField?.tags?.[tagId] || 'none'
               // Get remote tag value
               const remoteTagValue = remoteField?.node?.inlineTags?.[tagId]
+              // When a local tag that represents a boolean value is present,
+              // the value is always handled as a true value.
+              if (typeof remoteTagValue === 'boolean') localTagValue = true
               if (localTagValue !== remoteTagValue) {
                 logger.p(
                   '      ' +
