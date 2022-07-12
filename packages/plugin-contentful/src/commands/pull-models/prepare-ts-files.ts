@@ -31,11 +31,12 @@ export const prepareTsFiles = async ({
   const files: SourceFile[] = []
 
   for await (const remoteSourceContentType of remoteSourceContentTypeIterator) {
-    // Add sys and __typename to property tree
-    Object.assign(
-      remoteSourceContentType.propertyTree,
-      systemFieldspropertyTree
-    )
+    // Add sys and __typename to property tre
+    remoteSourceContentType.propertyTree = {
+      ...systemFieldspropertyTree,
+      ...remoteSourceContentType.propertyTree,
+    }
+
     const nodes = createAstNodes(remoteSourceContentType)
 
     // Add source file for this interface
