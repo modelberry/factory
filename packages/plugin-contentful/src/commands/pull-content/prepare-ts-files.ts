@@ -1,6 +1,6 @@
 import { camelToKebab, createTsExport, Node } from '@modelberry/mbfactory/plain'
 import { SourceFile } from '../../write-source-files/write-source-files'
-import { RemoteSourceEntryIterator } from './remote-source-entry-generator'
+import { RemoteSourceEntryIterator } from '../../generators/remote-source-entry-generator/remote-source-entry-generator'
 import { createAstNodes } from './create-ast-nodes'
 
 export interface PrepareTsFiles {

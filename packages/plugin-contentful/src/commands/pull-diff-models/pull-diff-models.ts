@@ -2,8 +2,8 @@ import { Environment } from 'contentful-management/types'
 import { logger, Options, TypeData } from '@modelberry/mbfactory/plain'
 import { asyncIteratorToArray } from '../../lib/async-iterator-to-array'
 import { ValidationsMap } from '../../handler/get-modelberry-plugin-data'
-import { localSourceContentTypeGenerator } from '../../push/models/local-source-content-type-generator'
-import { remoteSourceContentTypeGenerator } from '../models/remote-source-content-type-generator'
+import { localSourceContentTypeGenerator } from '../../generators/local-source-content-type-generator/local-source-content-type-generator'
+import { remoteSourceContentTypeGenerator } from '../../generators/remote-source-content-type-generator/remote-source-content-type-generator'
 
 export interface PullDiffModels {
   contentfulEnvironment: Environment

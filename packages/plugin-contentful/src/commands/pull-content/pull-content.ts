@@ -2,8 +2,8 @@ import { Environment } from 'contentful-management/types'
 import { Options } from '@modelberry/mbfactory/plain'
 import { writeSourceFiles } from '../../write-source-files/write-source-files'
 import { fetchLocales } from '../../lib/fetch-locales'
+import { remoteSourceEntryGenerator } from '../../generators/remote-source-entry-generator/remote-source-entry-generator'
 import { prepareTsFiles } from './prepare-ts-files'
-import { remoteSourceEntryGenerator } from './remote-source-entry-generator'
 
 export interface PullContent {
   contentfulEnvironment: Environment

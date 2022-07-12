@@ -1,7 +1,7 @@
-jest.mock('../push/content/push-content')
-jest.mock('../push/models/push-models')
-jest.mock('../pull/content/pull-content')
-jest.mock('../pull/models/pull-models')
+jest.mock('../commands/push-content/push-content')
+jest.mock('../commands/push-models/push-models')
+jest.mock('../commands/pull-content/pull-content')
+jest.mock('../commands/pull-models/pull-models')
 jest.mock('contentful-management', () => ({ createClient }))
 
 import { logger } from '@modelberry/mbfactory/plain'
@@ -9,10 +9,10 @@ import {
   createClient,
   environmentMock,
 } from '../contentful-mock/contentful-mock'
-import { pullContent } from '../pull/content/pull-content'
-import { pullModels } from '../pull/models/pull-models'
-import { pushContent } from '../push/content/push-content'
-import { pushModels } from '../push/models/push-models'
+import { pullContent } from '../commands/pull-content/pull-content'
+import { pullModels } from '../commands/pull-models/pull-models'
+import { pushContent } from '../commands/push-content/push-content'
+import { pushModels } from '../commands/push-models/push-models'
 import { handler } from './handler'
 
 const logSpy = {

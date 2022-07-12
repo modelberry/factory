@@ -6,10 +6,10 @@ import {
   Node,
 } from '@modelberry/mbfactory/plain'
 import { SourceFile } from '../../write-source-files/write-source-files'
+import { RemoteSourceContentTypeIterator } from '../../generators/remote-source-content-type-generator/remote-source-content-type-generator'
 import { createAstNodes } from './create-ast-nodes'
 import { createContentfulAssetTypeDeclaration } from './create-contentful-asset-type-declaration'
 import { createContentfulReferenceTypeDeclaration } from './create-contentful-reference-type-declaration'
-import { RemoteSourceContentTypeIterator } from './remote-source-content-type-generator'
 
 export interface PrepareTsFiles {
   /** Source files path */

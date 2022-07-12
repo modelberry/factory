@@ -1,8 +1,8 @@
 import { Environment } from 'contentful-management/types'
 import { Options } from '@modelberry/mbfactory/plain'
 import { writeSourceFiles } from '../../write-source-files/write-source-files'
+import { remoteSourceContentTypeGenerator } from '../../generators/remote-source-content-type-generator/remote-source-content-type-generator'
 import { prepareTsFiles } from './prepare-ts-files'
-import { remoteSourceContentTypeGenerator } from './remote-source-content-type-generator'
 
 export interface PullModels {
   contentfulEnvironment: Environment

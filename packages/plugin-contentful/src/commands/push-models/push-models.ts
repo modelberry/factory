@@ -1,9 +1,9 @@
 import { TypeData, Options, logger } from '@modelberry/mbfactory/plain'
 import { ContentType, Environment } from 'contentful-management/types'
 import { ValidationsMap } from '../../handler/get-modelberry-plugin-data'
+import { localSourceContentTypeGenerator } from '../../generators/local-source-content-type-generator/local-source-content-type-generator'
 import { pushFieldsToContentful } from './push-fields-to-contentful'
 import { pushControlsToContentful } from './push-controls-to-contentful'
-import { localSourceContentTypeGenerator } from './local-source-content-type-generator'
 import { getRemoteTargetContentTypeFields } from './get-remote-target-content-type-fields'
 import { getRemoteTargetContentTypeControls } from './get-remote-target-content-type-controls'
 
