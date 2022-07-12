@@ -15,6 +15,7 @@ export interface PushDiffModels {
   validationsMap: ValidationsMap
 }
 
+// TODO: Refactor into multiple files
 export const pushDiffModels = async ({
   contentfulEnvironment,
   options,
@@ -52,6 +53,7 @@ export const pushDiffModels = async ({
   logger.h1(`\nHow models will change at Contentful\n`)
   logger.p(chalk.green('itemAdded') + '/' + chalk.red('itemRemoved') + '\n')
 
+  // TODO: Defer logging, only show differences if there are any
   comparedContentTypeIds.union.forEach((contentTypeId) => {
     /**
      *
@@ -62,7 +64,7 @@ export const pushDiffModels = async ({
       item: contentTypeId,
     })
     logger.h2(chalk[contentTypeColor](contentTypeId))
-    // When the contentTypeColor is black, we compare the fields
+    // When the contentTypeColor is black, compare the fields
     if (contentTypeColor === 'black') {
       // Get local type and fields
       const localContentType = localContentTypes.find(
@@ -85,7 +87,7 @@ export const pushDiffModels = async ({
           item: fieldId,
         })
         logger.p('  ' + chalk[fieldColor](fieldId))
-        // When the fieldColor is black, we compare the tags
+        // When the fieldColor is black, compare the tags
         if (fieldColor === 'black') {
           // Get local field and tags
           const localField = localContentType?.fields[fieldId]
@@ -104,7 +106,7 @@ export const pushDiffModels = async ({
               item: tagId,
             })
             logger.p('    ' + chalk[tagColor](tagId))
-            // When the tagColor is black, we compare the tag value
+            // When the tagColor is black, compare the tag value
             if (tagColor === 'black') {
               // Get local tag value
               let localTagValue: string | boolean | undefined =
@@ -115,6 +117,10 @@ export const pushDiffModels = async ({
               // the value is always handled as a true value.
               if (typeof remoteTagValue === 'boolean') localTagValue = true
               if (localTagValue !== remoteTagValue) {
+                /**
+                 *
+                 * LOG TAG VALUE LEVEL
+                 */
                 logger.p(
                   '      ' +
                     chalk.red(remoteTagValue) +
