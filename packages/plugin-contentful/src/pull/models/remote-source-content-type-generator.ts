@@ -4,7 +4,7 @@ import {
   PropertyTree,
 } from '@modelberry/mbfactory/plain'
 import { Environment } from 'contentful-management/types'
-import { fetchContentTypes } from './fetch-content-types'
+import { fetchContentTypes } from '../../fetch-content-types/fetch-content-types'
 import { fetchEditorInterfaces } from './fetch-editor-interfaces'
 import { contentTypeToInlineTags } from './content-type-to-inline-tags'
 import { contentTypeFieldsToPropertyTree } from './content-type-fields-to-property-tree'

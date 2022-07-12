@@ -1,22 +1,22 @@
 import { Environment } from 'contentful-management/types'
 import { logger, Options, TypeData } from '@modelberry/mbfactory/plain'
-import { remoteSourceContentTypeGenerator } from '../../pull/models/remote-source-content-type-generator'
 import { asyncIteratorToArray } from '../../lib/async-iterator-to-array'
 import { ValidationsMap } from '../../handler/get-modelberry-plugin-data'
-import { localSourceContentTypeGenerator } from './local-source-content-type-generator'
+import { localSourceContentTypeGenerator } from '../../push/models/local-source-content-type-generator'
+import { remoteSourceContentTypeGenerator } from '../models/remote-source-content-type-generator'
 
-export interface PushDiffModels {
+export interface PullDiffModels {
   contentfulEnvironment: Environment
   options: Options
   typeData: TypeData
   validationsMap: ValidationsMap
 }
 
-export const pushDiffModels = async ({
+export const pullDiffModels = async ({
   contentfulEnvironment,
   options,
   typeData,
-}: PushDiffModels) => {
+}: PullDiffModels) => {
   // Empty object that gets filled with validations
   const validations: Record<string, any> = {}
 

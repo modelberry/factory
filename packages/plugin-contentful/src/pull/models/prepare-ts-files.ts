@@ -5,7 +5,7 @@ import {
   createTsImport,
   Node,
 } from '@modelberry/mbfactory/plain'
-import { SourceFile } from '../../lib/write-source-files'
+import { SourceFile } from '../../write-source-files/write-source-files'
 import { createAstNodes } from './create-ast-nodes'
 import { createContentfulAssetTypeDeclaration } from './create-contentful-asset-type-declaration'
 import { createContentfulReferenceTypeDeclaration } from './create-contentful-reference-type-declaration'

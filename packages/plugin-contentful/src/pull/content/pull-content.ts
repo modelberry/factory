@@ -1,6 +1,6 @@
 import { Environment } from 'contentful-management/types'
 import { Options } from '@modelberry/mbfactory/plain'
-import { writeSourceFiles } from '../../lib/write-source-files'
+import { writeSourceFiles } from '../../write-source-files/write-source-files'
 import { fetchLocales } from '../../lib/fetch-locales'
 import { prepareTsFiles } from './prepare-ts-files'
 import { remoteSourceEntryGenerator } from './remote-source-entry-generator'
