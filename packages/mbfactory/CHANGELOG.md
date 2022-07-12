@@ -1,5 +1,45 @@
 # Changelog
 
+## [7.0.0](https://github.com/modelberry/factory/compare/6.30.16...7.0.0) (2022-07-12)
+
+
+### ⚠ BREAKING CHANGES
+
+* —type becomes —filter, —force becomes —yes
+
+### Features
+
+* add diff command ([84defea](https://github.com/modelberry/factory/commit/84defeae59ea398aef76ef7d7373389bab9f1ea8))
+* change diff command into option ([c839bf0](https://github.com/modelberry/factory/commit/c839bf08294e248fcb9d4ca8590dce432d763624))
+* experimental flag for diff commands ([8fca155](https://github.com/modelberry/factory/commit/8fca1559361f2e3c0cbbb0a2ee21f531d61348b0))
+* mute logger ([01ac168](https://github.com/modelberry/factory/commit/01ac1680837e7cfd658696539783dd7ba45d8bab))
+* terminal logger ([3af3d86](https://github.com/modelberry/factory/commit/3af3d86651f13e7d19b8a5f0e361875837e448eb))
+
+
+### Code Refactoring
+
+* better naming with local and remote ([c98a92f](https://github.com/modelberry/factory/commit/c98a92f7de93ccdde9086439243463bbaafc4f91))
+* callHandler to use logger ([febbb36](https://github.com/modelberry/factory/commit/febbb366ee80b066e5ff48af4ca75634680f566a))
+* packages to use new logger (wip) ([c659c58](https://github.com/modelberry/factory/commit/c659c5826bef990fc3cd3492dcfbdfd630a4c12d))
+* packages to use new logger (wip) ([dc54c80](https://github.com/modelberry/factory/commit/dc54c8066c73985475b77adcd62f5c0c6f02b49f))
+* store inline tags in property tree ([93a4064](https://github.com/modelberry/factory/commit/93a40649c6ab46e0297e73a8649dfcb02b59cd16))
+
+
+### Commits
+
+* add TODO ([0777629](https://github.com/modelberry/factory/commit/0777629b77e5697f3ff51dc4e090665838ea2480))
+* better option names ([1c8a540](https://github.com/modelberry/factory/commit/1c8a54052dabd2014b4b822bff55362644a01db5))
+* change cli interface once more, into push-diff and pull-diff ([5fac82a](https://github.com/modelberry/factory/commit/5fac82a12917747b1250c8ee1c10384141037850))
+* connect handler to dif methods ([e208a66](https://github.com/modelberry/factory/commit/e208a666697a29ad4108aee01cd1be7f314f67bc))
+* fix build errors ([c6df20e](https://github.com/modelberry/factory/commit/c6df20e965f9b7e24da6f47c6431b2538bdd9413))
+* linter fixes ([d684df8](https://github.com/modelberry/factory/commit/d684df86af7b8d7781f9847d876f37111bcaeb30))
+* logger member order ([cafaed9](https://github.com/modelberry/factory/commit/cafaed9dae4ec7501148eedee5e6c1207aeb7832))
+* setup diff commands for push and pull ([d407bdc](https://github.com/modelberry/factory/commit/d407bdc331aea9e9e6d1f0c6241ae77d010c8061))
+* update diff commands in package.json ([6aa1ecf](https://github.com/modelberry/factory/commit/6aa1ecf3bf38e6f125ff5abdc5db1f5a7c7c5515))
+* update linter config ([913c3c6](https://github.com/modelberry/factory/commit/913c3c67a9a40ffdef7193459f5f96008df94bea))
+* update logger with h1, h2, etc ([a4b0eb1](https://github.com/modelberry/factory/commit/a4b0eb180d7e9bdb53773470f236b5be6c7ca512))
+* update packages ([3d0a2f2](https://github.com/modelberry/factory/commit/3d0a2f2b8177e5ab69f117c9bb8e9d99fc739569))
+
 ### [6.30.16](https://github.com/modelberry/factory/compare/6.30.15...6.30.16) (2022-07-03)
 
 ### [6.30.15](https://github.com/modelberry/factory/compare/6.30.14...6.30.15) (2022-07-03)
