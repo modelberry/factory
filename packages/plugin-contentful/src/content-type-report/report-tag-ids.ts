@@ -1,8 +1,8 @@
 import chalk from 'chalk'
-import { LocalSourceContentTypeYield } from '../../../generators/local-source-content-type-generator/local-source-content-type-generator'
-import { RemoteSourceContentTypeYield } from '../../../generators/remote-source-content-type-generator/remote-source-content-type-generator'
-import { compareArrays } from '../../../lib/compare-arrays'
-import { getAddRemoveColor } from '../../../lib/get-add-remove-color'
+import { LocalSourceContentTypeYield } from '../generators/local-source-content-type-generator/local-source-content-type-generator'
+import { RemoteSourceContentTypeYield } from '../generators/remote-source-content-type-generator/remote-source-content-type-generator'
+import { compareArrays } from '../lib/compare-arrays'
+import { getAddRemoveColor } from '../lib/get-add-remove-color'
 import { ReportEntry } from './report-entries'
 import { reportTagValue } from './report-tag-value'
 

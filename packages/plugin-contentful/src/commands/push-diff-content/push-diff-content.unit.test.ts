@@ -26,6 +26,6 @@ describe('Push diff content should', () => {
       typeData:
         multipleContentTypes['@modelberry/plugin-contentful/plain'].types,
     })
+    expect(logSpy.p).toHaveBeenCalledTimes(0)
   })
-  expect(logSpy.p).toHaveBeenCalledTimes(0)
 })

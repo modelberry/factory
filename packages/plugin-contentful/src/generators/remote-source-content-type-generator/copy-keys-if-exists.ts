@@ -26,6 +26,9 @@ export const copyKeysIfExists = ({
     let targetKey = key
     if (asItems) targetKey = `items${firstUpperCase(targetKey)}`
     if (asTag) targetKey = `@${targetKey}`
-    target[targetKey] = source[key]
+    let value = source[key]
+    // Convert booleans to strings
+    if (typeof value === 'boolean') value = value.toString()
+    target[targetKey] = value
   }
 }

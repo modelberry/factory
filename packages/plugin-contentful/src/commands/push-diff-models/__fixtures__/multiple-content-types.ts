@@ -20,6 +20,7 @@ export const multipleContentTypes = {
               tags: {
                 '@helpText': 'Voorbeeld: mijn-anchor',
                 '@type': 'Symbol',
+                '@name': 'Anchor',
               },
               type: 'string | undefined',
             },
@@ -27,18 +28,35 @@ export const multipleContentTypes = {
               tags: {
                 '@helpText': 'Omschrijving van de actie, voor zoekmachines',
                 '@type': 'Symbol',
+                '@name': 'Description',
               },
               type: 'string | undefined',
             },
             heading: {
               tags: {
                 '@type': 'Symbol',
+                '@name': 'Heading',
               },
               type: 'string | undefined',
             },
             url: {
               tags: {
                 '@type': 'Symbol',
+                '@name': 'Url',
+              },
+              type: 'string | undefined',
+            },
+            eventId: {
+              tags: {
+                '@type': 'Symbol',
+                '@name': 'Event id',
+              },
+              type: 'string | undefined',
+            },
+            query: {
+              tags: {
+                '@type': 'Symbol',
+                '@name': 'Query',
               },
               type: 'string | undefined',
             },

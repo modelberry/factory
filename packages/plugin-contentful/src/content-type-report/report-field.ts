@@ -1,8 +1,8 @@
 import chalk from 'chalk'
-import { LocalSourceContentTypeYield } from '../../../generators/local-source-content-type-generator/local-source-content-type-generator'
-import { RemoteSourceContentTypeYield } from '../../../generators/remote-source-content-type-generator/remote-source-content-type-generator'
-import { compareArrays } from '../../../lib/compare-arrays'
-import { getAddRemoveColor } from '../../../lib/get-add-remove-color'
+import { LocalSourceContentTypeYield } from '../generators/local-source-content-type-generator/local-source-content-type-generator'
+import { RemoteSourceContentTypeYield } from '../generators/remote-source-content-type-generator/remote-source-content-type-generator'
+import { compareArrays } from '../lib/compare-arrays'
+import { getAddRemoveColor } from '../lib/get-add-remove-color'
 import { ReportEntry } from './report-entries'
 import { reportTagIds } from './report-tag-ids'
 
@@ -31,10 +31,6 @@ export const reportField = ({
   const remoteFieldIds = Object.keys(remoteContentType?.propertyTree || {})
   const comparedFieldIds = compareArrays(localFieldIds, remoteFieldIds)
   comparedFieldIds.union.forEach((fieldId) => {
-    /**
-     *
-     * LOG FIELD LEVEL
-     */
     const fieldColor = getAddRemoveColor({
       compared: comparedFieldIds,
       item: fieldId,

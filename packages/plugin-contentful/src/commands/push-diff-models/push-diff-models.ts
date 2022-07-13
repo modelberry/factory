@@ -4,8 +4,8 @@ import { remoteSourceContentTypeGenerator } from '../../generators/remote-source
 import { asyncIteratorToArray } from '../../lib/async-iterator-to-array'
 import { ValidationsMap } from '../../handler/get-modelberry-plugin-data'
 import { localSourceContentTypeGenerator } from '../../generators/local-source-content-type-generator/local-source-content-type-generator'
-import { reportContentType } from './report/report-content-type'
-import { printReport } from './report/print-report'
+import { reportContentType } from '../../content-type-report/report-content-type'
+import { printContentTypeReport } from '../../content-type-report/print-content-type-report'
 
 export interface PushDiffModels {
   contentfulEnvironment: Environment
@@ -21,28 +21,39 @@ export const pushDiffModels = async ({
   // Empty object that gets filled with validations
   const validations: Record<string, any> = {}
 
+  // Initialize local and remote iterators
   const remoteSourceContentTypeIterator = remoteSourceContentTypeGenerator({
     contentfulEnvironment,
     options,
     validations,
   })
+  const localContentTypeIterator = localSourceContentTypeGenerator({
+    options,
+    typeData,
+  })
+
   // Mute logging when fetching remote and local content types
   logger.mute = true
   const remoteContentTypes = await asyncIteratorToArray(
     remoteSourceContentTypeIterator
   )
-  const localContentTypeIterator = localSourceContentTypeGenerator({
-    options,
-    typeData,
-  })
   const localContentTypes = Array.from(localContentTypeIterator)
   logger.mute = false
 
+  logger.object('localContentTypes', localContentTypes)
+  logger.object('remoteContentTypes', remoteContentTypes)
+
+  // Generate report
   const report = reportContentType({
     localContentTypes,
     remoteContentTypes,
   })
-  printReport({ report })
+
+  // Print report
+  printContentTypeReport({
+    heading: 'How models will change at Contentful',
+    report,
+  })
 
   logger.h2(
     '\nNOTE: This feature is experimental and still under development\n'

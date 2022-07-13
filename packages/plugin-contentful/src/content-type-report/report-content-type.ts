@@ -1,14 +1,19 @@
 import chalk from 'chalk'
-import { LocalSourceContentTypeYield } from '../../../generators/local-source-content-type-generator/local-source-content-type-generator'
-import { RemoteSourceContentTypeYield } from '../../../generators/remote-source-content-type-generator/remote-source-content-type-generator'
-import { compareArrays } from '../../../lib/compare-arrays'
-import { getAddRemoveColor } from '../../../lib/get-add-remove-color'
+import { LocalSourceContentTypeYield } from '../generators/local-source-content-type-generator/local-source-content-type-generator'
+import { RemoteSourceContentTypeYield } from '../generators/remote-source-content-type-generator/remote-source-content-type-generator'
+import { compareArrays } from '../lib/compare-arrays'
+import { getAddRemoveColor } from '../lib/get-add-remove-color'
 import { ReportEntry } from './report-entries'
 import { reportField } from './report-field'
 
 export interface ReportContentType {
+  /** Local values to compare */
   localContentTypes: LocalSourceContentTypeYield[]
+  /** Remote values to compare */
   remoteContentTypes: RemoteSourceContentTypeYield[]
+  /** By default local changes are compared to remote changes, this option
+   * reverses that */
+  reverse?: boolean
 }
 
 export const reportContentType = ({
