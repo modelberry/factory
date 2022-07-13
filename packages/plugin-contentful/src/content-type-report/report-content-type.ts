@@ -19,14 +19,16 @@ export interface ReportContentType {
 export const reportContentType = ({
   localContentTypes,
   remoteContentTypes,
+  reverse,
 }: ReportContentType) => {
   const reportEntries: ReportEntry[] = []
   const localContentTypeIds = localContentTypes.map((i) => i.interfaceTypeTag)
   const remoteContentTypeIds = remoteContentTypes.map((i) => i.contentTypeId)
-  const comparedContentTypeIds = compareArrays(
-    localContentTypeIds,
-    remoteContentTypeIds
-  )
+  const comparedContentTypeIds = compareArrays({
+    a: localContentTypeIds,
+    b: remoteContentTypeIds,
+    reverse,
+  })
 
   comparedContentTypeIds.union.forEach((contentTypeId) => {
     const contentTypeColor = getAddRemoveColor({
@@ -47,6 +49,7 @@ export const reportContentType = ({
         contentTypeReportEntry,
         localContentTypes,
         remoteContentTypes,
+        reverse,
       })
     }
   })

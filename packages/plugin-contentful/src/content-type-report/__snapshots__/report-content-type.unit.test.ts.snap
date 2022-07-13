@@ -415,3 +415,419 @@ Array [
   },
 ]
 `;
+
+exports[`reportContentType should create a reversed report correctly 1`] = `
+Array [
+  Object {
+    "logLevel": "contentType",
+    "loggerType": "h2",
+    "message": "[30mtestTopic[39m",
+    "subEntries": Array [
+      Object {
+        "logLevel": "field",
+        "loggerType": "p",
+        "message": "[30mabstract[39m",
+        "subEntries": Array [
+          Object {
+            "logLevel": "tagKey",
+            "loggerType": "p",
+            "message": "[32m@name[39m",
+            "subEntries": Array [],
+          },
+          Object {
+            "logLevel": "tagKey",
+            "loggerType": "p",
+            "message": "[30m@type[39m",
+            "subEntries": Array [],
+          },
+          Object {
+            "logLevel": "tagKey",
+            "loggerType": "p",
+            "message": "[32m@widgetId[39m",
+            "subEntries": Array [],
+          },
+          Object {
+            "logLevel": "tagKey",
+            "loggerType": "p",
+            "message": "[30m@validations[39m",
+            "subEntries": Array [
+              Object {
+                "logLevel": "tagValue",
+                "loggerType": "p",
+                "message": "[31mshortString[39m => [32msize-min0-max155 size-min1000-max200[39m",
+                "subEntries": Array [],
+              },
+            ],
+          },
+        ],
+      },
+      Object {
+        "logLevel": "field",
+        "loggerType": "p",
+        "message": "[30mactionsCollection[39m",
+        "subEntries": Array [
+          Object {
+            "logLevel": "tagKey",
+            "loggerType": "p",
+            "message": "[32m@name[39m",
+            "subEntries": Array [],
+          },
+          Object {
+            "logLevel": "tagKey",
+            "loggerType": "p",
+            "message": "[30m@type[39m",
+            "subEntries": Array [],
+          },
+          Object {
+            "logLevel": "tagKey",
+            "loggerType": "p",
+            "message": "[30m@itemsType[39m",
+            "subEntries": Array [],
+          },
+          Object {
+            "logLevel": "tagKey",
+            "loggerType": "p",
+            "message": "[30m@itemsLinkType[39m",
+            "subEntries": Array [],
+          },
+          Object {
+            "logLevel": "tagKey",
+            "loggerType": "p",
+            "message": "[32m@itemsValidations[39m",
+            "subEntries": Array [],
+          },
+          Object {
+            "logLevel": "tagKey",
+            "loggerType": "p",
+            "message": "[32m@widgetId[39m",
+            "subEntries": Array [],
+          },
+          Object {
+            "logLevel": "tagKey",
+            "loggerType": "p",
+            "message": "[31m@description[39m",
+            "subEntries": Array [],
+          },
+          Object {
+            "logLevel": "tagKey",
+            "loggerType": "p",
+            "message": "[31m@validations[39m",
+            "subEntries": Array [],
+          },
+        ],
+      },
+      Object {
+        "logLevel": "field",
+        "loggerType": "p",
+        "message": "[30mheading[39m",
+        "subEntries": Array [
+          Object {
+            "logLevel": "tagKey",
+            "loggerType": "p",
+            "message": "[32m@name[39m",
+            "subEntries": Array [],
+          },
+          Object {
+            "logLevel": "tagKey",
+            "loggerType": "p",
+            "message": "[30m@type[39m",
+            "subEntries": Array [],
+          },
+          Object {
+            "logLevel": "tagKey",
+            "loggerType": "p",
+            "message": "[32m@widgetId[39m",
+            "subEntries": Array [],
+          },
+        ],
+      },
+      Object {
+        "logLevel": "field",
+        "loggerType": "p",
+        "message": "[30micon[39m",
+        "subEntries": Array [
+          Object {
+            "logLevel": "tagKey",
+            "loggerType": "p",
+            "message": "[32m@name[39m",
+            "subEntries": Array [],
+          },
+          Object {
+            "logLevel": "tagKey",
+            "loggerType": "p",
+            "message": "[30m@type[39m",
+            "subEntries": Array [],
+          },
+          Object {
+            "logLevel": "tagKey",
+            "loggerType": "p",
+            "message": "[32m@widgetId[39m",
+            "subEntries": Array [],
+          },
+        ],
+      },
+      Object {
+        "logLevel": "field",
+        "loggerType": "p",
+        "message": "[30mmediaCollection[39m",
+        "subEntries": Array [
+          Object {
+            "logLevel": "tagKey",
+            "loggerType": "p",
+            "message": "[32m@name[39m",
+            "subEntries": Array [],
+          },
+          Object {
+            "logLevel": "tagKey",
+            "loggerType": "p",
+            "message": "[30m@type[39m",
+            "subEntries": Array [],
+          },
+          Object {
+            "logLevel": "tagKey",
+            "loggerType": "p",
+            "message": "[30m@itemsType[39m",
+            "subEntries": Array [],
+          },
+          Object {
+            "logLevel": "tagKey",
+            "loggerType": "p",
+            "message": "[30m@itemsLinkType[39m",
+            "subEntries": Array [],
+          },
+          Object {
+            "logLevel": "tagKey",
+            "loggerType": "p",
+            "message": "[32m@widgetId[39m",
+            "subEntries": Array [],
+          },
+        ],
+      },
+      Object {
+        "logLevel": "field",
+        "loggerType": "p",
+        "message": "[30mposter[39m",
+        "subEntries": Array [
+          Object {
+            "logLevel": "tagKey",
+            "loggerType": "p",
+            "message": "[32m@name[39m",
+            "subEntries": Array [],
+          },
+          Object {
+            "logLevel": "tagKey",
+            "loggerType": "p",
+            "message": "[30m@type[39m",
+            "subEntries": Array [],
+          },
+          Object {
+            "logLevel": "tagKey",
+            "loggerType": "p",
+            "message": "[30m@linkType[39m",
+            "subEntries": Array [],
+          },
+          Object {
+            "logLevel": "tagKey",
+            "loggerType": "p",
+            "message": "[32m@widgetId[39m",
+            "subEntries": Array [],
+          },
+        ],
+      },
+    ],
+  },
+  Object {
+    "logLevel": "contentType",
+    "loggerType": "h2",
+    "message": "[30mtestAction[39m",
+    "subEntries": Array [
+      Object {
+        "logLevel": "field",
+        "loggerType": "p",
+        "message": "[30manchor[39m",
+        "subEntries": Array [
+          Object {
+            "logLevel": "tagKey",
+            "loggerType": "p",
+            "message": "[30m@name[39m",
+            "subEntries": Array [],
+          },
+          Object {
+            "logLevel": "tagKey",
+            "loggerType": "p",
+            "message": "[30m@type[39m",
+            "subEntries": Array [],
+          },
+          Object {
+            "logLevel": "tagKey",
+            "loggerType": "p",
+            "message": "[30m@helpText[39m",
+            "subEntries": Array [],
+          },
+        ],
+      },
+      Object {
+        "logLevel": "field",
+        "loggerType": "p",
+        "message": "[30mdescription[39m",
+        "subEntries": Array [
+          Object {
+            "logLevel": "tagKey",
+            "loggerType": "p",
+            "message": "[30m@name[39m",
+            "subEntries": Array [],
+          },
+          Object {
+            "logLevel": "tagKey",
+            "loggerType": "p",
+            "message": "[30m@type[39m",
+            "subEntries": Array [],
+          },
+          Object {
+            "logLevel": "tagKey",
+            "loggerType": "p",
+            "message": "[30m@helpText[39m",
+            "subEntries": Array [],
+          },
+        ],
+      },
+      Object {
+        "logLevel": "field",
+        "loggerType": "p",
+        "message": "[30meventId[39m",
+        "subEntries": Array [
+          Object {
+            "logLevel": "tagKey",
+            "loggerType": "p",
+            "message": "[30m@name[39m",
+            "subEntries": Array [],
+          },
+          Object {
+            "logLevel": "tagKey",
+            "loggerType": "p",
+            "message": "[30m@type[39m",
+            "subEntries": Array [],
+          },
+        ],
+      },
+      Object {
+        "logLevel": "field",
+        "loggerType": "p",
+        "message": "[30mheading[39m",
+        "subEntries": Array [
+          Object {
+            "logLevel": "tagKey",
+            "loggerType": "p",
+            "message": "[30m@name[39m",
+            "subEntries": Array [],
+          },
+          Object {
+            "logLevel": "tagKey",
+            "loggerType": "p",
+            "message": "[30m@type[39m",
+            "subEntries": Array [],
+          },
+        ],
+      },
+      Object {
+        "logLevel": "field",
+        "loggerType": "p",
+        "message": "[30mquery[39m",
+        "subEntries": Array [
+          Object {
+            "logLevel": "tagKey",
+            "loggerType": "p",
+            "message": "[30m@name[39m",
+            "subEntries": Array [],
+          },
+          Object {
+            "logLevel": "tagKey",
+            "loggerType": "p",
+            "message": "[30m@type[39m",
+            "subEntries": Array [],
+          },
+        ],
+      },
+      Object {
+        "logLevel": "field",
+        "loggerType": "p",
+        "message": "[30murl[39m",
+        "subEntries": Array [
+          Object {
+            "logLevel": "tagKey",
+            "loggerType": "p",
+            "message": "[30m@name[39m",
+            "subEntries": Array [],
+          },
+          Object {
+            "logLevel": "tagKey",
+            "loggerType": "p",
+            "message": "[30m@type[39m",
+            "subEntries": Array [],
+          },
+        ],
+      },
+    ],
+  },
+  Object {
+    "logLevel": "contentType",
+    "loggerType": "h2",
+    "message": "[32mnavigationSection[39m",
+    "subEntries": Array [],
+  },
+  Object {
+    "logLevel": "contentType",
+    "loggerType": "h2",
+    "message": "[32mtopicSection[39m",
+    "subEntries": Array [],
+  },
+  Object {
+    "logLevel": "contentType",
+    "loggerType": "h2",
+    "message": "[32mtopic[39m",
+    "subEntries": Array [],
+  },
+  Object {
+    "logLevel": "contentType",
+    "loggerType": "h2",
+    "message": "[32mtextSection[39m",
+    "subEntries": Array [],
+  },
+  Object {
+    "logLevel": "contentType",
+    "loggerType": "h2",
+    "message": "[32mnavigationSegment[39m",
+    "subEntries": Array [],
+  },
+  Object {
+    "logLevel": "contentType",
+    "loggerType": "h2",
+    "message": "[32mpage[39m",
+    "subEntries": Array [],
+  },
+  Object {
+    "logLevel": "contentType",
+    "loggerType": "h2",
+    "message": "[32mglobals[39m",
+    "subEntries": Array [],
+  },
+  Object {
+    "logLevel": "contentType",
+    "loggerType": "h2",
+    "message": "[32membed[39m",
+    "subEntries": Array [],
+  },
+  Object {
+    "logLevel": "contentType",
+    "loggerType": "h2",
+    "message": "[32maction[39m",
+    "subEntries": Array [],
+  },
+  Object {
+    "logLevel": "contentType",
+    "loggerType": "h2",
+    "message": "[31mnewLocalField[39m",
+    "subEntries": Array [],
+  },
+]
+`;

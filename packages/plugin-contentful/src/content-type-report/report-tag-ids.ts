@@ -7,10 +7,17 @@ import { ReportEntry } from './report-entries'
 import { reportTagValue } from './report-tag-value'
 
 export interface ReportTagIds {
+  /** Parent field */
   fieldId: string
+  /** Parent report entry to add report to */
   fieldReportEntry: ReportEntry
+  /** Local values to compare */
   localContentType?: LocalSourceContentTypeYield
+  /** Remote values to compare */
   remoteContentType?: RemoteSourceContentTypeYield
+  /** By default local changes are compared to remote changes, this option
+   * reverses that */
+  reverse?: boolean
 }
 
 export const reportTagIds = ({
@@ -18,6 +25,7 @@ export const reportTagIds = ({
   fieldReportEntry,
   localContentType,
   remoteContentType,
+  reverse,
 }: ReportTagIds) => {
   // Get local field and tags
   const localField = localContentType?.fields?.[fieldId] || {}
@@ -25,7 +33,11 @@ export const reportTagIds = ({
   // Get remote field and tags
   const remoteField = remoteContentType?.propertyTree[fieldId] || {}
   const remoteTagIds = Object.keys(remoteField?.node?.inlineTags || {})
-  const comparedTagIds = compareArrays(localTagIds, remoteTagIds)
+  const comparedTagIds = compareArrays({
+    a: localTagIds,
+    b: remoteTagIds,
+    reverse,
+  })
 
   comparedTagIds.union.forEach((tagId) => {
     const tagColor = getAddRemoveColor({
@@ -47,6 +59,7 @@ export const reportTagIds = ({
         remoteField,
         tagId,
         tagKeyReportEntry,
+        reverse,
       })
     }
   })

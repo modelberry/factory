@@ -16,4 +16,12 @@ describe('reportContentType should', () => {
     })
     expect(report).toMatchSnapshot()
   })
+  test('create a reversed report correctly', async () => {
+    const report = reportContentType({
+      localContentTypes,
+      remoteContentTypes,
+      reverse: true,
+    })
+    expect(report).toMatchSnapshot()
+  })
 })
