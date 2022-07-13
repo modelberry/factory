@@ -1,8 +1,7 @@
-import chalk from 'chalk'
 import { LocalSourceContentTypeYield } from '../generators/local-source-content-type-generator/local-source-content-type-generator'
 import { RemoteSourceContentTypeYield } from '../generators/remote-source-content-type-generator/remote-source-content-type-generator'
 import { compareArrays } from '../lib/compare-arrays'
-import { getAddRemoveColor } from '../lib/get-add-remove-color'
+import { getReportEntryState } from './get-report-entry-state'
 import { ReportEntry } from './report-entries'
 import { reportTagIds } from './report-tag-ids'
 
@@ -10,7 +9,7 @@ export interface ReportField {
   /** Parent content type id */
   contentTypeId: string
   /** Parent report entry to add report to */
-  contentTypeReportEntry: ReportEntry
+  parentReportEntry: ReportEntry
   /** Local values to compare */
   localContentTypes: LocalSourceContentTypeYield[]
   /** Remote values to compare */
@@ -22,7 +21,7 @@ export interface ReportField {
 
 export const reportField = ({
   contentTypeId,
-  contentTypeReportEntry,
+  parentReportEntry,
   localContentTypes,
   remoteContentTypes,
   reverse,
@@ -43,27 +42,24 @@ export const reportField = ({
     reverse,
   })
   comparedFieldIds.union.forEach((fieldId) => {
-    const fieldColor = getAddRemoveColor({
+    const state = getReportEntryState({
       compared: comparedFieldIds,
       item: fieldId,
     })
     const fieldReportEntry: ReportEntry = {
+      state,
       logLevel: 'field',
       loggerType: 'p',
       subEntries: [],
-      message: chalk[fieldColor](fieldId),
+      message: fieldId,
     }
-    contentTypeReportEntry.subEntries.push(fieldReportEntry)
-
-    // When the fieldColor is black, compare the tags
-    if (fieldColor === 'black') {
-      reportTagIds({
-        fieldId,
-        fieldReportEntry,
-        localContentType,
-        remoteContentType,
-        reverse,
-      })
-    }
+    parentReportEntry.subEntries.push(fieldReportEntry)
+    reportTagIds({
+      fieldId,
+      parentReportEntry: fieldReportEntry,
+      localContentType,
+      remoteContentType,
+      reverse,
+    })
   })
 }

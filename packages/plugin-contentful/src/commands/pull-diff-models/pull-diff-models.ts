@@ -4,8 +4,8 @@ import { ValidationsMap } from '../../handler/get-modelberry-plugin-data'
 import { remoteSourceContentTypeGenerator } from '../../generators/remote-source-content-type-generator/remote-source-content-type-generator'
 import { localSourceContentTypeGenerator } from '../../generators/local-source-content-type-generator/local-source-content-type-generator'
 import { asyncIteratorToArray } from '../../lib/async-iterator-to-array'
-import { reportContentType } from '../../content-type-report/report-content-type'
-import { printContentTypeReport } from '../../content-type-report/print-content-type-report'
+import { reportContentType } from '../../report-content-type/report-content-type'
+import { printContentTypeReport } from '../../report-content-type/print-content-type-report'
 
 export interface PullDiffModels {
   contentfulEnvironment: Environment
@@ -50,7 +50,7 @@ export const pullDiffModels = async ({
 
   // Print report
   printContentTypeReport({
-    heading: 'How models will change in local source files',
+    heading: 'Local source file models will change',
     report,
   })
 

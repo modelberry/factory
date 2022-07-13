@@ -5,6 +5,7 @@ import {
 } from '@modelberry/mbfactory/plain'
 
 export type ReportLevel = 'contentType' | 'field' | 'tagKey' | 'tagValue'
+export type ReportEntryState = 'add' | 'remove' | 'equal' | 'modified'
 
 export type LocalField = {
   tags?: Record<string, string> | undefined
@@ -17,12 +18,19 @@ export type RemoteField = {
 }
 
 export type ReportEntry = {
+  /** The change the entry represents */
+  state: ReportEntryState
   /** The style of the message (h1, h2, etc) */
   loggerType: LoggerType
   /** The nested level of the message */
   logLevel: ReportLevel
   /** The message itself */
-  message: string
+  message?: string
   /** Subentries of this entry */
   subEntries: ReportEntry[]
+  /** Modification */
+  modification?: {
+    before?: string
+    after?: string
+  }
 }

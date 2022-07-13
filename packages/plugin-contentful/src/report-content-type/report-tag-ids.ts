@@ -1,8 +1,7 @@
-import chalk from 'chalk'
 import { LocalSourceContentTypeYield } from '../generators/local-source-content-type-generator/local-source-content-type-generator'
 import { RemoteSourceContentTypeYield } from '../generators/remote-source-content-type-generator/remote-source-content-type-generator'
 import { compareArrays } from '../lib/compare-arrays'
-import { getAddRemoveColor } from '../lib/get-add-remove-color'
+import { getReportEntryState } from './get-report-entry-state'
 import { ReportEntry } from './report-entries'
 import { reportTagValue } from './report-tag-value'
 
@@ -10,7 +9,7 @@ export interface ReportTagIds {
   /** Parent field */
   fieldId: string
   /** Parent report entry to add report to */
-  fieldReportEntry: ReportEntry
+  parentReportEntry: ReportEntry
   /** Local values to compare */
   localContentType?: LocalSourceContentTypeYield
   /** Remote values to compare */
@@ -22,7 +21,7 @@ export interface ReportTagIds {
 
 export const reportTagIds = ({
   fieldId,
-  fieldReportEntry,
+  parentReportEntry,
   localContentType,
   remoteContentType,
   reverse,
@@ -40,27 +39,24 @@ export const reportTagIds = ({
   })
 
   comparedTagIds.union.forEach((tagId) => {
-    const tagColor = getAddRemoveColor({
+    const state = getReportEntryState({
       compared: comparedTagIds,
       item: tagId,
     })
     const tagKeyReportEntry: ReportEntry = {
+      state,
       logLevel: 'tagKey',
       loggerType: 'p',
       subEntries: [],
-      message: chalk[tagColor](tagId),
+      message: tagId,
     }
-    fieldReportEntry.subEntries.push(tagKeyReportEntry)
-
-    // When the tagColor is black, compare the tag value
-    if (tagColor === 'black') {
-      reportTagValue({
-        localField,
-        remoteField,
-        tagId,
-        tagKeyReportEntry,
-        reverse,
-      })
-    }
+    parentReportEntry.subEntries.push(tagKeyReportEntry)
+    reportTagValue({
+      localField,
+      remoteField,
+      tagId,
+      parentReportEntry: tagKeyReportEntry,
+      reverse,
+    })
   })
 }

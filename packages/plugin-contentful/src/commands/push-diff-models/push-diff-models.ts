@@ -4,8 +4,8 @@ import { remoteSourceContentTypeGenerator } from '../../generators/remote-source
 import { asyncIteratorToArray } from '../../lib/async-iterator-to-array'
 import { ValidationsMap } from '../../handler/get-modelberry-plugin-data'
 import { localSourceContentTypeGenerator } from '../../generators/local-source-content-type-generator/local-source-content-type-generator'
-import { reportContentType } from '../../content-type-report/report-content-type'
-import { printContentTypeReport } from '../../content-type-report/print-content-type-report'
+import { reportContentType } from '../../report-content-type/report-content-type'
+import { printContentTypeReport } from '../../report-content-type/print-content-type-report'
 
 export interface PushDiffModels {
   contentfulEnvironment: Environment
@@ -48,7 +48,7 @@ export const pushDiffModels = async ({
 
   // Print report
   printContentTypeReport({
-    heading: 'How models will change at Contentful',
+    heading: 'Contentful models will change',
     report,
   })
 

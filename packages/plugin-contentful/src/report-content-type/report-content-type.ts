@@ -1,8 +1,7 @@
-import chalk from 'chalk'
 import { LocalSourceContentTypeYield } from '../generators/local-source-content-type-generator/local-source-content-type-generator'
 import { RemoteSourceContentTypeYield } from '../generators/remote-source-content-type-generator/remote-source-content-type-generator'
 import { compareArrays } from '../lib/compare-arrays'
-import { getAddRemoveColor } from '../lib/get-add-remove-color'
+import { getReportEntryState } from './get-report-entry-state'
 import { ReportEntry } from './report-entries'
 import { reportField } from './report-field'
 
@@ -31,27 +30,25 @@ export const reportContentType = ({
   })
 
   comparedContentTypeIds.union.forEach((contentTypeId) => {
-    const contentTypeColor = getAddRemoveColor({
+    const state = getReportEntryState({
       compared: comparedContentTypeIds,
       item: contentTypeId,
     })
     const contentTypeReportEntry: ReportEntry = {
+      state,
       logLevel: 'contentType',
       loggerType: 'h2',
       subEntries: [],
-      message: chalk[contentTypeColor](contentTypeId),
+      message: contentTypeId,
     }
     reportEntries.push(contentTypeReportEntry)
-    // When the contentTypeColor is black, compare the fields
-    if (contentTypeColor === 'black') {
-      reportField({
-        contentTypeId,
-        contentTypeReportEntry,
-        localContentTypes,
-        remoteContentTypes,
-        reverse,
-      })
-    }
+    reportField({
+      contentTypeId,
+      parentReportEntry: contentTypeReportEntry,
+      localContentTypes,
+      remoteContentTypes,
+      reverse,
+    })
   })
   return reportEntries
 }

@@ -63,6 +63,7 @@ export const addValidations = ({
     // No need to add if we have this validation already
     if (validationNames.includes(validationName)) continue
     validationNames.push(validationName)
+
     tags[tag] = validationNames.join(' ')
   }
 }
