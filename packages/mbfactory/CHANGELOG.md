@@ -1,5 +1,12 @@
 # Changelog
 
+### [7.0.1](https://github.com/modelberry/factory/compare/7.0.0...7.0.1) (2022-07-13)
+
+
+### Commits
+
+* draft setup of report generator and printer ([b6c0b2d](https://github.com/modelberry/factory/commit/b6c0b2d07d66262059523a4dd1ac3b4eea2fc801))
+
 ## [7.0.0](https://github.com/modelberry/factory/compare/6.30.16...7.0.0) (2022-07-12)
 
 
