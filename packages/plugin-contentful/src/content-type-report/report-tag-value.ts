@@ -15,13 +15,9 @@ export const reportTagValue = ({
   tagKeyReportEntry,
 }: ReportTagIds) => {
   // Get local tag value
-  let localTagValue: string | boolean | undefined =
-    localField?.tags?.[tagId] || 'none'
+  const localTagValue = localField?.tags?.[tagId] || 'none'
   // Get remote tag value
   const remoteTagValue = remoteField?.node?.inlineTags?.[tagId]
-  // When a local tag that represents a boolean value is present,
-  // the value is always handled as a true value.
-  if (typeof remoteTagValue === 'boolean') localTagValue = true
   if (localTagValue !== remoteTagValue) {
     const tagValueReportEntry: ReportEntry = {
       logLevel: 'tagValue',

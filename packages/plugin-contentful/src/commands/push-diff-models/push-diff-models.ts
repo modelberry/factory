@@ -40,9 +40,6 @@ export const pushDiffModels = async ({
   const localContentTypes = Array.from(localContentTypeIterator)
   logger.mute = false
 
-  logger.object('localContentTypes', localContentTypes)
-  logger.object('remoteContentTypes', remoteContentTypes)
-
   // Generate report
   const report = reportContentType({
     localContentTypes,
