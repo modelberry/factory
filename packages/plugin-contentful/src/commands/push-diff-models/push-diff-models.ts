@@ -51,7 +51,7 @@ export const pushDiffModels = async ({
 
   // Print report
   printContentTypeReport({
-    heading: 'Contentful models will change',
+    heading: 'Report for remote Contentful models',
     report,
   })
 

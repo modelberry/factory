@@ -53,7 +53,7 @@ export const pullDiffModels = async ({
 
   // Print report
   printContentTypeReport({
-    heading: 'Local source file models will change',
+    heading: 'Report for local source file models',
     report,
   })
 
