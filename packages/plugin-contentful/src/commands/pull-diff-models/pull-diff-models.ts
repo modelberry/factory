@@ -18,15 +18,16 @@ export const pullDiffModels = async ({
   contentfulEnvironment,
   options,
   typeData,
+  validationsMap,
 }: PullDiffModels) => {
   // Empty object that gets filled with validations
-  const validations: Record<string, any> = {}
+  const remoteValidationsMap: Record<string, any> = {}
 
   // Initialize local and remote iterators
   const remoteSourceContentTypeIterator = remoteSourceContentTypeGenerator({
     contentfulEnvironment,
     options,
-    validations,
+    validationsMap: remoteValidationsMap,
   })
   const localContentTypeIterator = localSourceContentTypeGenerator({
     options,
@@ -45,6 +46,8 @@ export const pullDiffModels = async ({
   const report = reportContentType({
     localContentTypes,
     remoteContentTypes,
+    localValidationsMap: validationsMap,
+    remoteValidationsMap,
     reverse: true,
   })
 

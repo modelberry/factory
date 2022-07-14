@@ -5,15 +5,15 @@ export interface GetExistingValidation {
   /** Validation to test */
   test: any
   /** Existing validations */
-  validations: Record<string, any>
+  validationsMap: Record<string, any>
 }
 
 export const getExistingValidation = ({
   test,
-  validations,
+  validationsMap,
 }: GetExistingValidation) => {
-  for (const existingValidationName of Object.keys(validations)) {
-    if (deepEqual(test, validations[existingValidationName]))
+  for (const existingValidationName of Object.keys(validationsMap)) {
+    if (deepEqual(test, validationsMap[existingValidationName]))
       return existingValidationName
   }
   return
@@ -27,20 +27,20 @@ export interface AddValidation {
   /** Object to add inline tag to */
   tags: Record<string, any>
   /** Empty object that gets filled with validations */
-  validations: Record<string, any>
+  validationsMap: Record<string, any>
 }
 
 export const addValidations = ({
   add,
   tag,
   tags,
-  validations,
+  validationsMap,
 }: AddValidation) => {
   for (const newValidation of add) {
     const validationNames = tags[tag] ? tags[tag].split(' ') : []
     const existingValidationName = getExistingValidation({
       test: newValidation,
-      validations,
+      validationsMap,
     })
     if (existingValidationName) {
       // No need to add if we have this validation already
@@ -52,13 +52,13 @@ export const addValidations = ({
     // New validation, add to validations object with a new name
     const validationName = getValidationName({
       val: newValidation,
-      vals: validations,
+      vals: validationsMap,
     })
     // Add empty flags. Typescript defs require this but the API does not return
     // this.
     if (newValidation.regexp && !newValidation.regexp.flags)
       newValidation.regexp.flags = ''
-    validations[validationName] = newValidation
+    validationsMap[validationName] = newValidation
 
     // No need to add if we have this validation already
     if (validationNames.includes(validationName)) continue

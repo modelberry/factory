@@ -304,11 +304,15 @@ Array [
               Object {
                 "logLevel": "tagValue",
                 "loggerType": "p",
-                "modification": Object {
-                  "after": "shortString",
-                  "before": "size-min0-max155 size-min1000-max200",
-                },
-                "state": "modified",
+                "message": "shortString",
+                "state": "equal",
+                "subEntries": Array [],
+              },
+              Object {
+                "logLevel": "tagValue",
+                "loggerType": "p",
+                "message": "size-min1000-max200",
+                "state": "remove",
                 "subEntries": Array [],
               },
             ],
@@ -450,7 +454,7 @@ Array [
               Object {
                 "logLevel": "tagValue",
                 "loggerType": "p",
-                "message": "linkContentType-someOtherAction linkContentType-testAction",
+                "message": "linkContentType-testAction linkContentType-someOtherAction",
                 "state": "remove",
                 "subEntries": Array [],
               },
@@ -6643,11 +6647,15 @@ Array [
               Object {
                 "logLevel": "tagValue",
                 "loggerType": "p",
-                "modification": Object {
-                  "after": "size-min0-max155 size-min1000-max200",
-                  "before": "shortString",
-                },
-                "state": "modified",
+                "message": "size-min1000-max200",
+                "state": "add",
+                "subEntries": Array [],
+              },
+              Object {
+                "logLevel": "tagValue",
+                "loggerType": "p",
+                "message": "size-min0-max155",
+                "state": "equal",
                 "subEntries": Array [],
               },
             ],
@@ -6729,7 +6737,7 @@ Array [
               Object {
                 "logLevel": "tagValue",
                 "loggerType": "p",
-                "message": "linkContentType-someOtherAction linkContentType-testAction",
+                "message": "linkContentType-testAction linkContentType-someOtherAction",
                 "state": "add",
                 "subEntries": Array [],
               },

@@ -1,5 +1,6 @@
 import { LocalSourceContentTypeYield } from '../generators/local-source-content-type-generator/local-source-content-type-generator'
 import { RemoteSourceContentTypeYield } from '../generators/remote-source-content-type-generator/remote-source-content-type-generator'
+import { ValidationsMap } from '../handler/get-modelberry-plugin-data'
 import { compareArrays } from '../lib/compare-arrays'
 import { getReportEntryState } from './get-report-entry-state'
 import { ReportEntry } from './report-entries'
@@ -14,6 +15,10 @@ export interface ReportTagIds {
   localContentType?: LocalSourceContentTypeYield
   /** Remote values to compare */
   remoteContentType?: RemoteSourceContentTypeYield
+  /** Local validations */
+  localValidationsMap: ValidationsMap
+  /** Remote validations */
+  remoteValidationsMap: ValidationsMap
   /** By default local changes are compared to remote changes, this option
    * reverses that */
   reverse?: boolean
@@ -24,6 +29,8 @@ export const reportTagIds = ({
   parentReportEntry,
   localContentType,
   remoteContentType,
+  localValidationsMap,
+  remoteValidationsMap,
   reverse,
 }: ReportTagIds) => {
   // Get local field and tags
@@ -54,6 +61,8 @@ export const reportTagIds = ({
     reportTagValue({
       localField,
       remoteField,
+      localValidationsMap,
+      remoteValidationsMap,
       tagId,
       parentReportEntry: tagKeyReportEntry,
       reverse,

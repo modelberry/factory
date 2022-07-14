@@ -30,7 +30,7 @@ describe('Push diff models should', () => {
     })
     expect(logSpy.h1).toHaveBeenCalledTimes(4)
     expect(logSpy.h2).toHaveBeenCalledTimes(13)
-    expect(logSpy.p).toHaveBeenCalledTimes(826)
+    expect(logSpy.p).toHaveBeenCalledTimes(827)
     expect(logSpy.info).toHaveBeenCalledTimes(0)
   })
 })

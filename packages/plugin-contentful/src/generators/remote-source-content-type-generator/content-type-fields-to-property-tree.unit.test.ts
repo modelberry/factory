@@ -41,7 +41,7 @@ const editorInterfaces = {
   },
 }
 
-const validations = {
+const validationsMap = {
   'linkContentType-testAction': {
     linkContentType: ['testAction'],
   },
@@ -57,7 +57,7 @@ describe('contentTypeFieldsToPropertyTree should', () => {
       contentTypeFields,
       editorInterfaces,
       namedImports: [],
-      validations,
+      validationsMap,
     })
 
     expect(propertyTree).toMatchSnapshot()

@@ -16,16 +16,16 @@ export const pullModels = async ({
   path,
 }: PullModels) => {
   // Empty object that gets filled with validations
-  const validations: Record<string, any> = {}
+  const validationsMap: Record<string, any> = {}
   const remoteSourceContentTypeIterator = remoteSourceContentTypeGenerator({
     contentfulEnvironment,
     options,
-    validations,
+    validationsMap,
   })
   const files = await prepareTsFiles({
     remoteSourceContentTypeIterator,
     path,
-    validations,
+    validationsMap,
   })
   await writeSourceFiles({ files, options })
 }

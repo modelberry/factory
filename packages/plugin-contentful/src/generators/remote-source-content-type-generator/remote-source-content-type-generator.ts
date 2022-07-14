@@ -13,7 +13,7 @@ export interface RemoteSourceContentTypeGenerator {
   contentfulEnvironment: Environment
   options: Options
   /** Empty object to save Contentful validations to */
-  validations: Record<string, any>
+  validationsMap: Record<string, any>
 }
 
 export type RemoteSourceContentTypeYield = {
@@ -33,7 +33,7 @@ export type RemoteSourceContentTypeIterator = AsyncGenerator<
 export async function* remoteSourceContentTypeGenerator({
   contentfulEnvironment,
   options,
-  validations,
+  validationsMap,
 }: RemoteSourceContentTypeGenerator) {
   const remoteContentTypes = await fetchContentTypes({
     contentfulEnvironment,
@@ -57,7 +57,7 @@ export async function* remoteSourceContentTypeGenerator({
       contentTypeFields: remoteContentType.fields,
       editorInterfaces,
       namedImports: remoteNamedImports,
-      validations,
+      validationsMap,
     })
     const remoteInterfaceName =
       'Contentful' + firstUpperCase(remoteContentTypeId)

@@ -21,16 +21,16 @@ describe('addValidations should', () => {
   })
 
   test('add a validation correctly', async () => {
-    const validations = {}
+    const validationsMap = {}
     const tags = { '@validations': 'existingValidation' }
     addValidations({
       add: [validationA, validationB],
       tag: '@validations',
       tags,
-      validations,
+      validationsMap,
     })
 
-    expect(validations).toEqual({
+    expect(validationsMap).toEqual({
       'enabledMarks-bold-italic-underline': validationB,
       'regexp-1': validationA,
     })
@@ -41,7 +41,7 @@ describe('addValidations should', () => {
   })
 
   test('not add a validation with the same name', async () => {
-    const validations = {
+    const validationsMap = {
       'enabledMarks-bold-italic-underline': validationB,
       'regexp-1': validationA,
     }
@@ -50,10 +50,10 @@ describe('addValidations should', () => {
       add: [validationC],
       tag: '@validations',
       tags,
-      validations,
+      validationsMap,
     })
 
-    expect(validations).toEqual({
+    expect(validationsMap).toEqual({
       'enabledMarks-bold-italic-underline': validationB,
       'enabledMarks-bold-italic-underline-3': validationC,
       'regexp-1': validationA,
@@ -65,7 +65,7 @@ describe('addValidations should', () => {
   })
 
   test('not add a validation with a name that already exists', async () => {
-    const validations = {
+    const validationsMap = {
       'enabledMarks-bold-italic-underline': validationB,
     }
     const tags = {
@@ -75,10 +75,10 @@ describe('addValidations should', () => {
       add: [validationA],
       tag: '@validations',
       tags,
-      validations,
+      validationsMap,
     })
 
-    expect(validations).toEqual({
+    expect(validationsMap).toEqual({
       'enabledMarks-bold-italic-underline': validationB,
       'regexp-1': validationA,
     })
@@ -88,7 +88,7 @@ describe('addValidations should', () => {
   })
 
   test('not add a validation twice', async () => {
-    const validations = {
+    const validationsMap = {
       'enabledMarks-bold-italic-underline': validationB,
       'regexp-1': validationA,
     }
@@ -99,10 +99,10 @@ describe('addValidations should', () => {
       add: [validationB],
       tag: '@validations',
       tags,
-      validations,
+      validationsMap,
     })
 
-    expect(validations).toEqual({
+    expect(validationsMap).toEqual({
       'enabledMarks-bold-italic-underline': validationB,
       'regexp-1': validationA,
     })

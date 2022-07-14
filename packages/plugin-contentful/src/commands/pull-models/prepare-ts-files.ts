@@ -16,13 +16,13 @@ export interface PrepareTsFiles {
   /** Source files path */
   path: string
   /** Empty object to save Contentful validations to */
-  validations: Record<string, any>
+  validationsMap: Record<string, any>
   remoteSourceContentTypeIterator: RemoteSourceContentTypeIterator
 }
 
 export const prepareTsFiles = async ({
   path,
-  validations,
+  validationsMap,
   remoteSourceContentTypeIterator,
 }: PrepareTsFiles) => {
   // Generate import statements for each type to be added to the main file
@@ -74,7 +74,9 @@ export const prepareTsFiles = async ({
 
   // Add main source file that imports all types and defines Contentful
   // validation objects
-  const dataObject = { '@modelberry/plugin-contentful/plain': { validations } }
+  const dataObject = {
+    '@modelberry/plugin-contentful/plain': { validations: validationsMap },
+  }
   const dataVarStatement = createDataVarStatement({ dataObject })
   const mbPluginDataImport = createTsImport({
     namedImports: ['ModelberryPluginData'],

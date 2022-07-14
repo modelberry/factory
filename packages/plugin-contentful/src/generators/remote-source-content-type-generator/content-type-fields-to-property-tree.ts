@@ -12,7 +12,7 @@ export interface ContentTypeFieldsToPropertyTree {
   /** Empty array that gets filled with named imports */
   namedImports: string[]
   /** Empty object that gets filled with validations */
-  validations: Record<string, any>
+  validationsMap: Record<string, any>
 }
 
 /**
@@ -57,7 +57,7 @@ export const contentTypeFieldsToPropertyTree = ({
   contentTypeFields,
   editorInterfaces,
   namedImports,
-  validations,
+  validationsMap,
 }: ContentTypeFieldsToPropertyTree) => {
   const propertyTree: PropertyTree = {}
   for (const contentTypeField of contentTypeFields) {
@@ -81,7 +81,7 @@ export const contentTypeFieldsToPropertyTree = ({
           add: contentTypeField.items.validations,
           tag: '@itemsValidations',
           tags: inlineTags,
-          validations,
+          validationsMap,
         })
       }
     }
@@ -104,7 +104,7 @@ export const contentTypeFieldsToPropertyTree = ({
         add: contentTypeField.validations,
         tag: '@validations',
         tags: inlineTags,
-        validations,
+        validationsMap,
       })
     }
     const isArray = contentTypeField.type === 'Array'
