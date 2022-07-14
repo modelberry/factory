@@ -1,6 +1,6 @@
 import { ValidationsMap } from '../handler/get-modelberry-plugin-data'
 import { LocalField, RemoteField, ReportEntry } from './report-entries'
-import { getValidationReportEntries } from './get-validation-diff'
+import { validationsToReportEntries } from './validations-to-report-entries'
 
 export interface ReportTagValue {
   /** Local parent field */
@@ -38,7 +38,7 @@ export const reportTagValue = ({
 
   if (parentReportEntry.state === 'equal' && isValidationTag) {
     // Validation tags need to be compared by using the validation maps
-    const tagValueReportEntries = getValidationReportEntries({
+    const tagValueReportEntries = validationsToReportEntries({
       localValidationsMap,
       remoteValidationsMap,
       localTagValue,
