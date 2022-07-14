@@ -11,6 +11,8 @@ export interface PrintReport {
 }
 
 export const printContentTypeReport = ({ heading, report }: PrintReport) => {
-  logger.h1(`\n${heading} ${chalk.green('ADD')}/${chalk.red('REMOVE')}/\n`)
+  logger.h1(
+    `\n${heading} (${chalk.green('addition')}/${chalk.red('deletion')})\n`
+  )
   printer({ report })
 }
