@@ -1,6 +1,6 @@
 {
   "name": "@modelberry/plugin-contentful",
-  "version": "7.1.0",
+  "version": "7.1.1",
   "description": "Contentful plugin for Modelberry factory",
   "keywords": [
     "any",
@@ -59,7 +59,7 @@
     "dev": "rollup --config --watch"
   },
   "dependencies": {
-    "@modelberry/mbfactory": "7.1.0",
+    "@modelberry/mbfactory": "7.1.1",
     "chalk": "4.1.2",
     "contentful-management": "10.8.0",
     "deep-equal": "2.0.5",

@@ -1,5 +1,7 @@
 # Changelog
 
+### [7.1.1](https://github.com/modelberry/factory/compare/7.1.0...7.1.1) (2022-08-31)
+
 ## [7.1.0](https://github.com/modelberry/factory/compare/7.0.4...7.1.0) (2022-08-31)
 
 

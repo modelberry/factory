@@ -1,31 +1,16 @@
-## @modelberry/mbfactory 7.1.0
+## @modelberry/mbfactory 7.1.1
 
-## [7.1.0](https://github.com/modelberry/factory/compare/7.0.4...7.1.0) (2022-08-31)
-
-
-### Features
-
-* remove experimental from push-diff and pull-diff commands ([fb7427a](https://github.com/modelberry/factory/commit/fb7427a58945e90e3a1cb3393233e0bb5d240fc3))
+### [7.1.1](https://github.com/modelberry/factory/compare/7.1.0...7.1.1) (2022-08-31)
 
 
+### Bug Fixes
 
-## @modelberry/plugin-contentful 7.1.0
-
-## [7.1.0](https://github.com/modelberry/factory/compare/7.0.4...7.1.0) (2022-08-31)
-
-
-### Features
-
-* remove experimental from push-diff and pull-diff commands ([fb7427a](https://github.com/modelberry/factory/commit/fb7427a58945e90e3a1cb3393233e0bb5d240fc3))
+* add push-diff and pull-diff commands to cli help ([3678c2b](https://github.com/modelberry/factory/commit/3678c2b6e32494d2eba666e95afd62f019974fcb))
 
 
-### Code Refactoring
 
-* getValidationDiff into validationsToReportEntries ([34a90e0](https://github.com/modelberry/factory/commit/34a90e06f33157f47ec2a754a4c17712ce24a898))
+## @modelberry/plugin-contentful 7.1.1
 
-
-### Commits
-
-* fix test ([a7efbac](https://github.com/modelberry/factory/commit/a7efbacaa39e56498a8840cbb362ced773a88290))
+### [7.1.1](https://github.com/modelberry/factory/compare/7.1.0...7.1.1) (2022-08-31)
 
 
