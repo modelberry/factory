@@ -56,8 +56,4 @@ export const pullDiffModels = async ({
     heading: 'Report for local source file models',
     report,
   })
-
-  logger.h2(
-    '\nNOTE: This feature is experimental and still under development\n'
-  )
 }

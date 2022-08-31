@@ -54,8 +54,4 @@ export const pushDiffModels = async ({
     heading: 'Report for remote Contentful models',
     report,
   })
-
-  logger.h2(
-    '\nNOTE: This feature is experimental and still under development\n'
-  )
 }
