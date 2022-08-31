@@ -29,7 +29,7 @@ describe('Push diff models should', () => {
       validationsMap: { mockedValidation: {} },
     })
     expect(logSpy.h1).toHaveBeenCalledTimes(4)
-    expect(logSpy.h2).toHaveBeenCalledTimes(13)
+    expect(logSpy.h2).toHaveBeenCalledTimes(12)
     expect(logSpy.p).toHaveBeenCalledTimes(826)
     expect(logSpy.info).toHaveBeenCalledTimes(0)
   })
