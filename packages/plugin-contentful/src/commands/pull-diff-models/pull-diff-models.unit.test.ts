@@ -30,4 +30,5 @@ describe('Pull diff models should', () => {
     })
   })
   expect(logSpy.p).toHaveBeenCalledTimes(0)
+  expect(process.exitCode).toBeUndefined()
 })

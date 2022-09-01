@@ -6,6 +6,7 @@ jest.mock('../../get-all-plugin-data/get-all-plugin-data', () => ({
 import { Arguments } from 'yargs'
 import { callHandler } from '../../call-handler/call-handler'
 import { logger } from '../../lib/logger'
+import { ExitCodes } from '../../lib/exit-codes'
 import { PullDiffArgv, pullDiffCommand } from './pull-diff'
 
 const logSpy = {
@@ -38,6 +39,7 @@ describe('The pull-diff command should', () => {
       '- file not found: ./src/commands/pull-diff/__fixtures__/xxx.ts'
     )
     expect(callHandler).toHaveBeenCalledTimes(0)
+    expect(process.exitCode).toEqual(ExitCodes.FileNotFound)
   })
 
   test('report nothing to process when file exists', async () => {
@@ -47,5 +49,6 @@ describe('The pull-diff command should', () => {
       '- nothing to process in file: ./src/commands/pull-diff/__fixtures__/dummy-file.ts'
     )
     expect(callHandler).toHaveBeenCalledTimes(0)
+    expect(process.exitCode).toEqual(ExitCodes.NothingToProcess)
   })
 })

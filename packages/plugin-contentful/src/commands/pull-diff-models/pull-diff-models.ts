@@ -1,11 +1,17 @@
 import { Environment } from 'contentful-management/types'
-import { logger, Options, TypeData } from '@modelberry/mbfactory/plain'
+import {
+  logger,
+  Options,
+  TypeData,
+  ExitCodes,
+} from '@modelberry/mbfactory/plain'
 import { ValidationsMap } from '../../handler/get-modelberry-plugin-data'
 import { remoteSourceContentTypeGenerator } from '../../generators/remote-source-content-type-generator/remote-source-content-type-generator'
 import { localSourceContentTypeGenerator } from '../../generators/local-source-content-type-generator/local-source-content-type-generator'
 import { asyncIteratorToArray } from '../../lib/async-iterator-to-array'
 import { reportContentType } from '../../report-content-type/report-content-type'
 import { printContentTypeReport } from '../../report-content-type/print-content-type-report'
+import { reportHasChanges } from '../../report-content-type/report-has-changes'
 
 export interface PullDiffModels {
   contentfulEnvironment: Environment
@@ -56,4 +62,10 @@ export const pullDiffModels = async ({
     heading: 'Report for local source file models',
     report,
   })
+
+  // Set exit code when diff is non equal for end to end testing
+  if (reportHasChanges({ report })) {
+    process.exitCode = ExitCodes.DiffNonEqual
+  }
+  logger.p('\n')
 }
