@@ -59,12 +59,12 @@
     "dev": "rollup --config --watch"
   },
   "dependencies": {
-    "@modelberry/mbfactory": "7.0.4",
+    "@modelberry/mbfactory": "7.2.0",
     "chalk": "4.1.2",
-    "contentful-management": "10.8.0",
+    "contentful-management": "10.15.1",
     "deep-equal": "2.0.5",
     "deepmerge": "4.2.2",
-    "inquirer": "8.2.3"
+    "inquirer": "8.2.4"
   },
   "engines": {
     "node": ">=16.0.0",
