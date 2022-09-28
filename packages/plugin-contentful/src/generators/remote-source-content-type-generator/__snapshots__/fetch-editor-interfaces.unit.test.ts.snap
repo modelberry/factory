@@ -1,23 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`fetchEditorInterfaces should fetch editor interfaces from mock 1`] = `
-Object {
-  "abstract": Object {
+{
+  "abstract": {
     "widgetId": "singleLine",
   },
-  "actions": Object {
+  "actions": {
     "widgetId": "entryLinksEditor",
   },
-  "heading": Object {
+  "heading": {
     "widgetId": "singleLine",
   },
-  "icon": Object {
+  "icon": {
     "widgetId": "singleLine",
   },
-  "media": Object {
+  "media": {
     "widgetId": "assetLinksEditor",
   },
-  "poster": Object {
+  "poster": {
     "widgetId": "assetLinkEditor",
   },
 }

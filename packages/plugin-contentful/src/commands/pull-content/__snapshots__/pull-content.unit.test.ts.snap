@@ -2,8 +2,8 @@
 
 exports[`Pull content should pull correctly with type filter 1`] = `
 [MockFunction] {
-  "calls": Array [
-    Array [
+  "calls": [
+    [
       "./dummy/contentful-test-topic-content.ts",
       "import { ContentfulTestTopic } from './contentful-test-topic'
 export const testTopic: ContentfulTestTopic[] = [
@@ -52,18 +52,18 @@ export const testTopic: ContentfulTestTopic[] = [
 ]
 ",
     ],
-    Array [
+    [
       "./dummy/main-content.ts",
       "export * from './contentful-test-topic-content'
 ",
     ],
   ],
-  "results": Array [
-    Object {
+  "results": [
+    {
       "type": "return",
       "value": undefined,
     },
-    Object {
+    {
       "type": "return",
       "value": undefined,
     },
@@ -73,8 +73,8 @@ export const testTopic: ContentfulTestTopic[] = [
 
 exports[`Pull content should pull correctly without type filter 1`] = `
 [MockFunction] {
-  "calls": Array [
-    Array [
+  "calls": [
+    [
       "./dummy/contentful-test-topic-content.ts",
       "import { ContentfulTestTopic } from './contentful-test-topic'
 export const testTopic: ContentfulTestTopic[] = [
@@ -123,7 +123,7 @@ export const testTopic: ContentfulTestTopic[] = [
 ]
 ",
     ],
-    Array [
+    [
       "./dummy/contentful-test-action-content.ts",
       "import { ContentfulTestAction } from './contentful-test-action'
 export const testAction: ContentfulTestAction[] = [
@@ -131,7 +131,7 @@ export const testAction: ContentfulTestAction[] = [
 ]
 ",
     ],
-    Array [
+    [
       "./dummy/contentful-navigation-section-content.ts",
       "import { ContentfulNavigationSection } from './contentful-navigation-section'
 export const navigationSection: ContentfulNavigationSection[] = [
@@ -168,7 +168,7 @@ export const navigationSection: ContentfulNavigationSection[] = [
 ]
 ",
     ],
-    Array [
+    [
       "./dummy/contentful-topic-section-content.ts",
       "import { ContentfulTopicSection } from './contentful-topic-section'
 export const topicSection: ContentfulTopicSection[] = [
@@ -412,16 +412,16 @@ export const topicSection: ContentfulTopicSection[] = [
 ]
 ",
     ],
-    Array [
+    [
       "./dummy/contentful-topic-content.ts",
       "import { ContentfulTopic } from './contentful-topic'
 export const topic: ContentfulTopic[] = [
   {
     sys: { id: '1eGF540LjYZaiXfvaK7ymF' },
-    title: 'Jac\\\\u00F3 Beach topic',
-    heading: 'Jac\\\\u00F3 Beach',
+    title: 'Jac\\u00F3 Beach topic',
+    heading: 'Jac\\u00F3 Beach',
     abstract:
-      'Jac\\\\u00F3 is a district of the Garabito canton, in the Puntarenas province of Costa Rica. Jac\\\\u00F3 has a black sand beach that is 4 km (2.5 mi) long and is popular among surfers.',
+      'Jac\\u00F3 is a district of the Garabito canton, in the Puntarenas province of Costa Rica. Jac\\u00F3 has a black sand beach that is 4 km (2.5 mi) long and is popular among surfers.',
     mediaCollection: { items: [{ sys: { id: '5lPtGy7GYExeNUC4P3X9Te' } }] },
     icon: 'sun',
     actionsCollection: { items: [{ sys: { id: '1mqAy6gAuztxgWhsDxxKQL' } }] },
@@ -458,7 +458,7 @@ export const topic: ContentfulTopic[] = [
     title: 'Showcase explained',
     heading: 'Showcase',
     abstract:
-      \\"Showcase sets your topics on display in a modest way. Stacked on top of each other, it's a clear line-up.\\",
+      "Showcase sets your topics on display in a modest way. Stacked on top of each other, it's a clear line-up.",
     icon: 'book-open',
     actionsCollection: { items: [{ sys: { id: '6oMJ77VICMAglDmH3EGofv' } }] },
   },
@@ -585,7 +585,7 @@ export const topic: ContentfulTopic[] = [
 ]
 ",
     ],
-    Array [
+    [
       "./dummy/contentful-text-section-content.ts",
       "import { ContentfulTextSection } from './contentful-text-section'
 export const textSection: ContentfulTextSection[] = [
@@ -627,7 +627,7 @@ export const textSection: ContentfulTextSection[] = [
                 marks: [{ type: 'italic' }],
                 data: {},
               },
-              { nodeType: 'text', value: \\". Here's an \\", marks: [], data: {} },
+              { nodeType: 'text', value: ". Here's an ", marks: [], data: {} },
               {
                 nodeType: 'text',
                 value: 'underlined piece',
@@ -879,7 +879,7 @@ export const textSection: ContentfulTextSection[] = [
                       },
                       {
                         nodeType: 'text',
-                        value: \\". Here's an \\",
+                        value: ". Here's an ",
                         marks: [],
                         data: {},
                       },
@@ -1032,7 +1032,7 @@ export const textSection: ContentfulTextSection[] = [
 ]
 ",
     ],
-    Array [
+    [
       "./dummy/contentful-navigation-segment-content.ts",
       "import { ContentfulNavigationSegment } from './contentful-navigation-segment'
 export const navigationSegment: ContentfulNavigationSegment[] = [
@@ -1091,7 +1091,7 @@ export const navigationSegment: ContentfulNavigationSegment[] = [
 ]
 ",
     ],
-    Array [
+    [
       "./dummy/contentful-page-content.ts",
       "import { ContentfulPage } from './contentful-page'
 export const page: ContentfulPage[] = [
@@ -1313,7 +1313,7 @@ export const page: ContentfulPage[] = [
 ]
 ",
     ],
-    Array [
+    [
       "./dummy/contentful-globals-content.ts",
       "import { ContentfulGlobals } from './contentful-globals'
 export const globals: ContentfulGlobals[] = [
@@ -1330,13 +1330,13 @@ export const globals: ContentfulGlobals[] = [
 ]
 ",
     ],
-    Array [
+    [
       "./dummy/contentful-embed-content.ts",
       "import { ContentfulEmbed } from './contentful-embed'
 export const embed: ContentfulEmbed[] = []
 ",
     ],
-    Array [
+    [
       "./dummy/contentful-action-content.ts",
       "import { ContentfulAction } from './contentful-action'
 export const action: ContentfulAction[] = [
@@ -1479,18 +1479,18 @@ export const action: ContentfulAction[] = [
   },
   {
     sys: { id: '1mqAy6gAuztxgWhsDxxKQL' },
-    title: 'Jac\\\\u00F3 Beach on Wikipedia',
-    heading: 'Jac\\\\u00F3 Beach on Wikipedia',
+    title: 'Jac\\u00F3 Beach on Wikipedia',
+    heading: 'Jac\\u00F3 Beach on Wikipedia',
     description:
-      'Jac\\\\u00F3 was created on 16 September 1965. Segregated from Puntarenas.',
+      'Jac\\u00F3 was created on 16 September 1965. Segregated from Puntarenas.',
     icon: 'external-link',
-    url: 'https://en.wikipedia.org/wiki/Jac\\\\u00F3,_Costa_Rica',
+    url: 'https://en.wikipedia.org/wiki/Jac\\u00F3,_Costa_Rica',
     eventId: 'jaco-beach',
   },
 ]
 ",
     ],
-    Array [
+    [
       "./dummy/main-content.ts",
       "export * from './contentful-test-topic-content'
 export * from './contentful-test-action-content'
@@ -1506,52 +1506,52 @@ export * from './contentful-action-content'
 ",
     ],
   ],
-  "results": Array [
-    Object {
+  "results": [
+    {
       "type": "return",
       "value": undefined,
     },
-    Object {
+    {
       "type": "return",
       "value": undefined,
     },
-    Object {
+    {
       "type": "return",
       "value": undefined,
     },
-    Object {
+    {
       "type": "return",
       "value": undefined,
     },
-    Object {
+    {
       "type": "return",
       "value": undefined,
     },
-    Object {
+    {
       "type": "return",
       "value": undefined,
     },
-    Object {
+    {
       "type": "return",
       "value": undefined,
     },
-    Object {
+    {
       "type": "return",
       "value": undefined,
     },
-    Object {
+    {
       "type": "return",
       "value": undefined,
     },
-    Object {
+    {
       "type": "return",
       "value": undefined,
     },
-    Object {
+    {
       "type": "return",
       "value": undefined,
     },
-    Object {
+    {
       "type": "return",
       "value": undefined,
     },

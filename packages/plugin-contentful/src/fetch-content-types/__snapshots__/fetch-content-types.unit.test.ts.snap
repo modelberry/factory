@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`fetchContentTypes should fetch content types from mock 1`] = `
-Array [
-  Object {
+[
+  {
     "description": "Topic model, a heading, an abstract and a call to action",
     "displayField": "heading",
-    "fields": Array [
-      Object {
+    "fields": [
+      {
         "disabled": false,
         "id": "abstract",
         "localized": false,
@@ -14,35 +14,35 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Symbol",
-        "validations": Array [
-          Object {
-            "size": Object {
+        "validations": [
+          {
+            "size": {
               "max": 155,
               "min": 0,
             },
           },
-          Object {
-            "size": Object {
+          {
+            "size": {
               "max": 200,
               "min": 1000,
             },
           },
         ],
       },
-      Object {
+      {
         "disabled": false,
         "id": "actions",
-        "items": Object {
+        "items": {
           "linkType": "Entry",
           "type": "Link",
-          "validations": Array [
-            Object {
-              "linkContentType": Array [
+          "validations": [
+            {
+              "linkContentType": [
                 "testAction",
               ],
             },
-            Object {
-              "linkContentType": Array [
+            {
+              "linkContentType": [
                 "someOtherAction",
               ],
             },
@@ -53,9 +53,9 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Array",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "heading",
         "localized": false,
@@ -63,9 +63,9 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Symbol",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "icon",
         "localized": false,
@@ -73,24 +73,24 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Symbol",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "media",
-        "items": Object {
+        "items": {
           "linkType": "Asset",
           "type": "Link",
-          "validations": Array [],
+          "validations": [],
         },
         "localized": false,
         "name": "Media",
         "omitted": false,
         "required": false,
         "type": "Array",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "poster",
         "linkType": "Asset",
@@ -99,23 +99,23 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Link",
-        "validations": Array [],
+        "validations": [],
       },
     ],
     "getEditorInterface": [Function],
     "name": "testTopic",
     "publish": [Function],
-    "sys": Object {
+    "sys": {
       "createdAt": "2021-08-06T16:53:44.571Z",
-      "createdBy": Object {
-        "sys": Object {
+      "createdBy": {
+        "sys": {
           "id": "5TOHdotj5KMHTHKvucd6zZ",
           "linkType": "User",
           "type": "Link",
         },
       },
-      "environment": Object {
-        "sys": Object {
+      "environment": {
+        "sys": {
           "id": "master",
           "linkType": "Environment",
           "type": "Link",
@@ -124,8 +124,8 @@ Array [
       "firstPublishedAt": "2021-08-06T16:53:45.059Z",
       "id": "testTopic",
       "publishedAt": "2021-08-08T19:28:59.973Z",
-      "publishedBy": Object {
-        "sys": Object {
+      "publishedBy": {
+        "sys": {
           "id": "5TOHdotj5KMHTHKvucd6zZ",
           "linkType": "User",
           "type": "Link",
@@ -133,8 +133,8 @@ Array [
       },
       "publishedCounter": 10,
       "publishedVersion": 19,
-      "space": Object {
-        "sys": Object {
+      "space": {
+        "sys": {
           "id": "tctsmza39jg6",
           "linkType": "Space",
           "type": "Link",
@@ -142,8 +142,8 @@ Array [
       },
       "type": "ContentType",
       "updatedAt": "2021-08-08T19:28:59.973Z",
-      "updatedBy": Object {
-        "sys": Object {
+      "updatedBy": {
+        "sys": {
           "id": "5TOHdotj5KMHTHKvucd6zZ",
           "linkType": "User",
           "type": "Link",
@@ -153,11 +153,11 @@ Array [
     },
     "update": [Function],
   },
-  Object {
+  {
     "description": null,
     "displayField": "heading",
-    "fields": Array [
-      Object {
+    "fields": [
+      {
         "disabled": false,
         "id": "anchor",
         "localized": false,
@@ -165,9 +165,9 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Symbol",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "description",
         "localized": false,
@@ -175,9 +175,9 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Symbol",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "eventId",
         "localized": false,
@@ -185,9 +185,9 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Symbol",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "heading",
         "localized": false,
@@ -195,9 +195,9 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Symbol",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "query",
         "localized": false,
@@ -205,9 +205,9 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Symbol",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "url",
         "localized": false,
@@ -215,23 +215,23 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Symbol",
-        "validations": Array [],
+        "validations": [],
       },
     ],
     "getEditorInterface": [Function],
     "name": "testAction",
     "publish": [Function],
-    "sys": Object {
+    "sys": {
       "createdAt": "2021-08-05T21:24:19.855Z",
-      "createdBy": Object {
-        "sys": Object {
+      "createdBy": {
+        "sys": {
           "id": "5TOHdotj5KMHTHKvucd6zZ",
           "linkType": "User",
           "type": "Link",
         },
       },
-      "environment": Object {
-        "sys": Object {
+      "environment": {
+        "sys": {
           "id": "master",
           "linkType": "Environment",
           "type": "Link",
@@ -240,8 +240,8 @@ Array [
       "firstPublishedAt": "2021-08-05T21:24:23.900Z",
       "id": "testAction",
       "publishedAt": "2021-08-08T19:28:56.882Z",
-      "publishedBy": Object {
-        "sys": Object {
+      "publishedBy": {
+        "sys": {
           "id": "5TOHdotj5KMHTHKvucd6zZ",
           "linkType": "User",
           "type": "Link",
@@ -249,8 +249,8 @@ Array [
       },
       "publishedCounter": 21,
       "publishedVersion": 46,
-      "space": Object {
-        "sys": Object {
+      "space": {
+        "sys": {
           "id": "tctsmza39jg6",
           "linkType": "Space",
           "type": "Link",
@@ -258,8 +258,8 @@ Array [
       },
       "type": "ContentType",
       "updatedAt": "2021-08-08T19:28:56.882Z",
-      "updatedBy": Object {
-        "sys": Object {
+      "updatedBy": {
+        "sys": {
           "id": "5TOHdotj5KMHTHKvucd6zZ",
           "linkType": "User",
           "type": "Link",
@@ -269,11 +269,11 @@ Array [
     },
     "update": [Function],
   },
-  Object {
+  {
     "description": "navigationSection",
     "displayField": "title",
-    "fields": Array [
-      Object {
+    "fields": [
+      {
         "disabled": false,
         "id": "title",
         "localized": false,
@@ -281,9 +281,9 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Symbol",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "logo",
         "linkType": "Asset",
@@ -292,9 +292,9 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Link",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "logoAction",
         "linkType": "Entry",
@@ -303,23 +303,23 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Link",
-        "validations": Array [
-          Object {
-            "linkContentType": Array [
+        "validations": [
+          {
+            "linkContentType": [
               "action",
             ],
           },
         ],
       },
-      Object {
+      {
         "disabled": false,
         "id": "header",
-        "items": Object {
+        "items": {
           "linkType": "Entry",
           "type": "Link",
-          "validations": Array [
-            Object {
-              "linkContentType": Array [
+          "validations": [
+            {
+              "linkContentType": [
                 "navigationSegment",
               ],
             },
@@ -330,17 +330,17 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Array",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "footer",
-        "items": Object {
+        "items": {
           "linkType": "Entry",
           "type": "Link",
-          "validations": Array [
-            Object {
-              "linkContentType": Array [
+          "validations": [
+            {
+              "linkContentType": [
                 "navigationSegment",
               ],
             },
@@ -351,9 +351,9 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Array",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "social",
         "linkType": "Entry",
@@ -362,15 +362,15 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Link",
-        "validations": Array [
-          Object {
-            "linkContentType": Array [
+        "validations": [
+          {
+            "linkContentType": [
               "navigationSegment",
             ],
           },
         ],
       },
-      Object {
+      {
         "disabled": false,
         "id": "actions",
         "linkType": "Entry",
@@ -379,15 +379,15 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Link",
-        "validations": Array [
-          Object {
-            "linkContentType": Array [
+        "validations": [
+          {
+            "linkContentType": [
               "navigationSegment",
             ],
           },
         ],
       },
-      Object {
+      {
         "disabled": false,
         "id": "legal",
         "linkType": "Entry",
@@ -396,23 +396,23 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Link",
-        "validations": Array [
-          Object {
-            "linkContentType": Array [
+        "validations": [
+          {
+            "linkContentType": [
               "navigationSegment",
             ],
           },
         ],
       },
-      Object {
+      {
         "disabled": false,
         "id": "information",
-        "items": Object {
+        "items": {
           "linkType": "Entry",
           "type": "Link",
-          "validations": Array [
-            Object {
-              "linkContentType": Array [
+          "validations": [
+            {
+              "linkContentType": [
                 "navigationSegment",
               ],
             },
@@ -423,17 +423,17 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Array",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "sitemap",
-        "items": Object {
+        "items": {
           "linkType": "Entry",
           "type": "Link",
-          "validations": Array [
-            Object {
-              "linkContentType": Array [
+          "validations": [
+            {
+              "linkContentType": [
                 "navigationSegment",
               ],
             },
@@ -444,23 +444,23 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Array",
-        "validations": Array [],
+        "validations": [],
       },
     ],
     "getEditorInterface": [Function],
     "name": "navigationSection",
     "publish": [Function],
-    "sys": Object {
+    "sys": {
       "createdAt": "2021-08-05T21:24:18.246Z",
-      "createdBy": Object {
-        "sys": Object {
+      "createdBy": {
+        "sys": {
           "id": "5TOHdotj5KMHTHKvucd6zZ",
           "linkType": "User",
           "type": "Link",
         },
       },
-      "environment": Object {
-        "sys": Object {
+      "environment": {
+        "sys": {
           "id": "master",
           "linkType": "Environment",
           "type": "Link",
@@ -469,8 +469,8 @@ Array [
       "firstPublishedAt": "2021-08-05T21:24:23.551Z",
       "id": "navigationSection",
       "publishedAt": "2021-08-05T21:24:23.551Z",
-      "publishedBy": Object {
-        "sys": Object {
+      "publishedBy": {
+        "sys": {
           "id": "5TOHdotj5KMHTHKvucd6zZ",
           "linkType": "User",
           "type": "Link",
@@ -478,8 +478,8 @@ Array [
       },
       "publishedCounter": 1,
       "publishedVersion": 1,
-      "space": Object {
-        "sys": Object {
+      "space": {
+        "sys": {
           "id": "tctsmza39jg6",
           "linkType": "Space",
           "type": "Link",
@@ -487,8 +487,8 @@ Array [
       },
       "type": "ContentType",
       "updatedAt": "2021-08-05T21:24:23.551Z",
-      "updatedBy": Object {
-        "sys": Object {
+      "updatedBy": {
+        "sys": {
           "id": "5TOHdotj5KMHTHKvucd6zZ",
           "linkType": "User",
           "type": "Link",
@@ -498,11 +498,11 @@ Array [
     },
     "update": [Function],
   },
-  Object {
+  {
     "description": "Topic section",
     "displayField": "title",
-    "fields": Array [
-      Object {
+    "fields": [
+      {
         "disabled": false,
         "id": "title",
         "localized": false,
@@ -510,9 +510,9 @@ Array [
         "omitted": false,
         "required": true,
         "type": "Symbol",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "variant",
         "localized": false,
@@ -520,9 +520,9 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Symbol",
-        "validations": Array [
-          Object {
-            "in": Array [
+        "validations": [
+          {
+            "in": [
               "block",
               "card",
               "divider",
@@ -538,15 +538,15 @@ Array [
           },
         ],
       },
-      Object {
+      {
         "disabled": false,
         "id": "topics",
-        "items": Object {
+        "items": {
           "linkType": "Entry",
           "type": "Link",
-          "validations": Array [
-            Object {
-              "linkContentType": Array [
+          "validations": [
+            {
+              "linkContentType": [
                 "topic",
               ],
             },
@@ -557,9 +557,9 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Array",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "hideIcon",
         "localized": false,
@@ -567,9 +567,9 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Boolean",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "hideMedia",
         "localized": false,
@@ -577,9 +577,9 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Boolean",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "hideHeading",
         "localized": false,
@@ -587,9 +587,9 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Boolean",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "hideAbstract",
         "localized": false,
@@ -597,9 +597,9 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Boolean",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "hideAction",
         "localized": false,
@@ -607,9 +607,9 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Boolean",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "reversedOrder",
         "localized": false,
@@ -617,9 +617,9 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Boolean",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "eventId",
         "localized": false,
@@ -627,13 +627,13 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Symbol",
-        "validations": Array [
-          Object {
+        "validations": [
+          {
             "unique": true,
           },
         ],
       },
-      Object {
+      {
         "disabled": false,
         "id": "theme",
         "localized": false,
@@ -641,16 +641,16 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Symbol",
-        "validations": Array [
-          Object {
-            "in": Array [
+        "validations": [
+          {
+            "in": [
               "glacierLight",
               "glacierDark",
             ],
           },
         ],
       },
-      Object {
+      {
         "disabled": true,
         "id": "modelVersion",
         "localized": false,
@@ -658,23 +658,23 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Symbol",
-        "validations": Array [],
+        "validations": [],
       },
     ],
     "getEditorInterface": [Function],
     "name": "topicSection",
     "publish": [Function],
-    "sys": Object {
+    "sys": {
       "createdAt": "2021-08-05T21:24:18.088Z",
-      "createdBy": Object {
-        "sys": Object {
+      "createdBy": {
+        "sys": {
           "id": "5TOHdotj5KMHTHKvucd6zZ",
           "linkType": "User",
           "type": "Link",
         },
       },
-      "environment": Object {
-        "sys": Object {
+      "environment": {
+        "sys": {
           "id": "master",
           "linkType": "Environment",
           "type": "Link",
@@ -683,8 +683,8 @@ Array [
       "firstPublishedAt": "2021-08-05T21:24:22.940Z",
       "id": "topicSection",
       "publishedAt": "2021-08-05T21:24:22.940Z",
-      "publishedBy": Object {
-        "sys": Object {
+      "publishedBy": {
+        "sys": {
           "id": "5TOHdotj5KMHTHKvucd6zZ",
           "linkType": "User",
           "type": "Link",
@@ -692,8 +692,8 @@ Array [
       },
       "publishedCounter": 1,
       "publishedVersion": 1,
-      "space": Object {
-        "sys": Object {
+      "space": {
+        "sys": {
           "id": "tctsmza39jg6",
           "linkType": "Space",
           "type": "Link",
@@ -701,8 +701,8 @@ Array [
       },
       "type": "ContentType",
       "updatedAt": "2021-08-05T21:24:22.940Z",
-      "updatedBy": Object {
-        "sys": Object {
+      "updatedBy": {
+        "sys": {
           "id": "5TOHdotj5KMHTHKvucd6zZ",
           "linkType": "User",
           "type": "Link",
@@ -712,11 +712,11 @@ Array [
     },
     "update": [Function],
   },
-  Object {
+  {
     "description": "Topic",
     "displayField": "title",
-    "fields": Array [
-      Object {
+    "fields": [
+      {
         "disabled": false,
         "id": "title",
         "localized": false,
@@ -724,9 +724,9 @@ Array [
         "omitted": false,
         "required": true,
         "type": "Symbol",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "heading",
         "localized": false,
@@ -734,9 +734,9 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Symbol",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "abstract",
         "localized": false,
@@ -744,31 +744,31 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Text",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "media",
-        "items": Object {
+        "items": {
           "linkType": "Asset",
           "type": "Link",
-          "validations": Array [],
+          "validations": [],
         },
         "localized": false,
         "name": "Onderwerp afbeelding",
         "omitted": false,
         "required": false,
         "type": "Array",
-        "validations": Array [
-          Object {
-            "size": Object {
+        "validations": [
+          {
+            "size": {
               "max": 4,
               "min": 1,
             },
           },
         ],
       },
-      Object {
+      {
         "disabled": false,
         "id": "icon",
         "localized": false,
@@ -776,24 +776,24 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Symbol",
-        "validations": Array [
-          Object {
-            "in": Array [
+        "validations": [
+          {
+            "in": [
               "activity",
               "airplay",
             ],
           },
         ],
       },
-      Object {
+      {
         "disabled": false,
         "id": "actions",
-        "items": Object {
+        "items": {
           "linkType": "Entry",
           "type": "Link",
-          "validations": Array [
-            Object {
-              "linkContentType": Array [
+          "validations": [
+            {
+              "linkContentType": [
                 "action",
               ],
             },
@@ -804,9 +804,9 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Array",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "poster",
         "linkType": "Asset",
@@ -815,15 +815,15 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Link",
-        "validations": Array [
-          Object {
-            "linkMimetypeGroup": Array [
+        "validations": [
+          {
+            "linkMimetypeGroup": [
               "image",
             ],
           },
         ],
       },
-      Object {
+      {
         "disabled": false,
         "id": "mediaEmbed",
         "linkType": "Entry",
@@ -832,15 +832,15 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Link",
-        "validations": Array [
-          Object {
-            "linkContentType": Array [
+        "validations": [
+          {
+            "linkContentType": [
               "embed",
             ],
           },
         ],
       },
-      Object {
+      {
         "disabled": true,
         "id": "modelVersion",
         "localized": false,
@@ -848,23 +848,23 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Symbol",
-        "validations": Array [],
+        "validations": [],
       },
     ],
     "getEditorInterface": [Function],
     "name": "topic",
     "publish": [Function],
-    "sys": Object {
+    "sys": {
       "createdAt": "2021-08-05T21:24:20.096Z",
-      "createdBy": Object {
-        "sys": Object {
+      "createdBy": {
+        "sys": {
           "id": "5TOHdotj5KMHTHKvucd6zZ",
           "linkType": "User",
           "type": "Link",
         },
       },
-      "environment": Object {
-        "sys": Object {
+      "environment": {
+        "sys": {
           "id": "master",
           "linkType": "Environment",
           "type": "Link",
@@ -873,8 +873,8 @@ Array [
       "firstPublishedAt": "2021-08-05T21:24:22.602Z",
       "id": "topic",
       "publishedAt": "2021-08-05T21:24:22.602Z",
-      "publishedBy": Object {
-        "sys": Object {
+      "publishedBy": {
+        "sys": {
           "id": "5TOHdotj5KMHTHKvucd6zZ",
           "linkType": "User",
           "type": "Link",
@@ -882,8 +882,8 @@ Array [
       },
       "publishedCounter": 1,
       "publishedVersion": 1,
-      "space": Object {
-        "sys": Object {
+      "space": {
+        "sys": {
           "id": "tctsmza39jg6",
           "linkType": "Space",
           "type": "Link",
@@ -891,8 +891,8 @@ Array [
       },
       "type": "ContentType",
       "updatedAt": "2021-08-05T21:24:22.602Z",
-      "updatedBy": Object {
-        "sys": Object {
+      "updatedBy": {
+        "sys": {
           "id": "5TOHdotj5KMHTHKvucd6zZ",
           "linkType": "User",
           "type": "Link",
@@ -902,11 +902,11 @@ Array [
     },
     "update": [Function],
   },
-  Object {
+  {
     "description": "Text section",
     "displayField": "title",
-    "fields": Array [
-      Object {
+    "fields": [
+      {
         "disabled": false,
         "id": "title",
         "localized": false,
@@ -914,9 +914,9 @@ Array [
         "omitted": false,
         "required": true,
         "type": "Symbol",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "variant",
         "localized": false,
@@ -924,15 +924,15 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Symbol",
-        "validations": Array [
-          Object {
-            "in": Array [
+        "validations": [
+          {
+            "in": [
               "text",
             ],
           },
         ],
       },
-      Object {
+      {
         "disabled": false,
         "id": "text",
         "localized": false,
@@ -940,9 +940,9 @@ Array [
         "omitted": false,
         "required": true,
         "type": "RichText",
-        "validations": Array [
-          Object {
-            "enabledMarks": Array [
+        "validations": [
+          {
+            "enabledMarks": [
               "bold",
               "italic",
               "underline",
@@ -950,19 +950,19 @@ Array [
             ],
             "message": "Only bold, italic, underline, and code marks are allowed",
           },
-          Object {
-            "nodes": Object {
-              "embedded-entry-block": Array [
-                Object {
-                  "linkContentType": Array [
+          {
+            "nodes": {
+              "embedded-entry-block": [
+                {
+                  "linkContentType": [
                     "embed",
                     "topicSection",
                   ],
                 },
               ],
-              "embedded-entry-inline": Array [
-                Object {
-                  "linkContentType": Array [
+              "embedded-entry-inline": [
+                {
+                  "linkContentType": [
                     "embed",
                     "topicSection",
                   ],
@@ -973,7 +973,7 @@ Array [
           },
         ],
       },
-      Object {
+      {
         "disabled": false,
         "id": "eventId",
         "localized": false,
@@ -981,13 +981,13 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Symbol",
-        "validations": Array [
-          Object {
+        "validations": [
+          {
             "unique": true,
           },
         ],
       },
-      Object {
+      {
         "disabled": true,
         "id": "modelVersion",
         "localized": false,
@@ -995,23 +995,23 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Symbol",
-        "validations": Array [],
+        "validations": [],
       },
     ],
     "getEditorInterface": [Function],
     "name": "textSection",
     "publish": [Function],
-    "sys": Object {
+    "sys": {
       "createdAt": "2021-08-05T21:24:17.604Z",
-      "createdBy": Object {
-        "sys": Object {
+      "createdBy": {
+        "sys": {
           "id": "5TOHdotj5KMHTHKvucd6zZ",
           "linkType": "User",
           "type": "Link",
         },
       },
-      "environment": Object {
-        "sys": Object {
+      "environment": {
+        "sys": {
           "id": "master",
           "linkType": "Environment",
           "type": "Link",
@@ -1020,8 +1020,8 @@ Array [
       "firstPublishedAt": "2021-08-05T21:24:22.296Z",
       "id": "textSection",
       "publishedAt": "2021-08-05T21:24:22.296Z",
-      "publishedBy": Object {
-        "sys": Object {
+      "publishedBy": {
+        "sys": {
           "id": "5TOHdotj5KMHTHKvucd6zZ",
           "linkType": "User",
           "type": "Link",
@@ -1029,8 +1029,8 @@ Array [
       },
       "publishedCounter": 1,
       "publishedVersion": 1,
-      "space": Object {
-        "sys": Object {
+      "space": {
+        "sys": {
           "id": "tctsmza39jg6",
           "linkType": "Space",
           "type": "Link",
@@ -1038,8 +1038,8 @@ Array [
       },
       "type": "ContentType",
       "updatedAt": "2021-08-05T21:24:22.296Z",
-      "updatedBy": Object {
-        "sys": Object {
+      "updatedBy": {
+        "sys": {
           "id": "5TOHdotj5KMHTHKvucd6zZ",
           "linkType": "User",
           "type": "Link",
@@ -1049,11 +1049,11 @@ Array [
     },
     "update": [Function],
   },
-  Object {
+  {
     "description": "Navigation segment",
     "displayField": "title",
-    "fields": Array [
-      Object {
+    "fields": [
+      {
         "disabled": false,
         "id": "title",
         "localized": false,
@@ -1061,9 +1061,9 @@ Array [
         "omitted": false,
         "required": true,
         "type": "Symbol",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "heading",
         "localized": false,
@@ -1071,9 +1071,9 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Symbol",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "abstract",
         "localized": false,
@@ -1081,17 +1081,17 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Text",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "actions",
-        "items": Object {
+        "items": {
           "linkType": "Entry",
           "type": "Link",
-          "validations": Array [
-            Object {
-              "linkContentType": Array [
+          "validations": [
+            {
+              "linkContentType": [
                 "action",
               ],
             },
@@ -1102,9 +1102,9 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Array",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": true,
         "id": "modelVersion",
         "localized": false,
@@ -1112,23 +1112,23 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Symbol",
-        "validations": Array [],
+        "validations": [],
       },
     ],
     "getEditorInterface": [Function],
     "name": "navigationSegment",
     "publish": [Function],
-    "sys": Object {
+    "sys": {
       "createdAt": "2021-08-05T21:24:17.555Z",
-      "createdBy": Object {
-        "sys": Object {
+      "createdBy": {
+        "sys": {
           "id": "5TOHdotj5KMHTHKvucd6zZ",
           "linkType": "User",
           "type": "Link",
         },
       },
-      "environment": Object {
-        "sys": Object {
+      "environment": {
+        "sys": {
           "id": "master",
           "linkType": "Environment",
           "type": "Link",
@@ -1137,8 +1137,8 @@ Array [
       "firstPublishedAt": "2021-08-05T21:24:21.726Z",
       "id": "navigationSegment",
       "publishedAt": "2021-08-05T21:24:21.726Z",
-      "publishedBy": Object {
-        "sys": Object {
+      "publishedBy": {
+        "sys": {
           "id": "5TOHdotj5KMHTHKvucd6zZ",
           "linkType": "User",
           "type": "Link",
@@ -1146,8 +1146,8 @@ Array [
       },
       "publishedCounter": 1,
       "publishedVersion": 1,
-      "space": Object {
-        "sys": Object {
+      "space": {
+        "sys": {
           "id": "tctsmza39jg6",
           "linkType": "Space",
           "type": "Link",
@@ -1155,8 +1155,8 @@ Array [
       },
       "type": "ContentType",
       "updatedAt": "2021-08-05T21:24:21.726Z",
-      "updatedBy": Object {
-        "sys": Object {
+      "updatedBy": {
+        "sys": {
           "id": "5TOHdotj5KMHTHKvucd6zZ",
           "linkType": "User",
           "type": "Link",
@@ -1166,11 +1166,11 @@ Array [
     },
     "update": [Function],
   },
-  Object {
+  {
     "description": "Page",
     "displayField": "title",
-    "fields": Array [
-      Object {
+    "fields": [
+      {
         "disabled": false,
         "id": "title",
         "localized": false,
@@ -1178,9 +1178,9 @@ Array [
         "omitted": false,
         "required": true,
         "type": "Symbol",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "path",
         "localized": false,
@@ -1188,27 +1188,27 @@ Array [
         "omitted": false,
         "required": true,
         "type": "Symbol",
-        "validations": Array [
-          Object {
+        "validations": [
+          {
             "message": "Please use a valid path: /this/is/a/valid/path/with/:slug",
-            "regexp": Object {
-              "pattern": "^\\\\/[a-z0-9:\\\\._/~%\\\\-\\\\+&\\\\#\\\\?!=\\\\(\\\\)@]*$",
+            "regexp": {
+              "pattern": "^\\/[a-z0-9:\\._/~%\\-\\+&\\#\\?!=\\(\\)@]*$",
             },
           },
-          Object {
+          {
             "unique": true,
           },
         ],
       },
-      Object {
+      {
         "disabled": false,
         "id": "sections",
-        "items": Object {
+        "items": {
           "linkType": "Entry",
           "type": "Link",
-          "validations": Array [
-            Object {
-              "linkContentType": Array [
+          "validations": [
+            {
+              "linkContentType": [
                 "navigationSection",
                 "tableSection",
                 "textSection",
@@ -1222,9 +1222,9 @@ Array [
         "omitted": false,
         "required": true,
         "type": "Array",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "theme",
         "localized": false,
@@ -1232,16 +1232,16 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Symbol",
-        "validations": Array [
-          Object {
-            "in": Array [
+        "validations": [
+          {
+            "in": [
               "glacierLight",
               "glacierDark",
             ],
           },
         ],
       },
-      Object {
+      {
         "disabled": false,
         "id": "seoTitle",
         "localized": false,
@@ -1249,9 +1249,9 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Symbol",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "seoDescription",
         "localized": false,
@@ -1259,16 +1259,16 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Symbol",
-        "validations": Array [
-          Object {
-            "size": Object {
+        "validations": [
+          {
+            "size": {
               "max": 155,
               "min": 0,
             },
           },
         ],
       },
-      Object {
+      {
         "disabled": false,
         "id": "seoImage",
         "linkType": "Asset",
@@ -1277,29 +1277,29 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Link",
-        "validations": Array [
-          Object {
-            "linkMimetypeGroup": Array [
+        "validations": [
+          {
+            "linkMimetypeGroup": [
               "image",
             ],
           },
         ],
       },
-      Object {
+      {
         "disabled": false,
         "id": "seoKeywords",
-        "items": Object {
+        "items": {
           "type": "Symbol",
-          "validations": Array [],
+          "validations": [],
         },
         "localized": false,
         "name": "Seo keywords",
         "omitted": false,
         "required": false,
         "type": "Array",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": true,
         "id": "modelVersion",
         "localized": false,
@@ -1307,23 +1307,23 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Symbol",
-        "validations": Array [],
+        "validations": [],
       },
     ],
     "getEditorInterface": [Function],
     "name": "page",
     "publish": [Function],
-    "sys": Object {
+    "sys": {
       "createdAt": "2021-08-05T21:24:17.570Z",
-      "createdBy": Object {
-        "sys": Object {
+      "createdBy": {
+        "sys": {
           "id": "5TOHdotj5KMHTHKvucd6zZ",
           "linkType": "User",
           "type": "Link",
         },
       },
-      "environment": Object {
-        "sys": Object {
+      "environment": {
+        "sys": {
           "id": "master",
           "linkType": "Environment",
           "type": "Link",
@@ -1332,8 +1332,8 @@ Array [
       "firstPublishedAt": "2021-08-05T21:24:21.390Z",
       "id": "page",
       "publishedAt": "2021-08-05T21:24:21.390Z",
-      "publishedBy": Object {
-        "sys": Object {
+      "publishedBy": {
+        "sys": {
           "id": "5TOHdotj5KMHTHKvucd6zZ",
           "linkType": "User",
           "type": "Link",
@@ -1341,8 +1341,8 @@ Array [
       },
       "publishedCounter": 1,
       "publishedVersion": 1,
-      "space": Object {
-        "sys": Object {
+      "space": {
+        "sys": {
           "id": "tctsmza39jg6",
           "linkType": "Space",
           "type": "Link",
@@ -1350,8 +1350,8 @@ Array [
       },
       "type": "ContentType",
       "updatedAt": "2021-08-05T21:24:21.390Z",
-      "updatedBy": Object {
-        "sys": Object {
+      "updatedBy": {
+        "sys": {
           "id": "5TOHdotj5KMHTHKvucd6zZ",
           "linkType": "User",
           "type": "Link",
@@ -1361,11 +1361,11 @@ Array [
     },
     "update": [Function],
   },
-  Object {
+  {
     "description": "Globals",
     "displayField": "title",
-    "fields": Array [
-      Object {
+    "fields": [
+      {
         "disabled": false,
         "id": "title",
         "localized": false,
@@ -1373,9 +1373,9 @@ Array [
         "omitted": false,
         "required": true,
         "type": "Symbol",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "siteAuthor",
         "localized": false,
@@ -1383,9 +1383,9 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Symbol",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "siteDescription",
         "localized": false,
@@ -1393,9 +1393,9 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Symbol",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "siteHeading",
         "localized": false,
@@ -1403,23 +1403,23 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Symbol",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "siteKeywords",
-        "items": Object {
+        "items": {
           "type": "Symbol",
-          "validations": Array [],
+          "validations": [],
         },
         "localized": false,
         "name": "Site sleutelwoorden",
         "omitted": false,
         "required": false,
         "type": "Array",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "siteImage",
         "linkType": "Asset",
@@ -1428,23 +1428,23 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Link",
-        "validations": Array [
-          Object {
-            "linkMimetypeGroup": Array [
+        "validations": [
+          {
+            "linkMimetypeGroup": [
               "image",
             ],
           },
         ],
       },
-      Object {
+      {
         "disabled": false,
         "id": "siteEmbeds",
-        "items": Object {
+        "items": {
           "linkType": "Entry",
           "type": "Link",
-          "validations": Array [
-            Object {
-              "linkContentType": Array [
+          "validations": [
+            {
+              "linkContentType": [
                 "embed",
               ],
             },
@@ -1455,9 +1455,9 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Array",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "skipToContentHeading",
         "localized": false,
@@ -1465,9 +1465,9 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Symbol",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": true,
         "id": "modelVersion",
         "localized": false,
@@ -1475,23 +1475,23 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Symbol",
-        "validations": Array [],
+        "validations": [],
       },
     ],
     "getEditorInterface": [Function],
     "name": "globals",
     "publish": [Function],
-    "sys": Object {
+    "sys": {
       "createdAt": "2021-08-05T21:24:17.577Z",
-      "createdBy": Object {
-        "sys": Object {
+      "createdBy": {
+        "sys": {
           "id": "5TOHdotj5KMHTHKvucd6zZ",
           "linkType": "User",
           "type": "Link",
         },
       },
-      "environment": Object {
-        "sys": Object {
+      "environment": {
+        "sys": {
           "id": "master",
           "linkType": "Environment",
           "type": "Link",
@@ -1500,8 +1500,8 @@ Array [
       "firstPublishedAt": "2021-08-05T21:24:21.013Z",
       "id": "globals",
       "publishedAt": "2021-08-05T21:24:21.013Z",
-      "publishedBy": Object {
-        "sys": Object {
+      "publishedBy": {
+        "sys": {
           "id": "5TOHdotj5KMHTHKvucd6zZ",
           "linkType": "User",
           "type": "Link",
@@ -1509,8 +1509,8 @@ Array [
       },
       "publishedCounter": 1,
       "publishedVersion": 1,
-      "space": Object {
-        "sys": Object {
+      "space": {
+        "sys": {
           "id": "tctsmza39jg6",
           "linkType": "Space",
           "type": "Link",
@@ -1518,8 +1518,8 @@ Array [
       },
       "type": "ContentType",
       "updatedAt": "2021-08-05T21:24:21.013Z",
-      "updatedBy": Object {
-        "sys": Object {
+      "updatedBy": {
+        "sys": {
           "id": "5TOHdotj5KMHTHKvucd6zZ",
           "linkType": "User",
           "type": "Link",
@@ -1529,11 +1529,11 @@ Array [
     },
     "update": [Function],
   },
-  Object {
+  {
     "description": "Embed",
     "displayField": "title",
-    "fields": Array [
-      Object {
+    "fields": [
+      {
         "disabled": false,
         "id": "title",
         "localized": false,
@@ -1541,9 +1541,9 @@ Array [
         "omitted": false,
         "required": true,
         "type": "Symbol",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "code",
         "localized": false,
@@ -1551,9 +1551,9 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Text",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "type",
         "localized": false,
@@ -1561,9 +1561,9 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Symbol",
-        "validations": Array [
-          Object {
-            "in": Array [
+        "validations": [
+          {
+            "in": [
               "html",
               "js-action",
               "js-app",
@@ -1574,7 +1574,7 @@ Array [
           },
         ],
       },
-      Object {
+      {
         "disabled": true,
         "id": "modelVersion",
         "localized": false,
@@ -1582,23 +1582,23 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Symbol",
-        "validations": Array [],
+        "validations": [],
       },
     ],
     "getEditorInterface": [Function],
     "name": "embed",
     "publish": [Function],
-    "sys": Object {
+    "sys": {
       "createdAt": "2021-08-05T21:24:17.547Z",
-      "createdBy": Object {
-        "sys": Object {
+      "createdBy": {
+        "sys": {
           "id": "5TOHdotj5KMHTHKvucd6zZ",
           "linkType": "User",
           "type": "Link",
         },
       },
-      "environment": Object {
-        "sys": Object {
+      "environment": {
+        "sys": {
           "id": "master",
           "linkType": "Environment",
           "type": "Link",
@@ -1607,8 +1607,8 @@ Array [
       "firstPublishedAt": "2021-08-05T21:24:20.715Z",
       "id": "embed",
       "publishedAt": "2021-08-05T21:24:20.715Z",
-      "publishedBy": Object {
-        "sys": Object {
+      "publishedBy": {
+        "sys": {
           "id": "5TOHdotj5KMHTHKvucd6zZ",
           "linkType": "User",
           "type": "Link",
@@ -1616,8 +1616,8 @@ Array [
       },
       "publishedCounter": 1,
       "publishedVersion": 1,
-      "space": Object {
-        "sys": Object {
+      "space": {
+        "sys": {
           "id": "tctsmza39jg6",
           "linkType": "Space",
           "type": "Link",
@@ -1625,8 +1625,8 @@ Array [
       },
       "type": "ContentType",
       "updatedAt": "2021-08-05T21:24:20.715Z",
-      "updatedBy": Object {
-        "sys": Object {
+      "updatedBy": {
+        "sys": {
           "id": "5TOHdotj5KMHTHKvucd6zZ",
           "linkType": "User",
           "type": "Link",
@@ -1636,11 +1636,11 @@ Array [
     },
     "update": [Function],
   },
-  Object {
+  {
     "description": "Action",
     "displayField": "title",
-    "fields": Array [
-      Object {
+    "fields": [
+      {
         "disabled": false,
         "id": "title",
         "localized": false,
@@ -1648,9 +1648,9 @@ Array [
         "omitted": false,
         "required": true,
         "type": "Symbol",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "heading",
         "localized": false,
@@ -1658,9 +1658,9 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Symbol",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "description",
         "localized": false,
@@ -1668,9 +1668,9 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Symbol",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "icon",
         "localized": false,
@@ -1678,16 +1678,16 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Symbol",
-        "validations": Array [
-          Object {
-            "in": Array [
+        "validations": [
+          {
+            "in": [
               "activity",
               "airplay",
             ],
           },
         ],
       },
-      Object {
+      {
         "disabled": false,
         "id": "page",
         "linkType": "Entry",
@@ -1696,15 +1696,15 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Link",
-        "validations": Array [
-          Object {
-            "linkContentType": Array [
+        "validations": [
+          {
+            "linkContentType": [
               "page",
             ],
           },
         ],
       },
-      Object {
+      {
         "disabled": false,
         "id": "url",
         "localized": false,
@@ -1712,16 +1712,16 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Symbol",
-        "validations": Array [
-          Object {
+        "validations": [
+          {
             "message": "Please use a valid url: https://this/is/a/valid/url",
-            "regexp": Object {
-              "pattern": "^(ftp|http|https):\\\\/\\\\/(\\\\w+:{0,1}\\\\w*@)?(\\\\S+)(:[0-9]+)?(\\\\/|\\\\/([\\\\w#!:.?+=&%@!\\\\-/]))?$",
+            "regexp": {
+              "pattern": "^(ftp|http|https):\\/\\/(\\w+:{0,1}\\w*@)?(\\S+)(:[0-9]+)?(\\/|\\/([\\w#!:.?+=&%@!\\-/]))?$",
             },
           },
         ],
       },
-      Object {
+      {
         "disabled": false,
         "id": "anchor",
         "localized": false,
@@ -1729,9 +1729,9 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Symbol",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "query",
         "localized": false,
@@ -1739,9 +1739,9 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Symbol",
-        "validations": Array [],
+        "validations": [],
       },
-      Object {
+      {
         "disabled": false,
         "id": "eventId",
         "localized": false,
@@ -1749,13 +1749,13 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Symbol",
-        "validations": Array [
-          Object {
+        "validations": [
+          {
             "unique": true,
           },
         ],
       },
-      Object {
+      {
         "disabled": true,
         "id": "modelVersion",
         "localized": false,
@@ -1763,23 +1763,23 @@ Array [
         "omitted": false,
         "required": false,
         "type": "Symbol",
-        "validations": Array [],
+        "validations": [],
       },
     ],
     "getEditorInterface": [Function],
     "name": "action",
     "publish": [Function],
-    "sys": Object {
+    "sys": {
       "createdAt": "2021-08-05T21:24:17.564Z",
-      "createdBy": Object {
-        "sys": Object {
+      "createdBy": {
+        "sys": {
           "id": "5TOHdotj5KMHTHKvucd6zZ",
           "linkType": "User",
           "type": "Link",
         },
       },
-      "environment": Object {
-        "sys": Object {
+      "environment": {
+        "sys": {
           "id": "master",
           "linkType": "Environment",
           "type": "Link",
@@ -1788,8 +1788,8 @@ Array [
       "firstPublishedAt": "2021-08-05T21:24:20.359Z",
       "id": "action",
       "publishedAt": "2021-08-05T21:24:20.359Z",
-      "publishedBy": Object {
-        "sys": Object {
+      "publishedBy": {
+        "sys": {
           "id": "5TOHdotj5KMHTHKvucd6zZ",
           "linkType": "User",
           "type": "Link",
@@ -1797,8 +1797,8 @@ Array [
       },
       "publishedCounter": 1,
       "publishedVersion": 1,
-      "space": Object {
-        "sys": Object {
+      "space": {
+        "sys": {
           "id": "tctsmza39jg6",
           "linkType": "Space",
           "type": "Link",
@@ -1806,8 +1806,8 @@ Array [
       },
       "type": "ContentType",
       "updatedAt": "2021-08-05T21:24:20.359Z",
-      "updatedBy": Object {
-        "sys": Object {
+      "updatedBy": {
+        "sys": {
           "id": "5TOHdotj5KMHTHKvucd6zZ",
           "linkType": "User",
           "type": "Link",

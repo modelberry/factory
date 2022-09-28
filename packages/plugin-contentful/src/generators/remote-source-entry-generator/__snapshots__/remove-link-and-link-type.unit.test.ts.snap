@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`removeLinkAndLinkType should remove link and linkType 1`] = `
-Object {
+{
   "disabled": false,
   "id": "social",
   "linkType": "Entry",
@@ -10,9 +10,9 @@ Object {
   "omitted": false,
   "required": false,
   "type": "Link",
-  "validations": Array [
-    Object {
-      "linkContentType": Array [
+  "validations": [
+    {
+      "linkContentType": [
         "navigationSegment",
       ],
     },
@@ -21,15 +21,15 @@ Object {
 `;
 
 exports[`removeLinkAndLinkType should remove link and linkType from items 1`] = `
-Object {
+{
   "disabled": false,
   "id": "footer",
-  "items": Object {
+  "items": {
     "linkType": "Entry",
     "type": "Link",
-    "validations": Array [
-      Object {
-        "linkContentType": Array [
+    "validations": [
+      {
+        "linkContentType": [
           "navigationSegment",
         ],
       },
@@ -40,6 +40,6 @@ Object {
   "omitted": false,
   "required": false,
   "type": "Array",
-  "validations": Array [],
+  "validations": [],
 }
 `;

@@ -1,16 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`getModelberryPluginData should get data correctly 1`] = `
-Object {
-  "validations": Object {
-    "camelCase": Object {
-      "regexp": Object {
+{
+  "validations": {
+    "camelCase": {
+      "regexp": {
         "flags": "",
         "pattern": "^[a-z]+([A-Z][a-z0-9]+)*$",
       },
     },
-    "dropdown": Object {
-      "in": Array [
+    "dropdown": {
+      "in": [
         "item A",
         "item B",
         "item C",
