@@ -5,7 +5,7 @@ import {
 } from '../lib/compare-validations'
 import { ReportEntry, ReportEntryState } from './report-entries'
 
-export interface GetValidationReportEntries {
+export interface ValidationsToReportEntries {
   /** Local validations */
   localValidationsMap: ValidationsMap
   /** Remote validations */
@@ -18,13 +18,13 @@ export interface GetValidationReportEntries {
   reverse?: boolean
 }
 
-export const getValidationReportEntries = ({
+export const validationsToReportEntries = ({
   localValidationsMap,
   remoteValidationsMap,
   localTagValue,
   remoteTagValue,
   reverse,
-}: GetValidationReportEntries) => {
+}: ValidationsToReportEntries) => {
   const localVals = localTagValue
     .split(' ')
     .filter((name) => name in localValidationsMap)

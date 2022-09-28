@@ -1,6 +1,6 @@
 import { logger } from '@modelberry/mbfactory/plain'
 import chalk from 'chalk'
-import { hasChanges } from './has-changes'
+import { reportEntryHasChanges } from './report-entry-has-changes'
 import { ReportEntry } from './report-entries'
 
 const indentCountMap = {
@@ -17,7 +17,7 @@ export interface Printer {
 
 export const printer = ({ report }: Printer) => {
   report.forEach((reportEntry) => {
-    const noChanges = !hasChanges({ reportEntry })
+    const noChanges = !reportEntryHasChanges({ reportEntry })
     const rootLevel = reportEntry.logLevel === 'contentType'
     const fieldLevel = reportEntry.logLevel === 'field'
     const indentString = ''.padStart(indentCountMap[reportEntry.logLevel], ' ')

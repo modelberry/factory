@@ -1,4 +1,4 @@
-import { getValidationReportEntries } from './get-validation-diff'
+import { validationsToReportEntries } from './validations-to-report-entries'
 import { localValidationsMap } from './__fixtures__/local-validations-map'
 import { remoteValidationsMap } from './__fixtures__/remote-validations-map'
 
@@ -8,7 +8,7 @@ describe('getValidationDiff should', () => {
   })
 
   test('sort the validations string', async () => {
-    const diffs = getValidationReportEntries({
+    const diffs = validationsToReportEntries({
       localValidationsMap,
       remoteValidationsMap,
       localTagValue: 'regexp-1',

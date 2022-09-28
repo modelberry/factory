@@ -1,6 +1,6 @@
 jest.mock('fs/promises')
 
-import { logger } from '@modelberry/mbfactory/plain'
+import { ExitCodes, logger } from '@modelberry/mbfactory/plain'
 import { environmentMock } from '../../contentful-mock/contentful-mock'
 import { multipleContentTypes } from './__fixtures__/multiple-content-types'
 import { pushDiffModels } from './push-diff-models'
@@ -29,8 +29,9 @@ describe('Push diff models should', () => {
       validationsMap: { mockedValidation: {} },
     })
     expect(logSpy.h1).toHaveBeenCalledTimes(4)
-    expect(logSpy.h2).toHaveBeenCalledTimes(13)
-    expect(logSpy.p).toHaveBeenCalledTimes(826)
+    expect(logSpy.h2).toHaveBeenCalledTimes(12)
+    expect(logSpy.p).toHaveBeenCalledTimes(827)
     expect(logSpy.info).toHaveBeenCalledTimes(0)
+    expect(process.exitCode).toEqual(ExitCodes.DiffNonEqual)
   })
 })

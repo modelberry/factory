@@ -132,14 +132,14 @@ yargs(hideBin(process.argv))
     pullHandler
   )
   .command(
-    'experimental-push-diff <diff-type> <file>',
-    false, //'show changes when pushing models or content, do not make changes',
+    'push-diff <diff-type> <file>',
+    'show how remote will change when pushing models or content, do not make changes',
     diffBuilder,
     pushDiffHandler
   )
   .command(
-    'experimental-pull-diff <diff-type> <file>',
-    false, //'show changes when pulling models or content, do not make changes',
+    'pull-diff <diff-type> <file>',
+    'show how local files will change when pulling models or content, do not make changes',
     diffBuilder,
     pullDiffHandler
   )

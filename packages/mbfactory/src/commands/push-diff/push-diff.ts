@@ -6,6 +6,7 @@ import { getCompilerOptions } from '../../get-compiler-options/get-compiler-opti
 import { ArgvType, callHandler, Options } from '../../call-handler/call-handler'
 import { getAndReportOptions } from '../../lib/get-and-report-options'
 import { logger } from '../../lib/logger'
+import { ExitCodes } from '../../lib/exit-codes'
 
 export type PushDiffArgv = Options & {
   diffType: ArgvType
@@ -20,6 +21,7 @@ export const pushDiffCommand = async ({ argv }: PushDiffCommand) => {
   logger.h1(`\nAnalyzing source files`)
   if (!existsSync(argv.file)) {
     logger.error(`- file not found: ${argv.file}`)
+    process.exitCode = ExitCodes.FileNotFound
     return
   }
   const compilerOptions = getCompilerOptions()
@@ -27,6 +29,7 @@ export const pushDiffCommand = async ({ argv }: PushDiffCommand) => {
   const allPluginData = getAllPluginData({ program })
   if (Object.keys(allPluginData).length < 1) {
     logger.error(`- nothing to process in file: ${argv.file}`)
+    process.exitCode = ExitCodes.NothingToProcess
     return
   }
   const options = getAndReportOptions({ argv })

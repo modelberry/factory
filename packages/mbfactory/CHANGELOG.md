@@ -1,5 +1,26 @@
 # Changelog
 
+## [7.2.0](https://github.com/modelberry/factory/compare/7.1.1...7.2.0) (2022-09-01)
+
+
+### Features
+
+* [#72](https://github.com/modelberry/factory/issues/72) ([142a930](https://github.com/modelberry/factory/commit/142a930da42f824c88f864dc349e55c9081d91f1))
+
+### [7.1.1](https://github.com/modelberry/factory/compare/7.1.0...7.1.1) (2022-08-31)
+
+
+### Bug Fixes
+
+* add push-diff and pull-diff commands to cli help ([3678c2b](https://github.com/modelberry/factory/commit/3678c2b6e32494d2eba666e95afd62f019974fcb))
+
+## [7.1.0](https://github.com/modelberry/factory/compare/7.0.4...7.1.0) (2022-08-31)
+
+
+### Features
+
+* remove experimental from push-diff and pull-diff commands ([fb7427a](https://github.com/modelberry/factory/commit/fb7427a58945e90e3a1cb3393233e0bb5d240fc3))
+
 ### [7.0.4](https://github.com/modelberry/factory/compare/7.0.3...7.0.4) (2022-07-14)
 
 ### [7.0.3](https://github.com/modelberry/factory/compare/7.0.2...7.0.3) (2022-07-14)
