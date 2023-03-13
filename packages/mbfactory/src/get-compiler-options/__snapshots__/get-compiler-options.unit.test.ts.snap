@@ -16,7 +16,7 @@ exports[`getCompilerOptions should get compiler options 1`] = `
     "lib.esnext.d.ts",
   ],
   "module": 1,
-  "moduleResolution": 2,
+  "moduleResolution": 3,
   "noImplicitReturns": true,
   "noUnusedLocals": true,
   "removeComments": true,
