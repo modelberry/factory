@@ -59,7 +59,7 @@ export const callHandler = async ({
   try {
     module = <Module>await import(pluginName)
   } catch (e: any) {
-    logger.error(`- could not find plugin (${e.code})`)
+    logger.error(`- could not find plugin (${e})`)
     return
   }
 
