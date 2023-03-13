@@ -25,7 +25,6 @@ export const createTsInterface = ({
   const members = createTsProperty({ propertyTree })
 
   const interfaceDeclaration = ts.factory.createInterfaceDeclaration(
-    undefined, // Decorators
     isExported
       ? [ts.factory.createToken(ts.SyntaxKind.ExportKeyword)]
       : undefined,

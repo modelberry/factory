@@ -10,7 +10,6 @@ const sourceFile = createTsSourceFile()
 
 const renderProps = async (members: ts.TypeElement[]) => {
   const interfaceDeclaration = ts.factory.createInterfaceDeclaration(
-    undefined, // Decorators
     [ts.factory.createToken(tsSyntaxKind.ExportKeyword)],
     'ContentfulTopic',
     undefined, // Type parameters

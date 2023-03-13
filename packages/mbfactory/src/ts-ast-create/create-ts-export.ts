@@ -15,7 +15,6 @@ export const createTsExport = ({ namedExports, from }: CreateTsExport) => {
     )
   )
   const exportDeclaration = ts.factory.createExportDeclaration(
-    undefined, // decorators,
     undefined, // modifiers
     false, // isTypeOnly,
     namedExports.length === 0

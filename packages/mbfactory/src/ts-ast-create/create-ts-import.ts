@@ -14,7 +14,6 @@ export const createTsImport = ({ namedImports, from }: CreateTsImport) => {
     )
   )
   const importDeclaration = ts.factory.createImportDeclaration(
-    undefined, // decorators
     undefined, // modifiers
     ts.factory.createImportClause(
       false, // isTypeOnly
