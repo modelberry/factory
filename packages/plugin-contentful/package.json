@@ -31,15 +31,9 @@
   ],
   "exports": {
     "./plain": {
+      "types": "./build/plain.d.ts",
       "import": "./build/plain.mjs",
       "require": "./build/plain.cjs"
-    }
-  },
-  "typesVersions": {
-    "*": {
-      "*": [
-        "build/*"
-      ]
     }
   },
   "files": [
@@ -61,9 +55,9 @@
   "dependencies": {
     "@modelberry/mbfactory": "7.2.0",
     "chalk": "4.1.2",
-    "contentful-management": "10.15.1",
-    "deep-equal": "2.0.5",
-    "deepmerge": "4.2.2",
+    "contentful-management": "10.30.0",
+    "deep-equal": "2.2.0",
+    "deepmerge": "4.3.0",
     "inquirer": "8.2.4"
   },
   "engines": {
