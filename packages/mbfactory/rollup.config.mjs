@@ -7,8 +7,8 @@ import pluginTypescript from '@rollup/plugin-typescript'
 import pluginCommonjs from '@rollup/plugin-commonjs'
 import pluginNodeResolve from '@rollup/plugin-node-resolve'
 import json from '@rollup/plugin-json'
-import pkg from './package.json'
-import rootPkg from '../../package.json'
+import rootPkg from '../../package.json' assert { type: 'json' }
+import pkg from './package.json' assert { type: 'json' }
 
 const moduleName = pkg.name.replace(/^@.*\//, '')
 const author = rootPkg.author
@@ -16,11 +16,10 @@ const globals = {
   '@microsoft/tsdoc': '*',
   'contentful-management': '*',
   'fs/promises': '*',
-  'path': '*',
+  path: '*',
   chalk: '*',
   fs: '*',
   inquirer: '*',
-  path: '*',
   prettier: '*',
   typescript: '*',
   yargs: '*',
@@ -54,7 +53,6 @@ const plugins = [
 export default [
   {
     external,
-    inlineDynamicImports: true,
     input: './src/plain.ts',
     output: [
       {
@@ -64,6 +62,7 @@ export default [
         format: 'es',
         globals,
         sourcemap: false,
+        inlineDynamicImports: true,
       },
       {
         banner,
@@ -72,13 +71,13 @@ export default [
         format: 'cjs',
         globals,
         sourcemap: false,
+        inlineDynamicImports: true,
       },
     ],
     plugins,
   },
   {
     external,
-    inlineDynamicImports: true,
     input: './src/cli.ts',
     output: [
       {
@@ -88,6 +87,7 @@ export default [
         format: 'es',
         globals,
         sourcemap: false,
+        inlineDynamicImports: true,
       },
       {
         banner: `#!/usr/bin/env node\n${banner}`,
@@ -96,6 +96,7 @@ export default [
         format: 'cjs',
         globals,
         sourcemap: false,
+        inlineDynamicImports: true,
       },
     ],
     plugins,
