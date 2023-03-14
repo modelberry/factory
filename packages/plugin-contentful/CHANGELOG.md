@@ -1,5 +1,14 @@
 # Changelog
 
+## [8.0.0](https://github.com/modelberry/factory/compare/7.2.2...8.0.0) (2023-03-14)
+
+
+### ⚠ BREAKING CHANGES
+
+* Use v7 for TS4.
+
+* Updated all node packages, this fixes security audit warnings. From v8 this package depends on Typescript 5. ([54337f1](https://github.com/modelberry/factory/commit/54337f188f517ad99d2ed09823f1fdc3751292a9))
+
 ## [7.2.2](https://github.com/modelberry/factory/compare/7.2.1...7.2.2) (2023-03-14)
 
 ## [7.2.1](https://github.com/modelberry/factory/compare/7.2.0...7.2.1) (2023-03-14)
