@@ -10,7 +10,7 @@ export const contentTypeToInlineTags = ({
   contentType,
 }: ContentTypeToInlineTags) => {
   const inlineTags: Record<string, any> = {}
-  inlineTags['@plugin'] = '"@modelberry/plugin-contentful/plain"'
+  inlineTags['@plugin'] = '"@modelberry/plugin-contentful"'
   const contentTypeId = contentType.sys.id
   inlineTags['@type'] = contentTypeId
   copyKeysIfExists({

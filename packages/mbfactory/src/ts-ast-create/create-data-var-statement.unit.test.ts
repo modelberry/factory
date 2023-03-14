@@ -24,7 +24,7 @@ describe('Create data variable should', () => {
   test('create a declaration', async () => {
     const varStatement = createDataVarStatement({
       dataObject: {
-        '@modelberry/plugin-contentful/plain': {
+        '@modelberry/plugin-contentful': {
           validations: {
             dropdown: { in: ['item A', 'item B', 'item C'] },
             media: { linkMimetypeGroup: ['image', 'video'] },
@@ -34,7 +34,7 @@ describe('Create data variable should', () => {
     })
     const source = await renderVarStatement(varStatement)
     expect(source)
-      .toEqual(`export const modelberryPluginData: ModelberryPluginData = { "@modelberry/plugin-contentful/plain": { "validations": { "dropdown": { "in": ["item A", "item B", "item C"] }, "media": { "linkMimetypeGroup": ["image", "video"] } } } };
+      .toEqual(`export const modelberryPluginData: ModelberryPluginData = { "@modelberry/plugin-contentful": { "validations": { "dropdown": { "in": ["item A", "item B", "item C"] }, "media": { "linkMimetypeGroup": ["image", "video"] } } } };
 `)
   })
 })

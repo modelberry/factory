@@ -1,7 +1,7 @@
 /**
  * Action model, used to render links and buttons
  * @modelberry
- * - {@plugin "@modelberry/plugin-contentful/plain"}
+ * - {@plugin "@modelberry/plugin-contentful"}
  * - {@displayField heading}
  * - {@type testAction}
  */

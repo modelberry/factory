@@ -10,7 +10,7 @@ export const badInterfaceTag: TypeData = {
         },
       },
       interfaceTags: {
-        '@plugin': '@modelberry/plugin-contentful/plain',
+        '@plugin': '@modelberry/plugin-contentful',
         '@type': 'topic',
         '@bad': 'content',
       },

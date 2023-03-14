@@ -1,7 +1,7 @@
 /**
  * @modelberry
  * - {@type topic}
- * - {@plugin "@modelberry/plugin-contentful/plain"}
+ * - {@plugin "@modelberry/plugin-contentful"}
  *
  */
 export interface Topic {

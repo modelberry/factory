@@ -14,7 +14,7 @@ export const badArraySymbol: TypeData = {
         },
       },
       interfaceTags: {
-        '@plugin': '@modelberry/plugin-contentful/plain',
+        '@plugin': '@modelberry/plugin-contentful',
         '@type': 'topic',
       },
       typeName: 'Topic',

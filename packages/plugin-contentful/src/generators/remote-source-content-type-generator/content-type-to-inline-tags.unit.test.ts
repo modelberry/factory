@@ -13,7 +13,7 @@ describe('contentTypeToInlineTags should', () => {
       '@description':
         'Topic model, a heading, an abstract and a call to action',
       '@displayField': 'heading',
-      '@plugin': '"@modelberry/plugin-contentful/plain"',
+      '@plugin': '"@modelberry/plugin-contentful"',
       '@type': 'testTopic',
     })
   })

@@ -13,7 +13,7 @@ import pkg from './package.json' assert { type: 'json' }
 const moduleName = pkg.name.replace(/^@.*\//, '')
 const author = rootPkg.author
 const globals = {
-  '@modelberry/mbfactory/plain': '*',
+  '@modelberry/mbfactory': '*',
   'contentful-management': '*',
   'fs/promises': '*',
   deepmerge: '*',
@@ -50,12 +50,12 @@ const plugins = [
 export default [
   {
     external,
-    input: './src/plain.ts',
+    input: './src/node.ts',
     output: [
       {
         banner,
         exports: 'named',
-        file: `./build/plain.mjs`,
+        file: `./build/node.mjs`,
         format: 'es',
         globals,
         sourcemap: false,
@@ -63,7 +63,7 @@ export default [
       {
         banner,
         exports: 'named',
-        file: `./build/plain.cjs`,
+        file: `./build/node.cjs`,
         format: 'cjs',
         globals,
         sourcemap: false,

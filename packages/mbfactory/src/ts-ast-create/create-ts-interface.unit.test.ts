@@ -25,7 +25,7 @@ describe('Create ts interface should', () => {
     const intDec = createTsInterface({
       blockTag: '@modelberry',
       inlineTags: {
-        '@plugin': '"@modelberry/plugin-contentful/plain"',
+        '@plugin': '"@modelberry/plugin-contentful"',
         '@type': 'testTopic',
         '@displayField': 'heading',
         '@description':
@@ -49,7 +49,7 @@ describe('Create ts interface should', () => {
     })
     const output = await renderInterface(intDec)
     expect(output).toEqual(`/** @modelberry
-* - {@plugin "@modelberry/plugin-contentful/plain"}
+* - {@plugin "@modelberry/plugin-contentful"}
 * - {@type testTopic}
 * - {@displayField heading}
 * - {@description Topic model, a heading, an abstract and a call to action}
@@ -67,7 +67,7 @@ export interface ContentfulTopic {
     const intDec = createTsInterface({
       blockTag: '@modelberry',
       inlineTags: {
-        '@plugin': '"@modelberry/plugin-contentful/plain"',
+        '@plugin': '"@modelberry/plugin-contentful"',
         '@type': 'testTopic',
         '@displayField': 'heading',
         '@description':
@@ -102,7 +102,7 @@ export interface ContentfulTopic {
     })
     const output = await renderInterface(intDec)
     expect(output).toEqual(`/** @modelberry
-* - {@plugin "@modelberry/plugin-contentful/plain"}
+* - {@plugin "@modelberry/plugin-contentful"}
 * - {@type testTopic}
 * - {@displayField heading}
 * - {@description Topic model, a heading, an abstract and a call to action}

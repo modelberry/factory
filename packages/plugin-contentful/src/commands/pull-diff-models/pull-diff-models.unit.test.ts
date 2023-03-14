@@ -25,7 +25,7 @@ describe('Pull diff models should', () => {
       contentfulEnvironment: environmentMock,
       options: { yes: true },
       typeData:
-        multipleContentTypes['@modelberry/plugin-contentful/plain'].types,
+        multipleContentTypes['@modelberry/plugin-contentful'].types,
       validationsMap: { mockedValidation: {} },
     })
   })

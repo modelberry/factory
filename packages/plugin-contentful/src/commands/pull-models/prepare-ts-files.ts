@@ -75,12 +75,12 @@ export const prepareTsFiles = async ({
   // Add main source file that imports all types and defines Contentful
   // validation objects
   const dataObject = {
-    '@modelberry/plugin-contentful/plain': { validations: validationsMap },
+    '@modelberry/plugin-contentful': { validations: validationsMap },
   }
   const dataVarStatement = createDataVarStatement({ dataObject })
   const mbPluginDataImport = createTsImport({
     namedImports: ['ModelberryPluginData'],
-    from: `@modelberry/plugin-contentful/plain`,
+    from: `@modelberry/plugin-contentful`,
   })
   files.push({
     filename: 'main.ts',

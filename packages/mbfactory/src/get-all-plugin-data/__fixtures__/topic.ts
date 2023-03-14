@@ -1,13 +1,13 @@
 // The import is like this because this package should not depend on
 // plugin-contentful. This fixture however may depend
-import { ModelberryPluginData } from '../../../../plugin-contentful/build/plain'
+import { ModelberryPluginData } from '../../../../plugin-contentful/build/node'
 import { ContentfulAction } from './topic-action'
 import { ContentfulAsset } from './topic-asset'
 
 /**
  * This desciption is not used
  * @modelberry
- * - {@plugin "@modelberry/plugin-contentful/plain"}
+ * - {@plugin "@modelberry/plugin-contentful"}
  * - {@type testTopic}
  * - {@displayField heading}
  * - {@description Topic model, a heading, an abstract and a call to action}
@@ -98,7 +98,7 @@ export const notTaggedObject: NotTagged = {
 }
 
 export const modelberryPluginData: ModelberryPluginData = {
-  '@modelberry/plugin-contentful/plain': {
+  '@modelberry/plugin-contentful': {
     validations: {
       dropdown: { in: ['item A', 'item B', 'item C'] },
       media: { linkMimetypeGroup: ['image', 'video'] },

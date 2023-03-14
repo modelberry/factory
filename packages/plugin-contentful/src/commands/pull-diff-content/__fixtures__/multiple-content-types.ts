@@ -1,5 +1,5 @@
 export const multipleContentTypes = {
-  '@modelberry/plugin-contentful/plain': {
+  '@modelberry/plugin-contentful': {
     dataVar: {
       fileName:
         '/Users/jacco/Development/modelberry/factory/packages/mbfactory/src/get-all-plugin-data/__fixtures__/topic.ts',
@@ -10,7 +10,7 @@ export const multipleContentTypes = {
       name: 'modelberryPluginData',
       type: 'ModelberryPluginData',
       value:
-        "{ '@modelberry/plugin-contentful/plain': { validations: { dropdown: { in: ['item A', 'item B', 'item C'] }, media: { linkMimetypeGroup: ['image', 'video'] }, action: { linkContentType: ['testAction'] }, shortString: { size: { max: 155, min: 0 } }, camelCase: { regexp: { pattern: '^[a-z]+([A-Z][a-z0-9]+)*$', flags: '' }, }, path: { regexp: { pattern: '^\\\\\\\\/[a-z0-9:\\\\\\\\._/~%\\\\\\\\-\\\\\\\\+&\\\\\\\\#\\\\\\\\?!=\\\\\\\\(\\\\\\\\)@]*$', flags: '', }, }, url: { regexp: { pattern: '^(ftp|http|https|mailto):(\\\\\\\\/\\\\\\\\/)*(\\\\\\\\w+:{0,1}\\\\\\\\w*@)?(\\\\\\\\S+)(:[0-9]+)?(\\\\\\\\/|\\\\\\\\/([\\\\\\\\w#!:.?+=&%@!\\\\\\\\-/]))?$', flags: '', }, }, }, }, }",
+        "{ '@modelberry/plugin-contentful': { validations: { dropdown: { in: ['item A', 'item B', 'item C'] }, media: { linkMimetypeGroup: ['image', 'video'] }, action: { linkContentType: ['testAction'] }, shortString: { size: { max: 155, min: 0 } }, camelCase: { regexp: { pattern: '^[a-z]+([A-Z][a-z0-9]+)*$', flags: '' }, }, path: { regexp: { pattern: '^\\\\\\\\/[a-z0-9:\\\\\\\\._/~%\\\\\\\\-\\\\\\\\+&\\\\\\\\#\\\\\\\\?!=\\\\\\\\(\\\\\\\\)@]*$', flags: '', }, }, url: { regexp: { pattern: '^(ftp|http|https|mailto):(\\\\\\\\/\\\\\\\\/)*(\\\\\\\\w+:{0,1}\\\\\\\\w*@)?(\\\\\\\\S+)(:[0-9]+)?(\\\\\\\\/|\\\\\\\\/([\\\\\\\\w#!:.?+=&%@!\\\\\\\\-/]))?$', flags: '', }, }, }, }, }",
     },
     types: {
       ContentfulAction: {
@@ -57,7 +57,7 @@ export const multipleContentTypes = {
           },
           interfaceTags: {
             '@displayField': 'heading',
-            '@plugin': '@modelberry/plugin-contentful/plain',
+            '@plugin': '@modelberry/plugin-contentful',
             '@type': 'testAction',
           },
           typeName: 'ContentfulAction',
@@ -129,7 +129,7 @@ export const multipleContentTypes = {
             '@description':
               'Topic model, a heading, an abstract and a call to action',
             '@displayField': 'heading',
-            '@plugin': '@modelberry/plugin-contentful/plain',
+            '@plugin': '@modelberry/plugin-contentful',
             '@type': 'testTopic',
           },
           typeName: 'ContentfulTopic',

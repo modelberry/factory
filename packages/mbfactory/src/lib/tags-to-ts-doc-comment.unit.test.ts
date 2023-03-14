@@ -9,7 +9,7 @@ describe('Create Ts Doc Comment From Tags should', () => {
     const result = tagsToTsDocComment({
       blockTag: '@modelberry',
       inlineTags: {
-        '@plugin': '"@modelberry/plugin-contentful/plain"',
+        '@plugin': '"@modelberry/plugin-contentful"',
         '@type': 'testTopic',
         '@displayField': 'heading',
         '@description':
@@ -17,7 +17,7 @@ describe('Create Ts Doc Comment From Tags should', () => {
       },
     })
     expect(result).toEqual(`@modelberry
-* - {@plugin "@modelberry/plugin-contentful/plain"}
+* - {@plugin "@modelberry/plugin-contentful"}
 * - {@type testTopic}
 * - {@displayField heading}
 * - {@description Topic model, a heading, an abstract and a call to action}

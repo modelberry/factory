@@ -39,7 +39,7 @@ export const localContentTypes: LocalSourceContentTypeYield[] = [
     interfaceTypeTag: 'testAction',
     interfaceTags: {
       '@displayField': 'heading',
-      '@plugin': '@modelberry/plugin-contentful/plain',
+      '@plugin': '@modelberry/plugin-contentful',
       '@type': 'testAction',
     },
     interfaceName: 'ContentfulAction',
@@ -80,7 +80,7 @@ export const localContentTypes: LocalSourceContentTypeYield[] = [
       '@description':
         'Topic model, a heading, an abstract and a call to action',
       '@displayField': 'heading',
-      '@plugin': '@modelberry/plugin-contentful/plain',
+      '@plugin': '@modelberry/plugin-contentful',
       '@type': 'testTopic',
     },
     interfaceName: 'ContentfulTopic',
@@ -97,7 +97,7 @@ export const localContentTypes: LocalSourceContentTypeYield[] = [
     interfaceTags: {
       '@description': 'New local field, to be added to remote',
       '@displayField': 'heading',
-      '@plugin': '@modelberry/plugin-contentful/plain',
+      '@plugin': '@modelberry/plugin-contentful',
       '@type': 'newLocalField',
     },
     interfaceName: 'NewLocalField',

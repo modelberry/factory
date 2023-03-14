@@ -2,7 +2,7 @@
 
 exports[`getAllPluginData should get data for all-tags.ts 1`] = `
 {
-  "@modelberry/plugin-contentful/plain": {
+  "@modelberry/plugin-contentful": {
     "dataVar": {},
     "types": {
       "Topic": {
@@ -25,7 +25,7 @@ exports[`getAllPluginData should get data for all-tags.ts 1`] = `
             },
           },
           "interfaceTags": {
-            "@plugin": "@modelberry/plugin-contentful/plain",
+            "@plugin": "@modelberry/plugin-contentful",
             "@type": "topic",
           },
           "typeName": "Topic",
@@ -39,7 +39,7 @@ exports[`getAllPluginData should get data for all-tags.ts 1`] = `
 
 exports[`getAllPluginData should get data for topic.ts 1`] = `
 {
-  "@modelberry/plugin-contentful/plain": {
+  "@modelberry/plugin-contentful": {
     "dataVar": {
       "fileName": "/Users/jacco/Development/modelberry/factory/packages/mbfactory/src/get-all-plugin-data/__fixtures__/topic.ts",
       "isArray": false,
@@ -49,7 +49,7 @@ exports[`getAllPluginData should get data for topic.ts 1`] = `
       "name": "modelberryPluginData",
       "type": "ModelberryPluginData",
       "value": "{
-  '@modelberry/plugin-contentful/plain': {
+  '@modelberry/plugin-contentful': {
     validations: {
       dropdown: { in: ['item A', 'item B', 'item C'] },
       media: { linkMimetypeGroup: ['image', 'video'] },
@@ -120,7 +120,7 @@ exports[`getAllPluginData should get data for topic.ts 1`] = `
           },
           "interfaceTags": {
             "@displayField": "heading",
-            "@plugin": "@modelberry/plugin-contentful/plain",
+            "@plugin": "@modelberry/plugin-contentful",
             "@type": "testAction",
           },
           "typeName": "ContentfulAction",
@@ -197,7 +197,7 @@ exports[`getAllPluginData should get data for topic.ts 1`] = `
           "interfaceTags": {
             "@description": "Topic model, a heading, an abstract and a call to action",
             "@displayField": "heading",
-            "@plugin": "@modelberry/plugin-contentful/plain",
+            "@plugin": "@modelberry/plugin-contentful",
             "@type": "testTopic",
           },
           "typeName": "ContentfulTopic",

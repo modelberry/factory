@@ -9,7 +9,7 @@ const dataVar = {
   name: 'modelberryPluginData',
   type: 'ModelberryPluginData',
   value: `{
-    '@modelberry/plugin-contentful/plain': {
+    '@modelberry/plugin-contentful': {
       validations: {
         dropdown: { in: ['item A', 'item B', 'item C'] },
         camelCase: {

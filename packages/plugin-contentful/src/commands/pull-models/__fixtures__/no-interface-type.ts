@@ -12,7 +12,7 @@ export const noInterfaceType: TypeData = {
         },
       },
       interfaceTags: {
-        '@plugin': '@modelberry/plugin-contentful/plain',
+        '@plugin': '@modelberry/plugin-contentful',
       },
       typeName: 'Topic',
     },

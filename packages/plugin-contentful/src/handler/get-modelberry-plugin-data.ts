@@ -11,7 +11,7 @@ export type ValidationsMap = {
 }
 
 export type ModelberryPluginData = {
-  '@modelberry/plugin-contentful/plain'?: {
+  '@modelberry/plugin-contentful'?: {
     validations?: ValidationsMap
   }
 }
@@ -25,7 +25,7 @@ export const getModelberryPluginData = ({
 }: GetModelberryPluginData) => {
   const dataVarFn = new Function(`return ${dataVar.value}`)
   const dataVarObj = dataVarFn() as ModelberryPluginData
-  const data = dataVarObj?.['@modelberry/plugin-contentful/plain']
+  const data = dataVarObj?.['@modelberry/plugin-contentful']
 
   return data
 }

@@ -9,7 +9,7 @@ exports[`Pull models should pull correctly with type filter 1`] = `
 import { ContentfulReference } from './contentful-reference'
 import { ContentfulAsset } from './contentful-asset'
 /** @modelberry
- * - {@plugin "@modelberry/plugin-contentful/plain"}
+ * - {@plugin "@modelberry/plugin-contentful"}
  * - {@type testTopic}
  * - {@displayField heading}
  * - {@description Topic model, a heading, an abstract and a call to action}
@@ -103,10 +103,10 @@ export interface ContentfulTestTopic {
     ],
     [
       "./dummy/main.ts",
-      "import { ModelberryPluginData } from '@modelberry/plugin-contentful/plain'
+      "import { ModelberryPluginData } from '@modelberry/plugin-contentful'
 export * from './contentful-test-topic'
 export const modelberryPluginData: ModelberryPluginData = {
-  '@modelberry/plugin-contentful/plain': {
+  '@modelberry/plugin-contentful': {
     validations: {
       'size-min0-max155': { size: { max: 155, min: 0 } },
       'size-min100-max200': { size: { max: 200, min: 100 } },
@@ -150,7 +150,7 @@ exports[`Pull models should pull correctly without type filter 1`] = `
 import { ContentfulReference } from './contentful-reference'
 import { ContentfulAsset } from './contentful-asset'
 /** @modelberry
- * - {@plugin "@modelberry/plugin-contentful/plain"}
+ * - {@plugin "@modelberry/plugin-contentful"}
  * - {@type testTopic}
  * - {@displayField heading}
  * - {@description Topic model, a heading, an abstract and a call to action}
@@ -219,7 +219,7 @@ export interface ContentfulTestTopic {
     [
       "./dummy/contentful-test-action.ts",
       "/** @modelberry
- * - {@plugin "@modelberry/plugin-contentful/plain"}
+ * - {@plugin "@modelberry/plugin-contentful"}
  * - {@type testAction}
  * - {@displayField heading}
  */
@@ -276,7 +276,7 @@ import { ContentfulReference } from './contentful-reference'
 import { ContentfulAction } from './contentful-action'
 import { ContentfulNavigationSegment } from './contentful-navigation-segment'
 /** @modelberry
- * - {@plugin "@modelberry/plugin-contentful/plain"}
+ * - {@plugin "@modelberry/plugin-contentful"}
  * - {@type navigationSection}
  * - {@displayField title}
  * - {@description navigationSection}
@@ -389,7 +389,7 @@ export interface ContentfulNavigationSection {
       "import { ContentfulTopic } from './contentful-topic'
 import { ContentfulReference } from './contentful-reference'
 /** @modelberry
- * - {@plugin "@modelberry/plugin-contentful/plain"}
+ * - {@plugin "@modelberry/plugin-contentful"}
  * - {@type topicSection}
  * - {@displayField title}
  * - {@description Topic section}
@@ -502,7 +502,7 @@ import { ContentfulReference } from './contentful-reference'
 import { ContentfulAction } from './contentful-action'
 import { ContentfulEmbed } from './contentful-embed'
 /** @modelberry
- * - {@plugin "@modelberry/plugin-contentful/plain"}
+ * - {@plugin "@modelberry/plugin-contentful"}
  * - {@type topic}
  * - {@displayField title}
  * - {@description Topic}
@@ -602,7 +602,7 @@ export interface ContentfulTopic {
     [
       "./dummy/contentful-text-section.ts",
       "/** @modelberry
- * - {@plugin "@modelberry/plugin-contentful/plain"}
+ * - {@plugin "@modelberry/plugin-contentful"}
  * - {@type textSection}
  * - {@displayField title}
  * - {@description Text section}
@@ -667,7 +667,7 @@ export interface ContentfulTextSection {
       "import { ContentfulAction } from './contentful-action'
 import { ContentfulReference } from './contentful-reference'
 /** @modelberry
- * - {@plugin "@modelberry/plugin-contentful/plain"}
+ * - {@plugin "@modelberry/plugin-contentful"}
  * - {@type navigationSegment}
  * - {@displayField title}
  * - {@description Navigation segment}
@@ -735,7 +735,7 @@ import { ContentfulTopicSection } from './contentful-topic-section'
 import { ContentfulReference } from './contentful-reference'
 import { ContentfulAsset } from './contentful-asset'
 /** @modelberry
- * - {@plugin "@modelberry/plugin-contentful/plain"}
+ * - {@plugin "@modelberry/plugin-contentful"}
  * - {@type page}
  * - {@displayField title}
  * - {@description Page}
@@ -842,7 +842,7 @@ export interface ContentfulPage {
 import { ContentfulReference } from './contentful-reference'
 import { ContentfulEmbed } from './contentful-embed'
 /** @modelberry
- * - {@plugin "@modelberry/plugin-contentful/plain"}
+ * - {@plugin "@modelberry/plugin-contentful"}
  * - {@type globals}
  * - {@displayField title}
  * - {@description Globals}
@@ -933,7 +933,7 @@ export interface ContentfulGlobals {
     [
       "./dummy/contentful-embed.ts",
       "/** @modelberry
- * - {@plugin "@modelberry/plugin-contentful/plain"}
+ * - {@plugin "@modelberry/plugin-contentful"}
  * - {@type embed}
  * - {@displayField title}
  * - {@description Embed}
@@ -984,7 +984,7 @@ export interface ContentfulEmbed {
       "import { ContentfulPage } from './contentful-page'
 import { ContentfulReference } from './contentful-reference'
 /** @modelberry
- * - {@plugin "@modelberry/plugin-contentful/plain"}
+ * - {@plugin "@modelberry/plugin-contentful"}
  * - {@type action}
  * - {@displayField title}
  * - {@description Action}
@@ -1106,7 +1106,7 @@ export interface ContentfulAction {
     ],
     [
       "./dummy/main.ts",
-      "import { ModelberryPluginData } from '@modelberry/plugin-contentful/plain'
+      "import { ModelberryPluginData } from '@modelberry/plugin-contentful'
 export * from './contentful-test-topic'
 export * from './contentful-test-action'
 export * from './contentful-navigation-section'
@@ -1119,7 +1119,7 @@ export * from './contentful-globals'
 export * from './contentful-embed'
 export * from './contentful-action'
 export const modelberryPluginData: ModelberryPluginData = {
-  '@modelberry/plugin-contentful/plain': {
+  '@modelberry/plugin-contentful': {
     validations: {
       'size-min0-max155': { size: { max: 155, min: 0 } },
       'size-min1000-max200': { size: { max: 200, min: 1000 } },

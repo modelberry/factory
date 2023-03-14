@@ -4,7 +4,7 @@ export const remoteContentTypes: RemoteSourceContentTypeYield[] = [
   {
     contentTypeId: 'testTopic',
     inlineTags: {
-      '@plugin': '"@modelberry/plugin-contentful/plain"',
+      '@plugin': '"@modelberry/plugin-contentful"',
       '@type': 'testTopic',
       '@displayField': 'heading',
       '@description':
@@ -122,7 +122,7 @@ export const remoteContentTypes: RemoteSourceContentTypeYield[] = [
   {
     contentTypeId: 'testAction',
     inlineTags: {
-      '@plugin': '"@modelberry/plugin-contentful/plain"',
+      '@plugin': '"@modelberry/plugin-contentful"',
       '@type': 'testAction',
       '@displayField': 'heading',
     },
@@ -190,7 +190,7 @@ export const remoteContentTypes: RemoteSourceContentTypeYield[] = [
   {
     contentTypeId: 'navigationSection',
     inlineTags: {
-      '@plugin': '"@modelberry/plugin-contentful/plain"',
+      '@plugin': '"@modelberry/plugin-contentful"',
       '@type': 'navigationSection',
       '@displayField': 'title',
       '@description': 'navigationSection',
@@ -402,7 +402,7 @@ export const remoteContentTypes: RemoteSourceContentTypeYield[] = [
   {
     contentTypeId: 'topicSection',
     inlineTags: {
-      '@plugin': '"@modelberry/plugin-contentful/plain"',
+      '@plugin': '"@modelberry/plugin-contentful"',
       '@type': 'topicSection',
       '@displayField': 'title',
       '@description': 'Topic section',
@@ -583,7 +583,7 @@ export const remoteContentTypes: RemoteSourceContentTypeYield[] = [
   {
     contentTypeId: 'topic',
     inlineTags: {
-      '@plugin': '"@modelberry/plugin-contentful/plain"',
+      '@plugin': '"@modelberry/plugin-contentful"',
       '@type': 'topic',
       '@displayField': 'title',
       '@description': 'Topic',
@@ -754,7 +754,7 @@ export const remoteContentTypes: RemoteSourceContentTypeYield[] = [
   {
     contentTypeId: 'textSection',
     inlineTags: {
-      '@plugin': '"@modelberry/plugin-contentful/plain"',
+      '@plugin': '"@modelberry/plugin-contentful"',
       '@type': 'textSection',
       '@displayField': 'title',
       '@description': 'Text section',
@@ -838,7 +838,7 @@ export const remoteContentTypes: RemoteSourceContentTypeYield[] = [
   {
     contentTypeId: 'navigationSegment',
     inlineTags: {
-      '@plugin': '"@modelberry/plugin-contentful/plain"',
+      '@plugin': '"@modelberry/plugin-contentful"',
       '@type': 'navigationSegment',
       '@displayField': 'title',
       '@description': 'Navigation segment',
@@ -930,7 +930,7 @@ export const remoteContentTypes: RemoteSourceContentTypeYield[] = [
   {
     contentTypeId: 'page',
     inlineTags: {
-      '@plugin': '"@modelberry/plugin-contentful/plain"',
+      '@plugin': '"@modelberry/plugin-contentful"',
       '@type': 'page',
       '@displayField': 'title',
       '@description': 'Page',
@@ -1095,7 +1095,7 @@ export const remoteContentTypes: RemoteSourceContentTypeYield[] = [
   {
     contentTypeId: 'globals',
     inlineTags: {
-      '@plugin': '"@modelberry/plugin-contentful/plain"',
+      '@plugin': '"@modelberry/plugin-contentful"',
       '@type': 'globals',
       '@displayField': 'title',
       '@description': 'Globals',
@@ -1249,7 +1249,7 @@ export const remoteContentTypes: RemoteSourceContentTypeYield[] = [
   {
     contentTypeId: 'embed',
     inlineTags: {
-      '@plugin': '"@modelberry/plugin-contentful/plain"',
+      '@plugin': '"@modelberry/plugin-contentful"',
       '@type': 'embed',
       '@displayField': 'title',
       '@description': 'Embed',
@@ -1314,7 +1314,7 @@ export const remoteContentTypes: RemoteSourceContentTypeYield[] = [
   {
     contentTypeId: 'action',
     inlineTags: {
-      '@plugin': '"@modelberry/plugin-contentful/plain"',
+      '@plugin': '"@modelberry/plugin-contentful"',
       '@type': 'action',
       '@displayField': 'title',
       '@description': 'Action',

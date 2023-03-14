@@ -24,7 +24,7 @@ describe('Pull diff content should', () => {
       contentfulEnvironment: environmentMock,
       options: { yes: true },
       typeData:
-        multipleContentTypes['@modelberry/plugin-contentful/plain'].types,
+        multipleContentTypes['@modelberry/plugin-contentful'].types,
     })
   })
   expect(logSpy.p).toHaveBeenCalledTimes(0)

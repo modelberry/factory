@@ -14,7 +14,7 @@ export const ignoreInterface: TypeData = {
       },
       interfaceTags: {
         '@ignore': '',
-        '@plugin': '@modelberry/plugin-contentful/plain',
+        '@plugin': '@modelberry/plugin-contentful',
         '@type': 'topic',
       },
       typeName: 'Topic',

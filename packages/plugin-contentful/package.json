@@ -30,12 +30,12 @@
     }
   ],
   "exports": {
-    "types": "./build/plain.d.ts",
-    "import": "./build/plain.mjs",
-    "require": "./build/plain.cjs"
+    "types": "./build/node.d.ts",
+    "import": "./build/node.mjs",
+    "require": "./build/node.cjs"
   },
-  "main": "./build/plain.cjs",
-  "types": "./build/plain.d.ts",
+  "main": "./build/node.cjs",
+  "types": "./build/node.d.ts",
   "files": [
     "CHANGELOG.md",
     "build"

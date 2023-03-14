@@ -13,7 +13,7 @@ export const topicAction: TypeData = {
       },
       interfaceTags: {
         '@displayField': 'heading',
-        '@plugin': '@modelberry/plugin-contentful/plain',
+        '@plugin': '@modelberry/plugin-contentful',
         '@type': 'testAction',
       },
       typeName: 'ContentfulAction',
@@ -61,7 +61,7 @@ anchor: 'anchor',
       },
       interfaceTags: {
         '@displayField': 'heading',
-        '@plugin': '@modelberry/plugin-contentful/plain',
+        '@plugin': '@modelberry/plugin-contentful',
         '@type': 'testTopic',
       },
       typeName: 'ContentfulTopic',

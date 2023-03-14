@@ -24,8 +24,7 @@ describe('Push diff models should', () => {
     await pushDiffModels({
       contentfulEnvironment: environmentMock,
       options: { yes: true },
-      typeData:
-        multipleContentTypes['@modelberry/plugin-contentful/plain'].types,
+      typeData: multipleContentTypes['@modelberry/plugin-contentful'].types,
       validationsMap: { mockedValidation: {} },
     })
     expect(logSpy.h1).toHaveBeenCalledTimes(4)

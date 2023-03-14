@@ -1,7 +1,7 @@
 /**
  * Something about this model, used as model description
  * @modelberry
- * - {@plugin "@modelberry/plugin-contentful/plain"}
+ * - {@plugin "@modelberry/plugin-contentful"}
  * - {@type topic}
  * @see https://www.modelberry.com
  */
