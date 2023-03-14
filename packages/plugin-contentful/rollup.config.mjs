@@ -16,10 +16,12 @@ const globals = {
   '@modelberry/mbfactory': '*',
   'contentful-management': '*',
   'fs/promises': '*',
+  chalk: '*',
   deepmerge: '*',
   fs: '*',
   inquirer: '*',
   path: '*',
+  typescript: '*',
 }
 
 const external = Object.keys(globals)
