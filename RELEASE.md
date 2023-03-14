@@ -1,21 +1,21 @@
-## @modelberry/mbfactory 8.0.1
+## @modelberry/mbfactory 8.0.2
 
-## [8.0.1](https://github.com/modelberry/factory/compare/8.0.0...8.0.1) (2023-03-14)
-
-
-### Commits
-
-* remove /plain ([3ffd5c4](https://github.com/modelberry/factory/commit/3ffd5c469110f5462265d52861385b28e7533941))
+## [8.0.2](https://github.com/modelberry/factory/compare/8.0.1...8.0.2) (2023-03-14)
 
 
+### Bug Fixes
 
-## @modelberry/plugin-contentful 8.0.1
-
-## [8.0.1](https://github.com/modelberry/factory/compare/8.0.0...8.0.1) (2023-03-14)
+* rollup config ([0ed7c55](https://github.com/modelberry/factory/commit/0ed7c554e8d9a69879d369dfb9da6a5f1003e2a2))
 
 
-### Commits
 
-* remove /plain ([3ffd5c4](https://github.com/modelberry/factory/commit/3ffd5c469110f5462265d52861385b28e7533941))
+## @modelberry/plugin-contentful 8.0.2
+
+## [8.0.2](https://github.com/modelberry/factory/compare/8.0.1...8.0.2) (2023-03-14)
+
+
+### Bug Fixes
+
+* rollup config ([0ed7c55](https://github.com/modelberry/factory/commit/0ed7c554e8d9a69879d369dfb9da6a5f1003e2a2))
 
 
