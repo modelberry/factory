@@ -2,10 +2,6 @@
 
 Sync Typescript to Contentful. Two way. Models and content.
 
-## Wheelroom
-
-First there was [Wheelroom](https://github.com/wheelroom/wheelroom). Then came the [UI Library](https://blue.modelberry.com). This evolved into the [Modelberry factory](https://www.modelberry.com) as we know it.
-
 ## Monorepo
 
 This repo contains two packages:
@@ -16,3 +12,7 @@ This repo contains two packages:
 ## Docs
 
 Docs and examples are at [modelberry/mbfactory-docs](https://github.com/modelberry/mbfactory-docs/blob/main/README.md).
+
+## History
+
+First there was [Wheelroom](https://github.com/wheelroom/wheelroom). Then came the [UI Library](https://blue.modelberry.com). This evolved into the [Modelberry factory](https://www.modelberry.com) as we know it.
