@@ -4,7 +4,7 @@ import {
   createTsExport,
   createTsImport,
   Node,
-} from '@modelberry/mbfactory/plain'
+} from '@modelberry/mbfactory'
 import { SourceFile } from '../../write-source-files/write-source-files'
 import { RemoteSourceContentTypeIterator } from '../../generators/remote-source-content-type-generator/remote-source-content-type-generator'
 import { systemFieldspropertyTree } from '../../generators/remote-source-content-type-generator/content-type-fields-to-property-tree'

@@ -4,7 +4,7 @@ import {
   logger,
   Options,
   TypeData,
-} from '@modelberry/mbfactory/plain'
+} from '@modelberry/mbfactory'
 import { remoteSourceContentTypeGenerator } from '../../generators/remote-source-content-type-generator/remote-source-content-type-generator'
 import { asyncIteratorToArray } from '../../lib/async-iterator-to-array'
 import { ValidationsMap } from '../../handler/get-modelberry-plugin-data'

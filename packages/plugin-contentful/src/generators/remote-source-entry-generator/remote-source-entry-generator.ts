@@ -1,4 +1,4 @@
-import { firstUpperCase, Options } from '@modelberry/mbfactory/plain'
+import { firstUpperCase, Options } from '@modelberry/mbfactory'
 import { Environment } from 'contentful-management/types'
 import { fetchContentTypes } from '../../fetch-content-types/fetch-content-types'
 import { fetchEntries } from './fetch-entries'

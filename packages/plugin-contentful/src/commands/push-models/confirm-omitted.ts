@@ -1,4 +1,4 @@
-import { logger } from '@modelberry/mbfactory/plain'
+import { logger } from '@modelberry/mbfactory'
 import { ContentFields } from 'contentful-management/types'
 import inquirer from 'inquirer'
 import { omitQuestion } from '../../handler/questions'

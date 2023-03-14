@@ -1,6 +1,6 @@
 jest.mock('fs/promises')
 
-import { ExitCodes, logger } from '@modelberry/mbfactory/plain'
+import { ExitCodes, logger } from '@modelberry/mbfactory'
 import { environmentMock } from '../../contentful-mock/contentful-mock'
 import { multipleContentTypes } from './__fixtures__/multiple-content-types'
 import { pushDiffModels } from './push-diff-models'

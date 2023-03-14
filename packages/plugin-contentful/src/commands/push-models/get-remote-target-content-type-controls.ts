@@ -1,5 +1,5 @@
 import { Control } from 'contentful-management/types'
-import { ModelberryInterface } from '@modelberry/mbfactory/plain'
+import { ModelberryInterface } from '@modelberry/mbfactory'
 import { getFieldIdWithoutPostfix } from '../../lib/get-field-id-without-postfix'
 import { getModelControl } from './get-model-control'
 

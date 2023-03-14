@@ -1,4 +1,4 @@
-import { Handler, logger } from '@modelberry/mbfactory/plain'
+import { Handler, logger } from '@modelberry/mbfactory'
 import inquirer from 'inquirer'
 import { pushModels } from '../commands/push-models/push-models'
 import { pushContent } from '../commands/push-content/push-content'

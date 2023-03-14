@@ -1,5 +1,5 @@
 import { ContentFields } from 'contentful-management/types'
-import { ModelberryInterface } from '@modelberry/mbfactory/plain'
+import { ModelberryInterface } from '@modelberry/mbfactory'
 import { getFieldIdWithoutPostfix } from '../../lib/get-field-id-without-postfix'
 import { ValidationsMap } from '../../handler/get-modelberry-plugin-data'
 import { getModelField } from './get-model-field'

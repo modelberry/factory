@@ -3,7 +3,7 @@ import {
   PropertryNode,
   PropertyTree,
   InlineTags,
-} from '@modelberry/mbfactory/plain'
+} from '@modelberry/mbfactory'
 import { ContentFields } from 'contentful-management/types'
 import { contentTypesToString } from './content-types-to-string'
 import { getLinkContentTypes } from './get-link-content-types'

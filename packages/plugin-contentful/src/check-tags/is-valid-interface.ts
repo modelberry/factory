@@ -1,4 +1,4 @@
-import { logger, Options } from '@modelberry/mbfactory/plain'
+import { logger, Options } from '@modelberry/mbfactory'
 
 export interface IsValidInterface {
   options: Options

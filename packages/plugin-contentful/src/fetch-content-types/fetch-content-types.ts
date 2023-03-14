@@ -1,4 +1,4 @@
-import { Options, logger } from '@modelberry/mbfactory/plain'
+import { Options, logger } from '@modelberry/mbfactory'
 import { ContentType, Environment } from 'contentful-management/types'
 
 export interface FetchContentTypes {

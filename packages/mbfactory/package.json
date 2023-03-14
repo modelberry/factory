@@ -30,12 +30,12 @@
     }
   ],
   "exports": {
-    "./plain": {
-      "types": "./build/plain.d.ts",
-      "import": "./build/plain.mjs",
-      "require": "./build/plain.cjs"
-    }
+    "types": "./build/plain.d.ts",
+    "import": "./build/plain.mjs",
+    "require": "./build/plain.cjs"
   },
+  "main": "./build/plain.cjs",
+  "types": "./build/plain.d.ts",
   "bin": {
     "mbfactory": "build/cli.cjs"
   },
@@ -69,7 +69,7 @@
     "contentful-management": "10.30.0",
     "inquirer": "8.2.4",
     "prettier": "2.8.4",
-    "typescript": "4.9.5",
+    "typescript": "5.0.1-rc",
     "yargs": "17.7.1"
   }
 }

@@ -1,4 +1,4 @@
-import { logger, Options, TypeData } from '@modelberry/mbfactory/plain'
+import { logger, Options, TypeData } from '@modelberry/mbfactory'
 import { Environment } from 'contentful-management/types'
 import { fetchLocales } from '../../fetch-locales/fetch-locales'
 import { localSourceVariableGenerator } from '../../generators/local-source-variable-generator/local-source-variable-generator'

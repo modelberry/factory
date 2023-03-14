@@ -1,4 +1,4 @@
-import { logger } from '@modelberry/mbfactory/plain'
+import { logger } from '@modelberry/mbfactory'
 import {
   CreateEntryProps,
   Entry,

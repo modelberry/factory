@@ -1,4 +1,4 @@
-import { logger } from '@modelberry/mbfactory/plain'
+import { logger } from '@modelberry/mbfactory'
 import chalk from 'chalk'
 import { reportEntryHasChanges } from './report-entry-has-changes'
 import { ReportEntry } from './report-entries'

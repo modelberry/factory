@@ -4,26 +4,31 @@ exports[`getCompilerOptions should get compiler options 1`] = `
 {
   "allowJs": true,
   "allowUmdGlobalAccess": true,
+  "baseUrl": ".",
   "configFilePath": undefined,
   "declaration": false,
   "downlevelIteration": true,
   "esModuleInterop": true,
   "forceConsistentCasingInFileNames": true,
-  "jsx": 4,
   "lib": [
     "lib.dom.d.ts",
     "lib.dom.iterable.d.ts",
     "lib.esnext.d.ts",
   ],
-  "module": 1,
-  "moduleResolution": 3,
+  "module": 199,
+  "moduleResolution": 99,
   "noImplicitReturns": true,
   "noUnusedLocals": true,
+  "paths": {
+    "@modelberry/*": [
+      "node_modules/@modelberry/*",
+    ],
+  },
+  "pathsBasePath": "../..",
   "removeComments": true,
-  "resolveJsonModule": true,
   "skipLibCheck": true,
   "sourceMap": false,
   "strict": true,
-  "target": 1,
+  "target": 99,
 }
 `;

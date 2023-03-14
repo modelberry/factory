@@ -8,7 +8,7 @@ import {
   printTsNodes,
   Options,
   logger,
-} from '@modelberry/mbfactory/plain'
+} from '@modelberry/mbfactory'
 import inquirer from 'inquirer'
 import { overwriteQuestion } from '../handler/questions'
 

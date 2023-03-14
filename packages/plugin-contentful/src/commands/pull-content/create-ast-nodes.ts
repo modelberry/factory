@@ -2,7 +2,7 @@ import {
   createContentVarStatement,
   camelToKebab,
   createTsImport,
-} from '@modelberry/mbfactory/plain'
+} from '@modelberry/mbfactory'
 import ts from 'typescript'
 
 export interface CreateAstNodes {

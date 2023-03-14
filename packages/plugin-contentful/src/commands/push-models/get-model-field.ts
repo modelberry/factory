@@ -1,4 +1,4 @@
-import { camelToSpaces, firstUpperCase } from '@modelberry/mbfactory/plain'
+import { camelToSpaces, firstUpperCase } from '@modelberry/mbfactory'
 import { ContentFields, FieldType } from 'contentful-management/types'
 import { ValidationsMap } from '../../handler/get-modelberry-plugin-data'
 import { getValidations } from './get-validations'

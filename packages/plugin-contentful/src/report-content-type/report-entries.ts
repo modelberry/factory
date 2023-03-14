@@ -2,7 +2,7 @@ import {
   LoggerType,
   PropertryNode,
   PropertyTree,
-} from '@modelberry/mbfactory/plain'
+} from '@modelberry/mbfactory'
 
 export type ReportLevel = 'contentType' | 'field' | 'tagKey' | 'tagValue'
 export type ReportEntryState = 'add' | 'remove' | 'equal' | 'modified'

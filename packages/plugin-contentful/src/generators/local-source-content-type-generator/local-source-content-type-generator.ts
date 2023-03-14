@@ -3,7 +3,7 @@ import {
   TypeData,
   logger,
   ModelberryInterface,
-} from '@modelberry/mbfactory/plain'
+} from '@modelberry/mbfactory'
 import { checkTags } from '../../check-tags/check-tags'
 import { isValidInterface } from '../../check-tags/is-valid-interface'
 import { getValidatedLocalSourceFields } from './get-validated-local-source-fields'

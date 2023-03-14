@@ -1,4 +1,4 @@
-import { ModelberryInterface, logger } from '@modelberry/mbfactory/plain'
+import { ModelberryInterface, logger } from '@modelberry/mbfactory'
 import { getFieldIdWithoutPostfix } from '../../lib/get-field-id-without-postfix'
 import { checkTags } from '../../check-tags/check-tags'
 import { isValidField } from '../../check-tags/is-valid-field'

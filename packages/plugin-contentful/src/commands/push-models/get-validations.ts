@@ -1,4 +1,4 @@
-import { logger } from '@modelberry/mbfactory/plain'
+import { logger } from '@modelberry/mbfactory'
 import { ValidationsMap } from '../../handler/get-modelberry-plugin-data'
 
 export interface GetValidations {

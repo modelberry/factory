@@ -1,4 +1,4 @@
-import { TypeData, Options, logger } from '@modelberry/mbfactory/plain'
+import { TypeData, Options, logger } from '@modelberry/mbfactory'
 import { ContentType, Environment } from 'contentful-management/types'
 import { ValidationsMap } from '../../handler/get-modelberry-plugin-data'
 import { localSourceContentTypeGenerator } from '../../generators/local-source-content-type-generator/local-source-content-type-generator'

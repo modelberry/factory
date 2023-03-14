@@ -1,4 +1,4 @@
-import { firstUpperCase } from '@modelberry/mbfactory/plain'
+import { firstUpperCase } from '@modelberry/mbfactory'
 
 export interface CopyKeysIfExists {
   // Add 'items' prefix to target key

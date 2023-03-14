@@ -1,5 +1,5 @@
 import { ContentFields } from 'contentful-management/types'
-import { PropertyTree, tsSyntaxKind } from '@modelberry/mbfactory/plain'
+import { PropertyTree, tsSyntaxKind } from '@modelberry/mbfactory'
 import { getPropertyTreeField } from './get-property-tree-field'
 import { copyKeysIfExists } from './copy-keys-if-exists'
 import { addValidations } from './add-validations'

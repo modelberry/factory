@@ -4,7 +4,7 @@ import {
   Options,
   TypeData,
   ExitCodes,
-} from '@modelberry/mbfactory/plain'
+} from '@modelberry/mbfactory'
 import { ValidationsMap } from '../../handler/get-modelberry-plugin-data'
 import { remoteSourceContentTypeGenerator } from '../../generators/remote-source-content-type-generator/remote-source-content-type-generator'
 import { localSourceContentTypeGenerator } from '../../generators/local-source-content-type-generator/local-source-content-type-generator'

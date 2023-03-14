@@ -1,4 +1,4 @@
-import { logger } from '@modelberry/mbfactory/plain'
+import { logger } from '@modelberry/mbfactory'
 import { environmentMock } from '../../contentful-mock/contentful-mock'
 import { pushContent } from './push-content'
 import { topicAction } from './__fixtures__/topic-action'

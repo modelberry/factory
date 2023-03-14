@@ -4,7 +4,7 @@ jest.mock('../commands/pull-content/pull-content')
 jest.mock('../commands/pull-models/pull-models')
 jest.mock('contentful-management', () => ({ createClient }))
 
-import { logger } from '@modelberry/mbfactory/plain'
+import { logger } from '@modelberry/mbfactory'
 import {
   createClient,
   environmentMock,

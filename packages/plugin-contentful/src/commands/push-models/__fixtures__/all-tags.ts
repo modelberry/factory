@@ -1,4 +1,4 @@
-import { TypeData } from '@modelberry/mbfactory/plain'
+import { TypeData } from '@modelberry/mbfactory'
 
 export const allTags: TypeData = {
   Topic: {

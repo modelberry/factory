@@ -1,4 +1,4 @@
-import { firstUpperCase } from '@modelberry/mbfactory/plain'
+import { firstUpperCase } from '@modelberry/mbfactory'
 import { ContentFields } from 'contentful-management/types'
 
 export interface GetLinkContentTypes {

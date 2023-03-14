@@ -4,7 +4,7 @@ import {
   logger,
   ModelberryInterface,
   ModelberryType,
-} from '@modelberry/mbfactory/plain'
+} from '@modelberry/mbfactory'
 import { KeyValueMap } from 'contentful-management/types'
 import { checkTags } from '../../check-tags/check-tags'
 import { isValidInterface } from '../../check-tags/is-valid-interface'

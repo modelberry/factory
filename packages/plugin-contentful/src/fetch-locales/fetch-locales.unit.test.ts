@@ -1,4 +1,4 @@
-import { logger } from '@modelberry/mbfactory/plain'
+import { logger } from '@modelberry/mbfactory'
 import { environmentMock } from '../contentful-mock/contentful-mock'
 import { fetchLocales } from './fetch-locales'
 

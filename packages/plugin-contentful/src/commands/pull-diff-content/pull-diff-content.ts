@@ -1,5 +1,5 @@
 import { Environment } from 'contentful-management/types'
-import { logger, Options, TypeData } from '@modelberry/mbfactory/plain'
+import { logger, Options, TypeData } from '@modelberry/mbfactory'
 
 export interface PullDiffContent {
   contentfulEnvironment: Environment

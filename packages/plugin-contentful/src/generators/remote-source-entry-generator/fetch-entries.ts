@@ -1,4 +1,4 @@
-import { Options, logger } from '@modelberry/mbfactory/plain'
+import { Options, logger } from '@modelberry/mbfactory'
 import {
   Collection,
   Entry,

@@ -2,7 +2,7 @@ import {
   firstUpperCase,
   Options,
   PropertyTree,
-} from '@modelberry/mbfactory/plain'
+} from '@modelberry/mbfactory'
 import { Environment } from 'contentful-management/types'
 import { fetchContentTypes } from '../../fetch-content-types/fetch-content-types'
 import { fetchEditorInterfaces } from './fetch-editor-interfaces'
