@@ -66,4 +66,7 @@ export const allTags: AllTags = {
   '@widgetId': {
     field: true,
   },
+  '@widgetNamespace': {
+    field: true,
+  },
 }

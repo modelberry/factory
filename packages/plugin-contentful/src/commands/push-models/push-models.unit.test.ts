@@ -172,7 +172,7 @@ describe('Push models should', () => {
     expect(logSpy.h1).toHaveBeenCalledWith('\nTopic')
     expect(logSpy.h3).toHaveBeenCalledWith('heading')
     expect(logSpy.error).toHaveBeenCalledWith(
-      '- Unknown field tag: @bad. Valid field tags are: @description, @disabled, @ignore, @helpText, @itemsType, @itemsLinkType, @itemsValidations, @linkType, @locale, @localized, @name, @omitted, @required, @type, @validations, @widgetId'
+      '- Unknown field tag: @bad. Valid field tags are: @description, @disabled, @ignore, @helpText, @itemsType, @itemsLinkType, @itemsValidations, @linkType, @locale, @localized, @name, @omitted, @required, @type, @validations, @widgetId, @widgetNamespace'
     )
     expect(logSpy.h2).toHaveBeenCalledWith('\nPushing to Contentful')
     expect(logSpy.p).toHaveBeenCalledWith('- pushing content type...')
