@@ -1,16 +1,16 @@
-## @modelberry/mbfactory 8.0.3
+## @modelberry/mbfactory 8.0.4
 
-## [8.0.3](https://github.com/modelberry/factory/compare/8.0.2...8.0.3) (2023-03-14)
-
-
-
-## @modelberry/plugin-contentful 8.0.3
-
-## [8.0.3](https://github.com/modelberry/factory/compare/8.0.2...8.0.3) (2023-03-14)
+## [8.0.4](https://github.com/modelberry/factory/compare/8.0.3...8.0.4) (2023-04-17)
 
 
-### Bug Fixes
 
-* typescript dependency ([d84edca](https://github.com/modelberry/factory/commit/d84edca6613cb4aa3d88833daaca5fd019f70261))
+## @modelberry/plugin-contentful 8.0.4
+
+## [8.0.4](https://github.com/modelberry/factory/compare/8.0.3...8.0.4) (2023-04-17)
+
+
+### Features
+
+* add support for TSDoc tag [@widget](https://github.com/widget)Namespace ([f407970](https://github.com/modelberry/factory/commit/f407970f65204ed82f03bfb721690fd0e764495e))
 
 

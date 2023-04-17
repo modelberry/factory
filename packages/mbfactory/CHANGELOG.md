@@ -1,5 +1,7 @@
 # Changelog
 
+## [8.0.4](https://github.com/modelberry/factory/compare/8.0.3...8.0.4) (2023-04-17)
+
 ## [8.0.3](https://github.com/modelberry/factory/compare/8.0.2...8.0.3) (2023-03-14)
 
 ## [8.0.2](https://github.com/modelberry/factory/compare/8.0.1...8.0.2) (2023-03-14)
