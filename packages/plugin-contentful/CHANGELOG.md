@@ -1,5 +1,12 @@
 # Changelog
 
+## [8.0.6](https://github.com/modelberry/factory/compare/8.0.4...8.0.6) (2024-1-7)
+
+
+### Bug Fixes
+
+* security audit ([2352d79](https://github.com/modelberry/factory/commit/2352d79404d8aad7657e6994748886f515184d86))
+
 ## [8.0.4](https://github.com/modelberry/factory/compare/8.0.3...8.0.4) (2023-04-17)
 
 

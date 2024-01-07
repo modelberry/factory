@@ -62,7 +62,7 @@ const validationAssetFileSize: ContentTypeFieldValidation = {
   },
 }
 const validationEnabledNodeTypes: ContentTypeFieldValidation = {
-  enabledNodeTypes: ['typeA', 'typeB'],
+  enabledNodeTypes: ['document', 'paragraph'],
 }
 const validationEnabledMarks: ContentTypeFieldValidation = {
   enabledMarks: ['bold', 'italic', 'underline', 'code'],
@@ -178,7 +178,7 @@ describe('getValidationName should', () => {
       val: validationEnabledNodeTypes,
       vals: validations,
     })
-    expect(validationName).toEqual('enabledNodeTypes-typeA-typeB')
+    expect(validationName).toEqual('enabledNodeTypes-document-paragraph')
   })
   test('create a new name for validationEnabledMarks', async () => {
     const validationName = getValidationName({

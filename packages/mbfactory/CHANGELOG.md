@@ -1,5 +1,21 @@
 # Changelog
 
+## [8.0.6](https://github.com/modelberry/factory/compare/8.0.4...8.0.6) (2024-1-7)
+
+
+### Bug Fixes
+
+* remove system details from tests ([377a57f](https://github.com/modelberry/factory/commit/377a57feaf0f16a16cc0d84f9610b5b34190e0fc))
+* security audit ([2352d79](https://github.com/modelberry/factory/commit/2352d79404d8aad7657e6994748886f515184d86))
+
+## [8.0.5](https://github.com/modelberry/factory/compare/8.0.4...8.0.5) (2024-1-7)
+
+
+### Bug Fixes
+
+* remove system details from tests ([377a57f](https://github.com/modelberry/factory/commit/377a57feaf0f16a16cc0d84f9610b5b34190e0fc))
+* security audit ([2352d79](https://github.com/modelberry/factory/commit/2352d79404d8aad7657e6994748886f515184d86))
+
 ## [8.0.4](https://github.com/modelberry/factory/compare/8.0.3...8.0.4) (2023-04-17)
 
 ## [8.0.3](https://github.com/modelberry/factory/compare/8.0.2...8.0.3) (2023-03-14)
