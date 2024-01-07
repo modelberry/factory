@@ -10,3 +10,6 @@ export const getContentfulEnvironment = async () => {
   )
   return environment
 }
+
+// CONTENTFUL_DELIVERY_ACCESSTOKEN
+// CONTENTFUL_PREVIEW_ACCESSTOKEN

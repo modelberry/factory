@@ -5,7 +5,7 @@ exports[`contentTypeFieldsToPropertyTree should create a property tree 1`] = `
   "actions": {
     "node": {
       "blockTag": "@modelberry",
-      "createKeywordTypeNode": 152,
+      "createKeywordTypeNode": 154,
       "inlineTags": {
         "@name": "Actions",
         "@widgetId": "entryLinksEditor",
@@ -16,7 +16,7 @@ exports[`contentTypeFieldsToPropertyTree should create a property tree 1`] = `
   "heading": {
     "node": {
       "blockTag": "@modelberry",
-      "createKeywordTypeNode": 152,
+      "createKeywordTypeNode": 154,
       "inlineTags": {
         "@localized": "true",
         "@name": "Heading",

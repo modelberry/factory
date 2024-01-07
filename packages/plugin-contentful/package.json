@@ -47,7 +47,7 @@
     "build": "npm-run-all clean build:*",
     "build:compile": "NODE_OPTIONS=--max-old-space-size=8192 rollup --config",
     "slow:lint": "eslint --cache 'src/**/*.{ts,tsx}'",
-    "build:test": "jest --silent --passWithNoTests",
+    "build:test": "NODE_OPTIONS=--experimental-vm-modules jest --silent --passWithNoTests",
     "build:types": "tsc -p tsconfig.json --declaration --emitDeclarationOnly --declarationDir build",
     "clean": "rimraf build/*",
     "dev": "rollup --config --watch"
@@ -55,17 +55,17 @@
   "dependencies": {
     "@modelberry/mbfactory": "8.0.6",
     "chalk": "4.1.2",
-    "contentful-management": "10.46.4",
-    "deep-equal": "2.2.0",
-    "deepmerge": "4.3.0",
+    "contentful-management": "11.8.0",
+    "deep-equal": "2.2.3",
+    "deepmerge": "4.3.1",
     "inquirer": "8.2.4",
-    "typescript": "4.9.5"
+    "typescript": "5.3.3"
   },
   "engines": {
     "node": ">=16.0.0",
     "npm": ">=7.11.1"
   },
   "devDependencies": {
-    "@types/deep-equal": "1.0.1"
+    "@types/deep-equal": "1.0.4"
   }
 }
