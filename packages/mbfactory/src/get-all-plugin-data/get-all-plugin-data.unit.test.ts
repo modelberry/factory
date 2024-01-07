@@ -25,6 +25,10 @@ describe('getAllPluginData should', () => {
     const file = './src/get-all-plugin-data/__fixtures__/topic.ts'
     const program = ts.createProgram([file], compilerOptions.options)
     const allPluginData = getAllPluginData({ program })
+    // Remove variables that contain hard system paths
+    allPluginData['@modelberry/plugin-contentful'].dataVar.fileName=''
+    allPluginData['@modelberry/plugin-contentful'].types.ContentfulAction.variables[0].fileName = ''
+    allPluginData['@modelberry/plugin-contentful'].types.ContentfulTopic.variables[0].fileName = ''
     expect(allPluginData).toMatchSnapshot()
   })
 

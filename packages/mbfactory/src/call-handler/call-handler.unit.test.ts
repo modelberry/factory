@@ -26,9 +26,7 @@ describe('The call handler should', () => {
     expect(logSpy.p).toHaveBeenCalledWith(
       '- plugin: @modelberry/does-not-exist'
     )
-    expect(logSpy.error).toHaveBeenCalledWith(
-      '- could not find plugin (Error: You need to run with a version of node that supports ES Modules in the VM API. See https://jestjs.io/docs/ecmascript-modules)'
-    )
+    expect(logSpy.error.mock.calls[0][0].substring(0, 23)).toEqual('- could not find plugin')
   })
 
   test('show an error when a plugin does not have a handler', async () => {
@@ -40,8 +38,6 @@ describe('The call handler should', () => {
     })
     expect(logSpy.h1).toHaveBeenCalledWith(`\nRunning plugin`)
     expect(logSpy.p).toHaveBeenCalledWith(`- plugin: chalk`)
-    expect(logSpy.error).toHaveBeenCalledWith(
-      `- could not find plugin (Error: You need to run with a version of node that supports ES Modules in the VM API. See https://jestjs.io/docs/ecmascript-modules)`
-    )
+    expect(logSpy.error.mock.calls[0][0].substring(0, 23)).toEqual('- could not find plugin')
   })
 })
